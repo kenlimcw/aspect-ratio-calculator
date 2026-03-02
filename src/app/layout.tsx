@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { InstallPrompt } from "@/components/InstallPrompt";
 import { ServiceWorkerRegistrar } from "@/components/ServiceWorkerRegistrar";
+import { Analytics } from "@vercel/analytics/react";
 
 const dmSans = DM_Sans({
   variable: "--font-body",
@@ -81,6 +82,7 @@ export default function RootLayout({
           {children}
           <InstallPrompt />
           <ServiceWorkerRegistrar />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
