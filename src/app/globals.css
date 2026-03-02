@@ -296,3 +296,367 @@ input[pattern="[0-9]*"] {
   padding: 0.625rem 0.75rem;
   font-size: 0.8125rem;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   FEEDBACK WIDGET — Floating button + slide-up panel
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── FAB (Floating Action Button) ── */
+
+.feedback-fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem 0.625rem 0.75rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow:
+    0 4px 16px color-mix(in srgb, var(--accent) 40%, transparent),
+    0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  outline: none;
+}
+
+.feedback-fab:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 24px color-mix(in srgb, var(--accent) 50%, transparent),
+    0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-fab:active {
+  transform: translateY(0);
+}
+
+.feedback-fab[data-open="true"] {
+  background: var(--surface-elevated);
+  color: var(--foreground-dim);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-fab[data-open="true"]:hover {
+  background: var(--surface-hover);
+}
+
+.feedback-fab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feedback-fab-label {
+  white-space: nowrap;
+}
+
+/* ── Panel ── */
+
+@keyframes feedbackPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.feedback-panel {
+  position: fixed;
+  bottom: 4.5rem;
+  right: 1.5rem;
+  z-index: 49;
+  width: 340px;
+  max-width: calc(100vw - 2rem);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    0 0 0 1px color-mix(in srgb, var(--accent) 8%, transparent);
+  animation: feedbackPanelIn 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+}
+
+/* ── Panel header ── */
+
+.feedback-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1rem 1.125rem 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.feedback-panel-header-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 60%, transparent);
+  flex-shrink: 0;
+}
+
+.feedback-panel-header-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--foreground);
+  letter-spacing: 0.01em;
+}
+
+/* ── Tabs ── */
+
+.feedback-tabs {
+  display: flex;
+  gap: 0;
+  padding: 0.625rem 1.125rem 0;
+}
+
+.feedback-tab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.875rem;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.15s ease, background 0.15s ease;
+  outline: none;
+}
+
+.feedback-tab:hover {
+  color: var(--foreground);
+  background: var(--surface-hover);
+}
+
+.feedback-tab.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.feedback-tab-pip {
+  position: absolute;
+  bottom: -0.625rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--accent) 50%, transparent);
+}
+
+/* ── Form ── */
+
+.feedback-form {
+  padding: 1rem 1.125rem 1.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.feedback-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.feedback-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--foreground-dim);
+  margin-bottom: 0.375rem;
+  letter-spacing: 0.01em;
+}
+
+.feedback-textarea {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.625rem 0.75rem;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  color: var(--foreground);
+  resize: vertical;
+  min-height: 80px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  line-height: 1.6;
+}
+
+.feedback-textarea::placeholder {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.feedback-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.feedback-textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.feedback-char-count {
+  text-align: right;
+  font-size: 0.6875rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Select ── */
+
+.feedback-select-wrap {
+  position: relative;
+}
+
+.feedback-select {
+  width: 100%;
+  appearance: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  color: var(--foreground);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.feedback-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.feedback-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.feedback-select option {
+  background: var(--surface-elevated);
+  color: var(--foreground);
+}
+
+.feedback-select-arrow {
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  color: var(--muted);
+  pointer-events: none;
+}
+
+/* ── Status / error ── */
+
+.feedback-status-error {
+  font-size: 0.75rem;
+  color: var(--accent-rose);
+  margin: 0;
+  padding: 0.5rem 0.625rem;
+  background: color-mix(in srgb, var(--accent-rose) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-rose) 20%, transparent);
+  border-radius: 6px;
+}
+
+/* ── Submit button ── */
+
+.feedback-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.6875rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.12s ease, box-shadow 0.15s ease;
+  outline: none;
+  margin-top: 0.25rem;
+}
+
+.feedback-submit:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.feedback-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.feedback-submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.feedback-submit[data-status="success"] {
+  background: var(--accent-emerald);
+  opacity: 1;
+  cursor: default;
+}
+
+/* ── Spinner ── */
+
+@keyframes feedbackSpin {
+  to { transform: rotate(360deg); }
+}
+
+.feedback-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: feedbackSpin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ── Mobile adjustments ── */
+
+@media (max-width: 400px) {
+  .feedback-fab {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  .feedback-panel {
+    bottom: 4rem;
+    right: 1rem;
+    width: calc(100vw - 2rem);
+  }
+}
