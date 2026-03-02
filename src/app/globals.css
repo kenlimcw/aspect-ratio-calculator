@@ -306,7 +306,7 @@ input[pattern="[0-9]*"] {
 .feedback-fab {
   position: fixed;
   bottom: 1.5rem;
-  right: 1.5rem;
+  left: 1.5rem;
   z-index: 50;
   display: flex;
   align-items: center;
@@ -377,7 +377,7 @@ input[pattern="[0-9]*"] {
 .feedback-panel {
   position: fixed;
   bottom: 4.5rem;
-  right: 1.5rem;
+  left: 1.5rem;
   z-index: 49;
   width: 340px;
   max-width: calc(100vw - 2rem);
@@ -652,11 +652,11 @@ input[pattern="[0-9]*"] {
 @media (max-width: 400px) {
   .feedback-fab {
     bottom: 1rem;
-    right: 1rem;
+    left: 1rem;
   }
   .feedback-panel {
     bottom: 4rem;
-    right: 1rem;
+    left: 1rem;
     width: calc(100vw - 2rem);
   }
 }
