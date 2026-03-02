@@ -246,7 +246,7 @@ export function FeedbackWidget() {
             <button
               type="submit"
               className="feedback-submit"
-              disabled={!canSubmit || status === "sending"}
+              disabled={!canSubmit}
               data-status={status}
             >
               {status === "success" ? (
