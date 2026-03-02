@@ -1,0 +1,26 @@
+# Vercel
+.vercel
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+
+# Dependencies
+node_modules/
+
+# Build
+*.tsbuildinfo
+
+# Test results
+test-results/
+playwright-report/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db

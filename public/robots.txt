@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aspect-ratio-calculator.com/sitemap.xml

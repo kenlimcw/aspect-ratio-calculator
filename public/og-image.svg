@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color: #1a1f2a; stop-opacity: 1" />
+      <stop offset="100%" style="stop-color: #0b0d11; stop-opacity: 1" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Playfair Display', Georgia, serif; font-size: 72px; font-weight: 700; fill: #e2e4e8; letter-spacing: -1px; }
+      .subtitle { font-family: 'DM Sans', system-ui, sans-serif; font-size: 28px; fill: #5b8fb9; font-weight: 500; }
+      .description { font-family: 'DM Sans', system-ui, sans-serif; font-size: 18px; fill: #a8adb8; }
+      .icon-rect { fill: none; stroke: #5b8fb9; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Decorative rectangles (aspect ratio visualization) -->
+  <g opacity="0.3">
+    <rect x="50" y="100" width="200" height="112.5" class="icon-rect"/>
+    <rect x="100" y="140" width="120" height="90" class="icon-rect"/>
+  </g>
+
+  <!-- Content -->
+  <text x="300" y="120" class="title">Aspect Ratio</text>
+  <text x="300" y="200" class="title">Calculator</text>
+
+  <text x="300" y="260" class="subtitle">Free • Fast • Offline-First</text>
+
+  <text x="300" y="310" class="description">Convert aspect ratios for Instagram, YouTube,</text>
+  <text x="300" y="340" class="description">TikTok, video editing, and more.</text>
+
+  <!-- Right-side accent element -->
+  <g opacity="0.15">
+    <circle cx="1000" cy="150" r="200" fill="#5b8fb9"/>
+    <circle cx="1100" cy="500" r="150" fill="#5b8fb9"/>
+  </g>
+</svg>
