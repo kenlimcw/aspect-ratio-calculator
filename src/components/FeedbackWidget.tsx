@@ -42,6 +42,7 @@ export function FeedbackWidget() {
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<Tab>("feedback");
   const [status, setStatus] = useState<Status>("idle");
+  const [errorDetail, setErrorDetail] = useState("");
 
   // Feedback form
   const [message, setMessage] = useState("");
@@ -100,16 +101,20 @@ export function FeedbackWidget() {
         body: JSON.stringify(body),
       });
 
-      if (!res.ok) throw new Error("Failed");
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.detail || data.error || "Failed");
+      }
       setStatus("success");
       resetForms();
       setTimeout(() => {
         setStatus("idle");
         setOpen(false);
       }, 2200);
-    } catch {
+    } catch (err) {
+      setErrorDetail(err instanceof Error ? err.message : "Unknown error");
       setStatus("error");
-      setTimeout(() => setStatus("idle"), 3000);
+      setTimeout(() => setStatus("idle"), 6000);
     }
   }
 
@@ -239,7 +244,9 @@ export function FeedbackWidget() {
 
             {/* Status messages */}
             {status === "error" && (
-              <p className="feedback-status-error">Something went wrong — please try again.</p>
+              <p className="feedback-status-error">
+                {errorDetail || "Something went wrong — please try again."}
+              </p>
             )}
 
             {/* Submit button */}
