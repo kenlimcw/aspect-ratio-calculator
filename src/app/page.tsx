@@ -1,6 +1,9 @@
+import { headers } from "next/headers";
 import Calculator from "@/components/Calculator";
 
-export default function Home() {
+export default async function Home() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -17,6 +20,7 @@ export default function Home() {
     <main className="min-h-screen px-4 py-8 md:py-16">
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
