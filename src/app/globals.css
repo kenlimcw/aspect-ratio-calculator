@@ -321,6 +321,12 @@ input[pattern="[0-9]*"] {
   font-weight: 600;
   letter-spacing: 0.01em;
   cursor: pointer;
+  /* Prevent browser from claiming the touch for scroll/zoom — required for long-press drag on mobile */
+  touch-action: none;
+  /* Prevent iOS callout menu and text selection during long-press */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
   box-shadow:
     0 4px 16px color-mix(in srgb, var(--accent) 40%, transparent),
     0 1px 3px rgba(0, 0, 0, 0.3);

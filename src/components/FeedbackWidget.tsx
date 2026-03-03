@@ -248,6 +248,7 @@ export function FeedbackWidget() {
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
+        onContextMenu={(e) => e.preventDefault()}
         onClick={handleClick}
         aria-label="Open feedback panel"
         className="feedback-fab"
