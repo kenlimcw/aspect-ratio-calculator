@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { MessageSquarePlus, X, Send, Check, ChevronRight } from "lucide-react";
+import { MessageSquarePlus, X, Send, Check, ChevronRight, EyeOff } from "lucide-react";
 
 type Tab = "feedback" | "request";
 type Status = "idle" | "sending" | "success" | "error";
@@ -38,30 +38,12 @@ const INDUSTRIES = [
   "Other",
 ];
 
-// Drag constants
-const BUTTON_H = 44;     // approx FAB height in px
-const PANEL_GAP = 8;     // gap between FAB top edge and panel bottom
-const PANEL_MAX_H = 420; // approx max panel height for clamping
-const LONG_PRESS_MS = 450;
-
 export function FeedbackWidget() {
-  const [open, setOpen] = useState(false);
-  const [tab, setTab] = useState<Tab>("feedback");
-  const [status, setStatus] = useState<Status>("idle");
+  const [open, setOpen]           = useState(false);
+  const [hidden, setHidden]       = useState(false);
+  const [tab, setTab]             = useState<Tab>("feedback");
+  const [status, setStatus]       = useState<Status>("idle");
   const [errorDetail, setErrorDetail] = useState("");
-
-  // Drag / position state
-  // null = use CSS default (bottom-left corner); object = user-dragged position
-  const [pos, setPos] = useState<{ left: number; bottom: number } | null>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [isLongPressing, setIsLongPressing] = useState(false);
-
-  // Refs for drag logic (avoid stale closure issues in pointer handlers)
-  const isDraggingRef    = useRef(false);
-  const longPressTimer   = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const dragStartPtr     = useRef<{ x: number; y: number } | null>(null);
-  const dragStartPos     = useRef<{ left: number; bottom: number } | null>(null);
-  const didDrag          = useRef(false);
 
   // Feedback form
   const [message, setMessage] = useState("");
@@ -71,20 +53,13 @@ export function FeedbackWidget() {
   const [industry, setIndustry] = useState("");
   const [problem, setProblem]   = useState("");
 
-  const panelRef     = useRef<HTMLDivElement>(null);
+  const panelRef      = useRef<HTMLDivElement>(null);
   const firstInputRef = useRef<HTMLTextAreaElement>(null);
 
-  // ── Load saved position on mount (clamped to current viewport) ───────────
+  // ── Restore hidden state from localStorage on mount ──────────────────────
   useEffect(() => {
-    const raw = localStorage.getItem("feedback-fab-pos");
-    if (!raw) return;
-    try {
-      const p = JSON.parse(raw) as { left: number; bottom: number };
-      const clampedLeft   = Math.max(0, Math.min(window.innerWidth  - 120, p.left));
-      const clampedBottom = Math.max(0, Math.min(window.innerHeight - BUTTON_H, p.bottom));
-      setPos({ left: clampedLeft, bottom: clampedBottom });
-    } catch {
-      // ignore malformed stored value
+    if (localStorage.getItem("feedback-fab-hidden") === "true") {
+      setHidden(true);
     }
   }, []);
 
@@ -96,88 +71,23 @@ export function FeedbackWidget() {
         setOpen(false);
       }
     }
-    // Slight delay so the open-click doesn't immediately close
     const t = setTimeout(() => document.addEventListener("mousedown", handleClick), 50);
     return () => { clearTimeout(t); document.removeEventListener("mousedown", handleClick); };
   }, [open]);
 
   // ── Focus first input on open ────────────────────────────────────────────
   useEffect(() => {
-    if (open) {
-      setTimeout(() => firstInputRef.current?.focus(), 120);
-    }
+    if (open) setTimeout(() => firstInputRef.current?.focus(), 120);
   }, [open, tab]);
 
   // ── Reset status when tab or open changes ────────────────────────────────
   useEffect(() => { setStatus("idle"); }, [tab, open]);
 
-  // ── Drag helpers ─────────────────────────────────────────────────────────
-
-  function cancelLongPress() {
-    if (longPressTimer.current) {
-      clearTimeout(longPressTimer.current);
-      longPressTimer.current = null;
-    }
-    setIsLongPressing(false);
-    dragStartPtr.current  = null;
-    dragStartPos.current  = null;
-  }
-
-  function onPointerDown(e: React.PointerEvent<HTMLButtonElement>) {
-    // Only respond to primary mouse button or any touch/pen
-    if (e.pointerType === "mouse" && e.button !== 0) return;
-    // Capture pointer so events keep firing even if pointer leaves the element
-    e.currentTarget.setPointerCapture(e.pointerId);
-
-    didDrag.current       = false;
-    dragStartPtr.current  = { x: e.clientX, y: e.clientY };
-    dragStartPos.current  = pos ?? { left: 24, bottom: 24 };
-    setIsLongPressing(true);
-
-    longPressTimer.current = setTimeout(() => {
-      isDraggingRef.current = true;
-      setIsDragging(true);
-      setIsLongPressing(false);
-      longPressTimer.current = null;
-    }, LONG_PRESS_MS);
-  }
-
-  function onPointerMove(e: React.PointerEvent<HTMLButtonElement>) {
-    if (!dragStartPtr.current) return;
-    const dx = e.clientX - dragStartPtr.current.x;
-    const dy = e.clientY - dragStartPtr.current.y;
-
-    // If user moves more than 8 px before long-press fires, cancel it
-    // (treat as a normal scroll or accidental move, not a drag intent)
-    if (!isDraggingRef.current && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) {
-      cancelLongPress();
-      return;
-    }
-
-    if (!isDraggingRef.current) return;
-
-    didDrag.current = true;
-    const start     = dragStartPos.current!;
-
-    // dy is inverted: dragging down reduces the `bottom` offset
-    const newLeft   = Math.max(0, Math.min(window.innerWidth  - 120, start.left + dx));
-    const newBottom = Math.max(0, Math.min(window.innerHeight - BUTTON_H, start.bottom - dy));
-
-    const newPos = { left: newLeft, bottom: newBottom };
-    setPos(newPos);
-    localStorage.setItem("feedback-fab-pos", JSON.stringify(newPos));
-  }
-
-  function onPointerUp() {
-    cancelLongPress();
-    isDraggingRef.current = false;
-    setIsDragging(false);
-  }
-
-  // Guard click so it doesn't fire after a drag
-  function handleClick() {
-    if (didDrag.current) { didDrag.current = false; return; }
-    setOpen(o => !o);
+  // ── Dismiss — hides the FAB and persists to localStorage ─────────────────
+  function handleDismiss() {
+    localStorage.setItem("feedback-fab-hidden", "true");
+    setOpen(false);
+    setHidden(true);
   }
 
   // ── Form logic ───────────────────────────────────────────────────────────
@@ -228,34 +138,17 @@ export function FeedbackWidget() {
       ? message.trim().length > 0
       : role.trim() && industry.trim() && problem.trim().length > 0);
 
-  // ── Panel position follows dragged button ────────────────────────────────
-  const panelStyle: React.CSSProperties | undefined = (() => {
-    if (!pos || typeof window === "undefined") return undefined;
-    return {
-      left:   Math.min(pos.left, window.innerWidth - 356),
-      bottom: Math.min(
-        pos.bottom + BUTTON_H + PANEL_GAP,
-        window.innerHeight - PANEL_MAX_H,
-      ),
-    };
-  })();
+  // Don't render anything if the user has dismissed the button
+  if (hidden) return null;
 
   return (
     <>
       {/* ── Floating button ─────────────────────────────────── */}
       <button
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerUp}
-        onContextMenu={(e) => e.preventDefault()}
-        onClick={handleClick}
+        onClick={() => setOpen(o => !o)}
         aria-label="Open feedback panel"
         className="feedback-fab"
         data-open={open}
-        data-dragging={isDragging}
-        data-longpressing={isLongPressing}
-        style={pos ? { left: pos.left, bottom: pos.bottom } : undefined}
       >
         <span className="feedback-fab-icon">
           {open ? <X size={18} strokeWidth={2.5} /> : <MessageSquarePlus size={18} strokeWidth={2.5} />}
@@ -273,7 +166,6 @@ export function FeedbackWidget() {
           role="dialog"
           aria-modal="true"
           aria-label="Feedback panel"
-          style={panelStyle}
         >
           {/* Header */}
           <div className="feedback-panel-header">
@@ -402,6 +294,16 @@ export function FeedbackWidget() {
                   <span>{tab === "feedback" ? "Send Feedback" : "Submit Request"}</span>
                 </>
               )}
+            </button>
+
+            {/* Dismiss */}
+            <button
+              type="button"
+              className="feedback-dismiss"
+              onClick={handleDismiss}
+            >
+              <EyeOff size={12} strokeWidth={2} />
+              <span>Hide this button</span>
             </button>
           </form>
         </div>
