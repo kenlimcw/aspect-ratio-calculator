@@ -155,7 +155,6 @@ export default function PrivacyPage() {
                   {[
                     ["Vercel", "Hosting & anonymous analytics", "vercel.com/legal/privacy-policy"],
                     ["Resend", "Feedback email delivery", "resend.com/legal/privacy-policy"],
-                    ["Google Fonts", "Typography (DM Sans, JetBrains Mono)", "policies.google.com/privacy"],
                   ].map(([service, purpose, policy]) => (
                     <tr key={service}>
                       <td className="font-medium text-[var(--foreground)]">

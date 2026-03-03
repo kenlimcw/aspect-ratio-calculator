@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, JetBrains_Mono, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { InstallPrompt } from "@/components/InstallPrompt";
@@ -8,22 +8,30 @@ import { FeedbackWidget } from "@/components/FeedbackWidget";
 import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/Footer";
 
-const dmSans = DM_Sans({
+// Fonts self-hosted as WOFF2 variable fonts committed to the repo.
+// No requests are made to Google or any external server at build time or runtime.
+const dmSans = localFont({
+  src: "../fonts/dm-sans.woff2",
   variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: "100 900",
+  display: "swap",
+  fallback: ["system-ui", "sans-serif"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const jetbrainsMono = localFont({
+  src: "../fonts/jetbrains-mono.woff2",
   variable: "--font-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: "100 800",
+  display: "swap",
+  fallback: ["ui-monospace", "monospace"],
 });
 
-const playfairDisplay = Playfair_Display({
+const playfairDisplay = localFont({
+  src: "../fonts/playfair-display.woff2",
   variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: "300 900",
+  display: "swap",
+  fallback: ["Georgia", "serif"],
 });
 
 export const viewport: Viewport = {
