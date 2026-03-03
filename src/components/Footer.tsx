@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FooterFeedbackLink } from "@/components/FooterFeedbackLink";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -20,6 +21,8 @@ export function Footer() {
           >
             Privacy Policy
           </Link>
+          <span className="text-[var(--border)]">·</span>
+          <FooterFeedbackLink />
           <span className="text-[var(--border)]">·</span>
           <span>Free tool, no sign-up required</span>
         </nav>

@@ -63,6 +63,17 @@ export function FeedbackWidget() {
     }
   }, []);
 
+  // ── Listen for "show-feedback" event dispatched by the footer link ────────
+  useEffect(() => {
+    function handleShow() {
+      localStorage.removeItem("feedback-fab-hidden");
+      setHidden(false);
+      setOpen(true);
+    }
+    window.addEventListener("show-feedback", handleShow);
+    return () => window.removeEventListener("show-feedback", handleShow);
+  }, []);
+
   // ── Close on outside click ───────────────────────────────────────────────
   useEffect(() => {
     if (!open) return;
