@@ -340,6 +340,28 @@ input[pattern="[0-9]*"] {
   transform: translateY(0);
 }
 
+/* Long-press hint — cursor changes to grab and button subtly scales up */
+.feedback-fab[data-longpressing="true"] {
+  cursor: grab;
+  transform: scale(1.06);
+  transition: transform 0.15s ease;
+}
+
+/* Dragging state — no transition lag, elevated shadow, grabbing cursor */
+.feedback-fab[data-dragging="true"] {
+  cursor: grabbing;
+  transform: scale(1.08);
+  opacity: 0.9;
+  transition: none;
+  box-shadow:
+    0 8px 32px color-mix(in srgb, var(--accent) 55%, transparent),
+    0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.feedback-fab[data-dragging="true"]:hover {
+  transform: scale(1.08); /* prevent hover from overriding drag scale */
+}
+
 .feedback-fab[data-open="true"] {
   background: var(--surface-elevated);
   color: var(--foreground-dim);
