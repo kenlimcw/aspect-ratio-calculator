@@ -6,6 +6,7 @@ import { InstallPrompt } from "@/components/InstallPrompt";
 import { ServiceWorkerRegistrar } from "@/components/ServiceWorkerRegistrar";
 import { FeedbackWidget } from "@/components/FeedbackWidget";
 import { Analytics } from "@vercel/analytics/next";
+import { Footer } from "@/components/Footer";
 
 const dmSans = DM_Sans({
   variable: "--font-body",
@@ -81,6 +82,7 @@ export default function RootLayout({
       <body className={`${dmSans.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} antialiased`}>
         <ThemeProvider>
           {children}
+          <Footer />
           <InstallPrompt />
           <ServiceWorkerRegistrar />
           <FeedbackWidget />

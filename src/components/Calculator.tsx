@@ -1515,36 +1515,49 @@ export default function Calculator() {
     const lines: string[] = [];
 
     if (mode === "scale") {
-      if (exportToggles.dimensions) lines.push(`Dimensions: ${activeWStr} × ${activeHStr}`);
-      if (exportToggles.ratio && previewRatioW > 0) lines.push(`Aspect Ratio: ${previewRatioW}:${previewRatioH}`);
-      if (exportToggles.quality && qualityData) lines.push(`Quality: ${qualityData.verdict.label} (${qualityData.scalePct}%)`);
+      lines.push("Aspect Ratio Results");
+      lines.push("");
+      const origWNum = parseFloat(origW) || 0;
+      const origHNum = parseFloat(origH) || 0;
+      if (origWNum > 0 && origHNum > 0) {
+        lines.push(`Original Size:  ${origWNum} × ${origHNum}`);
+      }
+      if (exportToggles.ratio && previewRatioW > 0) lines.push(`Target Ratio:   ${previewRatioW}:${previewRatioH}`);
+      if (exportToggles.dimensions) lines.push(`Target Size:    ${activeWStr} × ${activeHStr}`);
+      if (exportToggles.quality && qualityData) lines.push(`Quality:        ${qualityData.verdict.label} (${qualityData.scalePct}%)`);
       if (exportToggles.css) {
-        lines.push("", "CSS:");
+        lines.push("", "CSS Properties:");
         lines.push(`  aspect-ratio: ${activeRatioW} / ${activeRatioH};`);
         lines.push(`  padding-bottom: ${paddingPct}%;`);
         lines.push(`  width: ${activeWStr}px; height: ${activeHStr}px;`);
       }
       if (exportToggles.printSizes && qualityData?.dpiSizes) {
-        lines.push("", "Print Sizes:");
+        lines.push("", "Print Sizes (at 300 DPI):");
         qualityData.dpiSizes.forEach(d => lines.push(`  ${d.label}: ${d.inW} × ${d.inH} in`));
       }
     } else if (mode === "find") {
-      if (exportToggles.dimensions) lines.push(`Dimensions: ${activeWStr} × ${activeHStr}`);
-      if (exportToggles.ratio) lines.push(`Ratio: ${findSimplifiedW}:${findSimplifiedH}`);
-      if (exportToggles.decimal) lines.push(`Decimal: ${findDecimal}:1`);
+      lines.push("Aspect Ratio Report");
+      lines.push("");
+      if (exportToggles.dimensions) lines.push(`Dimensions:     ${activeWStr} × ${activeHStr}`);
+      if (exportToggles.ratio) lines.push(`Ratio:          ${findSimplifiedW}:${findSimplifiedH}`);
+      if (exportToggles.decimal) lines.push(`Decimal:        ${findDecimal}:1`);
       if (exportToggles.standardMatch && (findKnownFormat || findClosestRatio)) {
-        lines.push(`Standard: ${findKnownFormat || findClosestRatio}`);
+        lines.push(`Standard:       ${findKnownFormat || findClosestRatio}`);
       }
       if (exportToggles.css) {
-        lines.push("", "CSS:");
+        lines.push("", "CSS Properties:");
         lines.push(`  aspect-ratio: ${findSimplifiedW} / ${findSimplifiedH};`);
         lines.push(`  padding-bottom: ${findPaddingPct}%;`);
       }
     }
 
-    if (shareUrl) lines.push(`\n→ ${shareUrl}`);
+    lines.push("");
+    lines.push(mode === "find"
+      ? "Analyse your dimensions at aspect-ratio-calculator.com"
+      : "Recalculate at aspect-ratio-calculator.com");
+    if (shareUrl) lines.push(shareUrl);
     return lines.join("\n");
-  }, [mode, exportToggles, activeW, activeH, activeWStr, activeHStr, previewRatioW, previewRatioH, qualityData, activeRatioW, activeRatioH, paddingPct, findSimplifiedW, findSimplifiedH, findDecimal, findKnownFormat, findClosestRatio, findPaddingPct, shareUrl]);
+  }, [mode, exportToggles, activeW, activeH, activeWStr, activeHStr, origW, origH, previewRatioW, previewRatioH, qualityData, activeRatioW, activeRatioH, paddingPct, findSimplifiedW, findSimplifiedH, findDecimal, findKnownFormat, findClosestRatio, findPaddingPct, shareUrl]);
 
   // ── Fitting analysis: auto-open when ratios differ ──
   const ratiosDiffer = useMemo(() => {
@@ -2536,7 +2549,19 @@ export default function Calculator() {
                     {copied === "wizard-dims" ? "Copied!" : `Copy ${dimsStr}`}
                   </button>
 
-                  <ShareButtons text={`Dimensions: ${dimsStr}\n\n→ ${wizardShareUrl}`} shareUrl={wizardShareUrl} />
+                  <ShareButtons
+                    text={[
+                      "Image Resize Recommendation",
+                      "",
+                      `Original Image: ${guideImage.w} × ${guideImage.h}`,
+                      `Recommended:    ${finalTargetW} × ${finalTargetH}${wizardActionData.ratioLabel !== "original" ? ` (${wizardActionData.ratioLabel})` : ""}`,
+                      `Crop:           ${pct}% of image preserved`,
+                      "",
+                      "Get instant recommendations at aspect-ratio-calculator.com",
+                      wizardShareUrl,
+                    ].join("\n")}
+                    shareUrl={wizardShareUrl}
+                  />
 
                   <p className="text-[10px] text-[var(--muted)] italic">
                     Paste into Canva → Custom Size
