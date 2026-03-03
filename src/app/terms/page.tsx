@@ -244,7 +244,7 @@ export default function TermsPage() {
               >
                 main calculator page
               </Link>
-              . We aim to respond to all enquiries within 5 business days.
+              .
             </p>
           </div>
 

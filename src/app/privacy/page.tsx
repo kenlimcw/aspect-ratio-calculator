@@ -224,8 +224,8 @@ export default function PrivacyPage() {
             </h2>
             <p className="text-sm text-[var(--muted)] leading-relaxed">
               Feedback form submissions (including any email address you
-              provide) are retained for a maximum of 90 days, after which they
-              are permanently deleted. Anonymous analytics data (aggregated page
+              provide) are retained only as long as necessary to address your
+              enquiry, after which they are deleted. Anonymous analytics data (aggregated page
               view counts) may be retained indefinitely as it contains no
               personally identifiable information.
             </p>
@@ -290,9 +290,7 @@ export default function PrivacyPage() {
               >
                 calculator page
               </Link>
-              . We are based in Australia and aim to respond to all privacy
-              enquiries within 30 days, as required by the Australian Privacy
-              Principles.
+              .
             </p>
           </div>
 
