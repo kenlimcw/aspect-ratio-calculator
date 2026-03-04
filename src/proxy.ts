@@ -6,12 +6,12 @@ export function proxy(request: NextRequest) {
 
   const csp = [
     "default-src 'self'",
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`,
+    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms`,
     "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data: blob:",
+    "img-src 'self' data: blob: https://www.google-analytics.com https://c.clarity.ms",
     "font-src 'self'",
-    // Vercel Analytics sends beacons to vitals.vercel-insights.com
-    "connect-src 'self' https://vitals.vercel-insights.com",
+    // Vercel Analytics + GA4 + Microsoft Clarity reporting endpoints
+    "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://z.clarity.ms https://c.clarity.ms https://www.clarity.ms",
     "object-src 'none'",
     "base-uri 'self'",
   ].join("; ");
