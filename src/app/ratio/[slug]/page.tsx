@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { RATIO_DATA, RATIO_SLUGS, PLATFORM_DATA } from "@/lib/seo-data";
+import { RatioCalculator } from "@/components/RatioCalculator";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -98,12 +99,9 @@ export default async function RatioPage({ params }: Props) {
           <p className="text-[var(--muted)] text-sm md:text-base leading-relaxed mb-6">
             {data.explanation}
           </p>
-          <Link
-            href={calcUrl}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-sm font-medium transition-colors"
-          >
-            Open {data.label} Calculator →
-          </Link>
+
+          {/* Inline calculator locked to this ratio */}
+          <RatioCalculator w={data.w} h={data.h} label={data.label} calcUrl={calcUrl} />
         </div>
 
         <div className="space-y-4">
