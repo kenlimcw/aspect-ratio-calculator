@@ -12,6 +12,9 @@ import { I18nProvider } from "@/components/I18nProvider";
 import { getMessages } from "@/i18n/get-messages";
 import { getLocaleFromSegment, LOCALES, BASE_URL, LOCALE_SEGMENTS } from "@/i18n/config";
 import { getAlternates } from "@/lib/hreflang";
+import { getSeoData } from "@/i18n/get-seo-data";
+import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
+import type { FooterSeoData } from "@/components/Footer";
 
 const dmSans = localFont({
   src: "../../fonts/dm-sans.woff2",
@@ -92,6 +95,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { locale: segment } = await params;
   const localeConfig = getLocaleFromSegment(segment);
   const messages = await getMessages(localeConfig.code);
+  const { RATIO_DATA, PLATFORM_DATA, ARTICLE_DATA } = await getSeoData(localeConfig.code);
+
+  const footerSeoData: FooterSeoData = {
+    ratioLabels: Object.fromEntries(RATIO_SLUGS.map((s) => [s, RATIO_DATA[s]?.label ?? s])),
+    platformNames: Object.fromEntries(PLATFORM_SLUGS.map((s) => [s, PLATFORM_DATA[s]?.name ?? s])),
+    articleTitles: Object.fromEntries(ARTICLE_SLUGS.map((s) => [s, ARTICLE_DATA[s]?.title ?? s])),
+  };
 
   return (
     <html lang={localeConfig.code} dir={localeConfig.dir} suppressHydrationWarning>
@@ -105,7 +115,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               <LanguageSwitcher />
             </div>
             {children}
-            <Footer locale={localeConfig.code} />
+            <Footer locale={localeConfig.code} seoData={footerSeoData} />
             <InstallPrompt />
             <ServiceWorkerRegistrar />
             <FeedbackWidget />

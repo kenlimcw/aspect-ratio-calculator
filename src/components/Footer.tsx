@@ -4,7 +4,14 @@ import Link from "next/link";
 import { FooterFeedbackLink } from "@/components/FooterFeedbackLink";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useTranslation } from "@/components/I18nProvider";
-import { RATIO_DATA, PLATFORM_DATA, ARTICLE_DATA, RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
+import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
+
+/** Serializable SEO titles passed from server layout */
+export interface FooterSeoData {
+  ratioLabels: Record<string, string>;
+  platformNames: Record<string, string>;
+  articleTitles: Record<string, string>;
+}
 import { LOCALES, type LocaleConfig } from "@/i18n/config";
 
 function getBasePath(pathname: string): string {
@@ -23,7 +30,7 @@ function buildLocalePath(basePath: string, locale: LocaleConfig): string {
   return `${locale.urlPrefix}${basePath}`;
 }
 
-export function Footer({ locale: localeProp }: { locale?: string }) {
+export function Footer({ locale: localeProp, seoData }: { locale?: string; seoData?: FooterSeoData }) {
   const { t, locale: ctxLocale } = useTranslation();
   const locale = localeProp ?? ctxLocale;
   const year = new Date().getFullYear();
@@ -46,7 +53,7 @@ export function Footer({ locale: localeProp }: { locale?: string }) {
                     href={`${prefix}/ratio/${slug}`}
                     className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
                   >
-                    {RATIO_DATA[slug].label} {t("common", "ratio")}
+                    {seoData?.ratioLabels[slug] ?? slug} {t("common", "ratio")}
                   </Link>
                 </li>
               ))}
@@ -63,7 +70,7 @@ export function Footer({ locale: localeProp }: { locale?: string }) {
                     href={`${prefix}/platform/${slug}`}
                     className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
                   >
-                    {PLATFORM_DATA[slug].name}
+                    {seoData?.platformNames[slug] ?? slug}
                   </Link>
                 </li>
               ))}
@@ -80,7 +87,7 @@ export function Footer({ locale: localeProp }: { locale?: string }) {
                     href={`${prefix}/blog/${slug}`}
                     className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
                   >
-                    {ARTICLE_DATA[slug].title}
+                    {seoData?.articleTitles[slug] ?? slug}
                   </Link>
                 </li>
               ))}
