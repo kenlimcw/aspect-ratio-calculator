@@ -1,5 +1,29 @@
 import { headers } from "next/headers";
+import Link from "next/link";
 import Calculator from "@/components/Calculator";
+import { RATIO_DATA, PLATFORM_DATA, ARTICLE_DATA, RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
+
+const RATIO_SLUG_MAP: Record<string, string> = {
+  "16:9": "16-9",
+  "9:16": "9-16",
+  "1:1": "1-1",
+  "4:5": "4-5",
+  "4:3": "4-3",
+  "3:2": "3-2",
+  "5:4": "5-4",
+  "21:9": "21-9",
+  "2:1": "2-1",
+};
+
+const PLATFORM_SLUG_MAP: Record<string, string> = {
+  "Instagram": "instagram",
+  "YouTube": "youtube",
+  "TikTok": "tiktok",
+  "X / Twitter": "twitter",
+  "LinkedIn": "linkedin",
+  "Facebook": "facebook",
+  "Pinterest": "pinterest",
+};
 
 export default async function Home() {
   const nonce = (await headers()).get("x-nonce") ?? undefined;
@@ -80,14 +104,21 @@ export default async function Home() {
                     ["2.39:1", "2.390", "Cinemascope / anamorphic", "Theatrical films, DCI projection"],
                     ["1.85:1", "1.850", "Theatrical flat", "Wide-release cinema, IMAX digital"],
                     ["21:9", "2.333", "Ultrawide monitors", "Gaming, ultrawide displays"],
-                  ].map(([ratio, dec, use, where]) => (
-                    <tr key={ratio}>
-                      <td className="font-mono font-medium text-[var(--accent)]">{ratio}</td>
-                      <td className="font-mono text-[var(--foreground-dim)]">{dec}</td>
-                      <td className="text-[var(--foreground)]">{use}</td>
-                      <td className="text-[var(--muted)]">{where}</td>
-                    </tr>
-                  ))}
+                  ].map(([ratio, dec, use, where]) => {
+                    const slug = RATIO_SLUG_MAP[ratio];
+                    return (
+                      <tr key={ratio}>
+                        <td className="font-mono font-medium text-[var(--accent)]">
+                          {slug ? (
+                            <Link href={`/ratio/${slug}`} className="hover:underline">{ratio}</Link>
+                          ) : ratio}
+                        </td>
+                        <td className="font-mono text-[var(--foreground-dim)]">{dec}</td>
+                        <td className="text-[var(--foreground)]">{use}</td>
+                        <td className="text-[var(--muted)]">{where}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -157,16 +188,81 @@ export default async function Home() {
                     ["Facebook", "Post", "1200 × 630", "1.91:1"],
                     ["Facebook", "Cover", "820 × 312", "2.63:1"],
                     ["Pinterest", "Pin", "1000 × 1500", "2:3"],
-                  ].map(([platform, format, dims, ratio], i) => (
-                    <tr key={i}>
-                      <td className="font-medium text-[var(--foreground)]">{platform}</td>
-                      <td className="text-[var(--foreground)]">{format}</td>
-                      <td className="font-mono text-[var(--foreground-dim)]">{dims}</td>
-                      <td className="font-mono text-[var(--accent)]">{ratio}</td>
-                    </tr>
-                  ))}
+                  ].map(([platform, format, dims, ratio], i) => {
+                    const slug = PLATFORM_SLUG_MAP[platform];
+                    return (
+                      <tr key={i}>
+                        <td className="font-medium text-[var(--foreground)]">
+                          {slug ? (
+                            <Link href={`/platform/${slug}`} className="hover:underline">{platform}</Link>
+                          ) : platform}
+                        </td>
+                        <td className="text-[var(--foreground)]">{format}</td>
+                        <td className="font-mono text-[var(--foreground-dim)]">{dims}</td>
+                        <td className="font-mono text-[var(--accent)]">{ratio}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          {/* ── Explore Section ── */}
+          <div className="seo-card">
+            <h2 className="text-base font-semibold text-[var(--foreground)] mb-4">
+              Explore Aspect Ratios
+            </h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
+                  By Ratio
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {RATIO_SLUGS.map((slug) => (
+                    <Link
+                      key={slug}
+                      href={`/ratio/${slug}`}
+                      className="px-3 py-1.5 text-sm font-mono rounded-md border border-[var(--border)] text-[var(--foreground-dim)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                    >
+                      {RATIO_DATA[slug].label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
+                  By Platform
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {PLATFORM_SLUGS.map((slug) => (
+                    <Link
+                      key={slug}
+                      href={`/platform/${slug}`}
+                      className="px-3 py-1.5 text-sm rounded-md border border-[var(--border)] text-[var(--foreground-dim)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                    >
+                      {PLATFORM_DATA[slug].name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
+                  Guides
+                </h3>
+                <ul className="space-y-1.5">
+                  {ARTICLE_SLUGS.map((slug) => (
+                    <li key={slug}>
+                      <Link
+                        href={`/blog/${slug}`}
+                        className="text-sm text-[var(--foreground-dim)] hover:text-[var(--accent)] transition-colors"
+                      >
+                        {ARTICLE_DATA[slug].title} →
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
