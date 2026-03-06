@@ -1,27 +1,52 @@
+"use client";
+
 import Link from "next/link";
 import { FooterFeedbackLink } from "@/components/FooterFeedbackLink";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useTranslation } from "@/components/I18nProvider";
 import { RATIO_DATA, PLATFORM_DATA, ARTICLE_DATA, RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
+import { LOCALES, type LocaleConfig } from "@/i18n/config";
 
-export function Footer() {
+function getBasePath(pathname: string): string {
+  for (const locale of LOCALES) {
+    if (locale.code === "en") continue;
+    const prefix = `/${locale.urlSegment}`;
+    if (pathname === prefix || pathname.startsWith(prefix + "/")) {
+      return pathname.slice(prefix.length) || "/";
+    }
+  }
+  return pathname;
+}
+
+function buildLocalePath(basePath: string, locale: LocaleConfig): string {
+  if (locale.code === "en") return basePath;
+  return `${locale.urlPrefix}${basePath}`;
+}
+
+export function Footer({ locale: localeProp }: { locale?: string }) {
+  const { t, locale: ctxLocale } = useTranslation();
+  const locale = localeProp ?? ctxLocale;
   const year = new Date().getFullYear();
+
+  const prefix = locale === "en" ? "" : `/${LOCALES.find((l) => l.code === locale)?.urlSegment ?? locale}`;
 
   return (
     <footer className="mt-20 border-t border-[var(--border)]">
-      {/* ── Explore Navigation ── */}
+      {/* Explore Navigation */}
       <div className="max-w-2xl mx-auto px-4 pt-8 pb-4">
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs">
           <div>
             <h4 className="font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
-              Aspect Ratios
+              {t("footer", "aspectRatios")}
             </h4>
             <ul className="space-y-1.5">
               {RATIO_SLUGS.map((slug) => (
                 <li key={slug}>
                   <Link
-                    href={`/ratio/${slug}`}
+                    href={`${prefix}/ratio/${slug}`}
                     className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
                   >
-                    {RATIO_DATA[slug].label} Ratio
+                    {RATIO_DATA[slug].label} {t("common", "ratio")}
                   </Link>
                 </li>
               ))}
@@ -29,30 +54,30 @@ export function Footer() {
           </div>
           <div>
             <h4 className="font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
-              Platforms
+              {t("footer", "platforms")}
             </h4>
             <ul className="space-y-1.5">
               {PLATFORM_SLUGS.map((slug) => (
                 <li key={slug}>
                   <Link
-                    href={`/platform/${slug}`}
+                    href={`${prefix}/platform/${slug}`}
                     className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
                   >
-                    {PLATFORM_DATA[slug].name} Sizes
+                    {PLATFORM_DATA[slug].name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="col-span-2 sm:col-span-1">
+          <div>
             <h4 className="font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
-              Guides
+              {t("footer", "guides")}
             </h4>
             <ul className="space-y-1.5">
               {ARTICLE_SLUGS.map((slug) => (
                 <li key={slug}>
                   <Link
-                    href={`/blog/${slug}`}
+                    href={`${prefix}/blog/${slug}`}
                     className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
                   >
                     {ARTICLE_DATA[slug].title}
@@ -61,30 +86,58 @@ export function Footer() {
               ))}
             </ul>
           </div>
+          <div>
+            <h4 className="font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
+              {t("footer", "language")}
+            </h4>
+            <ul className="space-y-1.5">
+              {LOCALES.map((l) => {
+                const basePath =
+                  typeof window !== "undefined"
+                    ? getBasePath(window.location.pathname)
+                    : "/";
+                const href = buildLocalePath(basePath, l);
+                return (
+                  <li key={l.code}>
+                    <a
+                      href={href}
+                      className={`transition-colors ${
+                        l.code === locale
+                          ? "text-[var(--accent)] font-medium"
+                          : "text-[var(--muted)] hover:text-[var(--accent)]"
+                      }`}
+                    >
+                      {l.nativeName}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
 
-      {/* ── Copyright & Legal ── */}
+      {/* Copyright & Legal */}
       <div className="border-t border-[var(--border)]">
         <div className="max-w-2xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--muted)]">
-          <span>&copy; {year} aspect-ratio-calculator.com. All rights reserved.</span>
+          <span>{t("footer", "copyright").replace("{year}", String(year))}</span>
           <nav className="flex items-center gap-4" aria-label="Legal">
             <Link
-              href="/terms"
+              href={`${prefix}/terms`}
               className="hover:text-[var(--foreground)] transition-colors"
             >
-              Terms of Service
+              {t("footer", "termsOfService")}
             </Link>
             <Link
-              href="/privacy"
+              href={`${prefix}/privacy`}
               className="hover:text-[var(--foreground)] transition-colors"
             >
-              Privacy Policy
+              {t("footer", "privacyPolicy")}
             </Link>
             <span className="text-[var(--border)]">&middot;</span>
             <FooterFeedbackLink />
             <span className="text-[var(--border)]">&middot;</span>
-            <span>Free tool, no sign-up required</span>
+            <span>{t("footer", "freeTool")}</span>
           </nav>
         </div>
       </div>

@@ -149,11 +149,11 @@ input[pattern="[0-9]*"] {
 
 .glow-computed {
   animation: computedPulse 0.6s ease-out;
-  border-left: 2px solid var(--accent-teal) !important;
+  border-inline-start: 2px solid var(--accent-teal) !important;
 }
 
 .computed-settled {
-  border-left: 2px solid var(--accent-teal) !important;
+  border-inline-start: 2px solid var(--accent-teal) !important;
 }
 
 .locked-ratio-glow {
@@ -306,7 +306,7 @@ input[pattern="[0-9]*"] {
 .feedback-fab {
   position: fixed;
   bottom: 1.5rem;
-  left: 1.5rem;
+  inset-inline-start: 1.5rem;
   z-index: 50;
   display: flex;
   align-items: center;
@@ -377,7 +377,7 @@ input[pattern="[0-9]*"] {
 .feedback-panel {
   position: fixed;
   bottom: 4.5rem;
-  left: 1.5rem;
+  inset-inline-start: 1.5rem;
   z-index: 49;
   width: 340px;
   max-width: calc(100vw - 2rem);
@@ -523,7 +523,7 @@ input[pattern="[0-9]*"] {
 }
 
 .feedback-char-count {
-  text-align: right;
+  text-align: end;
   font-size: 0.6875rem;
   color: var(--muted);
   margin-top: 0.25rem;
@@ -542,7 +542,9 @@ input[pattern="[0-9]*"] {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  padding: 0.5rem;
+  padding-inline-start: 0.75rem;
+  padding-inline-end: 2rem;
   font-family: var(--font-body), system-ui, sans-serif;
   font-size: 0.8125rem;
   color: var(--foreground);
@@ -568,7 +570,7 @@ input[pattern="[0-9]*"] {
 
 .feedback-select-arrow {
   position: absolute;
-  right: 0.6rem;
+  inset-inline-end: 0.6rem;
   top: 50%;
   transform: translateY(-50%) rotate(90deg);
   color: var(--muted);
@@ -678,11 +680,24 @@ input[pattern="[0-9]*"] {
 @media (max-width: 400px) {
   .feedback-fab {
     bottom: 1rem;
-    left: 1rem;
+    inset-inline-start: 1rem;
   }
   .feedback-panel {
     bottom: 4rem;
-    left: 1rem;
+    inset-inline-start: 1rem;
     width: calc(100vw - 2rem);
   }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RTL OVERRIDES
+   ══════════════════════════════════════════════════════════════ */
+
+[dir="rtl"] .feedback-select-arrow {
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+[dir="rtl"] .tab-indicator {
+  /* Flip the translateX direction for RTL */
+  direction: rtl;
 }

@@ -2,53 +2,52 @@
 
 import { useState, useRef, useEffect } from "react";
 import { MessageSquarePlus, X, Send, Check, ChevronRight, EyeOff } from "lucide-react";
+import { useTranslation } from "@/components/I18nProvider";
 
 type Tab = "feedback" | "request";
 type Status = "idle" | "sending" | "success" | "error";
 
-const ROLES = [
-  "Designer",
-  "Developer / Engineer",
-  "Video Editor",
-  "Photographer",
-  "Content Creator",
-  "Social Media Manager",
-  "Marketing Professional",
-  "Filmmaker / Cinematographer",
-  "Educator / Teacher",
-  "Product Manager",
-  "Freelancer",
-  "Student",
-  "Other",
-];
+const ROLE_KEYS = [
+  "roleDesigner",
+  "roleDeveloper",
+  "roleVideoEditor",
+  "rolePhotographer",
+  "roleContentCreator",
+  "roleSocialMediaManager",
+  "roleMarketingProfessional",
+  "roleFilmmaker",
+  "roleEducator",
+  "roleProductManager",
+  "roleFreelancer",
+  "roleStudent",
+  "roleOther",
+] as const;
 
-const INDUSTRIES = [
-  "Media & Entertainment",
-  "Marketing & Advertising",
-  "Education",
-  "Software & Technology",
-  "Film & Television",
-  "Photography",
-  "Social Media & Content",
-  "E-commerce & Retail",
-  "Healthcare",
-  "Finance & Banking",
-  "Gaming",
-  "Non-Profit",
-  "Other",
-];
+const INDUSTRY_KEYS = [
+  "industryMedia",
+  "industryMarketing",
+  "industryEducation",
+  "industrySoftware",
+  "industryFilm",
+  "industryPhotography",
+  "industrySocialMedia",
+  "industryEcommerce",
+  "industryHealthcare",
+  "industryFinance",
+  "industryGaming",
+  "industryNonProfit",
+  "industryOther",
+] as const;
 
 export function FeedbackWidget() {
+  const { t } = useTranslation();
   const [open, setOpen]           = useState(false);
   const [hidden, setHidden]       = useState(false);
   const [tab, setTab]             = useState<Tab>("feedback");
   const [status, setStatus]       = useState<Status>("idle");
   const [errorDetail, setErrorDetail] = useState("");
 
-  // Feedback form
   const [message, setMessage] = useState("");
-
-  // Request form
   const [role, setRole]         = useState("");
   const [industry, setIndustry] = useState("");
   const [problem, setProblem]   = useState("");
@@ -56,14 +55,12 @@ export function FeedbackWidget() {
   const panelRef      = useRef<HTMLDivElement>(null);
   const firstInputRef = useRef<HTMLTextAreaElement>(null);
 
-  // ── Restore hidden state from localStorage on mount ──────────────────────
   useEffect(() => {
     if (localStorage.getItem("feedback-fab-hidden") === "true") {
       setHidden(true);
     }
   }, []);
 
-  // ── Listen for "show-feedback" event dispatched by the footer link ────────
   useEffect(() => {
     function handleShow() {
       localStorage.removeItem("feedback-fab-hidden");
@@ -74,7 +71,6 @@ export function FeedbackWidget() {
     return () => window.removeEventListener("show-feedback", handleShow);
   }, []);
 
-  // ── Close on outside click ───────────────────────────────────────────────
   useEffect(() => {
     if (!open) return;
     function handleClick(e: MouseEvent) {
@@ -82,26 +78,21 @@ export function FeedbackWidget() {
         setOpen(false);
       }
     }
-    const t = setTimeout(() => document.addEventListener("mousedown", handleClick), 50);
-    return () => { clearTimeout(t); document.removeEventListener("mousedown", handleClick); };
+    const timer = setTimeout(() => document.addEventListener("mousedown", handleClick), 50);
+    return () => { clearTimeout(timer); document.removeEventListener("mousedown", handleClick); };
   }, [open]);
 
-  // ── Focus first input on open ────────────────────────────────────────────
   useEffect(() => {
     if (open) setTimeout(() => firstInputRef.current?.focus(), 120);
   }, [open, tab]);
 
-  // ── Reset status when tab or open changes ────────────────────────────────
   useEffect(() => { setStatus("idle"); }, [tab, open]);
 
-  // ── Dismiss — hides the FAB and persists to localStorage ─────────────────
   function handleDismiss() {
     localStorage.setItem("feedback-fab-hidden", "true");
     setOpen(false);
     setHidden(true);
   }
-
-  // ── Form logic ───────────────────────────────────────────────────────────
 
   function resetForms() {
     setMessage("");
@@ -149,12 +140,11 @@ export function FeedbackWidget() {
       ? message.trim().length > 0
       : role.trim() && industry.trim() && problem.trim().length > 0);
 
-  // Don't render anything if the user has dismissed the button
   if (hidden) return null;
 
   return (
     <>
-      {/* ── Floating button ─────────────────────────────────── */}
+      {/* Floating button */}
       <button
         onClick={() => setOpen(o => !o)}
         aria-label="Open feedback panel"
@@ -165,11 +155,11 @@ export function FeedbackWidget() {
           {open ? <X size={18} strokeWidth={2.5} /> : <MessageSquarePlus size={18} strokeWidth={2.5} />}
         </span>
         <span className="feedback-fab-label">
-          {open ? "Close" : "Feedback"}
+          {open ? t("feedbackWidget", "close") : t("feedbackWidget", "feedbackTab")}
         </span>
       </button>
 
-      {/* ── Panel ───────────────────────────────────────────── */}
+      {/* Panel */}
       {open && (
         <div
           ref={panelRef}
@@ -178,22 +168,20 @@ export function FeedbackWidget() {
           aria-modal="true"
           aria-label="Feedback panel"
         >
-          {/* Header */}
           <div className="feedback-panel-header">
             <div className="feedback-panel-header-dot" />
             <span className="feedback-panel-header-title">
-              {tab === "feedback" ? "Share your thoughts" : "Request a feature"}
+              {tab === "feedback" ? t("feedbackWidget", "shareYourThoughts") : t("feedbackWidget", "requestFeature")}
             </span>
           </div>
 
-          {/* Tab switcher */}
           <div className="feedback-tabs">
             <button
               className={`feedback-tab ${tab === "feedback" ? "active" : ""}`}
               onClick={() => setTab("feedback")}
               type="button"
             >
-              <span>Feedback</span>
+              <span>{t("feedbackWidget", "feedbackTab")}</span>
               {tab === "feedback" && <span className="feedback-tab-pip" />}
             </button>
             <button
@@ -201,24 +189,22 @@ export function FeedbackWidget() {
               onClick={() => setTab("request")}
               type="button"
             >
-              <span>Request</span>
+              <span>{t("feedbackWidget", "requestTab")}</span>
               {tab === "request" && <span className="feedback-tab-pip" />}
             </button>
           </div>
 
-          {/* Form */}
           <form onSubmit={handleSubmit} className="feedback-form">
-
             {tab === "feedback" ? (
               <>
                 <label className="feedback-label">
-                  Compliment, complaint, or anything on your mind
+                  {t("feedbackWidget", "feedbackLabel")}
                 </label>
                 <textarea
                   ref={firstInputRef}
                   value={message}
                   onChange={e => setMessage(e.target.value)}
-                  placeholder="This tool is amazing because… / I wish it could…"
+                  placeholder={t("feedbackWidget", "feedbackPlaceholder")}
                   className="feedback-textarea"
                   rows={5}
                   maxLength={2000}
@@ -229,7 +215,7 @@ export function FeedbackWidget() {
             ) : (
               <div className="feedback-fields">
                 <div>
-                  <label className="feedback-label">Your Role</label>
+                  <label className="feedback-label">{t("feedbackWidget", "yourRole")}</label>
                   <div className="feedback-select-wrap">
                     <select
                       value={role}
@@ -237,14 +223,16 @@ export function FeedbackWidget() {
                       className="feedback-select"
                       disabled={status !== "idle"}
                     >
-                      <option value="">Select your role…</option>
-                      {ROLES.map(r => <option key={r} value={r}>{r}</option>)}
+                      <option value="">{t("feedbackWidget", "selectRole")}</option>
+                      {ROLE_KEYS.map(key => (
+                        <option key={key} value={key}>{t("feedbackWidget", key)}</option>
+                      ))}
                     </select>
                     <ChevronRight size={14} className="feedback-select-arrow" />
                   </div>
                 </div>
                 <div>
-                  <label className="feedback-label">Industry</label>
+                  <label className="feedback-label">{t("feedbackWidget", "industry")}</label>
                   <div className="feedback-select-wrap">
                     <select
                       value={industry}
@@ -252,19 +240,21 @@ export function FeedbackWidget() {
                       className="feedback-select"
                       disabled={status !== "idle"}
                     >
-                      <option value="">Select your industry…</option>
-                      {INDUSTRIES.map(i => <option key={i} value={i}>{i}</option>)}
+                      <option value="">{t("feedbackWidget", "selectIndustry")}</option>
+                      {INDUSTRY_KEYS.map(key => (
+                        <option key={key} value={key}>{t("feedbackWidget", key)}</option>
+                      ))}
                     </select>
                     <ChevronRight size={14} className="feedback-select-arrow" />
                   </div>
                 </div>
                 <div>
-                  <label className="feedback-label">Problem you&apos;d like solved</label>
+                  <label className="feedback-label">{t("feedbackWidget", "problemToSolve")}</label>
                   <textarea
                     ref={firstInputRef}
                     value={problem}
                     onChange={e => setProblem(e.target.value)}
-                    placeholder="Describe the workflow or task you're trying to accomplish…"
+                    placeholder={t("feedbackWidget", "problemPlaceholder")}
                     className="feedback-textarea"
                     rows={4}
                     maxLength={2000}
@@ -275,14 +265,12 @@ export function FeedbackWidget() {
               </div>
             )}
 
-            {/* Status messages */}
             {status === "error" && (
               <p className="feedback-status-error">
-                {errorDetail || "Something went wrong — please try again."}
+                {errorDetail || t("feedbackWidget", "somethingWentWrong")}
               </p>
             )}
 
-            {/* Submit button */}
             <button
               type="submit"
               className="feedback-submit"
@@ -292,29 +280,28 @@ export function FeedbackWidget() {
               {status === "success" ? (
                 <>
                   <Check size={16} strokeWidth={2.5} />
-                  <span>Sent — thank you!</span>
+                  <span>{t("feedbackWidget", "sentThankYou")}</span>
                 </>
               ) : status === "sending" ? (
                 <>
                   <span className="feedback-spinner" />
-                  <span>Sending…</span>
+                  <span>{t("feedbackWidget", "sending")}</span>
                 </>
               ) : (
                 <>
                   <Send size={14} strokeWidth={2.5} />
-                  <span>{tab === "feedback" ? "Send Feedback" : "Submit Request"}</span>
+                  <span>{tab === "feedback" ? t("feedbackWidget", "sendFeedback") : t("feedbackWidget", "submitRequest")}</span>
                 </>
               )}
             </button>
 
-            {/* Dismiss */}
             <button
               type="button"
               className="feedback-dismiss"
               onClick={handleDismiss}
             >
               <EyeOff size={12} strokeWidth={2} />
-              <span>Hide this button</span>
+              <span>{t("feedbackWidget", "hideButton")}</span>
             </button>
           </form>
         </div>

@@ -23,6 +23,7 @@ import {
   Send,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { useTranslation } from "@/components/I18nProvider";
 
 // ── Preset Data ──────────────────────────────────────────────
 
@@ -195,10 +196,10 @@ function fallbackCopy(text: string): boolean {
   }
 }
 
-function getOrientation(w: number, h: number): "Landscape" | "Portrait" | "Square" {
-  if (w > h) return "Landscape";
-  if (h > w) return "Portrait";
-  return "Square";
+function getOrientation(w: number, h: number): "landscape" | "portrait" | "square" {
+  if (w > h) return "landscape";
+  if (h > w) return "portrait";
+  return "square";
 }
 
 function formatRatioLabel(rw: number, rh: number): string {
@@ -213,19 +214,19 @@ const GROUP_ICONS = {
 
 // ── Quality Analysis Helpers ─────────────────────────────────
 
-function getQualityVerdict(scalePct: number): { label: string; color: string } {
-  if (scalePct > 200) return { label: "Heavy upscaling", color: "var(--accent-rose)" };
-  if (scalePct > 105) return { label: "Mild upscaling", color: "var(--accent-amber)" };
-  if (scalePct >= 95) return { label: "Lossless", color: "var(--accent-emerald)" };
-  if (scalePct >= 50) return { label: "Good — downsized", color: "var(--accent-emerald)" };
-  return { label: "Good — much smaller", color: "var(--accent-emerald)" };
+function getQualityVerdict(scalePct: number): { labelKey: string; color: string } {
+  if (scalePct > 200) return { labelKey: "heavyUpscaling", color: "var(--accent-rose)" };
+  if (scalePct > 105) return { labelKey: "mildUpscaling", color: "var(--accent-amber)" };
+  if (scalePct >= 95) return { labelKey: "lossless", color: "var(--accent-emerald)" };
+  if (scalePct >= 50) return { labelKey: "goodDownsized", color: "var(--accent-emerald)" };
+  return { labelKey: "goodMuchSmaller", color: "var(--accent-emerald)" };
 }
 
-function getDpiSizes(w: number, h: number): { dpi: number; label: string; inW: string; inH: string }[] {
+function getDpiSizes(w: number, h: number): { dpi: number; labelKey: string; inW: string; inH: string }[] {
   return [
-    { dpi: 72, label: "Screen (72 DPI)", inW: (w / 72).toFixed(1), inH: (h / 72).toFixed(1) },
-    { dpi: 150, label: "Web print (150 DPI)", inW: (w / 150).toFixed(1), inH: (h / 150).toFixed(1) },
-    { dpi: 300, label: "High-quality print (300 DPI)", inW: (w / 300).toFixed(1), inH: (h / 300).toFixed(1) },
+    { dpi: 72, labelKey: "screen72dpi", inW: (w / 72).toFixed(1), inH: (h / 72).toFixed(1) },
+    { dpi: 150, labelKey: "webPrint150dpi", inW: (w / 150).toFixed(1), inH: (h / 150).toFixed(1) },
+    { dpi: 300, labelKey: "highQualityPrint300dpi", inW: (w / 300).toFixed(1), inH: (h / 300).toFixed(1) },
   ];
 }
 
@@ -424,21 +425,21 @@ function getCropKeptPct(srcW: number, srcH: number, tgtRW: number, tgtRH: number
   }
 }
 
-function getCropFitLabel(pct: number): { icon: string; color: string; text: string } {
-  if (pct >= 95) return { icon: "✅", color: "var(--accent-emerald)", text: "Great fit" };
-  if (pct >= 75) return { icon: "✅", color: "var(--accent-emerald)", text: "Minor crop" };
-  if (pct >= 50) return { icon: "⚠️", color: "var(--accent-amber)", text: "Moderate crop" };
-  return { icon: "❌", color: "var(--accent-rose)", text: "Heavy crop" };
+function getCropFitLabel(pct: number): { icon: string; color: string; textKey: string } {
+  if (pct >= 95) return { icon: "✅", color: "var(--accent-emerald)", textKey: "greatFit" };
+  if (pct >= 75) return { icon: "✅", color: "var(--accent-emerald)", textKey: "minorCrop" };
+  if (pct >= 50) return { icon: "⚠️", color: "var(--accent-amber)", textKey: "moderateCrop" };
+  return { icon: "❌", color: "var(--accent-rose)", textKey: "heavyCrop" };
 }
 
-function getPrintQuality(imgW: number, imgH: number, printW: number, printH: number): { dpi: number; icon: string; label: string; color: string } {
+function getPrintQuality(imgW: number, imgH: number, printW: number, printH: number): { dpi: number; icon: string; labelKey: string; color: string } {
   const dpiW = imgW / printW;
   const dpiH = imgH / printH;
   const dpi = Math.round(Math.min(dpiW, dpiH));
-  if (dpi >= 300) return { dpi, icon: "✅", label: "Excellent", color: "var(--accent-emerald)" };
-  if (dpi >= 200) return { dpi, icon: "✅", label: "Very good", color: "var(--accent-emerald)" };
-  if (dpi >= 150) return { dpi, icon: "⚠️", label: "Acceptable", color: "var(--accent-amber)" };
-  return { dpi, icon: "❌", label: "Not recommended", color: "var(--accent-rose)" };
+  if (dpi >= 300) return { dpi, icon: "✅", labelKey: "excellent", color: "var(--accent-emerald)" };
+  if (dpi >= 200) return { dpi, icon: "✅", labelKey: "veryGood", color: "var(--accent-emerald)" };
+  if (dpi >= 150) return { dpi, icon: "⚠️", labelKey: "acceptable", color: "var(--accent-amber)" };
+  return { dpi, icon: "❌", labelKey: "notRecommended", color: "var(--accent-rose)" };
 }
 
 // ── Scale Comparison Preview ─────────────────────────────────
@@ -459,9 +460,10 @@ function ScaleComparisonPreview({
   newH: number;
   scaleRatioW: number;
   scaleRatioH: number;
-  qualityData: { scalePct: number; fitScalePct: number; fillScalePct: number; origMP: string; newMP: string; verdict: { label: string; color: string }; fitVerdict: { label: string; color: string }; fillVerdict: { label: string; color: string }; dpiSizes: { dpi: number; label: string; inW: string; inH: string }[] } | null;
+  qualityData: { scalePct: number; fitScalePct: number; fillScalePct: number; origMP: string; newMP: string; verdict: { labelKey: string; color: string }; fitVerdict: { labelKey: string; color: string }; fillVerdict: { labelKey: string; color: string }; dpiSizes: { dpi: number; labelKey: string; inW: string; inH: string }[] } | null;
   fitMode: "fit" | "fill";
 }) {
+  const { t } = useTranslation();
   // Guard against zero / invalid dimensions that produce NaN or Infinity
   if (!origW || !origH || !newW || !newH || !isFinite(origW) || !isFinite(newW)) return null;
 
@@ -524,20 +526,20 @@ function ScaleComparisonPreview({
       <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs">
         <span className="flex items-center gap-1.5">
           <span className="w-3 h-3 rounded-sm border-2 border-dashed inline-block" style={{ borderColor: 'var(--muted)' }} />
-          <span className="text-[var(--muted)]">Original {origW / origG}:{origH / origG}</span>
+          <span className="text-[var(--muted)]">{t("calculator", "original")} {origW / origG}:{origH / origG}</span>
         </span>
         <span className="flex items-center gap-1.5">
           <span className="w-3 h-3 rounded-sm border-2 border-[var(--accent)] inline-block" />
-          <span className="text-[var(--accent)]">New frame {scaleRatioW}:{scaleRatioH}</span>
+          <span className="text-[var(--accent)]">{t("calculator", "newFrame")} {scaleRatioW}:{scaleRatioH}</span>
         </span>
         <span className="flex items-center gap-1.5">
           <span className="w-3 h-3 rounded-sm border-2 inline-block" style={{ borderColor: 'var(--accent-teal)', backgroundColor: 'color-mix(in srgb, var(--accent-teal) 15%, transparent)' }} />
-          <span style={{ color: 'var(--accent-teal)' }}>{isFillMode && !isSameRatio ? "Visible content" : "Image content"}</span>
+          <span style={{ color: 'var(--accent-teal)' }}>{isFillMode && !isSameRatio ? t("calculator", "visibleContent") : t("calculator", "imageContent")}</span>
         </span>
         {!isSameRatio && (
           <span className="flex items-center gap-1.5">
             <span className="w-3 h-3 rounded-sm inline-block" style={{ backgroundImage: 'repeating-linear-gradient(-45deg, transparent, transparent 2px, var(--accent-rose) 2px, var(--accent-rose) 3px)' }} />
-            <span style={{ color: 'var(--accent-rose)' }}>{isFillMode ? "Cropped area" : "Uncovered area"}</span>
+            <span style={{ color: 'var(--accent-rose)' }}>{isFillMode ? t("calculator", "croppedArea") : t("calculator", "uncoveredArea")}</span>
           </span>
         )}
         {(() => {
@@ -548,7 +550,7 @@ function ScaleComparisonPreview({
             <span className="flex items-center gap-1.5">
               <span className="text-sm text-[var(--muted)]">{isUp ? "↗" : "↙"}</span>
               <span className="text-[var(--muted)]">
-                {isUp ? "Scale up" : "Scale down"}
+                {isUp ? t("calculator", "scaleUp") : t("calculator", "scaleDown")}
               </span>
             </span>
           );
@@ -823,18 +825,18 @@ function ScaleComparisonPreview({
       <div className="text-center space-y-1">
         {isSameRatio ? (
           <p className="text-xs text-[var(--accent-emerald)] font-medium">
-            Same ratio — perfect fit, no cropping needed
+            {t("calculator", "sameRatioPerfectFit")}
           </p>
         ) : isFillMode ? (
           <div className="space-y-0.5">
             <p className="text-xs font-medium" style={{ color: cropLabel.color }}>
-              {cropLabel.icon} {cropLabel.text} — {cropKeptPct}% of image kept
+              {cropLabel.icon} {t("calculator", cropLabel.textKey)} — {cropKeptPct}% {t("calculator", "ofImageKept")}
             </p>
             {cropKeptPct < 95 && (
               <p className="text-[10px] text-[var(--muted)]">
                 {overflowX > overflowY
-                  ? `Left & right edges cropped`
-                  : `Top & bottom edges cropped`
+                  ? t("calculator", "leftRightEdgesCropped")
+                  : t("calculator", "topBottomEdgesCropped")
                 }
               </p>
             )}
@@ -846,13 +848,13 @@ function ScaleComparisonPreview({
                    : parseFloat(coveragePct) >= 75 ? 'var(--accent-amber)'
                    : 'var(--accent-rose)'
             }}>
-              {gapX > 0 ? "Pillarboxed" : "Letterboxed"} — {coveragePct}% content coverage
+              {gapX > 0 ? t("calculator", "pillarboxed") : t("calculator", "letterboxed")} — {coveragePct}% {t("calculator", "contentCoverage")}
             </p>
             {parseFloat(coveragePct) < 95 && (
               <p className="text-[10px] text-[var(--muted)]">
                 {gapX > 0
-                  ? `Empty bars on left & right (${Math.round(gapX / newPxW * 100)}% width unused)`
-                  : `Empty bars on top & bottom (${Math.round(gapY / newPxH * 100)}% height unused)`
+                  ? `${t("calculator", "emptyBarsLeftRight")} (${Math.round(gapX / newPxW * 100)}% ${t("calculator", "widthUnused")})`
+                  : `${t("calculator", "emptyBarsTopBottom")} (${Math.round(gapY / newPxH * 100)}% ${t("calculator", "heightUnused")})`
                 }
               </p>
             )}
@@ -860,7 +862,7 @@ function ScaleComparisonPreview({
         )}
         {qualityData && (
           <p className="text-xs font-medium" style={{ color: isFillMode ? qualityData.fillVerdict.color : qualityData.fitVerdict.color }}>
-            Quality: {isFillMode ? qualityData.fillVerdict.label : qualityData.fitVerdict.label} ({isFillMode ? qualityData.fillScalePct : qualityData.fitScalePct}%)
+            {t("calculator", "quality")}: {t("calculator", isFillMode ? qualityData.fillVerdict.labelKey : qualityData.fitVerdict.labelKey)} ({isFillMode ? qualityData.fillScalePct : qualityData.fitScalePct}%)
           </p>
         )}
       </div>
@@ -1024,6 +1026,8 @@ function ShareButtons({ text, shareUrl }: { text: string; shareUrl: string }) {
 type Mode = "scale" | "find" | "guide";
 
 export default function Calculator() {
+  const { t } = useTranslation();
+
   // ── Mode ──
   const [mode, setMode] = useState<Mode>("scale");
 
@@ -1454,7 +1458,7 @@ export default function Calculator() {
   const activeRatioH = mode === "scale" ? scaleRatioH : findSimplifiedH;
 
   const orientation = activeW > 0 && activeH > 0 ? getOrientation(activeW, activeH) : null;
-  const OrientationIcon = orientation === "Landscape" ? RectangleHorizontal : orientation === "Portrait" ? RectangleVertical : Square;
+  const OrientationIcon = orientation === "landscape" ? RectangleHorizontal : orientation === "portrait" ? RectangleVertical : Square;
 
   // For preview
   const previewRatioW = mode === "scale" ? scaleRatioW : findSimplifiedW;
@@ -1515,37 +1519,37 @@ export default function Calculator() {
     const lines: string[] = [];
 
     if (mode === "scale") {
-      lines.push("Aspect Ratio Results");
+      lines.push(t("calculator", "aspectRatioResults"));
       lines.push("");
       const origWNum = parseFloat(origW) || 0;
       const origHNum = parseFloat(origH) || 0;
       if (origWNum > 0 && origHNum > 0) {
-        lines.push(`Original Size:  ${origWNum} × ${origHNum}`);
+        lines.push(`${t("calculator", "originalSize")}:  ${origWNum} × ${origHNum}`);
       }
-      if (exportToggles.ratio && previewRatioW > 0) lines.push(`Target Ratio:   ${previewRatioW}:${previewRatioH}`);
-      if (exportToggles.dimensions) lines.push(`Target Size:    ${activeWStr} × ${activeHStr}`);
-      if (exportToggles.quality && qualityData) lines.push(`Quality:        ${qualityData.verdict.label} (${qualityData.scalePct}%)`);
+      if (exportToggles.ratio && previewRatioW > 0) lines.push(`${t("calculator", "targetRatio")}:   ${previewRatioW}:${previewRatioH}`);
+      if (exportToggles.dimensions) lines.push(`${t("calculator", "targetSize")}:    ${activeWStr} × ${activeHStr}`);
+      if (exportToggles.quality && qualityData) lines.push(`${t("calculator", "quality")}:        ${t("calculator", qualityData.verdict.labelKey)} (${qualityData.scalePct}%)`);
       if (exportToggles.css) {
-        lines.push("", "CSS Properties:");
+        lines.push("", `${t("calculator", "cssProperties")}:`);
         lines.push(`  aspect-ratio: ${activeRatioW} / ${activeRatioH};`);
         lines.push(`  padding-bottom: ${paddingPct}%;`);
         lines.push(`  width: ${activeWStr}px; height: ${activeHStr}px;`);
       }
       if (exportToggles.printSizes && qualityData?.dpiSizes) {
-        lines.push("", "Print Sizes (at 300 DPI):");
-        qualityData.dpiSizes.forEach(d => lines.push(`  ${d.label}: ${d.inW} × ${d.inH} in`));
+        lines.push("", `${t("calculator", "printSizesAt300DPI")}:`);
+        qualityData.dpiSizes.forEach(d => lines.push(`  ${t("calculator", d.labelKey)}: ${d.inW} × ${d.inH} in`));
       }
     } else if (mode === "find") {
-      lines.push("Aspect Ratio Report");
+      lines.push(t("calculator", "aspectRatioReport"));
       lines.push("");
-      if (exportToggles.dimensions) lines.push(`Dimensions:     ${activeWStr} × ${activeHStr}`);
-      if (exportToggles.ratio) lines.push(`Ratio:          ${findSimplifiedW}:${findSimplifiedH}`);
-      if (exportToggles.decimal) lines.push(`Decimal:        ${findDecimal}:1`);
+      if (exportToggles.dimensions) lines.push(`${t("calculator", "dimensions")}:     ${activeWStr} × ${activeHStr}`);
+      if (exportToggles.ratio) lines.push(`${t("calculator", "ratio")}:          ${findSimplifiedW}:${findSimplifiedH}`);
+      if (exportToggles.decimal) lines.push(`${t("calculator", "decimal")}:        ${findDecimal}:1`);
       if (exportToggles.standardMatch && (findKnownFormat || findClosestRatio)) {
-        lines.push(`Standard:       ${findKnownFormat || findClosestRatio}`);
+        lines.push(`${t("calculator", "standard")}:       ${findKnownFormat || findClosestRatio}`);
       }
       if (exportToggles.css) {
-        lines.push("", "CSS Properties:");
+        lines.push("", `${t("calculator", "cssProperties")}:`);
         lines.push(`  aspect-ratio: ${findSimplifiedW} / ${findSimplifiedH};`);
         lines.push(`  padding-bottom: ${findPaddingPct}%;`);
       }
@@ -1553,11 +1557,11 @@ export default function Calculator() {
 
     lines.push("");
     lines.push(mode === "find"
-      ? "Analyse your dimensions at aspect-ratio-calculator.com"
-      : "Recalculate at aspect-ratio-calculator.com");
+      ? t("calculator", "analyseYourDimensions")
+      : t("calculator", "recalculateAt"));
     if (shareUrl) lines.push(shareUrl);
     return lines.join("\n");
-  }, [mode, exportToggles, activeW, activeH, activeWStr, activeHStr, origW, origH, previewRatioW, previewRatioH, qualityData, activeRatioW, activeRatioH, paddingPct, findSimplifiedW, findSimplifiedH, findDecimal, findKnownFormat, findClosestRatio, findPaddingPct, shareUrl]);
+  }, [mode, exportToggles, activeW, activeH, activeWStr, activeHStr, origW, origH, previewRatioW, previewRatioH, qualityData, activeRatioW, activeRatioH, paddingPct, findSimplifiedW, findSimplifiedH, findDecimal, findKnownFormat, findClosestRatio, findPaddingPct, shareUrl, t]);
 
   // ── Fitting analysis: auto-open when ratios differ ──
   const ratiosDiffer = useMemo(() => {
@@ -1630,8 +1634,8 @@ export default function Calculator() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--background)]/80 border-4 border-dashed border-[var(--accent)] pointer-events-none">
           <div className="text-center">
             <Upload size={48} className="mx-auto mb-3 text-[var(--accent)]" />
-            <p className="text-lg font-semibold text-[var(--foreground)]">Drop image to analyze</p>
-            <p className="text-sm text-[var(--muted)]">Opens in Image Wizard</p>
+            <p className="text-lg font-semibold text-[var(--foreground)]">{t("calculator", "dropImageToAnalyze")}</p>
+            <p className="text-sm text-[var(--muted)]">{t("calculator", "opensInImageWizard")}</p>
           </div>
         </div>
       )}
@@ -1647,9 +1651,9 @@ export default function Calculator() {
           }}
         />
         {([
-          { key: "scale" as Mode, label: "Calculator" },
-          { key: "find" as Mode, label: "Find Ratio" },
-          { key: "guide" as Mode, label: "Image Wizard" },
+          { key: "scale" as Mode, label: t("calculator", "calculatorTab") },
+          { key: "find" as Mode, label: t("calculator", "findRatioTab") },
+          { key: "guide" as Mode, label: t("calculator", "imageWizardTab") },
         ]).map(({ key, label }) => (
           <button
             key={key}
@@ -1679,17 +1683,17 @@ export default function Calculator() {
           {/* ── Section 1: Original Size ── */}
           <div className="mb-5">
             <div className="flex items-center gap-2 mb-1">
-              <h3 className="text-sm font-semibold text-[var(--foreground)]">Original Size</h3>
+              <h3 className="text-sm font-semibold text-[var(--foreground)]">{t("calculator", "originalSize")}</h3>
               {scaleOrigFilled && (
                 <span className="text-[var(--accent-emerald)] text-xs">&#10003;</span>
               )}
             </div>
             <p className={`instruction-text text-xs text-[var(--muted)] mb-2 ${scaleOrigFilled ? "faded" : ""}`}>
-              Enter dimensions in any unit
+              {t("calculator", "enterDimensionsInAnyUnit")}
             </p>
             <div className="flex items-center gap-3">
               <div className="flex-1">
-                <label className="block text-xs text-[var(--muted)] mb-1">Width</label>
+                <label className="block text-xs text-[var(--muted)] mb-1">{t("calculator", "width")}</label>
                 <input
                   type="text"
                   inputMode="decimal"
@@ -1697,9 +1701,9 @@ export default function Calculator() {
                   value={origW}
                   onChange={(e) => handleOrigWChange(sanitizeNumeric(e.target.value))}
                   onFocus={(e) => e.target.select()}
-                  placeholder="Width"
+                  placeholder={t("calculator", "width")}
                   className={`${bigInputBase} ${glowClass("origW", scaleActiveGlow, false)}`}
-                  aria-label="Original width"
+                  aria-label={t("calculator", "originalWidth")}
                 />
               </div>
               <div className="flex flex-col items-center gap-1 mt-5">
@@ -1707,14 +1711,14 @@ export default function Calculator() {
                 <button
                   onClick={cycleUnit}
                   className="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-[var(--surface)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:border-[var(--accent)] transition-all"
-                  title="Click to change unit"
-                  aria-label={`Unit: ${unit}. Click to cycle.`}
+                  title={t("calculator", "clickToChangeUnit")}
+                  aria-label={`${t("calculator", "unit")}: ${unit}`}
                 >
                   {unit}
                 </button>
               </div>
               <div className="flex-1">
-                <label className="block text-xs text-[var(--muted)] mb-1">Height</label>
+                <label className="block text-xs text-[var(--muted)] mb-1">{t("calculator", "height")}</label>
                 <input
                   ref={origHRef}
                   type="text"
@@ -1729,16 +1733,16 @@ export default function Calculator() {
                       newWRef.current.focus();
                     }
                   }}
-                  placeholder="Height"
+                  placeholder={t("calculator", "height")}
                   className={`${bigInputBase} ${glowClass("origH", scaleActiveGlow, false)}`}
-                  aria-label="Original height"
+                  aria-label={t("calculator", "originalHeight")}
                 />
               </div>
             </div>
             {/* Original Ratio badge — directly under inputs */}
             {detectedRW > 0 && detectedRH > 0 && (
               <div className={`mt-3 px-4 py-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] flex items-center justify-between ${!scaleQuickRatio ? "locked-ratio-glow" : ""}`}>
-                <span className="text-sm text-[var(--muted)]">Original Ratio</span>
+                <span className="text-sm text-[var(--muted)]">{t("calculator", "originalRatio")}</span>
                 <span className={`flex items-center gap-2 font-semibold ${scaleQuickRatio ? "text-sm text-[var(--muted)]" : "text-lg text-[var(--foreground)]"}`}>
                   {!scaleQuickRatio && <Lock size={14} className={`text-[var(--accent)] ${lockAnimating ? "lock-animate" : ""}`} />}
                   {formatRatioLabel(detectedRW, detectedRH)}
@@ -1754,7 +1758,7 @@ export default function Calculator() {
           {detectedRW > 0 && detectedRH > 0 && scaleQuickRatio && (
             <div className="mb-5">
               <div className="px-4 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--surface)] flex items-center justify-between locked-ratio-glow">
-                <span className="text-sm text-[var(--muted)]">Target Ratio</span>
+                <span className="text-sm text-[var(--muted)]">{t("calculator", "targetRatio")}</span>
                 <span className="flex items-center gap-2 text-lg font-semibold text-[var(--foreground)]">
                   <Lock size={14} className={`text-[var(--accent)] ${lockAnimating ? "lock-animate" : ""}`} />
                   {formatRatioLabel(scaleRatioW, scaleRatioH)}
@@ -1766,7 +1770,7 @@ export default function Calculator() {
           {/* Quick Ratio Override */}
           <div className="mb-5">
             <label className="block text-xs text-[var(--muted)] mb-2 uppercase tracking-wider">
-              Target ratio
+              {t("calculator", "targetRatio")}
             </label>
             <div className="flex flex-wrap gap-2">
               <button
@@ -1784,10 +1788,10 @@ export default function Calculator() {
                     ? "bg-[var(--accent)] text-white shadow-sm shadow-[var(--accent)]/25"
                     : "bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)] border border-[var(--border)]"
                 }`}
-                title="Use the ratio detected from your original dimensions"
-                aria-label="Custom ratio from original dimensions"
+                title={t("calculator", "useDetectedRatioTitle")}
+                aria-label={t("calculator", "customRatioFromOriginal")}
               >
-                Custom{scaleRatioW > 0 && !scaleQuickRatio ? ` (${formatRatioLabel(scaleRatioW, scaleRatioH)})` : ""}
+                {t("calculator", "custom")}{scaleRatioW > 0 && !scaleQuickRatio ? ` (${formatRatioLabel(scaleRatioW, scaleRatioH)})` : ""}
               </button>
               {QUICK_RATIOS.map((p) => {
                 const maxDim = 14;
@@ -1803,8 +1807,8 @@ export default function Calculator() {
                         ? "bg-[var(--accent)] text-[var(--background)] shadow-sm shadow-[var(--accent)]/25"
                         : "bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)] border border-[var(--border)]"
                     }`}
-                    title={p.desc}
-                    aria-label={`${p.label}: ${p.desc}`}
+                    title={t("calculator", `quickRatio_${p.desc.toLowerCase()}`)}
+                    aria-label={`${p.label}: ${t("calculator", `quickRatio_${p.desc.toLowerCase()}`)}`}
                   >
                     <span className="ratio-shape" style={{ width: shapeW, height: shapeH }} />
                     {p.label}
@@ -1831,7 +1835,7 @@ export default function Calculator() {
                   >
                     <span className="flex items-center gap-2">
                       <IconComp size={14} style={{ color: group.color }} />
-                      {group.name}
+                      {t("calculator", `presetGroup_${group.icon}`)}
                     </span>
                     <ChevronDown
                       size={16}
@@ -1870,18 +1874,18 @@ export default function Calculator() {
           {/* ── Section 3: New Size + Swap ── */}
           <div className="mb-4">
             <div className="flex items-center gap-2 mb-1">
-              <h3 className="text-sm font-semibold text-[var(--foreground)]">Target Size</h3>
+              <h3 className="text-sm font-semibold text-[var(--foreground)]">{t("calculator", "targetSize")}</h3>
               {(parseFloat(newW) || 0) > 0 && (parseFloat(newH) || 0) > 0 && (
                 <span className="text-[var(--accent-emerald)] text-xs">&#10003;</span>
               )}
             </div>
             <p className={`instruction-text text-xs text-[var(--muted)] mb-2 ${scaleNewFilled ? "faded" : ""}`}>
-              Enter target width or height
+              {t("calculator", "enterTargetWidthOrHeight")}
             </p>
             <div className="flex items-center gap-3">
               <div className="flex-1">
                 <label className="block text-xs text-[var(--muted)] mb-1">
-                  Width {scaleLastEdited === "h" && (parseFloat(newW) || 0) > 0 && <span className="text-[var(--accent-teal)]">(auto)</span>}
+                  {t("calculator", "width")} {scaleLastEdited === "h" && (parseFloat(newW) || 0) > 0 && <span className="text-[var(--accent-teal)]">({t("calculator", "auto")})</span>}
                 </label>
                 <input
                   ref={newWRef}
@@ -1891,9 +1895,9 @@ export default function Calculator() {
                   value={newW}
                   onChange={(e) => handleNewWChange(sanitizeNumeric(e.target.value))}
                   onFocus={(e) => e.target.select()}
-                  placeholder={scaleLastEdited === "h" ? "auto" : "Width"}
+                  placeholder={scaleLastEdited === "h" ? t("calculator", "auto") : t("calculator", "width")}
                   className={`${bigInputBase} ${glowClass("newW", scaleActiveGlow, scaleLastEdited === "h" && (parseFloat(newW) || 0) > 0)}`}
-                  aria-label="New width"
+                  aria-label={t("calculator", "newWidth")}
                 />
               </div>
               {/* Swap */}
@@ -1906,21 +1910,21 @@ export default function Calculator() {
                     borderColor: 'var(--accent-teal)',
                     color: 'var(--accent-teal)',
                   }}
-                  title="Swap to portrait / landscape"
-                  aria-label="Swap width and height"
+                  title={t("calculator", "swapToPortraitLandscape")}
+                  aria-label={t("calculator", "swapWidthAndHeight")}
                 >
                   <ArrowLeftRight size={20} />
                 </button>
                 {orientation && (
                   <span className="flex items-center gap-1 text-[10px] text-[var(--accent-teal)]">
                     <OrientationIcon size={10} />
-                    {orientation}
+                    {t("calculator", orientation)}
                   </span>
                 )}
               </div>
               <div className="flex-1">
                 <label className="block text-xs text-[var(--muted)] mb-1">
-                  Height {scaleLastEdited === "w" && (parseFloat(newH) || 0) > 0 && <span className="text-[var(--accent-teal)]">(auto)</span>}
+                  {t("calculator", "height")} {scaleLastEdited === "w" && (parseFloat(newH) || 0) > 0 && <span className="text-[var(--accent-teal)]">({t("calculator", "auto")})</span>}
                 </label>
                 <input
                   type="text"
@@ -1929,9 +1933,9 @@ export default function Calculator() {
                   value={newH}
                   onChange={(e) => handleNewHChange(sanitizeNumeric(e.target.value))}
                   onFocus={(e) => e.target.select()}
-                  placeholder={scaleLastEdited === "w" ? "auto" : "Height"}
+                  placeholder={scaleLastEdited === "w" ? t("calculator", "auto") : t("calculator", "height")}
                   className={`${bigInputBase} ${glowClass("newH", scaleActiveGlow, scaleLastEdited === "w" && (parseFloat(newH) || 0) > 0)}`}
-                  aria-label="New height"
+                  aria-label={t("calculator", "newHeight")}
                 />
               </div>
             </div>
@@ -1954,9 +1958,9 @@ export default function Calculator() {
                         size={14}
                         className={`transition-transform ${expandedPanels["fitting"] !== false ? "rotate-180" : ""}`}
                       />
-                      Fitting Preview
+                      {t("calculator", "fittingPreview")}
                       {ratiosDiffer && expandedPanels["fitting"] === false && (
-                        <span className="text-[var(--accent-amber)] ml-1">Ratios differ</span>
+                        <span className="text-[var(--accent-amber)] ml-1">{t("calculator", "ratiosDiffer")}</span>
                       )}
                     </button>
                     {expandedPanels["fitting"] !== false && (
@@ -1974,7 +1978,7 @@ export default function Calculator() {
                                     border: `1px solid ${fitMode === "fill" ? 'var(--accent)' : 'var(--border)'}`,
                                   }}
                                 >
-                                  Fill (crop)
+                                  {t("calculator", "fillCrop")}
                                 </button>
                                 <button
                                   onClick={() => setFitMode("fit")}
@@ -1985,7 +1989,7 @@ export default function Calculator() {
                                     border: `1px solid ${fitMode === "fit" ? 'var(--accent)' : 'var(--border)'}`,
                                   }}
                                 >
-                                  Fit (letterbox)
+                                  {t("calculator", "fitLetterbox")}
                                 </button>
                               </div>
                             )}
@@ -2002,7 +2006,7 @@ export default function Calculator() {
                           </>
                         ) : (
                           <p className="text-xs text-[var(--muted)] text-center py-4">
-                            Select a target ratio or enter a target size to see the fitting preview
+                            {t("calculator", "selectTargetRatioHint")}
                           </p>
                         )}
                       </div>
@@ -2022,27 +2026,27 @@ export default function Calculator() {
                         size={14}
                         className={`transition-transform ${expandedPanels["quality"] !== false ? "rotate-180" : ""}`}
                       />
-                      Quality Analysis
+                      {t("calculator", "qualityAnalysis")}
                     </button>
                     {expandedPanels["quality"] !== false && (
                       <div className="bg-[var(--surface)] border border-[var(--border)] rounded-lg p-3 space-y-2 text-xs panel-slide-in">
                         <div className="flex justify-between items-center">
-                          <span className="text-[var(--muted)]">Scale factor</span>
-                          <span className="font-medium text-[var(--foreground)]">{qualityData.scalePct}% of original</span>
+                          <span className="text-[var(--muted)]">{t("calculator", "scaleFactor")}</span>
+                          <span className="font-medium text-[var(--foreground)]">{qualityData.scalePct}% {t("calculator", "ofOriginal")}</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-[var(--muted)]">Megapixels</span>
+                          <span className="text-[var(--muted)]">{t("calculator", "megapixels")}</span>
                           <span className="font-mono text-[var(--foreground)]">{qualityData.origMP} MP → {qualityData.newMP} MP</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-[var(--muted)]">Quality</span>
-                          <span className="font-medium" style={{ color: qualityData.verdict.color }}>{qualityData.verdict.label}</span>
+                          <span className="text-[var(--muted)]">{t("calculator", "quality")}</span>
+                          <span className="font-medium" style={{ color: qualityData.verdict.color }}>{t("calculator", qualityData.verdict.labelKey)}</span>
                         </div>
                         <div className="border-t border-[var(--border)] pt-2 mt-2">
-                          <p className="text-[var(--muted)] mb-1.5 font-medium">Print size at new dimensions</p>
+                          <p className="text-[var(--muted)] mb-1.5 font-medium">{t("calculator", "printSizeAtNewDimensions")}</p>
                           {qualityData.dpiSizes.map((d) => (
                             <div key={d.dpi} className="flex justify-between items-center py-0.5">
-                              <span className="text-[var(--muted)]">{d.label}</span>
+                              <span className="text-[var(--muted)]">{t("calculator", d.labelKey)}</span>
                               <span className="font-mono text-[var(--foreground)]">{d.inW}×{d.inH} in</span>
                             </div>
                           ))}
@@ -2063,7 +2067,7 @@ export default function Calculator() {
                     className={`transition-transform ${expandedPanels["css"] ? "rotate-180" : ""}`}
                   />
                   <Code2 size={12} />
-                  CSS Output
+                  {t("calculator", "cssOutput")}
                 </button>
                 {expandedPanels["css"] && (
                   <div className="bg-[var(--surface)] border border-[var(--border)] rounded-lg p-3 space-y-1.5 font-mono text-xs panel-slide-in">
@@ -2077,7 +2081,7 @@ export default function Calculator() {
                         style={{ color: copied === "css-ar" ? "var(--accent-emerald)" : "var(--accent)" }}
                       >
                         {copied === "css-ar" ? <Check size={10} /> : <Copy size={10} />}
-                        {copied === "css-ar" ? "done" : "copy"}
+                        {copied === "css-ar" ? t("calculator", "done") : t("calculator", "copy")}
                       </button>
                     </div>
                     <div className="flex justify-between items-center group">
@@ -2090,7 +2094,7 @@ export default function Calculator() {
                         style={{ color: copied === "css-pb" ? "var(--accent-emerald)" : "var(--accent)" }}
                       >
                         {copied === "css-pb" ? <Check size={10} /> : <Copy size={10} />}
-                        {copied === "css-pb" ? "done" : "copy"}
+                        {copied === "css-pb" ? t("calculator", "done") : t("calculator", "copy")}
                       </button>
                     </div>
                     <div className="flex justify-between items-center group">
@@ -2103,7 +2107,7 @@ export default function Calculator() {
                         style={{ color: copied === "css-wh" ? "var(--accent-emerald)" : "var(--accent)" }}
                       >
                         {copied === "css-wh" ? <Check size={10} /> : <Copy size={10} />}
-                        {copied === "css-wh" ? "done" : "copy"}
+                        {copied === "css-wh" ? t("calculator", "done") : t("calculator", "copy")}
                       </button>
                     </div>
                   </div>
@@ -2113,22 +2117,22 @@ export default function Calculator() {
               {/* ── Section 5: Export ── */}
               <SectionDivider />
               <div className="space-y-2 mb-4">
-                <h3 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider">Export</h3>
+                <h3 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider">{t("calculator", "export")}</h3>
 
                 <div className="space-y-0.5">
                   <ExportRow checked={exportToggles.dimensions} onToggle={() => toggleExport("dimensions")}
-                    label="Dimensions" value={`${activeWStr} × ${activeHStr}`} />
+                    label={t("calculator", "dimensions")} value={`${activeWStr} × ${activeHStr}`} />
                   <ExportRow checked={exportToggles.ratio} onToggle={() => toggleExport("ratio")}
-                    label="Aspect Ratio" value={`${previewRatioW}:${previewRatioH}`} />
+                    label={t("calculator", "aspectRatio")} value={`${previewRatioW}:${previewRatioH}`} />
                   {qualityData && (
                     <ExportRow checked={exportToggles.quality} onToggle={() => toggleExport("quality")}
-                      label="Quality" value={`${qualityData.verdict.label} (${qualityData.scalePct}%)`} />
+                      label={t("calculator", "quality")} value={`${t("calculator", qualityData.verdict.labelKey)} (${qualityData.scalePct}%)`} />
                   )}
                   <ExportRow checked={exportToggles.css} onToggle={() => toggleExport("css")}
-                    label="CSS Output" value={`aspect-ratio: ${activeRatioW}/${activeRatioH}`} mono />
+                    label={t("calculator", "cssOutput")} value={`aspect-ratio: ${activeRatioW}/${activeRatioH}`} mono />
                   {qualityData?.dpiSizes && (
                     <ExportRow checked={exportToggles.printSizes} onToggle={() => toggleExport("printSizes")}
-                      label="Print Sizes" value={`${qualityData.dpiSizes[0].inW}×${qualityData.dpiSizes[0].inH} in @ 72 DPI`} />
+                      label={t("calculator", "printSizes")} value={`${qualityData.dpiSizes[0].inW}×${qualityData.dpiSizes[0].inH} in @ 72 DPI`} />
                   )}
                 </div>
 
@@ -2140,10 +2144,10 @@ export default function Calculator() {
                         ? "bg-[var(--accent-emerald)]/15 border border-[var(--accent-emerald)] text-[var(--accent-emerald)]"
                         : "bg-[var(--surface)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)]"
                     }`}
-                    aria-label="Copy export to clipboard"
+                    aria-label={t("calculator", "copyExportToClipboard")}
                   >
                     {copied === "export" ? <Check size={12} /> : <Copy size={12} />}
-                    {copied === "export" ? "Copied!" : "Copy"}
+                    {copied === "export" ? t("calculator", "copied") : t("calculator", "copy")}
                   </button>
                   <ShareButtons text={exportText} shareUrl={shareUrl} />
                 </div>
@@ -2159,9 +2163,9 @@ export default function Calculator() {
       {mode === "find" && (
         <>
           <div className="mb-4">
-            <h3 className="text-sm font-semibold text-[var(--foreground)] mb-1">Enter Dimensions</h3>
+            <h3 className="text-sm font-semibold text-[var(--foreground)] mb-1">{t("calculator", "enterDimensions")}</h3>
             <p className={`instruction-text text-xs text-[var(--muted)] mb-3 ${findFilled ? "faded" : ""}`}>
-              Enter dimensions in any unit to find the ratio
+              {t("calculator", "enterDimensionsToFindRatio")}
             </p>
 
             <div className="mb-4 text-center">
@@ -2171,20 +2175,20 @@ export default function Calculator() {
                 accept="image/*"
                 onChange={handleFileSelect}
                 className="hidden"
-                aria-label="Upload image to detect dimensions"
+                aria-label={t("calculator", "uploadImageToDetectDimensions")}
               />
               <button
                 onClick={() => fileInputRef.current?.click()}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--surface)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors text-sm font-medium"
               >
                 <Upload size={16} />
-                Upload image
+                {t("calculator", "uploadImage")}
               </button>
             </div>
 
             <div className="flex items-center gap-3">
               <div className="flex-1">
-                <label className="block text-xs text-[var(--muted)] mb-1">Width</label>
+                <label className="block text-xs text-[var(--muted)] mb-1">{t("calculator", "width")}</label>
                 <input
                   type="text"
                   inputMode="decimal"
@@ -2192,9 +2196,9 @@ export default function Calculator() {
                   value={findW}
                   onChange={(e) => setFindW(sanitizeNumeric(e.target.value))}
                   onFocus={(e) => e.target.select()}
-                  placeholder="Width"
+                  placeholder={t("calculator", "width")}
                   className={`${bigInputBase} ${!findWNum ? "glow-active" : ""}`}
-                  aria-label="Width"
+                  aria-label={t("calculator", "width")}
                 />
               </div>
               <div className="flex flex-col items-center gap-1 mt-5">
@@ -2202,14 +2206,14 @@ export default function Calculator() {
                 <button
                   onClick={cycleUnit}
                   className="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-[var(--surface)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:border-[var(--accent)] transition-all"
-                  title="Click to change unit"
-                  aria-label={`Unit: ${unit}. Click to cycle.`}
+                  title={t("calculator", "clickToChangeUnit")}
+                  aria-label={`${t("calculator", "unit")}: ${unit}`}
                 >
                   {unit}
                 </button>
               </div>
               <div className="flex-1">
-                <label className="block text-xs text-[var(--muted)] mb-1">Height</label>
+                <label className="block text-xs text-[var(--muted)] mb-1">{t("calculator", "height")}</label>
                 <input
                   type="text"
                   inputMode="decimal"
@@ -2217,9 +2221,9 @@ export default function Calculator() {
                   value={findH}
                   onChange={(e) => setFindH(sanitizeNumeric(e.target.value))}
                   onFocus={(e) => e.target.select()}
-                  placeholder="Height"
+                  placeholder={t("calculator", "height")}
                   className={`${bigInputBase} ${findWNum > 0 && !findHNum ? "glow-active" : ""}`}
-                  aria-label="Height"
+                  aria-label={t("calculator", "height")}
                 />
               </div>
             </div>
@@ -2227,34 +2231,34 @@ export default function Calculator() {
 
           {findWNum > 0 && findHNum > 0 && (
             <div className="bg-[var(--surface)] border border-[var(--border)] rounded-lg p-4 mb-4 space-y-3 animate-[fadeSlideIn_0.25s_ease-out]">
-              <h4 className="text-xs uppercase tracking-wider text-[var(--muted)] font-semibold border-b border-[var(--border)] pb-2">Result</h4>
+              <h4 className="text-xs uppercase tracking-wider text-[var(--muted)] font-semibold border-b border-[var(--border)] pb-2">{t("calculator", "result")}</h4>
 
               {(findKnownFormat || findClosestRatio) && (
                 <div className="pb-3 border-b border-[var(--border)]">
                   {findKnownFormat && (
                     <p className="text-sm font-medium text-[var(--accent)]">
-                      Matches: {findKnownFormat}
+                      {t("calculator", "matches")}: {findKnownFormat}
                     </p>
                   )}
                   {!findKnownFormat && findClosestRatio && (
                     <p className="text-sm font-medium text-[var(--accent)]">
-                      Closest standard ratio: {findClosestRatio}
+                      {t("calculator", "closestStandardRatio")}: {findClosestRatio}
                     </p>
                   )}
                 </div>
               )}
 
               <div className="flex justify-between items-center">
-                <span className="text-[var(--muted)] text-sm">Ratio</span>
+                <span className="text-[var(--muted)] text-sm">{t("calculator", "ratio")}</span>
                 <span className="text-xl font-semibold">{findSimplifiedW}:{findSimplifiedH}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-[var(--muted)] text-sm">Decimal</span>
+                <span className="text-[var(--muted)] text-sm">{t("calculator", "decimal")}</span>
                 <span className="text-lg font-mono">{findDecimal}:1</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-[var(--muted)] text-sm" title="CSS padding-bottom for intrinsic ratio containers">
-                  CSS padding-bottom
+                  {t("calculator", "cssPaddingBottom")}
                 </span>
                 <span className="text-lg font-mono">{findPaddingPct}%</span>
               </div>
@@ -2264,21 +2268,21 @@ export default function Calculator() {
           {/* Find mode export */}
           {activeW > 0 && activeH > 0 && (
             <div className="space-y-2 mb-4">
-              <h3 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider">Export</h3>
+              <h3 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider">{t("calculator", "export")}</h3>
 
               <div className="space-y-0.5">
                 <ExportRow checked={exportToggles.dimensions} onToggle={() => toggleExport("dimensions")}
-                  label="Dimensions" value={`${activeWStr} × ${activeHStr}`} />
+                  label={t("calculator", "dimensions")} value={`${activeWStr} × ${activeHStr}`} />
                 <ExportRow checked={exportToggles.ratio} onToggle={() => toggleExport("ratio")}
-                  label="Ratio" value={`${findSimplifiedW}:${findSimplifiedH}`} />
+                  label={t("calculator", "ratio")} value={`${findSimplifiedW}:${findSimplifiedH}`} />
                 <ExportRow checked={exportToggles.decimal} onToggle={() => toggleExport("decimal")}
-                  label="Decimal" value={`${findDecimal}:1`} mono />
+                  label={t("calculator", "decimal")} value={`${findDecimal}:1`} mono />
                 {(findKnownFormat || findClosestRatio) && (
                   <ExportRow checked={exportToggles.standardMatch} onToggle={() => toggleExport("standardMatch")}
-                    label="Standard" value={findKnownFormat || findClosestRatio || ""} />
+                    label={t("calculator", "standard")} value={findKnownFormat || findClosestRatio || ""} />
                 )}
                 <ExportRow checked={exportToggles.css} onToggle={() => toggleExport("css")}
-                  label="CSS Output" value={`padding-bottom: ${findPaddingPct}%`} mono />
+                  label={t("calculator", "cssOutput")} value={`padding-bottom: ${findPaddingPct}%`} mono />
               </div>
 
               <div className="flex gap-2 pt-2 flex-wrap">
@@ -2289,10 +2293,10 @@ export default function Calculator() {
                       ? "bg-[var(--accent-emerald)]/15 border border-[var(--accent-emerald)] text-[var(--accent-emerald)]"
                       : "bg-[var(--surface)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)]"
                   }`}
-                  aria-label="Copy export to clipboard"
+                  aria-label={t("calculator", "copyExportToClipboard")}
                 >
                   {copied === "export" ? <Check size={12} /> : <Copy size={12} />}
-                  {copied === "export" ? "Copied!" : "Copy"}
+                  {copied === "export" ? t("calculator", "copied") : t("calculator", "copy")}
                 </button>
                 <ShareButtons text={exportText} shareUrl={shareUrl} />
               </div>
@@ -2308,7 +2312,7 @@ export default function Calculator() {
         <div className="space-y-6">
           {/* ── Step 1: Upload Your Image ── */}
           <div>
-            <StepBadge num={1} title="Upload Your Image" active={true} />
+            <StepBadge num={1} title={t("calculator", "uploadYourImage")} active={true} />
             {!guideImage && (
               <div>
                 <input
@@ -2323,8 +2327,8 @@ export default function Calculator() {
                   className="w-full py-12 rounded-xl border-2 border-dashed border-[var(--border)] bg-[var(--surface)] hover:bg-[var(--surface-hover)] hover:border-[var(--accent)] transition-all flex flex-col items-center gap-3 cursor-pointer"
                 >
                   <Upload size={40} className="text-[var(--muted)]" />
-                  <span className="text-base font-medium text-[var(--foreground)]">Upload an image</span>
-                  <span className="text-xs text-[var(--muted)]">or drag & drop anywhere on this page</span>
+                  <span className="text-base font-medium text-[var(--foreground)]">{t("calculator", "uploadAnImage")}</span>
+                  <span className="text-xs text-[var(--muted)]">{t("calculator", "orDragAndDrop")}</span>
                 </button>
               </div>
             )}
@@ -2333,7 +2337,7 @@ export default function Calculator() {
                 {guideImage.dataUrl && (
                   <img
                     src={guideImage.dataUrl}
-                    alt="Uploaded"
+                    alt={t("calculator", "uploaded")}
                     className="w-16 h-16 object-cover rounded-md border border-[var(--border)]"
                   />
                 )}
@@ -2343,14 +2347,14 @@ export default function Calculator() {
                     {guideImage.w} × {guideImage.h} px
                   </p>
                   <p className="text-xs text-[var(--muted)]">
-                    {guideImageInfo.ratioLabel} · {guideImageInfo.mp} MP · {guideImageInfo.orient}
+                    {guideImageInfo.ratioLabel} · {guideImageInfo.mp} MP · {t("calculator", guideImageInfo.orient)}
                   </p>
                 </div>
                 <button
                   onClick={() => { setGuideImage(null); setWizardCategory(null); setWizardPlatform(null); setWizardAction(null); }}
                   className="text-xs text-[var(--muted)] hover:text-[var(--foreground)] transition-colors underline"
                 >
-                  Change
+                  {t("calculator", "change")}
                 </button>
               </div>
             )}
@@ -2358,7 +2362,7 @@ export default function Calculator() {
 
           {/* ── Step 2: Where will you use it? ── */}
           <div className={!guideImage ? "opacity-40 pointer-events-none" : ""}>
-            <StepBadge num={2} title="Where will you use it?" active={!!guideImage} />
+            <StepBadge num={2} title={t("calculator", "whereWillYouUseIt")} active={!!guideImage} />
             <div className="grid grid-cols-2 gap-2">
               {WIZARD_CATEGORIES.map((cat) => {
                 const IconComp = WIZARD_CATEGORY_ICONS[cat.icon];
@@ -2390,10 +2394,10 @@ export default function Calculator() {
                     >
                       <div className="flex items-center gap-2 mb-1">
                         <IconComp size={14} style={{ color: cat.color }} />
-                        <span className="text-sm font-medium text-[var(--foreground)]">{cat.label}</span>
+                        <span className="text-sm font-medium text-[var(--foreground)]">{t("calculator", `wizardCategory_${cat.key}`)}</span>
                       </div>
                       <span className="text-[10px] text-[var(--muted)]">
-                        {cat.platforms.length === 1 ? cat.platforms[0].label : `${cat.platforms.length} options`}
+                        {cat.platforms.length === 1 ? cat.platforms[0].label : `${cat.platforms.length} ${t("calculator", "options")}`}
                       </span>
                     </button>
                     {/* Expanded platforms under selected category */}
@@ -2425,7 +2429,7 @@ export default function Calculator() {
 
           {/* ── Step 3: What do you want to do? ── */}
           <div className={!wizardPlatform ? "opacity-40 pointer-events-none" : ""}>
-            <StepBadge num={3} title="What do you want to do?" active={!!wizardPlatform} />
+            <StepBadge num={3} title={t("calculator", "whatDoYouWantToDo")} active={!!wizardPlatform} />
             {wizardPlatformData && wizardCategory !== "print" && (
               <div className="flex flex-wrap gap-2">
                 {wizardPlatformData.actions.map((action) => (
@@ -2446,13 +2450,13 @@ export default function Calculator() {
             {wizardCategory === "print" && wizardPlatformData && guideImage && (
               <div className="bg-[var(--surface)] border border-[var(--border)] rounded-lg overflow-hidden">
                 <p className="text-xs text-[var(--muted)] px-3 pt-3 pb-1">
-                  Your image: {guideImage.w} × {guideImage.h} ({guideImageInfo?.mp} MP)
+                  {t("calculator", "yourImage")}: {guideImage.w} × {guideImage.h} ({guideImageInfo?.mp} MP)
                 </p>
                 <table className="w-full text-xs">
                   <thead>
                     <tr className="border-b border-[var(--border)]">
-                      <th className="py-2 px-3 text-left text-[var(--muted)] font-medium">Print Size</th>
-                      <th className="py-2 px-3 text-left text-[var(--muted)] font-medium">Quality</th>
+                      <th className="py-2 px-3 text-left text-[var(--muted)] font-medium">{t("calculator", "printSize")}</th>
+                      <th className="py-2 px-3 text-left text-[var(--muted)] font-medium">{t("calculator", "quality")}</th>
                       <th className="py-2 px-3 text-left text-[var(--muted)] font-medium">DPI</th>
                     </tr>
                   </thead>
@@ -2463,7 +2467,7 @@ export default function Calculator() {
                         <tr key={action.label} className="border-b border-[var(--border)] last:border-0">
                           <td className="py-2 px-3 text-[var(--foreground)]">{action.label}</td>
                           <td className="py-2 px-3" style={{ color: q.color }}>
-                            {q.icon} {q.label}
+                            {q.icon} {t("calculator", q.labelKey)}
                           </td>
                           <td className="py-2 px-3 font-mono text-[var(--muted)]">{q.dpi} DPI</td>
                         </tr>
@@ -2471,14 +2475,14 @@ export default function Calculator() {
                     })}
                   </tbody>
                 </table>
-                <p className="text-[10px] text-[var(--muted)] px-3 pb-2 pt-1">Minimum for sharp print: 300 DPI</p>
+                <p className="text-[10px] text-[var(--muted)] px-3 pb-2 pt-1">{t("calculator", "minimumForSharpPrint")}</p>
               </div>
             )}
           </div>
 
           {/* ── Step 4: Your Results ── */}
           <div className={(!wizardAction && wizardCategory !== "print") ? "opacity-40 pointer-events-none" : ""}>
-            <StepBadge num={4} title="Your Results" active={!!(wizardAction || wizardCategory === "print")} />
+            <StepBadge num={4} title={t("calculator", "yourResults")} active={!!(wizardAction || wizardCategory === "print")} />
             {wizardActionData && guideImage && wizardCategory !== "print" && (() => {
               // Handle "Make Smaller" actions where targetH is 0 (preserve ratio)
               const finalTargetW = wizardActionData.targetW;
@@ -2497,11 +2501,11 @@ export default function Calculator() {
                 <div className="space-y-3">
                   <div className="bg-[var(--surface)] border border-[var(--border)] rounded-lg p-4">
                     <p className="text-sm font-medium text-[var(--foreground)] mb-1">
-                      Recommended: {finalTargetW}×{finalTargetH}
+                      {t("calculator", "recommended")}: {finalTargetW}×{finalTargetH}
                       {wizardActionData.ratioLabel !== "original" && ` (${wizardActionData.ratioLabel})`}
                     </p>
                     <p className="text-xs" style={{ color: fit.color }}>
-                      {fit.icon} {fit.text} — {pct}% of image kept
+                      {fit.icon} {t("calculator", fit.textKey)} — {pct}% {t("calculator", "ofImageKept")}
                     </p>
 
                     {/* Upscale warning */}
@@ -2514,9 +2518,9 @@ export default function Calculator() {
                           border: `1px solid ${scaleVerdict.color}`,
                           color: scaleVerdict.color,
                         }}>
-                          {scalePct > 200 ? "❌" : "⚠️"} {scaleVerdict.label}
+                          {scalePct > 200 ? "❌" : "⚠️"} {t("calculator", scaleVerdict.labelKey)}
                           <span className="block text-[var(--muted)] mt-0.5">
-                            {guideImage.w}×{guideImage.h} → {finalTargetW}×{finalTargetH} ({scalePct}% upscale)
+                            {guideImage.w}×{guideImage.h} → {finalTargetW}×{finalTargetH} ({scalePct}% {t("calculator", "upscale")})
                           </span>
                         </div>
                       ) : null;
@@ -2546,25 +2550,25 @@ export default function Calculator() {
                     }`}
                   >
                     {copied === "wizard-dims" ? <Check size={16} /> : <Copy size={16} />}
-                    {copied === "wizard-dims" ? "Copied!" : `Copy ${dimsStr}`}
+                    {copied === "wizard-dims" ? t("calculator", "copied") : `${t("calculator", "copy")} ${dimsStr}`}
                   </button>
 
                   <ShareButtons
                     text={[
-                      "Image Resize Recommendation",
+                      t("calculator", "imageResizeRecommendation"),
                       "",
-                      `Original Image: ${guideImage.w} × ${guideImage.h}`,
-                      `Recommended:    ${finalTargetW} × ${finalTargetH}${wizardActionData.ratioLabel !== "original" ? ` (${wizardActionData.ratioLabel})` : ""}`,
-                      `Crop:           ${pct}% of image preserved`,
+                      `${t("calculator", "originalImage")}: ${guideImage.w} × ${guideImage.h}`,
+                      `${t("calculator", "recommended")}:    ${finalTargetW} × ${finalTargetH}${wizardActionData.ratioLabel !== "original" ? ` (${wizardActionData.ratioLabel})` : ""}`,
+                      `${t("calculator", "crop")}:           ${pct}% ${t("calculator", "ofImagePreserved")}`,
                       "",
-                      "Get instant recommendations at aspect-ratio-calculator.com",
+                      t("calculator", "getRecommendationsAt"),
                       wizardShareUrl,
                     ].join("\n")}
                     shareUrl={wizardShareUrl}
                   />
 
                   <p className="text-[10px] text-[var(--muted)] italic">
-                    Paste into Canva → Custom Size
+                    {t("calculator", "pasteIntoCanva")}
                   </p>
                 </div>
               );
@@ -2589,7 +2593,7 @@ export default function Calculator() {
             <span className="text-[var(--foreground)] font-medium text-sm">
               {scaleRatioW}:{scaleRatioH}
             </span>
-            <span className="text-[var(--muted)] text-[10px]">Original</span>
+            <span className="text-[var(--muted)] text-[10px]">{t("calculator", "original")}</span>
           </div>
         </div>
       )}
@@ -2611,7 +2615,7 @@ export default function Calculator() {
             {orientation && (
               <span className="text-[var(--muted)] text-[10px] flex items-center gap-1">
                 <OrientationIcon size={9} />
-                {orientation}
+                {t("calculator", orientation)}
               </span>
             )}
           </div>

@@ -1,37 +1,53 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { RATIO_DATA, RATIO_SLUGS, PLATFORM_DATA } from "@/lib/seo-data";
+import { RATIO_SLUGS } from "@/lib/seo-data";
 import { RatioCalculator } from "@/components/RatioCalculator";
+import { LOCALE_SEGMENTS, getLocaleFromSegment, BASE_URL } from "@/i18n/config";
+import { getAlternates } from "@/lib/hreflang";
+import { getSeoData } from "@/i18n/get-seo-data";
+import { getMessages } from "@/i18n/get-messages";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
-export async function generateStaticParams() {
-  return RATIO_SLUGS.map((slug) => ({ slug }));
+export function generateStaticParams() {
+  return LOCALE_SEGMENTS.flatMap((locale) =>
+    RATIO_SLUGS.map((slug) => ({ locale, slug }))
+  );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const data = RATIO_DATA[slug];
+  const { locale: localeSegment, slug } = await params;
+  const localeConfig = getLocaleFromSegment(localeSegment);
+  const seoData = await getSeoData(localeConfig.code);
+  const data = seoData.RATIO_DATA[slug];
   if (!data) return {};
+  const alternates = getAlternates(`/ratio/${slug}`, localeConfig.urlPrefix);
   return {
     title: data.title,
     description: data.description,
     openGraph: {
       title: data.title,
       description: data.description,
-      url: `https://aspect-ratio-calculator.com/ratio/${slug}`,
+      url: `${BASE_URL}${localeConfig.urlPrefix}/ratio/${slug}`,
       images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     },
+    alternates,
   };
 }
 
 export default async function RatioPage({ params }: Props) {
-  const { slug } = await params;
-  const data = RATIO_DATA[slug];
+  const { locale: localeSegment, slug } = await params;
+  const localeConfig = getLocaleFromSegment(localeSegment);
+  const messages = await getMessages(localeConfig.code);
+  const seoData = await getSeoData(localeConfig.code);
+  const data = seoData.RATIO_DATA[slug];
   if (!data) notFound();
+
+  const rp = messages.ratioPage ?? {};
+  const prefix = localeConfig.urlPrefix;
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -50,19 +66,19 @@ export default async function RatioPage({ params }: Props) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Home",
-        item: "https://aspect-ratio-calculator.com",
+        name: messages.common?.home ?? "Home",
+        item: `${BASE_URL}${prefix}`,
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: `${data.label} Aspect Ratio`,
-        item: `https://aspect-ratio-calculator.com/ratio/${slug}`,
+        name: `${data.label} ${rp.aspectRatio ?? "Aspect Ratio"}`,
+        item: `${BASE_URL}${prefix}/ratio/${slug}`,
       },
     ],
   };
 
-  const calcUrl = `/?rw=${data.w}&rh=${data.h}&mode=scale`;
+  const calcUrl = `${prefix}/?rw=${data.w}&rh=${data.h}&mode=scale`;
   const paddingBottom = ((data.h / data.w) * 100).toFixed(4);
 
   return (
@@ -79,12 +95,12 @@ export default async function RatioPage({ params }: Props) {
       <div className="max-w-2xl mx-auto">
         {/* Breadcrumb */}
         <nav className="text-xs text-[var(--muted)] mb-8 flex items-center gap-1.5">
-          <Link href="/" className="hover:text-[var(--foreground)] transition-colors">
-            Home
+          <Link href={`${prefix}/`} className="hover:text-[var(--foreground)] transition-colors">
+            {messages.common?.home ?? "Home"}
           </Link>
           <span>/</span>
-          <Link href="/" className="hover:text-[var(--foreground)] transition-colors">
-            Aspect Ratio Calculator
+          <Link href={`${prefix}/`} className="hover:text-[var(--foreground)] transition-colors">
+            {messages.meta?.siteTitle ?? "Aspect Ratio Calculator"}
           </Link>
           <span>/</span>
           <span className="text-[var(--foreground)]">{data.label}</span>
@@ -94,7 +110,7 @@ export default async function RatioPage({ params }: Props) {
         <div className="mb-10">
           <h1 className="font-display text-3xl md:text-4xl font-semibold text-[var(--foreground)] mb-4 tracking-tight leading-tight">
             {data.label}{" "}
-            <span className="text-[var(--accent)]">Aspect Ratio</span>
+            <span className="text-[var(--accent)]">{rp.aspectRatio ?? "Aspect Ratio"}</span>
           </h1>
           <p className="text-[var(--muted)] text-sm md:text-base leading-relaxed mb-6">
             {data.explanation}
@@ -108,16 +124,16 @@ export default async function RatioPage({ params }: Props) {
           {/* Common Dimensions */}
           <div className="seo-card">
             <h2 className="text-base font-semibold text-[var(--foreground)] mb-4">
-              Common {data.label} Dimensions
+              {(rp.commonDimensions ?? "Common {label} Dimensions").replace("{label}", data.label)}
             </h2>
             <div className="overflow-x-auto -mx-1.5">
               <table className="w-full text-left border-collapse seo-table">
                 <thead>
                   <tr className="border-b border-[var(--border)]">
-                    <th>Name</th>
-                    <th>Width</th>
-                    <th>Height</th>
-                    <th>Common Use</th>
+                    <th>{rp.tableName ?? "Name"}</th>
+                    <th>{rp.tableWidth ?? "Width"}</th>
+                    <th>{rp.tableHeight ?? "Height"}</th>
+                    <th>{rp.tableCommonUse ?? "Common Use"}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -137,12 +153,12 @@ export default async function RatioPage({ params }: Props) {
           {/* Use Cases */}
           <div className="seo-card">
             <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
-              Where is {data.label} Used?
+              {(rp.whereUsed ?? "Where is {label} Used?").replace("{label}", data.label)}
             </h2>
             <ul className="space-y-2">
               {data.useCases.map((use) => (
                 <li key={use} className="flex items-start gap-2 text-sm text-[var(--muted)]">
-                  <span className="text-[var(--accent)] mt-0.5 flex-shrink-0">→</span>
+                  <span className="text-[var(--accent)] mt-0.5 flex-shrink-0">{"\u2192"}</span>
                   {use}
                 </li>
               ))}
@@ -152,10 +168,10 @@ export default async function RatioPage({ params }: Props) {
           {/* CSS Code Snippet */}
           <div className="seo-card">
             <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
-              CSS for {data.label}
+              {(rp.cssFor ?? "CSS for {label}").replace("{label}", data.label)}
             </h2>
             <p className="text-sm text-[var(--muted)] mb-3">
-              Use these CSS snippets to enforce the {data.label} ratio on any element:
+              {(rp.paddingBottomTrick ?? "Use these CSS snippets to enforce the {label} ratio on any element:").replace("{label}", data.label)}
             </p>
             <div className="space-y-2">
               <div className="rounded-md bg-[var(--background)] border border-[var(--border)] p-3">
@@ -176,7 +192,7 @@ export default async function RatioPage({ params }: Props) {
           {/* FAQ */}
           <div className="seo-card">
             <h2 className="text-base font-semibold text-[var(--foreground)] mb-4">
-              Frequently Asked Questions
+              {rp.faq ?? "Frequently Asked Questions"}
             </h2>
             <div className="space-y-3">
               {data.faq.map((item) => (
@@ -202,16 +218,16 @@ export default async function RatioPage({ params }: Props) {
           {data.relatedRatios.length > 0 && (
             <div className="seo-card">
               <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
-                Related Aspect Ratios
+                {rp.relatedRatios ?? "Related Aspect Ratios"}
               </h2>
               <div className="flex flex-wrap gap-2">
                 {data.relatedRatios.map((rs) => {
-                  const related = RATIO_DATA[rs];
+                  const related = seoData.RATIO_DATA[rs];
                   if (!related) return null;
                   return (
                     <Link
                       key={rs}
-                      href={`/ratio/${rs}`}
+                      href={`${prefix}/ratio/${rs}`}
                       className="px-3 py-1.5 text-sm font-mono rounded-md border border-[var(--border)] text-[var(--foreground-dim)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
                     >
                       {related.label}
@@ -226,16 +242,16 @@ export default async function RatioPage({ params }: Props) {
           {data.relatedPlatforms.length > 0 && (
             <div className="seo-card">
               <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
-                Platforms Using {data.label}
+                {(rp.platformsUsing ?? "Platforms Using {label}").replace("{label}", data.label)}
               </h2>
               <div className="flex flex-wrap gap-2">
                 {data.relatedPlatforms.map((ps) => {
-                  const platform = PLATFORM_DATA[ps];
+                  const platform = seoData.PLATFORM_DATA[ps];
                   if (!platform) return null;
                   return (
                     <Link
                       key={ps}
-                      href={`/platform/${ps}`}
+                      href={`${prefix}/platform/${ps}`}
                       className="px-3 py-1.5 text-sm rounded-md border border-[var(--border)] text-[var(--foreground-dim)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
                     >
                       {platform.name}
@@ -249,13 +265,13 @@ export default async function RatioPage({ params }: Props) {
           {/* CTA */}
           <div className="seo-card text-center">
             <p className="text-sm text-[var(--muted)] mb-4">
-              Ready to calculate {data.label} dimensions? Our free calculator handles any width or height instantly.
+              {(rp.readyToCalculate ?? "Ready to calculate {label} dimensions? Our free calculator handles any width or height instantly.").replace("{label}", data.label)}
             </p>
             <Link
               href={calcUrl}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-sm font-medium transition-colors"
             >
-              Use the {data.label} Calculator →
+              {(rp.useCalculator ?? "Use the {label} Calculator").replace("{label}", data.label)} {"\u2192"}
             </Link>
           </div>
         </div>

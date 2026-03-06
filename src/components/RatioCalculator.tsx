@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Link from "next/link";
+import { useTranslation } from "@/components/I18nProvider";
 
 interface Props {
   w: number; // ratio width unit  e.g. 16
@@ -11,6 +12,7 @@ interface Props {
 }
 
 export function RatioCalculator({ w, h, label, calcUrl }: Props) {
+  const { t } = useTranslation();
   const [width, setWidth] = useState("");
   const [height, setHeight] = useState("");
   const [lastEdited, setLastEdited] = useState<"w" | "h" | null>(null);
@@ -54,12 +56,12 @@ export function RatioCalculator({ w, h, label, calcUrl }: Props) {
       <div className="flex items-center justify-between mb-4">
         <div>
           <p className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-0.5">
-            Quick Calculator
+            {t("ratioCalculator", "quickCalculator")}
           </p>
           <p className="text-xs text-[var(--muted)]">
-            Locked to{" "}
+            {t("ratioCalculator", "lockedTo")}{" "}
             <span className="font-mono text-[var(--accent)]">{label}</span>
-            {" "}({decimal}:1) — type either dimension
+            {" "}({decimal}:1) — {t("ratioCalculator", "typeEitherDimension")}
           </p>
         </div>
         <div
@@ -74,13 +76,13 @@ export function RatioCalculator({ w, h, label, calcUrl }: Props) {
         {/* Width */}
         <div className="flex-1">
           <label className="block text-xs text-[var(--muted)] mb-1.5 font-medium">
-            Width <span className="text-[var(--muted)] font-normal">(px)</span>
+            {t("ratioCalculator", "width")} <span className="text-[var(--muted)] font-normal">{t("ratioCalculator", "px")}</span>
           </label>
           <input
             type="number"
             inputMode="numeric"
             min="1"
-            placeholder="e.g. 1920"
+            placeholder={t("ratioCalculator", "egWidth")}
             value={width}
             onChange={(e) => handleWidth(e.target.value)}
             className="
@@ -103,13 +105,13 @@ export function RatioCalculator({ w, h, label, calcUrl }: Props) {
         {/* Height */}
         <div className="flex-1">
           <label className="block text-xs text-[var(--muted)] mb-1.5 font-medium">
-            Height <span className="text-[var(--muted)] font-normal">(px)</span>
+            {t("ratioCalculator", "height")} <span className="text-[var(--muted)] font-normal">{t("ratioCalculator", "px")}</span>
           </label>
           <input
             type="number"
             inputMode="numeric"
             min="1"
-            placeholder="e.g. 1080"
+            placeholder={t("ratioCalculator", "egHeight")}
             value={height}
             onChange={(e) => handleHeight(e.target.value)}
             className="
@@ -132,7 +134,7 @@ export function RatioCalculator({ w, h, label, calcUrl }: Props) {
             {" × "}
             <span className="font-mono text-[var(--foreground)]">{Number(height).toLocaleString()}</span>
             {" px — "}
-            {lastEdited === "w" ? "height" : "width"} calculated for {label}
+            {t("ratioCalculator", "calculatedFor", { dimension: t("ratioCalculator", lastEdited === "w" ? "height" : "width"), label })}
           </p>
         </div>
       )}
@@ -140,13 +142,13 @@ export function RatioCalculator({ w, h, label, calcUrl }: Props) {
       {/* Full calculator link */}
       <div className="mt-3 pt-3 border-t border-[var(--border)] flex items-center justify-between">
         <p className="text-xs text-[var(--muted)]">
-          Need scaling, presets, or image upload?
+          {t("ratioCalculator", "needMore")}
         </p>
         <Link
           href={calcUrl}
           className="text-xs font-medium text-[var(--accent)] hover:underline flex-shrink-0"
         >
-          Full calculator →
+          {t("ratioCalculator", "fullCalculator")}
         </Link>
       </div>
     </div>

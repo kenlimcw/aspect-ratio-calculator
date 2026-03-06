@@ -1,43 +1,59 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ARTICLE_DATA, ARTICLE_SLUGS } from "@/lib/seo-data";
+import { ARTICLE_SLUGS } from "@/lib/seo-data";
+import { LOCALE_SEGMENTS, getLocaleFromSegment, BASE_URL } from "@/i18n/config";
+import { getAlternates } from "@/lib/hreflang";
+import { getSeoData } from "@/i18n/get-seo-data";
+import { getMessages } from "@/i18n/get-messages";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
-export async function generateStaticParams() {
-  return ARTICLE_SLUGS.map((slug) => ({ slug }));
+export function generateStaticParams() {
+  return LOCALE_SEGMENTS.flatMap((locale) =>
+    ARTICLE_SLUGS.map((slug) => ({ locale, slug }))
+  );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const data = ARTICLE_DATA[slug];
+  const { locale: localeSegment, slug } = await params;
+  const localeConfig = getLocaleFromSegment(localeSegment);
+  const seoData = await getSeoData(localeConfig.code);
+  const data = seoData.ARTICLE_DATA[slug];
   if (!data) return {};
+  const alternates = getAlternates(`/blog/${slug}`, localeConfig.urlPrefix);
   return {
     title: data.title,
     description: data.description,
     openGraph: {
       title: data.title,
       description: data.description,
-      url: `https://aspect-ratio-calculator.com/blog/${slug}`,
+      url: `${BASE_URL}${localeConfig.urlPrefix}/blog/${slug}`,
       images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     },
+    alternates,
   };
 }
 
 export default async function BlogArticlePage({ params }: Props) {
-  const { slug } = await params;
-  const data = ARTICLE_DATA[slug];
+  const { locale: localeSegment, slug } = await params;
+  const localeConfig = getLocaleFromSegment(localeSegment);
+  const messages = await getMessages(localeConfig.code);
+  const seoData = await getSeoData(localeConfig.code);
+  const data = seoData.ARTICLE_DATA[slug];
   if (!data) notFound();
+
+  const bp = messages.blogPage ?? {};
+  const prefix = localeConfig.urlPrefix;
 
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     name: data.title,
     description: data.description,
-    url: `https://aspect-ratio-calculator.com/blog/${slug}`,
+    url: `${BASE_URL}${prefix}/blog/${slug}`,
     datePublished: "2026-01-15",
     publisher: {
       "@type": "Organization",
@@ -52,20 +68,20 @@ export default async function BlogArticlePage({ params }: Props) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Home",
-        item: "https://aspect-ratio-calculator.com/",
+        name: messages.common?.home ?? "Home",
+        item: `${BASE_URL}${prefix}/`,
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: "Blog",
-        item: "https://aspect-ratio-calculator.com/blog",
+        name: bp.blog ?? "Blog",
+        item: `${BASE_URL}${prefix}/blog`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: data.title,
-        item: `https://aspect-ratio-calculator.com/blog/${slug}`,
+        item: `${BASE_URL}${prefix}/blog/${slug}`,
       },
     ],
   };
@@ -84,11 +100,11 @@ export default async function BlogArticlePage({ params }: Props) {
       <div className="max-w-2xl mx-auto">
         {/* Breadcrumb */}
         <nav className="text-xs text-[var(--muted)] mb-8 flex items-center gap-1.5">
-          <Link href="/" className="hover:text-[var(--foreground)] transition-colors">
-            Home
+          <Link href={`${prefix}/`} className="hover:text-[var(--foreground)] transition-colors">
+            {messages.common?.home ?? "Home"}
           </Link>
           <span>/</span>
-          <span>Blog</span>
+          <span>{bp.blog ?? "Blog"}</span>
           <span>/</span>
           <span className="text-[var(--foreground)]">{data.title}</span>
         </nav>
@@ -118,7 +134,7 @@ export default async function BlogArticlePage({ params }: Props) {
                 <ul className="space-y-2 mb-3">
                   {section.list.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-[var(--muted)]">
-                      <span className="text-[var(--accent)] mt-0.5 flex-shrink-0">→</span>
+                      <span className="text-[var(--accent)] mt-0.5 flex-shrink-0">{"\u2192"}</span>
                       {item}
                     </li>
                   ))}
@@ -169,13 +185,13 @@ export default async function BlogArticlePage({ params }: Props) {
           {/* CTA */}
           <div className="seo-card text-center">
             <p className="text-sm text-[var(--muted)] mb-4">
-              Ready to put this into practice?
+              {bp.readyToPractice ?? "Ready to put this into practice?"}
             </p>
             <Link
-              href="/"
+              href={`${prefix}/`}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-sm font-medium transition-colors"
             >
-              Try the Free Aspect Ratio Calculator →
+              {bp.tryCalculator ?? "Try the Free Aspect Ratio Calculator \u2192"}
             </Link>
           </div>
         </div>

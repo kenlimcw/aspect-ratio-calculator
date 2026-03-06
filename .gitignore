@@ -24,3 +24,6 @@ playwright-report/
 # OS
 .DS_Store
 Thumbs.db
+
+# i18n
+translation-dispute.md
