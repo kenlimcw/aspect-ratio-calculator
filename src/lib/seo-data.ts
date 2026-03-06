@@ -20,6 +20,9 @@ export interface RatioData {
   useCases: string[];
   dimensions: RatioDimension[];
   faq: FaqItem[];
+  relatedRatios: string[];
+  relatedPlatforms: string[];
+  cssValue: string;
 }
 
 export interface PlatformFormat {
@@ -38,6 +41,7 @@ export interface PlatformData {
   formats: PlatformFormat[];
   tips: string[];
   faq: FaqItem[];
+  relatedRatios: string[];
 }
 
 export interface ArticleSection {
@@ -102,6 +106,9 @@ export const RATIO_DATA: Record<string, RatioData> = {
         a: "4K UHD (Ultra High Definition) at 16:9 is 3840×2160 pixels — exactly four times the area of 1920×1080. Cinema 4K (DCI 4K) is 4096×2160, which is a slightly different ratio (1.9:1).",
       },
     ],
+    relatedRatios: ["4-3", "21-9", "9-16"],
+    relatedPlatforms: ["youtube", "twitter", "linkedin", "facebook"],
+    cssValue: "16 / 9",
   },
 
   "9-16": {
@@ -142,6 +149,9 @@ export const RATIO_DATA: Record<string, RatioData> = {
         a: "Yes — YouTube Shorts is specifically designed for 9:16 vertical videos. Regular YouTube uploads also accept 9:16, but they will display with black bars (pillarboxing) on desktop when embedded in a 16:9 player.",
       },
     ],
+    relatedRatios: ["16-9", "4-5", "1-1"],
+    relatedPlatforms: ["instagram", "tiktok", "youtube"],
+    cssValue: "9 / 16",
   },
 
   "4-3": {
@@ -183,6 +193,9 @@ export const RATIO_DATA: Record<string, RatioData> = {
         a: "4:3 is more square (ratio of 1.33:1) while 16:9 is wider and more rectangular (ratio of 1.78:1). 16:9 is the modern TV and video standard; 4:3 is the legacy standard that preceded it. When viewing 4:3 content on a 16:9 screen, black bars (pillarboxing) appear on the sides.",
       },
     ],
+    relatedRatios: ["16-9", "3-2", "5-4"],
+    relatedPlatforms: ["youtube", "facebook"],
+    cssValue: "4 / 3",
   },
 
   "1-1": {
@@ -222,6 +235,9 @@ export const RATIO_DATA: Record<string, RatioData> = {
         a: "Instagram was originally designed around mobile photography and chose the 1:1 square format to standardise the feed grid. While they later added portrait (4:5) and landscape (1.91:1) formats, the 1:1 square remains the classic Instagram format.",
       },
     ],
+    relatedRatios: ["4-5", "4-3", "3-2"],
+    relatedPlatforms: ["instagram", "facebook", "linkedin"],
+    cssValue: "1 / 1",
   },
 
   "4-5": {
@@ -259,6 +275,9 @@ export const RATIO_DATA: Record<string, RatioData> = {
         a: "A 4:5 post takes up more vertical space in the feed than a 1:1 square or 1.91:1 landscape post, which can help capture more attention as users scroll. Many creators report higher engagement rates with portrait posts, though this is content-dependent.",
       },
     ],
+    relatedRatios: ["1-1", "9-16", "3-2"],
+    relatedPlatforms: ["instagram", "pinterest", "facebook"],
+    cssValue: "4 / 5",
   },
 
   "3-2": {
@@ -293,6 +312,9 @@ export const RATIO_DATA: Record<string, RatioData> = {
         a: "Any resolution where width ÷ height = 1.5 is a 3:2 ratio. Common examples: 3000×2000, 4500×3000, 6000×4000. Most DSLR cameras capture images natively at 3:2.",
       },
     ],
+    relatedRatios: ["4-3", "16-9", "5-4"],
+    relatedPlatforms: ["instagram", "facebook"],
+    cssValue: "3 / 2",
   },
 
   "21-9": {
@@ -326,6 +348,9 @@ export const RATIO_DATA: Record<string, RatioData> = {
         a: "Many modern games natively support 21:9 ultrawide. Some older titles or certain multiplayer games restrict the field of view to 16:9 to prevent competitive advantages. Check a game's settings or community sites for ultrawide support status.",
       },
     ],
+    relatedRatios: ["16-9", "2-1"],
+    relatedPlatforms: [],
+    cssValue: "21 / 9",
   },
 
   "2-1": {
@@ -355,6 +380,9 @@ export const RATIO_DATA: Record<string, RatioData> = {
         a: "A 2:1 ratio (2.0:1) is wider than 16:9 (1.78:1). A 2:1 image is more panoramic — for example, 2000×1000 pixels versus 1920×1080 at 16:9. 2:1 has more horizontal space relative to its height.",
       },
     ],
+    relatedRatios: ["16-9", "21-9"],
+    relatedPlatforms: ["twitter"],
+    cssValue: "2 / 1",
   },
 
   "5-4": {
@@ -384,6 +412,9 @@ export const RATIO_DATA: Record<string, RatioData> = {
         a: "Common 5:4 pixel sizes include 1280×1024, 2560×2048, and any dimension pair where width ÷ height = 1.25. An 8×10 print scanned at 300 DPI produces 2400×3000 pixels (in portrait orientation, 3:2.4 = 5:4).",
       },
     ],
+    relatedRatios: ["4-3", "1-1", "3-2"],
+    relatedPlatforms: [],
+    cssValue: "5 / 4",
   },
 };
 
@@ -427,6 +458,7 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
         a: "Keep all text and key visuals within the safe zone: roughly 1080×1420 pixels centred within the 1080×1920 canvas. The top 250px and bottom 250px are typically covered by UI elements like the username and reply bar.",
       },
     ],
+    relatedRatios: ["1-1", "4-5", "9-16"],
   },
 
   youtube: {
@@ -465,6 +497,7 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
         a: "YouTube Shorts uses a 9:16 vertical ratio, with the recommended resolution of 1080×1920 pixels. The maximum length for Shorts is 60 seconds.",
       },
     ],
+    relatedRatios: ["16-9", "9-16", "1-1"],
   },
 
   tiktok: {
@@ -501,6 +534,7 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
         a: "As of 2026, TikTok allows videos up to 10 minutes long for standard accounts. Shorter videos (15–60 seconds) typically perform better in the recommendation algorithm.",
       },
     ],
+    relatedRatios: ["9-16", "1-1"],
   },
 
   twitter: {
@@ -535,6 +569,7 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
         a: "The recommended X header size is 1500×500 pixels (3:1 ratio). Note that the banner is cropped differently on desktop vs. mobile — keep important content within the centre area.",
       },
     ],
+    relatedRatios: ["16-9", "1-1", "2-1"],
   },
 
   linkedin: {
@@ -569,6 +604,7 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
         a: "The LinkedIn personal banner (background photo) should be 1584×396 pixels (4:1 ratio). This is the size that displays behind your profile picture on desktop and mobile.",
       },
     ],
+    relatedRatios: ["1-1", "16-9"],
   },
 
   facebook: {
@@ -603,6 +639,7 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
         a: "The recommended Facebook cover photo size is 820×312 pixels for desktop. On mobile, it displays as 640×360. To avoid cropping, keep important content in the centre 640×312 area.",
       },
     ],
+    relatedRatios: ["1-1", "16-9", "9-16"],
   },
 
   pinterest: {
@@ -640,6 +677,7 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
         a: "Idea Pins (formerly Story Pins) are multi-page, full-screen vertical content (9:16, 1080×1920). They do not link to external websites and are designed for native content within Pinterest.",
       },
     ],
+    relatedRatios: ["3-2", "1-1", "9-16"],
   },
 };
 

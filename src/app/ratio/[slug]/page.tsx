@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { RATIO_DATA, RATIO_SLUGS } from "@/lib/seo-data";
+import { RATIO_DATA, RATIO_SLUGS, PLATFORM_DATA } from "@/lib/seo-data";
+import { RatioCalculator } from "@/components/RatioCalculator";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -42,13 +43,37 @@ export default async function RatioPage({ params }: Props) {
     })),
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://aspect-ratio-calculator.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: `${data.label} Aspect Ratio`,
+        item: `https://aspect-ratio-calculator.com/ratio/${slug}`,
+      },
+    ],
+  };
+
   const calcUrl = `/?rw=${data.w}&rh=${data.h}&mode=scale`;
+  const paddingBottom = ((data.h / data.w) * 100).toFixed(4);
 
   return (
     <main className="min-h-screen px-4 py-8 md:py-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <div className="max-w-2xl mx-auto">
@@ -74,12 +99,9 @@ export default async function RatioPage({ params }: Props) {
           <p className="text-[var(--muted)] text-sm md:text-base leading-relaxed mb-6">
             {data.explanation}
           </p>
-          <Link
-            href={calcUrl}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-sm font-medium transition-colors"
-          >
-            Open {data.label} Calculator →
-          </Link>
+
+          {/* Inline calculator locked to this ratio */}
+          <RatioCalculator w={data.w} h={data.h} label={data.label} calcUrl={calcUrl} />
         </div>
 
         <div className="space-y-4">
@@ -127,6 +149,30 @@ export default async function RatioPage({ params }: Props) {
             </ul>
           </div>
 
+          {/* CSS Code Snippet */}
+          <div className="seo-card">
+            <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
+              CSS for {data.label}
+            </h2>
+            <p className="text-sm text-[var(--muted)] mb-3">
+              Use these CSS snippets to enforce the {data.label} ratio on any element:
+            </p>
+            <div className="space-y-2">
+              <div className="rounded-md bg-[var(--background)] border border-[var(--border)] p-3">
+                <p className="text-xs text-[var(--muted)] mb-1">Modern (CSS aspect-ratio)</p>
+                <code className="font-mono text-sm text-[var(--accent)]">
+                  aspect-ratio: {data.cssValue};
+                </code>
+              </div>
+              <div className="rounded-md bg-[var(--background)] border border-[var(--border)] p-3">
+                <p className="text-xs text-[var(--muted)] mb-1">Legacy (padding-bottom hack)</p>
+                <code className="font-mono text-sm text-[var(--accent)]">
+                  padding-bottom: {paddingBottom}%;
+                </code>
+              </div>
+            </div>
+          </div>
+
           {/* FAQ */}
           <div className="seo-card">
             <h2 className="text-base font-semibold text-[var(--foreground)] mb-4">
@@ -151,6 +197,54 @@ export default async function RatioPage({ params }: Props) {
               ))}
             </div>
           </div>
+
+          {/* Related Ratios */}
+          {data.relatedRatios.length > 0 && (
+            <div className="seo-card">
+              <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
+                Related Aspect Ratios
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {data.relatedRatios.map((rs) => {
+                  const related = RATIO_DATA[rs];
+                  if (!related) return null;
+                  return (
+                    <Link
+                      key={rs}
+                      href={`/ratio/${rs}`}
+                      className="px-3 py-1.5 text-sm font-mono rounded-md border border-[var(--border)] text-[var(--foreground-dim)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                    >
+                      {related.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Platforms Using This Ratio */}
+          {data.relatedPlatforms.length > 0 && (
+            <div className="seo-card">
+              <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
+                Platforms Using {data.label}
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {data.relatedPlatforms.map((ps) => {
+                  const platform = PLATFORM_DATA[ps];
+                  if (!platform) return null;
+                  return (
+                    <Link
+                      key={ps}
+                      href={`/platform/${ps}`}
+                      className="px-3 py-1.5 text-sm rounded-md border border-[var(--border)] text-[var(--foreground-dim)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                    >
+                      {platform.name}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* CTA */}
           <div className="seo-card text-center">

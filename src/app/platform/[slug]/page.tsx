@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PLATFORM_DATA, PLATFORM_SLUGS } from "@/lib/seo-data";
+import { PLATFORM_DATA, PLATFORM_SLUGS, RATIO_DATA } from "@/lib/seo-data";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -42,11 +42,37 @@ export default async function PlatformPage({ params }: Props) {
     })),
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://aspect-ratio-calculator.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: `${data.name} Image Sizes`,
+        item: `https://aspect-ratio-calculator.com/platform/${slug}`,
+      },
+    ],
+  };
+
+  // Get other platforms for cross-linking (exclude current)
+  const otherPlatforms = PLATFORM_SLUGS.filter((s) => s !== slug);
+
   return (
     <main className="min-h-screen px-4 py-8 md:py-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <div className="max-w-2xl mx-auto">
@@ -146,6 +172,51 @@ export default async function PlatformPage({ params }: Props) {
                   </div>
                 </details>
               ))}
+            </div>
+          </div>
+
+          {/* Aspect Ratios Used by This Platform */}
+          {data.relatedRatios.length > 0 && (
+            <div className="seo-card">
+              <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
+                Aspect Ratios Used by {data.name}
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {data.relatedRatios.map((rs) => {
+                  const ratio = RATIO_DATA[rs];
+                  if (!ratio) return null;
+                  return (
+                    <Link
+                      key={rs}
+                      href={`/ratio/${rs}`}
+                      className="px-3 py-1.5 text-sm font-mono rounded-md border border-[var(--border)] text-[var(--foreground-dim)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                    >
+                      {ratio.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Other Platforms */}
+          <div className="seo-card">
+            <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
+              Other Platform Guides
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {otherPlatforms.map((ps) => {
+                const platform = PLATFORM_DATA[ps];
+                return (
+                  <Link
+                    key={ps}
+                    href={`/platform/${ps}`}
+                    className="px-3 py-1.5 text-sm rounded-md border border-[var(--border)] text-[var(--foreground-dim)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                  >
+                    {platform.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
