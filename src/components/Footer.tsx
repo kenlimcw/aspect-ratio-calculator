@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FooterFeedbackLink } from "@/components/FooterFeedbackLink";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useTranslation } from "@/components/I18nProvider";
@@ -33,6 +34,7 @@ function buildLocalePath(basePath: string, locale: LocaleConfig): string {
 export function Footer({ locale: localeProp, seoData }: { locale?: string; seoData?: FooterSeoData }) {
   const { t, locale: ctxLocale } = useTranslation();
   const locale = localeProp ?? ctxLocale;
+  const pathname = usePathname();
   const year = new Date().getFullYear();
 
   const prefix = locale === "en" ? "" : `/${LOCALES.find((l) => l.code === locale)?.urlSegment ?? locale}`;
@@ -99,10 +101,7 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             </h4>
             <ul className="space-y-1.5">
               {LOCALES.map((l) => {
-                const basePath =
-                  typeof window !== "undefined"
-                    ? getBasePath(window.location.pathname)
-                    : "/";
+                const basePath = getBasePath(pathname);
                 const href = buildLocalePath(basePath, l);
                 return (
                   <li key={l.code}>
