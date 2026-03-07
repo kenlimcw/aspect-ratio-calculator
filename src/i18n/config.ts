@@ -18,7 +18,10 @@ export const LOCALES: LocaleConfig[] = [
   { code: "zh-Hans", name: "Simplified Chinese", nativeName: "简体中文", dir: "ltr", hreflang: "zh-Hans", urlPrefix: "/zh-hans", urlSegment: "zh-hans" },
   { code: "zh-Hant", name: "Traditional Chinese", nativeName: "繁體中文", dir: "ltr", hreflang: "zh-Hant", urlPrefix: "/zh-hant", urlSegment: "zh-hant" },
   { code: "ar", name: "Arabic", nativeName: "العربية", dir: "rtl", hreflang: "ar", urlPrefix: "/ar", urlSegment: "ar" },
-  { code: "ru", name: "Russian", nativeName: "Русский", dir: "ltr", hreflang: "ru", urlPrefix: "/ru", urlSegment: "ru" },
+  { code: "uk", name: "Ukrainian", nativeName: "Українська", dir: "ltr", hreflang: "uk", urlPrefix: "/uk", urlSegment: "uk" },
+  { code: "pl", name: "Polish", nativeName: "Polski", dir: "ltr", hreflang: "pl", urlPrefix: "/pl", urlSegment: "pl" },
+  { code: "ro", name: "Romanian", nativeName: "Română", dir: "ltr", hreflang: "ro", urlPrefix: "/ro", urlSegment: "ro" },
+  { code: "vi", name: "Vietnamese", nativeName: "Tiếng Việt", dir: "ltr", hreflang: "vi", urlPrefix: "/vi", urlSegment: "vi" },
 ];
 
 export const DEFAULT_LOCALE = "en";

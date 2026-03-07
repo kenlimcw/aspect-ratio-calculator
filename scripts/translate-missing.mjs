@@ -9,7 +9,14 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const MESSAGES_DIR = path.join(__dirname, "../src/i18n/messages");
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+let GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+if (!GEMINI_API_KEY) {
+  const envPath = path.join(__dirname, "../../.env.main");
+  if (fs.existsSync(envPath)) {
+    const match = fs.readFileSync(envPath, "utf-8").match(/^GEMINI_API_KEY=(.+)$/m);
+    if (match) GEMINI_API_KEY = match[1].trim();
+  }
+}
 if (!GEMINI_API_KEY) {
   console.error("GEMINI_API_KEY environment variable is required. Set it or add to ../.env.main");
   process.exit(1);
@@ -26,20 +33,38 @@ const LOCALES = [
   { code: "zh-Hans", name: "Simplified Chinese" },
   { code: "zh-Hant", name: "Traditional Chinese" },
   { code: "ar", name: "Arabic" },
-  { code: "ru", name: "Russian" },
+  { code: "uk", name: "Ukrainian" },
+  { code: "pl", name: "Polish" },
+  { code: "ro", name: "Romanian" },
+  { code: "vi", name: "Vietnamese" },
 ];
 
-async function callGemini(prompt) {
-  const res = await fetch(GEMINI_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: { temperature: 0.1, maxOutputTokens: 16000 },
-    }),
-  });
-  const data = await res.json();
-  return data.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+async function callGemini(prompt, retries = 3) {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const res = await fetch(GEMINI_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { temperature: 0.1, maxOutputTokens: 65000 },
+        }),
+      });
+      if (res.status === 429) {
+        const wait = 10000 * (attempt + 1);
+        console.log(`    Rate limited, waiting ${wait / 1000}s...`);
+        await new Promise((r) => setTimeout(r, wait));
+        continue;
+      }
+      const data = await res.json();
+      return data.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+    } catch (e) {
+      if (attempt < retries) {
+        await new Promise((r) => setTimeout(r, 5000 * (attempt + 1)));
+      } else throw e;
+    }
+  }
+  return "";
 }
 
 function findMissing(en, locale) {
@@ -62,7 +87,7 @@ function findMissing(en, locale) {
   return missing;
 }
 
-async function translateMissing(missing, langName) {
+async function translateNamespace(nsKeys, langName) {
   const prompt = `Translate this JSON from English to ${langName}. Return ONLY valid JSON, no markdown fences.
 
 Rules:
@@ -73,18 +98,42 @@ Rules:
 - Translate naturally, not word-for-word
 
 JSON to translate:
-${JSON.stringify(missing, null, 2)}`;
+${JSON.stringify(nsKeys, null, 2)}`;
 
   const raw = await callGemini(prompt);
-  // Strip markdown fences if present
   const cleaned = raw.replace(/^```(?:json)?\s*/m, "").replace(/\s*```\s*$/m, "").trim();
   try {
     return JSON.parse(cleaned);
   } catch (e) {
-    console.error(`  Failed to parse Gemini response for ${langName}:`, e.message);
-    console.error(`  Raw (first 200 chars):`, cleaned.slice(0, 200));
+    console.error(`    Parse error: ${e.message}`);
+    console.error(`    Raw (first 200 chars): ${cleaned.slice(0, 200)}`);
     return null;
   }
+}
+
+async function translateMissing(missing, langName) {
+  const result = {};
+  const namespaces = Object.keys(missing);
+
+  for (let i = 0; i < namespaces.length; i++) {
+    const ns = namespaces[i];
+    process.stdout.write(`    [${i + 1}/${namespaces.length}] ${ns}...`);
+    const translated = await translateNamespace(missing[ns], langName);
+    if (translated) {
+      result[ns] = translated;
+      console.log(` OK (${Object.keys(translated).length} keys)`);
+    } else {
+      // Fall back to English for this namespace
+      result[ns] = missing[ns];
+      console.log(` FALLBACK (using English)`);
+    }
+    // Small delay between namespace calls
+    if (i < namespaces.length - 1) {
+      await new Promise((r) => setTimeout(r, 300));
+    }
+  }
+
+  return result;
 }
 
 async function main() {

@@ -15,7 +15,14 @@ const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SEO_DATA_DIR = path.join(__dirname, "../src/i18n/seo-data");
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+let GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+if (!GEMINI_API_KEY) {
+  const envPath = path.join(__dirname, "../../.env.main");
+  if (fs.existsSync(envPath)) {
+    const match = fs.readFileSync(envPath, "utf-8").match(/^GEMINI_API_KEY=(.+)$/m);
+    if (match) GEMINI_API_KEY = match[1].trim();
+  }
+}
 if (!GEMINI_API_KEY) {
   console.error("GEMINI_API_KEY environment variable is required. Set it or add to ../.env.main");
   process.exit(1);
@@ -32,7 +39,10 @@ const LOCALES = [
   { code: "zh-Hans", name: "Simplified Chinese" },
   { code: "zh-Hant", name: "Traditional Chinese" },
   { code: "ar", name: "Arabic" },
-  { code: "ru", name: "Russian" },
+  { code: "uk", name: "Ukrainian" },
+  { code: "pl", name: "Polish" },
+  { code: "ro", name: "Romanian" },
+  { code: "vi", name: "Vietnamese" },
 ];
 
 const DELAY_BETWEEN_CALLS_MS = 6000;

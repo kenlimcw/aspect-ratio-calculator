@@ -34,7 +34,10 @@ const TARGET_LOCALES = [
   { code: "zh-Hans", name: "Simplified Chinese", nativeName: "简体中文" },
   { code: "zh-Hant", name: "Traditional Chinese", nativeName: "繁體中文" },
   { code: "ar", name: "Arabic", nativeName: "العربية" },
-  { code: "ru", name: "Russian", nativeName: "Русский" },
+  { code: "uk", name: "Ukrainian", nativeName: "Українська" },
+  { code: "pl", name: "Polish", nativeName: "Polski" },
+  { code: "ro", name: "Romanian", nativeName: "Română" },
+  { code: "vi", name: "Vietnamese", nativeName: "Tiếng Việt" },
 ];
 
 // ── Load environment ──────────────────────────────────────────
