@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import Script from "next/script";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { InstallPrompt } from "@/components/InstallPrompt";
 import { ServiceWorkerRegistrar } from "@/components/ServiceWorkerRegistrar";
@@ -9,6 +8,8 @@ import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/Footer";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { I18nProvider } from "@/components/I18nProvider";
+import { AnalyticsScripts } from "@/components/AnalyticsScripts";
+import { CookieConsent } from "@/components/CookieConsent";
 import { getMessages } from "@/i18n/get-messages";
 import { getLocaleFromSegment, LOCALES, BASE_URL, LOCALE_SEGMENTS } from "@/i18n/config";
 import { getAlternates } from "@/lib/hreflang";
@@ -120,27 +121,10 @@ export default async function LocaleLayout({ children, params }: Props) {
             <ServiceWorkerRegistrar />
             <FeedbackWidget />
             <Analytics />
+            <AnalyticsScripts />
+            <CookieConsent />
           </ThemeProvider>
         </I18nProvider>
-        {/* Google Analytics 4 */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-K2FFY9EBDL"
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-K2FFY9EBDL');
-        `}</Script>
-        {/* Microsoft Clarity */}
-        <Script id="clarity-init" strategy="afterInteractive">{`
-          (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "vqoklhyc4l");
-        `}</Script>
       </body>
     </html>
   );

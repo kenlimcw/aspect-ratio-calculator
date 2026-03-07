@@ -107,10 +107,17 @@ export default async function PrivacyPage({ params }: Props) {
             </ul>
 
             <h3 className="text-sm font-semibold text-[var(--foreground)] mb-2">
-              {pv.s2h2 ?? "Anonymous analytics"}
+              {pv.s2h2 ?? "Analytics (with your consent)"}
             </h3>
             <p className="text-sm text-[var(--muted)] leading-relaxed mb-4">
               {pv.s2analytics ?? "We use Vercel Analytics to collect anonymous, aggregated data about how the Service is used. This includes page views, general geographic region (country level only), device type, and referring source. Vercel Analytics does not use cookies, does not fingerprint your browser, and does not collect personally identifiable information (PII)."}
+            </p>
+
+            <h3 className="text-sm font-semibold text-[var(--foreground)] mb-2">
+              {pv.s2h2b ?? "Optional analytics (Google Analytics & Microsoft Clarity)"}
+            </h3>
+            <p className="text-sm text-[var(--muted)] leading-relaxed mb-4">
+              {pv.s2ga4clarity ?? "With your consent, we also use Google Analytics 4 and Microsoft Clarity to understand visitor behaviour in more detail. These tools set cookies and may collect your approximate location and device information. You can accept or decline these cookies via the cookie banner shown on your first visit, or change your preference at any time via the Cookie Settings link."}
             </p>
 
             <h3 className="text-sm font-semibold text-[var(--foreground)] mb-2">
@@ -153,8 +160,10 @@ export default async function PrivacyPage({ params }: Props) {
                 </thead>
                 <tbody>
                   {[
-                    ["Vercel", pv.s4vercelPurpose ?? "Hosting & anonymous analytics", "vercel.com/legal/privacy-policy"],
+                    ["Vercel", pv.s4vercelPurpose ?? "Hosting & anonymous analytics (cookieless)", "vercel.com/legal/privacy-policy"],
                     ["Resend", pv.s4resendPurpose ?? "Feedback email delivery", "resend.com/legal/privacy-policy"],
+                    ["Google Analytics", pv.s4ga4Purpose ?? "Optional usage analytics (cookies, requires consent)", "policies.google.com/privacy"],
+                    ["Microsoft Clarity", pv.s4clarityPurpose ?? "Optional session analytics (cookies, requires consent)", "privacy.microsoft.com/en-us/privacystatement"],
                   ].map(([service, purpose, policy]) => (
                     <tr key={service}>
                       <td className="font-medium text-[var(--foreground)]">
@@ -188,9 +197,36 @@ export default async function PrivacyPage({ params }: Props) {
               <li>{pv.s5list3 ?? "Request deletion of any personal information you have voluntarily provided (e.g., via the feedback form)"}</li>
               <li>{pv.s5list4 ?? "Lodge a complaint with the Office of the Australian Information Commissioner (OAIC) at oaic.gov.au if you believe we have breached your privacy"}</li>
             </ul>
+
+            <p className="text-sm text-[var(--muted)] leading-relaxed mt-4 mb-2">
+              {pv.s5introGdpr ?? "If you are in the EU/EEA or UK, you also have the right to:"}
+            </p>
+            <ul className="text-sm text-[var(--muted)] space-y-1.5 list-disc list-inside leading-relaxed">
+              <li>{pv.s5gdpr1 ?? "Data portability — receive your personal data in a structured, machine-readable format (Art. 20 GDPR)"}</li>
+              <li>{pv.s5gdpr2 ?? "Restriction of processing — ask us to pause processing of your data in certain circumstances (Art. 18 GDPR)"}</li>
+              <li>{pv.s5gdpr3 ?? "Object to processing — object to processing based on legitimate interests (Art. 21 GDPR)"}</li>
+              <li>{pv.s5gdpr4 ?? "Not be subject to solely automated decisions that produce legal or similarly significant effects (Art. 22 GDPR) — we do not carry out any such automated decision-making"}</li>
+              <li>{pv.s5gdpr5 ?? "Lodge a complaint with your local EU/EEA Data Protection Authority (DPA) — find your DPA at edpb.europa.eu/about-edpb/about-edpb/members_en"}</li>
+            </ul>
+
             <p className="text-sm text-[var(--muted)] leading-relaxed mt-3">
               {pv.s5contact ?? "To exercise any of these rights, please contact us via the feedback widget on the calculator page."}
             </p>
+          </div>
+
+          {/* Lawful Basis (GDPR) */}
+          <div className="seo-card">
+            <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
+              {pv.s5bTitle ?? "5b. Lawful Basis for Processing (GDPR)"}
+            </h2>
+            <p className="text-sm text-[var(--muted)] leading-relaxed mb-3">
+              {pv.s5bIntro ?? "Where GDPR applies, we rely on the following lawful bases:"}
+            </p>
+            <ul className="text-sm text-[var(--muted)] space-y-1.5 list-disc list-inside leading-relaxed">
+              <li>{pv.s5bList1 ?? "Essential operations (theme preference, offline cache): Legitimate interests (Art. 6(1)(f)) — necessary to deliver the Service you requested"}</li>
+              <li>{pv.s5bList2 ?? "Analytics cookies (Google Analytics & Clarity): Consent (Art. 6(1)(a)) — only set after you accept via the cookie banner"}</li>
+              <li>{pv.s5bList3 ?? "Feedback email: Legitimate interests (Art. 6(1)(f)) — to respond to your message"}</li>
+            </ul>
           </div>
 
           {/* Retention */}
