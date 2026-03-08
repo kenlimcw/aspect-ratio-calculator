@@ -256,7 +256,10 @@
     "gotIt": "فهمت",
     "step1": "اضغط على زر <strong>المشاركة</strong> في شريط أدوات Safari",
     "step2": "مرر لأسفل واضغط على <strong>\"إضافة إلى الشاشة الرئيسية\"</strong>",
-    "step3": "اضغط على <strong>\"إضافة\"</strong> للتأكيد"
+    "step3": "اضغط على <strong>\"إضافة\"</strong> للتأكيد",
+    "maybeLater": "ربما لاحقًا",
+    "learnWhy": "تعرف على السبب ←",
+    "miniChipLabel": "تثبيت للاستخدام دون اتصال"
   },
   "feedbackWidget": {
     "feedbackTab": "الملاحظات",
@@ -503,5 +506,20 @@
   },
   "languageSwitcher": {
     "label": "اللغة"
+  },
+  "cookieConsent": {
+    "title": "تفضيلات ملفات تعريف الارتباط",
+    "body": "نحن نستخدم Google Analytics و Microsoft Clarity لفهم كيفية استخدام الزوار لهذا الموقع. تقوم هذه الأدوات بتعيين ملفات تعريف الارتباط وجمع بيانات الاستخدام المجهولة. يمكنك القبول أو الرفض — ستعمل حاسبتك دائمًا بغض النظر عن اختيارك.",
+    "acceptAll": "قبول التحليلات",
+    "rejectAll": "رفض",
+    "manageSettings": "إعدادات ملفات تعريف الارتباط",
+    "settingsTitle": "إدارة تفضيلات ملفات تعريف الارتباط",
+    "analyticsCookies": "ملفات تعريف الارتباط التحليلية",
+    "analyticsCookiesDesc": "Google Analytics و Microsoft Clarity — تساعدنا على تحسين الحاسبة. يمكنك تغيير هذا في أي وقت.",
+    "essentialLabel": "أساسي",
+    "essentialDesc": "تفضيل المظهر وذاكرة التخزين المؤقت دون اتصال — نشط دائمًا، لا يمكن تعطيله.",
+    "alwaysOn": "دائم التشغيل",
+    "save": "حفظ التفضيلات",
+    "privacyLink": "سياسة الخصوصية"
   }
 }

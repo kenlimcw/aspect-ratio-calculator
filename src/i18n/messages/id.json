@@ -256,7 +256,10 @@
     "gotIt": "Mengerti",
     "step1": "Ketuk tombol <strong>Bagikan</strong> di bilah alat Safari",
     "step2": "Gulir ke bawah dan ketuk <strong>\"Tambahkan ke Layar Utama\"</strong>",
-    "step3": "Ketuk <strong>\"Tambah\"</strong> untuk mengonfirmasi"
+    "step3": "Ketuk <strong>\"Tambah\"</strong> untuk mengonfirmasi",
+    "maybeLater": "Mungkin nanti",
+    "learnWhy": "Pelajari alasannya →",
+    "miniChipLabel": "Instal untuk penggunaan offline"
   },
   "feedbackWidget": {
     "feedbackTab": "Umpan Balik",
@@ -503,5 +506,20 @@
   },
   "languageSwitcher": {
     "label": "Bahasa"
+  },
+  "cookieConsent": {
+    "title": "Preferensi Cookie",
+    "body": "Kami menggunakan Google Analytics dan Microsoft Clarity untuk memahami bagaimana pengunjung menggunakan situs ini. Alat-alat ini mengatur cookie dan mengumpulkan data penggunaan anonim. Anda dapat menerima atau menolak — kalkulator Anda selalu berfungsi terlepas dari pilihan Anda.",
+    "acceptAll": "Terima Analitik",
+    "rejectAll": "Tolak",
+    "manageSettings": "Pengaturan Cookie",
+    "settingsTitle": "Kelola Preferensi Cookie",
+    "analyticsCookies": "Cookie Analitik",
+    "analyticsCookiesDesc": "Google Analytics & Microsoft Clarity — membantu kami meningkatkan kalkulator. Anda dapat mengubah ini kapan saja.",
+    "essentialLabel": "Esensial",
+    "essentialDesc": "Preferensi tema & cache offline — selalu aktif, tidak dapat dinonaktifkan.",
+    "alwaysOn": "Selalu aktif",
+    "save": "Simpan Preferensi",
+    "privacyLink": "Kebijakan Privasi"
   }
 }

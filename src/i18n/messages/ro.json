@@ -256,7 +256,10 @@
     "gotIt": "Am înțeles",
     "step1": "Atinge butonul <strong>Partajează</strong> din bara de instrumente Safari",
     "step2": "Derulează în jos și atinge <strong>„Adaugă la ecranul principal”</strong>",
-    "step3": "Atinge <strong>„Adaugă”</strong> pentru a confirma"
+    "step3": "Atinge <strong>„Adaugă”</strong> pentru a confirma",
+    "maybeLater": "Poate mai târziu",
+    "learnWhy": "Află de ce →",
+    "miniChipLabel": "Instalează pentru utilizare offline"
   },
   "feedbackWidget": {
     "feedbackTab": "Feedback",
@@ -502,5 +505,20 @@
   },
   "languageSwitcher": {
     "label": "Limbă"
+  },
+  "cookieConsent": {
+    "title": "Preferințe cookie",
+    "body": "Folosim Google Analytics și Microsoft Clarity pentru a înțelege cum vizitatorii utilizează acest site. Aceste instrumente setează cookie-uri și colectează date anonime de utilizare. Puteți accepta sau refuza — calculatorul dumneavoastră funcționează întotdeauna indiferent de alegerea dumneavoastră.",
+    "acceptAll": "Acceptă Analiza",
+    "rejectAll": "Refuză",
+    "manageSettings": "Setări cookie",
+    "settingsTitle": "Gestionează Preferințele Cookie",
+    "analyticsCookies": "Cookie-uri de Analiză",
+    "analyticsCookiesDesc": "Google Analytics și Microsoft Clarity — ne ajută să îmbunătățim calculatorul. Puteți schimba acest lucru oricând.",
+    "essentialLabel": "Esențiale",
+    "essentialDesc": "Preferința temei și cache-ul offline — întotdeauna active, nu pot fi dezactivate.",
+    "alwaysOn": "Întotdeauna activ",
+    "save": "Salvează Preferințele",
+    "privacyLink": "Politica de confidențialitate"
   }
 }

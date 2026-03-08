@@ -256,7 +256,10 @@
     "gotIt": "Rozumiem",
     "step1": "Stuknij przycisk <strong>Udostępnij</strong> na pasku narzędzi Safari",
     "step2": "Przewiń w dół i stuknij <strong>„Dodaj do ekranu początkowego”</strong>",
-    "step3": "Stuknij <strong>„Dodaj”</strong>, aby potwierdzić"
+    "step3": "Stuknij <strong>„Dodaj”</strong>, aby potwierdzić",
+    "maybeLater": "Może później",
+    "learnWhy": "Dowiedz się dlaczego →",
+    "miniChipLabel": "Zainstaluj do użytku offline"
   },
   "feedbackWidget": {
     "feedbackTab": "Opinie",
@@ -502,5 +505,20 @@
   },
   "languageSwitcher": {
     "label": "Język"
+  },
+  "cookieConsent": {
+    "title": "Preferencje dotyczące plików cookie",
+    "body": "Używamy Google Analytics i Microsoft Clarity, aby zrozumieć, w jaki sposób odwiedzający korzystają z tej witryny. Narzędzia te ustawiają pliki cookie i zbierają anonimowe dane użytkowania. Możesz zaakceptować lub odrzucić — Twój kalkulator zawsze działa niezależnie od Twojego wyboru.",
+    "acceptAll": "Akceptuj analitykę",
+    "rejectAll": "Odrzuć",
+    "manageSettings": "Ustawienia plików cookie",
+    "settingsTitle": "Zarządzaj preferencjami plików cookie",
+    "analyticsCookies": "Analityczne pliki cookie",
+    "analyticsCookiesDesc": "Google Analytics i Microsoft Clarity — pomagają nam ulepszyć kalkulator. Możesz to zmienić w dowolnym momencie.",
+    "essentialLabel": "Niezbędne",
+    "essentialDesc": "Preferencje motywu i pamięć podręczna offline — zawsze aktywne, nie można wyłączyć.",
+    "alwaysOn": "Zawsze włączone",
+    "save": "Zapisz preferencje",
+    "privacyLink": "Polityka prywatności"
   }
 }

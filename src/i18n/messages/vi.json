@@ -256,7 +256,10 @@
     "gotIt": "Đã hiểu",
     "step1": "Chạm vào nút <strong>Chia sẻ</strong> trên thanh công cụ Safari",
     "step2": "Cuộn xuống và chạm vào <strong>\"Thêm vào Màn hình chính\"</strong>",
-    "step3": "Chạm vào <strong>\"Thêm\"</strong> để xác nhận"
+    "step3": "Chạm vào <strong>\"Thêm\"</strong> để xác nhận",
+    "maybeLater": "Có thể sau",
+    "learnWhy": "Tìm hiểu lý do →",
+    "miniChipLabel": "Cài đặt để sử dụng ngoại tuyến"
   },
   "feedbackWidget": {
     "feedbackTab": "Phản hồi",
@@ -502,5 +505,20 @@
   },
   "languageSwitcher": {
     "label": "Ngôn ngữ"
+  },
+  "cookieConsent": {
+    "title": "Tùy chọn Cookie",
+    "body": "Chúng tôi sử dụng Google Analytics và Microsoft Clarity để hiểu cách khách truy cập sử dụng trang web này. Các công cụ này đặt cookie và thu thập dữ liệu sử dụng ẩn danh. Bạn có thể chấp nhận hoặc từ chối — công cụ tính tỷ lệ khung hình của bạn luôn hoạt động bất kể lựa chọn của bạn.",
+    "acceptAll": "Chấp nhận Phân tích",
+    "rejectAll": "Từ chối",
+    "manageSettings": "Cài đặt Cookie",
+    "settingsTitle": "Quản lý Tùy chọn Cookie",
+    "analyticsCookies": "Cookie Phân tích",
+    "analyticsCookiesDesc": "Google Analytics & Microsoft Clarity — giúp chúng tôi cải thiện công cụ tính tỷ lệ khung hình. Bạn có thể thay đổi điều này bất cứ lúc nào.",
+    "essentialLabel": "Thiết yếu",
+    "essentialDesc": "Tùy chọn giao diện & bộ nhớ đệm ngoại tuyến — luôn hoạt động, không thể tắt.",
+    "alwaysOn": "Luôn bật",
+    "save": "Lưu Tùy chọn",
+    "privacyLink": "Chính sách Quyền riêng tư"
   }
 }

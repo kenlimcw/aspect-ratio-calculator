@@ -256,7 +256,10 @@
     "gotIt": "Entendido",
     "step1": "Toque el botón <strong>Compartir</strong> en la barra de herramientas de Safari",
     "step2": "Desplácese hacia abajo y toque <strong>\"Añadir a la pantalla de inicio\"</strong>",
-    "step3": "Toque <strong>\"Añadir\"</strong> para confirmar"
+    "step3": "Toque <strong>\"Añadir\"</strong> para confirmar",
+    "maybeLater": "Quizás más tarde",
+    "learnWhy": "Saber por qué →",
+    "miniChipLabel": "Instalar para uso sin conexión"
   },
   "feedbackWidget": {
     "feedbackTab": "Comentarios",
@@ -503,5 +506,20 @@
   },
   "languageSwitcher": {
     "label": "Idioma"
+  },
+  "cookieConsent": {
+    "title": "Preferencias de Cookies",
+    "body": "Utilizamos Google Analytics y Microsoft Clarity para entender cómo los visitantes usan este sitio. Estas herramientas establecen cookies y recopilan datos de uso anónimos. Puedes aceptar o rechazar — tu calculadora siempre funciona independientemente de tu elección.",
+    "acceptAll": "Aceptar Analíticas",
+    "rejectAll": "Rechazar",
+    "manageSettings": "Configuración de Cookies",
+    "settingsTitle": "Gestionar Preferencias de Cookies",
+    "analyticsCookies": "Cookies de Analíticas",
+    "analyticsCookiesDesc": "Google Analytics y Microsoft Clarity — nos ayuda a mejorar la calculadora. Puedes cambiar esto en cualquier momento.",
+    "essentialLabel": "Esenciales",
+    "essentialDesc": "Preferencia de tema y caché sin conexión — siempre activas, no se pueden desactivar.",
+    "alwaysOn": "Siempre activas",
+    "save": "Guardar Preferencias",
+    "privacyLink": "Política de Privacidad"
   }
 }

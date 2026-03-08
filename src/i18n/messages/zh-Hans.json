@@ -256,7 +256,10 @@
     "gotIt": "知道了",
     "step1": "轻触 Safari 工具栏中的<strong>分享</strong>按钮",
     "step2": "向下滚动并轻触<strong>“添加到主屏幕”</strong>",
-    "step3": "轻触<strong>“添加”</strong>以确认"
+    "step3": "轻触<strong>“添加”</strong>以确认",
+    "maybeLater": "稍后",
+    "learnWhy": "了解原因 →",
+    "miniChipLabel": "安装以离线使用"
   },
   "feedbackWidget": {
     "feedbackTab": "反馈",
@@ -503,5 +506,20 @@
   },
   "languageSwitcher": {
     "label": "语言"
+  },
+  "cookieConsent": {
+    "title": "Cookie 偏好设置",
+    "body": "我们使用 Google Analytics 和 Microsoft Clarity 来了解访问者如何使用本网站。这些工具会设置 Cookie 并收集匿名使用数据。您可以接受或拒绝 — 无论您的选择如何，您的计算器始终可以正常工作。",
+    "acceptAll": "接受分析 Cookie",
+    "rejectAll": "拒绝",
+    "manageSettings": "Cookie 设置",
+    "settingsTitle": "管理 Cookie 偏好设置",
+    "analyticsCookies": "分析 Cookie",
+    "analyticsCookiesDesc": "Google Analytics 和 Microsoft Clarity — 帮助我们改进计算器。您可以随时更改此设置。",
+    "essentialLabel": "必要",
+    "essentialDesc": "主题偏好设置和离线缓存 — 始终启用，无法禁用。",
+    "alwaysOn": "始终开启",
+    "save": "保存偏好设置",
+    "privacyLink": "隐私政策"
   }
 }

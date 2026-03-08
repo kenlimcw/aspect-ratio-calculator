@@ -256,7 +256,10 @@
     "gotIt": "了解しました",
     "step1": "Safariツールバーの<strong>共有</strong>ボタンをタップします",
     "step2": "下にスクロールして<strong>「ホーム画面に追加」</strong>をタップします",
-    "step3": "<strong>「追加」</strong>をタップして確定します"
+    "step3": "<strong>「追加」</strong>をタップして確定します",
+    "maybeLater": "後で",
+    "learnWhy": "理由を見る →",
+    "miniChipLabel": "オフライン利用のためにインストール"
   },
   "feedbackWidget": {
     "feedbackTab": "フィードバック",
@@ -503,5 +506,20 @@
   },
   "languageSwitcher": {
     "label": "言語"
+  },
+  "cookieConsent": {
+    "title": "Cookieの設定",
+    "body": "当サイトでは、訪問者の利用状況を把握するためにGoogle AnalyticsとMicrosoft Clarityを使用しています。これらのツールはCookieを設定し、匿名で利用データを収集します。同意または拒否を選択できます。どちらを選択しても、計算機は常に機能します。",
+    "acceptAll": "アナリティクスを許可",
+    "rejectAll": "拒否",
+    "manageSettings": "Cookieの設定",
+    "settingsTitle": "Cookieの設定を管理",
+    "analyticsCookies": "アナリティクスCookie",
+    "analyticsCookiesDesc": "Google AnalyticsとMicrosoft Clarity — 計算機の改善に役立ちます。これはいつでも変更できます。",
+    "essentialLabel": "必須",
+    "essentialDesc": "テーマ設定とオフラインキャッシュ — 常に有効で、無効にすることはできません。",
+    "alwaysOn": "常にオン",
+    "save": "設定を保存",
+    "privacyLink": "プライバシーポリシー"
   }
 }
