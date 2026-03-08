@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslation } from "@/components/I18nProvider";
+
 /**
  * Thin client button that lives in the server-rendered Footer.
  * Clicking it:
@@ -8,6 +10,8 @@
  *  3. FeedbackWidget re-shows itself and opens the panel
  */
 export function FooterFeedbackLink() {
+  const { t } = useTranslation();
+
   function handleClick() {
     localStorage.removeItem("feedback-fab-hidden");
     window.dispatchEvent(new CustomEvent("show-feedback"));
@@ -19,7 +23,7 @@ export function FooterFeedbackLink() {
       onClick={handleClick}
       className="hover:text-[var(--foreground)] transition-colors cursor-pointer bg-transparent border-none p-0 font-inherit text-inherit"
     >
-      Give feedback
+      {t("footer", "feedback")}
     </button>
   );
 }
