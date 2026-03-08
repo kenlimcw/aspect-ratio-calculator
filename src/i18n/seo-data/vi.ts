@@ -1524,5 +1524,50 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       }
     ],
     "conclusion": "Cách tốt nhất để thay đổi kích thước mà không làm giảm chất lượng là luôn thu nhỏ (downscale) từ ảnh gốc có độ phân giải cao, duy trì tỷ lệ khung hình và xuất ở định dạng phù hợp. Sử dụng Công cụ tính tỷ lệ khung hình của chúng tôi để tìm kích thước mục tiêu chính xác giúp giữ nguyên tỷ lệ gốc của bạn — không cần phỏng đoán."
+  },
+  "install-aspect-ratio-calculator": {
+    "title": "Tại sao nên cài đặt Aspect Ratio Calculator? Truy cập ngoại tuyến, tốc độ & hơn thế nữa",
+    "description": "Cài đặt Aspect Ratio Calculator dưới dạng một ứng dụng để truy cập ngoại tuyến tức thì, một lối tắt trên màn hình chính và trải nghiệm không bị phân tâm — không có giao diện người dùng trình duyệt, không cần tải lại.",
+    "intro": "Bạn có thể sử dụng công cụ tính này trực tiếp từ trình duyệt của mình, nhưng cài đặt nó dưới dạng một ứng dụng sẽ nâng cao trải nghiệm hơn nữa — khởi chạy tức thì từ màn hình chính của bạn, hỗ trợ ngoại tuyến đầy đủ và giao diện gọn gàng không có thanh điều hướng trình duyệt gây cản trở. Đây là tất cả những gì bạn cần biết.",
+    "sections": [
+      {
+        "heading": "'Cài đặt' thực sự có nghĩa là gì?",
+        "body": "Khi bạn cài đặt một ứng dụng web (còn gọi là PWA — Progressive Web App), thiết bị của bạn sẽ lưu một lối tắt vào màn hình chính hoặc màn hình nền của bạn và lưu vào bộ nhớ đệm các tệp ứng dụng để sử dụng ngoại tuyến. Không có App Store nào liên quan và không có gì đang tải xuống hàng gigabyte dữ liệu — các tệp đã có trong bộ nhớ đệm của trình duyệt của bạn. Việc cài đặt đơn giản là nâng cấp trang web thành trải nghiệm ứng dụng hạng nhất trên thiết bị của bạn."
+      },
+      {
+        "heading": "Lợi ích của việc cài đặt",
+        "body": "Cài đặt Aspect Ratio Calculator mang lại cho bạn một số lợi thế so với việc chỉ sử dụng nó trong trình duyệt:",
+        "list": [
+          "Truy cập ngoại tuyến — các phép tính hoạt động ngay cả khi không có kết nối internet, hữu ích khi ở trường quay, ngoài thực địa hoặc trên máy bay",
+          "Lối tắt màn hình chính — mở bằng một lần chạm, không cần điều hướng đến URL hoặc mở tab trình duyệt",
+          "Giao diện không bị phân tâm — không có thanh địa chỉ trình duyệt, tab hoặc thanh công cụ; công cụ tính lấp đầy màn hình một cách gọn gàng",
+          "Tải nhanh hơn — các tệp được lưu vào bộ nhớ đệm tải tức thì từ bộ nhớ cục bộ thay vì chờ phản hồi mạng",
+          "Luôn cập nhật — service worker tìm nạp các bản cập nhật một cách âm thầm trong nền để bạn luôn có phiên bản mới nhất"
+        ]
+      },
+      {
+        "heading": "Cách cài đặt trên Chrome hoặc Android",
+        "body": "Trên Android hoặc Chrome dành cho máy tính để bàn, một biểu ngữ sẽ tự động xuất hiện ở cuối trang với nút Cài đặt. Chạm hoặc nhấp vào Cài đặt và xác nhận khi được nhắc. Nếu biểu ngữ đã bị loại bỏ, hãy tìm biểu tượng cài đặt (một màn hình có mũi tên xuống ⊕) trong thanh địa chỉ trình duyệt trên máy tính để bàn, hoặc chạm vào menu ba chấm trên Android và chọn 'Thêm vào màn hình chính'."
+      },
+      {
+        "heading": "Cách cài đặt trên iPhone hoặc iPad (Safari)",
+        "body": "Safari trên iOS không hiển thị biểu ngữ cài đặt tự động, nhưng quá trình này rất đơn giản:",
+        "list": [
+          "Chạm vào nút Chia sẻ (hộp có mũi tên chỉ lên) trong thanh công cụ Safari ở cuối màn hình",
+          "Cuộn xuống trong bảng chia sẻ và chạm vào 'Thêm vào màn hình chính'",
+          "Chỉnh sửa tên nếu bạn muốn, sau đó chạm vào 'Thêm' ở góc trên bên phải",
+          "Biểu tượng công cụ tính giờ đây xuất hiện trên màn hình chính của bạn và khởi chạy ở chế độ độc lập"
+        ]
+      },
+      {
+        "heading": "Cách cài đặt trên máy tính để bàn (Chrome hoặc Edge)",
+        "body": "Trên máy tính để bàn chạy Chrome hoặc Edge, hãy tìm biểu tượng cài đặt trong thanh địa chỉ — nó trông giống một màn hình có mũi tên tải xuống nhỏ. Nhấp vào đó và xác nhận lời nhắc. Trên Edge, tùy chọn này cũng có thể xuất hiện trong menu ba chấm dưới dạng 'Ứng dụng → Cài đặt trang web này dưới dạng ứng dụng'. Sau khi cài đặt, công cụ tính sẽ xuất hiện trong Start menu (Windows) hoặc thư mục Ứng dụng (Mac) của bạn giống như bất kỳ ứng dụng gốc nào."
+      },
+      {
+        "heading": "Cách gỡ cài đặt",
+        "body": "Việc gỡ cài đặt cũng dễ dàng như cài đặt. Trên iOS, nhấn giữ biểu tượng trên màn hình chính của bạn và chạm vào 'Xóa ứng dụng'. Trên Android, nhấn giữ và kéo đến khu vực gỡ cài đặt, hoặc vào Cài đặt → Ứng dụng. Trên Chrome dành cho máy tính để bàn, mở ứng dụng, nhấp vào menu ba chấm bên trong cửa sổ ứng dụng và chọn 'Gỡ cài đặt Aspect Ratio Calculator'. Trên Edge, nhấp chuột phải vào ứng dụng trong thanh tác vụ hoặc Start menu và chọn Gỡ cài đặt."
+      }
+    ],
+    "conclusion": "Cài đặt Aspect Ratio Calculator mất khoảng mười giây và không tốn phí. Bạn có được quyền truy cập ngoại tuyến, một lối tắt trên màn hình chính và trải nghiệm nhanh hơn, gọn gàng hơn — không yêu cầu App Store. Nếu bạn thường xuyên sử dụng công cụ tính này, việc cài đặt nó là cách thuận tiện nhất để giữ nó trong tầm tay bạn."
   }
 };

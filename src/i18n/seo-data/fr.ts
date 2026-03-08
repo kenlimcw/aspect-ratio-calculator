@@ -1524,5 +1524,50 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       }
     ],
     "conclusion": "La meilleure façon de redimensionner sans perte de qualité est de toujours réduire depuis un original haute résolution, maintenir le format d'image et exporter dans le format approprié. Utilisez notre Calculateur de Format d'Image pour trouver les dimensions cibles exactes qui préservent vos proportions originales — sans avoir à deviner."
+  },
+  "install-aspect-ratio-calculator": {
+    "title": "Pourquoi installer l'Aspect Ratio Calculator ? Accès hors ligne, rapidité et plus encore",
+    "description": "Installez l'Aspect Ratio Calculator comme une application pour un accès hors ligne instantané, un raccourci sur l'écran d'accueil et une expérience sans distraction — pas d'interface de navigateur, pas de rechargement.",
+    "intro": "Vous pouvez utiliser cette calculatrice directement depuis votre navigateur, mais l'installer comme une application pousse l'expérience plus loin — lancement instantané depuis votre écran d'accueil, prise en charge complète hors ligne et une interface épurée sans navigation de navigateur. Voici tout ce que vous devez savoir.",
+    "sections": [
+      {
+        "heading": "Que signifie réellement « Installer » ?",
+        "body": "Lorsque vous installez une application web (également appelée PWA — Progressive Web App), votre appareil enregistre un raccourci sur votre écran d'accueil ou votre bureau et met en cache les fichiers de l'application pour une utilisation hors ligne. Il n'y a pas d'App Store impliqué et rien ne télécharge des gigaoctets de données — les fichiers sont déjà dans le cache de votre navigateur. L'installation promeut simplement le site à une expérience d'application de première classe sur votre appareil."
+      },
+      {
+        "heading": "Avantages de l'installation",
+        "body": "L'installation de l'Aspect Ratio Calculator vous offre plusieurs avantages par rapport à son utilisation purement dans le navigateur :",
+        "list": [
+          "Accès hors ligne — les calculs fonctionnent même sans connexion internet, utile sur un plateau, sur le terrain ou dans un avion",
+          "Raccourci sur l'écran d'accueil — s'ouvre d'un simple toucher, pas besoin de naviguer vers l'URL ou d'ouvrir un onglet de navigateur",
+          "Interface sans distraction — pas de barre d'adresse de navigateur, d'onglets ou de barre d'outils ; la calculatrice remplit l'écran proprement",
+          "Chargement plus rapide — les fichiers mis en cache se chargent instantanément depuis le stockage local au lieu d'attendre une réponse réseau",
+          "Toujours à jour — le service worker récupère les mises à jour silencieusement en arrière-plan afin que vous ayez toujours la dernière version"
+        ]
+      },
+      {
+        "heading": "Comment installer sur Chrome ou Android",
+        "body": "Sur Android ou Chrome pour ordinateur de bureau, une bannière apparaît automatiquement en bas de la page avec un bouton Installer. Appuyez ou cliquez sur Installer et confirmez lorsque vous y êtes invité. Si la bannière a été ignorée, recherchez l'icône d'installation (un moniteur avec une flèche vers le bas ⊕) dans la barre d'adresse du navigateur sur ordinateur de bureau, ou appuyez sur le menu à trois points sur Android et sélectionnez « Ajouter à l'écran d'accueil »."
+      },
+      {
+        "heading": "Comment installer sur iPhone ou iPad (Safari)",
+        "body": "Safari sur iOS n'affiche pas de bannière d'installation automatique, mais le processus est simple :",
+        "list": [
+          "Appuyez sur le bouton Partager (la boîte avec une flèche pointant vers le haut) dans la barre d'outils Safari en bas de l'écran",
+          "Faites défiler la feuille de partage vers le bas et appuyez sur « Ajouter à l'écran d'accueil »",
+          "Modifiez le nom si vous le souhaitez, puis appuyez sur « Ajouter » dans le coin supérieur droit",
+          "L'icône de la calculatrice apparaît maintenant sur votre écran d'accueil et se lance en mode autonome"
+        ]
+      },
+      {
+        "heading": "Comment installer sur ordinateur de bureau (Chrome ou Edge)",
+        "body": "Sur un ordinateur de bureau exécutant Chrome ou Edge, recherchez l'icône d'installation dans la barre d'adresse — elle ressemble à un moniteur avec une petite flèche de téléchargement. Cliquez dessus et confirmez l'invite. Sur Edge, l'option peut également apparaître sous le menu à trois points comme « Applications → Installer ce site en tant qu'application ». Une fois installée, la calculatrice apparaît dans votre Start menu (Windows) ou votre dossier Applications (Mac) comme toute application native."
+      },
+      {
+        "heading": "Comment désinstaller",
+        "body": "La désinstallation est tout aussi facile que l'installation. Sur iOS, appuyez longuement sur l'icône de votre écran d'accueil et appuyez sur « Supprimer l'app ». Sur Android, appuyez longuement et faites glisser vers la zone de désinstallation, ou allez dans Paramètres → Applications. Sur Chrome pour ordinateur de bureau, ouvrez l'application, cliquez sur le menu à trois points dans la fenêtre de l'application et sélectionnez « Désinstaller Aspect Ratio Calculator ». Sur Edge, faites un clic droit sur l'application dans la barre des tâches ou le Start menu et choisissez Désinstaller."
+      }
+    ],
+    "conclusion": "L'installation de l'Aspect Ratio Calculator prend environ dix secondes et ne coûte rien. Vous bénéficiez d'un accès hors ligne, d'un raccourci sur l'écran d'accueil et d'une expérience plus rapide et plus propre — sans App Store requis. Si vous utilisez régulièrement la calculatrice, l'installer est le moyen le plus pratique de l'avoir à portée de main."
   }
 };

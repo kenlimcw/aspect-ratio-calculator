@@ -1524,5 +1524,50 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       }
     ],
     "conclusion": "Cea mai bună modalitate de a redimensiona fără pierderi de calitate este să micșorezi întotdeauna dintr-un original de înaltă rezoluție, să menții aspect-ratio și să exporți în formatul adecvat. Utilizează Calculatorul nostru de Aspect Ratio pentru a găsi dimensiunile țintă exacte care păstrează proporțiile originale — fără a fi nevoie de presupuneri."
+  },
+  "install-aspect-ratio-calculator": {
+    "title": "De ce să instalați Calculatorul de Raport de Aspect? Acces Offline, Viteză și Mai Mult",
+    "description": "Instalați Calculatorul de Raport de Aspect ca aplicație pentru acces offline instantaneu, o scurtătură pe Home screen și o experiență fără distrageri — fără interfață de utilizator a browserului, fără reîncărcări.",
+    "intro": "Puteți utiliza acest calculator direct din browserul dumneavoastră, dar instalarea sa ca aplicație duce experiența mai departe — lansare instantanee de pe Home screen, suport offline complet și o interfață curată, fără navigarea browserului în cale. Iată tot ce trebuie să știți.",
+    "sections": [
+      {
+        "heading": "Ce înseamnă de fapt 'Instalare'?",
+        "body": "Când instalați o aplicație web (numită și PWA — Progressive Web App), dispozitivul dumneavoastră salvează o scurtătură pe Home screen sau pe desktop și memorează fișierele aplicației pentru utilizare offline. Nu este implicat niciun App Store și nu se descarcă gigabytes de date — fișierele sunt deja în memoria cache a browserului dumneavoastră. Instalarea pur și simplu promovează site-ul la o experiență de aplicație de primă clasă pe dispozitivul dumneavoastră."
+      },
+      {
+        "heading": "Beneficiile instalării",
+        "body": "Instalarea Calculatorului de Raport de Aspect vă oferă mai multe avantaje față de utilizarea sa pur și simplu în browser:",
+        "list": [
+          "Acces offline — calculele funcționează chiar și fără o conexiune la internet, util pe platou, pe teren sau într-un avion",
+          "Scurtătură pe Home screen — se deschide cu o singură atingere, nu este nevoie să navigați la URL sau să deschideți o filă de browser",
+          "Interfață fără distrageri — fără bară de adrese a browserului, file sau bară de instrumente; calculatorul umple ecranul curat",
+          "Încărcare mai rapidă — fișierele memorate în cache se încarcă instantaneu din stocarea locală în loc să așteptați un răspuns de la rețea",
+          "Întotdeauna actualizat — service worker-ul preia actualizările silențios în fundal, astfel încât să aveți întotdeauna cea mai recentă versiune"
+        ]
+      },
+      {
+        "heading": "Cum se instalează pe Chrome sau Android",
+        "body": "Pe Android sau Chrome desktop, un banner apare automat în partea de jos a paginii cu un buton de Instalare. Atingeți sau faceți clic pe Instalare și confirmați când vi se solicită. Dacă bannerul a fost închis, căutați pictograma de instalare (un monitor cu o săgeată în jos ⊕) în bara de adrese a browserului pe desktop, sau atingeți meniul cu trei puncte pe Android și selectați 'Add to Home screen'."
+      },
+      {
+        "heading": "Cum se instalează pe iPhone sau iPad (Safari)",
+        "body": "Safari pe iOS nu afișează un banner de instalare automat, dar procesul este simplu:",
+        "list": [
+          "Atingeți butonul Partajare (caseta cu o săgeată îndreptată în sus) în bara de instrumente Safari din partea de jos a ecranului",
+          "Derulați în jos în foaia de partajare și atingeți 'Add to Home Screen'",
+          "Editați numele dacă doriți, apoi atingeți 'Add' în colțul din dreapta sus",
+          "Pictograma calculatorului apare acum pe Home screen și se lansează în modul independent"
+        ]
+      },
+      {
+        "heading": "Cum se instalează pe desktop (Chrome sau Edge)",
+        "body": "Pe un computer desktop care rulează Chrome sau Edge, căutați pictograma de instalare în bara de adrese — arată ca un monitor cu o săgeată mică de descărcare. Faceți clic pe ea și confirmați solicitarea. Pe Edge, opțiunea poate apărea și sub meniul cu trei puncte ca 'Apps → Install this site as an app'. Odată instalat, calculatorul apare în meniul Start (Windows) sau în folderul Aplicații (Mac) ca orice aplicație nativă."
+      },
+      {
+        "heading": "Cum se dezinstalează",
+        "body": "Dezinstalarea este la fel de ușoară ca instalarea. Pe iOS, apăsați lung pictograma de pe Home screen și atingeți 'Remove App'. Pe Android, apăsați lung și trageți în zona de dezinstalare, sau mergeți la Setări → Aplicații. Pe Chrome desktop, deschideți aplicația, faceți clic pe meniul cu trei puncte din fereastra aplicației și selectați 'Dezinstalați Calculatorul de Raport de Aspect'. Pe Edge, faceți clic dreapta pe aplicație în bara de activități sau în meniul Start și alegeți Dezinstalare."
+      }
+    ],
+    "conclusion": "Instalarea Calculatorului de Raport de Aspect durează aproximativ zece secunde și nu costă nimic. Obțineți acces offline, o scurtătură pe Home screen și o experiență mai rapidă, mai curată — fără a fi necesar un App Store. Dacă vă regăsiți utilizând calculatorul în mod regulat, instalarea sa este cel mai convenabil mod de a-l avea la îndemână."
   }
 };

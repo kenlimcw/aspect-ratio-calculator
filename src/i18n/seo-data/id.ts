@@ -1524,5 +1524,50 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       }
     ],
     "conclusion": "Cara terbaik mengubah ukuran tanpa kehilangan kualitas adalah selalu melakukan downscale dari asli resolusi tinggi, mempertahankan rasio aspek, dan mengekspor dalam format yang sesuai. Gunakan Kalkulator Rasio Aspek kami untuk menemukan dimensi target yang tepat yang mempertahankan proporsi asli Anda — tanpa perlu menebak."
+  },
+  "install-aspect-ratio-calculator": {
+    "title": "Mengapa Menginstal Aspect Ratio Calculator? Akses Offline, Kecepatan & Lainnya",
+    "description": "Instal Aspect Ratio Calculator sebagai aplikasi untuk akses offline instan, pintasan layar utama, dan pengalaman bebas gangguan — tanpa UI browser, tanpa memuat ulang.",
+    "intro": "Anda dapat menggunakan kalkulator ini langsung dari browser Anda, tetapi menginstalnya sebagai aplikasi akan meningkatkan pengalaman — peluncuran instan dari layar utama Anda, dukungan offline penuh, dan antarmuka yang bersih tanpa navigasi browser yang mengganggu. Berikut adalah semua yang perlu Anda ketahui.",
+    "sections": [
+      {
+        "heading": "Apa sebenarnya arti 'Instal'?",
+        "body": "Saat Anda menginstal aplikasi web (juga disebut PWA — Progressive Web App), perangkat Anda menyimpan pintasan ke layar utama atau desktop Anda dan menyimpan file aplikasi dalam cache untuk penggunaan offline. Tidak ada App Store yang terlibat dan tidak ada yang mengunduh data gigabyte — file-file tersebut sudah ada di cache browser Anda. Menginstal hanya meningkatkan situs menjadi pengalaman aplikasi kelas satu di perangkat Anda."
+      },
+      {
+        "heading": "Manfaat menginstal",
+        "body": "Menginstal Aspect Ratio Calculator memberi Anda beberapa keuntungan dibandingkan hanya menggunakannya di browser:",
+        "list": [
+          "Akses offline — perhitungan berfungsi bahkan tanpa koneksi internet, berguna di lokasi syuting, di lapangan, atau di pesawat",
+          "Pintasan layar utama — terbuka dengan satu ketukan, tidak perlu menavigasi ke URL atau membuka tab browser",
+          "Antarmuka bebas gangguan — tanpa bilah alamat browser, tab, atau bilah alat; kalkulator memenuhi layar dengan bersih",
+          "Pemuatan lebih cepat — file yang di-cache dimuat secara instan dari penyimpanan lokal alih-alih menunggu respons jaringan",
+          "Selalu terbaru — service worker mengambil pembaruan secara diam-diam di latar belakang sehingga Anda selalu memiliki versi terbaru"
+        ]
+      },
+      {
+        "heading": "Cara menginstal di Chrome atau Android",
+        "body": "Di Android atau Chrome desktop, sebuah banner muncul secara otomatis di bagian bawah halaman dengan tombol Instal. Ketuk atau klik Instal dan konfirmasi saat diminta. Jika banner telah ditutup, cari ikon instal (monitor dengan panah ke bawah ⊕) di bilah alamat browser di desktop, atau ketuk menu tiga titik di Android dan pilih 'Tambahkan ke Layar Utama'."
+      },
+      {
+        "heading": "Cara menginstal di iPhone atau iPad (Safari)",
+        "body": "Safari di iOS tidak menampilkan banner instal otomatis, tetapi prosesnya mudah:",
+        "list": [
+          "Ketuk tombol Bagikan (kotak dengan panah menunjuk ke atas) di bilah alat Safari di bagian bawah layar",
+          "Gulir ke bawah di lembar berbagi dan ketuk 'Tambahkan ke Layar Utama'",
+          "Edit nama jika Anda mau, lalu ketuk 'Tambah' di sudut kanan atas",
+          "Ikon kalkulator sekarang muncul di layar utama Anda dan diluncurkan dalam mode mandiri"
+        ]
+      },
+      {
+        "heading": "Cara menginstal di desktop (Chrome atau Edge)",
+        "body": "Di komputer desktop yang menjalankan Chrome atau Edge, cari ikon instal di bilah alamat — terlihat seperti monitor dengan panah unduh kecil. Klik dan konfirmasi perintahnya. Di Edge, opsi tersebut mungkin juga muncul di bawah menu tiga titik sebagai 'Aplikasi → Instal situs ini sebagai aplikasi'. Setelah terinstal, kalkulator muncul di Start menu Anda (Windows) atau folder Aplikasi (Mac) seperti aplikasi native lainnya."
+      },
+      {
+        "heading": "Cara menghapus instalasi",
+        "body": "Menghapus instalasi semudah menginstal. Di iOS, tekan lama ikon di layar utama Anda dan ketuk 'Hapus Aplikasi'. Di Android, tekan lama dan seret ke area hapus instalasi, atau buka Pengaturan → Aplikasi. Di Chrome desktop, buka aplikasi, klik menu tiga titik di dalam jendela aplikasi, dan pilih 'Hapus Instalasi Aspect Ratio Calculator'. Di Edge, klik kanan aplikasi di bilah tugas atau Start menu dan pilih Hapus Instalasi."
+      }
+    ],
+    "conclusion": "Menginstal Aspect Ratio Calculator membutuhkan waktu sekitar sepuluh detik dan tidak dikenakan biaya. Anda mendapatkan akses offline, pintasan layar utama, dan pengalaman yang lebih cepat, lebih bersih — tanpa memerlukan App Store. Jika Anda sering menggunakan kalkulator ini, menginstalnya adalah cara paling nyaman untuk selalu memilikinya di ujung jari Anda."
   }
 };

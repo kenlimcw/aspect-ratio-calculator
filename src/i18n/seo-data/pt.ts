@@ -1524,5 +1524,50 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       }
     ],
     "conclusion": "A melhor maneira de redimensionar sem perda de qualidade é sempre reduzir a partir de um original de alta resolução, manter a proporção de aspecto e exportar no formato apropriado. Use nossa Calculadora de Proporção de Aspecto para encontrar as dimensões exatas que preservem suas proporções originais — sem necessidade de adivinhação."
+  },
+  "install-aspect-ratio-calculator": {
+    "title": "Por que instalar a Calculadora de Proporção? Acesso Offline, Velocidade e Mais",
+    "description": "Instale a Calculadora de Proporção como um aplicativo para acesso offline instantâneo, um atalho na tela inicial e uma experiência sem distrações — sem interface de navegador, sem recarregamentos.",
+    "intro": "Você pode usar esta calculadora diretamente do seu navegador, mas instalá-la como um aplicativo leva a experiência adiante — lançamento instantâneo da sua tela inicial, suporte offline completo e uma interface limpa sem navegação do navegador no caminho. Aqui está tudo o que você precisa saber.",
+    "sections": [
+      {
+        "heading": "O que 'Instalar' realmente significa?",
+        "body": "Quando você instala um aplicativo web (também chamado de PWA — Progressive Web App), seu dispositivo salva um atalho para sua tela inicial ou desktop e armazena em cache os arquivos do aplicativo para uso offline. Não há nenhuma app store envolvida e nada está baixando gigabytes de dados — os arquivos já estão no cache do seu navegador. Instalar simplesmente promove o site a uma experiência de aplicativo de primeira classe no seu dispositivo."
+      },
+      {
+        "heading": "Benefícios da instalação",
+        "body": "Instalar a Calculadora de Proporção oferece várias vantagens em relação ao uso puramente no navegador:",
+        "list": [
+          "Acesso offline — os cálculos funcionam mesmo sem conexão com a internet, útil no set, no campo ou em um avião",
+          "Atalho na tela inicial — abre com um único toque, sem necessidade de navegar para a URL ou abrir uma aba do navegador",
+          "Interface sem distrações — sem barra de endereço do navegador, abas ou barra de ferramentas; a calculadora preenche a tela de forma limpa",
+          "Carregamento mais rápido — arquivos em cache carregam instantaneamente do armazenamento local em vez de esperar por uma resposta da rede",
+          "Sempre atualizado — o service worker busca atualizações silenciosamente em segundo plano para que você sempre tenha a versão mais recente"
+        ]
+      },
+      {
+        "heading": "Como instalar no Chrome ou Android",
+        "body": "No Android ou Chrome para desktop, um banner aparece automaticamente na parte inferior da página com um botão Install. Toque ou clique em Install e confirme quando solicitado. Se o banner tiver sido dispensado, procure o ícone de instalação (um monitor com uma seta para baixo ⊕) na barra de endereço do navegador no desktop, ou toque no menu de três pontos no Android e selecione 'Add to Home screen'."
+      },
+      {
+        "heading": "Como instalar no iPhone ou iPad (Safari)",
+        "body": "O Safari no iOS não mostra um banner de instalação automático, mas o processo é simples:",
+        "list": [
+          "Toque no botão Share (a caixa com uma seta apontando para cima) na barra de ferramentas do Safari na parte inferior da tela",
+          "Role para baixo na folha de compartilhamento e toque em 'Add to Home Screen'",
+          "Edite o nome se desejar, depois toque em 'Add' no canto superior direito",
+          "O ícone da calculadora agora aparece na sua tela inicial e é iniciado em modo autônomo"
+        ]
+      },
+      {
+        "heading": "Como instalar no desktop (Chrome ou Edge)",
+        "body": "Em um computador desktop executando Chrome ou Edge, procure o ícone de instalação na barra de endereço — ele se parece com um monitor com uma pequena seta de download. Clique nele e confirme o prompt. No Edge, a opção também pode aparecer sob o menu de três pontos como 'Apps → Install this site as an app'. Uma vez instalada, a calculadora aparece no seu Start menu (Windows) ou pasta Applications (Mac) como qualquer aplicativo nativo."
+      },
+      {
+        "heading": "Como desinstalar",
+        "body": "Desinstalar é tão fácil quanto instalar. No iOS, pressione e segure o ícone na sua tela inicial e toque em 'Remove App'. No Android, pressione e segure e arraste para a área de desinstalação, ou vá para Settings → Apps. No Chrome para desktop, abra o aplicativo, clique no menu de três pontos dentro da janela do aplicativo e selecione 'Uninstall Aspect Ratio Calculator'. No Edge, clique com o botão direito no aplicativo na barra de tarefas ou no Start menu e escolha Uninstall."
+      }
+    ],
+    "conclusion": "Instalar a Calculadora de Proporção leva cerca de dez segundos e não custa nada. Você obtém acesso offline, um atalho na tela inicial e uma experiência mais rápida e limpa — sem necessidade de app store. Se você se encontra usando a calculadora regularmente, instalá-la é a maneira mais conveniente de tê-la ao seu alcance."
   }
 };

@@ -1524,5 +1524,50 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       }
     ],
     "conclusion": "Najlepszym sposobem na zmianę rozmiaru bez utraty jakości jest zawsze zmniejszanie (downscaling) z oryginalnego pliku o wysokiej rozdzielczości, zachowanie proporcji obrazu (aspect ratio) i eksportowanie w odpowiednim formacie. Użyj naszego Kalkulatora Proporcji Obrazu (Aspect Ratio Calculator), aby znaleźć dokładne docelowe wymiary, które zachowają Twoje oryginalne proporcje — bez zgadywania."
+  },
+  "install-aspect-ratio-calculator": {
+    "title": "Dlaczego warto zainstalować Kalkulator Proporcji Obrazu? Dostęp offline, szybkość i więcej",
+    "description": "Zainstaluj Kalkulator Proporcji Obrazu jako aplikację, aby uzyskać natychmiastowy dostęp offline, skrót na ekranie głównym i doświadczenie bez rozpraszaczy — bez interfejsu przeglądarki, bez przeładowywania.",
+    "intro": "Możesz używać tego kalkulatora bezpośrednio z przeglądarki, ale zainstalowanie go jako aplikacji przenosi doświadczenie na wyższy poziom — natychmiastowe uruchamianie z ekranu głównego, pełne wsparcie offline i czysty interfejs bez nawigacji przeglądarki. Oto wszystko, co musisz wiedzieć.",
+    "sections": [
+      {
+        "heading": "Co właściwie oznacza 'Zainstaluj'?",
+        "body": "Kiedy instalujesz aplikację internetową (zwaną również PWA — Progressive Web App), Twoje urządzenie zapisuje skrót na ekranie głównym lub pulpicie i buforuje pliki aplikacji do użytku offline. Nie ma w tym udziału żadnego App Store i nic nie pobiera gigabajtów danych — pliki są już w pamięci podręcznej przeglądarki. Instalacja po prostu promuje witrynę do pełnoprawnego doświadczenia aplikacji na Twoim urządzeniu."
+      },
+      {
+        "heading": "Korzyści z instalacji",
+        "body": "Zainstalowanie Kalkulatora Proporcji Obrazu daje kilka przewag nad używaniem go wyłącznie w przeglądarce:",
+        "list": [
+          "Dostęp offline — obliczenia działają nawet bez połączenia z internetem, przydatne na planie, w terenie lub w samolocie",
+          "Skrót na ekranie głównym — otwiera się jednym dotknięciem, nie trzeba nawigować do adresu URL ani otwierać karty przeglądarki",
+          "Interfejs bez rozpraszaczy — brak paska adresu przeglądarki, kart czy paska narzędzi; kalkulator czysto wypełnia ekran",
+          "Szybsze ładowanie — buforowane pliki ładują się natychmiast z pamięci lokalnej, zamiast czekać na odpowiedź sieciową",
+          "Zawsze aktualny — service worker pobiera aktualizacje cicho w tle, dzięki czemu zawsze masz najnowszą wersję"
+        ]
+      },
+      {
+        "heading": "Jak zainstalować na Chrome lub Android",
+        "body": "Na Android lub Chrome na komputerze stacjonarnym, na dole strony automatycznie pojawia się baner z przyciskiem Zainstaluj. Stuknij lub kliknij Zainstaluj i potwierdź, gdy zostaniesz o to poproszony. Jeśli baner został odrzucony, poszukaj ikony instalacji (monitor z strzałką w dół ⊕) w pasku adresu przeglądarki na komputerze stacjonarnym, lub stuknij menu z trzema kropkami na Android i wybierz 'Dodaj do ekranu głównego'."
+      },
+      {
+        "heading": "Jak zainstalować na iPhone lub iPad (Safari)",
+        "body": "Safari na iOS nie wyświetla automatycznego banera instalacji, ale proces jest prosty:",
+        "list": [
+          "Stuknij przycisk Udostępnij (ikonę kwadratu ze strzałką skierowaną w górę) na pasku narzędzi Safari na dole ekranu",
+          "Przewiń w dół w arkuszu udostępniania i stuknij 'Dodaj do ekranu początkowego'",
+          "Edytuj nazwę, jeśli chcesz, a następnie stuknij 'Dodaj' w prawym górnym rogu",
+          "Ikona kalkulatora pojawi się teraz na Twoim ekranie głównym i uruchomi się w trybie samodzielnym"
+        ]
+      },
+      {
+        "heading": "Jak zainstalować na komputerze stacjonarnym (Chrome lub Edge)",
+        "body": "Na komputerze stacjonarnym z systemem Chrome lub Edge, poszukaj ikony instalacji w pasku adresu — wygląda jak monitor z małą strzałką pobierania. Kliknij ją i potwierdź monit. W Edge opcja może również pojawić się w menu z trzema kropkami jako 'Aplikacje → Zainstaluj tę witrynę jako aplikację'. Po zainstalowaniu kalkulator pojawi się w menu Start (Windows) lub folderze Aplikacje (Mac) jak każda natywna aplikacja."
+      },
+      {
+        "heading": "Jak odinstalować",
+        "body": "Odinstalowanie jest tak samo łatwe jak instalacja. Na iOS, naciśnij i przytrzymaj ikonę na ekranie głównym i stuknij 'Usuń aplikację'. Na Android, naciśnij i przytrzymaj, a następnie przeciągnij do obszaru odinstalowania, lub przejdź do Ustawień → Aplikacje. Na Chrome na komputerze stacjonarnym, otwórz aplikację, kliknij menu z trzema kropkami w oknie aplikacji i wybierz 'Odinstaluj Kalkulator Proporcji Obrazu'. W Edge, kliknij prawym przyciskiem myszy aplikację na pasku zadań lub w menu Start i wybierz Odinstaluj."
+      }
+    ],
+    "conclusion": "Zainstalowanie Kalkulatora Proporcji Obrazu zajmuje około dziesięciu sekund i nic nie kosztuje. Otrzymujesz dostęp offline, skrót na ekranie głównym oraz szybsze, czystsze doświadczenie — bez konieczności korzystania z App Store. Jeśli regularnie korzystasz z kalkulatora, zainstalowanie go jest najwygodniejszym sposobem, aby mieć go zawsze pod ręką."
   }
 };
