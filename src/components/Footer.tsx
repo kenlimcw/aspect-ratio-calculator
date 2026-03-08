@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FooterFeedbackLink } from "@/components/FooterFeedbackLink";
+import { CookieSettingsLink } from "@/components/CookieConsent";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useTranslation } from "@/components/I18nProvider";
 import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
@@ -140,6 +141,8 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             >
               {t("footer", "privacyPolicy")}
             </Link>
+            <span className="text-[var(--border)]">&middot;</span>
+            <CookieSettingsLink />
             <span className="text-[var(--border)]">&middot;</span>
             <FooterFeedbackLink />
             <span className="text-[var(--border)]">&middot;</span>

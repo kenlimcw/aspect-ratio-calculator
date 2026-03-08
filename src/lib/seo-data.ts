@@ -961,6 +961,55 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
     conclusion:
       "The best way to resize without quality loss is to always downscale from a high-resolution original, maintain the aspect ratio, and export in the appropriate format. Use our Aspect Ratio Calculator to find the exact target dimensions that preserve your original proportions — no guesswork required.",
   },
+
+  "install-aspect-ratio-calculator": {
+    title: "Why Install Aspect Ratio Calculator? Offline Access, Speed & More",
+    description:
+      "Install the Aspect Ratio Calculator as an app for instant offline access, a home screen shortcut, and a distraction-free experience — no browser UI, no reloading.",
+    intro:
+      "You can use this calculator straight from your browser, but installing it as an app takes the experience further — instant launch from your home screen, full offline support, and a clean interface with no browser navigation in the way. Here is everything you need to know.",
+    sections: [
+      {
+        heading: "What does 'Install' actually mean?",
+        body: "When you install a web app (also called a PWA — Progressive Web App), your device saves a shortcut to your home screen or desktop and caches the app files for offline use. There is no app store involved and nothing is downloading gigabytes of data — the files are already in your browser cache. Installing simply promotes the site to a first-class app experience on your device.",
+      },
+      {
+        heading: "Benefits of installing",
+        body: "Installing the Aspect Ratio Calculator gives you several advantages over using it purely in the browser:",
+        list: [
+          "Offline access — calculations work even without an internet connection, useful on set, in the field, or on an aeroplane",
+          "Home screen shortcut — opens with a single tap, no need to navigate to the URL or open a browser tab",
+          "Distraction-free interface — no browser address bar, tabs, or toolbar; the calculator fills the screen cleanly",
+          "Faster load — cached files load instantly from local storage instead of waiting for a network response",
+          "Always up to date — the service worker fetches updates silently in the background so you always have the latest version",
+        ],
+      },
+      {
+        heading: "How to install on Chrome or Android",
+        body: "On Android or Chrome desktop, a banner appears automatically at the bottom of the page with an Install button. Tap or click Install and confirm when prompted. If the banner has been dismissed, look for the install icon (a monitor with a downward arrow ⊕) in the browser address bar on desktop, or tap the three-dot menu on Android and select 'Add to Home screen'.",
+      },
+      {
+        heading: "How to install on iPhone or iPad (Safari)",
+        body: "Safari on iOS does not show an automatic install banner, but the process is straightforward:",
+        list: [
+          "Tap the Share button (the box with an arrow pointing upward) in the Safari toolbar at the bottom of the screen",
+          "Scroll down in the share sheet and tap 'Add to Home Screen'",
+          "Edit the name if you wish, then tap 'Add' in the top-right corner",
+          "The calculator icon now appears on your home screen and launches in standalone mode",
+        ],
+      },
+      {
+        heading: "How to install on desktop (Chrome or Edge)",
+        body: "On a desktop computer running Chrome or Edge, look for the install icon in the address bar — it looks like a monitor with a small download arrow. Click it and confirm the prompt. On Edge the option may also appear under the three-dot menu as 'Apps → Install this site as an app'. Once installed, the calculator appears in your Start menu (Windows) or Applications folder (Mac) like any native application.",
+      },
+      {
+        heading: "How to uninstall",
+        body: "Uninstalling is just as easy as installing. On iOS, long-press the icon on your home screen and tap 'Remove App'. On Android, long-press and drag to the uninstall area, or go to Settings → Apps. On Chrome desktop, open the app, click the three-dot menu inside the app window, and select 'Uninstall Aspect Ratio Calculator'. On Edge, right-click the app in the taskbar or Start menu and choose Uninstall.",
+      },
+    ],
+    conclusion:
+      "Installing the Aspect Ratio Calculator takes about ten seconds and costs nothing. You get offline access, a home screen shortcut, and a faster, cleaner experience — with no app store required. If you find yourself using the calculator regularly, installing it is the most convenient way to keep it at your fingertips.",
+  },
 };
 
 // ── Sitemap Helpers ───────────────────────────────────────────────────────────

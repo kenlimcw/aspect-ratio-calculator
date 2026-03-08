@@ -7,6 +7,7 @@ import { useTranslation } from "@/components/I18nProvider";
 const CONSENT_KEY = "cookie-consent";
 const CONSENT_EVENT = "cookie-consent-updated";
 const CONSENT_VERSION = 1;
+const OPEN_SETTINGS_EVENT = "open-cookie-settings";
 
 interface ConsentRecord {
   analytics: boolean;
@@ -49,6 +50,15 @@ export function CookieConsent() {
       setAnalyticsEnabled(consent.analytics);
       setStatus("hidden");
     }
+
+    // Listen for external requests to open the settings modal (e.g. from CookieSettingsLink in Footer)
+    const handleOpenSettings = () => {
+      const latest = readConsent();
+      setAnalyticsEnabled(latest?.analytics ?? false);
+      setStatus("settings");
+    };
+    window.addEventListener(OPEN_SETTINGS_EVENT, handleOpenSettings);
+    return () => window.removeEventListener(OPEN_SETTINGS_EVENT, handleOpenSettings);
   }, []);
 
   function accept() {
@@ -63,20 +73,15 @@ export function CookieConsent() {
     setStatus("hidden");
   }
 
-  function openSettings() {
-    const consent = readConsent();
-    setAnalyticsEnabled(consent?.analytics ?? false);
-    setStatus("settings");
-  }
-
   function saveSettings() {
     writeConsent(analyticsEnabled);
     setStatus("hidden");
   }
 
-  if (status === "loading") return null;
+  if (status === "loading" || status === "hidden") return null;
 
-  const privacyHref = locale === "en" ? "/en/privacy" : `/${locale}/privacy`;
+  // English locale uses no URL prefix — privacy is at /privacy, not /en/privacy
+  const privacyHref = locale === "en" ? "/privacy" : `/${locale}/privacy`;
 
   if (status === "banner") {
     return (
@@ -116,93 +121,113 @@ export function CookieConsent() {
     );
   }
 
-  if (status === "settings") {
-    return (
+  // status === "settings"
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={cc.settingsTitle ?? "Manage Cookie Preferences"}
+      className="fixed inset-0 z-50 flex items-end justify-start p-4 md:items-center md:justify-start md:p-6"
+    >
+      {/* Backdrop */}
       <div
-        role="dialog"
-        aria-modal="true"
-        aria-label={cc.settingsTitle ?? "Manage Cookie Preferences"}
-        className="fixed inset-0 z-50 flex items-end justify-start p-4 md:items-center md:justify-start md:p-6"
-      >
-        {/* Backdrop */}
-        <div
-          className="absolute inset-0 bg-black/40"
-          onClick={() => setStatus("hidden")}
-          aria-hidden="true"
-        />
-        <div className="relative rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl p-5 w-full max-w-sm space-y-4">
-          <h2 className="text-sm font-semibold text-[var(--foreground)]">
-            {cc.settingsTitle ?? "Manage Cookie Preferences"}
-          </h2>
+        className="absolute inset-0 bg-black/40"
+        onClick={() => setStatus("hidden")}
+        aria-hidden="true"
+      />
+      <div className="relative rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl p-5 w-full max-w-sm space-y-4">
+        <h2 className="text-sm font-semibold text-[var(--foreground)]">
+          {cc.settingsTitle ?? "Manage Cookie Preferences"}
+        </h2>
 
-          {/* Essential — always on */}
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <p className="text-xs font-medium text-[var(--foreground)]">
-                {cc.essentialLabel ?? "Essential"}
-              </p>
-              <p className="text-[11px] text-[var(--muted)] leading-relaxed mt-0.5">
-                {cc.essentialDesc ?? "Theme preference & offline cache — always active."}
-              </p>
-            </div>
-            <span className="text-[10px] font-medium text-[var(--muted)] whitespace-nowrap mt-0.5">
-              {cc.alwaysOn ?? "Always on"}
-            </span>
+        {/* Essential — always on */}
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-medium text-[var(--foreground)]">
+              {cc.essentialLabel ?? "Essential"}
+            </p>
+            <p className="text-[11px] text-[var(--muted)] leading-relaxed mt-0.5">
+              {cc.essentialDesc ?? "Theme preference & offline cache — always active."}
+            </p>
           </div>
+          <span className="text-[10px] font-medium text-[var(--muted)] whitespace-nowrap mt-0.5">
+            {cc.alwaysOn ?? "Always on"}
+          </span>
+        </div>
 
-          <div className="border-t border-[var(--border)]" />
+        <div className="border-t border-[var(--border)]" />
 
-          {/* Analytics toggle */}
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <p className="text-xs font-medium text-[var(--foreground)]">
-                {cc.analyticsCookies ?? "Analytics Cookies"}
-              </p>
-              <p className="text-[11px] text-[var(--muted)] leading-relaxed mt-0.5">
-                {cc.analyticsCookiesDesc ?? "Google Analytics & Microsoft Clarity — helps us improve the calculator."}
-              </p>
-            </div>
-            <button
-              role="switch"
-              aria-checked={analyticsEnabled}
-              onClick={() => setAnalyticsEnabled((v) => !v)}
-              className={`relative flex-shrink-0 mt-0.5 w-9 h-5 rounded-full transition-colors ${
-                analyticsEnabled ? "bg-[var(--accent)]" : "bg-[var(--border)]"
+        {/* Analytics toggle */}
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-medium text-[var(--foreground)]">
+              {cc.analyticsCookies ?? "Analytics Cookies"}
+            </p>
+            <p className="text-[11px] text-[var(--muted)] leading-relaxed mt-0.5">
+              {cc.analyticsCookiesDesc ?? "Google Analytics & Microsoft Clarity — helps us improve the calculator."}
+            </p>
+          </div>
+          <button
+            role="switch"
+            aria-checked={analyticsEnabled}
+            onClick={() => setAnalyticsEnabled((v) => !v)}
+            className={`relative flex-shrink-0 mt-0.5 w-9 h-5 rounded-full transition-colors ${
+              analyticsEnabled ? "bg-[var(--accent)]" : "bg-[var(--border)]"
+            }`}
+          >
+            <span
+              className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform ${
+                analyticsEnabled ? "translate-x-4" : "translate-x-0"
               }`}
-            >
-              <span
-                className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform ${
-                  analyticsEnabled ? "translate-x-4" : "translate-x-0"
-                }`}
-              />
-            </button>
-          </div>
+            />
+          </button>
+        </div>
 
-          <div className="flex gap-2 pt-1">
-            <button
-              onClick={saveSettings}
-              className="flex-1 rounded-lg bg-[var(--accent)] text-white text-xs font-medium py-2 px-4 hover:opacity-90 transition-opacity"
-            >
-              {cc.save ?? "Save Preferences"}
-            </button>
-            <button
-              onClick={() => setStatus("hidden")}
-              className="rounded-lg border border-[var(--border)] text-[var(--muted)] text-xs font-medium py-2 px-3 hover:bg-[var(--surface-hover,var(--border))] transition-colors"
-            >
-              ✕
-            </button>
-          </div>
+        <div className="flex gap-2 pt-1">
+          <button
+            onClick={saveSettings}
+            className="flex-1 rounded-lg bg-[var(--accent)] text-white text-xs font-medium py-2 px-4 hover:opacity-90 transition-opacity"
+          >
+            {cc.save ?? "Save Preferences"}
+          </button>
+          <button
+            onClick={() => setStatus("hidden")}
+            className="rounded-lg border border-[var(--border)] text-[var(--muted)] text-xs font-medium py-2 px-3 hover:bg-[var(--surface-hover,var(--border))] transition-colors"
+          >
+            ✕
+          </button>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
-  // status === "hidden" — show a small unobtrusive trigger
+/**
+ * Renders a "Cookie Settings" link for use in the Footer.
+ * Only visible after the user has already given (or declined) consent.
+ * Clicking opens the CookieConsent settings modal via a window event.
+ */
+export function CookieSettingsLink() {
+  const { messages } = useTranslation();
+  const cc = messages.cookieConsent ?? {};
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    // Show the link only after consent has been given/declined
+    setVisible(!!localStorage.getItem(CONSENT_KEY));
+
+    // Re-evaluate visibility when consent state changes
+    const onConsentUpdate = () => setVisible(!!localStorage.getItem(CONSENT_KEY));
+    window.addEventListener(CONSENT_EVENT, onConsentUpdate);
+    return () => window.removeEventListener(CONSENT_EVENT, onConsentUpdate);
+  }, []);
+
+  if (!visible) return null;
+
   return (
     <button
-      onClick={openSettings}
-      className="fixed bottom-3 start-3 z-30 text-[10px] text-[var(--muted)] hover:text-[var(--foreground)] underline underline-offset-2 transition-colors"
-      aria-label={cc.manageSettings ?? "Cookie Settings"}
+      onClick={() => window.dispatchEvent(new Event(OPEN_SETTINGS_EVENT))}
+      className="hover:text-[var(--foreground)] transition-colors"
     >
       {cc.manageSettings ?? "Cookie Settings"}
     </button>
