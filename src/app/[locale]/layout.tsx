@@ -119,6 +119,14 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={localeConfig.code} dir={localeConfig.dir} suppressHydrationWarning>
       <head>
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* Declared, not just conventional: a reader or crawler should not
+          * have to guess /feed.xml by trying paths. */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Aspect Ratio Calculator — guides"
+          href="/feed.xml"
+        />
         {/* Who this site is, once, sitewide. Every template's own JSON-LD
           * references these two nodes by @id instead of redescribing them.
           * No nonce: reading headers() here would make all 364 pages dynamic,

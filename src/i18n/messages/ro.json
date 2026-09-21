@@ -453,7 +453,22 @@
     "s9Title": "9. Modificări ale acestei politici",
     "s9text": "Putem actualiza această Politică de confidențialitate din când în când pentru a reflecta modificările practicilor noastre sau din motive legale, operaționale sau de reglementare. Atunci când facem modificări, vom actualiza data intrării în vigoare în partea de sus a acestei pagini. Vă încurajăm să revizuiți periodic această politică. Utilizarea continuă a Serviciului după publicarea modificărilor constituie acceptarea dumneavoastră a politicii actualizate.",
     "s10Title": "10. Contactați-ne",
-    "s10text": "Dacă aveți întrebări, nelămuriri sau solicitări referitoare la această Politică de confidențialitate sau la practicile noastre de date, vă rugăm să utilizați widget-ul de feedback de pe pagina calculatorului."
+    "s10text": "Dacă aveți întrebări, nelămuriri sau solicitări referitoare la această Politică de confidențialitate sau la practicile noastre de date, vă rugăm să utilizați widget-ul de feedback de pe pagina calculatorului.",
+    "s2h2b": "Analize opționale (Google Analytics & Microsoft Clarity)",
+    "s2ga4clarity": "Cu acordul dumneavoastră, utilizăm de asemenea Google Analytics 4 și Microsoft Clarity pentru a înțelege mai detaliat comportamentul vizitatorilor. Aceste instrumente setează cookie-uri și pot colecta locația dumneavoastră aproximativă și informații despre dispozitiv. Puteți accepta sau refuza aceste cookie-uri prin intermediul bannerului de cookie-uri afișat la prima dumneavoastră vizită, sau puteți schimba preferința oricând prin linkul Setări Cookie din subsol.",
+    "s4ga4Purpose": "Analize opționale de utilizare (cookie-uri, necesită consimțământ)",
+    "s4clarityPurpose": "Analize opționale de sesiune (cookie-uri, necesită consimțământ)",
+    "s5introGdpr": "Dacă vă aflați în UE/SEE sau Marea Britanie, aveți de asemenea dreptul la:",
+    "s5gdpr1": "Portabilitatea datelor — să primiți datele dumneavoastră personale într-un format structurat, lizibil automat (Art. 20 GDPR)",
+    "s5gdpr2": "Restricționarea prelucrării — să ne cereți să suspendăm prelucrarea datelor dumneavoastră în anumite circumstanțe (Art. 18 GDPR)",
+    "s5gdpr3": "Dreptul de a vă opune prelucrării — să vă opuneți prelucrării bazate pe interese legitime (Art. 21 GDPR)",
+    "s5gdpr4": "Să nu faceți obiectul unor decizii bazate exclusiv pe prelucrarea automată care produc efecte juridice sau efecte semnificative similare (Art. 22 GDPR) — noi nu efectuăm astfel de decizii automate",
+    "s5gdpr5": "Să depuneți o plângere la Autoritatea dumneavoastră locală pentru Protecția Datelor (DPA) din UE/SEE — găsiți DPA-ul dumneavoastră la edpb.europa.eu/about-edpb/about-edpb/members_en",
+    "s5bTitle": "5b. Temeiul legal pentru prelucrare (GDPR)",
+    "s5bIntro": "Acolo unde se aplică GDPR, ne bazăm pe următoarele temeiuri legale:",
+    "s5bList1": "Operațiuni esențiale (preferința temei, cache offline): Interese legitime (Art. 6(1)(f)) — necesare pentru a furniza Serviciul solicitat",
+    "s5bList2": "Cookie-uri de analiză (Google Analytics & Clarity): Consimțământ (Art. 6(1)(a)) — setate doar după ce acceptați prin intermediul bannerului de cookie-uri",
+    "s5bList3": "Email de feedback: Interese legitime (Art. 6(1)(f)) — pentru a răspunde mesajului dumneavoastră"
   },
   "terms": {
     "title": "Termeni și condiții",
@@ -520,5 +535,32 @@
     "alwaysOn": "Întotdeauna activ",
     "save": "Salvează Preferințele",
     "privacyLink": "Politica de confidențialitate"
+  },
+  "aboutPage": {
+    "title": "Despre",
+    "heading": "Despre Calculatorul de Rapoarte de Aspect",
+    "lead": "Un instrument gratuit pentru calcularea rapoartelor de aspect și redimensionarea la acestea fără presupuneri. Fără cont, fără încărcare, fără cost.",
+    "whatItDoesTitle": "Ce face",
+    "whatItDoes": "Trei lucruri. Calculatorul redimensionează o lățime sau o înălțime menținând un raport fix. Funcția Găsește-raport ia oricare două dimensiuni și îți spune raportul pe care îl formează, redus la forma sa cea mai simplă. Expertul de Imagini ia o imagine, îi citește dimensiunile automat și arată cum va fi decupată pe fiecare platformă socială majoră.",
+    "privacyTitle": "Imaginile nu părăsesc niciodată dispozitivul tău",
+    "privacy": "Fiecare calcul rulează în browserul tău. Imaginile deschise în Expertul de Imagini sunt citite local și nu sunt niciodată încărcate, stocate sau transmise — nu există un server la care să le trimită. Site-ul se instalează și ca aplicație și continuă să funcționeze fără nicio conexiune.",
+    "languagesTitle": "Treisprezece limbi",
+    "languages": "Calculatorul, ghidurile și paginile de referință ale platformelor sunt publicate în engleză, spaniolă, portugheză, franceză, indoneziană, japoneză, chineză simplificată și tradițională, arabă, ucraineană, poloneză, română și vietnameză.",
+    "maintenanceTitle": "Cum este menținut la zi",
+    "maintenance": "Dimensiunile platformelor sociale se schimbă, așa că paginile platformelor sunt revizuite conform specificațiilor publicate de fiecare platformă în parte, în loc să fie copiate din alte ghiduri. Fiecare articol poartă data publicării sale, iar acea dată este modificată doar atunci când conținutul se schimbă efectiv.",
+    "contactCta": "Ai găsit ceva greșit sau ceva lipsește?",
+    "contactLink": "Contactează-ne"
+  },
+  "contactPage": {
+    "title": "Contact",
+    "heading": "Contact",
+    "lead": "Corecțiile, cererile de funcționalități și rapoartele de erori sunt toate binevenite și toate citite.",
+    "feedbackTitle": "Feedback și cereri de funcționalități",
+    "feedback": "Formularul de feedback este cea mai rapidă cale. Acesta preia un mesaj și, opțional, pentru ce folosiți calculatorul — ceea ce decide ce va fi dezvoltat în continuare.",
+    "feedbackButton": "Deschide formularul de feedback",
+    "securityTitle": "Raportarea unei probleme de securitate",
+    "security": "Rapoartele de securitate respectă RFC 9116. Detaliile de contact lizibile de mașină sunt publicate la /.well-known/security.txt, iar rapoartele trimise prin formularul de feedback ajung în același loc.",
+    "dataTitle": "Datele dumneavoastră",
+    "data": "Nimic din ceea ce calculați nu este transmis, deci nu există nimic de solicitat sau șters. Ceea ce colectează site-ul și cum să dezactivați colectarea este stabilit în politica de confidențialitate."
   }
 }

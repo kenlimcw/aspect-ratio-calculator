@@ -454,7 +454,22 @@
     "s9Title": "9. Modifications de cette politique",
     "s9text": "Nous pouvons mettre à jour cette Politique de confidentialité de temps à autre pour refléter les changements dans nos pratiques ou pour des raisons légales, opérationnelles ou réglementaires. Lorsque nous apportons des modifications, nous mettrons à jour la date d'entrée en vigueur en haut de cette page. Nous vous encourageons à consulter cette politique périodiquement. L'utilisation continue du Service après la publication des modifications constitue votre acceptation de la politique mise à jour.",
     "s10Title": "10. Nous contacter",
-    "s10text": "Si vous avez des questions, des préoccupations ou des demandes concernant cette Politique de confidentialité ou nos pratiques en matière de données, veuillez utiliser le widget de commentaires sur la page du calculateur."
+    "s10text": "Si vous avez des questions, des préoccupations ou des demandes concernant cette Politique de confidentialité ou nos pratiques en matière de données, veuillez utiliser le widget de commentaires sur la page du calculateur.",
+    "s2h2b": "Analyses facultatives (Google Analytics & Microsoft Clarity)",
+    "s2ga4clarity": "Avec votre consentement, nous utilisons également Google Analytics 4 et Microsoft Clarity pour mieux comprendre le comportement des visiteurs. Ces outils déposent des cookies et peuvent collecter votre localisation approximative ainsi que des informations sur votre appareil. Vous pouvez accepter ou refuser ces cookies via la bannière de consentement affichée lors de votre première visite, ou modifier vos préférences à tout moment via le lien Paramètres des cookies dans le pied de page.",
+    "s4ga4Purpose": "Analyses d'utilisation facultatives (cookies, nécessite un consentement)",
+    "s4clarityPurpose": "Analyses de session facultatives (cookies, nécessite un consentement)",
+    "s5introGdpr": "Si vous êtes dans l'UE/EEE ou au Royaume-Uni, vous avez également le droit de :",
+    "s5gdpr1": "Portabilité des données — recevoir vos données personnelles dans un format structuré et lisible par machine (Art. 20 GDPR)",
+    "s5gdpr2": "Limitation du traitement — nous demander de suspendre le traitement de vos données dans certaines circonstances (Art. 18 GDPR)",
+    "s5gdpr3": "Droit d'opposition — s'opposer au traitement fondé sur des intérêts légitimes (Art. 21 GDPR)",
+    "s5gdpr4": "Ne pas faire l'objet de décisions fondées uniquement sur un traitement automatisé produisant des effets juridiques ou significatifs similaires (Art. 22 GDPR) — nous n'effectuons aucune prise de décision automatisée de ce type",
+    "s5gdpr5": "Déposer une plainte auprès de votre Autorité de protection des données (APD) locale de l'UE/EEE — trouvez votre APD sur edpb.europa.eu/about-edpb/about-edpb/members_en",
+    "s5bTitle": "5b. Base légale du traitement (GDPR)",
+    "s5bIntro": "Lorsque le GDPR s'applique, nous nous appuyons sur les bases légales suivantes :",
+    "s5bList1": "Opérations essentielles (préférence de thème, cache hors ligne) : Intérêts légitimes (Art. 6(1)(f)) — nécessaire pour fournir le Service que vous avez demandé",
+    "s5bList2": "Cookies d'analyse (Google Analytics & Clarity) : Consentement (Art. 6(1)(a)) — déposés uniquement après votre acceptation via la bannière de consentement",
+    "s5bList3": "E-mail de retour : Intérêts légitimes (Art. 6(1)(f)) — pour répondre à votre message"
   },
   "terms": {
     "title": "Conditions d'utilisation",
@@ -521,5 +536,32 @@
     "alwaysOn": "Toujours activé",
     "save": "Enregistrer les préférences",
     "privacyLink": "Politique de confidentialité"
+  },
+  "aboutPage": {
+    "title": "À propos",
+    "heading": "À propos du Calculateur de Rapport d'Aspect",
+    "lead": "Un outil gratuit pour calculer les rapports d'aspect et redimensionner sans tâtonner. Aucun compte, aucun téléchargement, aucun coût.",
+    "whatItDoesTitle": "Ce qu'il fait",
+    "whatItDoes": "Trois fonctions. Le calculateur redimensionne une largeur ou une hauteur en maintenant un rapport fixe. La fonction « Trouver un rapport » prend deux dimensions quelconques et vous indique le rapport qu'elles forment, réduit à sa forme la plus simple. L'Assistant d'Images prend une image, lit ses dimensions automatiquement et montre comment elle sera recadrée sur chaque plateforme sociale majeure.",
+    "privacyTitle": "Les images ne quittent jamais votre appareil",
+    "privacy": "Chaque calcul s'exécute dans votre navigateur. Les images ouvertes dans l'Assistant d'Images sont lues localement et ne sont jamais téléchargées, stockées ou transmises — il n'y a pas de serveur pour les envoyer. Le site s'installe également comme une application et continue de fonctionner sans aucune connexion.",
+    "languagesTitle": "Treize langues",
+    "languages": "Le calculateur, les guides et les pages de référence des plateformes sont publiés en anglais, espagnol, portugais, français, indonésien, japonais, chinois simplifié et traditionnel, arabe, ukrainien, polonais, roumain et vietnamien.",
+    "maintenanceTitle": "Comment il est maintenu à jour",
+    "maintenance": "Les dimensions des plateformes sociales changent, donc les pages des plateformes sont examinées par rapport aux spécifications publiées par chaque plateforme elle-même, plutôt que copiées d'autres guides. Chaque article porte la date de sa publication, et cette date n'est modifiée que lorsque le contenu change réellement.",
+    "contactCta": "Vous avez trouvé une erreur ou il manque quelque chose ?",
+    "contactLink": "Contactez-nous"
+  },
+  "contactPage": {
+    "title": "Contact",
+    "heading": "Contact",
+    "lead": "Les corrections, les demandes de fonctionnalités et les rapports de bugs sont tous les bienvenus et tous lus.",
+    "feedbackTitle": "Commentaires et demandes de fonctionnalités",
+    "feedback": "Le formulaire de commentaires est le moyen le plus rapide. Il permet d'envoyer un message et, facultativement, d'indiquer l'utilisation que vous faites du calculateur — ce qui nous aide à décider des prochaines fonctionnalités à développer.",
+    "feedbackButton": "Ouvrir le formulaire de commentaires",
+    "securityTitle": "Signaler un problème de sécurité",
+    "security": "Les rapports de sécurité suivent la RFC 9116. Les coordonnées de contact lisibles par machine sont publiées à l'adresse /.well-known/security.txt, et les rapports envoyés via le formulaire de commentaires parviennent au même endroit.",
+    "dataTitle": "Vos données",
+    "data": "Rien de ce que vous calculez n'est transmis, il n'y a donc rien à demander ou à supprimer. Ce que le site collecte, et comment le désactiver, est détaillé dans la politique de confidentialité."
   }
 }

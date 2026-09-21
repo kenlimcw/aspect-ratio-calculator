@@ -453,7 +453,22 @@
     "s9Title": "9. Zmiany w Niniejszej Polityce",
     "s9text": "Możemy od czasu do czasu aktualizować niniejszą Politykę Prywatności, aby odzwierciedlić zmiany w naszych praktykach lub z przyczyn prawnych, operacyjnych lub regulacyjnych. Kiedy wprowadzimy zmiany, zaktualizujemy datę wejścia w życie na górze tej strony. Zachęcamy do okresowego przeglądania tej polityki. Dalsze korzystanie z Serwisu po opublikowaniu zmian oznacza akceptację zaktualizowanej polityki.",
     "s10Title": "10. Skontaktuj się z Nami",
-    "s10text": "Jeśli masz pytania, wątpliwości lub prośby dotyczące niniejszej Polityki Prywatności lub naszych praktyk dotyczących danych, skorzystaj z widżetu opinii na stronie kalkulatora."
+    "s10text": "Jeśli masz pytania, wątpliwości lub prośby dotyczące niniejszej Polityki Prywatności lub naszych praktyk dotyczących danych, skorzystaj z widżetu opinii na stronie kalkulatora.",
+    "s2h2b": "Opcjonalne narzędzia analityczne (Google Analytics i Microsoft Clarity)",
+    "s2ga4clarity": "Za Twoją zgodą używamy również Google Analytics 4 i Microsoft Clarity, aby dokładniej zrozumieć zachowania odwiedzających. Narzędzia te ustawiają pliki cookie i mogą zbierać Twoją przybliżoną lokalizację oraz informacje o urządzeniu. Możesz zaakceptować lub odrzucić te pliki cookie za pośrednictwem banera plików cookie wyświetlanego podczas pierwszej wizyty lub zmienić swoje preferencje w dowolnym momencie za pomocą linku Ustawienia plików cookie w stopce.",
+    "s4ga4Purpose": "Opcjonalna analityka użytkowania (pliki cookie, wymaga zgody)",
+    "s4clarityPurpose": "Opcjonalna analityka sesji (pliki cookie, wymaga zgody)",
+    "s5introGdpr": "Jeśli znajdujesz się w UE/EOG lub Wielkiej Brytanii, masz również prawo do:",
+    "s5gdpr1": "Przenoszenia danych — otrzymania swoich danych osobowych w ustrukturyzowanym, powszechnie używanym formacie nadającym się do odczytu maszynowego (Art. 20 RODO)",
+    "s5gdpr2": "Ograniczenia przetwarzania — zażądania od nas wstrzymania przetwarzania Twoich danych w określonych okolicznościach (Art. 18 RODO)",
+    "s5gdpr3": "Sprzeciwu wobec przetwarzania — wniesienia sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionych interesach (Art. 21 RODO)",
+    "s5gdpr4": "Niepodlegania wyłącznie zautomatyzowanym decyzjom, które wywołują skutki prawne lub podobnie istotne (Art. 22 RODO) — nie przeprowadzamy żadnego takiego zautomatyzowanego podejmowania decyzji",
+    "s5gdpr5": "Złożenia skargi do lokalnego organu ochrony danych (DPA) w UE/EOG — znajdź swój DPA na edpb.europa.eu/about-edpb/about-edpb/members_en",
+    "s5bTitle": "5b. Podstawa prawna przetwarzania (RODO)",
+    "s5bIntro": "Tam, gdzie ma zastosowanie RODO, opieramy się na następujących podstawach prawnych:",
+    "s5bList1": "Podstawowe operacje (preferencje motywu, pamięć podręczna offline): Prawnie uzasadnione interesy (Art. 6 ust. 1 lit. f) — niezbędne do świadczenia żądanej Usługi",
+    "s5bList2": "Analityczne pliki cookie (Google Analytics i Clarity): Zgoda (Art. 6 ust. 1 lit. a) — ustawiane tylko po zaakceptowaniu za pośrednictwem banera plików cookie",
+    "s5bList3": "E-mail zwrotny: Prawnie uzasadnione interesy (Art. 6 ust. 1 lit. f) — w celu odpowiedzi na Twoją wiadomość"
   },
   "terms": {
     "title": "Warunki świadczenia usług",
@@ -520,5 +535,32 @@
     "alwaysOn": "Zawsze włączone",
     "save": "Zapisz preferencje",
     "privacyLink": "Polityka prywatności"
+  },
+  "aboutPage": {
+    "title": "Informacje",
+    "heading": "O Kalkulatorze Współczynnika Proporcji",
+    "lead": "Darmowe narzędzie do obliczania współczynników proporcji i zmiany rozmiaru zgodnie z nimi bez zgadywania. Bez konta, bez przesyłania, bezpłatnie.",
+    "whatItDoesTitle": "Co robi",
+    "whatItDoes": "Trzy rzeczy. Kalkulator zmienia rozmiar szerokości lub wysokości, utrzymując stałe proporcje. Funkcja 'Znajdź proporcje' przyjmuje dowolne dwa wymiary i podaje proporcje, jakie tworzą, sprowadzone do najprostszej postaci. Kreator Obrazów przyjmuje obraz, automatycznie odczytuje jego wymiary i pokazuje, jak zostanie przycięty na każdej głównej platformie społecznościowej.",
+    "privacyTitle": "Obrazy nigdy nie opuszczają Twojego urządzenia",
+    "privacy": "Każde obliczenie jest wykonywane w Twojej przeglądarce. Obrazy otwarte w Kreatorze Obrazów są odczytywane lokalnie i nigdy nie są przesyłane, przechowywane ani transmitowane — nie ma serwera, do którego mogłyby zostać wysłane. Strona instaluje się również jako aplikacja i działa bez połączenia z internetem.",
+    "languagesTitle": "Trzynaście języków",
+    "languages": "Kalkulator, przewodniki i strony referencyjne platform są dostępne w językach: angielskim, hiszpańskim, portugalskim, francuskim, indonezyjskim, japońskim, chińskim uproszczonym i tradycyjnym, arabskim, ukraińskim, polskim, rumuńskim i wietnamskim.",
+    "maintenanceTitle": "Jak jest aktualizowany",
+    "maintenance": "Wymiary platform społecznościowych zmieniają się, dlatego strony platform są weryfikowane na podstawie własnych, opublikowanych specyfikacji każdej platformy, a nie kopiowane z innych przewodników. Każdy artykuł zawiera datę publikacji, a data ta jest zmieniana tylko wtedy, gdy faktycznie zmienia się treść.",
+    "contactCta": "Znalazłeś błąd lub czegoś brakuje?",
+    "contactLink": "Skontaktuj się z nami"
+  },
+  "contactPage": {
+    "title": "Kontakt",
+    "heading": "Kontakt",
+    "lead": "Poprawki, prośby o nowe funkcje i zgłoszenia błędów są mile widziane i wszystkie są czytane.",
+    "feedbackTitle": "Opinie i prośby o nowe funkcje",
+    "feedback": "Formularz opinii to najszybsza droga. Przyjmuje wiadomość i, opcjonalnie, informację do czego używasz kalkulatora — co decyduje o tym, co zostanie zbudowane w następnej kolejności.",
+    "feedbackButton": "Otwórz formularz opinii",
+    "securityTitle": "Zgłaszanie problemu bezpieczeństwa",
+    "security": "Zgłoszenia dotyczące bezpieczeństwa są zgodne z RFC 9116. Dane kontaktowe w formacie czytelnym maszynowo są publikowane pod adresem /.well-known/security.txt, a zgłoszenia wysłane za pośrednictwem formularza opinii trafiają w to samo miejsce.",
+    "dataTitle": "Twoje dane",
+    "data": "Nic, co obliczasz, nie jest przesyłane, więc nie ma nic do żądania ani usunięcia. To, co strona zbiera i jak to wyłączyć, jest określone w polityce prywatności."
   }
 }

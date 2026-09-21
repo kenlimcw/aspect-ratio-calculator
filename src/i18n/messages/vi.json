@@ -453,7 +453,22 @@
     "s9Title": "9. Thay đổi đối với Chính sách này",
     "s9text": "Chúng tôi có thể cập nhật Chính sách quyền riêng tư này theo thời gian để phản ánh những thay đổi trong thực tiễn của chúng tôi hoặc vì lý do pháp lý, vận hành hoặc quy định. Khi chúng tôi thực hiện các thay đổi, chúng tôi sẽ cập nhật ngày có hiệu lực ở đầu trang này. Chúng tôi khuyến khích bạn xem xét chính sách này định kỳ. Việc tiếp tục sử dụng Dịch vụ sau khi các thay đổi được đăng tải đồng nghĩa với việc bạn chấp nhận chính sách đã cập nhật.",
     "s10Title": "10. Liên hệ với chúng tôi",
-    "s10text": "Nếu bạn có câu hỏi, thắc mắc hoặc yêu cầu liên quan đến Chính sách quyền riêng tư này hoặc các thực tiễn dữ liệu của chúng tôi, vui lòng sử dụng tiện ích phản hồi trên trang máy tính."
+    "s10text": "Nếu bạn có câu hỏi, thắc mắc hoặc yêu cầu liên quan đến Chính sách quyền riêng tư này hoặc các thực tiễn dữ liệu của chúng tôi, vui lòng sử dụng tiện ích phản hồi trên trang máy tính.",
+    "s2h2b": "Phân tích tùy chọn (Google Analytics & Microsoft Clarity)",
+    "s2ga4clarity": "Với sự đồng ý của bạn, chúng tôi cũng sử dụng Google Analytics 4 và Microsoft Clarity để hiểu rõ hơn về hành vi của khách truy cập. Các công cụ này đặt cookie và có thể thu thập thông tin vị trí gần đúng cũng như thông tin thiết bị của bạn. Bạn có thể chấp nhận hoặc từ chối các cookie này thông qua biểu ngữ cookie hiển thị trong lần truy cập đầu tiên của bạn, hoặc thay đổi tùy chọn của mình bất cứ lúc nào thông qua liên kết Cài đặt Cookie ở chân trang.",
+    "s4ga4Purpose": "Phân tích sử dụng tùy chọn (cookie, yêu cầu sự đồng ý)",
+    "s4clarityPurpose": "Phân tích phiên tùy chọn (cookie, yêu cầu sự đồng ý)",
+    "s5introGdpr": "Nếu bạn ở EU/EEA hoặc Vương quốc Anh, bạn cũng có quyền:",
+    "s5gdpr1": "Quyền di chuyển dữ liệu — nhận dữ liệu cá nhân của bạn ở định dạng có cấu trúc, có thể đọc được bằng máy (Điều 20 GDPR)",
+    "s5gdpr2": "Hạn chế xử lý — yêu cầu chúng tôi tạm dừng xử lý dữ liệu của bạn trong một số trường hợp nhất định (Điều 18 GDPR)",
+    "s5gdpr3": "Phản đối việc xử lý — phản đối việc xử lý dựa trên lợi ích hợp pháp (Điều 21 GDPR)",
+    "s5gdpr4": "Không phải chịu các quyết định hoàn toàn tự động tạo ra hiệu ứng pháp lý hoặc các hiệu ứng quan trọng tương tự (Điều 22 GDPR) — chúng tôi không thực hiện bất kỳ quyết định tự động nào như vậy",
+    "s5gdpr5": "Nộp đơn khiếu nại với Cơ quan Bảo vệ Dữ liệu (DPA) địa phương của bạn tại EU/EEA — tìm DPA của bạn tại edpb.europa.eu/about-edpb/about-edpb/members_en",
+    "s5bTitle": "5b. Cơ sở pháp lý để xử lý (GDPR)",
+    "s5bIntro": "Trong trường hợp GDPR được áp dụng, chúng tôi dựa vào các cơ sở pháp lý sau:",
+    "s5bList1": "Hoạt động thiết yếu (tùy chọn giao diện, bộ nhớ đệm ngoại tuyến): Lợi ích hợp pháp (Điều 6(1)(f)) — cần thiết để cung cấp Dịch vụ bạn yêu cầu",
+    "s5bList2": "Cookie phân tích (Google Analytics & Clarity): Sự đồng ý (Điều 6(1)(a)) — chỉ được đặt sau khi bạn chấp nhận thông qua biểu ngữ cookie",
+    "s5bList3": "Email phản hồi: Lợi ích hợp pháp (Điều 6(1)(f)) — để phản hồi tin nhắn của bạn"
   },
   "terms": {
     "title": "Điều khoản Dịch vụ",
@@ -520,5 +535,32 @@
     "alwaysOn": "Luôn bật",
     "save": "Lưu Tùy chọn",
     "privacyLink": "Chính sách Quyền riêng tư"
+  },
+  "aboutPage": {
+    "title": "Giới thiệu",
+    "heading": "Giới thiệu về Công cụ tính tỷ lệ khung hình",
+    "lead": "Một công cụ miễn phí để tính toán tỷ lệ khung hình và thay đổi kích thước theo chúng mà không cần phỏng đoán. Không cần tài khoản, không cần tải lên, không mất phí.",
+    "whatItDoesTitle": "Chức năng",
+    "whatItDoes": "Ba chức năng. Công cụ tính toán thay đổi kích thước chiều rộng hoặc chiều cao trong khi giữ tỷ lệ cố định. Chức năng \"Tìm tỷ lệ\" nhận hai kích thước bất kỳ và cho bạn biết tỷ lệ chúng tạo thành, được rút gọn về dạng đơn giản nhất. Trình hướng dẫn hình ảnh (Image Wizard) nhận một hình ảnh, tự động đọc kích thước của nó và hiển thị cách nó sẽ được cắt trên từng nền tảng mạng xã hội lớn.",
+    "privacyTitle": "Hình ảnh không bao giờ rời khỏi thiết bị của bạn",
+    "privacy": "Mọi phép tính đều chạy trong trình duyệt của bạn. Hình ảnh được mở trong Trình hướng dẫn hình ảnh (Image Wizard) được đọc cục bộ và không bao giờ được tải lên, lưu trữ hoặc truyền đi — không có máy chủ nào để gửi chúng đến. Trang web cũng có thể cài đặt dưới dạng ứng dụng và tiếp tục hoạt động mà không cần kết nối internet.",
+    "languagesTitle": "Mười ba ngôn ngữ",
+    "languages": "Công cụ tính toán, các hướng dẫn và các trang tham khảo nền tảng được xuất bản bằng tiếng Anh, tiếng Tây Ban Nha, tiếng Bồ Đào Nha, tiếng Pháp, tiếng Indonesia, tiếng Nhật, tiếng Trung giản thể và phồn thể, tiếng Ả Rập, tiếng Ukraina, tiếng Ba Lan, tiếng Romania và tiếng Việt.",
+    "maintenanceTitle": "Cách thức cập nhật",
+    "maintenance": "Kích thước của các nền tảng mạng xã hội thay đổi, vì vậy các trang nền tảng được xem xét dựa trên thông số kỹ thuật do chính nền tảng đó công bố thay vì sao chép từ các hướng dẫn khác. Mỗi bài viết đều ghi ngày xuất bản, và ngày đó chỉ được thay đổi khi nội dung thực sự thay đổi.",
+    "contactCta": "Tìm thấy lỗi hoặc thiếu sót?",
+    "contactLink": "Liên hệ"
+  },
+  "contactPage": {
+    "title": "Liên hệ",
+    "heading": "Liên hệ",
+    "lead": "Các yêu cầu sửa lỗi, đề xuất tính năng và báo cáo lỗi đều được hoan nghênh và sẽ được đọc.",
+    "feedbackTitle": "Phản hồi và đề xuất tính năng",
+    "feedback": "Biểu mẫu phản hồi là cách nhanh nhất. Nó nhận một tin nhắn và, tùy chọn, thông tin về mục đích bạn sử dụng công cụ tính toán — điều này sẽ quyết định những gì được phát triển tiếp theo.",
+    "feedbackButton": "Mở biểu mẫu phản hồi",
+    "securityTitle": "Báo cáo vấn đề bảo mật",
+    "security": "Các báo cáo bảo mật tuân thủ RFC 9116. Chi tiết liên hệ có thể đọc bằng máy được công bố tại /.well-known/security.txt, và các báo cáo gửi qua biểu mẫu phản hồi cũng đến cùng một địa chỉ.",
+    "dataTitle": "Dữ liệu của bạn",
+    "data": "Không có dữ liệu nào bạn tính toán được truyền đi, vì vậy không có gì để yêu cầu hoặc xóa. Những gì trang web thu thập và cách tắt nó được nêu rõ trong chính sách quyền riêng tư."
   }
 }

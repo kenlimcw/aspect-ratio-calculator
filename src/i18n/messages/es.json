@@ -454,7 +454,22 @@
     "s9Title": "9. Cambios en esta Política",
     "s9text": "Podemos actualizar esta Política de Privacidad de vez en cuando para reflejar cambios en nuestras prácticas o por razones legales, operativas o regulatorias. Cuando realicemos cambios, actualizaremos la fecha de entrada en vigor en la parte superior de esta página. Le recomendamos que revise esta política periódicamente. El uso continuado del Servicio después de la publicación de los cambios constituye su aceptación de la política actualizada.",
     "s10Title": "10. Contáctenos",
-    "s10text": "Si tiene preguntas, inquietudes o solicitudes con respecto a esta Política de Privacidad o nuestras prácticas de datos, utilice el widget de comentarios en la página de la calculadora."
+    "s10text": "Si tiene preguntas, inquietudes o solicitudes con respecto a esta Política de Privacidad o nuestras prácticas de datos, utilice el widget de comentarios en la página de la calculadora.",
+    "s2h2b": "Analíticas opcionales (Google Analytics y Microsoft Clarity)",
+    "s2ga4clarity": "Con su consentimiento, también utilizamos Google Analytics 4 y Microsoft Clarity para comprender el comportamiento de los visitantes con mayor detalle. Estas herramientas instalan cookies y pueden recopilar su ubicación aproximada e información del dispositivo. Puede aceptar o rechazar estas cookies a través del banner de cookies que se muestra en su primera visita, o cambiar su preferencia en cualquier momento a través del enlace de Configuración de Cookies en el pie de página.",
+    "s4ga4Purpose": "Analíticas de uso opcionales (cookies, requiere consentimiento)",
+    "s4clarityPurpose": "Analíticas de sesión opcionales (cookies, requiere consentimiento)",
+    "s5introGdpr": "Si se encuentra en la UE/EEE o el Reino Unido, también tiene derecho a:",
+    "s5gdpr1": "Portabilidad de datos — recibir sus datos personales en un formato estructurado y legible por máquina (Art. 20 GDPR)",
+    "s5gdpr2": "Restricción del tratamiento — solicitarnos que pausemos el tratamiento de sus datos en determinadas circunstancias (Art. 18 GDPR)",
+    "s5gdpr3": "Oposición al tratamiento — oponerse al tratamiento basado en intereses legítimos (Art. 21 GDPR)",
+    "s5gdpr4": "No ser objeto de decisiones basadas únicamente en el tratamiento automatizado que produzcan efectos jurídicos o significativamente similares (Art. 22 GDPR) — no realizamos ninguna toma de decisiones automatizada de este tipo",
+    "s5gdpr5": "Presentar una reclamación ante su Autoridad de Protección de Datos (DPA) local de la UE/EEE — encuentre su DPA en edpb.europa.eu/about-edpb/about-edpb/members_en",
+    "s5bTitle": "5b. Base Legítima para el Tratamiento (GDPR)",
+    "s5bIntro": "Cuando se aplica el GDPR, nos basamos en las siguientes bases legítimas:",
+    "s5bList1": "Operaciones esenciales (preferencia de tema, caché sin conexión): Intereses legítimos (Art. 6(1)(f)) — necesario para prestar el Servicio que solicitó",
+    "s5bList2": "Cookies de analíticas (Google Analytics y Clarity): Consentimiento (Art. 6(1)(a)) — solo se instalan después de que las acepte a través del banner de cookies",
+    "s5bList3": "Correo electrónico de comentarios: Intereses legítimos (Art. 6(1)(f)) — para responder a su mensaje"
   },
   "terms": {
     "title": "Términos de Servicio",
@@ -521,5 +536,32 @@
     "alwaysOn": "Siempre activas",
     "save": "Guardar Preferencias",
     "privacyLink": "Política de Privacidad"
+  },
+  "aboutPage": {
+    "title": "Acerca de",
+    "heading": "Acerca de la Calculadora de Aspect Ratio",
+    "lead": "Una herramienta gratuita para calcular relaciones de aspecto y redimensionar a ellas sin conjeturas. No requiere cuenta, subida ni costo.",
+    "whatItDoesTitle": "Qué hace",
+    "whatItDoes": "Tres cosas. La calculadora redimensiona un ancho o un alto manteniendo una relación fija. Find-ratio toma dos dimensiones cualesquiera y te dice la relación que forman, reducida a su forma más simple. El Asistente de Imágenes toma una imagen, lee sus dimensiones automáticamente y muestra cómo se recortará en cada una de las principales plataformas sociales.",
+    "privacyTitle": "Las imágenes nunca salen de tu dispositivo",
+    "privacy": "Cada cálculo se ejecuta en tu navegador. Las imágenes abiertas en el Asistente de Imágenes se leen localmente y nunca se suben, almacenan ni transmiten — no hay un servidor al que enviarlas. El sitio también se instala como una aplicación y sigue funcionando sin conexión alguna.",
+    "languagesTitle": "Trece idiomas",
+    "languages": "La calculadora, las guías y las páginas de referencia de plataformas se publican en inglés, español, portugués, francés, indonesio, japonés, chino simplificado y tradicional, árabe, ucraniano, polaco, rumano y vietnamita.",
+    "maintenanceTitle": "Cómo se mantiene actualizado",
+    "maintenance": "Las dimensiones de las plataformas sociales cambian, por lo que las páginas de la plataforma se revisan según la especificación publicada de cada plataforma en lugar de copiarse de otras guías. Cada artículo lleva la fecha en que fue publicado, y esa fecha solo se modifica cuando las palabras realmente cambian.",
+    "contactCta": "¿Encontraste algo incorrecto o algo que falta?",
+    "contactLink": "Ponte en contacto"
+  },
+  "contactPage": {
+    "title": "Contacto",
+    "heading": "Contacto",
+    "lead": "Las correcciones, solicitudes de funciones y reportes de errores son bienvenidos y todos son leídos.",
+    "feedbackTitle": "Comentarios y solicitudes de funciones",
+    "feedback": "El formulario de comentarios es la vía más rápida. Recibe un mensaje y, opcionalmente, para qué utilizas la calculadora, lo cual decide qué se desarrollará a continuación.",
+    "feedbackButton": "Abrir el formulario de comentarios",
+    "securityTitle": "Reportar un problema de seguridad",
+    "security": "Los informes de seguridad siguen el RFC 9116. Los detalles de contacto legibles por máquina se publican en /.well-known/security.txt, y los informes enviados a través del formulario de comentarios llegan al mismo lugar.",
+    "dataTitle": "Tus datos",
+    "data": "Nada de lo que calculas se transmite, por lo que no hay nada que solicitar o eliminar. Lo que el sitio sí recopila, y cómo desactivarlo, se establece en la política de privacidad."
   }
 }
