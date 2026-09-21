@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { ARTICLE_SLUGS } from "@/lib/seo-data";
 import { LOCALE_SEGMENTS, getLocaleFromSegment, BASE_URL } from "@/i18n/config";
 import { getAlternates } from "@/lib/hreflang";
+import { articleDates } from "@/lib/article-meta";
+import { ORG_ID } from "@/lib/schema";
 import { getSeoData } from "@/i18n/get-seo-data";
 import { getMessages } from "@/i18n/get-messages";
 
@@ -48,17 +50,25 @@ export default async function BlogArticlePage({ params }: Props) {
   const bp = messages.blogPage ?? {};
   const prefix = localeConfig.urlPrefix;
 
+  const dates = articleDates(slug);
+  const articleUrl = `${BASE_URL}${prefix}/blog/${slug}`;
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    name: data.title,
+    // `headline`, not `name`: headline is the property Google reads for Article.
+    headline: data.title,
     description: data.description,
-    url: `${BASE_URL}${prefix}/blog/${slug}`,
-    datePublished: "2026-01-15",
-    publisher: {
-      "@type": "Organization",
-      name: "Aspect Ratio Calculator",
-    },
+    url: articleUrl,
+    mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
+    image: `${BASE_URL}/og-image.png`,
+    inLanguage: localeConfig.hreflang,
+    datePublished: dates.published,
+    dateModified: dates.modified,
+    // Unsigned editorial by the site itself, which is what these are. An
+    // invented byline would read better and be false; when a person puts their
+    // name to these, this becomes a Person with an author page behind it.
+    author: { "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
   };
 
   const breadcrumbJsonLd = {
@@ -104,7 +114,9 @@ export default async function BlogArticlePage({ params }: Props) {
             {messages.common?.home ?? "Home"}
           </Link>
           <span>/</span>
-          <span>{bp.blog ?? "Blog"}</span>
+          <Link href={`${prefix}/blog`} className="hover:text-[var(--foreground)] transition-colors">
+            {bp.blog ?? "Blog"}
+          </Link>
           <span>/</span>
           <span className="text-[var(--foreground)]">{data.title}</span>
         </nav>
@@ -116,6 +128,21 @@ export default async function BlogArticlePage({ params }: Props) {
           </h1>
           <p className="text-[var(--muted)] text-sm md:text-base leading-relaxed">
             {data.intro}
+          </p>
+          {/* The same date the schema carries. A reader who cannot see how old
+            * an article is has to take its currency on trust; an assistant
+            * weighing two answers uses recency, and an undated page loses. */}
+          <p className="text-[var(--muted)] text-xs mt-4">
+            <time dateTime={dates.modified}>
+              {(messages.legal?.lastUpdated ?? "Last updated: {date}").replace(
+                "{date}",
+                new Date(dates.modified).toLocaleDateString(localeConfig.code, {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                }),
+              )}
+            </time>
           </p>
         </div>
 

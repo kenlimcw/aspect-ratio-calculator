@@ -13,6 +13,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { getMessages } from "@/i18n/get-messages";
 import { getLocaleFromSegment, LOCALES, BASE_URL, LOCALE_SEGMENTS } from "@/i18n/config";
 import { getAlternates } from "@/lib/hreflang";
+import { graph, organizationNode, websiteNode, jsonLd } from "@/lib/schema";
 import { getSeoData } from "@/i18n/get-seo-data";
 import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
 import type { FooterSeoData } from "@/components/Footer";
@@ -118,6 +119,16 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={localeConfig.code} dir={localeConfig.dir} suppressHydrationWarning>
       <head>
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* Who this site is, once, sitewide. Every template's own JSON-LD
+          * references these two nodes by @id instead of redescribing them.
+          * No nonce: reading headers() here would make all 364 pages dynamic,
+          * and application/ld+json is data, not an executed script. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: jsonLd(graph([organizationNode(), websiteNode(localeConfig)])),
+          }}
+        />
       </head>
       <body className={`${dmSans.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} antialiased`}>
         <I18nProvider locale={localeConfig.code} dir={localeConfig.dir} messages={messages}>
