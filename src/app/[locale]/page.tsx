@@ -62,16 +62,64 @@ export default async function Home({ params }: Props) {
   const hp = messages.homePage ?? {};
   const prefix = localeConfig.urlPrefix; // "" for en, "/es" for es, etc.
 
-  const jsonLd = {
+  const appName = hp.heroTitle ? `${hp.heroTitle} ${hp.heroTitleAccent}` : "Aspect Ratio Calculator";
+  const appUrl = `${BASE_URL}${prefix}`;
+
+  const webAppLd = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": hp.heroTitle ? `${hp.heroTitle} ${hp.heroTitleAccent}` : "Aspect Ratio Calculator",
+    "@type": ["WebApplication", "SoftwareApplication"],
+    "name": appName,
     "description": messages.meta?.siteDescription ?? "Calculate and convert aspect ratios for video, images, social media, and screens. Free, fast, works offline.",
-    "url": `${BASE_URL}${prefix}`,
+    "url": appUrl,
     "applicationCategory": "UtilityApplication",
+    "applicationSubCategory": "Image and Video Tools",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Requires a modern web browser",
+    "isAccessibleForFree": true,
+    "inLanguage": localeConfig.code,
+    "screenshot": `${BASE_URL}/og-image.png`,
+    "featureList": [
+      "Calculate dimensions while preserving aspect ratio",
+      "Find the ratio of any width and height",
+      "Image Wizard: upload any image for automatic dimension detection and platform-specific crop recommendations",
+      "Presets for Instagram, YouTube, TikTok, X, LinkedIn, Facebook, Pinterest",
+      "Cinema and broadcast ratios (16:9, 4:3, 1:1, 9:16, 21:9, 3:2, 4:5, 2:1, 5:4)",
+      "CSS padding-bottom snippet for responsive containers",
+      "Works offline as an installable PWA",
+      "Available in 13+ languages",
+    ],
+  };
+
+  const howToLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": hp.howToUse ?? "How to Use This Calculator",
+    "description": "Three modes to calculate and convert aspect ratios for any dimensions, image, or social platform.",
+    "totalTime": "PT30S",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": (hp.howToUseStep1Title ?? "Calculator:").replace(/:$/, ""),
+        "text": hp.howToUseStep1Text ?? "Enter your original dimensions (the ratio locks automatically), then type a new width or height — the other dimension calculates instantly. Pick a platform preset to auto-fill recommended dimensions.",
+        "url": `${appUrl}#calculator`,
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": (hp.howToUseStep2Title ?? "Find Ratio:").replace(/:$/, ""),
+        "text": hp.howToUseStep2Text ?? "Enter any width and height to discover the simplified ratio, decimal value, closest standard match, and CSS padding-bottom value. Upload an image to instantly detect its dimensions.",
+        "url": `${appUrl}#find-ratio`,
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": (hp.howToUseStep3Title ?? "Image Wizard:").replace(/:$/, ""),
+        "text": hp.howToUseStep3Text ?? "Upload any image and choose where you want to use it — social media, websites, print, or personal use. Get instant recommendations with crop analysis and one-click dimension copying.",
+        "url": `${appUrl}#image-wizard`,
+      },
+    ],
   };
 
   return (
@@ -79,7 +127,12 @@ export default async function Home({ params }: Props) {
       <script
         type="application/ld+json"
         nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppLd) }}
+      />
+      <script
+        type="application/ld+json"
+        nonce={nonce}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }}
       />
 
       <div className="max-w-2xl mx-auto">

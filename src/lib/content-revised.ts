@@ -18,7 +18,7 @@ export const CONTENT_REVISED = {
   /** The calculator itself — the app, not the copy around it. */
   home: "2026-03-08",
   /** RATIO_DATA and PLATFORM_DATA in seo-data.ts; they are edited together. */
-  ratioAndPlatform: "2026-03-08",
+  ratioAndPlatform: "2026-09-22",
   /** The legal pages carry their own visible effective date; keep them in step. */
   legal: "2026-03-01",
   /** About, Contact, the blog index and the developer documentation. */

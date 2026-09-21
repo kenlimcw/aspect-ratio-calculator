@@ -20,9 +20,14 @@ export async function getSeoData(locale: string): Promise<SeoDataModule> {
   try {
     const mod = await import(`./seo-data/${locale}`);
     return {
-      // For RATIO and PLATFORM, locale files provide complete data — use as-is
-      RATIO_DATA: mod.RATIO_DATA ?? base.RATIO_DATA,
-      PLATFORM_DATA: mod.PLATFORM_DATA ?? base.PLATFORM_DATA,
+      // Key-level merge for these too. "Locale files provide complete data" was
+      // true when it was written and stops being true the moment a ratio or a
+      // platform is added: the new key exists only in English, the whole-object
+      // swap drops it, and the page calls notFound(). Five cinema ratios would
+      // have 404ed on twelve locales while sitting in the sitemap. Falling back
+      // to English is not as good as translating it, but it is a page.
+      RATIO_DATA: { ...base.RATIO_DATA, ...mod.RATIO_DATA },
+      PLATFORM_DATA: { ...base.PLATFORM_DATA, ...mod.PLATFORM_DATA },
       // Key-level merge: locale articles override English; keys only in English
       // (e.g. newly added articles) fall back to English automatically
       ARTICLE_DATA: { ...base.ARTICLE_DATA, ...mod.ARTICLE_DATA },
