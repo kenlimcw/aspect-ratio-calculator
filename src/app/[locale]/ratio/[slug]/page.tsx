@@ -78,6 +78,43 @@ export default async function RatioPage({ params }: Props) {
     ],
   };
 
+  /* This page defines a named thing, so it says so.
+   *
+   * A definition that is merely present has to be found and extracted; a
+   * DefinedTerm is quotable, and an assistant answering "what is 16:9" can lift
+   * it with the term, the definition and the source attached. The termCode is
+   * the ratio itself, which is what makes each entry unambiguous across the set.
+   *
+   * speakable points at #ratio-summary — the answer — rather than at the page.
+   * The whole point is to name the sentence worth reading aloud; selecting the
+   * article means "read all of it", which is not an answer. */
+  const termJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "@id": `${BASE_URL}${prefix}/ratio/${slug}#term`,
+    name: `${data.label} ${rp.aspectRatio ?? "Aspect Ratio"}`,
+    termCode: data.label,
+    description: data.explanation,
+    url: `${BASE_URL}${prefix}/ratio/${slug}`,
+    inLanguage: localeConfig.hreflang,
+    inDefinedTermSet: {
+      "@type": "DefinedTermSet",
+      "@id": `${BASE_URL}/#aspect-ratios`,
+      name: "Aspect ratios",
+      url: `${BASE_URL}/`,
+    },
+  };
+
+  const speakableJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${BASE_URL}${prefix}/ratio/${slug}`,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["#ratio-summary"],
+    },
+  };
+
   const calcUrl = `${prefix}/?rw=${data.w}&rh=${data.h}&mode=scale`;
   const paddingBottom = ((data.h / data.w) * 100).toFixed(4);
 
@@ -86,6 +123,14 @@ export default async function RatioPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(termJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }}
       />
       <script
         type="application/ld+json"
@@ -112,7 +157,10 @@ export default async function RatioPage({ params }: Props) {
             {data.label}{" "}
             <span className="text-[var(--accent)]">{rp.aspectRatio ?? "Aspect Ratio"}</span>
           </h1>
-          <p className="text-[var(--muted)] text-sm md:text-base leading-relaxed mb-6">
+          <p
+            id="ratio-summary"
+            className="text-[var(--muted)] text-sm md:text-base leading-relaxed mb-6"
+          >
             {data.explanation}
           </p>
 
