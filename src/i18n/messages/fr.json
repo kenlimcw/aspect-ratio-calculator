@@ -579,5 +579,19 @@
     "cors": "Les requêtes inter-origines sont autorisées de partout. Les réponses sont de l'arithmétique publique sur des données publiques — il n'y a pas de session et rien ici qui ne soit pas déjà sur la page.",
     "termsTitle": "Conditions",
     "terms": "Utilisation gratuite, y compris à des fins commerciales, avec attribution à aspect-ratio-calculator.com. Si l'API vous évite de construire la vôtre, un lien retour est le seul prix."
+  },
+  "searchPage": {
+    "title": "Recherche",
+    "heading": "Recherche",
+    "placeholder": "Rechercher des rapports, des plateformes et des guides",
+    "submit": "Rechercher",
+    "label": "Rechercher sur ce site",
+    "resultsFor": "Résultats pour « {query} »",
+    "count": "{count} résultats trouvés",
+    "noResults": "Aucun résultat ne correspond à « {query} ». Essayez un rapport tel que 16:9, le nom d'une plateforme ou un sujet comme le recadrage.",
+    "emptyPrompt": "Saisissez un rapport, une plateforme ou un sujet.",
+    "groupRatios": "Rapports d'aspect",
+    "groupPlatforms": "Plateformes",
+    "groupGuides": "Guides"
   }
 }

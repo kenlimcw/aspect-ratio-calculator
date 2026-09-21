@@ -578,5 +578,19 @@
     "cors": "Các yêu cầu đa nguồn gốc được phép từ bất cứ đâu. Các phản hồi là phép tính công khai trên dữ liệu công khai — không có phiên làm việc và không có gì ở đây mà chưa có trên trang.",
     "termsTitle": "Điều khoản",
     "terms": "Miễn phí sử dụng, bao gồm cả mục đích thương mại, với sự ghi công cho aspect-ratio-calculator.com. Nếu API giúp bạn không phải tự xây dựng, một liên kết ngược lại là toàn bộ chi phí."
+  },
+  "searchPage": {
+    "title": "Tìm kiếm",
+    "heading": "Tìm kiếm",
+    "placeholder": "Tìm kiếm tỷ lệ, nền tảng và hướng dẫn",
+    "submit": "Tìm kiếm",
+    "label": "Tìm kiếm trên trang này",
+    "resultsFor": "Kết quả cho “{query}”",
+    "count": "Tìm thấy {count}",
+    "noResults": "Không tìm thấy kết quả nào khớp với “{query}”. Hãy thử một tỷ lệ như 16:9, tên nền tảng hoặc một chủ đề như cắt ảnh.",
+    "emptyPrompt": "Nhập một tỷ lệ, một nền tảng hoặc một chủ đề.",
+    "groupRatios": "Tỷ lệ khung hình",
+    "groupPlatforms": "Nền tảng",
+    "groupGuides": "Hướng dẫn"
   }
 }

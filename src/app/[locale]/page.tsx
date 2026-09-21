@@ -152,7 +152,7 @@ export default async function Home({ params }: Props) {
         {/* ── SEO Content ── */}
         <section className="mt-20 space-y-6">
           <div className="seo-card">
-            <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
+            <h2 id="what-is-aspect-ratio" className="text-base font-semibold text-[var(--foreground)] mb-3">
               {hp.whatIsAspectRatio ?? "What is an Aspect Ratio?"}
             </h2>
             <p className="text-sm text-[var(--muted)] leading-relaxed">
@@ -161,7 +161,7 @@ export default async function Home({ params }: Props) {
           </div>
 
           <div className="seo-card">
-            <h2 className="text-base font-semibold text-[var(--foreground)] mb-4">
+            <h2 id="common-aspect-ratios" className="text-base font-semibold text-[var(--foreground)] mb-4">
               {hp.commonAspectRatios ?? "Common Aspect Ratios"}
             </h2>
             <div className="overflow-x-auto -mx-1.5">
@@ -207,7 +207,7 @@ export default async function Home({ params }: Props) {
           </div>
 
           <div className="seo-card">
-            <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
+            <h2 id="how-to-use" className="text-base font-semibold text-[var(--foreground)] mb-3">
               {hp.howToUse ?? "How to Use This Calculator"}
             </h2>
             <div className="space-y-3 text-sm text-[var(--muted)] leading-relaxed">
@@ -236,7 +236,7 @@ export default async function Home({ params }: Props) {
           </div>
 
           <div className="seo-card">
-            <h2 className="text-base font-semibold text-[var(--foreground)] mb-4">
+            <h2 id="social-media-sizes" className="text-base font-semibold text-[var(--foreground)] mb-4">
               {hp.socialMediaSizes ?? "Social Media Image Sizes (2026)"}
             </h2>
             <div className="overflow-x-auto -mx-1.5">
@@ -286,12 +286,12 @@ export default async function Home({ params }: Props) {
 
           {/* ── Explore Section ── */}
           <div className="seo-card">
-            <h2 className="text-base font-semibold text-[var(--foreground)] mb-4">
+            <h2 id="explore" className="text-base font-semibold text-[var(--foreground)] mb-4">
               {hp.exploreAspectRatios ?? "Explore Aspect Ratios"}
             </h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
+                <h3 id="by-ratio" className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
                   {hp.byRatio ?? "By Ratio"}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -307,7 +307,7 @@ export default async function Home({ params }: Props) {
                 </div>
               </div>
               <div>
-                <h3 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
+                <h3 id="by-platform" className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
                   {hp.byPlatform ?? "By Platform"}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -323,7 +323,7 @@ export default async function Home({ params }: Props) {
                 </div>
               </div>
               <div>
-                <h3 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
+                <h3 id="guides" className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
                   {messages.blogPage?.blog ?? "Guides"}
                 </h3>
                 <ul className="space-y-1.5">

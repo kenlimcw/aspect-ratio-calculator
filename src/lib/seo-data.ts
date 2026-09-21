@@ -115,7 +115,7 @@ export const RATIO_DATA: Record<string, RatioData> = {
     label: "9:16",
     w: 9,
     h: 16,
-    title: "9:16 Aspect Ratio — TikTok, Reels & Vertical Video Dimensions",
+    title: "9:16 Aspect Ratio — TikTok, Reels & Vertical Video Sizes",
     description:
       "Complete guide to the 9:16 aspect ratio: pixel dimensions, use cases for TikTok, Instagram Reels, YouTube Shorts, and a free calculator.",
     explanation:
@@ -244,7 +244,7 @@ export const RATIO_DATA: Record<string, RatioData> = {
     label: "4:5",
     w: 4,
     h: 5,
-    title: "4:5 Aspect Ratio — Instagram Portrait Dimensions & Calculator",
+    title: "4:5 Aspect Ratio — Instagram Portrait Size & Calculator",
     description:
       "The 4:5 aspect ratio for Instagram portrait posts: best pixel sizes, why it gets more feed space, and a free calculator.",
     explanation:

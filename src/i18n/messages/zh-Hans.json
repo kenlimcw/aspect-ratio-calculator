@@ -579,5 +579,19 @@
     "cors": "允许来自任何地方的跨域请求。响应是对公共数据进行的公共计算—— 没有会话，这里的一切都已在页面上公开。",
     "termsTitle": "条款",
     "terms": "免费使用，包括商业用途，但需注明来源 aspect-ratio-calculator.com。如果此 API 节省了您自行构建的时间，那么一个回链就是全部代价。"
+  },
+  "searchPage": {
+    "title": "搜索",
+    "heading": "搜索",
+    "placeholder": "搜索宽高比、平台和指南",
+    "submit": "搜索",
+    "label": "搜索本站",
+    "resultsFor": "“{query}”的搜索结果",
+    "count": "找到{count}个结果",
+    "noResults": "没有与“{query}”匹配的结果。请尝试搜索宽高比（例如 16:9）、平台名称或像“裁剪”这样的主题。",
+    "emptyPrompt": "输入宽高比、平台或主题。",
+    "groupRatios": "宽高比",
+    "groupPlatforms": "平台",
+    "groupGuides": "指南"
   }
 }
