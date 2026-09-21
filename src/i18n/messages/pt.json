@@ -454,7 +454,22 @@
     "s9Title": "9. Alterações a Esta Política",
     "s9text": "Podemos atualizar esta Política de Privacidade periodicamente para refletir mudanças em nossas práticas ou por razões legais, operacionais ou regulatórias. Quando fizermos alterações, atualizaremos a data de vigência no topo desta página. Incentivamos você a revisar esta política periodicamente. O uso continuado do Serviço após a publicação das alterações constitui a sua aceitação da política atualizada.",
     "s10Title": "10. Contate-nos",
-    "s10text": "Se tiver dúvidas, preocupações ou solicitações relacionadas a esta Política de Privacidade ou às nossas práticas de dados, utilize o widget de feedback na página da calculadora."
+    "s10text": "Se tiver dúvidas, preocupações ou solicitações relacionadas a esta Política de Privacidade ou às nossas práticas de dados, utilize o widget de feedback na página da calculadora.",
+    "s2h2b": "Análise opcional (Google Analytics & Microsoft Clarity)",
+    "s2ga4clarity": "Com o seu consentimento, também usamos o Google Analytics 4 e o Microsoft Clarity para entender o comportamento do visitante em mais detalhes. Estas ferramentas definem cookies e podem coletar sua localização aproximada e informações do dispositivo. Você pode aceitar ou recusar esses cookies através do banner de cookies exibido na sua primeira visita, ou alterar sua preferência a qualquer momento através do link Configurações de Cookies no rodapé.",
+    "s4ga4Purpose": "Análise de uso opcional (cookies, requer consentimento)",
+    "s4clarityPurpose": "Análise de sessão opcional (cookies, requer consentimento)",
+    "s5introGdpr": "Se você está na UE/EEE ou no Reino Unido, você também tem o direito de:",
+    "s5gdpr1": "Portabilidade dos dados — receber seus dados pessoais em um formato estruturado e legível por máquina (Art. 20 GDPR)",
+    "s5gdpr2": "Restrição do tratamento — pedir-nos para suspender o tratamento dos seus dados em certas circunstâncias (Art. 18 GDPR)",
+    "s5gdpr3": "Oposição ao tratamento — opor-se ao tratamento com base em interesses legítimos (Art. 21 GDPR)",
+    "s5gdpr4": "Não ser sujeito a decisões unicamente automatizadas que produzam efeitos jurídicos ou igualmente significativos (Art. 22 GDPR) — não realizamos nenhuma tomada de decisão automatizada desse tipo",
+    "s5gdpr5": "Apresentar uma reclamação junto à sua Autoridade de Proteção de Dados (APD) local da UE/EEE — encontre sua APD em edpb.europa.eu/about-edpb/about-edpb/members_en",
+    "s5bTitle": "5b. Base Legal para o Tratamento (GDPR)",
+    "s5bIntro": "Onde o GDPR se aplica, contamos com as seguintes bases legais:",
+    "s5bList1": "Operações essenciais (preferência de tema, cache offline): Interesses legítimos (Art. 6(1)(f)) — necessário para fornecer o Serviço que você solicitou",
+    "s5bList2": "Cookies de análise (Google Analytics & Clarity): Consentimento (Art. 6(1)(a)) — apenas definidos após sua aceitação via banner de cookies",
+    "s5bList3": "E-mail de feedback: Interesses legítimos (Art. 6(1)(f)) — para responder à sua mensagem"
   },
   "terms": {
     "title": "Termos de Serviço",
@@ -521,5 +536,48 @@
     "alwaysOn": "Sempre ativo",
     "save": "Salvar Preferências",
     "privacyLink": "Política de Privacidade"
+  },
+  "aboutPage": {
+    "title": "Sobre",
+    "heading": "Sobre a Calculadora de Proporção de Tela",
+    "lead": "Uma ferramenta gratuita para calcular proporções de tela e redimensionar para elas sem suposições. Não é necessário criar uma conta, fazer upload ou pagar.",
+    "whatItDoesTitle": "O que ela faz",
+    "whatItDoes": "Três coisas. A calculadora redimensiona uma largura ou altura mantendo uma proporção fixa. A função Encontrar Proporção pega quaisquer duas dimensões e informa a proporção que elas formam, reduzida à sua forma mais simples. O Assistente de Imagem pega uma imagem, lê suas dimensões automaticamente e mostra como ela será cortada em cada uma das principais plataformas sociais.",
+    "privacyTitle": "As imagens nunca saem do seu dispositivo",
+    "privacy": "Cada cálculo é executado no seu navegador. As imagens abertas no Assistente de Imagem são lidas localmente e nunca são carregadas, armazenadas ou transmitidas — não há servidor para enviá-las. O site também pode ser instalado como um aplicativo e continua funcionando sem nenhuma conexão.",
+    "languagesTitle": "Treze idiomas",
+    "languages": "A calculadora, os guias e as páginas de referência da plataforma são publicados em Inglês, Espanhol, Português, Francês, Indonésio, Japonês, Chinês Simplificado e Tradicional, Árabe, Ucraniano, Polonês, Romeno e Vietnamita.",
+    "maintenanceTitle": "Como é mantido atualizado",
+    "maintenance": "As dimensões das plataformas sociais mudam, então as páginas da plataforma são revisadas de acordo com a especificação publicada de cada plataforma, em vez de serem copiadas de outros guias. Cada artigo contém a data em que foi publicado, e essa data só é alterada quando as palavras realmente mudam.",
+    "contactCta": "Encontrou algo errado ou faltando?",
+    "contactLink": "Entre em contato"
+  },
+  "contactPage": {
+    "title": "Contato",
+    "heading": "Contato",
+    "lead": "Correções, solicitações de recursos e relatórios de bugs são todos bem-vindos e todos lidos.",
+    "feedbackTitle": "Feedback e solicitações de recursos",
+    "feedback": "O formulário de feedback é o caminho mais rápido. Ele recebe uma mensagem e, opcionalmente, para que você usa a calculadora — o que decide o que será desenvolvido a seguir.",
+    "feedbackButton": "Abrir o formulário de feedback",
+    "securityTitle": "Reportar um problema de segurança",
+    "security": "Os relatórios de segurança seguem a RFC 9116. Os detalhes de contato legíveis por máquina são publicados em /.well-known/security.txt, e os relatórios enviados através do formulário de feedback chegam ao mesmo lugar.",
+    "dataTitle": "Seus dados",
+    "data": "Nada do que você calcula é transmitido, então não há nada para solicitar ou excluir. O que o site coleta e como desativar está descrito na política de privacidade."
+  },
+  "developersPage": {
+    "title": "API",
+    "heading": "API para Desenvolvedores",
+    "lead": "A calculadora é invocável. Sem chave, sem conta, sem limite de taxa além do uso justo comum — e cada resposta indica sua origem.",
+    "ratioTitle": "Aritmética de proporção de tela",
+    "ratio": "Forneça uma largura e uma altura e ele retorna a proporção simplificada. Forneça uma proporção e uma dimensão e ele retorna a outra. Não forneça nada e ele lista todas as proporções nomeadas no site.",
+    "contentTitle": "Páginas como dados",
+    "content": "Cada página de conteúdo possui uma representação JSON do mesmo recurso. Você pode solicitá-lo diretamente, ou pedi-lo na própria URL da página enviando um cabeçalho Accept de application/json — o HTML e o JSON são a mesma coisa em duas formas.",
+    "exampleLabel": "Na própria URL da página:",
+    "specTitle": "Especificação legível por máquina",
+    "spec": "A descrição completa OpenAPI 3.1 de ambos os endpoints, para que um cliente possa ser gerado em vez de escrito.",
+    "corsTitle": "Chamando de um navegador",
+    "cors": "Requisições de origem cruzada são permitidas de qualquer lugar. As respostas são aritmética pública sobre dados públicos — não há sessão e nada aqui que já não esteja na página.",
+    "termsTitle": "Termos",
+    "terms": "Uso gratuito, inclusive comercialmente, com atribuição a aspect-ratio-calculator.com. Se a API te poupar de construir a sua própria, um link de volta é o preço total."
   }
 }

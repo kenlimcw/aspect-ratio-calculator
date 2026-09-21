@@ -535,5 +535,48 @@
     "alwaysOn": "Always on",
     "save": "Save Preferences",
     "privacyLink": "Privacy Policy"
+  },
+  "aboutPage": {
+    "title": "About",
+    "heading": "About the Aspect Ratio Calculator",
+    "lead": "A free tool for working out aspect ratios and resizing to them without guesswork. No account, no upload, no cost.",
+    "whatItDoesTitle": "What it does",
+    "whatItDoes": "Three things. The calculator resizes a width or a height while holding a ratio fixed. Find-ratio takes any two dimensions and tells you the ratio they make, reduced to its simplest form. The Image Wizard takes an image, reads its dimensions automatically, and shows how it will crop on each major social platform.",
+    "privacyTitle": "Images never leave your device",
+    "privacy": "Every calculation runs in your browser. Images opened in the Image Wizard are read locally and are never uploaded, stored or transmitted — there is no server to send them to. The site also installs as an app and keeps working with no connection at all.",
+    "languagesTitle": "Thirteen languages",
+    "languages": "The calculator, the guides and the platform reference pages are published in English, Spanish, Portuguese, French, Indonesian, Japanese, Simplified and Traditional Chinese, Arabic, Ukrainian, Polish, Romanian and Vietnamese.",
+    "maintenanceTitle": "How it is kept current",
+    "maintenance": "Social platform dimensions change, so the platform pages are reviewed against each platform's own published specification rather than copied from other guides. Every article carries the date it was published, and that date is only moved when the words actually change.",
+    "contactCta": "Found something wrong, or something missing?",
+    "contactLink": "Get in touch"
+  },
+  "contactPage": {
+    "title": "Contact",
+    "heading": "Contact",
+    "lead": "Corrections, feature requests and bug reports are all welcome, and all read.",
+    "feedbackTitle": "Feedback and feature requests",
+    "feedback": "The feedback form is the fastest route. It takes a message and, optionally, what you use the calculator for — which is what decides what gets built next.",
+    "feedbackButton": "Open the feedback form",
+    "securityTitle": "Reporting a security problem",
+    "security": "Security reports follow RFC 9116. The machine-readable contact details are published at /.well-known/security.txt, and reports sent through the feedback form reach the same place.",
+    "dataTitle": "Your data",
+    "data": "Nothing you calculate is transmitted, so there is nothing to request or delete. What the site does collect, and how to turn it off, is set out in the privacy policy."
+  },
+  "developersPage": {
+    "title": "API",
+    "heading": "Developer API",
+    "lead": "The calculator is callable. No key, no account, no rate limit beyond ordinary fair use — and every response says where it came from.",
+    "ratioTitle": "Aspect ratio arithmetic",
+    "ratio": "Give it a width and a height and it returns the simplified ratio. Give it a ratio and one dimension and it returns the other. Give it nothing and it lists every named ratio on the site.",
+    "contentTitle": "Pages as data",
+    "content": "Every content page has a JSON representation of the same resource. You can request it directly, or ask for it on the page's own URL by sending an Accept header of application/json — the HTML and the JSON are the same thing in two forms.",
+    "exampleLabel": "On the page's own URL:",
+    "specTitle": "Machine-readable specification",
+    "spec": "The full OpenAPI 3.1 description of both endpoints, so a client can be generated rather than written.",
+    "corsTitle": "Calling from a browser",
+    "cors": "Cross-origin requests are allowed from anywhere. The responses are public arithmetic over public data — there is no session and nothing here that is not already on the page.",
+    "termsTitle": "Terms",
+    "terms": "Free to use, including commercially, with attribution to aspect-ratio-calculator.com. If the API saves you building your own, a link back is the whole price."
   }
 }

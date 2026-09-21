@@ -11,8 +11,10 @@ import { I18nProvider } from "@/components/I18nProvider";
 import { AnalyticsScripts } from "@/components/AnalyticsScripts";
 import { CookieConsent } from "@/components/CookieConsent";
 import { getMessages } from "@/i18n/get-messages";
-import { getLocaleFromSegment, LOCALES, BASE_URL, LOCALE_SEGMENTS } from "@/i18n/config";
+import { notFound } from "next/navigation";
+import { getLocaleFromSegment, urlSegmentToLocale, LOCALES, BASE_URL, LOCALE_SEGMENTS } from "@/i18n/config";
 import { getAlternates } from "@/lib/hreflang";
+import { graph, organizationNode, websiteNode, jsonLd } from "@/lib/schema";
 import { getSeoData } from "@/i18n/get-seo-data";
 import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
 import type { FooterSeoData } from "@/components/Footer";
@@ -50,6 +52,22 @@ export async function generateStaticParams() {
   return LOCALE_SEGMENTS.map((locale) => ({ locale }));
 }
 
+/* Any segment that is not one of the 13 locales is a 404, not a locale.
+ *
+ * [locale] accepted ANY value and getLocaleFromSegment() fell back to English,
+ * so /openapi.json served the English homepage with a 200. The proxy skips
+ * every path containing a dot, so all of them landed here — /llms.txt,
+ * /rss.xml, any dotted path at all — each returning a full copy of the
+ * homepage. A soft 404 says "found" about a page that is not there, and
+ * nothing downstream can tell the difference.
+ *
+ * dynamicParams = false is declared and is NOT sufficient on its own: the home
+ * page reads headers() for the CSP nonce, which forces it to render on demand,
+ * and a dynamically rendered route never consults generateStaticParams. So the
+ * segment is also checked here, in the layout every locale route passes
+ * through, where it holds whichever way the page below happens to render. */
+export const dynamicParams = false;
+
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "#0b0d11" },
@@ -59,6 +77,7 @@ export const viewport: Viewport = {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale: segment } = await params;
+  if (!urlSegmentToLocale(segment)) notFound();
   const localeConfig = getLocaleFromSegment(segment);
   const messages = await getMessages(localeConfig.code);
 
@@ -94,6 +113,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale: segment } = await params;
+  if (!urlSegmentToLocale(segment)) notFound();
   const localeConfig = getLocaleFromSegment(segment);
   const messages = await getMessages(localeConfig.code);
   const { RATIO_DATA, PLATFORM_DATA, ARTICLE_DATA } = await getSeoData(localeConfig.code);
@@ -108,6 +128,24 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={localeConfig.code} dir={localeConfig.dir} suppressHydrationWarning>
       <head>
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* Declared, not just conventional: a reader or crawler should not
+          * have to guess /feed.xml by trying paths. */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Aspect Ratio Calculator — guides"
+          href="/feed.xml"
+        />
+        {/* Who this site is, once, sitewide. Every template's own JSON-LD
+          * references these two nodes by @id instead of redescribing them.
+          * No nonce: reading headers() here would make all 364 pages dynamic,
+          * and application/ld+json is data, not an executed script. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: jsonLd(graph([organizationNode(), websiteNode(localeConfig)])),
+          }}
+        />
       </head>
       <body className={`${dmSans.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} antialiased`}>
         <I18nProvider locale={localeConfig.code} dir={localeConfig.dir} messages={messages}>

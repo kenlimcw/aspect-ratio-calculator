@@ -128,7 +128,26 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
       <div className="border-t border-[var(--border)]">
         <div className="max-w-2xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--muted)]">
           <span>{t("footer", "copyright").replace("{year}", String(year))}</span>
-          <nav className="flex items-center gap-4" aria-label="Legal">
+          <nav className="flex items-center gap-4" aria-label="Site information">
+            <Link
+              href={`${prefix}/about`}
+              className="hover:text-[var(--foreground)] transition-colors"
+            >
+              {t("aboutPage", "title")}
+            </Link>
+            <Link
+              href={`${prefix}/contact`}
+              className="hover:text-[var(--foreground)] transition-colors"
+            >
+              {t("contactPage", "title")}
+            </Link>
+            <Link
+              href={`${prefix}/developers`}
+              className="hover:text-[var(--foreground)] transition-colors"
+            >
+              {t("developersPage", "title")}
+            </Link>
+            <span className="text-[var(--border)]">&middot;</span>
             <Link
               href={`${prefix}/terms`}
               className="hover:text-[var(--foreground)] transition-colors"

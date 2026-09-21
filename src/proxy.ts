@@ -4,8 +4,37 @@ import { NON_DEFAULT_SEGMENTS } from "@/i18n/config";
 
 const localeSegments = new Set(NON_DEFAULT_SEGMENTS);
 
+/* Does this caller want JSON rather than the page?
+ *
+ * Deliberately strict: JSON must be asked for AND HTML must not be. Every
+ * browser sends text/html in Accept, so this can never fire for a person, only
+ * for something that asked for a machine-readable representation by name. */
+function prefersJson(accept: string | null): boolean {
+  if (!accept) return false;
+  const a = accept.toLowerCase();
+  return a.includes("application/json") && !a.includes("text/html") && !a.includes("*/*");
+}
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  /* Content negotiation: the same URL, a different representation.
+   *
+   * An agent that wants the numbers on /ratio/16-9 should not have to parse a
+   * page laid out for a human — and the part of a page that scraping depends
+   * on is exactly the part that changes when the design does. Asking for
+   * application/json on the canonical URL returns the same resource as data. */
+  if (
+    !pathname.startsWith("/api/") &&
+    !pathname.startsWith("/_next/") &&
+    !pathname.includes(".") &&
+    prefersJson(request.headers.get("accept"))
+  ) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/api/content";
+    url.searchParams.set("path", pathname);
+    return NextResponse.rewrite(url);
+  }
 
   // Skip API routes, static files, service worker, manifest
   if (

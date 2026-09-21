@@ -454,7 +454,22 @@
     "s9Title": "9. Perubahan pada Kebijakan Ini",
     "s9text": "Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu untuk mencerminkan perubahan dalam praktik kami atau untuk alasan hukum, operasional, atau regulasi. Ketika kami membuat perubahan, kami akan memperbarui tanggal berlaku di bagian atas halaman ini. Kami mendorong Anda untuk meninjau kebijakan ini secara berkala. Penggunaan Layanan yang berkelanjutan setelah perubahan diposting merupakan penerimaan Anda terhadap kebijakan yang diperbarui.",
     "s10Title": "10. Hubungi Kami",
-    "s10text": "Jika Anda memiliki pertanyaan, kekhawatiran, atau permintaan mengenai Kebijakan Privasi ini atau praktik data kami, silakan gunakan widget umpan balik di halaman kalkulator."
+    "s10text": "Jika Anda memiliki pertanyaan, kekhawatiran, atau permintaan mengenai Kebijakan Privasi ini atau praktik data kami, silakan gunakan widget umpan balik di halaman kalkulator.",
+    "s2h2b": "Analitik opsional (Google Analytics & Microsoft Clarity)",
+    "s2ga4clarity": "Dengan persetujuan Anda, kami juga menggunakan Google Analytics 4 dan Microsoft Clarity untuk memahami perilaku pengunjung secara lebih rinci. Alat-alat ini mengatur cookie dan dapat mengumpulkan perkiraan lokasi serta informasi perangkat Anda. Anda dapat menerima atau menolak cookie ini melalui spanduk cookie yang ditampilkan pada kunjungan pertama Anda, atau mengubah preferensi Anda kapan saja melalui tautan Pengaturan Cookie di bagian bawah halaman.",
+    "s4ga4Purpose": "Analitik penggunaan opsional (cookie, memerlukan persetujuan)",
+    "s4clarityPurpose": "Analitik sesi opsional (cookie, memerlukan persetujuan)",
+    "s5introGdpr": "Jika Anda berada di EU/EEA atau Inggris, Anda juga memiliki hak untuk:",
+    "s5gdpr1": "Portabilitas data — menerima data pribadi Anda dalam format terstruktur yang dapat dibaca mesin (Pasal 20 GDPR)",
+    "s5gdpr2": "Pembatasan pemrosesan — meminta kami untuk menangguhkan pemrosesan data Anda dalam keadaan tertentu (Pasal 18 GDPR)",
+    "s5gdpr3": "Keberatan terhadap pemrosesan — mengajukan keberatan terhadap pemrosesan berdasarkan kepentingan sah (Pasal 21 GDPR)",
+    "s5gdpr4": "Tidak tunduk pada keputusan yang semata-mata otomatis yang menghasilkan efek hukum atau efek signifikan serupa (Pasal 22 GDPR) — kami tidak melakukan pengambilan keputusan otomatis semacam itu",
+    "s5gdpr5": "Mengajukan keluhan kepada Otoritas Perlindungan Data (DPA) EU/EEA lokal Anda — temukan DPA Anda di edpb.europa.eu/about-edpb/about-edpb/members_en",
+    "s5bTitle": "5b. Dasar Hukum untuk Pemrosesan (GDPR)",
+    "s5bIntro": "Di mana GDPR berlaku, kami mengandalkan dasar hukum berikut:",
+    "s5bList1": "Operasi penting (preferensi tema, cache offline): Kepentingan sah (Pasal 6(1)(f)) — diperlukan untuk menyediakan Layanan yang Anda minta",
+    "s5bList2": "Cookie analitik (Google Analytics & Clarity): Persetujuan (Pasal 6(1)(a)) — hanya diatur setelah Anda menerima melalui spanduk cookie",
+    "s5bList3": "Email umpan balik: Kepentingan sah (Pasal 6(1)(f)) — untuk menanggapi pesan Anda"
   },
   "terms": {
     "title": "Ketentuan Layanan",
@@ -521,5 +536,48 @@
     "alwaysOn": "Selalu aktif",
     "save": "Simpan Preferensi",
     "privacyLink": "Kebijakan Privasi"
+  },
+  "aboutPage": {
+    "title": "Tentang",
+    "heading": "Tentang Kalkulator Rasio Aspek",
+    "lead": "Sebuah alat gratis untuk menghitung rasio aspek dan mengubah ukurannya sesuai rasio tersebut tanpa perlu menebak-nebak. Tidak perlu akun, tidak perlu mengunggah, tidak ada biaya.",
+    "whatItDoesTitle": "Fungsinya",
+    "whatItDoes": "Tiga hal. Kalkulator ini mengubah ukuran lebar atau tinggi sambil mempertahankan rasio tetap. Fitur 'Temukan Rasio' mengambil dua dimensi apa pun dan memberi tahu Anda rasio yang terbentuk, disederhanakan ke bentuk paling sederhana. Wizard Gambar mengambil sebuah gambar, membaca dimensinya secara otomatis, dan menunjukkan bagaimana gambar tersebut akan dipotong di setiap platform sosial utama.",
+    "privacyTitle": "Gambar tidak pernah meninggalkan perangkat Anda",
+    "privacy": "Setiap perhitungan berjalan di browser Anda. Gambar yang dibuka di Wizard Gambar dibaca secara lokal dan tidak pernah diunggah, disimpan, atau ditransmisikan — tidak ada server untuk mengirimkannya. Situs ini juga dapat diinstal sebagai aplikasi dan tetap berfungsi tanpa koneksi sama sekali.",
+    "languagesTitle": "Tiga belas bahasa",
+    "languages": "Kalkulator, panduan, dan halaman referensi platform diterbitkan dalam bahasa Inggris, Spanyol, Portugis, Prancis, Indonesia, Jepang, Mandarin Sederhana dan Tradisional, Arab, Ukraina, Polandia, Rumania, dan Vietnam.",
+    "maintenanceTitle": "Bagaimana pembaruannya dijaga",
+    "maintenance": "Dimensi platform sosial berubah, jadi halaman platform ditinjau berdasarkan spesifikasi yang diterbitkan oleh masing-masing platform itu sendiri, bukan disalin dari panduan lain. Setiap artikel mencantumkan tanggal publikasinya, dan tanggal tersebut hanya diubah ketika isinya benar-benar berubah.",
+    "contactCta": "Menemukan kesalahan, atau ada yang kurang?",
+    "contactLink": "Hubungi kami"
+  },
+  "contactPage": {
+    "title": "Kontak",
+    "heading": "Kontak",
+    "lead": "Koreksi, permintaan fitur, dan laporan bug semuanya diterima dan akan dibaca.",
+    "feedbackTitle": "Umpan balik dan permintaan fitur",
+    "feedback": "Formulir umpan balik adalah cara tercepat. Formulir ini menerima pesan dan, secara opsional, informasi tentang untuk apa Anda menggunakan kalkulator — yang akan menentukan apa yang akan dikembangkan selanjutnya.",
+    "feedbackButton": "Buka formulir umpan balik",
+    "securityTitle": "Melaporkan masalah keamanan",
+    "security": "Laporan keamanan mengikuti RFC 9116. Detail kontak yang dapat dibaca mesin dipublikasikan di /.well-known/security.txt, dan laporan yang dikirim melalui formulir umpan balik akan sampai ke tempat yang sama.",
+    "dataTitle": "Data Anda",
+    "data": "Tidak ada data yang Anda hitung yang ditransmisikan, jadi tidak ada yang perlu diminta atau dihapus. Apa yang dikumpulkan situs ini, dan cara mematikannya, dijelaskan dalam kebijakan privasi."
+  },
+  "developersPage": {
+    "title": "API",
+    "heading": "API Pengembang",
+    "lead": "Kalkulator ini dapat dipanggil. Tidak ada kunci, tidak ada akun, tidak ada batasan laju selain penggunaan wajar biasa — dan setiap respons menyatakan asalnya.",
+    "ratioTitle": "Aritmetika Rasio Aspek",
+    "ratio": "Berikan lebar dan tinggi, dan ia akan mengembalikan rasio yang disederhanakan. Berikan rasio dan satu dimensi, dan ia akan mengembalikan dimensi lainnya. Jangan berikan apa pun, dan ia akan mencantumkan setiap rasio bernama di situs.",
+    "contentTitle": "Halaman sebagai Data",
+    "content": "Setiap halaman konten memiliki representasi JSON dari sumber daya yang sama. Anda dapat memintanya secara langsung, atau memintanya di URL halaman itu sendiri dengan mengirimkan header Accept application/json — HTML dan JSON adalah hal yang sama dalam dua bentuk.",
+    "exampleLabel": "Pada URL halaman itu sendiri:",
+    "specTitle": "Spesifikasi yang Dapat Dibaca Mesin",
+    "spec": "Deskripsi lengkap OpenAPI 3.1 dari kedua endpoint, sehingga klien dapat dibuat secara otomatis daripada ditulis secara manual.",
+    "corsTitle": "Memanggil dari Peramban",
+    "cors": "Permintaan lintas-asal diizinkan dari mana saja. Responsnya adalah aritmetika publik atas data publik — tidak ada sesi dan tidak ada di sini yang belum ada di halaman.",
+    "termsTitle": "Ketentuan",
+    "terms": "Gratis untuk digunakan, termasuk secara komersial, dengan atribusi ke aspect-ratio-calculator.com. Jika API ini menghemat Anda dari membangun sendiri, tautan kembali adalah harga keseluruhannya."
   }
 }
