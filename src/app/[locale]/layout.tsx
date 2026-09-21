@@ -11,7 +11,8 @@ import { I18nProvider } from "@/components/I18nProvider";
 import { AnalyticsScripts } from "@/components/AnalyticsScripts";
 import { CookieConsent } from "@/components/CookieConsent";
 import { getMessages } from "@/i18n/get-messages";
-import { getLocaleFromSegment, LOCALES, BASE_URL, LOCALE_SEGMENTS } from "@/i18n/config";
+import { notFound } from "next/navigation";
+import { getLocaleFromSegment, urlSegmentToLocale, LOCALES, BASE_URL, LOCALE_SEGMENTS } from "@/i18n/config";
 import { getAlternates } from "@/lib/hreflang";
 import { graph, organizationNode, websiteNode, jsonLd } from "@/lib/schema";
 import { getSeoData } from "@/i18n/get-seo-data";
@@ -53,12 +54,18 @@ export async function generateStaticParams() {
 
 /* Any segment that is not one of the 13 locales is a 404, not a locale.
  *
- * Without this, [locale] accepts ANY value and getLocaleFromSegment() falls
- * back to English, so /openapi.json rendered the English homepage with a 200.
- * The proxy matcher skips every path containing a dot, so all of them landed
- * here: /llms.txt, /rss.xml and any other dotted path served a full copy of the
- * homepage. That is a soft 404 — the response says "found" about a page that is
- * not there, which is worse than a 404 because nothing downstream can tell. */
+ * [locale] accepted ANY value and getLocaleFromSegment() fell back to English,
+ * so /openapi.json served the English homepage with a 200. The proxy skips
+ * every path containing a dot, so all of them landed here — /llms.txt,
+ * /rss.xml, any dotted path at all — each returning a full copy of the
+ * homepage. A soft 404 says "found" about a page that is not there, and
+ * nothing downstream can tell the difference.
+ *
+ * dynamicParams = false is declared and is NOT sufficient on its own: the home
+ * page reads headers() for the CSP nonce, which forces it to render on demand,
+ * and a dynamically rendered route never consults generateStaticParams. So the
+ * segment is also checked here, in the layout every locale route passes
+ * through, where it holds whichever way the page below happens to render. */
 export const dynamicParams = false;
 
 export const viewport: Viewport = {
@@ -70,6 +77,7 @@ export const viewport: Viewport = {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale: segment } = await params;
+  if (!urlSegmentToLocale(segment)) notFound();
   const localeConfig = getLocaleFromSegment(segment);
   const messages = await getMessages(localeConfig.code);
 
@@ -105,6 +113,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale: segment } = await params;
+  if (!urlSegmentToLocale(segment)) notFound();
   const localeConfig = getLocaleFromSegment(segment);
   const messages = await getMessages(localeConfig.code);
   const { RATIO_DATA, PLATFORM_DATA, ARTICLE_DATA } = await getSeoData(localeConfig.code);
