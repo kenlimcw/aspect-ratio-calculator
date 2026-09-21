@@ -23,6 +23,9 @@ const spec = {
       name: "Free to use with attribution",
       url: `${BASE_URL}/terms`,
     },
+    // An agent has already made the request by the time a human would have read
+    // a footer. The terms belong where the caller looks before it calls.
+    termsOfService: `${BASE_URL}/terms`,
   },
   servers: [{ url: BASE_URL }],
   paths: {
