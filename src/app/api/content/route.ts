@@ -11,7 +11,11 @@ import { articleDates } from "@/lib/article-meta";
  * a human to read, and the fragile part of scraping is exactly the part that
  * changes whenever the design does.
  */
-export const dynamic = "force-static";
+/* NOT force-static: this endpoint reads the query string, and under
+ * force-static Next hands the handler EMPTY searchParams and caches one
+ * response for every caller. It answered the catalogue to every question,
+ * with a 200, which is the worst kind of wrong — confidently. */
+export const dynamic = "force-dynamic";
 
 const JSON_HEADERS = {
   "Access-Control-Allow-Origin": "*",

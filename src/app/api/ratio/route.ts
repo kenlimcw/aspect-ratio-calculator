@@ -13,7 +13,11 @@ import { BASE_URL } from "@/i18n/config";
  * Pure arithmetic, no state, no side effects: every GET is safe to repeat and
  * two identical requests always give the same answer.
  */
-export const dynamic = "force-static";
+/* NOT force-static: this endpoint reads the query string, and under
+ * force-static Next hands the handler EMPTY searchParams and caches one
+ * response for every caller. It answered the catalogue to every question,
+ * with a 200, which is the worst kind of wrong — confidently. */
+export const dynamic = "force-dynamic";
 
 const CORS = {
   // Deliberately open. The responses are public arithmetic over public data —
@@ -141,7 +145,11 @@ export function GET(request: NextRequest) {
           heightRounded: Math.round(scaled.height),
         },
         ratio: {
-          label: `${simple.w}:${simple.h}`,
+          // The label the caller used, not the reduced one. 21:9 reduces to 7:3
+          // and is always called 21:9 — echoing back "7:3" is arithmetically
+          // right and reads like a mistake. Both forms are given.
+          label: `${ratio.w}:${ratio.h}`,
+          simplified: `${simple.w}:${simple.h}`,
           width: simple.w,
           height: simple.h,
           decimal: Number((ratio.w / ratio.h).toFixed(6)),
