@@ -50,6 +50,16 @@ export async function generateStaticParams() {
   return LOCALE_SEGMENTS.map((locale) => ({ locale }));
 }
 
+/* Any segment that is not one of the 13 locales is a 404, not a locale.
+ *
+ * Without this, [locale] accepts ANY value and getLocaleFromSegment() falls
+ * back to English, so /openapi.json rendered the English homepage with a 200.
+ * The proxy matcher skips every path containing a dot, so all of them landed
+ * here: /llms.txt, /rss.xml and any other dotted path served a full copy of the
+ * homepage. That is a soft 404 — the response says "found" about a page that is
+ * not there, which is worse than a 404 because nothing downstream can tell. */
+export const dynamicParams = false;
+
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "#0b0d11" },

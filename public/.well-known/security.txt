@@ -1,0 +1,10 @@
+# Aspect Ratio Calculator — how to report a security problem.
+# RFC 9116. https://www.rfc-editor.org/rfc/rfc9116
+
+Contact: https://aspect-ratio-calculator.com/contact
+Expires: 2027-09-21T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://aspect-ratio-calculator.com/.well-known/security.txt
+
+# Expires is not decoration: past that date this file is formally stale and
+# scanners are told to ignore it. Bump it on review, not on a build.
