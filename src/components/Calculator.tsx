@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useTranslation } from "@/components/I18nProvider";
+import { track } from "@/lib/analytics";
 
 // ── Preset Data ──────────────────────────────────────────────
 
@@ -1279,6 +1280,7 @@ export default function Calculator() {
 
   // Quick ratio override in Scale mode
   const selectScaleQuickRatio = useCallback((preset: Preset) => {
+    track("preset_select", { kind: "quick", label: preset.label });
     setScaleLockedRW(preset.w);
     setScaleLockedRH(preset.h);
     setScaleQuickRatio(preset.label);
@@ -1313,6 +1315,7 @@ export default function Calculator() {
 
   // Preset card selection in Scale mode
   const selectScalePresetCard = useCallback((preset: Preset) => {
+    track("preset_select", { kind: "platform", label: preset.label });
     setScaleLockedRW(preset.w);
     setScaleLockedRH(preset.h);
     setScaleQuickRatio(preset.label);
@@ -1355,6 +1358,7 @@ export default function Calculator() {
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file || !file.type.startsWith("image/")) return;
+    track("image_wizard_upload", { mode: "find", size_kb: Math.round(file.size / 1024) });
     const img = new window.Image();
     img.onload = () => {
       setFindW(String(img.naturalWidth));
@@ -1370,6 +1374,7 @@ export default function Calculator() {
   const handleGuideFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file || !file.type.startsWith("image/")) return;
+    track("image_wizard_upload", { mode: "wizard", size_kb: Math.round(file.size / 1024) });
     loadGuideImage(file);
     e.target.value = "";
   }, [loadGuideImage]);
@@ -1380,6 +1385,7 @@ export default function Calculator() {
     if (ok) {
       setCopied(label);
       setTimeout(() => setCopied(null), 1500);
+      track("copy_dimensions", { label });
     }
   }, []);
 
@@ -1683,7 +1689,7 @@ export default function Calculator() {
           {/* ── Section 1: Original Size ── */}
           <div className="mb-5">
             <div className="flex items-center gap-2 mb-1">
-              <h3 className="text-sm font-semibold text-[var(--foreground)]">{t("calculator", "originalSize")}</h3>
+              <h2 className="text-sm font-semibold text-[var(--foreground)]">{t("calculator", "originalSize")}</h2>
               {scaleOrigFilled && (
                 <span className="text-[var(--accent-emerald)] text-xs">&#10003;</span>
               )}
@@ -1874,7 +1880,7 @@ export default function Calculator() {
           {/* ── Section 3: New Size + Swap ── */}
           <div className="mb-4">
             <div className="flex items-center gap-2 mb-1">
-              <h3 className="text-sm font-semibold text-[var(--foreground)]">{t("calculator", "targetSize")}</h3>
+              <h2 className="text-sm font-semibold text-[var(--foreground)]">{t("calculator", "targetSize")}</h2>
               {(parseFloat(newW) || 0) > 0 && (parseFloat(newH) || 0) > 0 && (
                 <span className="text-[var(--accent-emerald)] text-xs">&#10003;</span>
               )}

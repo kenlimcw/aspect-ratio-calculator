@@ -579,5 +579,19 @@
     "cors": "Requisições de origem cruzada são permitidas de qualquer lugar. As respostas são aritmética pública sobre dados públicos — não há sessão e nada aqui que já não esteja na página.",
     "termsTitle": "Termos",
     "terms": "Uso gratuito, inclusive comercialmente, com atribuição a aspect-ratio-calculator.com. Se a API te poupar de construir a sua própria, um link de volta é o preço total."
+  },
+  "searchPage": {
+    "title": "Busca",
+    "heading": "Busca",
+    "placeholder": "Pesquisar proporções, plataformas e guias",
+    "submit": "Pesquisar",
+    "label": "Pesquisar neste site",
+    "resultsFor": "Resultados para “{query}”",
+    "count": "{count} encontrados",
+    "noResults": "Nada correspondeu a “{query}”. Tente uma proporção como 16:9, o nome de uma plataforma ou um tópico como corte.",
+    "emptyPrompt": "Digite uma proporção, uma plataforma ou um tópico.",
+    "groupRatios": "Proporções de aspecto",
+    "groupPlatforms": "Plataformas",
+    "groupGuides": "Guias"
   }
 }

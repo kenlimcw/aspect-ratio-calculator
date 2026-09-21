@@ -578,5 +578,19 @@
     "cors": "Żądania cross-origin są dozwolone z dowolnego miejsca. Odpowiedzi to publiczne obliczenia na publicznych danych — nie ma sesji ani niczego, czego nie ma już na stronie.",
     "termsTitle": "Warunki",
     "terms": "Bezpłatne w użyciu, w tym komercyjnie, z przypisaniem do aspect-ratio-calculator.com. Jeśli API oszczędza Ci budowania własnego rozwiązania, link zwrotny jest całą ceną."
+  },
+  "searchPage": {
+    "title": "Wyszukiwanie",
+    "heading": "Wyszukiwanie",
+    "placeholder": "Szukaj proporcji, platform i przewodników",
+    "submit": "Szukaj",
+    "label": "Szukaj na tej stronie",
+    "resultsFor": "Wyniki dla „{query}”",
+    "count": "{count} znaleziono",
+    "noResults": "Nic nie pasuje do „{query}”. Spróbuj proporcji, np. 16:9, nazwy platformy lub tematu, np. kadrowanie.",
+    "emptyPrompt": "Wpisz proporcję, platformę lub temat.",
+    "groupRatios": "Proporcje obrazu",
+    "groupPlatforms": "Platformy",
+    "groupGuides": "Przewodniki"
   }
 }

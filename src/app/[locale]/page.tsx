@@ -62,16 +62,64 @@ export default async function Home({ params }: Props) {
   const hp = messages.homePage ?? {};
   const prefix = localeConfig.urlPrefix; // "" for en, "/es" for es, etc.
 
-  const jsonLd = {
+  const appName = hp.heroTitle ? `${hp.heroTitle} ${hp.heroTitleAccent}` : "Aspect Ratio Calculator";
+  const appUrl = `${BASE_URL}${prefix}`;
+
+  const webAppLd = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": hp.heroTitle ? `${hp.heroTitle} ${hp.heroTitleAccent}` : "Aspect Ratio Calculator",
+    "@type": ["WebApplication", "SoftwareApplication"],
+    "name": appName,
     "description": messages.meta?.siteDescription ?? "Calculate and convert aspect ratios for video, images, social media, and screens. Free, fast, works offline.",
-    "url": `${BASE_URL}${prefix}`,
+    "url": appUrl,
     "applicationCategory": "UtilityApplication",
+    "applicationSubCategory": "Image and Video Tools",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Requires a modern web browser",
+    "isAccessibleForFree": true,
+    "inLanguage": localeConfig.code,
+    "screenshot": `${BASE_URL}/og-image.png`,
+    "featureList": [
+      "Calculate dimensions while preserving aspect ratio",
+      "Find the ratio of any width and height",
+      "Image Wizard: upload any image for automatic dimension detection and platform-specific crop recommendations",
+      "Presets for Instagram, YouTube, TikTok, X, LinkedIn, Facebook, Pinterest",
+      "Cinema and broadcast ratios (16:9, 4:3, 1:1, 9:16, 21:9, 3:2, 4:5, 2:1, 5:4)",
+      "CSS padding-bottom snippet for responsive containers",
+      "Works offline as an installable PWA",
+      "Available in 13+ languages",
+    ],
+  };
+
+  const howToLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": hp.howToUse ?? "How to Use This Calculator",
+    "description": "Three modes to calculate and convert aspect ratios for any dimensions, image, or social platform.",
+    "totalTime": "PT30S",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": (hp.howToUseStep1Title ?? "Calculator:").replace(/:$/, ""),
+        "text": hp.howToUseStep1Text ?? "Enter your original dimensions (the ratio locks automatically), then type a new width or height — the other dimension calculates instantly. Pick a platform preset to auto-fill recommended dimensions.",
+        "url": `${appUrl}#calculator`,
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": (hp.howToUseStep2Title ?? "Find Ratio:").replace(/:$/, ""),
+        "text": hp.howToUseStep2Text ?? "Enter any width and height to discover the simplified ratio, decimal value, closest standard match, and CSS padding-bottom value. Upload an image to instantly detect its dimensions.",
+        "url": `${appUrl}#find-ratio`,
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": (hp.howToUseStep3Title ?? "Image Wizard:").replace(/:$/, ""),
+        "text": hp.howToUseStep3Text ?? "Upload any image and choose where you want to use it — social media, websites, print, or personal use. Get instant recommendations with crop analysis and one-click dimension copying.",
+        "url": `${appUrl}#image-wizard`,
+      },
+    ],
   };
 
   return (
@@ -79,7 +127,12 @@ export default async function Home({ params }: Props) {
       <script
         type="application/ld+json"
         nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppLd) }}
+      />
+      <script
+        type="application/ld+json"
+        nonce={nonce}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }}
       />
 
       <div className="max-w-2xl mx-auto">
@@ -99,7 +152,7 @@ export default async function Home({ params }: Props) {
         {/* ── SEO Content ── */}
         <section className="mt-20 space-y-6">
           <div className="seo-card">
-            <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
+            <h2 id="what-is-aspect-ratio" className="text-base font-semibold text-[var(--foreground)] mb-3">
               {hp.whatIsAspectRatio ?? "What is an Aspect Ratio?"}
             </h2>
             <p className="text-sm text-[var(--muted)] leading-relaxed">
@@ -108,7 +161,7 @@ export default async function Home({ params }: Props) {
           </div>
 
           <div className="seo-card">
-            <h2 className="text-base font-semibold text-[var(--foreground)] mb-4">
+            <h2 id="common-aspect-ratios" className="text-base font-semibold text-[var(--foreground)] mb-4">
               {hp.commonAspectRatios ?? "Common Aspect Ratios"}
             </h2>
             <div className="overflow-x-auto -mx-1.5">
@@ -154,7 +207,7 @@ export default async function Home({ params }: Props) {
           </div>
 
           <div className="seo-card">
-            <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
+            <h2 id="how-to-use" className="text-base font-semibold text-[var(--foreground)] mb-3">
               {hp.howToUse ?? "How to Use This Calculator"}
             </h2>
             <div className="space-y-3 text-sm text-[var(--muted)] leading-relaxed">
@@ -183,7 +236,7 @@ export default async function Home({ params }: Props) {
           </div>
 
           <div className="seo-card">
-            <h2 className="text-base font-semibold text-[var(--foreground)] mb-4">
+            <h2 id="social-media-sizes" className="text-base font-semibold text-[var(--foreground)] mb-4">
               {hp.socialMediaSizes ?? "Social Media Image Sizes (2026)"}
             </h2>
             <div className="overflow-x-auto -mx-1.5">
@@ -233,12 +286,12 @@ export default async function Home({ params }: Props) {
 
           {/* ── Explore Section ── */}
           <div className="seo-card">
-            <h2 className="text-base font-semibold text-[var(--foreground)] mb-4">
+            <h2 id="explore" className="text-base font-semibold text-[var(--foreground)] mb-4">
               {hp.exploreAspectRatios ?? "Explore Aspect Ratios"}
             </h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
+                <h3 id="by-ratio" className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
                   {hp.byRatio ?? "By Ratio"}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -254,7 +307,7 @@ export default async function Home({ params }: Props) {
                 </div>
               </div>
               <div>
-                <h3 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
+                <h3 id="by-platform" className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
                   {hp.byPlatform ?? "By Platform"}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -270,7 +323,7 @@ export default async function Home({ params }: Props) {
                 </div>
               </div>
               <div>
-                <h3 className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
+                <h3 id="guides" className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
                   {messages.blogPage?.blog ?? "Guides"}
                 </h3>
                 <ul className="space-y-1.5">

@@ -579,5 +579,19 @@
     "cors": "允許來自任何地方的跨來源請求。回應是對公開資料進行的公開運算 — 沒有會話，這裡沒有任何內容是頁面上尚未存在的。",
     "termsTitle": "條款",
     "terms": "免費使用，包括商業用途，但需註明來源 aspect-ratio-calculator.com。如果此 API 讓您省去了自行建置的麻煩，那麼一個反向連結就是全部的代價。"
+  },
+  "searchPage": {
+    "title": "搜尋",
+    "heading": "搜尋",
+    "placeholder": "搜尋比例、平台與指南",
+    "submit": "搜尋",
+    "label": "搜尋本網站",
+    "resultsFor": "「{query}」的搜尋結果",
+    "count": "找到 {count} 個結果",
+    "noResults": "沒有符合「{query}」的結果。請嘗試輸入比例（例如 16:9）、平台名稱或像「裁切」這樣的主題。",
+    "emptyPrompt": "輸入比例、平台或主題。",
+    "groupRatios": "長寬比",
+    "groupPlatforms": "平台",
+    "groupGuides": "指南"
   }
 }

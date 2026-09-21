@@ -6,6 +6,7 @@ import { FooterFeedbackLink } from "@/components/FooterFeedbackLink";
 import { CookieSettingsLink } from "@/components/CookieConsent";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useTranslation } from "@/components/I18nProvider";
+import { SiteSearch } from "@/components/SiteSearch";
 import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
 
 /** Serializable SEO titles passed from server layout */
@@ -128,6 +129,7 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
       <div className="border-t border-[var(--border)]">
         <div className="max-w-2xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--muted)]">
           <span>{t("footer", "copyright").replace("{year}", String(year))}</span>
+          <SiteSearch className="mb-4 sm:mb-0 sm:me-auto" />
           <nav className="flex items-center gap-4" aria-label="Site information">
             <Link
               href={`${prefix}/about`}
@@ -147,6 +149,12 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             >
               {t("developersPage", "title")}
             </Link>
+            <a
+              href="/openapi.json"
+              className="hover:text-[var(--foreground)] transition-colors"
+            >
+              openapi.json
+            </a>
             <span className="text-[var(--border)]">&middot;</span>
             <Link
               href={`${prefix}/terms`}

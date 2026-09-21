@@ -579,5 +579,19 @@
     "cors": "Permintaan lintas-asal diizinkan dari mana saja. Responsnya adalah aritmetika publik atas data publik — tidak ada sesi dan tidak ada di sini yang belum ada di halaman.",
     "termsTitle": "Ketentuan",
     "terms": "Gratis untuk digunakan, termasuk secara komersial, dengan atribusi ke aspect-ratio-calculator.com. Jika API ini menghemat Anda dari membangun sendiri, tautan kembali adalah harga keseluruhannya."
+  },
+  "searchPage": {
+    "title": "Pencarian",
+    "heading": "Pencarian",
+    "placeholder": "Cari rasio, platform, dan panduan",
+    "submit": "Cari",
+    "label": "Cari di situs ini",
+    "resultsFor": "Hasil untuk “{query}”",
+    "count": "{count} ditemukan",
+    "noResults": "Tidak ada yang cocok dengan “{query}”. Coba rasio seperti 16:9, nama platform, atau topik seperti pemotongan.",
+    "emptyPrompt": "Ketik rasio, platform, atau topik.",
+    "groupRatios": "Rasio aspek",
+    "groupPlatforms": "Platform",
+    "groupGuides": "Panduan"
   }
 }

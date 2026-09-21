@@ -70,14 +70,21 @@ export function websiteNode(locale: LocaleConfig): Node {
     description: SITE_DESCRIPTION,
     publisher: { "@id": ORG_ID },
     inLanguage: LOCALES.map((l) => l.hreflang),
-    /* No potentialAction / SearchAction here, deliberately.
+    /* Now true, and only now.
      *
-     * The sitelinks searchbox requires a real internal search endpoint that
-     * accepts a query and returns results. This site has none. Declaring a
-     * SearchAction whose target 404s is not a shortcut to the rich result — it
-     * is a false statement in structured data, and the usual consequence is
-     * that the engine stops trusting the rest of the graph. It goes in when
-     * search exists, and not before. */
+     * This was deliberately absent while the site had no search: a SearchAction
+     * whose target 404s is not a shortcut to the sitelinks searchbox, it is a
+     * false statement in structured data, and the usual price is the engine
+     * discounting the rest of the graph. /search is a real endpoint that takes
+     * q and returns results, so the claim is now one the site can keep. */
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${BASE_URL}${locale.urlPrefix}/search?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 }
 

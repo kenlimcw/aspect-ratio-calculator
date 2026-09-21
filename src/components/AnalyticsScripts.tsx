@@ -7,10 +7,13 @@ const CLARITY_ID = "vqoklhyc4l";
 const CONSENT_KEY = "cookie-consent";
 const CONSENT_EVENT = "cookie-consent-updated";
 
+/* dataLayer and gtag are declared once, in src/lib/analytics.ts, and optional
+ * there because before consent they genuinely do not exist. Re-declaring them
+ * as required here made the two declarations disagree on their modifiers, which
+ * TypeScript refuses to merge — the build failed and the whole /compare and
+ * /embed branch could not ship. */
 declare global {
   interface Window {
-    dataLayer: unknown[];
-    gtag: (...args: unknown[]) => void;
     __ga4Loaded?: boolean;
     __clarityLoaded?: boolean;
   }
@@ -26,9 +29,9 @@ function loadGA4() {
   script.async = true;
   document.head.appendChild(script);
 
-  window.dataLayer = window.dataLayer || [];
+  const layer: unknown[] = (window.dataLayer = window.dataLayer ?? []);
   window.gtag = function (...args: unknown[]) {
-    window.dataLayer.push(args);
+    layer.push(args);
   };
   window.gtag("js", new Date());
   window.gtag("config", GA4_ID);

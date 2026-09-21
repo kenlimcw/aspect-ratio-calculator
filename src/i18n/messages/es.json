@@ -579,5 +579,19 @@
     "cors": "Las solicitudes de origen cruzado están permitidas desde cualquier lugar. Las respuestas son aritmética pública sobre datos públicos — no hay session y nada aquí que no esté ya en la página.",
     "termsTitle": "Términos",
     "terms": "De uso gratuito, incluso comercialmente, con atribución a aspect-ratio-calculator.com. Si la API te ahorra construir la tuya propia, un enlace de vuelta es el precio completo."
+  },
+  "searchPage": {
+    "title": "Buscar",
+    "heading": "Buscar",
+    "placeholder": "Buscar relaciones de aspecto, plataformas y guías",
+    "submit": "Buscar",
+    "label": "Buscar en este sitio",
+    "resultsFor": "Resultados para “{query}”",
+    "count": "{count} encontrados",
+    "noResults": "Nada coincidió con “{query}”. Intenta una relación de aspecto como 16:9, el nombre de una plataforma o un tema como el recorte.",
+    "emptyPrompt": "Escribe una relación de aspecto, una plataforma o un tema.",
+    "groupRatios": "Relaciones de aspecto",
+    "groupPlatforms": "Plataformas",
+    "groupGuides": "Guías"
   }
 }

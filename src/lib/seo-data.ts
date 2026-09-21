@@ -115,7 +115,7 @@ export const RATIO_DATA: Record<string, RatioData> = {
     label: "9:16",
     w: 9,
     h: 16,
-    title: "9:16 Aspect Ratio — TikTok, Reels & Vertical Video Dimensions",
+    title: "9:16 Aspect Ratio — TikTok, Reels & Vertical Video Sizes",
     description:
       "Complete guide to the 9:16 aspect ratio: pixel dimensions, use cases for TikTok, Instagram Reels, YouTube Shorts, and a free calculator.",
     explanation:
@@ -244,7 +244,7 @@ export const RATIO_DATA: Record<string, RatioData> = {
     label: "4:5",
     w: 4,
     h: 5,
-    title: "4:5 Aspect Ratio — Instagram Portrait Dimensions & Calculator",
+    title: "4:5 Aspect Ratio — Instagram Portrait Size & Calculator",
     description:
       "The 4:5 aspect ratio for Instagram portrait posts: best pixel sizes, why it gets more feed space, and a free calculator.",
     explanation:
@@ -415,6 +415,190 @@ export const RATIO_DATA: Record<string, RatioData> = {
     relatedRatios: ["4-3", "1-1", "3-2"],
     relatedPlatforms: [],
     cssValue: "5 / 4",
+  },
+
+  // ── Cinema & broadcast presets ───────────────────────────────────────────────
+
+  "2-39-1": {
+    label: "2.39:1",
+    w: 239,
+    h: 100,
+    title: "2.39:1 Aspect Ratio — CinemaScope, Anamorphic & Free Calculator",
+    description:
+      "The 2.39:1 anamorphic widescreen ratio used for modern theatrical films (CinemaScope, Panavision). Includes DCI 2K and 4K dimensions and a free calculator.",
+    explanation:
+      "2.39:1 (often written 2.40:1 colloquially) is the standard anamorphic widescreen ratio for modern theatrical cinema. It descends from the original CinemaScope format and is achieved either optically (anamorphic lenses that horizontally squeeze the image onto Super 35 film) or digitally (cropping a 16:9 sensor's vertical resolution). Most major theatrical releases since the 1970s use this ratio.",
+    useCases: [
+      "Theatrical feature films (CinemaScope, Panavision)",
+      "Anamorphic short films",
+      "Cinematic music videos",
+      "Letterboxed home releases of theatrical content",
+      "Premium TV drama shot for theatrical aesthetic",
+    ],
+    dimensions: [
+      { name: "DCI 2K Scope", width: 2048, height: 858, use: "DCI 2K theatrical projection (anamorphic crop)" },
+      { name: "DCI 4K Scope", width: 4096, height: 1716, use: "DCI 4K theatrical projection (anamorphic crop)" },
+      { name: "1080p Letterbox", width: 1920, height: 803, use: "2.39:1 letterboxed within a 1080p container" },
+      { name: "UHD Letterbox", width: 3840, height: 1607, use: "2.39:1 letterboxed within a 4K UHD container" },
+    ],
+    faq: [
+      {
+        q: "Is 2.39:1 the same as 2.40:1?",
+        a: "Practically yes, with a subtle distinction. The original SMPTE spec for anamorphic was 2.39:1 (after a 1970 revision from the historical 2.35:1). Many writers and Blu-ray labels round to 2.40:1 for readability. CSS, FFmpeg, and most film software accept either value — 2.39 / 1 and 2.40 / 1 differ by less than half a pixel at 1080p.",
+      },
+      {
+        q: "Why does anamorphic look different from a plain widescreen crop?",
+        a: "Optical anamorphic uses a special lens that horizontally squeezes the image during capture and un-squeezes it during projection. This produces distinctive oval bokeh, horizontal lens flares (the blue streak in many films), and slightly compressed faces in close-ups — aesthetic traits that pure digital cropping doesn't reproduce.",
+      },
+    ],
+    relatedRatios: ["16-9", "2-1", "21-9"],
+    relatedPlatforms: [],
+    cssValue: "2.39 / 1",
+  },
+
+  "1-85-1": {
+    label: "1.85:1",
+    w: 185,
+    h: 100,
+    title: "1.85:1 Aspect Ratio — Theatrical Flat & DCP Calculator",
+    description:
+      "The 1.85:1 theatrical 'flat' ratio used for non-anamorphic feature films and Digital Cinema Package (DCP) Flat delivery. Free calculator and exact pixel dimensions.",
+    explanation:
+      "1.85:1 is the standard 'flat' theatrical aspect ratio for non-anamorphic feature films. It originated in the early 1950s as a response to the rise of widescreen television and remains one of the two dominant theatrical formats alongside 2.39:1 anamorphic. DCI Flat delivery (2048×1080 at 2K, 3996×2160 at 4K) is the digital cinema spec for 1.85:1 distribution.",
+    useCases: [
+      "Theatrical feature films (non-anamorphic)",
+      "DCP Flat distribution (DCI 2K and 4K)",
+      "Independent film festival deliveries",
+      "1990s-style home video masters",
+      "Comedies and dramas favouring a less stretched frame than anamorphic",
+    ],
+    dimensions: [
+      { name: "DCI 2K Flat", width: 1998, height: 1080, use: "DCI 2K theatrical projection (1.85:1 active area)" },
+      { name: "DCI 4K Flat", width: 3996, height: 2160, use: "DCI 4K theatrical projection (1.85:1 active area)" },
+      { name: "1080p Letterbox", width: 1920, height: 1038, use: "1.85:1 within a 1080p container" },
+      { name: "UHD Letterbox", width: 3840, height: 2076, use: "1.85:1 within a 4K UHD container" },
+    ],
+    faq: [
+      {
+        q: "Why pick 1.85:1 over 2.39:1?",
+        a: "1.85:1 is closer to the native 16:9 (1.78:1) aspect ratio of capture sensors, so it wastes less vertical resolution and avoids the anamorphic lens cost and complexity. Directors often pick 1.85:1 for character-driven dramas and comedies where vertical headroom matters; 2.39:1 favours epic landscapes and action.",
+      },
+      {
+        q: "Is 1.85:1 the same as 16:9?",
+        a: "Very close but not identical. 16:9 is 1.778:1, while 1.85:1 is slightly wider. The difference at 1080p height is about 38 pixels of width (1920 vs 1998). For non-theatrical delivery the two are often used interchangeably; for theatrical DCP the distinction is exact and required.",
+      },
+    ],
+    relatedRatios: ["16-9", "2-39-1", "21-9"],
+    relatedPlatforms: [],
+    cssValue: "1.85 / 1",
+  },
+
+  "1-43-1": {
+    label: "1.43:1",
+    w: 143,
+    h: 100,
+    title: "1.43:1 Aspect Ratio — IMAX Calculator & Pixel Dimensions",
+    description:
+      "The 1.43:1 IMAX aspect ratio: native 70mm IMAX film, IMAX Digital, and the taller cinematic frames Christopher Nolan and Denis Villeneuve favour.",
+    explanation:
+      "1.43:1 is the native aspect ratio of 15-perforation 70mm IMAX film and IMAX Digital projection. It's noticeably taller than standard widescreen — closer to a square than to a letterbox — which is why scenes shot in IMAX expand vertically on-screen when projected in a true IMAX theater. Films like Oppenheimer, Dunkirk, Interstellar, and Mission: Impossible use this format for select sequences.",
+    useCases: [
+      "Native IMAX 70mm and IMAX Digital projection",
+      "Premium large-format (PLF) theatrical sequences",
+      "Documentary and nature films shot for IMAX",
+      "Selected scenes within otherwise widescreen features",
+      "Theme park immersive content",
+    ],
+    dimensions: [
+      { name: "IMAX Digital 2K", width: 2048, height: 1432, use: "IMAX 1.43:1 active area at 2K" },
+      { name: "IMAX Digital 4K", width: 4096, height: 2864, use: "IMAX 1.43:1 active area at 4K" },
+      { name: "Native 70mm IMAX (scan)", width: 11200, height: 7820, use: "Approximate 11K scan of native IMAX 15/70 film" },
+    ],
+    faq: [
+      {
+        q: "Why is 1.43:1 taller than other cinema ratios?",
+        a: "IMAX 15-perforation 70mm film runs horizontally through the camera (unlike standard 65mm/70mm), exposing a frame three times the area of a standard 35mm frame and with a near-square aspect. The format was designed to fill a giant dome or flat IMAX screen and maximise vertical immersion, not to match TV broadcast conventions.",
+      },
+      {
+        q: "Can I watch 1.43:1 at home?",
+        a: "Partially. Most home releases letterbox IMAX sequences down to 16:9 or 2.39:1, cropping the top and bottom. Some 4K Blu-rays preserve the 1.90:1 IMAX Digital expanded format, which is close to but not the same as native 1.43:1. True 1.43:1 viewing requires an IMAX theatre.",
+      },
+    ],
+    relatedRatios: ["4-3", "3-2", "2-39-1"],
+    relatedPlatforms: [],
+    cssValue: "1.43 / 1",
+  },
+
+  "1-375-1": {
+    label: "1.375:1",
+    w: 11,
+    h: 8,
+    title: "1.375:1 Academy Ratio — Classic Cinema Calculator",
+    description:
+      "The 1.375:1 Academy ratio: the standard 35mm sound-era cinema aspect ratio from 1932 to the early 1950s, still used today for stylistic effect.",
+    explanation:
+      "The Academy ratio (1.375:1, also written 11:8) was the standard 35mm sound film aspect ratio adopted by the Academy of Motion Picture Arts and Sciences in 1932 and used for nearly all theatrical features until widescreen formats arrived in the 1950s. It's slightly wider than 4:3 (1.33:1) to accommodate the optical soundtrack stripe on the film. Modern directors occasionally revive it for stylistic reasons — The Lighthouse, Ida, and First Cow are recent examples.",
+    useCases: [
+      "Classic Hollywood films (1932–early 1950s)",
+      "Stylistic revival films seeking a vintage feel",
+      "Museum and archive film preservation",
+      "Black-and-white art house features",
+      "Film school projects shot on 35mm",
+    ],
+    dimensions: [
+      { name: "1080p Academy", width: 1485, height: 1080, use: "1.375:1 letterboxed within a 1080p container" },
+      { name: "UHD Academy", width: 2970, height: 2160, use: "1.375:1 letterboxed within a 4K UHD container" },
+      { name: "DCP 2K Academy", width: 1485, height: 1080, use: "Custom DCP delivery for archive screenings" },
+    ],
+    faq: [
+      {
+        q: "Why isn't Academy ratio just 4:3?",
+        a: "When 35mm film added an optical soundtrack along one edge in 1929, projectionists masked the image to a slightly wider 1.375:1 to keep the visible frame roughly square. 4:3 (1.33:1) was the silent-era native ratio before the soundtrack stripe consumed part of the frame.",
+      },
+      {
+        q: "Can streaming services display 1.375:1?",
+        a: "Yes — streaming platforms preserve the original aspect ratio by letterboxing within their player. A 1.375:1 film on Netflix or Mubi will display with thin black bars on the left and right of a 16:9 viewport. Some apps offer a 'fill screen' option that crops the top and bottom.",
+      },
+    ],
+    relatedRatios: ["4-3", "1-1", "5-4"],
+    relatedPlatforms: [],
+    cssValue: "11 / 8",
+  },
+
+  "1-66-1": {
+    label: "1.66:1",
+    w: 5,
+    h: 3,
+    title: "1.66:1 Aspect Ratio — European Widescreen Calculator",
+    description:
+      "The 1.66:1 (5:3) European widescreen aspect ratio used historically across European theatrical releases, Super 16, and animation.",
+    explanation:
+      "1.66:1 (also written 5:3) is the European theatrical widescreen ratio, predominantly used across European cinema from the mid-1950s onward as the equivalent of the American 1.85:1 standard. It also matches the native ratio of Super 16mm film, making it common in independent and documentary production. Wes Anderson uses 1.66:1 for several features for its slightly more contained frame.",
+    useCases: [
+      "European theatrical features",
+      "Super 16mm film production",
+      "Animation (Studio Ghibli used a near-1.66 framing for several features)",
+      "Independent and documentary cinema",
+      "European broadcast standard pre-16:9",
+    ],
+    dimensions: [
+      { name: "Super 16 (scan)", width: 2048, height: 1234, use: "Super 16mm film scanned to 2K" },
+      { name: "1080p Letterbox", width: 1800, height: 1080, use: "1.66:1 letterboxed within a 1080p container" },
+      { name: "UHD Letterbox", width: 3600, height: 2160, use: "1.66:1 letterboxed within a 4K UHD container" },
+    ],
+    faq: [
+      {
+        q: "What is 1.66:1 in simpler numbers?",
+        a: "Exactly 5:3. Width is five units for every three units of height — slightly less wide than 16:9 (1.78:1), and slightly less than 1.85:1 American Flat. It's a useful 'in-between' ratio when you want widescreen feel without the full theatrical horizontal stretch.",
+      },
+      {
+        q: "Is Super 16mm the same as 1.66:1?",
+        a: "Yes, the Super 16 film gate is 12.52 × 7.41 mm, which works out to almost exactly 1.69:1 — commonly cropped to 1.66:1 in post for distribution. Many independent and BBC productions favoured Super 16 in the 1980s–2000s for its blend of film aesthetic and lower cost than 35mm.",
+      },
+    ],
+    relatedRatios: ["16-9", "3-2", "4-3"],
+    relatedPlatforms: [],
+    cssValue: "5 / 3",
   },
 };
 

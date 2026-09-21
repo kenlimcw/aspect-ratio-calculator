@@ -578,5 +578,19 @@
     "cors": "Solicitările cross-origin sunt permise de oriunde. Răspunsurile sunt aritmetică publică peste date publice — nu există sesiune și nimic aici care să nu fie deja pe pagină.",
     "termsTitle": "Termeni",
     "terms": "Utilizare gratuită, inclusiv în scop comercial, cu atribuire către aspect-ratio-calculator.com. Dacă API-ul vă scutește de a construi propriul, un link înapoi este întregul preț."
+  },
+  "searchPage": {
+    "title": "Căutare",
+    "heading": "Căutare",
+    "placeholder": "Căutați raporturi, platforme și ghiduri",
+    "submit": "Căutați",
+    "label": "Căutați pe acest site",
+    "resultsFor": "Rezultate pentru „{query}”",
+    "count": "{count} găsite",
+    "noResults": "Nimic nu s-a potrivit cu „{query}”. Încercați un raport precum 16:9, un nume de platformă sau un subiect precum decuparea.",
+    "emptyPrompt": "Introduceți un raport, o platformă sau un subiect.",
+    "groupRatios": "Raporturi de aspect",
+    "groupPlatforms": "Platforme",
+    "groupGuides": "Ghiduri"
   }
 }

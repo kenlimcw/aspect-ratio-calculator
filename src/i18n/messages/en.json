@@ -578,5 +578,19 @@
     "cors": "Cross-origin requests are allowed from anywhere. The responses are public arithmetic over public data — there is no session and nothing here that is not already on the page.",
     "termsTitle": "Terms",
     "terms": "Free to use, including commercially, with attribution to aspect-ratio-calculator.com. If the API saves you building your own, a link back is the whole price."
+  },
+  "searchPage": {
+    "title": "Search",
+    "heading": "Search",
+    "placeholder": "Search ratios, platforms and guides",
+    "submit": "Search",
+    "label": "Search this site",
+    "resultsFor": "Results for “{query}”",
+    "count": "{count} found",
+    "noResults": "Nothing matched “{query}”. Try a ratio such as 16:9, a platform name, or a topic like cropping.",
+    "emptyPrompt": "Type a ratio, a platform or a topic.",
+    "groupRatios": "Aspect ratios",
+    "groupPlatforms": "Platforms",
+    "groupGuides": "Guides"
   }
 }
