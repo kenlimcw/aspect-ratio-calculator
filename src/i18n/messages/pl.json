@@ -562,5 +562,21 @@
     "security": "Zgłoszenia dotyczące bezpieczeństwa są zgodne z RFC 9116. Dane kontaktowe w formacie czytelnym maszynowo są publikowane pod adresem /.well-known/security.txt, a zgłoszenia wysłane za pośrednictwem formularza opinii trafiają w to samo miejsce.",
     "dataTitle": "Twoje dane",
     "data": "Nic, co obliczasz, nie jest przesyłane, więc nie ma nic do żądania ani usunięcia. To, co strona zbiera i jak to wyłączyć, jest określone w polityce prywatności."
+  },
+  "developersPage": {
+    "title": "API",
+    "heading": "API dla deweloperów",
+    "lead": "Kalkulator jest wywoływalny. Bez klucza, bez konta, bez limitu zapytań poza zwykłym dozwolonym użytkiem — a każda odpowiedź wskazuje swoje źródło.",
+    "ratioTitle": "Arytmetyka proporcji obrazu",
+    "ratio": "Podaj szerokość i wysokość, a zwróci uproszczone proporcje. Podaj proporcje i jeden wymiar, a zwróci drugi. Nie podawaj niczego, a wyświetli wszystkie nazwane proporcje dostępne na stronie.",
+    "contentTitle": "Strony jako dane",
+    "content": "Każda strona z treścią posiada reprezentację JSON tego samego zasobu. Możesz ją zażądać bezpośrednio lub poprosić o nią pod własnym adresem URL strony, wysyłając nagłówek Accept o wartości application/json — HTML i JSON to ta sama rzecz w dwóch formach.",
+    "exampleLabel": "Pod własnym adresem URL strony:",
+    "specTitle": "Specyfikacja czytelna maszynowo",
+    "spec": "Pełny opis OpenAPI 3.1 obu punktów końcowych, dzięki czemu klient może zostać wygenerowany, a nie napisany.",
+    "corsTitle": "Wywoływanie z przeglądarki",
+    "cors": "Żądania cross-origin są dozwolone z dowolnego miejsca. Odpowiedzi to publiczne obliczenia na publicznych danych — nie ma sesji ani niczego, czego nie ma już na stronie.",
+    "termsTitle": "Warunki",
+    "terms": "Bezpłatne w użyciu, w tym komercyjnie, z przypisaniem do aspect-ratio-calculator.com. Jeśli API oszczędza Ci budowania własnego rozwiązania, link zwrotny jest całą ceną."
   }
 }

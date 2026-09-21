@@ -563,5 +563,21 @@
     "security": "Laporan keamanan mengikuti RFC 9116. Detail kontak yang dapat dibaca mesin dipublikasikan di /.well-known/security.txt, dan laporan yang dikirim melalui formulir umpan balik akan sampai ke tempat yang sama.",
     "dataTitle": "Data Anda",
     "data": "Tidak ada data yang Anda hitung yang ditransmisikan, jadi tidak ada yang perlu diminta atau dihapus. Apa yang dikumpulkan situs ini, dan cara mematikannya, dijelaskan dalam kebijakan privasi."
+  },
+  "developersPage": {
+    "title": "API",
+    "heading": "API Pengembang",
+    "lead": "Kalkulator ini dapat dipanggil. Tidak ada kunci, tidak ada akun, tidak ada batasan laju selain penggunaan wajar biasa — dan setiap respons menyatakan asalnya.",
+    "ratioTitle": "Aritmetika Rasio Aspek",
+    "ratio": "Berikan lebar dan tinggi, dan ia akan mengembalikan rasio yang disederhanakan. Berikan rasio dan satu dimensi, dan ia akan mengembalikan dimensi lainnya. Jangan berikan apa pun, dan ia akan mencantumkan setiap rasio bernama di situs.",
+    "contentTitle": "Halaman sebagai Data",
+    "content": "Setiap halaman konten memiliki representasi JSON dari sumber daya yang sama. Anda dapat memintanya secara langsung, atau memintanya di URL halaman itu sendiri dengan mengirimkan header Accept application/json — HTML dan JSON adalah hal yang sama dalam dua bentuk.",
+    "exampleLabel": "Pada URL halaman itu sendiri:",
+    "specTitle": "Spesifikasi yang Dapat Dibaca Mesin",
+    "spec": "Deskripsi lengkap OpenAPI 3.1 dari kedua endpoint, sehingga klien dapat dibuat secara otomatis daripada ditulis secara manual.",
+    "corsTitle": "Memanggil dari Peramban",
+    "cors": "Permintaan lintas-asal diizinkan dari mana saja. Responsnya adalah aritmetika publik atas data publik — tidak ada sesi dan tidak ada di sini yang belum ada di halaman.",
+    "termsTitle": "Ketentuan",
+    "terms": "Gratis untuk digunakan, termasuk secara komersial, dengan atribusi ke aspect-ratio-calculator.com. Jika API ini menghemat Anda dari membangun sendiri, tautan kembali adalah harga keseluruhannya."
   }
 }

@@ -562,5 +562,21 @@
     "security": "Rapoartele de securitate respectă RFC 9116. Detaliile de contact lizibile de mașină sunt publicate la /.well-known/security.txt, iar rapoartele trimise prin formularul de feedback ajung în același loc.",
     "dataTitle": "Datele dumneavoastră",
     "data": "Nimic din ceea ce calculați nu este transmis, deci nu există nimic de solicitat sau șters. Ceea ce colectează site-ul și cum să dezactivați colectarea este stabilit în politica de confidențialitate."
+  },
+  "developersPage": {
+    "title": "API",
+    "heading": "API pentru Dezvoltatori",
+    "lead": "Calculatorul poate fi apelat. Fără cheie, fără cont, fără limită de solicitări dincolo de utilizarea rezonabilă obișnuită — și fiecare răspuns indică sursa.",
+    "ratioTitle": "Aritmetica raportului de aspect",
+    "ratio": "Oferiți-i o lățime și o înălțime și va returna raportul simplificat. Oferiți-i un raport și o dimensiune și va returna cealaltă. Nu-i oferiți nimic și va lista fiecare raport denumit de pe site.",
+    "contentTitle": "Pagini ca date",
+    "content": "Fiecare pagină de conținut are o reprezentare JSON a aceleiași resurse. O puteți solicita direct sau o puteți cere la URL-ul paginii, trimițând un Accept header de application/json — HTML-ul și JSON-ul sunt același lucru în două forme.",
+    "exampleLabel": "La URL-ul paginii:",
+    "specTitle": "Specificație lizibilă de mașină",
+    "spec": "Descrierea completă OpenAPI 3.1 a ambelor endpoint-uri, astfel încât un client poate fi generat în loc să fie scris.",
+    "corsTitle": "Apelare dintr-un browser",
+    "cors": "Solicitările cross-origin sunt permise de oriunde. Răspunsurile sunt aritmetică publică peste date publice — nu există sesiune și nimic aici care să nu fie deja pe pagină.",
+    "termsTitle": "Termeni",
+    "terms": "Utilizare gratuită, inclusiv în scop comercial, cu atribuire către aspect-ratio-calculator.com. Dacă API-ul vă scutește de a construi propriul, un link înapoi este întregul preț."
   }
 }

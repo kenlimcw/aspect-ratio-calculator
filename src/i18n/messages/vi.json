@@ -562,5 +562,21 @@
     "security": "Các báo cáo bảo mật tuân thủ RFC 9116. Chi tiết liên hệ có thể đọc bằng máy được công bố tại /.well-known/security.txt, và các báo cáo gửi qua biểu mẫu phản hồi cũng đến cùng một địa chỉ.",
     "dataTitle": "Dữ liệu của bạn",
     "data": "Không có dữ liệu nào bạn tính toán được truyền đi, vì vậy không có gì để yêu cầu hoặc xóa. Những gì trang web thu thập và cách tắt nó được nêu rõ trong chính sách quyền riêng tư."
+  },
+  "developersPage": {
+    "title": "API",
+    "heading": "API dành cho nhà phát triển",
+    "lead": "Công cụ tính toán có thể được gọi. Không cần khóa, không cần tài khoản, không giới hạn tốc độ ngoài mức sử dụng hợp lý thông thường — và mọi phản hồi đều cho biết nguồn gốc của nó.",
+    "ratioTitle": "Phép tính tỷ lệ khung hình",
+    "ratio": "Cung cấp chiều rộng và chiều cao, nó sẽ trả về tỷ lệ đã được đơn giản hóa. Cung cấp một tỷ lệ và một chiều, nó sẽ trả về chiều còn lại. Không cung cấp gì, nó sẽ liệt kê mọi tỷ lệ được đặt tên trên trang web.",
+    "contentTitle": "Các trang dưới dạng dữ liệu",
+    "content": "Mọi trang nội dung đều có một biểu diễn JSON của cùng một tài nguyên. Bạn có thể yêu cầu trực tiếp, hoặc yêu cầu nó trên URL của chính trang bằng cách gửi một Accept header là application/json — HTML và JSON là cùng một thứ dưới hai dạng.",
+    "exampleLabel": "Trên URL của chính trang:",
+    "specTitle": "Đặc tả có thể đọc được bằng máy",
+    "spec": "Mô tả đầy đủ OpenAPI 3.1 của cả hai điểm cuối, để một client có thể được tạo ra thay vì phải viết thủ công.",
+    "corsTitle": "Gọi từ trình duyệt",
+    "cors": "Các yêu cầu đa nguồn gốc được phép từ bất cứ đâu. Các phản hồi là phép tính công khai trên dữ liệu công khai — không có phiên làm việc và không có gì ở đây mà chưa có trên trang.",
+    "termsTitle": "Điều khoản",
+    "terms": "Miễn phí sử dụng, bao gồm cả mục đích thương mại, với sự ghi công cho aspect-ratio-calculator.com. Nếu API giúp bạn không phải tự xây dựng, một liên kết ngược lại là toàn bộ chi phí."
   }
 }

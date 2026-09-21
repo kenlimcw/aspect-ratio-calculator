@@ -563,5 +563,21 @@
     "security": "Les rapports de sécurité suivent la RFC 9116. Les coordonnées de contact lisibles par machine sont publiées à l'adresse /.well-known/security.txt, et les rapports envoyés via le formulaire de commentaires parviennent au même endroit.",
     "dataTitle": "Vos données",
     "data": "Rien de ce que vous calculez n'est transmis, il n'y a donc rien à demander ou à supprimer. Ce que le site collecte, et comment le désactiver, est détaillé dans la politique de confidentialité."
+  },
+  "developersPage": {
+    "title": "API",
+    "heading": "API Développeur",
+    "lead": "La calculatrice est appelable. Pas de clé, pas de compte, pas de limite de débit au-delà d'une utilisation équitable ordinaire — et chaque réponse indique sa provenance.",
+    "ratioTitle": "Arithmétique des rapports d'aspect",
+    "ratio": "Donnez-lui une largeur et une hauteur et il renvoie le rapport simplifié. Donnez-lui un rapport et une dimension et il renvoie l'autre. Ne lui donnez rien et il liste tous les rapports nommés sur le site.",
+    "contentTitle": "Les pages en tant que données",
+    "content": "Chaque page de contenu possède une représentation JSON de la même ressource. Vous pouvez la demander directement, ou la solliciter sur l'URL propre de la page en envoyant un en-tête Accept de application/json — le HTML et le JSON sont la même chose sous deux formes.",
+    "exampleLabel": "Sur l'URL propre de la page :",
+    "specTitle": "Spécification lisible par machine",
+    "spec": "La description complète OpenAPI 3.1 des deux endpoints, afin qu'un client puisse être généré plutôt qu'écrit.",
+    "corsTitle": "Appel depuis un navigateur",
+    "cors": "Les requêtes inter-origines sont autorisées de partout. Les réponses sont de l'arithmétique publique sur des données publiques — il n'y a pas de session et rien ici qui ne soit pas déjà sur la page.",
+    "termsTitle": "Conditions",
+    "terms": "Utilisation gratuite, y compris à des fins commerciales, avec attribution à aspect-ratio-calculator.com. Si l'API vous évite de construire la vôtre, un lien retour est le seul prix."
   }
 }

@@ -563,5 +563,21 @@
     "security": "Los informes de seguridad siguen el RFC 9116. Los detalles de contacto legibles por máquina se publican en /.well-known/security.txt, y los informes enviados a través del formulario de comentarios llegan al mismo lugar.",
     "dataTitle": "Tus datos",
     "data": "Nada de lo que calculas se transmite, por lo que no hay nada que solicitar o eliminar. Lo que el sitio sí recopila, y cómo desactivarlo, se establece en la política de privacidad."
+  },
+  "developersPage": {
+    "title": "API",
+    "heading": "API para Desarrolladores",
+    "lead": "Se puede llamar a la calculadora. Sin clave, sin cuenta, sin límite de tasa más allá del uso justo ordinario — y cada respuesta indica su origen.",
+    "ratioTitle": "Aritmética de la relación de aspecto",
+    "ratio": "Dale un ancho y un alto y devolverá la relación simplificada. Dale una relación y una dimensión y devolverá la otra. No le des nada y listará todas las relaciones con nombre del sitio.",
+    "contentTitle": "Páginas como datos",
+    "content": "Cada página de contenido tiene una representación JSON del mismo recurso. Puedes solicitarla directamente, o pedirla en la propia URL de la página enviando una cabecera Accept de application/json — el HTML y el JSON son la misma cosa en dos formas.",
+    "exampleLabel": "En la propia URL de la página:",
+    "specTitle": "Especificación legible por máquina",
+    "spec": "La descripción completa de OpenAPI 3.1 de ambos endpoints, para que se pueda generar un client en lugar de escribirlo.",
+    "corsTitle": "Llamadas desde un navegador",
+    "cors": "Las solicitudes de origen cruzado están permitidas desde cualquier lugar. Las respuestas son aritmética pública sobre datos públicos — no hay session y nada aquí que no esté ya en la página.",
+    "termsTitle": "Términos",
+    "terms": "De uso gratuito, incluso comercialmente, con atribución a aspect-ratio-calculator.com. Si la API te ahorra construir la tuya propia, un enlace de vuelta es el precio completo."
   }
 }

@@ -141,6 +141,12 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             >
               {t("contactPage", "title")}
             </Link>
+            <Link
+              href={`${prefix}/developers`}
+              className="hover:text-[var(--foreground)] transition-colors"
+            >
+              {t("developersPage", "title")}
+            </Link>
             <span className="text-[var(--border)]">&middot;</span>
             <Link
               href={`${prefix}/terms`}
