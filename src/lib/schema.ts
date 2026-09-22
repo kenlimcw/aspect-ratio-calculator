@@ -33,7 +33,11 @@ const SITE_DESCRIPTION =
  * and is ours, and an empty slot is always better than a wrong one.
  */
 export const SAME_AS: string[] = [
-  "https://www.youtube.com/@AspectRatioCalc",
+  // The canonical form, as the YouTube Data API reports snippet.customUrl.
+  // Handles are case-insensitive and both URLs resolve, but sameAs is an
+  // identity claim and the identifier may as well be the one the platform
+  // itself considers canonical.
+  "https://www.youtube.com/@aspectratiocalc",
 ];
 
 interface Node {
