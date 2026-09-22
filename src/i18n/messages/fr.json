@@ -550,7 +550,9 @@
     "maintenanceTitle": "Comment il est maintenu à jour",
     "maintenance": "Les dimensions des plateformes sociales changent, donc les pages des plateformes sont examinées par rapport aux spécifications publiées par chaque plateforme elle-même, plutôt que copiées d'autres guides. Chaque article porte la date de sa publication, et cette date n'est modifiée que lorsque le contenu change réellement.",
     "contactCta": "Vous avez trouvé une erreur ou il manque quelque chose ?",
-    "contactLink": "Contactez-nous"
+    "contactLink": "Contactez-nous",
+    "purposeTitle": "Pourquoi ce site existe",
+    "purpose": "L'aspect ratio est à la base de nombreux travaux qui ne le concernent pas directement. Une photographie qui doit être recadrée. Une diapositive qui doit remplir un projecteur. Un téléviseur acheté pour le type de films que vous regardez réellement. Un conteneur qui nécessite une hauteur exacte dans le code. Dans chacun de ces cas, la décision est la même petite opération arithmétique, et se tromper se voit immédiatement : quelque chose est trop grand, trop petit, flou, ou entouré d'un espace qui ne devrait pas être là. Une partie de cela peut être corrigée à l'œil. Le code, lui, ne le peut pas — il exige un nombre. Ce site existe pour prendre cette décision rapidement et ensuite s'effacer."
   },
   "contactPage": {
     "title": "Contact",

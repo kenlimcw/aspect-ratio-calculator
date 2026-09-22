@@ -1081,19 +1081,19 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
   "what-is-aspect-ratio": {
     "title": "Tỷ lệ khung hình là gì? Hướng dẫn dành cho người mới bắt đầu",
     "description": "Giải thích rõ ràng, dễ hiểu về tỷ lệ khung hình dành cho người mới bắt đầu: ý nghĩa của nó, cách viết, tại sao nó quan trọng đối với màn hình và hình ảnh, và cách sử dụng.",
-    "intro": "Tỷ lệ khung hình là một trong những thuật ngữ nghe có vẻ kỹ thuật nhưng thực ra khá đơn giản khi bạn đã hiểu nó. Dù bạn đang thay đổi kích thước ảnh cho Instagram, thiết lập video YouTube hay mua một màn hình mới, tỷ lệ khung hình sẽ quyết định hình dạng của hình ảnh hoặc màn hình của bạn. Hướng dẫn này giải thích mọi thứ bạn cần biết.",
+    "intro": "Tỷ lệ khung hình là một trong những thuật ngữ nghe có vẻ kỹ thuật nhưng thực ra khá đơn giản một khi bạn hiểu nó. Cho dù bạn đang thay đổi kích thước ảnh cho Instagram, thiết lập video YouTube hay mua một màn hình mới, tỷ lệ khung hình sẽ quyết định hình dạng của hình ảnh hoặc màn hình của bạn. Hướng dẫn này giải thích mọi thứ bạn cần biết.",
     "sections": [
       {
         "heading": "Tỷ lệ khung hình có nghĩa là gì?",
-        "body": "Tỷ lệ khung hình là mối quan hệ tỷ lệ giữa chiều rộng và chiều cao của một hình ảnh, màn hình hoặc khung video. Nó được viết dưới dạng hai số cách nhau bởi dấu hai chấm, ví dụ 16:9 hoặc 4:3. Số đầu tiên là chiều rộng và số thứ hai là chiều cao. Tỷ lệ 16:9 có nghĩa là cứ mỗi 16 đơn vị chiều rộng thì chiều cao là 9 đơn vị. Kích thước thực tế không quan trọng. Một hình ảnh 160×90 pixel và một hình ảnh 3840×2160 pixel đều có tỷ lệ 16:9 vì chúng có cùng tỷ lệ."
+        "body": "Tỷ lệ khung hình là mối quan hệ tỷ lệ giữa chiều rộng và chiều cao của một hình ảnh, màn hình hoặc khung video. Nó được viết dưới dạng hai số cách nhau bằng dấu hai chấm, ví dụ 16:9 hoặc 4:3. Số đầu tiên là chiều rộng và số thứ hai là chiều cao. Tỷ lệ 16:9 có nghĩa là cứ mỗi 16 đơn vị chiều rộng thì chiều cao là 9 đơn vị. Kích thước thực tế không quan trọng. Một hình ảnh 160×90 pixel và một hình ảnh 3840×2160 pixel đều có tỷ lệ 16:9 vì chúng có cùng tỷ lệ."
       },
       {
         "heading": "Tại sao tỷ lệ khung hình lại quan trọng?",
-        "body": "Tỷ lệ khung hình quan trọng bất cứ khi nào bạn hiển thị, in ấn hoặc chia sẻ nội dung hình ảnh. Nếu tỷ lệ hình ảnh của bạn không khớp với tỷ lệ của màn hình hoặc vùng chứa, một trong hai điều sau sẽ xảy ra:",
+        "body": "Tỷ lệ khung hình quan trọng bất cứ khi nào bạn hiển thị, in hoặc chia sẻ nội dung hình ảnh. Nếu tỷ lệ hình ảnh của bạn không khớp với tỷ lệ của màn hình hoặc vùng chứa, một trong hai điều sau sẽ xảy ra:",
         "list": [
-          "Letterboxing / Pillarboxing: thanh màu đen xuất hiện để lấp đầy không gian trống",
-          "Cắt xén: hình ảnh bị cắt để vừa vặn, và một phần nội dung bị mất",
-          "Kéo giãn: hình ảnh bị biến dạng để lấp đầy khung hình (ít mong muốn nhất)"
+          "Letterboxing / Pillarboxing: các thanh màu đen xuất hiện để lấp đầy không gian trống",
+          "Cropping: hình ảnh bị cắt để vừa vặn, và một phần nội dung bị mất",
+          "Stretching: hình ảnh bị biến dạng để lấp đầy khung hình (ít mong muốn nhất)"
         ]
       },
       {
@@ -1119,22 +1119,22 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             [
               "1:1",
               "1.00:1",
-              "Bài đăng trên Instagram feed, ảnh đại diện, ảnh bìa album"
+              "Bài đăng trên Instagram feed, ảnh đại diện, bìa album"
             ],
             [
               "4:5",
               "0.80:1",
-              "Bài đăng dọc trên Instagram (chiều cao tối đa trên feed)"
+              "Bài đăng dọc trên Instagram (chiều cao tối đa của feed)"
             ],
             [
               "4:3",
               "1.33:1",
-              "iPad, TV đời cũ, PowerPoint, máy ảnh DSLR"
+              "iPad, TV cũ, PowerPoint, máy ảnh DSLR"
             ],
             [
               "3:2",
               "1.50:1",
-              "máy ảnh DSLR, ảnh in 4×6, phim 35mm"
+              "Máy ảnh DSLR, ảnh in 4×6, phim 35mm"
             ],
             [
               "2.39:1",
@@ -1146,30 +1146,34 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Cách tính tỷ lệ khung hình",
-        "body": "Để tìm tỷ lệ khung hình của bất kỳ hình ảnh nào, hãy chia cả chiều rộng và chiều cao cho Ước số chung lớn nhất (GCD) của chúng. Ví dụ, một hình ảnh có 1920×1080 pixel: cả hai số đều chia hết cho 120, cho ra tỷ lệ 16:9. Công cụ tính toán miễn phí của chúng tôi thực hiện điều này tự động — chỉ cần nhập chiều rộng và chiều cao của bạn."
+        "body": "Để tìm tỷ lệ khung hình của bất kỳ hình ảnh nào, hãy chia cả chiều rộng và chiều cao cho Ước số chung lớn nhất (GCD) của chúng. Ví dụ, một hình ảnh có kích thước 1920×1080 pixel: cả hai số đều chia hết cho 120, cho ra tỷ lệ 16:9. Máy tính miễn phí của chúng tôi thực hiện điều này tự động — chỉ cần nhập chiều rộng và chiều cao của bạn."
       },
       {
         "heading": "Tỷ lệ khung hình so với Độ phân giải",
-        "body": "Tỷ lệ khung hình và độ phân giải có liên quan nhưng không phải là một. Độ phân giải đề cập đến tổng số pixel (ví dụ: 1920×1080). Tỷ lệ khung hình đề cập đến hình dạng (ví dụ: 16:9). Hai hình ảnh có thể có cùng tỷ lệ khung hình nhưng có độ phân giải hoàn toàn khác nhau: 640×360 và 3840×2160 đều là 16:9 nhưng khác biệt rất lớn về số lượng pixel và chất lượng."
+        "body": "Tỷ lệ khung hình và độ phân giải có liên quan nhưng không phải là một. Độ phân giải đề cập đến tổng số pixel (ví dụ: 1920×1080). Tỷ lệ khung hình đề cập đến hình dạng (ví dụ: 16:9). Hai hình ảnh có thể có cùng tỷ lệ khung hình nhưng độ phân giải hoàn toàn khác nhau: 640×360 và 3840×2160 đều là 16:9 nhưng khác biệt rất lớn về số lượng pixel và chất lượng."
+      },
+      {
+        "heading": "Tại sao nó đáng để biết",
+        "body": "Tỷ lệ khung hình là một trong những điều mà không ai nhận ra cho đến khi nó sai, và sau đó nó là điều duy nhất họ có thể thấy. Nhiếp ảnh, phim ảnh, trang web, tạp chí, bao bì: phần lớn những gì được coi là chuyên nghiệp chỉ đơn giản là tỷ lệ được đặt đúng. Khi chúng không đúng, bạn sẽ cảm thấy điều đó trước khi bạn có thể gọi tên nó. Một cái gì đó quá lớn, quá nhỏ, mềm mại một cách kỳ lạ, hoặc trôi nổi trong không gian lãng phí. Một khi bạn bắt đầu nhận thấy nó, bạn không thể ngừng lại, đó là một món quà hơi khó chịu đã được ban tặng."
       }
     ],
-    "conclusion": "Toàn bộ vấn đề này quy về một thói quen: quyết định hình dạng trước khi quyết định kích thước. Tỷ lệ trước, pixel sau. Thực hiện đúng thứ tự đó và phần còn lại (cắt xén, letterboxing, các thanh màu đen, việc tải lên bị mờ) hầu như sẽ tự động không còn xảy ra nữa."
+    "conclusion": "Toàn bộ chủ đề này quy về một thói quen: quyết định hình dạng trước khi quyết định kích thước. Tỷ lệ trước, pixel sau. Thực hiện đúng thứ tự đó và phần còn lại (cắt xén, letterboxing, các thanh màu đen, việc tải lên bị mờ) hầu như sẽ tự động không còn xảy ra nữa."
   },
   "how-to-calculate-aspect-ratio": {
     "title": "Cách Tính Tỷ Lệ Khung Hình: Hướng Dẫn Hoàn Chỉnh",
-    "description": "Tìm hiểu cách tính tỷ lệ khung hình từng bước: sử dụng phương pháp GCD, công thức và công cụ tính trực tuyến miễn phí của chúng tôi. Bao gồm các ví dụ minh họa.",
-    "intro": "Biết cách tính tỷ lệ khung hình là một kỹ năng cơ bản cho bất kỳ ai làm việc với hình ảnh, video hoặc thiết kế. Hướng dẫn này bao gồm các phép toán đằng sau nó, các phương pháp thủ công nhanh nhất và cách sử dụng công cụ tính miễn phí của chúng tôi để có kết quả tức thì.",
+    "description": "Tìm hiểu cách tính tỷ lệ khung hình từng bước: sử dụng phương pháp GCD, công thức và công cụ tính toán trực tuyến miễn phí của chúng tôi. Bao gồm các ví dụ minh họa.",
+    "intro": "Biết cách tính tỷ lệ khung hình là một kỹ năng cơ bản cho bất kỳ ai làm việc với hình ảnh, video hoặc thiết kế. Hướng dẫn này bao gồm các phép toán đằng sau nó, các phương pháp thủ công nhanh nhất và cách sử dụng công cụ tính toán miễn phí của chúng tôi để có kết quả tức thì.",
     "sections": [
       {
         "heading": "Công Thức Tỷ Lệ Khung Hình",
-        "body": "Tỷ lệ khung hình của bất kỳ hình chữ nhật nào đơn giản là: Chiều Rộng ÷ Chiều Cao. Để biểu thị nó dưới dạng tỷ lệ W:H rõ ràng (ví dụ: 16:9 thay vì 1.778:1), bạn cần tìm Ước Số Chung Lớn Nhất (GCD) của chiều rộng và chiều cao, sau đó chia cả hai cho nó."
+        "body": "Tỷ lệ khung hình của bất kỳ hình chữ nhật nào đơn giản là: Chiều rộng ÷ Chiều cao. Để biểu thị nó dưới dạng tỷ lệ W:H rõ ràng (ví dụ: 16:9 thay vì 1.778:1), bạn cần tìm Ước số chung lớn nhất (GCD) của chiều rộng và chiều cao, sau đó chia cả hai cho nó."
       },
       {
         "heading": "Từng Bước: Cách Tìm Tỷ Lệ Khung Hình",
         "body": "Dưới đây là cách tính tỷ lệ khung hình của bất kỳ hình ảnh nào theo cách thủ công:",
         "list": [
           "Bước 1: Ghi lại chiều rộng và chiều cao theo pixel (ví dụ: 1920 và 1080)",
-          "Bước 2: Tìm Ước Số Chung Lớn Nhất (GCD) của cả hai số. Đối với 1920 và 1080, GCD là 120.",
+          "Bước 2: Tìm Ước số chung lớn nhất (GCD) của cả hai số. Đối với 1920 và 1080, GCD là 120.",
           "Bước 3: Chia cả hai số cho GCD. 1920 ÷ 120 = 16; 1080 ÷ 120 = 9.",
           "Bước 4: Viết kết quả dưới dạng W:H — trong trường hợp này, 16:9."
         ]
@@ -1179,10 +1183,10 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         "body": "Dưới đây là một số kích thước phổ biến và tỷ lệ khung hình của chúng:",
         "table": {
           "headers": [
-            "Chiều Rộng",
-            "Chiều Cao",
+            "Chiều rộng",
+            "Chiều cao",
             "GCD",
-            "Tỷ Lệ Khung Hình"
+            "Tỷ lệ khung hình"
           ],
           "rows": [
             [
@@ -1226,11 +1230,11 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Cách Tìm GCD Mà Không Cần Máy Tính",
-        "body": "Mọi phương pháp trên đều phụ thuộc vào việc tìm Ước Số Chung Lớn Nhất, và đó là bước mà hầu hết các hướng dẫn bỏ qua. Cách đáng tin cậy là thuật toán Euclid, đã có từ hơn hai nghìn năm trước và mất khoảng bốn bước cho các số có kích thước màn hình: chia số lớn hơn cho số nhỏ hơn, giữ lại số dư, sau đó lặp lại với số nhỏ hơn và số dư đó cho đến khi số dư bằng 0. Số khác 0 cuối cùng là GCD. Đối với 1920 và 1080: 1920 ÷ 1080 còn lại 840; 1080 ÷ 840 còn lại 240; 840 ÷ 240 còn lại 120; 240 ÷ 120 còn lại 0. GCD là 120."
+        "body": "Mọi phương pháp trên đều phụ thuộc vào việc tìm Ước số chung lớn nhất, và đó là bước mà hầu hết các hướng dẫn bỏ qua. Cách đáng tin cậy là thuật toán Euclid, đã có từ hơn hai nghìn năm trước và mất khoảng bốn bước cho các số có kích thước màn hình: chia số lớn hơn cho số nhỏ hơn, giữ lại số dư, sau đó lặp lại với số nhỏ hơn và số dư đó cho đến khi số dư bằng 0. Số khác 0 cuối cùng là GCD. Đối với 1920 và 1080: 1920 ÷ 1080 còn lại 840; 1080 ÷ 840 còn lại 240; 840 ÷ 240 còn lại 120; 240 ÷ 120 còn lại 0. GCD là 120."
       },
       {
         "heading": "Khi Các Con Số Không Thể Rút Gọn",
-        "body": "Không phải mọi cặp kích thước đều cho ra một tỷ lệ gọn gàng. 1847 × 923 có GCD là 1, vì vậy tỷ lệ \"đơn giản hóa\" của nó là 1847:923 — về mặt kỹ thuật là đúng nhưng vô dụng. Khi điều đó xảy ra, hãy ngừng cố gắng rút gọn và thay vào đó làm hai việc: lấy số thập phân (1847 ÷ 923 = 2.001, vì vậy về cơ bản là 2:1), và tìm tỷ lệ tiêu chuẩn gần nhất mà bạn thực sự có thể làm việc. Màn hình và nền tảng chấp nhận tỷ lệ tiêu chuẩn, không phải tỷ lệ chính xác, và sự khác biệt dưới khoảng nửa phần trăm là không thể nhận thấy."
+        "body": "Không phải mọi cặp kích thước đều cho ra một tỷ lệ gọn gàng. 1847 × 923 có GCD là 1, vì vậy tỷ lệ \"đơn giản hóa\" của nó là 1847:923 — về mặt kỹ thuật là đúng nhưng vô dụng. Khi điều đó xảy ra, hãy ngừng cố gắng rút gọn và thay vào đó làm hai việc: lấy số thập phân (1847 ÷ 923 = 2.001, vì vậy về cơ bản là 2:1), và tìm tỷ lệ tiêu chuẩn gần nhất mà bạn thực sự có thể làm việc. Màn hình và nền tảng chấp nhận tỷ lệ tiêu chuẩn, không phải tỷ lệ chính xác, và sự khác biệt dưới khoảng nửa phần trăm là không thể nhìn thấy."
       },
       {
         "heading": "Tại Sao 1200 × 630 Không Phải Là 1.91:1",
@@ -1238,14 +1242,18 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Cách Tính Kích Thước Bị Thiếu",
-        "body": "Nếu bạn biết kích thước gốc và muốn tìm một kích thước mới với cùng tỷ lệ, hãy sử dụng công thức này: Chiều Cao Mới = (Chiều Cao Gốc ÷ Chiều Rộng Gốc) × Chiều Rộng Mới. Ví dụ, để tìm chiều cao của một hình ảnh 16:9 có chiều rộng 1280px: (1080 ÷ 1920) × 1280 = 720px. Công cụ tính của chúng tôi thực hiện điều này tự động theo cả hai hướng."
+        "body": "Nếu bạn biết kích thước gốc và muốn tìm kích thước mới với cùng tỷ lệ, hãy sử dụng công thức này: Chiều cao mới = (Chiều cao gốc ÷ Chiều rộng gốc) × Chiều rộng mới. Ví dụ, để tìm chiều cao của một hình ảnh 16:9 có chiều rộng 1280px: (1080 ÷ 1920) × 1280 = 720px. Công cụ tính toán của chúng tôi thực hiện điều này tự động theo cả hai hướng."
       },
       {
         "heading": "Phương Pháp Nhanh Nhất: Sử Dụng Máy Tính",
-        "body": "Việc tính toán tỷ lệ khung hình thủ công khá đơn giản đối với các số tròn, nhưng nhanh chóng trở nên tẻ nhạt đối với các kích thước không đều như 1847×923. Công cụ Tính Tỷ Lệ Khung Hình miễn phí của chúng tôi xử lý mọi chiều rộng và chiều cao ngay lập tức. Nhập các giá trị của bạn và nhận tỷ lệ đơn giản hóa, số thập phân, kết quả khớp tiêu chuẩn gần nhất và các giá trị CSS chỉ trong một cú nhấp chuột."
+        "body": "Tính toán tỷ lệ khung hình thủ công khá đơn giản với các số tròn, nhưng nhanh chóng trở nên tẻ nhạt với các kích thước không đều như 1847×923. Công cụ tính tỷ lệ khung hình miễn phí của chúng tôi xử lý mọi chiều rộng và chiều cao ngay lập tức. Nhập các giá trị của bạn và nhận tỷ lệ đơn giản hóa, số thập phân, tỷ lệ tiêu chuẩn gần nhất và các giá trị CSS chỉ bằng một cú nhấp chuột."
+      },
+      {
+        "heading": "Tại Sao Bạn Không Thể Chỉ Ước Lượng Bằng Mắt",
+        "body": "Có một điểm mà sự đánh giá bằng mắt không còn hiệu quả. Di chuyển một bức ảnh quanh trang cho đến khi nó trông vừa mắt là một phương pháp hoàn toàn tốt, bởi vì mắt là công cụ để đánh giá kết quả. Mã code không như vậy. Một tỷ lệ khung hình CSS, một cài đặt xuất, một chiều cao vùng chứa: mỗi cái đều cần một con số, và con số đó hoặc là đúng hoặc là sai lệch một pixel duy nhất hiển thị dưới dạng một khe hở nhỏ trên bố cục hoàn chỉnh. Thiết kế bạn có thể điều chỉnh bằng cảm giác. Kích thước bạn phải tính toán."
       }
     ],
-    "conclusion": "Hai quy tắc bao gồm hầu hết mọi trường hợp. Rút gọn bằng GCD khi các con số cho phép, và quay lại số thập phân cộng với tỷ lệ tiêu chuẩn gần nhất khi chúng không cho phép. Giữ tỷ lệ số nguyên cho mọi phép tính và chỉ làm tròn ở cuối cùng. Thói quen đơn giản đó ngăn chặn hầu hết các lỗi lệch một pixel xuất hiện dưới dạng khe hở nhỏ trên bố cục hoàn chỉnh."
+    "conclusion": "Hai quy tắc bao gồm hầu hết mọi trường hợp. Rút gọn bằng GCD khi các số cho phép, và quay lại số thập phân cộng với tỷ lệ tiêu chuẩn gần nhất khi chúng không cho phép. Giữ tỷ lệ số nguyên cho mọi phép tính và chỉ làm tròn ở cuối cùng. Thói quen đơn giản đó ngăn chặn hầu hết các lỗi lệch một pixel hiển thị dưới dạng khe hở nhỏ trên bố cục hoàn chỉnh."
   },
   "aspect-ratio-social-media-guide-2026": {
     "title": "Kích Thước & Tỷ Lệ Ảnh Mạng Xã Hội: Hướng Dẫn Hoàn Chỉnh 2026",
@@ -1264,26 +1272,26 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Kích Thước Ảnh Instagram 2026",
-        "body": "Instagram hỗ trợ ba tỷ lệ bảng tin cùng với Stories và Reels. Đối với bài đăng trên bảng tin, ảnh chân dung 4:5 (1080×1350) mang lại cho bạn không gian dọc tối đa, điều bạn muốn trên một bề mặt mà mọi người cuộn qua.",
+        "body": "Instagram hỗ trợ ba tỷ lệ bảng tin cùng với Stories và Reels. Đối với bài đăng trên bảng tin, ảnh chân dung 4:5 (1080×1350) mang lại cho bạn không gian dọc nhiều nhất, điều bạn muốn trên một bề mặt mà mọi người cuộn qua.",
         "table": {
           "headers": [
-            "Định dạng",
-            "Kích thước",
-            "Tỷ lệ"
+            "Format",
+            "Dimensions",
+            "Ratio"
           ],
           "rows": [
             [
-              "Bài đăng bảng tin (Vuông)",
+              "Feed Post (Square)",
               "1080 × 1080",
               "1:1"
             ],
             [
-              "Bài đăng bảng tin (Chân dung)",
+              "Feed Post (Portrait)",
               "1080 × 1350",
               "4:5"
             ],
             [
-              "Bài đăng bảng tin (Ngang)",
+              "Feed Post (Landscape)",
               "1080 × 566",
               "1.91:1"
             ],
@@ -1293,7 +1301,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
               "9:16"
             ],
             [
-              "Ảnh đại diện",
+              "Profile Picture",
               "320 × 320",
               "1:1"
             ]
@@ -1305,9 +1313,9 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         "body": "YouTube là một nền tảng 16:9. Thiết kế hình thu nhỏ ở 1280×720 với văn bản đậm, dễ đọc. Hình thu nhỏ của bạn thường là yếu tố quyết định liệu ai đó có nhấp vào hay không.",
         "table": {
           "headers": [
-            "Định dạng",
-            "Kích thước",
-            "Tỷ lệ"
+            "Format",
+            "Dimensions",
+            "Ratio"
           ],
           "rows": [
             [
@@ -1321,12 +1329,12 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
               "9:16"
             ],
             [
-              "Hình thu nhỏ",
+              "Thumbnail",
               "1280 × 720",
               "16:9"
             ],
             [
-              "Ảnh bìa kênh",
+              "Channel Banner",
               "2560 × 1440",
               "16:9"
             ]
@@ -1338,18 +1346,18 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         "body": "TikTok hoàn toàn là định dạng dọc — luôn sử dụng 9:16 ở 1080×1920 để có chất lượng tốt nhất. Giữ nội dung chính ở giữa khung hình và tránh xa 20% phía dưới nơi chú thích và các yếu tố giao diện người dùng xuất hiện.",
         "table": {
           "headers": [
-            "Định dạng",
-            "Kích thước",
-            "Tỷ lệ"
+            "Format",
+            "Dimensions",
+            "Ratio"
           ],
           "rows": [
             [
-              "Video (Khuyến nghị)",
+              "Video (Recommended)",
               "1080 × 1920",
               "9:16"
             ],
             [
-              "Ảnh đại diện",
+              "Profile Picture",
               "200 × 200",
               "1:1"
             ]
@@ -1361,15 +1369,15 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         "body": "Dưới đây là bảng tham khảo nhanh về các kích thước ảnh mạng xã hội được sử dụng phổ biến nhất vào năm 2026:",
         "table": {
           "headers": [
-            "Nền tảng",
-            "Định dạng",
-            "Kích thước",
-            "Tỷ lệ"
+            "Platform",
+            "Format",
+            "Dimensions",
+            "Ratio"
           ],
           "rows": [
             [
               "Instagram",
-              "Bài đăng bảng tin (Chân dung)",
+              "Feed Post (Portrait)",
               "1080 × 1350",
               "4:5"
             ],
@@ -1387,7 +1395,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             ],
             [
               "YouTube",
-              "Hình thu nhỏ",
+              "Thumbnail",
               "1280 × 720",
               "16:9"
             ],
@@ -1399,25 +1407,25 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             ],
             [
               "X / Twitter",
-              "Ảnh bài đăng",
+              "Post Image",
               "1600 × 900",
               "16:9"
             ],
             [
               "LinkedIn",
-              "Ảnh bài đăng",
+              "Post Image",
               "1200 × 628",
               "1.91:1"
             ],
             [
               "Facebook",
-              "Ảnh bài đăng",
+              "Post Image",
               "1200 × 630",
               "1.91:1"
             ],
             [
               "Pinterest",
-              "Pin tiêu chuẩn",
+              "Standard Pin",
               "1000 × 1500",
               "2:3"
             ]
@@ -1426,42 +1434,46 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Kích Thước Đúng Nhưng Khung Hình Vẫn Sai",
-        "body": "Tải lên ở 1080 × 1920 không có nghĩa là toàn bộ nội dung đều hiển thị. Mọi định dạng dọc đều đặt giao diện lên trên ảnh của bạn: một hàng hồ sơ và chú thích ở phía dưới, thanh tiến trình và nút đóng ở phía trên, và trên Reels và TikTok là một cột nút ở một bên. Ảnh là toàn màn hình; nhưng khu vực có thể sử dụng thì không. Một lề làm việc thực tế là giữ bất cứ thứ gì cần đọc (văn bản, khuôn mặt, logo, giá cả) nằm trong khoảng 70% giữa theo chiều dọc và tránh xa cạnh cuối, sau đó xem trước trên điện thoại trước khi xuất bản. Vùng an toàn không được công bố như một thông số kỹ thuật và nó di chuyển, vì vậy hãy coi đó là một lề chứ không phải một phép đo."
+        "body": "Tải lên ở 1080 × 1920 không có nghĩa là toàn bộ nội dung đều hiển thị. Mọi định dạng dọc đều đặt giao diện lên trên ảnh của bạn: một hàng hồ sơ và chú thích ở phía dưới, thanh tiến trình và nút đóng ở phía trên, và trên Reels và TikTok là một cột nút ở một bên. Ảnh là toàn màn hình; nhưng khu vực có thể sử dụng thì không. Một lề làm việc thực tế là giữ bất cứ thứ gì cần đọc (văn bản, khuôn mặt, logo, giá cả) nằm trong 70% giữa theo chiều dọc và tránh xa cạnh cuối, sau đó xem trước trên điện thoại trước khi xuất bản. Khu vực an toàn không được công bố như một thông số kỹ thuật và nó di chuyển, vì vậy hãy coi đó là một lề chứ không phải một phép đo."
       },
       {
-        "heading": "Tải Lên Kích Thước Lớn Hơn Con Số Trong Bảng",
-        "body": "Mọi nền tảng đều nén lại những gì bạn gửi, và chúng làm tốt hơn khi bắt đầu từ nhiều dữ liệu hơn. Tải lên một ảnh xuất 1080 × 1350 từ một ảnh gốc rộng 1080 sẽ không cung cấp gì cho bộ mã hóa; tải lên phiên bản 2160 × 2700 của cùng một ảnh và để nền tảng giảm kích thước thường trông rõ ràng hơn ở cùng kích thước cuối cùng, đặc biệt là trên văn bản và các cạnh sắc nét. Ngoại lệ là khi một nền tảng công bố một giới hạn tối đa cứng. Hãy tôn trọng điều đó, sau đó tải lên gần với giới hạn đó nhất có thể."
+        "heading": "Tải Lên Lớn Hơn Con Số Trong Bảng",
+        "body": "Mọi nền tảng đều nén lại những gì bạn gửi, và nó hoạt động tốt hơn khi bắt đầu từ nhiều dữ liệu hơn. Tải lên một ảnh xuất 1080 × 1350 từ một ảnh gốc rộng 1080 sẽ không cung cấp cho bộ mã hóa dữ liệu để xử lý; tải lên phiên bản 2160 × 2700 của cùng một hình ảnh và để nền tảng giảm kích thước thường trông rõ ràng hơn đáng kể ở cùng kích thước cuối cùng, đặc biệt là trên văn bản và các cạnh sắc nét. Ngoại lệ là khi một nền tảng công bố một giới hạn tối đa cứng. Hãy tôn trọng điều đó, sau đó tải lên gần mức đó nhất có thể."
       },
       {
-        "heading": "Nếu Bạn Chỉ Có Thể Tạo Một Tài Sản Duy Nhất",
-        "body": "Hãy tạo nó ở tỷ lệ 4:5 với kích thước 1080 × 1350. Đây là hình dạng cao nhất mà bảng tin Instagram chấp nhận, có nghĩa là nó chiếm nhiều không gian màn hình nhất trên bề mặt cung cấp cho bạn ít nhất, và nó cắt gọn gàng: cắt giữa thành 1:1 cho vị trí vuông, hoặc thành 1.91:1 cho thẻ liên kết, và chủ thể vẫn ở vị trí bạn đặt. Đi theo hướng ngược lại, bắt đầu từ hình vuông và cố gắng đạt tỷ lệ 4:5, có nghĩa là tạo ra hình ảnh chưa từng được chụp."
+        "heading": "Nếu Bạn Chỉ Có Thể Tạo Một Tài Sản",
+        "body": "Hãy tạo nó ở tỷ lệ 4:5 với kích thước 1080 × 1350. Đây là hình dạng cao nhất mà bảng tin của Instagram chấp nhận, có nghĩa là nó chiếm nhiều không gian màn hình nhất trên bề mặt cung cấp cho bạn ít nhất, và nó cắt gọn gàng: cắt giữa thành 1:1 cho vị trí vuông, hoặc thành 1.91:1 cho thẻ liên kết, và chủ thể vẫn ở vị trí bạn đặt. Đi theo hướng ngược lại, bắt đầu từ hình vuông và cố gắng đạt tỷ lệ 4:5, có nghĩa là phải tạo ra hình ảnh chưa từng được chụp."
       },
       {
         "heading": "Một Lời Cảnh Báo Về Các Hướng Dẫn Như Thế Này",
-        "body": "Mọi con số ở đây đều chính xác tại thời điểm viết và các nền tảng thay đổi chúng mà không thông báo trước. Một hướng dẫn là điểm khởi đầu, không phải là một nguồn đáng tin cậy tuyệt đối: trước một chiến dịch quan trọng, hãy kiểm tra tài liệu trợ giúp của chính nền tảng, bởi vì đó là phiên bản duy nhất được cập nhật khi họ thay đổi. Các tỷ lệ trong cột cuối cùng ổn định hơn nhiều so với kích thước pixel bên cạnh chúng. 9:16 và 4:5 đã tồn tại qua nhiều vòng thay đổi thông số kỹ thuật, và việc xây dựng theo tỷ lệ thay vì số lượng pixel là điều giúp bảng này không bị lỗi thời đối với bạn."
+        "body": "Mọi con số ở đây đều chính xác tại thời điểm viết và các nền tảng thay đổi chúng mà không thông báo. Một hướng dẫn là điểm khởi đầu, không phải là một cơ quan có thẩm quyền: trước một chiến dịch quan trọng, hãy kiểm tra tài liệu trợ giúp của chính nền tảng, bởi vì đó là phiên bản duy nhất được cập nhật khi họ thay đổi. Các tỷ lệ ở cột cuối cùng ổn định hơn nhiều so với kích thước pixel bên cạnh chúng. 9:16 và 4:5 đã tồn tại qua nhiều vòng thay đổi thông số kỹ thuật, và việc xây dựng theo tỷ lệ thay vì số lượng pixel là điều giúp bảng này không bị lỗi thời đối với bạn."
+      },
+      {
+        "heading": "Quyết Định Hình Dạng Trước Khi Chụp",
+        "body": "Hầu hết các vấn đề trong hướng dẫn này có thể tránh được sớm hơn nhiều so với suy nghĩ của mọi người. Chọn khung hình trước khi chụp, thay vì phát hiện ra nó khi tải lên, là sự khác biệt giữa việc bạn quyết định cái gì bị cắt và để nền tảng quyết định thay bạn. Đây cũng là chỉnh sửa rẻ nhất hiện có: việc điều chỉnh khung hình không tốn kém gì trước khi bấm máy và tốn một phần tư giá trị bức ảnh sau đó."
       }
     ],
-    "conclusion": "Hãy xây dựng theo tỷ lệ, không theo số lượng pixel, và xuất lớn hơn mục tiêu. Hai thói quen đó sẽ tồn tại qua các thay đổi của nền tảng, điều mà các con số chính xác trong các bảng này sẽ không làm được. Giữ bất cứ thứ gì cần đọc rõ ràng nằm gọn trong khung hình, và kiểm tra tài liệu của chính nền tảng trước khi bất kỳ thứ gì bạn trả tiền được công bố."
+    "conclusion": "Hãy xây dựng theo tỷ lệ, không phải theo số lượng pixel, và xuất ảnh lớn hơn mục tiêu. Hai thói quen đó sẽ tồn tại qua các thay đổi của nền tảng, điều mà các con số chính xác trong các bảng này sẽ không làm được. Giữ bất cứ thứ gì cần đọc rõ ràng nằm gọn trong khung hình, và kiểm tra tài liệu của chính nền tảng trước khi bất cứ thứ gì bạn trả tiền được công bố."
   },
   "16-9-vs-4-3-aspect-ratio": {
-    "title": "16:9 vs 4:3 Tỷ Lệ Khung Hình — Bạn Nên Sử Dụng Tỷ Lệ Nào?",
-    "description": "So sánh rõ ràng về tỷ lệ khung hình 16:9 và 4:3: khi nào nên sử dụng từng loại, lịch sử đằng sau chúng, những khác biệt chính và các ví dụ về kích thước pixel.",
-    "intro": "16:9 và 4:3 là hai tỷ lệ khung hình có ý nghĩa lịch sử nhất trong lĩnh vực video và nhiếp ảnh. Nếu bạn đã từng thấy các thanh màu đen trên màn hình của mình, dù ở hai bên hay trên và dưới, bạn đã gặp phải sự khác biệt giữa chúng. Dưới đây là một so sánh đầy đủ.",
+    "title": "Tỷ lệ khung hình 16:9 so với 4:3 — Bạn nên sử dụng loại nào?",
+    "description": "So sánh rõ ràng về tỷ lệ khung hình 16:9 và 4:3: khi nào nên sử dụng từng loại, lịch sử đằng sau chúng, sự khác biệt chính và ví dụ về kích thước pixel.",
+    "intro": "16:9 và 4:3 là hai tỷ lệ khung hình có ý nghĩa lịch sử nhất trong video và nhiếp ảnh. Nếu bạn đã từng thấy các thanh màu đen trên màn hình của mình, dù ở hai bên hay trên và dưới, bạn đã gặp phải sự khác biệt giữa chúng. Dưới đây là một so sánh đầy đủ.",
     "sections": [
       {
         "heading": "Sự Khác Biệt Chính",
-        "body": "16:9 rộng hơn và có hình chữ nhật hơn (tỷ lệ 1.78:1), trong khi 4:3 vuông hơn (tỷ lệ 1.33:1). Một hình ảnh 16:9 rộng hơn khoảng 33% so với hình ảnh 4:3 có cùng chiều cao. Sự khác biệt này có vẻ nhỏ nhưng rất dễ nhận thấy trên màn hình."
+        "body": "16:9 rộng hơn và hình chữ nhật hơn (tỷ lệ 1.78:1), trong khi 4:3 vuông hơn (tỷ lệ 1.33:1). Một hình ảnh 16:9 rộng hơn khoảng 33% so với hình ảnh 4:3 có cùng chiều cao. Sự khác biệt này có vẻ nhỏ nhưng rất dễ nhận thấy trên màn hình."
       },
       {
-        "heading": "Lịch Sử: Chúng Từ Đâu Mà Ra?",
-        "body": "4:3 xuất hiện đầu tiên, phù hợp với hình dạng của phim điện ảnh 35mm thời kỳ đầu, và nó duy trì là tiêu chuẩn truyền hình trong hầu hết thế kỷ XX. 16:9 không được kế thừa từ bất cứ thứ gì. Nó được thiết kế. Làm việc tại SMPTE vào đầu những năm 1980, Kerns Powers đã cắt các hình chữ nhật có diện tích bằng nhau cho mọi tỷ lệ khung hình đang được sử dụng, từ truyền hình 1.33:1 đến điện ảnh 2.35:1, và chồng chúng lên nhau sao cho tâm trùng khớp. Mỗi hình chữ nhật nằm gọn trong một hộp bên ngoài và chứa một hộp bên trong, và cả hai hộp đó đều gần với tỷ lệ 1.77:1. Con số đó gần như chính xác là trung bình nhân của các giá trị cực đoan: căn bậc hai của 1.33 × 2.35 là 1.77, và 16 ÷ 9 là 1.778. 16:9 là hình dạng lãng phí ít không gian màn hình nhất, tính trung bình trên mọi thứ mà bất kỳ ai có thể muốn hiển thị trên đó."
+        "heading": "Lịch Sử: Chúng Bắt Nguồn Từ Đâu?",
+        "body": "4:3 xuất hiện đầu tiên, phù hợp với hình dạng của phim điện ảnh 35mm thời kỳ đầu, và nó vẫn là tiêu chuẩn truyền hình trong hầu hết thế kỷ XX. 16:9 không được kế thừa từ bất cứ thứ gì. Nó được thiết kế. Làm việc tại SMPTE vào đầu những năm 1980, Kerns Powers đã cắt các hình chữ nhật có diện tích bằng nhau cho mọi tỷ lệ khung hình đang được sử dụng, từ truyền hình 1.33:1 đến điện ảnh 2.35:1, và đặt chúng chồng lên nhau ở giữa. Mọi hình chữ nhật đều nằm gọn trong một hộp bên ngoài và chứa một hộp bên trong, và cả hai hộp đó đều gần với 1.77:1. Con số đó gần như chính xác là trung bình nhân của các giá trị cực đoan: căn bậc hai của 1.33 × 2.35 là 1.77, và 16 ÷ 9 là 1.778. 16:9 là hình dạng lãng phí ít màn hình nhất, tính trung bình trên mọi thứ mà bất kỳ ai cũng có thể muốn hiển thị trên đó."
       },
       {
         "heading": "Khi Nào Nên Sử Dụng 16:9",
         "body": "Sử dụng 16:9 khi:",
         "list": [
           "Tạo nội dung video cho YouTube, Netflix hoặc truyền hình",
-          "Tạo các bài thuyết trình hiện đại (Google Slides, PowerPoint 2016 trở lên mặc định là 16:9)",
+          "Tạo các bài thuyết trình hiện đại (Google Slides, PowerPoint 2016 và các phiên bản sau mặc định là 16:9)",
           "Thiết kế cho màn hình rộng và máy tính xách tay",
           "Quay video bằng điện thoại thông minh hoặc máy ảnh hiện đại",
           "Tạo hình thu nhỏ YouTube"
@@ -1508,26 +1520,30 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Chi Phí Thực Sự Khi Chuyển Đổi Giữa Chúng",
-        "body": "Cả hai phép chuyển đổi đều làm mất chính xác một phần tư hình ảnh, điều này nhiều hơn hầu hết mọi người mong đợi. Chuyển từ 16:9 sang 4:3 với cùng chiều cao có nghĩa là cắt chiều rộng từ 16 đơn vị xuống 12, vì vậy bạn mất 25% khung hình, và phần bị mất là ở hai bên, nơi các đối tượng được quay thường được căn chỉnh. Theo hướng ngược lại, từ 4:3 sang 16:9 với cùng chiều rộng, cắt chiều cao từ 12 đơn vị xuống 9: cũng mất 25%, lần này là ở phía trên và dưới, nơi thường có đầu người và chú thích. Không có hướng nào là thay đổi kích thước. Nếu nội dung quan trọng, hãy điều chỉnh lại khung hình thay vì để công cụ cắt tự động chọn."
+        "body": "Cả hai chuyển đổi đều tốn chính xác một phần tư hình ảnh, nhiều hơn hầu hết mọi người mong đợi. Chuyển từ 16:9 sang 4:3 với cùng chiều cao có nghĩa là cắt chiều rộng từ 16 đơn vị xuống 12, vì vậy bạn mất 25% khung hình, và nó bị cắt ở hai bên, nơi các đối tượng quay phim thường được đóng khung. Đi theo chiều ngược lại, từ 4:3 sang 16:9 với cùng chiều rộng, cắt chiều cao từ 12 đơn vị xuống 9: cũng 25%, lần này là ở trên và dưới, nơi đầu và chú thích thường xuất hiện. Cả hai hướng đều không phải là thay đổi kích thước. Nếu nội dung quan trọng, hãy đóng khung lại thay vì để công cụ cắt chọn."
       },
       {
-        "heading": "Những Thanh Đen Đang Gây Tổn Thất Gì Cho Bạn",
-        "body": "Hiển thị nội dung 4:3 trên màn hình 16:9 sẽ tạo ra các thanh đen ở hai bên (pillarbox), và các thanh này không chỉ mang tính thẩm mỹ: hình ảnh chiếm 12 trong số 16 đơn vị chiều rộng của màn hình, vì vậy một phần tư màn hình không làm gì cả. Một chiếc tivi 16:9 55 inch có chiều rộng 47.9 inch, vì vậy có khoảng 12 inch màu đen. Đây là lập luận thực tế cho việc quay phim theo tỷ lệ bạn sẽ xuất bản, thay vì lên kế hoạch sửa chữa sau này. Không có cách cắt nào có thể khôi phục lại một phần tư màn hình."
+        "heading": "Những Thanh Màu Đen Đang Gây Tốn Kém Gì Cho Bạn",
+        "body": "Hiển thị nội dung 4:3 trên màn hình 16:9 sẽ tạo ra các thanh đen ở hai bên (pillarbox), và các thanh này không chỉ mang tính thẩm mỹ: hình ảnh chiếm 12 trong số 16 đơn vị chiều rộng của màn hình, vì vậy một phần tư màn hình không làm gì cả. Một chiếc tivi 16:9 55 inch rộng 47.9 inch, vì vậy đó là khoảng 12 inch màu đen. Đây là lập luận thực tế để quay ở tỷ lệ bạn sẽ xuất bản, thay vì lên kế hoạch sửa chữa sau đó. Không có công cụ cắt nào có thể khôi phục một phần tư màn hình."
+      },
+      {
+        "heading": "Nó Cũng Quyết Định Nên Mua Tivi Nào",
+        "body": "Đây không chỉ là một câu hỏi về sản xuất. Nếu điều bạn yêu thích là điện ảnh màn hình rộng, một chiếc tivi 16:9 sẽ tạo ra các thanh đen ở trên và dưới (letterbox) cho gần như mọi thứ bạn xem, vì hầu hết các bộ phim chiếu rạp đều rộng hơn màn hình bạn đang xem. Nếu bạn chủ yếu xem truyền hình phát sóng và phim truyền hình trực tuyến, 16:9 là hình dạng chính xác mà nội dung đó được tạo ra và hầu như không có gì bị lãng phí. Màn hình phù hợp là màn hình khớp với định dạng bạn thực sự dành buổi tối của mình, điều này đáng để tìm hiểu trước khi bạn chi tiền chứ không phải sau đó."
       }
     ],
-    "conclusion": "Hãy quay và thiết kế ở tỷ lệ 16:9 trừ khi có điều gì đó cụ thể buộc bạn phải làm khác: đối tượng khán giả ưu tiên iPad, một máy chiếu cũ, một kho lưu trữ cần khớp. Điều đáng tránh là quyết định muộn: cả hai phép chuyển đổi đều làm mất một phần tư khung hình, và việc bạn mất phần tư nào là một quyết định nên được đưa ra thông qua kính ngắm hơn là bằng công cụ cắt sau này."
+    "conclusion": "Hãy quay và thiết kế ở tỷ lệ 16:9 trừ khi có điều gì đó cụ thể buộc bạn phải làm khác: đối tượng ưu tiên iPad, máy chiếu cũ, một kho lưu trữ cần khớp. Điều đáng tránh là quyết định muộn: cả hai chuyển đổi đều tốn một phần tư khung hình, và phần tư nào bạn mất là một quyết định nên được đưa ra thông qua kính ngắm hơn là bằng công cụ cắt sau đó."
   },
   "how-to-resize-image-without-losing-quality": {
-    "title": "Cách Thay Đổi Kích Thước Ảnh Mà Không Giảm Chất Lượng",
-    "description": "Tìm hiểu các kỹ thuật thay đổi kích thước ảnh mà không làm giảm chất lượng: thu nhỏ (downscaling) so với phóng to (upscaling), các định dạng tệp tốt nhất, giải thích về DPI và các công cụ được đề xuất.",
-    "intro": "Thay đổi kích thước ảnh nghe có vẻ đơn giản, nhưng nếu thực hiện không đúng cách sẽ dẫn đến ảnh bị mờ, vỡ hạt (pixelated) hoặc biến dạng. Hướng dẫn này giải thích khi nào và làm thế nào bạn có thể thay đổi kích thước ảnh mà không làm giảm chất lượng rõ rệt.",
+    "title": "Cách thay đổi kích thước ảnh mà không làm giảm chất lượng",
+    "description": "Tìm hiểu các kỹ thuật thay đổi kích thước ảnh mà không làm giảm chất lượng: thu nhỏ so với phóng to, các định dạng tệp tốt nhất, giải thích về DPI và các công cụ được đề xuất.",
+    "intro": "Thay đổi kích thước ảnh nghe có vẻ đơn giản, nhưng nếu thực hiện không đúng cách sẽ dẫn đến ảnh bị mờ, vỡ hạt hoặc méo mó. Hướng dẫn này giải thích khi nào và làm thế nào bạn có thể thay đổi kích thước ảnh mà không làm giảm chất lượng rõ rệt.",
     "sections": [
       {
-        "heading": "Thu nhỏ (Downscaling) so với Phóng to (Upscaling)",
+        "heading": "Thu nhỏ so với Phóng to",
         "body": "Có hai hướng bạn có thể thay đổi kích thước ảnh, và chúng có những tác động rất khác nhau đến chất lượng. Thu nhỏ (làm ảnh nhỏ hơn) hầu như luôn giữ được chất lượng, vì bạn chỉ đơn giản là loại bỏ các pixel. Phóng to (làm ảnh lớn hơn) là nơi phát sinh các vấn đề về chất lượng, vì phần mềm phải tạo ra dữ liệu pixel không tồn tại trong ảnh gốc."
       },
       {
-        "heading": "Quy Tắc Vàng: Luôn Bắt Đầu Với Độ Phân Giải Cao Nhất",
+        "heading": "Quy tắc vàng: Luôn bắt đầu với độ phân giải cao nhất",
         "body": "Mất chất lượng hầu như không thể đảo ngược. Nếu bạn bắt đầu với một ảnh nhỏ và cần một ảnh lớn, bạn sẽ luôn thấy chất lượng bị suy giảm. Thực hành tốt nhất là:",
         "list": [
           "Luôn giữ tệp gốc có độ phân giải cao của bạn",
@@ -1537,60 +1553,65 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         ]
       },
       {
-        "heading": "Bạn Có Thể Phóng To Đến Mức Nào?",
-        "body": "Theo hướng dẫn chung: phóng to lên đến 110–120% thường không thể nhận thấy đối với hầu hết người xem. Phóng to 150–200% sẽ tạo ra độ mềm mại đáng chú ý. Phóng to vượt quá 200% thường tạo ra hiện tượng vỡ hạt (pixelation) và mờ rõ rệt. Các công cụ phóng to dựa trên AI (như Topaz Gigapixel, Adobe Firefly, và các công cụ tương tự) đôi khi có thể tạo ra kết quả chấp nhận được khi phóng to 2–4× bằng cách tạo chi tiết một cách thông minh."
+        "heading": "Bạn có thể phóng to bao nhiêu?",
+        "body": "Theo hướng dẫn chung: phóng to lên đến 110–120% thường không thể nhận thấy đối với hầu hết người xem. Phóng to 150–200% tạo ra độ mềm mại đáng chú ý. Phóng to vượt quá 200% thường tạo ra hiện tượng vỡ hạt và mờ rõ rệt. Các công cụ phóng to dựa trên AI (như Topaz Gigapixel, Adobe Firefly và các công cụ tương tự) đôi khi có thể tạo ra kết quả chấp nhận được khi phóng to 2–4 lần bằng cách tạo chi tiết một cách thông minh."
       },
       {
-        "heading": "Duy Trì Tỷ Lệ Khung Hình Khi Thay Đổi Kích Thước",
-        "body": "Một trong những lỗi chất lượng phổ biến nhất là vô tình thay đổi tỷ lệ khung hình trong quá trình thay đổi kích thước, làm kéo giãn hoặc bóp méo ảnh. Luôn thay đổi kích thước theo tỷ lệ bằng cách khóa tỷ lệ khung hình trong công cụ chỉnh sửa của bạn. Công cụ tính toán miễn phí của chúng tôi giúp bạn tìm chiều cao mục tiêu chính xác cho bất kỳ chiều rộng mới nào (hoặc ngược lại), đảm bảo việc thay đổi kích thước của bạn duy trì tỷ lệ gốc."
+        "heading": "Duy trì tỷ lệ khung hình khi thay đổi kích thước",
+        "body": "Một trong những lỗi chất lượng phổ biến nhất là vô tình thay đổi tỷ lệ khung hình trong quá trình thay đổi kích thước, làm kéo giãn hoặc nén ảnh. Luôn thay đổi kích thước theo tỷ lệ bằng cách khóa tỷ lệ khung hình trong công cụ chỉnh sửa của bạn. Công cụ tính toán miễn phí của chúng tôi giúp bạn tìm chiều cao mục tiêu chính xác cho bất kỳ chiều rộng mới nào (hoặc ngược lại), đảm bảo việc thay đổi kích thước của bạn duy trì tỷ lệ gốc."
       },
       {
-        "heading": "Các Định Dạng Tệp Tốt Nhất Cho Chất Lượng",
+        "heading": "Các định dạng tệp tốt nhất cho chất lượng",
         "body": "Định dạng tệp ảnh hưởng đáng kể đến chất lượng sau khi thay đổi kích thước:",
         "list": [
-          "PNG: nén không mất dữ liệu; lý tưởng cho đồ họa, hình minh họa và ảnh chụp màn hình nơi độ sắc nét quan trọng",
+          "PNG: nén không mất dữ liệu; lý tưởng cho đồ họa, minh họa và ảnh chụp màn hình nơi độ sắc nét quan trọng",
           "JPEG: nén mất dữ liệu; lý tưởng cho ảnh chụp; đặt chất lượng 80–90% để có sự cân bằng tốt nhất giữa kích thước/chất lượng",
           "WebP: một định dạng hiện đại đạt được khả năng nén tốt hơn JPEG ở chất lượng tương đương; được hỗ trợ bởi tất cả các trình duyệt hiện đại",
-          "TIFF: không nén hoặc không mất dữ liệu; được sử dụng trong quy trình làm việc in ấn và nhiếp ảnh chuyên nghiệp"
+          "TIFF: không nén hoặc không mất dữ liệu; được sử dụng trong quy trình in ấn và nhiếp ảnh chuyên nghiệp"
         ]
       },
       {
-        "heading": "DPI và Chất Lượng In",
-        "body": "DPI (dots per inch) chỉ liên quan đến in ấn. Màn hình hoàn toàn bỏ qua nó. Đối với in ấn: sử dụng 300 DPI cho bản in ảnh sắc nét, 150 DPI cho chất lượng chấp nhận được và 72–96 DPI chỉ để sử dụng trên màn hình. Để tính kích thước pixel cần thiết cho bản in: nhân kích thước in bằng inch với DPI. Đối với bản in 8×10 inch ở 300 DPI: 2400×3000 pixel."
+        "heading": "DPI và chất lượng in",
+        "body": "DPI (dots per inch) chỉ liên quan đến in ấn. Màn hình hoàn toàn bỏ qua nó. Đối với in ấn: sử dụng 300 DPI cho ảnh in sắc nét, 150 DPI cho chất lượng chấp nhận được và 72–96 DPI chỉ để sử dụng trên màn hình. Để tính kích thước pixel cần thiết cho bản in: nhân kích thước in theo inch với DPI. Đối với bản in 8×10 inch ở 300 DPI: 2400×3000 pixel."
+      },
+      {
+        "heading": "Ba cách nó trông sai",
+        "body": "Một lần thay đổi kích thước kém chất lượng tự thể hiện theo một trong ba cách: quá lớn, quá nhỏ hoặc mềm mại (mờ). Hai vấn đề đầu tiên là vấn đề về khung hình, và các vấn đề về khung hình thường có thể được khắc phục bằng cách di chuyển một cái gì đó. Vấn đề thứ ba thì không thể. Độ mềm mại là thông tin không còn trong tệp, và không có bất kỳ điều chỉnh nào có thể đưa nó trở lại. Biết bạn đang nhìn vào vấn đề nào trong ba vấn đề này thực sự là câu hỏi liệu bạn còn năm phút nữa là xong hay phải bắt đầu lại từ đầu với tệp gốc."
       }
     ],
-    "conclusion": "Hãy giữ tệp gốc. Hầu hết mọi vấn đề về chất lượng trong hướng dẫn này đều bắt nguồn từ việc ai đó không còn tệp gốc nữa: bạn không thể thu nhỏ từ thứ bạn đã vứt bỏ, và không có công cụ phóng to nào có thể khôi phục chi tiết chưa từng được ghi lại. Xuất các bản sao, lưu trữ tệp gốc và thay đổi kích thước từ đó mỗi lần."
+    "conclusion": "Giữ tệp gốc. Hầu hết mọi vấn đề về chất lượng trong hướng dẫn này đều bắt nguồn từ việc ai đó không còn tệp gốc nữa: bạn không thể thu nhỏ từ một thứ bạn đã vứt bỏ, và không có công cụ phóng to nào có thể khôi phục chi tiết chưa từng được ghi lại. Xuất bản sao, lưu trữ bản gốc và thay đổi kích thước từ đó mỗi lần."
   },
   "install-aspect-ratio-calculator": {
-    "title": "Tại sao nên cài đặt Aspect Ratio Calculator? Truy cập ngoại tuyến, tốc độ và hơn thế nữa",
-    "description": "Cài đặt Aspect Ratio Calculator dưới dạng ứng dụng để truy cập ngoại tuyến tức thì, có lối tắt trên màn hình chính và trải nghiệm không bị phân tâm — không có giao diện trình duyệt, không cần tải lại.",
-    "intro": "Bạn có thể sử dụng công cụ tính này trực tiếp từ trình duyệt của mình, nhưng việc cài đặt nó dưới dạng ứng dụng sẽ nâng cao trải nghiệm hơn nữa: khởi chạy tức thì từ màn hình chính, hỗ trợ ngoại tuyến đầy đủ và giao diện gọn gàng không có điều hướng trình duyệt gây cản trở. Dưới đây là mọi thứ bạn cần biết.",
+    "title": "Tại sao nên cài đặt Aspect Ratio Calculator? Truy cập ngoại tuyến, tốc độ & hơn thế nữa",
+    "description": "Cài đặt Aspect Ratio Calculator dưới dạng một ứng dụng để truy cập ngoại tuyến tức thì, một lối tắt trên màn hình chính và trải nghiệm không bị phân tâm — không có giao diện người dùng trình duyệt, không cần tải lại.",
+    "intro": "Bạn có thể sử dụng công cụ tính này trực tiếp từ trình duyệt của mình, nhưng việc cài đặt nó dưới dạng một ứng dụng sẽ nâng cao trải nghiệm hơn nữa: khởi chạy tức thì từ màn hình chính của bạn, hỗ trợ ngoại tuyến đầy đủ và giao diện gọn gàng không có thanh điều hướng trình duyệt gây cản trở. Dưới đây là mọi thứ bạn cần biết.",
     "sections": [
       {
         "heading": "'Cài đặt' thực sự có nghĩa là gì?",
-        "body": "Khi bạn cài đặt một ứng dụng web (còn gọi là PWA, hoặc Progressive Web App), thiết bị của bạn sẽ lưu một lối tắt vào màn hình chính hoặc màn hình nền và lưu vào bộ nhớ đệm các tệp ứng dụng để sử dụng ngoại tuyến. Không có App Store nào liên quan và không có gì đang tải xuống hàng gigabyte dữ liệu, vì các tệp đã có trong bộ nhớ đệm của trình duyệt của bạn. Việc cài đặt đơn giản là nâng cấp trang web thành trải nghiệm ứng dụng hạng nhất trên thiết bị của bạn."
+        "body": "Khi bạn cài đặt một ứng dụng web (còn gọi là PWA, hoặc Progressive Web App), thiết bị của bạn sẽ lưu một lối tắt vào màn hình chính hoặc màn hình nền và lưu vào bộ nhớ đệm các tệp ứng dụng để sử dụng ngoại tuyến. Không có App Store nào liên quan và không có gì tải xuống hàng gigabyte dữ liệu, vì các tệp đã có trong bộ nhớ đệm của trình duyệt của bạn. Việc cài đặt đơn giản là nâng cấp trang web thành trải nghiệm ứng dụng hạng nhất trên thiết bị của bạn.",
+        "list": []
       },
       {
         "heading": "Lợi ích của việc cài đặt",
-        "body": "Cài đặt Aspect Ratio Calculator mang lại cho bạn một số lợi thế so với việc chỉ sử dụng nó trong trình duyệt:",
+        "body": "Việc cài đặt Aspect Ratio Calculator mang lại cho bạn một số lợi thế so với việc chỉ sử dụng nó trong trình duyệt:",
         "list": [
-          "Truy cập ngoại tuyến: các phép tính hoạt động ngay cả khi không có kết nối internet, hữu ích khi đang quay phim, ở hiện trường hoặc trên máy bay",
-          "Lối tắt màn hình chính: mở chỉ với một lần chạm, không cần điều hướng đến URL hoặc mở tab trình duyệt",
-          "Giao diện không bị phân tâm: không có thanh địa chỉ trình duyệt, tab hoặc thanh công cụ; công cụ tính toán lấp đầy màn hình một cách gọn gàng",
-          "Tải nhanh hơn: các tệp đã lưu vào bộ nhớ đệm tải ngay lập tức từ bộ nhớ cục bộ thay vì chờ phản hồi mạng",
+          "Truy cập ngoại tuyến: các phép tính hoạt động ngay cả khi không có kết nối internet, hữu ích khi ở trường quay, ngoài hiện trường hoặc trên máy bay",
+          "Lối tắt màn hình chính: mở bằng một lần chạm, không cần điều hướng đến URL hoặc mở tab trình duyệt",
+          "Giao diện không bị phân tâm: không có thanh địa chỉ, tab hoặc thanh công cụ trình duyệt; công cụ tính toán lấp đầy màn hình một cách gọn gàng",
+          "Tải nhanh hơn: các tệp được lưu vào bộ nhớ đệm tải ngay lập tức từ bộ nhớ cục bộ thay vì chờ phản hồi mạng",
           "Luôn cập nhật: service worker tìm nạp các bản cập nhật một cách âm thầm trong nền để bạn luôn có phiên bản mới nhất"
         ]
       },
       {
         "heading": "Cách cài đặt trên Chrome hoặc Android",
-        "body": "Trên Android hoặc Chrome dành cho máy tính để bàn, một biểu ngữ sẽ tự động xuất hiện ở cuối trang với nút Cài đặt. Chạm hoặc nhấp vào Cài đặt và xác nhận khi được nhắc. Nếu biểu ngữ đã bị loại bỏ, hãy tìm biểu tượng cài đặt (một màn hình có mũi tên xuống ⊕) trong thanh địa chỉ trình duyệt trên máy tính để bàn, hoặc chạm vào menu ba chấm trên Android và chọn 'Thêm vào màn hình chính'."
+        "body": "Trên Android hoặc Chrome dành cho máy tính để bàn, một biểu ngữ sẽ tự động xuất hiện ở cuối trang với nút Cài đặt. Chạm hoặc nhấp vào Cài đặt và xác nhận khi được nhắc. Nếu biểu ngữ đã bị loại bỏ, hãy tìm biểu tượng cài đặt (một màn hình có mũi tên xuống ⊕) trong thanh địa chỉ trình duyệt trên máy tính để bàn, hoặc chạm vào menu ba chấm trên Android và chọn 'Thêm vào Màn hình chính'."
       },
       {
         "heading": "Cách cài đặt trên iPhone hoặc iPad (Safari)",
-        "body": "Safari trên iOS không hiển thị biểu ngữ cài đặt tự động, nhưng quy trình rất đơn giản:",
+        "body": "Safari trên iOS không hiển thị biểu ngữ cài đặt tự động, nhưng quá trình này rất đơn giản:",
         "list": [
-          "Chạm vào nút Chia sẻ (hộp có mũi tên hướng lên) trong thanh công cụ Safari ở cuối màn hình",
-          "Cuộn xuống trong bảng chia sẻ và chạm vào 'Thêm vào màn hình chính'",
+          "Chạm vào nút Chia sẻ (hộp có mũi tên chỉ lên) trong thanh công cụ Safari ở cuối màn hình",
+          "Cuộn xuống trong bảng chia sẻ và chạm vào 'Thêm vào Màn hình chính'",
           "Chỉnh sửa tên nếu bạn muốn, sau đó chạm vào 'Thêm' ở góc trên bên phải",
           "Biểu tượng công cụ tính toán giờ đây xuất hiện trên màn hình chính của bạn và khởi chạy ở chế độ độc lập"
         ]
@@ -1601,9 +1622,13 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Cách gỡ cài đặt",
-        "body": "Gỡ cài đặt cũng dễ dàng như cài đặt. Trên iOS, nhấn giữ biểu tượng trên màn hình chính của bạn và chạm vào 'Xóa ứng dụng'. Trên Android, nhấn giữ và kéo đến khu vực gỡ cài đặt, hoặc vào Cài đặt → Ứng dụng. Trên Chrome dành cho máy tính để bàn, mở ứng dụng, nhấp vào menu ba chấm bên trong cửa sổ ứng dụng và chọn 'Gỡ cài đặt Aspect Ratio Calculator'. Trên Edge, nhấp chuột phải vào ứng dụng trong thanh tác vụ hoặc Start menu và chọn Gỡ cài đặt."
+        "body": "Việc gỡ cài đặt cũng dễ dàng như cài đặt. Trên iOS, nhấn giữ biểu tượng trên màn hình chính của bạn và chạm vào 'Xóa ứng dụng'. Trên Android, nhấn giữ và kéo đến khu vực gỡ cài đặt, hoặc vào Cài đặt → Ứng dụng. Trên Chrome dành cho máy tính để bàn, mở ứng dụng, nhấp vào menu ba chấm bên trong cửa sổ ứng dụng và chọn 'Gỡ cài đặt Aspect Ratio Calculator'. Trên Edge, nhấp chuột phải vào ứng dụng trong thanh tác vụ hoặc Start menu và chọn Gỡ cài đặt."
+      },
+      {
+        "heading": "Tại sao việc này cần nhanh chóng",
+        "body": "Hầu như không ai ngồi xuống với ý định thực hiện các phép tính tỷ lệ khung hình. Nó xuất hiện giữa chừng một việc khác: một tệp có hình dạng sai, một vùng chứa cần chiều cao, một bản in sắp được xuất bản. Nó luôn cản trở công việc bạn đang thực sự làm. Đó là toàn bộ bản tóm tắt thiết kế cho công cụ này, và là lý do tại sao nó mở ngay lập tức và không cần tài khoản: hiểu tình huống, đưa ra quyết định, quay lại làm việc."
       }
     ],
-    "conclusion": "Cài đặt Aspect Ratio Calculator mất khoảng mười giây và không tốn phí. Bạn có quyền truy cập ngoại tuyến, lối tắt trên màn hình chính và trải nghiệm nhanh hơn, gọn gàng hơn, không yêu cầu App Store. Nếu bạn thường xuyên sử dụng công cụ tính này, việc cài đặt nó là cách thuận tiện nhất để giữ nó trong tầm tay bạn."
+    "conclusion": "Việc cài đặt Aspect Ratio Calculator mất khoảng mười giây và không tốn phí. Bạn có quyền truy cập ngoại tuyến, một lối tắt trên màn hình chính và trải nghiệm nhanh hơn, gọn gàng hơn, mà không cần App Store. Nếu bạn thường xuyên sử dụng công cụ tính toán này, việc cài đặt nó là cách thuận tiện nhất để giữ nó trong tầm tay bạn."
   }
 };

@@ -550,7 +550,9 @@
     "maintenanceTitle": "Bagaimana pembaruannya dijaga",
     "maintenance": "Dimensi platform sosial berubah, jadi halaman platform ditinjau berdasarkan spesifikasi yang diterbitkan oleh masing-masing platform itu sendiri, bukan disalin dari panduan lain. Setiap artikel mencantumkan tanggal publikasinya, dan tanggal tersebut hanya diubah ketika isinya benar-benar berubah.",
     "contactCta": "Menemukan kesalahan, atau ada yang kurang?",
-    "contactLink": "Hubungi kami"
+    "contactLink": "Hubungi kami",
+    "purposeTitle": "Mengapa ini ada",
+    "purpose": "Aspect ratio mendasari banyak pekerjaan yang sebenarnya tidak secara langsung berkaitan dengan aspect ratio itu sendiri. Sebuah foto yang perlu dipotong. Sebuah slide yang harus mengisi layar proyektor. Sebuah televisi yang dibeli untuk jenis film yang benar-benar Anda tonton. Sebuah kontainer yang membutuhkan tinggi yang tepat dalam kode. Dalam setiap kasus tersebut, keputusannya adalah perhitungan aritmatika sederhana yang sama, dan jika salah, akan langsung terlihat: sesuatu terlalu besar, terlalu kecil, buram, atau dikelilingi oleh ruang yang seharusnya tidak ada. Beberapa di antaranya bisa Anda perbaiki secara visual. Dalam kode, tidak bisa — ia membutuhkan angka. Situs ini ada untuk membuat keputusan itu dengan cepat dan kemudian menyingkir."
   },
   "contactPage": {
     "title": "Kontak",

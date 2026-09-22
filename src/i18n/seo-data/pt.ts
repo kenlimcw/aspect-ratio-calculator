@@ -1079,20 +1079,20 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
 
 export const ARTICLE_DATA: Record<string, ArticleData> = {
   "what-is-aspect-ratio": {
-    "title": "O que é Proporção de Tela? Um Guia para Iniciantes",
+    "title": "O Que é Proporção de Tela? Um Guia Para Iniciantes",
     "description": "Uma explicação clara e amigável para iniciantes sobre proporção de tela: o que significa, como é escrita, por que é importante para telas e imagens, e como usá-la.",
     "intro": "Proporção de tela é um daqueles termos que soam técnicos, mas que na verdade são bastante simples depois que você os entende. Seja ao redimensionar uma foto para o Instagram, configurar um vídeo do YouTube ou comprar um novo monitor, a proporção de tela determina o formato da sua imagem ou tela. Este guia explica tudo o que você precisa saber.",
     "sections": [
       {
         "heading": "O Que Significa Proporção de Tela?",
-        "body": "Proporção de tela é a relação proporcional entre a largura e a altura de uma imagem, tela ou quadro de vídeo. É escrita como dois números separados por dois pontos, como 16:9 ou 4:3. O primeiro número é a largura e o segundo é a altura. Uma proporção de 16:9 significa que para cada 16 unidades de largura, a altura é de 9 unidades. O tamanho real não importa. Uma imagem de 160×90 pixels e uma imagem de 3840×2160 pixels são ambas 16:9 porque compartilham as mesmas proporções."
+        "body": "Proporção de tela é a relação proporcional entre a largura e a altura de uma imagem, tela ou quadro de vídeo. É escrita como dois números separados por dois pontos, como 16:9 ou 4:3. O primeiro número é a largura e o segundo é a altura. Uma proporção 16:9 significa que para cada 16 unidades de largura, a altura é de 9 unidades. O tamanho real não importa. Uma imagem de 160×90 pixels e uma imagem de 3840×2160 pixels são ambas 16:9 porque compartilham as mesmas proporções."
       },
       {
-        "heading": "Por Que a Proporção de Tela é Importante?",
-        "body": "A proporção de tela é importante sempre que você estiver exibindo, imprimindo ou compartilhando conteúdo visual. Se a proporção da sua imagem não corresponder à proporção da tela ou do contêiner, uma de duas coisas acontece:",
+        "heading": "Por Que a Proporção de Tela Importa?",
+        "body": "A proporção de tela importa sempre que você estiver exibindo, imprimindo ou compartilhando conteúdo visual. Se a proporção da sua imagem não corresponder à proporção da tela ou do contêiner, uma de duas coisas acontece:",
         "list": [
           "Letterboxing / Pillarboxing: barras pretas aparecem para preencher o espaço vazio",
-          "Corte (Cropping): a imagem é cortada para se ajustar, e parte do conteúdo é perdida",
+          "Corte (Cropping): a imagem é cortada para caber, e parte do conteúdo é perdida",
           "Esticamento (Stretching): a imagem é distorcida para preencher o quadro (menos desejável)"
         ]
       },
@@ -1129,7 +1129,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             [
               "4:3",
               "1.33:1",
-              "iPads, TVs antigas, PowerPoint, câmeras DSLR"
+              "iPads, TV antiga, PowerPoint, câmeras DSLR"
             ],
             [
               "3:2",
@@ -1151,38 +1151,42 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       {
         "heading": "Proporção de Tela vs. Resolução",
         "body": "Proporção de tela e resolução estão relacionadas, mas não são a mesma coisa. Resolução refere-se ao número total de pixels (por exemplo, 1920×1080). Proporção de tela refere-se ao formato (por exemplo, 16:9). Duas imagens podem compartilhar a mesma proporção de tela, mas ter resoluções completamente diferentes: 640×360 e 3840×2160 são ambas 16:9, mas diferem vastamente na contagem de pixels e na qualidade."
-      }
-    ],
-    "conclusion": "Todo o assunto se resume a um hábito: decida o formato antes de decidir o tamanho. Proporção primeiro, pixels segundo. Acertando essa ordem, o resto (cortes, letterboxing, as barras pretas, o upload borrado) geralmente para de acontecer por si só."
-  },
-  "how-to-calculate-aspect-ratio": {
-    "title": "Como Calcular a Proporção de Aspecto: O Guia Completo",
-    "description": "Aprenda a calcular a proporção de aspecto passo a passo: usando o método do GCD, a fórmula e nossa calculadora online gratuita. Inclui exemplos práticos.",
-    "intro": "Saber como calcular uma proporção de aspecto é uma habilidade fundamental para qualquer pessoa que trabalhe com imagens, vídeo ou design. Este guia aborda a matemática por trás disso, os métodos manuais mais rápidos e como usar nossa calculadora gratuita para resultados instantâneos.",
-    "sections": [
-      {
-        "heading": "A Fórmula da Proporção de Aspecto",
-        "body": "A proporção de aspecto de qualquer retângulo é simplesmente: Largura ÷ Altura. Para expressá-la como uma proporção W:H limpa (por exemplo, 16:9 em vez de 1.778:1), você precisa encontrar o Greatest Common Divisor (GCD) da largura e da altura e dividir ambos por ele."
       },
       {
-        "heading": "Passo a Passo: Como Encontrar a Proporção de Aspecto",
-        "body": "Veja como calcular manualmente a proporção de aspecto de qualquer imagem:",
+        "heading": "Por Que Vale a Pena Saber",
+        "body": "A proporção de tela é uma daquelas coisas que ninguém nota até que esteja errada, e então é a única coisa que conseguem ver. Fotografia, cinema, sites, revistas, embalagens: grande parte do que parece um acabamento profissional é simplesmente ter as proporções certas. Quando não estão, você sente antes de conseguir nomear. Algo está muito grande, muito pequeno, estranhamente suave ou flutuando em espaço desperdiçado. Uma vez que você começa a notar, não consegue mais parar, o que é um presente um tanto irritante de se ter recebido."
+      }
+    ],
+    "conclusion": "Todo o assunto se resume a um hábito: decida o formato antes de decidir o tamanho. Proporção primeiro, pixels segundo. Acertando essa ordem, o resto (corte, letterboxing, as barras pretas, o upload borrado) na maioria das vezes para de acontecer por conta própria."
+  },
+  "how-to-calculate-aspect-ratio": {
+    "title": "Como Calcular a Proporção de Tela: O Guia Completo",
+    "description": "Aprenda a calcular a proporção de tela passo a passo: usando o método do MDC, a fórmula e nossa calculadora online gratuita. Inclui exemplos práticos.",
+    "intro": "Saber como calcular uma proporção de tela é uma habilidade fundamental para qualquer pessoa que trabalhe com imagens, vídeo ou design. Este guia aborda a matemática por trás disso, os métodos manuais mais rápidos e como usar nossa calculadora gratuita para resultados instantâneos.",
+    "sections": [
+      {
+        "heading": "A Fórmula da Proporção de Tela",
+        "body": "A proporção de tela de qualquer retângulo é simplesmente: Largura ÷ Altura. Para expressá-la como uma proporção W:H limpa (por exemplo, 16:9 em vez de 1.778:1), você precisa encontrar o Máximo Divisor Comum (MDC) da largura e da altura e dividir ambos por ele."
+      },
+      {
+        "heading": "Passo a Passo: Como Encontrar a Proporção de Tela",
+        "body": "Veja como calcular manualmente a proporção de tela de qualquer imagem:",
         "list": [
           "Passo 1: Anote a largura e a altura em pixels (por exemplo, 1920 e 1080)",
-          "Passo 2: Encontre o Greatest Common Divisor (GCD) de ambos os números. Para 1920 e 1080, o GCD é 120.",
-          "Passo 3: Divida ambos os números pelo GCD. 1920 ÷ 120 = 16; 1080 ÷ 120 = 9.",
-          "Passo 4: Escreva o resultado como W:H — neste caso, 16:9."
+          "Passo 2: Encontre o Máximo Divisor Comum (MDC) de ambos os números. Para 1920 e 1080, o MDC é 120.",
+          "Passo 3: Divida ambos os números pelo MDC. 1920 ÷ 120 = 16; 1080 ÷ 120 = 9.",
+          "Passo 4: Escreva o resultado como L:A — neste caso, 16:9."
         ]
       },
       {
         "heading": "Exemplos Práticos",
-        "body": "Aqui estão algumas dimensões comuns e suas proporções de aspecto:",
+        "body": "Aqui estão algumas dimensões comuns e suas proporções de tela:",
         "table": {
           "headers": [
             "Largura",
             "Altura",
-            "GCD",
-            "Proporção de Aspecto"
+            "MDC",
+            "Proporção de Tela"
           ],
           "rows": [
             [
@@ -1225,51 +1229,55 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         }
       },
       {
-        "heading": "Como Encontrar o GCD Sem uma Calculadora",
-        "body": "Cada método acima depende de encontrar o Greatest Common Divisor, e esse é o passo que a maioria dos guias pula. A maneira confiável é o algoritmo de Euclides, que tem mais de dois mil anos e leva cerca de quatro passos para números do tamanho de tela: divida o número maior pelo menor, mantenha o resto, então repita com o número menor e esse resto até que o resto seja zero. O último número não-zero é o GCD. Para 1920 e 1080: 1920 ÷ 1080 deixa 840; 1080 ÷ 840 deixa 240; 840 ÷ 240 deixa 120; 240 ÷ 120 deixa 0. O GCD é 120."
+        "heading": "Como Encontrar o MDC Sem uma Calculadora",
+        "body": "Cada método acima depende de encontrar o Máximo Divisor Comum, e esse é o passo que a maioria dos guias pula. A maneira confiável é o algoritmo de Euclides, que tem mais de dois mil anos e leva cerca de quatro passos para números do tamanho de tela: divida o número maior pelo menor, mantenha o resto, depois repita com o número menor e esse resto até que o resto seja zero. O último número não zero é o MDC. Para 1920 e 1080: 1920 ÷ 1080 deixa 840; 1080 ÷ 840 deixa 240; 840 ÷ 240 deixa 120; 240 ÷ 120 deixa 0. O MDC é 120."
       },
       {
         "heading": "Quando os Números Se Recusam a Reduzir",
-        "body": "Nem todo par de dimensões resulta em uma proporção limpa. 1847 × 923 tem um GCD de 1, então sua proporção \"simplificada\" é 1847:923 — tecnicamente correta e inútil. Quando isso acontece, pare de tentar reduzir e faça duas coisas em vez disso: pegue o decimal (1847 ÷ 923 = 2.001, então é essencialmente 2:1), e encontre a proporção padrão mais próxima com a qual você pode realmente trabalhar. Telas e plataformas aceitam proporções padrão, não exatas, e uma diferença abaixo de cerca de meio por cento é invisível."
+        "body": "Nem todo par de dimensões resulta em uma proporção limpa. 1847 × 923 tem um MDC de 1, então sua proporção \"simplificada\" é 1847:923 — tecnicamente correta e inútil. Quando isso acontece, pare de tentar reduzir e faça duas coisas em vez disso: pegue o decimal (1847 ÷ 923 = 2.001, então é essencialmente 2:1), e encontre a proporção padrão mais próxima com a qual você pode realmente trabalhar. Telas e plataformas aceitam proporções padrão, não exatas, e uma diferença abaixo de cerca de meio por cento é invisível."
       },
       {
         "heading": "Por Que 1200 × 630 Não É 1.91:1",
-        "body": "O tamanho de imagem Open Graph que toda plataforma social pede é 1200 × 630, e é quase sempre descrito como 1.91:1. Execute o GCD e você obterá 40:21, cujo decimal é 1.9048. O valor 1.91 é um rótulo arredondado que pegou, não a proporção real. Isso importa quando você escala: calcular uma nova largura a partir de 1.91 em vez de 40:21 desvia em aproximadamente um pixel a 1200px de largura e em quatro a 4800px. Sempre escale a partir da proporção inteira e arredonde apenas no final."
+        "body": "O tamanho da imagem Open Graph que toda plataforma social pede é 1200 × 630, e é quase sempre descrito como 1.91:1. Execute o MDC e você obterá 40:21, cujo decimal é 1.9048. O valor 1.91 é um rótulo arredondado que pegou, não a proporção real. Isso importa ao escalar: calcular uma nova largura a partir de 1.91 em vez de 40:21 desvia em aproximadamente um pixel a 1200px de largura e em quatro a 4800px. Sempre escale a partir da proporção inteira e arredonde apenas no final."
       },
       {
-        "heading": "Como Calcular uma Dimensão Ausente",
-        "body": "Se você conhece as dimensões originais e quer encontrar um novo tamanho na mesma proporção, use esta fórmula: Nova Altura = (Altura Original ÷ Largura Original) × Nova Largura. Por exemplo, para encontrar a altura de uma imagem 16:9 com 1280px de largura: (1080 ÷ 1920) × 1280 = 720px. Nossa calculadora faz isso automaticamente em ambas as direções."
+        "heading": "Como Calcular uma Dimensão Faltante",
+        "body": "Se você conhece as dimensões originais e quer encontrar um novo tamanho com a mesma proporção, use esta fórmula: Nova Altura = (Altura Original ÷ Largura Original) × Nova Largura. Por exemplo, para encontrar a altura de uma imagem 16:9 com 1280px de largura: (1080 ÷ 1920) × 1280 = 720px. Nossa calculadora faz isso automaticamente em ambas as direções."
       },
       {
         "heading": "O Método Mais Rápido: Use uma Calculadora",
-        "body": "Calcular proporções de aspecto manualmente é simples para números redondos, mas rapidamente se torna tedioso para dimensões irregulares como 1847×923. Nossa Calculadora de Proporção de Aspecto gratuita lida com qualquer largura e altura instantaneamente. Insira seus valores e obtenha a proporção simplificada, decimal, a correspondência padrão mais próxima e os valores CSS em um clique."
+        "body": "Calcular proporções de tela manualmente é simples para números redondos, mas rapidamente se torna tedioso para dimensões irregulares como 1847×923. Nossa Calculadora de Proporção de Tela gratuita lida com qualquer largura e altura instantaneamente. Insira seus valores e obtenha a proporção simplificada, decimal, a correspondência padrão mais próxima e os valores CSS em um clique."
+      },
+      {
+        "heading": "Por Que Você Não Pode Apenas Olhar e Adivinhar",
+        "body": "Há um ponto em que o julgamento para de funcionar. Mover uma foto pela página até que pareça certa é um método perfeitamente bom, porque o olho é o instrumento pelo qual o resultado será julgado. O código não é assim. Um CSS aspect-ratio, uma predefinição de exportação, uma altura de contêiner: cada um deles recebe um número, e o número está correto ou está errado por um único pixel que aparece como uma lacuna fina em um layout finalizado. O design você pode ajustar pelo tato. Os tamanhos você tem que calcular."
       }
     ],
-    "conclusion": "Duas regras cobrem quase todos os casos. Reduza com o GCD quando os números permitirem, e recorra ao decimal mais a proporção padrão mais próxima quando não permitirem. Mantenha a proporção inteira para qualquer aritmética e arredonde apenas no final. Esse único hábito previne a maioria dos erros de um pixel que aparecem como uma lacuna fina em um layout finalizado."
+    "conclusion": "Duas regras cobrem quase todos os casos. Reduza com o MDC quando os números permitirem, e recorra ao decimal mais a proporção padrão mais próxima quando não permitirem. Mantenha a proporção inteira para qualquer aritmética e arredonde apenas no final. Esse único hábito previne a maioria dos erros de um pixel que aparecem como uma lacuna fina em um layout finalizado."
   },
   "aspect-ratio-social-media-guide-2026": {
     "title": "Tamanhos e Proporções de Imagem para Redes Sociais: Guia Completo 2026",
-    "description": "Todos os tamanhos e proporções de imagem para redes sociais em 2026: Instagram, YouTube, TikTok, X, LinkedIn, Facebook e Pinterest. Mantenha este guia salvo.",
+    "description": "Todos os tamanhos e proporções de imagem para redes sociais em 2026: Instagram, YouTube, TikTok, X, LinkedIn, Facebook e Pinterest. Mantenha este guia salvo nos favoritos.",
     "intro": "Cada plataforma de rede social tem suas próprias dimensões de imagem recomendadas, e elas mudam regularmente. Usar o tamanho errado significa que suas imagens serão cortadas, ficarão borradas ou serão exibidas de forma inadequada. Este guia cobre todas as principais plataformas para 2026.",
     "sections": [
       {
         "heading": "Por Que os Tamanhos de Imagem Importam nas Redes Sociais",
         "body": "Cada plataforma tem um layout de feed, área de exibição e algoritmo de compressão diferentes. Uma imagem otimizada para uma plataforma pode parecer borrada, cortada ou esticada em outra. Fazer o upload com as dimensões exatas recomendadas garante:",
         "list": [
-          "Nenhum corte inesperado de conteúdo chave",
+          "Nenhum corte inesperado de conteúdo importante",
           "Nitidez máxima — sem redimensionamento (upscaling) pela plataforma",
           "Tempos de carregamento mais rápidos — o dimensionamento correto reduz o tamanho do arquivo",
-          "Melhor desempenho em algoritmos de recomendação"
+          "Melhor desempenho nos algoritmos de recomendação"
         ]
       },
       {
         "heading": "Tamanhos de Imagem para Instagram 2026",
-        "body": "O Instagram suporta três proporções para o feed, além de Stories e Reels. Para posts no feed, o formato retrato 4:5 (1080×1350) oferece o maior espaço vertical, que é o que você deseja em uma superfície que as pessoas rolam rapidamente.",
+        "body": "O Instagram suporta três proporções de feed, além de Stories e Reels. Para posts no feed, o formato retrato 4:5 (1080×1350) oferece o maior espaço vertical, que é o ideal em uma superfície que as pessoas rolam rapidamente.",
         "table": {
           "headers": [
             "Formato",
-            "Dimensions",
-            "Ratio"
+            "Dimensões",
+            "Proporção"
           ],
           "rows": [
             [
@@ -1306,8 +1314,8 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         "table": {
           "headers": [
             "Formato",
-            "Dimensions",
-            "Ratio"
+            "Dimensões",
+            "Proporção"
           ],
           "rows": [
             [
@@ -1335,12 +1343,12 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Tamanhos de Vídeo para TikTok 2026",
-        "body": "O TikTok é totalmente vertical — sempre use 9:16 em 1080×1920 para a melhor qualidade. Mantenha o conteúdo principal no centro do quadro e longe dos 20% inferiores, onde aparecem legendas e elementos da interface do usuário.",
+        "body": "O TikTok é totalmente vertical — sempre use 9:16 em 1080×1920 para a melhor qualidade. Mantenha o conteúdo principal no centro do quadro e longe dos 20% inferiores, onde legendas e elementos da interface do usuário aparecem.",
         "table": {
           "headers": [
             "Formato",
-            "Dimensions",
-            "Ratio"
+            "Dimensões",
+            "Proporção"
           ],
           "rows": [
             [
@@ -1358,13 +1366,13 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Referência Rápida: Todas as Plataformas",
-        "body": "Aqui está uma tabela de referência rápida para os tamanhos de imagem de redes sociais mais comumente usados em 2026:",
+        "body": "Aqui está uma tabela de referência rápida para os tamanhos de imagem de redes sociais mais usados em 2026:",
         "table": {
           "headers": [
-            "Platform",
+            "Plataforma",
             "Formato",
-            "Dimensions",
-            "Ratio"
+            "Dimensões",
+            "Proporção"
           ],
           "rows": [
             [
@@ -1426,19 +1434,23 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Os Tamanhos Estão Certos e o Enquadramento Ainda Está Errado",
-        "body": "Fazer o upload em 1080 × 1920 não significa que tudo será visível. Todo formato vertical coloca elementos da interface sobre sua imagem: uma linha de perfil e uma legenda na parte inferior, uma barra de progresso e um botão de fechar na parte superior, e nos Reels e TikTok uma coluna de botões em um dos lados. A imagem é de sangria total; a área utilizável não é. Uma margem de trabalho prática é manter tudo o que precisa ser lido (texto, rostos, logotipos, preços) dentro dos 70% centrais verticalmente e longe da borda final, e então pré-visualizar em um telefone antes de publicar. A área segura não é publicada como uma especificação e ela se move, então trate-a como uma margem em vez de uma medida."
+        "body": "Fazer o upload em 1080 × 1920 não significa que tudo estará visível. Todo formato vertical coloca a interface sobre sua imagem: uma linha de perfil e uma legenda na parte inferior, uma barra de progresso e um botão de fechar na parte superior, e nos Reels e TikTok uma coluna de botões em um dos lados. A imagem é de sangria total; a área utilizável não é. Uma margem de trabalho prática é manter tudo o que precisa ser lido (texto, rostos, logotipos, preços) dentro dos 70% centrais verticalmente e longe da borda final, e então pré-visualizar em um telefone antes de publicar. A área segura não é publicada como uma especificação e ela se move, então trate-a como uma margem em vez de uma medida."
       },
       {
         "heading": "Faça o Upload Maior do Que o Número na Tabela",
-        "body": "Toda plataforma recompila o que você envia, e faz um trabalho melhor começando com mais dados. Fazer o upload de uma exportação de 1080 × 1350 de um original com 1080 de largura não dá ao codificador nada para trabalhar; fazer o upload de uma versão de 2160 × 2700 da mesma imagem e deixar a plataforma reduzir a escala geralmente parece visivelmente mais limpo no mesmo tamanho final, particularmente em texto e bordas finas. A exceção é quando uma plataforma publica um limite máximo rígido. Respeite isso e, em seguida, aproxime-se o máximo possível."
+        "body": "Toda plataforma recompila o que você envia, e faz um trabalho melhor começando com mais dados. Fazer o upload de uma exportação de 1080 × 1350 de um original de 1080 de largura não dá ao codificador nada para trabalhar; fazer o upload de uma versão de 2160 × 2700 da mesma imagem e deixar a plataforma reduzir a escala geralmente parece visivelmente mais limpo no mesmo tamanho final, particularmente em texto e bordas finas. A exceção é quando uma plataforma publica um máximo rígido. Respeite isso, e então chegue o mais próximo possível abaixo dele."
       },
       {
         "heading": "Se Você Puder Criar Apenas Um Ativo",
-        "body": "Crie-o em 4:5 com 1080 × 1350. É o formato mais alto que o feed do Instagram aceita, o que significa que ele ocupa a maior parte da tela na superfície que lhe dá menos, e ele corta de forma limpa: corte central para 1:1 para um posicionamento quadrado, ou para 1.91:1 para um cartão de link, e o assunto permanece onde você o colocou. Fazer o contrário, começar com um quadrado e tentar alcançar 4:5, significa inventar uma imagem que nunca foi fotografada."
+        "body": "Crie-o em 4:5 com 1080 × 1350. É o formato mais alto que o feed do Instagram aceita, o que significa que ele ocupa a maior parte da tela na superfície que lhe dá menos, e ele corta de forma limpa: corte central para 1:1 para um posicionamento quadrado, ou para 1.91:1 para um cartão de link, e o assunto permanece onde você o colocou. Indo na outra direção, começando quadrado e tentando alcançar 4:5, significa inventar uma imagem que nunca foi fotografada."
       },
       {
         "heading": "Um Aviso Sobre Guias Como Este",
         "body": "Cada número aqui estava correto quando foi escrito e as plataformas os alteram sem aviso. Um guia é um ponto de partida, não uma autoridade: antes de uma campanha importante, verifique a documentação de ajuda da própria plataforma, porque essa é a única versão que se atualiza quando eles o fazem. As proporções na última coluna são muito mais estáveis do que as dimensões em pixels ao lado delas. 9:16 e 4:5 sobreviveram a várias rodadas de mudanças de especificações, e construir com base na proporção, em vez da contagem de pixels, é o que impede que esta tabela se torne obsoleta para você."
+      },
+      {
+        "heading": "Decida o Formato Antes de Fotografar",
+        "body": "A maior parte do trabalho neste guia é evitável muito antes do que as pessoas pensam. Escolher o enquadramento antes da sessão, em vez de descobri-lo no momento do upload, é a diferença entre decidir o que será cortado e deixar uma plataforma decidir por você. É também a edição mais barata disponível: reenquadrar não custa nada antes do clique e custa um quarto da imagem depois."
       }
     ],
     "conclusion": "Construa com base na proporção, não na contagem de pixels, e exporte maior do que o alvo. Esses dois hábitos sobrevivem às mudanças da plataforma, o que os números exatos nestas tabelas não farão. Mantenha tudo o que precisa ser lido bem dentro do quadro e verifique a documentação da própria plataforma antes que qualquer coisa pela qual você esteja pagando seja publicada."
@@ -1450,11 +1462,11 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
     "sections": [
       {
         "heading": "A Principal Diferença",
-        "body": "16:9 é mais largo e mais retangular (proporção de 1.78:1), enquanto 4:3 é mais quadrado (proporção de 1.33:1). Uma imagem 16:9 é cerca de 33% mais larga do que uma imagem 4:3 da mesma altura. Essa diferença pode parecer pequena, mas é muito perceptível na tela."
+        "body": "16:9 é mais largo e retangular (proporção de 1.78:1), enquanto 4:3 é mais quadrado (proporção de 1.33:1). Uma imagem 16:9 é cerca de 33% mais larga do que uma imagem 4:3 da mesma altura. Essa diferença pode parecer pequena, mas é muito perceptível na tela."
       },
       {
         "heading": "História: De Onde Vieram?",
-        "body": "4:3 veio primeiro, combinando com o formato dos primeiros filmes de 35mm, e permaneceu o padrão de televisão durante a maior parte do século XX. 16:9 não foi herdado de nada. Foi projetado. Trabalhando na SMPTE no início dos anos 1980, Kerns Powers cortou retângulos de área igual para cada proporção de tela então em uso, da televisão 1.33:1 ao cinema 2.35:1, e os sobrepôs centralizados uns nos outros. Cada retângulo se encaixava dentro de uma caixa externa e continha uma caixa interna, e ambas as caixas estavam próximas de 1.77:1. Esse número é quase exatamente a média geométrica dos extremos: a raiz quadrada de 1.33 × 2.35 é 1.77, e 16 ÷ 9 é 1.778. 16:9 é o formato que desperdiça menos tela, em média, considerando tudo o que alguém possa querer exibir nela."
+        "body": "4:3 veio primeiro, correspondendo ao formato dos primeiros filmes de 35mm, e permaneceu o padrão de televisão durante a maior parte do século XX. 16:9 não foi herdado de nada. Foi projetado. Trabalhando na SMPTE no início dos anos 1980, Kerns Powers cortou retângulos de área igual para cada proporção de tela então em uso, de 1.33:1 para televisão a 2.35:1 para cinema, e os sobrepôs centralizados uns nos outros. Cada retângulo se encaixava dentro de uma caixa externa e continha uma caixa interna, e ambas as caixas estavam próximas de 1.77:1. Esse número é quase exatamente a média geométrica dos extremos: a raiz quadrada de 1.33 × 2.35 é 1.77, e 16 ÷ 9 é 1.778. 16:9 é o formato que desperdiça menos tela, em média, considerando tudo o que alguém possa querer exibir nela."
       },
       {
         "heading": "Quando Usar 16:9",
@@ -1512,10 +1524,14 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "O Que as Barras Pretas Estão Lhe Custando",
-        "body": "Exibir conteúdo 4:3 em uma tela 16:9 o 'pillarbox', e as barras não são cosméticas: a imagem ocupa 12 das 16 unidades de largura da tela, então um quarto do display não está fazendo nada. Uma televisão 16:9 de 55 polegadas tem 47.9 polegadas de largura, então isso representa cerca de 12 polegadas de preto. Este é o argumento prático para filmar na proporção em que você publicará, em vez de planejar corrigi-lo depois. Não há corte que recupere um quarto da tela."
+        "body": "Exibir conteúdo 4:3 em uma tela 16:9 o 'pillarbox', e as barras não são cosméticas: a imagem ocupa 12 das 16 unidades de largura da tela, então um quarto do display não está fazendo nada. Uma televisão 16:9 de 55 polegadas tem 47.9 polegadas de largura, então isso é cerca de 12 polegadas de preto. Este é o argumento prático para filmar na proporção em que você publicará, em vez de planejar corrigi-lo depois. Não há corte que recupere um quarto da tela."
+      },
+      {
+        "heading": "Também Decide Qual Televisão Comprar",
+        "body": "Esta não é apenas uma questão de produção. Se o que você ama é cinema widescreen, uma televisão 16:9 irá 'letterbox' quase tudo o que você assistir, porque a maioria dos filmes teatrais são mais largos do que o aparelho em que você os está assistindo. Se você assiste principalmente televisão aberta e dramas de streaming, 16:9 é o formato exato em que esse conteúdo é feito e quase nada é desperdiçado. A tela certa é aquela que corresponde ao formato em que você realmente passa suas noites, o que vale a pena descobrir antes de gastar o dinheiro, e não depois."
       }
     ],
-    "conclusion": "Filme e projete em 16:9, a menos que algo específico o leve para outro lugar: um público que usa iPad principalmente, um projetor legado, um arquivo para corresponder. A única coisa a evitar é decidir tarde: ambas as conversões custam um quarto do quadro, e qual quarto você perde é uma decisão melhor tomada através de um visor do que por uma ferramenta de corte depois."
+    "conclusion": "Filme e projete em 16:9, a menos que algo específico o leve para outro lugar: um público que prioriza o iPad, um projetor legado, um arquivo para corresponder. A única coisa que vale a pena evitar é decidir tarde: ambas as conversões custam um quarto do quadro, e qual quarto você perde é uma decisão melhor tomada através de um visor do que por uma ferramenta de corte depois."
   },
   "how-to-resize-image-without-losing-quality": {
     "title": "Como Redimensionar uma Imagem Sem Perder Qualidade",
@@ -1528,11 +1544,11 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "A Regra de Ouro: Sempre Comece Com a Mais Alta Resolução",
-        "body": "A perda de qualidade é, na maioria das vezes, irreversível. Se você começar com uma imagem pequena e precisar de uma grande, sempre verá degradação da qualidade. A melhor prática é:",
+        "body": "A perda de qualidade é em grande parte irreversível. Se você começar com uma imagem pequena e precisar de uma grande, sempre verá degradação da qualidade. A melhor prática é:",
         "list": [
           "Sempre mantenha seu arquivo original de alta resolução",
           "Exporte ou salve uma cópia separada no tamanho desejado",
-          "Nunca salve um JPEG compactado várias vezes, pois cada salvamento degrada a qualidade",
+          "Nunca salve novamente um JPEG compactado várias vezes, porque cada salvamento degrada a qualidade",
           "Exporte do arquivo mestre cada vez que precisar de um novo tamanho"
         ]
       },
@@ -1556,19 +1572,23 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "DPI e Qualidade de Impressão",
-        "body": "DPI (dots per inch) é relevante apenas para impressão. Telas o ignoram completamente. Para impressão: use 300 DPI para impressões fotográficas nítidas, 150 DPI para qualidade aceitável e 72–96 DPI para uso apenas em tela. Para calcular as dimensões em pixels necessárias para uma impressão: multiplique o tamanho da impressão em polegadas pelo DPI. Para uma impressão de 8×10 polegadas a 300 DPI: 2400×3000 pixels."
+        "body": "DPI (dots per inch) é relevante apenas para impressão. As telas o ignoram completamente. Para impressão: use 300 DPI para impressões de fotos nítidas, 150 DPI para qualidade aceitável e 72–96 DPI para uso apenas em tela. Para calcular as dimensões em pixels necessárias para uma impressão: multiplique o tamanho da impressão em polegadas pelo DPI. Para uma impressão de 8×10 polegadas a 300 DPI: 2400×3000 pixels."
+      },
+      {
+        "heading": "As Três Maneiras de Parecer Errado",
+        "body": "Um redimensionamento ruim se manifesta de uma de três maneiras: muito grande, muito pequeno ou suave. Os dois primeiros são problemas de enquadramento, e problemas de enquadramento geralmente podem ser corrigidos movendo algo. O terceiro não pode. A suavidade é informação que não está mais no arquivo, e nenhuma quantidade de ajuste a recoloca. Saber qual dos três você está vendo é realmente uma questão sobre se você está a cinco minutos de terminar ou começando novamente do original."
       }
     ],
-    "conclusion": "Mantenha o arquivo mestre. Quase todos os problemas de qualidade neste guia remontam a alguém que não tem mais o original: você não pode reduzir algo que já descartou, e nenhum ampliador recupera detalhes que nunca foram registrados. Exporte cópias, arquive o original e redimensione a partir dele sempre."
+    "conclusion": "Mantenha o arquivo mestre. Quase todos os problemas de qualidade neste guia remontam a alguém que não tem mais o original: você não pode reduzir de algo que já descartou, e nenhum ampliador recupera detalhes que nunca foram registrados. Exporte cópias, arquive o original e redimensione a partir dele todas as vezes."
   },
   "install-aspect-ratio-calculator": {
-    "title": "Por que Instalar o Aspect Ratio Calculator? Acesso Offline, Velocidade e Mais",
-    "description": "Instale o Aspect Ratio Calculator como um aplicativo para acesso offline instantâneo, um atalho na tela inicial e uma experiência sem distrações — sem interface do navegador, sem recarregamentos.",
-    "intro": "Você pode usar esta calculadora diretamente do seu navegador, mas instalá-la como um aplicativo leva a experiência adiante: inicialização instantânea da sua tela inicial, suporte offline completo e uma interface limpa sem a navegação do navegador no caminho. Aqui está tudo o que você precisa saber.",
+    "title": "Por que instalar o Aspect Ratio Calculator? Acesso Offline, Velocidade e Mais",
+    "description": "Instale o Aspect Ratio Calculator como um aplicativo para acesso offline instantâneo, um atalho na tela inicial e uma experiência sem distrações — sem interface do navegador, sem recarregar.",
+    "intro": "Você pode usar esta calculadora diretamente do seu navegador, mas instalá-la como um aplicativo leva a experiência adiante: inicialização instantânea da sua tela inicial, suporte offline completo e uma interface limpa sem navegação do navegador no caminho. Aqui está tudo o que você precisa saber.",
     "sections": [
       {
         "heading": "O que 'Instalar' realmente significa?",
-        "body": "Quando você instala um aplicativo web (também chamado de PWA, ou Progressive Web App), seu dispositivo salva um atalho na sua tela inicial ou desktop e armazena em cache os arquivos do aplicativo para uso offline. Não há nenhuma app store envolvida e nada está baixando gigabytes de dados, porque os arquivos já estão no cache do seu navegador. Instalar simplesmente promove o site a uma experiência de aplicativo de primeira classe no seu dispositivo."
+        "body": "Quando você instala um aplicativo web (também chamado de PWA, ou Progressive Web App), seu dispositivo salva um atalho para sua tela inicial ou desktop e armazena em cache os arquivos do aplicativo para uso offline. Não há App Store envolvida e nada está baixando gigabytes de dados, porque os arquivos já estão no cache do seu navegador. Instalar simplesmente promove o site a uma experiência de aplicativo de primeira classe no seu dispositivo."
       },
       {
         "heading": "Benefícios da instalação",
@@ -1583,7 +1603,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Como instalar no Chrome ou Android",
-        "body": "No Android ou Chrome desktop, um banner aparece automaticamente na parte inferior da página com um botão Instalar. Toque ou clique em Instalar e confirme quando solicitado. Se o banner tiver sido dispensado, procure o ícone de instalação (um monitor com uma seta para baixo ⊕) na barra de endereço do navegador no desktop, ou toque no menu de três pontos no Android e selecione 'Adicionar à tela inicial'."
+        "body": "No Android ou Chrome desktop, um banner aparece automaticamente na parte inferior da página com um botão Instalar. Toque ou clique em Instalar e confirme quando solicitado. Se o banner foi dispensado, procure o ícone de instalação (um monitor com uma seta para baixo ⊕) na barra de endereço do navegador no desktop, ou toque no menu de três pontos no Android e selecione 'Adicionar à tela inicial'."
       },
       {
         "heading": "Como instalar no iPhone ou iPad (Safari)",
@@ -1597,13 +1617,17 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Como instalar no desktop (Chrome ou Edge)",
-        "body": "Em um computador desktop executando Chrome ou Edge, procure o ícone de instalação na barra de endereço. Ele se parece com um monitor com uma pequena seta de download. Clique nele e confirme o prompt. No Edge, a opção também pode aparecer sob o menu de três pontos como 'Aplicativos → Instalar este site como um aplicativo'. Uma vez instalado, a calculadora aparece no seu Start menu (Windows) ou pasta Aplicativos (Mac) como qualquer aplicativo nativo."
+        "body": "Em um computador desktop executando Chrome ou Edge, procure o ícone de instalação na barra de endereço. Ele se parece com um monitor com uma pequena seta de download. Clique nele e confirme o prompt. No Edge, a opção também pode aparecer sob o menu de três pontos como 'Aplicativos → Instalar este site como um aplicativo'. Uma vez instalada, a calculadora aparece no seu Start menu (Windows) ou pasta Aplicativos (Mac) como qualquer aplicativo nativo."
       },
       {
         "heading": "Como desinstalar",
-        "body": "Desinstalar é tão fácil quanto instalar. No iOS, pressione e segure o ícone na sua tela inicial e toque em 'Remover App'. No Android, pressione e segure e arraste para a área de desinstalação, ou vá para Configurações → Aplicativos. No Chrome desktop, abra o aplicativo, clique no menu de três pontos dentro da janela do aplicativo e selecione 'Desinstalar Aspect Ratio Calculator'. No Edge, clique com o botão direito no aplicativo na barra de tarefas ou no Start menu e escolha Desinstalar."
+        "body": "Desinstalar é tão fácil quanto instalar. No iOS, pressione e segure o ícone na sua tela inicial e toque em 'Remover App'. No Android, pressione e segure e arraste para a área de desinstalação, ou vá para Configurações → Aplicativos. No Chrome desktop, abra o aplicativo, clique no menu de três pontos dentro da janela do aplicativo e selecione 'Uninstall Aspect Ratio Calculator'. No Edge, clique com o botão direito no aplicativo na barra de tarefas ou Start menu e escolha Desinstalar."
+      },
+      {
+        "heading": "Por que Fazer Isso Rapidamente Importa",
+        "body": "Quase ninguém se senta com a intenção de fazer aritmética de proporção. Isso surge no meio de outra coisa: um arquivo está com o formato errado, um contêiner precisa de uma altura, uma impressão está prestes a sair. Está sempre no caminho do que você estava realmente fazendo. Esse é o objetivo de design completo para esta ferramenta, e a razão pela qual ela abre instantaneamente e não precisa de conta: entender a situação, tomar a decisão, voltar ao trabalho."
       }
     ],
-    "conclusion": "Instalar o Aspect Ratio Calculator leva cerca de dez segundos e não custa nada. Você obtém acesso offline, um atalho na tela inicial e uma experiência mais rápida e limpa, sem necessidade de app store. Se você se encontra usando a calculadora regularmente, instalá-la é a maneira mais conveniente de tê-la ao seu alcance."
+    "conclusion": "Instalar o Aspect Ratio Calculator leva cerca de dez segundos e não custa nada. Você obtém acesso offline, um atalho na tela inicial e uma experiência mais rápida e limpa, sem necessidade de App Store. Se você se encontra usando a calculadora regularmente, instalá-la é a maneira mais conveniente de tê-la ao seu alcance."
   }
 };

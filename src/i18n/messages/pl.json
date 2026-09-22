@@ -549,7 +549,9 @@
     "maintenanceTitle": "Jak jest aktualizowany",
     "maintenance": "Wymiary platform społecznościowych zmieniają się, dlatego strony platform są weryfikowane na podstawie własnych, opublikowanych specyfikacji każdej platformy, a nie kopiowane z innych przewodników. Każdy artykuł zawiera datę publikacji, a data ta jest zmieniana tylko wtedy, gdy faktycznie zmienia się treść.",
     "contactCta": "Znalazłeś błąd lub czegoś brakuje?",
-    "contactLink": "Skontaktuj się z nami"
+    "contactLink": "Skontaktuj się z nami",
+    "purposeTitle": "Dlaczego to istnieje",
+    "purpose": "Aspect ratio leży u podstaw wielu zadań, które pozornie nie mają z nim nic wspólnego. Zdjęcie, które wymaga kadrowania. Slajd, który musi wypełnić ekran projektora. Telewizor kupiony pod kątem filmów, które faktycznie oglądasz. Kontener, który wymaga dokładnej wysokości w kodzie. W każdym z tych przypadków decyzja sprowadza się do tego samego, prostego rachunku, a pomyłka natychmiast się ujawnia: coś jest za duże, za małe, rozmyte lub otoczone niepotrzebną przestrzenią. Część z tego możesz poprawić na oko. W kodzie nie możesz — on wymaga liczby. Ta strona istnieje, aby pomóc szybko podjąć tę decyzję, a następnie nie przeszkadzać."
   },
   "contactPage": {
     "title": "Kontakt",

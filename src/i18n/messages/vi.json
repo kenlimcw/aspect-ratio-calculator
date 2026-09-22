@@ -549,7 +549,9 @@
     "maintenanceTitle": "Cách thức cập nhật",
     "maintenance": "Kích thước của các nền tảng mạng xã hội thay đổi, vì vậy các trang nền tảng được xem xét dựa trên thông số kỹ thuật do chính nền tảng đó công bố thay vì sao chép từ các hướng dẫn khác. Mỗi bài viết đều ghi ngày xuất bản, và ngày đó chỉ được thay đổi khi nội dung thực sự thay đổi.",
     "contactCta": "Tìm thấy lỗi hoặc thiếu sót?",
-    "contactLink": "Liên hệ"
+    "contactLink": "Liên hệ",
+    "purposeTitle": "Lý do trang này tồn tại",
+    "purpose": "Tỷ lệ khung hình (aspect ratio) ẩn chứa trong nhiều công việc không trực tiếp liên quan đến tỷ lệ khung hình. Một bức ảnh cần cắt xén. Một slide phải lấp đầy màn hình máy chiếu. Một chiếc TV được mua để xem loại phim bạn thực sự yêu thích. Một container cần chiều cao chính xác trong mã (code). Trong mỗi trường hợp đó, quyết định đều liên quan đến một phép tính số học nhỏ, và nếu làm sai, kết quả sẽ hiển thị ngay lập tức: một thứ gì đó quá lớn, quá nhỏ, mờ nhạt, hoặc bị bao quanh bởi khoảng trống không mong muốn. Một số lỗi bạn có thể sửa bằng mắt thường. Mã (code) thì không thể — nó cần một con số. Trang web này tồn tại để giúp bạn đưa ra quyết định đó một cách nhanh chóng và sau đó không làm phiền bạn nữa."
   },
   "contactPage": {
     "title": "Liên hệ",

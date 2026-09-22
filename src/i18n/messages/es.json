@@ -550,7 +550,9 @@
     "maintenanceTitle": "Cómo se mantiene actualizado",
     "maintenance": "Las dimensiones de las plataformas sociales cambian, por lo que las páginas de la plataforma se revisan según la especificación publicada de cada plataforma en lugar de copiarse de otras guías. Cada artículo lleva la fecha en que fue publicado, y esa fecha solo se modifica cuando las palabras realmente cambian.",
     "contactCta": "¿Encontraste algo incorrecto o algo que falta?",
-    "contactLink": "Ponte en contacto"
+    "contactLink": "Ponte en contacto",
+    "purposeTitle": "Propósito",
+    "purpose": "La relación de aspecto es un concepto subyacente en gran parte del trabajo que no se centra directamente en ella. Una fotografía que necesita ser recortada. Una diapositiva que tiene que llenar un proyector. Un televisor comprado por el tipo de películas que realmente ves. Un contenedor que necesita una altura exacta en el código. En cada uno de esos casos, la decisión es la misma pequeña pieza de aritmética, y equivocarse se nota de inmediato: algo es demasiado grande, demasiado pequeño, poco nítido o está rodeado de espacio que no debería existir. Parte de eso se puede arreglar a ojo. El código no, este requiere un número. Este sitio existe para facilitar esa decisión rápidamente y luego no estorbar."
   },
   "contactPage": {
     "title": "Contacto",

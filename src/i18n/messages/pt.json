@@ -550,7 +550,9 @@
     "maintenanceTitle": "Como é mantido atualizado",
     "maintenance": "As dimensões das plataformas sociais mudam, então as páginas da plataforma são revisadas de acordo com a especificação publicada de cada plataforma, em vez de serem copiadas de outros guias. Cada artigo contém a data em que foi publicado, e essa data só é alterada quando as palavras realmente mudam.",
     "contactCta": "Encontrou algo errado ou faltando?",
-    "contactLink": "Entre em contato"
+    "contactLink": "Entre em contato",
+    "purposeTitle": "Por que isso existe",
+    "purpose": "Aspect ratio está por trás de muito trabalho que não é sobre aspect ratio. Uma fotografia que precisa de corte. Um slide que precisa preencher um projetor. Uma televisão comprada para o tipo de filmes que você realmente assiste. Um contêiner que precisa de uma altura exata no código. Em cada um desses, a decisão é o mesmo pequeno pedaço de aritmética, e errar mostra imediatamente: algo está muito grande, muito pequeno, borrado, ou cercado por um espaço que não deveria estar lá. Parte disso você pode corrigir a olho nu. Código você não pode — ele quer um número. Este site existe para tomar essa decisão rapidamente e depois sair do caminho."
   },
   "contactPage": {
     "title": "Contato",

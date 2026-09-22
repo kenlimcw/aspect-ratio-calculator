@@ -40,6 +40,7 @@ export default async function AboutPage({ params }: Props) {
   const prefix = localeConfig.urlPrefix;
 
   const sections = [
+    { title: ap.purposeTitle, body: ap.purpose },
     { title: ap.whatItDoesTitle, body: ap.whatItDoes },
     { title: ap.privacyTitle, body: ap.privacy },
     { title: ap.languagesTitle, body: ap.languages },
