@@ -311,7 +311,6 @@
   "homePage": {
     "heroTitle": "Tỷ lệ khung hình",
     "heroTitleAccent": "Máy tính",
-    "heroSubtitle": "Tính toán kích thước cho mạng xã hội, video, nhiếp ảnh và màn hình",
     "whatIsAspectRatio": "Tỷ lệ khung hình là gì?",
     "whatIsAspectRatioText": "Tỷ lệ khung hình mô tả mối quan hệ tỷ lệ giữa chiều rộng và chiều cao. Được viết dưới dạng W:H (ví dụ: 16:9), nó cho bạn biết hình dạng của màn hình, hình ảnh hoặc khung video. Tỷ lệ 16:9 có nghĩa là cứ mỗi 16 đơn vị chiều rộng thì chiều cao là 9 đơn vị — đây là tiêu chuẩn cho video HD và 4K. Tỷ lệ 1:1 là hình vuông hoàn hảo, được sử dụng cho các bài đăng trên Instagram.",
     "commonAspectRatios": "Các tỷ lệ khung hình phổ biến",
@@ -352,7 +351,8 @@
     "tableRow1851UseCase": "Phim chiếu rạp định dạng phẳng",
     "tableRow1851Where": "Rạp chiếu phim phát hành rộng rãi, IMAX kỹ thuật số",
     "tableRow219UseCase": "Màn hình siêu rộng",
-    "tableRow219Where": "Chơi game, màn hình siêu rộng"
+    "tableRow219Where": "Chơi game, màn hình siêu rộng",
+    "heroSubtitle": "Tính toán và chuyển đổi tỷ lệ khung hình cho mạng xã hội, video, nhiếp ảnh và màn hình"
   },
   "ratioPage": {
     "aspectRatio": "Tỷ lệ khung hình",

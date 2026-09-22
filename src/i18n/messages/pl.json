@@ -311,7 +311,6 @@
   "homePage": {
     "heroTitle": "Proporcje Obrazu",
     "heroTitleAccent": "Kalkulator",
-    "heroSubtitle": "Oblicz wymiary dla mediów społecznościowych, wideo, fotografii i ekranów",
     "whatIsAspectRatio": "Czym są proporcje obrazu?",
     "whatIsAspectRatioText": "Proporcje obrazu opisują proporcjonalny związek między szerokością a wysokością. Zapisywane jako S:W (np. 16:9), informują o kształcie ekranu, obrazu lub klatki wideo. Proporcje 16:9 oznaczają, że na każde 16 jednostek szerokości przypada 9 jednostek wysokości — to standard dla wideo HD i 4K. Proporcje 1:1 to idealny kwadrat, używany do postów na Instagramie.",
     "commonAspectRatios": "Popularne proporcje obrazu",
@@ -352,7 +351,8 @@
     "tableRow1851UseCase": "Kinowy płaski",
     "tableRow1851Where": "Kino szerokiej dystrybucji, IMAX cyfrowy",
     "tableRow219UseCase": "Monitory ultrawide",
-    "tableRow219Where": "Gry, wyświetlacze ultrawide"
+    "tableRow219Where": "Gry, wyświetlacze ultrawide",
+    "heroSubtitle": "Obliczaj i konwertuj proporcje obrazu dla mediów społecznościowych, wideo, fotografii i ekranów"
   },
   "ratioPage": {
     "aspectRatio": "Współczynnik proporcji",

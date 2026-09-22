@@ -1079,31 +1079,31 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
 
 export const ARTICLE_DATA: Record<string, ArticleData> = {
   "what-is-aspect-ratio": {
-    "title": "Ce este aspect-ratio? Un ghid pentru începători",
-    "description": "O explicație clară, ușor de înțeles pentru începători, despre aspect-ratio: ce înseamnă, cum se scrie, de ce este important pentru ecrane și imagini și cum să-l folosești.",
-    "intro": "Aspect-ratio este unul dintre acei termeni care sună tehnic, dar este de fapt destul de simplu odată ce îl înțelegi. Indiferent dacă redimensionezi o fotografie pentru Instagram, configurezi un videoclip YouTube sau cumperi un monitor nou, aspect-ratio determină forma imaginii sau a ecranului tău. Acest ghid explică tot ce trebuie să știi.",
+    "title": "Ce este Raportul de Aspect? Un Ghid pentru Începători",
+    "description": "O explicație clară, prietenoasă pentru începători, a raportului de aspect: ce înseamnă, cum se scrie, de ce este important pentru ecrane și imagini și cum să-l folosești.",
+    "intro": "Raportul de aspect este unul dintre acei termeni care sună tehnic, dar este de fapt destul de simplu odată ce îl înțelegi. Indiferent dacă redimensionezi o fotografie pentru Instagram, configurezi un videoclip YouTube sau cumperi un monitor nou, raportul de aspect determină forma imaginii sau a ecranului tău. Acest ghid explică tot ce trebuie să știi.",
     "sections": [
       {
-        "heading": "Ce înseamnă aspect-ratio?",
-        "body": "Aspect-ratio este relația proporțională dintre lățimea și înălțimea unei imagini, a unui ecran sau a unui cadru video. Se scrie ca două numere separate printr-o două puncte — de exemplu, 16:9 sau 4:3. Primul număr este lățimea, iar al doilea este înălțimea. Un raport 16:9 înseamnă că pentru fiecare 16 unități de lățime, înălțimea este de 9 unități. Dimensiunea reală nu contează — o imagine de 160×90 pixeli și o imagine de 3840×2160 pixeli sunt ambele 16:9 deoarece împărtășesc aceleași proporții."
+        "heading": "Ce Înseamnă Raportul de Aspect?",
+        "body": "Raportul de aspect este relația proporțională dintre lățimea și înălțimea unei imagini, a unui ecran sau a unui cadru video. Se scrie ca două numere separate prin două puncte, ca în 16:9 sau 4:3. Primul număr este lățimea, iar al doilea este înălțimea. Un raport 16:9 înseamnă că pentru fiecare 16 unități de lățime, înălțimea este de 9 unități. Dimensiunea reală nu contează. O imagine de 160×90 pixel și o imagine de 3840×2160 pixel sunt ambele 16:9 deoarece împărtășesc aceleași proporții."
       },
       {
-        "heading": "De ce este important aspect-ratio?",
-        "body": "Aspect-ratio este important ori de câte ori afișezi, printezi sau partajezi conținut vizual. Dacă raportul imaginii tale nu se potrivește cu raportul afișajului sau al containerului, se întâmplă unul dintre următoarele două lucruri:",
+        "heading": "De Ce Contează Raportul de Aspect?",
+        "body": "Raportul de aspect contează ori de câte ori afișezi, printezi sau partajezi conținut vizual. Dacă raportul imaginii tale nu se potrivește cu raportul afișajului sau al containerului, se întâmplă unul dintre următoarele două lucruri:",
         "list": [
-          "Letterboxing / Pillarboxing — Apar bare negre pentru a umple spațiul gol",
-          "Decupare (Cropping) — Imaginea este tăiată pentru a se potrivi, iar o parte din conținut se pierde",
-          "Întindere (Stretching) — Imaginea este distorsionată pentru a umple cadrul (cel mai puțin de dorit)"
+          "Letterboxing / Pillarboxing: apar bare negre pentru a umple spațiul gol",
+          "Decupare (Cropping): imaginea este tăiată pentru a se potrivi, iar o parte din conținut se pierde",
+          "Întindere (Stretching): imaginea este distorsionată pentru a umple cadrul (cel mai puțin de dorit)"
         ]
       },
       {
-        "heading": "Raporturi aspect-ratio comune și unde sunt utilizate",
-        "body": "Diferite industrii și platforme au standardizat diferite raporturi aspect-ratio. Iată cele mai importante de știut:",
+        "heading": "Raporturi de Aspect Comune și Unde Sunt Utilizate",
+        "body": "Diferite industrii și platforme au standardizat diferite raporturi de aspect. Iată cele mai importante pe care trebuie să le știi:",
         "table": {
           "headers": [
             "Raport",
             "Zecimal",
-            "Utilizare comună"
+            "Utilizare Comună"
           ],
           "rows": [
             [
@@ -1119,12 +1119,12 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             [
               "1:1",
               "1.00:1",
-              "Postări în feed-ul Instagram, fotografii de profil, coperți de album"
+              "Postări Instagram feed, poze de profil, coperți de album"
             ],
             [
               "4:5",
               "0.80:1",
-              "Postări portret Instagram (înălțime maximă în feed)"
+              "Postări portret Instagram (înălțime maximă feed)"
             ],
             [
               "4:3",
@@ -1145,32 +1145,32 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         }
       },
       {
-        "heading": "Cum se calculează un aspect-ratio",
-        "body": "Pentru a găsi aspect-ratio-ul oricărei imagini, împarte atât lățimea, cât și înălțimea la Cel Mai Mare Divizor Comun (CMDC). De exemplu, o imagine de 1920×1080 pixeli: ambele numere sunt divizibile cu 120, rezultând 16:9. Calculatorul nostru gratuit face acest lucru automat — trebuie doar să introduci lățimea și înălțimea."
+        "heading": "Cum să Calculezi un Raport de Aspect",
+        "body": "Pentru a găsi raportul de aspect al oricărei imagini, împarte atât lățimea, cât și înălțimea la Cel Mai Mare Divizor Comun (CMDC). De exemplu, o imagine de 1920×1080 pixels: ambele numere sunt divizibile cu 120, rezultând 16:9. Calculatorul nostru gratuit face acest lucru automat — trebuie doar să introduci lățimea și înălțimea."
       },
       {
-        "heading": "Aspect-ratio vs. Rezoluție",
-        "body": "Aspect-ratio și rezoluția sunt înrudite, dar nu sunt același lucru. Rezoluția se referă la numărul total de pixeli (de exemplu, 1920×1080). Aspect-ratio se referă la formă (de exemplu, 16:9). Două imagini pot avea același aspect-ratio, dar rezoluții complet diferite — de exemplu, 640×360 și 3840×2160 sunt ambele 16:9, dar diferă enorm în ceea ce privește numărul de pixeli și calitatea."
+        "heading": "Raport de Aspect vs. Rezoluție",
+        "body": "Raportul de aspect și rezoluția sunt înrudite, dar nu sunt același lucru. Rezoluția se referă la numărul total de pixeli (de exemplu, 1920×1080). Raportul de aspect se referă la formă (de exemplu, 16:9). Două imagini pot avea același raport de aspect, dar rezoluții complet diferite: 640×360 și 3840×2160 sunt ambele 16:9, dar diferă enorm în ceea ce privește numărul de pixeli și calitate."
       }
     ],
-    "conclusion": "Înțelegerea aspect-ratio te ajută să produci imagini și videoclipuri care arată exact așa cum intenționezi pe fiecare ecran și platformă. Folosește calculatorul nostru gratuit de aspect-ratio pentru a converti instantaneu dimensiuni, a identifica raporturi și a redimensiona imagini, menținând proporțiile corecte."
+    "conclusion": "Întregul subiect se reduce la un singur obicei: decide forma înainte de a decide dimensiunea. Raportul mai întâi, pixelii pe locul doi. Respectă această ordine și restul (decuparea, letterboxing-ul, barele negre, încărcarea neclară) în mare parte nu se va mai întâmpla de la sine."
   },
   "how-to-calculate-aspect-ratio": {
     "title": "Cum să Calculezi Raportul de Aspect: Ghidul Complet",
-    "description": "Învață cum să calculezi raportul de aspect pas cu pas: folosind metoda CMMDC, formula și calculatorul nostru online gratuit. Include exemple rezolvate.",
+    "description": "Învață cum să calculezi raportul de aspect pas cu pas: folosind metoda GCD, formula și calculatorul nostru online gratuit. Include exemple rezolvate.",
     "intro": "A ști cum să calculezi un raport de aspect este o abilitate fundamentală pentru oricine lucrează cu imagini, video sau design. Acest ghid acoperă matematica din spatele său, cele mai rapide metode manuale și cum să folosești calculatorul nostru gratuit pentru rezultate instantanee.",
     "sections": [
       {
         "heading": "Formula Raportului de Aspect",
-        "body": "Raportul de aspect al oricărui dreptunghi este pur și simplu: Lățime ÷ Înălțime. Pentru a-l exprima ca un raport curat L:Î (de exemplu, 16:9 în loc de 1.778:1), trebuie să găsești Cel Mai Mare Divizor Comun (CMMDC) al lățimii și înălțimii și să le împarți pe ambele la acesta."
+        "body": "Raportul de aspect al oricărui dreptunghi este pur și simplu: Lățime ÷ Înălțime. Pentru a-l exprima ca un raport curat L:Î (de exemplu, 16:9 în loc de 1.778:1), trebuie să găsești Cel Mai Mare Divizor Comun (GCD) al lățimii și înălțimii și să le împarți pe ambele la acesta."
       },
       {
         "heading": "Pas cu Pas: Cum să Găsești Raportul de Aspect",
         "body": "Iată cum să calculezi manual raportul de aspect al oricărei imagini:",
         "list": [
           "Pasul 1: Notează lățimea și înălțimea în pixeli (de exemplu, 1920 și 1080)",
-          "Pasul 2: Găsește Cel Mai Mare Divizor Comun (CMMDC) al ambelor numere. Pentru 1920 și 1080, CMMDC este 120.",
-          "Pasul 3: Împarte ambele numere la CMMDC. 1920 ÷ 120 = 16; 1080 ÷ 120 = 9.",
+          "Pasul 2: Găsește Cel Mai Mare Divizor Comun (GCD) al ambelor numere. Pentru 1920 și 1080, GCD este 120.",
+          "Pasul 3: Împarte ambele numere la GCD. 1920 ÷ 120 = 16; 1080 ÷ 120 = 9.",
           "Pasul 4: Scrie rezultatul ca L:Î — în acest caz, 16:9."
         ]
       },
@@ -1181,7 +1181,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
           "headers": [
             "Lățime",
             "Înălțime",
-            "CMMDC",
+            "GCD",
             "Raport de Aspect"
           ],
           "rows": [
@@ -1225,15 +1225,27 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         }
       },
       {
+        "heading": "Cum să Găsești GCD Fără Calculator",
+        "body": "Fiecare metodă de mai sus depinde de găsirea Celui Mai Mare Divizor Comun, iar acesta este pasul pe care majoritatea ghidurilor îl omit. Metoda fiabilă este algoritmul lui Euclid, care are peste două mii de ani și necesită aproximativ patru pași pentru numere de dimensiunea ecranului: împarte numărul mai mare la cel mai mic, păstrează restul, apoi repetă cu numărul mai mic și acel rest până când restul este zero. Ultimul număr non-zero este GCD. Pentru 1920 și 1080: 1920 ÷ 1080 lasă 840; 1080 ÷ 840 lasă 240; 840 ÷ 240 lasă 120; 240 ÷ 120 lasă 0. GCD este 120."
+      },
+      {
+        "heading": "Când Numerele Refuză să se Simplifice",
+        "body": "Nu orice pereche de dimensiuni oferă un raport ordonat. 1847 × 923 are un GCD de 1, deci raportul său „simplificat” este 1847:923 — tehnic corect și inutil. Când se întâmplă asta, nu mai încerca să simplifici și fă două lucruri în schimb: ia valoarea zecimală (1847 ÷ 923 = 2.001, deci este în esență 2:1) și găsește cel mai apropiat raport standard la care poți lucra efectiv. Ecranele și platformele acceptă rapoarte standard, nu exacte, iar o diferență sub aproximativ jumătate de procent este invizibilă."
+      },
+      {
+        "heading": "De Ce 1200 × 630 Nu Este 1.91:1",
+        "body": "Dimensiunea imaginii Open Graph pe care o solicită fiecare platformă socială este 1200 × 630 și este aproape întotdeauna descrisă ca 1.91:1. Rulează GCD și vei obține 40:21, a cărui valoare zecimală este 1.9048. Cifra 1.91 este o etichetă rotunjită care a rămas, nu raportul real. Acest lucru contează atunci când scalezi: calcularea unei noi lățimi de la 1.91 în loc de 40:21 deviază cu aproximativ un pixel la o lățime de 1200px și cu patru la 4800px. Scalează întotdeauna de la raportul întreg și rotunjește o singură dată la final."
+      },
+      {
         "heading": "Cum să Calculezi o Dimensiune Lipsă",
-        "body": "Dacă știi dimensiunile originale și vrei să găsești o nouă dimensiune la același raport, folosește această formulă: Înălțime Nouă = (Înălțime Originală ÷ Lățime Originală) × Lățime Nouă. De exemplu, pentru a găsi înălțimea unei imagini 16:9 cu o lățime de 1280px: (1080 ÷ 1920) × 1280 = 720px. Calculatorul nostru face acest lucru automat în ambele direcții."
+        "body": "Dacă știi dimensiunile originale și vrei să găsești o nouă dimensiune la același raport, folosește această formulă: Înălțime Nouă = (Înălțime Originală ÷ Lățime Originală) × Lățime Nouă. De exemplu, pentru a găsi înălțimea unei imagini 16:9 la o lățime de 1280px: (1080 ÷ 1920) × 1280 = 720px. Calculatorul nostru face acest lucru automat în ambele direcții."
       },
       {
         "heading": "Cea Mai Rapidă Metodă: Folosește un Calculator",
-        "body": "Calcularea manuală a rapoartelor de aspect este simplă pentru numere rotunde, dar devine rapid plictisitoare pentru dimensiuni neregulate precum 1847×923. Calculatorul nostru gratuit de Raport de Aspect gestionează instantaneu orice lățime și înălțime — introdu valorile tale și obține raportul simplificat, zecimalul, cea mai apropiată potrivire standard și valorile CSS dintr-un singur clic."
+        "body": "Calcularea manuală a rapoartelor de aspect este simplă pentru numere rotunde, dar devine rapid plictisitoare pentru dimensiuni neregulate precum 1847×923. Calculatorul nostru gratuit de Raport de Aspect gestionează instantaneu orice lățime și înălțime. Introdu valorile tale și obține raportul simplificat, valoarea zecimală, cea mai apropiată potrivire standard și valorile CSS într-un singur clic."
       }
     ],
-    "conclusion": "Calcularea rapoartelor de aspect este ușoară odată ce înțelegi metoda CMMDC. Pentru utilizarea zilnică, calculatorul nostru gratuit îți va economisi timp și îți va oferi informații suplimentare precum analiza calității, dimensiuni de imprimare și export CSS. Încearcă-l acum la aspect-ratio-calculator.com."
+    "conclusion": "Două reguli acoperă aproape fiecare caz. Simplifică cu GCD atunci când numerele permit, și revino la valoarea zecimală plus cel mai apropiat raport standard atunci când nu permit. Păstrează raportul întreg pentru orice operație aritmetică și rotunjește doar la final. Acest singur obicei previne majoritatea erorilor de un pixel care apar ca un spațiu fin într-un layout finalizat."
   },
   "aspect-ratio-social-media-guide-2026": {
     "title": "Dimensiuni și Rapoarte de Aspect ale Imaginilor pentru Social Media: Ghid Complet 2026",
@@ -1252,7 +1264,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Dimensiuni Imagini Instagram 2026",
-        "body": "Instagram suportă trei rapoarte de aspect pentru feed, plus Stories și Reels. Pentru postările din feed, formatul portret 4:5 (1080×1350) vă oferă cel mai mult spațiu vertical — ideal pentru maximizarea vizibilității la derulare.",
+        "body": "Instagram suportă trei rapoarte de aspect pentru feed, plus Stories și Reels. Pentru postările din feed, formatul portret 4:5 (1080×1350) vă oferă cel mai mult spațiu vertical, ceea ce este de dorit pe o suprafață pe care oamenii o derulează.",
         "table": {
           "headers": [
             "Format",
@@ -1290,7 +1302,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Dimensiuni YouTube 2026",
-        "body": "YouTube este o platformă 16:9. Proiectați miniaturi la 1280×720 cu text îndrăzneț, lizibil — miniatura dvs. este adesea factorul decisiv pentru ca cineva să dea click.",
+        "body": "YouTube este o platformă 16:9. Proiectați miniaturi la 1280×720 cu text îndrăzneț, lizibil. Miniatura dvs. este adesea factorul decisiv pentru ca cineva să dea click.",
         "table": {
           "headers": [
             "Format",
@@ -1323,7 +1335,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Dimensiuni Video TikTok 2026",
-        "body": "TikTok este în întregime vertical — utilizați întotdeauna 9:16 la 1080×1920 pentru cea mai bună calitate. Păstrați conținutul cheie în centrul cadrului și departe de cele 20% inferioare unde apar subtitrările și elementele UI.",
+        "body": "TikTok este în întregime vertical — utilizați întotdeauna 9:16 la 1080×1920 pentru cea mai bună calitate. Păstrați conținutul cheie în centrul cadrului și departe de partea inferioară de 20% unde apar subtitrările și elementele UI.",
         "table": {
           "headers": [
             "Format",
@@ -1411,22 +1423,38 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             ]
           ]
         }
+      },
+      {
+        "heading": "Dimensiunile sunt corecte și totuși încadrarea este greșită",
+        "body": "Încărcarea la 1080 × 1920 nu înseamnă că totul este vizibil. Fiecare format vertical suprapune elemente de interfață peste imaginea dvs.: un rând de profil și o descriere în partea de jos, o bară de progres și un buton de închidere în partea de sus, iar pe Reels și TikTok o coloană de butoane pe o parte. Imaginea este full-bleed; zona utilizabilă nu este. O marjă practică de lucru este să păstrați orice trebuie citit (text, fețe, logo-uri, prețuri) în interiorul celor 70% din mijloc pe verticală și departe de marginea inferioară, apoi să previzualizați pe un telefon înainte de publicare. Zona sigură nu este publicată ca specificație și se mișcă, așa că tratați-o ca o marjă, nu ca o măsurătoare."
+      },
+      {
+        "heading": "Încărcați mai mare decât numărul din tabel",
+        "body": "Fiecare platformă re-comprimă ceea ce trimiteți și face o treabă mai bună pornind de la mai multe date. Încărcarea unui export de 1080 × 1350 dintr-un original de 1080 lățime nu oferă nimic de lucru encoderului; încărcarea unei versiuni de 2160 × 2700 a aceleiași imagini și lăsarea platformei să o redimensioneze în jos arată de obicei vizibil mai curat la aceeași dimensiune finală, în special pe text și margini fine. Excepția este atunci când o platformă publică un maxim strict. Respectați acest lucru, apoi mergeți cât mai aproape sub el posibil."
+      },
+      {
+        "heading": "Dacă puteți crea un singur activ",
+        "body": "Creați-o în format 4:5 la 1080 × 1350. Este cea mai înaltă formă pe care o acceptă feed-ul Instagram, ceea ce înseamnă că ocupă cel mai mult ecran pe suprafața care vă oferă cel mai puțin, și se decupează curat: decupați central la 1:1 pentru o plasare pătrată, sau la 1.91:1 pentru un card de link, iar subiectul rămâne acolo unde l-ați pus. Mergând invers, pornind de la un pătrat și încercând să ajungeți la 4:5, înseamnă să inventați o imagine care nu a fost niciodată fotografiată."
+      },
+      {
+        "heading": "O Avertizare Despre Ghiduri Ca Acesta",
+        "body": "Fiecare număr de aici era corect la momentul scrierii și platformele le schimbă fără anunț. Un ghid este un punct de plecare, nu o autoritate: înainte de o campanie importantă, verificați documentația de ajutor a platformei, deoarece aceasta este singura versiune care se actualizează atunci când o fac și ele. Rapoartele din ultima coloană sunt mult mai stabile decât dimensiunile în pixeli de lângă ele. 9:16 și 4:5 au supraviețuit mai multor runde de modificări ale specificațiilor, iar construirea în funcție de raport, mai degrabă decât de numărul de pixeli, este ceea ce împiedică acest tabel să devină învechit."
       }
     ],
-    "conclusion": "Salvați acest ghid și utilizați Calculatorul nostru gratuit Aspect Ratio pentru a verifica sau converti orice dimensiuni în câteva secunde. Introduceți dimensiunea actuală a imaginii și dimensiunile platformei țintă pentru a verifica calitatea, a calcula valorile CSS și a partaja rezultatele instantaneu."
+    "conclusion": "Construiți în funcție de raport, nu de numărul de pixeli, și exportați mai mare decât ținta. Aceste două obiceiuri supraviețuiesc schimbărilor platformelor, ceea ce numerele exacte din aceste tabele nu o vor face. Păstrați orice trebuie citit bine în interiorul cadrului și verificați documentația proprie a platformei înainte de a publica orice pentru care plătiți."
   },
   "16-9-vs-4-3-aspect-ratio": {
-    "title": "16:9 vs 4:3 Aspect Ratio — Pe care ar trebui să-l folosești?",
-    "description": "O comparație clară a 16:9 și 4:3 aspect ratios: când să folosești fiecare, istoria din spatele lor, diferențele cheie și exemple de dimensiuni de pixeli.",
-    "intro": "16:9 și 4:3 sunt cele două aspect ratios cele mai semnificative din punct de vedere istoric în video și fotografie. Dacă ai văzut vreodată bare negre pe ecranul tău — fie pe laterale, fie sus și jos — ai întâlnit deja diferența dintre ele. Iată o comparație completă.",
+    "title": "16:9 vs 4:3 Raport de aspect — Pe care ar trebui să-l folosești?",
+    "description": "O comparație clară a rapoartelor de aspect 16:9 și 4:3: când să-l folosești pe fiecare, istoria din spatele lor, diferențele cheie și exemple de dimensiuni în pixeli.",
+    "intro": "16:9 și 4:3 sunt cele două rapoarte de aspect cele mai semnificative din punct de vedere istoric în video și fotografie. Dacă ai văzut vreodată bare negre pe ecranul tău, fie pe laterale, fie sus și jos, ai întâlnit deja diferența dintre ele. Iată o comparație completă.",
     "sections": [
       {
         "heading": "Diferența Cheie",
-        "body": "16:9 este mai lat și mai dreptunghiular (ratio de 1.78:1), în timp ce 4:3 este mai pătrat (ratio de 1.33:1). O imagine 16:9 este cu aproximativ 33% mai lată decât o imagine 4:3 de aceeași înălțime. Această diferență poate părea mică, dar este foarte vizibilă pe ecran."
+        "body": "16:9 este mai lat și mai dreptunghiular (raport de 1.78:1), în timp ce 4:3 este mai pătrat (raport de 1.33:1). O imagine 16:9 este cu aproximativ 33% mai lată decât o imagine 4:3 de aceeași înălțime. Această diferență poate părea mică, dar este foarte vizibilă pe ecran."
       },
       {
         "heading": "Istorie: De unde provin?",
-        "body": "4:3 a fost standardul original de televiziune, adoptat în anii 1930 deoarece se potrivea îndeaproape cu aspect ratio al filmului cinematografic de 35mm de la acea vreme. 16:9 a fost introdus la sfârșitul anilor 1980 ca un standard widescreen de compromis care putea afișa atât conținut TV 4:3 (cu bare laterale mici), cât și conținut cinematografic 2.39:1 (cu bare mici sus/jos) cu spațiu negru minim. ITU a adoptat 16:9 ca standard HDTV în 1987."
+        "body": "4:3 a apărut primul, potrivindu-se formei filmului cinematografic de 35mm timpuriu, și a rămas standardul de televiziune pentru cea mai mare parte a secolului al XX-lea. 16:9 nu a fost moștenit de la nimic. A fost proiectat. Lucrând la SMPTE la începutul anilor 1980, Kerns Powers a tăiat dreptunghiuri de suprafață egală pentru fiecare raport de aspect utilizat atunci, de la televiziunea 1.33:1 la cinematograful 2.35:1, și le-a suprapus centrat unul peste altul. Fiecare dreptunghi se potrivea într-o cutie exterioară și conținea o cutie interioară, iar ambele cutii erau aproape de 1.77:1. Această cifră este aproape exact media geometrică a extremelor: rădăcina pătrată din 1.33 × 2.35 este 1.77, iar 16 ÷ 9 este 1.778. 16:9 este forma care irosește cel mai puțin ecranul, în medie, pentru tot ceea ce ar putea dori cineva să afișeze pe el."
       },
       {
         "heading": "Când să folosești 16:9",
@@ -1452,7 +1480,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Comparație Dimensiune Pixeli",
-        "body": "Iată rezoluții comune pentru ambele ratios la număr echivalent de megapixeli:",
+        "body": "Iată rezoluții comune pentru ambele rapoarte la număr echivalent de megapixeli:",
         "table": {
           "headers": [
             "Calitate",
@@ -1477,97 +1505,105 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             ]
           ]
         }
+      },
+      {
+        "heading": "Ce costă de fapt conversia între ele",
+        "body": "Ambele conversii costă exact un sfert din imagine, ceea ce este mai mult decât se așteaptă majoritatea oamenilor. Trecerea de la 16:9 la 4:3 la aceeași înălțime înseamnă decuparea lățimii de la 16 unități la 12, deci pierzi 25% din cadru, iar aceasta se face din laterale, unde subiecții filmați sunt adesea încadrați. Mergi în sens invers, de la 4:3 la 16:9 la aceeași lățime, decupează înălțimea de la 12 unități la 9: de asemenea 25%, de data aceasta din partea de sus și de jos, unde se află capetele și subtitrările. Niciuna dintre direcții nu este o redimensionare. Dacă conținutul contează, reîncadrează-l în loc să lași un instrument de decupare să aleagă."
+      },
+      {
+        "heading": "Ce te costă barele negre",
+        "body": "Afișarea conținutului 4:3 pe un ecran 16:9 îl încadrează cu bare laterale (pillarbox), iar barele nu sunt cosmetice: imaginea ocupă 12 din cele 16 unități de lățime ale ecranului, deci un sfert din afișaj nu face nimic. Un televizor 16:9 de 55 de inchi are o lățime de 47.9 inchi, deci asta înseamnă aproximativ 12 inchi de negru. Acesta este argumentul practic pentru a filma în raportul în care vei publica, mai degrabă decât să planifici să remediezi ulterior. Nu există nicio decupare care să recupereze un sfert din ecran."
       }
     ],
-    "conclusion": "Pentru majoritatea conținutului video și de ecran modern, 16:9 este alegerea corectă. Pentru conținutul axat pe tabletă sau compatibilitatea cu sisteme vechi, 4:3 poate fi mai potrivit. Când ai îndoieli, folosește calculatorul nostru gratuit de Aspect Ratio pentru a converti între cele două și a previzualiza rezultatul instantaneu."
+    "conclusion": "Filmează și proiectează în 16:9, cu excepția cazului în care ceva specific te împinge în altă direcție: un public axat pe iPad, un proiector vechi, o arhivă de potrivit. Singurul lucru de evitat este să decizi târziu: ambele conversii costă un sfert din cadru, iar ce sfert pierzi este o decizie mai bine luată printr-un vizor decât de un instrument de decupare ulterior."
   },
   "how-to-resize-image-without-losing-quality": {
-    "title": "Cum să redimensionezi o imagine fără a pierde calitatea",
-    "description": "Învață tehnicile de redimensionare a imaginilor fără a pierde calitatea: micșorare vs. mărire, cele mai bune formate de fișier, explicații despre DPI și recomandări de instrumente.",
+    "title": "Cum să redimensionezi o imagine fără a pierde din calitate",
+    "description": "Învață tehnicile de redimensionare a imaginilor fără a pierde din calitate: downscaling vs upscaling, cele mai bune formate de fișier, explicații despre DPI și recomandări de instrumente.",
     "intro": "Redimensionarea unei imagini pare simplă, dar făcută incorect, duce la fotografii neclare, pixelate sau distorsionate. Acest ghid explică când și cum poți redimensiona imagini fără o pierdere vizibilă de calitate.",
     "sections": [
       {
-        "heading": "Micșorare vs. Mărire",
-        "body": "Există două direcții în care poți redimensiona o imagine, iar acestea au implicații foarte diferite asupra calității. Micșorarea (făcând o imagine mai mică) aproape întotdeauna păstrează calitatea — pur și simplu elimini pixeli. Mărirea (făcând o imagine mai mare) este locul unde apar problemele de calitate, deoarece software-ul trebuie să inventeze date de pixeli care nu există în original."
+        "heading": "Downscaling vs. Upscaling",
+        "body": "Există două direcții în care poți redimensiona o imagine, iar acestea au implicații foarte diferite asupra calității. Downscaling-ul (micșorarea unei imagini) aproape întotdeauna păstrează calitatea, deoarece pur și simplu elimini pixeli. Upscaling-ul (mărirea unei imagini) este locul unde apar probleme de calitate, deoarece software-ul trebuie să inventeze date de pixeli care nu există în original."
       },
       {
-        "heading": "Regula de Aur: Începe Întotdeauna cu Cea Mai Mare Rezoluție",
+        "heading": "Regula de Aur: Începe întotdeauna cu cea mai înaltă rezoluție",
         "body": "Pierderea calității este în mare parte ireversibilă. Dacă începi cu o imagine mică și ai nevoie de una mare, vei observa întotdeauna o degradare a calității. Cea mai bună practică este să:",
         "list": [
           "Păstrează întotdeauna fișierul original de înaltă rezoluție",
           "Exportează sau salvează o copie separată la dimensiunea țintă",
-          "Nu re-salva niciodată un JPEG comprimat de mai multe ori — fiecare salvare degradează calitatea",
+          "Nu re-salva niciodată un JPEG comprimat de mai multe ori, deoarece fiecare salvare degradează calitatea",
           "Exportează din fișierul master de fiecare dată când ai nevoie de o nouă dimensiune"
         ]
       },
       {
-        "heading": "Cât de mult poți mări?",
-        "body": "Ca o regulă generală: mărirea cu până la 110–120% este, în general, imperceptibilă pentru majoritatea privitorilor. Mărirea cu 150–200% produce o estompare vizibilă. Mărirea dincolo de 200% produce de obicei pixelare și neclaritate evidente. Instrumentele de mărire bazate pe AI (cum ar fi Topaz Gigapixel, Adobe Firefly și similare) pot produce uneori rezultate acceptabile la o mărire de 2–4× prin generarea inteligentă de detalii."
+        "heading": "Cât de mult poți Upscala?",
+        "body": "Ca o regulă generală: upscaling-ul cu până la 110–120% este, în general, imperceptibil pentru majoritatea privitorilor. Upscaling-ul cu 150–200% produce o estompare vizibilă. Upscaling-ul peste 200% produce de obicei pixelare și neclaritate evidente. Instrumentele de upscaling bazate pe AI (cum ar fi Topaz Gigapixel, Adobe Firefly și similare) pot produce uneori rezultate acceptabile la upscaling de 2–4× prin generarea inteligentă de detalii."
       },
       {
         "heading": "Menținerea Raportului de Aspect la Redimensionare",
-        "body": "Una dintre cele mai comune greșeli de calitate este modificarea accidentală a aspect-ratio în timpul redimensionării — întinderea sau comprimarea imaginii. Redimensionează întotdeauna proporțional, blocând aspect-ratio în instrumentul tău de editare. Calculatorul nostru gratuit te ajută să găsești înălțimea țintă corectă pentru orice lățime nouă (sau invers), asigurându-te că redimensionarea ta menține proporțiile originale."
+        "body": "Una dintre cele mai comune greșeli de calitate este modificarea accidentală a raportului de aspect în timpul redimensionării, întinzând sau comprimând imaginea. Redimensionează întotdeauna proporțional, blocând raportul de aspect în instrumentul tău de editare. Calculatorul nostru gratuit te ajută să găsești înălțimea țintă corectă pentru orice lățime nouă (sau invers), asigurându-te că redimensionarea ta menține proporțiile originale."
       },
       {
-        "heading": "Cele Mai Bune Formate de Fișier pentru Calitate",
+        "heading": "Cele mai bune formate de fișier pentru calitate",
         "body": "Formatul fișierului afectează semnificativ calitatea după redimensionare:",
         "list": [
-          "PNG — Compresie fără pierderi; ideal pentru grafică, ilustrații și capturi de ecran unde claritatea contează",
-          "JPEG — Compresie cu pierderi; ideal pentru fotografii; setează calitatea la 80–90% pentru cel mai bun echilibru dimensiune/calitate",
-          "WebP — Format modern care realizează o compresie mai bună decât JPEG la o calitate echivalentă; suportat de toate browserele moderne",
-          "TIFF — Necomprimat sau fără pierderi; utilizat în fluxurile de lucru profesionale de tipar și fotografie"
+          "PNG: compresie fără pierderi; ideal pentru grafică, ilustrații și capturi de ecran unde claritatea contează",
+          "JPEG: compresie cu pierderi; ideal pentru fotografii; setează calitatea la 80–90% pentru cel mai bun echilibru dimensiune/calitate",
+          "WebP: un format modern care realizează o compresie mai bună decât JPEG la o calitate echivalentă; suportat de toate browserele moderne",
+          "TIFF: necomprimat sau fără pierderi; utilizat în fluxurile de lucru profesionale de imprimare și fotografie"
         ]
       },
       {
         "heading": "DPI și Calitatea Imprimării",
-        "body": "DPI (dots per inch) este relevant doar pentru tipar — este ignorat de ecrane. Pentru tipar: utilizează 300 DPI pentru printuri foto clare, 150 DPI pentru o calitate acceptabilă și 72–96 DPI pentru utilizare doar pe ecran. Pentru a calcula dimensiunile în pixeli necesare pentru un print: înmulțește dimensiunea printului în inchi cu DPI. Pentru un print de 8×10 inchi la 300 DPI: 2400×3000 pixeli."
+        "body": "DPI (dots per inch) este relevant doar pentru imprimare. Ecranele îl ignoră complet. Pentru imprimare: utilizează 300 DPI pentru printuri foto clare, 150 DPI pentru o calitate acceptabilă și 72–96 DPI pentru utilizare doar pe ecran. Pentru a calcula dimensiunile în pixeli necesare pentru o imprimare: înmulțește dimensiunea de imprimare în inchi cu DPI-ul. Pentru o imprimare de 8×10 inchi la 300 DPI: 2400×3000 pixeli."
       }
     ],
-    "conclusion": "Cea mai bună modalitate de a redimensiona fără pierderi de calitate este să micșorezi întotdeauna dintr-un original de înaltă rezoluție, să menții aspect-ratio și să exporți în formatul adecvat. Utilizează Calculatorul nostru de Aspect Ratio pentru a găsi dimensiunile țintă exacte care păstrează proporțiile originale — fără a fi nevoie de presupuneri."
+    "conclusion": "Păstrează fișierul master. Aproape fiecare problemă de calitate din acest ghid se datorează faptului că cineva nu mai are originalul: nu poți face downscale dintr-un fișier pe care l-ai aruncat deja, și niciun upscaler nu recuperează detalii care nu au fost niciodată înregistrate. Exportează copii, arhivează originalul și redimensionează din el de fiecare dată."
   },
   "install-aspect-ratio-calculator": {
-    "title": "De ce să instalați Calculatorul de Raport de Aspect? Acces Offline, Viteză și Mai Mult",
-    "description": "Instalați Calculatorul de Raport de Aspect ca aplicație pentru acces offline instantaneu, o scurtătură pe Home screen și o experiență fără distrageri — fără interfață de utilizator a browserului, fără reîncărcări.",
-    "intro": "Puteți utiliza acest calculator direct din browserul dumneavoastră, dar instalarea sa ca aplicație duce experiența mai departe — lansare instantanee de pe Home screen, suport offline complet și o interfață curată, fără navigarea browserului în cale. Iată tot ce trebuie să știți.",
+    "title": "De ce să instalezi Aspect Ratio Calculator? Acces offline, viteză și mai mult",
+    "description": "Instalează Aspect Ratio Calculator ca aplicație pentru acces offline instantaneu, o scurtătură pe ecranul de pornire și o experiență fără distrageri — fără interfață de utilizator a browserului, fără reîncărcări.",
+    "intro": "Poți folosi acest calculator direct din browserul tău, dar instalarea sa ca aplicație duce experiența mai departe: lansare instantanee de pe ecranul de pornire, suport offline complet și o interfață curată, fără navigarea browserului în cale. Iată tot ce trebuie să știi.",
     "sections": [
       {
         "heading": "Ce înseamnă de fapt 'Instalare'?",
-        "body": "Când instalați o aplicație web (numită și PWA — Progressive Web App), dispozitivul dumneavoastră salvează o scurtătură pe Home screen sau pe desktop și memorează fișierele aplicației pentru utilizare offline. Nu este implicat niciun App Store și nu se descarcă gigabytes de date — fișierele sunt deja în memoria cache a browserului dumneavoastră. Instalarea pur și simplu promovează site-ul la o experiență de aplicație de primă clasă pe dispozitivul dumneavoastră."
+        "body": "Când instalezi o aplicație web (numită și PWA, sau Progressive Web App), dispozitivul tău salvează o scurtătură pe ecranul de pornire sau pe desktop și memorează fișierele aplicației pentru utilizare offline. Nu este implicat niciun App Store și nu se descarcă gigabytes de date, deoarece fișierele sunt deja în memoria cache a browserului tău. Instalarea pur și simplu promovează site-ul la o experiență de aplicație de primă clasă pe dispozitivul tău."
       },
       {
         "heading": "Beneficiile instalării",
-        "body": "Instalarea Calculatorului de Raport de Aspect vă oferă mai multe avantaje față de utilizarea sa pur și simplu în browser:",
+        "body": "Instalarea Aspect Ratio Calculator îți oferă mai multe avantaje față de utilizarea sa pur și simplu în browser:",
         "list": [
-          "Acces offline — calculele funcționează chiar și fără o conexiune la internet, util pe platou, pe teren sau într-un avion",
-          "Scurtătură pe Home screen — se deschide cu o singură atingere, nu este nevoie să navigați la URL sau să deschideți o filă de browser",
-          "Interfață fără distrageri — fără bară de adrese a browserului, file sau bară de instrumente; calculatorul umple ecranul curat",
-          "Încărcare mai rapidă — fișierele memorate în cache se încarcă instantaneu din stocarea locală în loc să așteptați un răspuns de la rețea",
-          "Întotdeauna actualizat — service worker-ul preia actualizările silențios în fundal, astfel încât să aveți întotdeauna cea mai recentă versiune"
+          "Acces offline: calculele funcționează chiar și fără o conexiune la internet, util pe platou, pe teren sau într-un avion",
+          "Scurtătură pe ecranul de pornire: se deschide cu o singură atingere, nu este nevoie să navighezi la URL sau să deschizi o filă de browser",
+          "Interfață fără distrageri: fără bară de adrese a browserului, file sau bară de instrumente; calculatorul umple ecranul curat",
+          "Încărcare mai rapidă: fișierele memorate în cache se încarcă instantaneu din stocarea locală în loc să aștepte un răspuns de la rețea",
+          "Întotdeauna actualizat: service worker-ul preia actualizările silențios în fundal, astfel încât să ai întotdeauna cea mai recentă versiune"
         ]
       },
       {
         "heading": "Cum se instalează pe Chrome sau Android",
-        "body": "Pe Android sau Chrome desktop, un banner apare automat în partea de jos a paginii cu un buton de Instalare. Atingeți sau faceți clic pe Instalare și confirmați când vi se solicită. Dacă bannerul a fost închis, căutați pictograma de instalare (un monitor cu o săgeată în jos ⊕) în bara de adrese a browserului pe desktop, sau atingeți meniul cu trei puncte pe Android și selectați 'Add to Home screen'."
+        "body": "Pe Android sau Chrome desktop, un banner apare automat în partea de jos a paginii cu un buton de Instalare. Atinge sau dă clic pe Instalare și confirmă când ți se solicită. Dacă bannerul a fost închis, caută pictograma de instalare (un monitor cu o săgeată în jos ⊕) în bara de adrese a browserului pe desktop, sau atinge meniul cu trei puncte pe Android și selectează 'Adaugă pe ecranul de pornire'."
       },
       {
         "heading": "Cum se instalează pe iPhone sau iPad (Safari)",
         "body": "Safari pe iOS nu afișează un banner de instalare automat, dar procesul este simplu:",
         "list": [
-          "Atingeți butonul Partajare (caseta cu o săgeată îndreptată în sus) în bara de instrumente Safari din partea de jos a ecranului",
-          "Derulați în jos în foaia de partajare și atingeți 'Add to Home Screen'",
-          "Editați numele dacă doriți, apoi atingeți 'Add' în colțul din dreapta sus",
-          "Pictograma calculatorului apare acum pe Home screen și se lansează în modul independent"
+          "Atinge butonul Partajare (caseta cu o săgeată îndreptată în sus) în bara de instrumente Safari din partea de jos a ecranului",
+          "Derulează în jos în foaia de partajare și atinge 'Adaugă pe ecranul de pornire'",
+          "Editează numele dacă dorești, apoi atinge 'Adaugă' în colțul din dreapta sus",
+          "Pictograma calculatorului apare acum pe ecranul tău de pornire și se lansează în modul autonom"
         ]
       },
       {
         "heading": "Cum se instalează pe desktop (Chrome sau Edge)",
-        "body": "Pe un computer desktop care rulează Chrome sau Edge, căutați pictograma de instalare în bara de adrese — arată ca un monitor cu o săgeată mică de descărcare. Faceți clic pe ea și confirmați solicitarea. Pe Edge, opțiunea poate apărea și sub meniul cu trei puncte ca 'Apps → Install this site as an app'. Odată instalat, calculatorul apare în meniul Start (Windows) sau în folderul Aplicații (Mac) ca orice aplicație nativă."
+        "body": "Pe un computer desktop care rulează Chrome sau Edge, caută pictograma de instalare în bara de adrese. Arată ca un monitor cu o săgeată mică de descărcare. Dă clic pe ea și confirmă solicitarea. Pe Edge, opțiunea poate apărea și sub meniul cu trei puncte ca 'Aplicații → Instalează acest site ca aplicație'. Odată instalat, calculatorul apare în Start menu (Windows) sau în folderul Aplicații (Mac) ca orice aplicație nativă."
       },
       {
         "heading": "Cum se dezinstalează",
-        "body": "Dezinstalarea este la fel de ușoară ca instalarea. Pe iOS, apăsați lung pictograma de pe Home screen și atingeți 'Remove App'. Pe Android, apăsați lung și trageți în zona de dezinstalare, sau mergeți la Setări → Aplicații. Pe Chrome desktop, deschideți aplicația, faceți clic pe meniul cu trei puncte din fereastra aplicației și selectați 'Dezinstalați Calculatorul de Raport de Aspect'. Pe Edge, faceți clic dreapta pe aplicație în bara de activități sau în meniul Start și alegeți Dezinstalare."
+        "body": "Dezinstalarea este la fel de ușoară ca instalarea. Pe iOS, apasă lung pe pictogramă de pe ecranul de pornire și atinge 'Elimină aplicația'. Pe Android, apasă lung și trage în zona de dezinstalare, sau mergi la Setări → Aplicații. Pe Chrome desktop, deschide aplicația, dă clic pe meniul cu trei puncte din fereastra aplicației și selectează 'Dezinstalează Aspect Ratio Calculator'. Pe Edge, dă clic dreapta pe aplicație în bara de activități sau în Start menu și alege Dezinstalare."
       }
     ],
-    "conclusion": "Instalarea Calculatorului de Raport de Aspect durează aproximativ zece secunde și nu costă nimic. Obțineți acces offline, o scurtătură pe Home screen și o experiență mai rapidă, mai curată — fără a fi necesar un App Store. Dacă vă regăsiți utilizând calculatorul în mod regulat, instalarea sa este cel mai convenabil mod de a-l avea la îndemână."
+    "conclusion": "Instalarea Aspect Ratio Calculator durează aproximativ zece secunde și nu costă nimic. Obții acces offline, o scurtătură pe ecranul de pornire și o experiență mai rapidă, mai curată, fără a fi necesar un App Store. Dacă te trezești folosind calculatorul în mod regulat, instalarea sa este cel mai convenabil mod de a-l avea la îndemână."
   }
 };

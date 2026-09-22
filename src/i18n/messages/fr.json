@@ -311,7 +311,6 @@
   "homePage": {
     "heroTitle": "Rapport d'aspect",
     "heroTitleAccent": "Calculateur",
-    "heroSubtitle": "Calculez les dimensions pour les médias sociaux, la vidéo, la photographie et les écrans",
     "whatIsAspectRatio": "Qu'est-ce qu'un rapport d'aspect ?",
     "whatIsAspectRatioText": "Un rapport d'aspect décrit la relation proportionnelle entre la largeur et la hauteur. Écrit sous la forme L:H (par exemple, 16:9), il indique la forme d'un écran, d'une image ou d'une trame vidéo. Un rapport 16:9 signifie que pour chaque 16 unités de largeur, la hauteur est de 9 unités — la norme pour la vidéo HD et 4K. Un rapport 1:1 est un carré parfait, utilisé pour les publications Instagram.",
     "commonAspectRatios": "Rapports d'aspect courants",
@@ -352,7 +351,8 @@
     "tableRow1851UseCase": "Cinéma plat",
     "tableRow1851Where": "Cinéma à large diffusion, numérique IMAX",
     "tableRow219UseCase": "Moniteurs ultra-larges",
-    "tableRow219Where": "Jeux vidéo, écrans ultra-larges"
+    "tableRow219Where": "Jeux vidéo, écrans ultra-larges",
+    "heroSubtitle": "Calculer et convertir les rapports d'aspect pour les réseaux sociaux, la vidéo, la photographie et les écrans"
   },
   "ratioPage": {
     "aspectRatio": "Rapport d'aspect",

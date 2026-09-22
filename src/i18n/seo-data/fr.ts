@@ -1079,29 +1079,29 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
 
 export const ARTICLE_DATA: Record<string, ArticleData> = {
   "what-is-aspect-ratio": {
-    "title": "Qu'est-ce que le format d'image ? Guide pour débutants",
-    "description": "Une explication claire et accessible du format d'image : ce que cela signifie, comment il s'écrit, pourquoi c'est important pour les écrans et les images, et comment l'utiliser.",
-    "intro": "Le format d'image est l'un de ces termes qui semblent techniques mais qui sont en réalité assez simples une fois compris. Que vous redimensionniez une photo pour Instagram, configuriez une vidéo YouTube ou achetiez un nouveau moniteur, le format d'image détermine la forme de votre image ou écran. Ce guide explique tout ce que vous devez savoir.",
+    "title": "Qu'est-ce que le rapport d'aspect ? Un guide pour débutants",
+    "description": "Une explication claire et conviviale pour les débutants sur le rapport d'aspect : ce que cela signifie, comment il est écrit, pourquoi il est important pour les écrans et les images, et comment l'utiliser.",
+    "intro": "Le rapport d'aspect est l'un de ces termes qui semblent techniques mais qui sont en fait assez simples une fois que vous les comprenez. Que vous redimensionniez une photo pour Instagram, configuriez une vidéo YouTube ou achetiez un nouveau moniteur, le rapport d'aspect détermine la forme de votre image ou de votre écran. Ce guide explique tout ce que vous devez savoir.",
     "sections": [
       {
-        "heading": "Que signifie le format d'image ?",
-        "body": "Le format d'image est la relation proportionnelle entre la largeur et la hauteur d'une image, d'un écran ou d'une trame vidéo. Il s'écrit sous forme de deux nombres séparés par deux-points — par exemple, 16:9 ou 4:3. Le premier nombre est la largeur et le second est la hauteur. Un format 16:9 signifie que pour chaque 16 unités de largeur, la hauteur est de 9 unités. La taille réelle n'a pas d'importance — une image de 160×90 pixels et une image de 3840×2160 pixels sont toutes deux en 16:9 car elles partagent les mêmes proportions."
+        "heading": "Que signifie le rapport d'aspect ?",
+        "body": "Le rapport d'aspect est la relation proportionnelle entre la largeur et la hauteur d'une image, d'un écran ou d'une trame vidéo. Il est écrit sous la forme de deux nombres séparés par un deux-points, comme 16:9 ou 4:3. Le premier nombre est la largeur et le second est la hauteur. Un rapport 16:9 signifie que pour chaque 16 unités de largeur, la hauteur est de 9 unités. La taille réelle n'a pas d'importance. Une image de 160×90 pixels et une image de 3840×2160 pixels sont toutes deux en 16:9 car elles partagent les mêmes proportions."
       },
       {
-        "heading": "Pourquoi le format d'image est-il important ?",
-        "body": "Le format d'image est important chaque fois que vous affichez, imprimez ou partagez du contenu visuel. Si le format de votre image ne correspond pas au format de l'écran ou du conteneur, l'une des choses suivantes se produit :",
+        "heading": "Pourquoi le rapport d'aspect est-il important ?",
+        "body": "Le rapport d'aspect est important chaque fois que vous affichez, imprimez ou partagez du contenu visuel. Si le rapport de votre image ne correspond pas au rapport de l'affichage ou du conteneur, l'une des deux choses suivantes se produit :",
         "list": [
-          "Letterboxing / Pillarboxing — Des bandes noires apparaissent pour remplir l'espace vide",
-          "Recadrage — L'image est coupée pour s'adapter, et une partie du contenu est perdue",
-          "Étirement — L'image est déformée pour remplir le cadre (le moins souhaitable)"
+          "Letterboxing / Pillarboxing : des barres noires apparaissent pour remplir l'espace vide",
+          "Recadrage : l'image est coupée pour s'adapter, et une partie du contenu est perdue",
+          "Étirement : l'image est déformée pour remplir le cadre (le moins souhaitable)"
         ]
       },
       {
-        "heading": "Formats d'image courants et où ils sont utilisés",
-        "body": "Différentes industries et plateformes ont standardisé différents formats d'image. Voici les plus importants à connaître :",
+        "heading": "Rapports d'aspect courants et leurs utilisations",
+        "body": "Différentes industries et plateformes ont standardisé différents rapports d'aspect. Voici les plus importants à connaître :",
         "table": {
           "headers": [
-            "Format",
+            "Rapport",
             "Décimal",
             "Utilisation courante"
           ],
@@ -1124,65 +1124,65 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             [
               "4:5",
               "0.80:1",
-              "Publications portrait Instagram (hauteur max du fil)"
+              "Publications portrait Instagram (hauteur maximale du fil)"
             ],
             [
               "4:3",
               "1.33:1",
-              "iPads, TV ancienne, PowerPoint, appareils DSLR"
+              "iPad, téléviseurs anciens, PowerPoint, appareils photo DSLR"
             ],
             [
               "3:2",
               "1.50:1",
-              "Appareils DSLR, tirages 10×15 cm, film 35mm"
+              "Appareils photo DSLR, tirages 4×6, film 35mm"
             ],
             [
               "2.39:1",
               "2.39:1",
-              "Films de cinéma au format CinemaScope"
+              "Films cinémascope théâtraux"
             ]
           ]
         }
       },
       {
-        "heading": "Comment calculer un format d'image",
-        "body": "Pour trouver le format d'image de n'importe quelle image, divisez la largeur et la hauteur par leur Plus Grand Commun Diviseur (PGCD). Par exemple, une image de 1920×1080 pixels : les deux nombres sont divisibles par 120, ce qui donne 16:9. Notre calculateur gratuit le fait automatiquement — entrez simplement votre largeur et votre hauteur."
+        "heading": "Comment calculer un rapport d'aspect",
+        "body": "Pour trouver le rapport d'aspect de n'importe quelle image, divisez la largeur et la hauteur par leur Plus Grand Commun Diviseur (PGCD). Par exemple, une image de 1920×1080 pixels : les deux nombres sont divisibles par 120, ce qui donne 16:9. Notre calculateur gratuit le fait automatiquement — il suffit d'entrer votre largeur et votre hauteur."
       },
       {
-        "heading": "Format d'image vs. Résolution",
-        "body": "Le format d'image et la résolution sont liés mais ne sont pas la même chose. La résolution se réfère au nombre total de pixels (ex. 1920×1080). Le format d'image se réfère à la forme (ex. 16:9). Deux images peuvent partager le même format d'image mais avoir des résolutions complètement différentes — par exemple, 640×360 et 3840×2160 sont toutes deux en 16:9 mais diffèrent considérablement en nombre de pixels et en qualité."
+        "heading": "Rapport d'aspect vs. Résolution",
+        "body": "Le rapport d'aspect et la résolution sont liés mais ne sont pas la même chose. La résolution fait référence au nombre total de pixels (par exemple, 1920×1080). Le rapport d'aspect fait référence à la forme (par exemple, 16:9). Deux images peuvent partager le même rapport d'aspect mais avoir des résolutions complètement différentes : 640×360 et 3840×2160 sont toutes deux en 16:9 mais diffèrent considérablement en termes de nombre de pixels et de qualité."
       }
     ],
-    "conclusion": "Comprendre le format d'image vous aide à produire des images et des vidéos qui s'affichent exactement comme prévu sur chaque écran et plateforme. Utilisez notre calculateur de format d'image gratuit pour convertir instantanément les dimensions, identifier les formats et redimensionner les images tout en conservant les bonnes proportions."
+    "conclusion": "L'ensemble du sujet se résume à une seule habitude : décidez de la forme avant de décider de la taille. Le rapport d'abord, les pixels ensuite. Si vous respectez cet ordre, le reste (le recadrage, le letterboxing, les barres noires, le téléchargement flou) cesse en grande partie de se produire de lui-même."
   },
   "how-to-calculate-aspect-ratio": {
-    "title": "Comment Calculer un Format d'Image : Le Guide Complet",
-    "description": "Apprenez à calculer un format d'image étape par étape : en utilisant la méthode du PGCD, la formule et notre calculateur en ligne gratuit. Inclut des exemples résolus.",
-    "intro": "Savoir calculer un format d'image est une compétence fondamentale pour quiconque travaille avec des images, de la vidéo ou du design. Ce guide couvre les mathématiques sous-jacentes, les méthodes manuelles les plus rapides et comment utiliser notre calculateur gratuit pour des résultats instantanés.",
+    "title": "Comment calculer le rapport d'aspect : Le guide complet",
+    "description": "Apprenez à calculer le rapport d'aspect étape par étape : en utilisant la méthode du GCD, la formule et notre calculateur en ligne gratuit. Inclut des exemples concrets.",
+    "intro": "Savoir comment calculer un rapport d'aspect est une compétence fondamentale pour quiconque travaille avec des images, de la vidéo ou du design. Ce guide couvre les mathématiques qui le sous-tendent, les méthodes manuelles les plus rapides et comment utiliser notre calculateur gratuit pour des résultats instantanés.",
     "sections": [
       {
-        "heading": "La Formule du Format d'Image",
-        "body": "Le format d'image de tout rectangle est simplement : Largeur ÷ Hauteur. Pour l'exprimer sous forme de ratio L:H propre (par exemple, 16:9 plutôt que 1,778:1), vous devez trouver le Plus Grand Commun Diviseur (PGCD) de la largeur et de la hauteur et diviser les deux par celui-ci."
+        "heading": "La formule du rapport d'aspect",
+        "body": "Le rapport d'aspect de tout rectangle est simplement : Largeur ÷ Hauteur. Pour l'exprimer sous forme de rapport W:H propre (par exemple, 16:9 plutôt que 1.778:1), vous devez trouver le plus grand commun diviseur (GCD) de la largeur et de la hauteur et diviser les deux par celui-ci."
       },
       {
-        "heading": "Étape par Étape : Comment Trouver le Format d'Image",
-        "body": "Voici comment calculer manuellement le format d'image de n'importe quelle image :",
+        "heading": "Étape par étape : Comment trouver le rapport d'aspect",
+        "body": "Voici comment calculer manuellement le rapport d'aspect de n'importe quelle image :",
         "list": [
           "Étape 1 : Notez la largeur et la hauteur en pixels (par exemple, 1920 et 1080)",
-          "Étape 2 : Trouvez le Plus Grand Commun Diviseur (PGCD) des deux nombres. Pour 1920 et 1080, le PGCD est 120.",
-          "Étape 3 : Divisez les deux nombres par le PGCD. 1920 ÷ 120 = 16 ; 1080 ÷ 120 = 9.",
-          "Étape 4 : Écrivez le résultat sous forme L:H — dans ce cas, 16:9."
+          "Étape 2 : Trouvez le plus grand commun diviseur (GCD) des deux nombres. Pour 1920 et 1080, le GCD est 120.",
+          "Étape 3 : Divisez les deux nombres par le GCD. 1920 ÷ 120 = 16 ; 1080 ÷ 120 = 9.",
+          "Étape 4 : Écrivez le résultat sous forme de W:H — dans ce cas, 16:9."
         ]
       },
       {
-        "heading": "Exemples Résolus",
-        "body": "Voici quelques dimensions courantes et leurs formats d'image :",
+        "heading": "Exemples concrets",
+        "body": "Voici quelques dimensions courantes et leurs rapports d'aspect :",
         "table": {
           "headers": [
             "Largeur",
             "Hauteur",
-            "PGCD",
-            "Format d'Image"
+            "GCD",
+            "Rapport d'aspect"
           ],
           "rows": [
             [
@@ -1225,53 +1225,65 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         }
       },
       {
-        "heading": "Comment Calculer une Dimension Manquante",
-        "body": "Si vous connaissez les dimensions originales et souhaitez trouver une nouvelle taille avec le même format, utilisez cette formule : Nouvelle Hauteur = (Hauteur Originale ÷ Largeur Originale) × Nouvelle Largeur. Par exemple, pour trouver la hauteur d'une image 16:9 avec une largeur de 1280px : (1080 ÷ 1920) × 1280 = 720px. Notre calculateur le fait automatiquement dans les deux sens."
+        "heading": "Comment trouver le GCD sans calculateur",
+        "body": "Chaque méthode ci-dessus dépend de la recherche du plus grand commun diviseur (GCD), et c'est l'étape que la plupart des guides ignorent. La méthode fiable est l'algorithme d'Euclide, qui a plus de deux mille ans et prend environ quatre étapes pour des nombres de taille d'écran : divisez le plus grand nombre par le plus petit, gardez le reste, puis répétez avec le plus petit nombre et ce reste jusqu'à ce que le reste soit zéro. Le dernier nombre non nul est le GCD. Pour 1920 et 1080 : 1920 ÷ 1080 laisse 840 ; 1080 ÷ 840 laisse 240 ; 840 ÷ 240 laisse 120 ; 240 ÷ 120 laisse 0. Le GCD est 120."
       },
       {
-        "heading": "La Méthode la Plus Rapide : Utiliser un Calculateur",
-        "body": "Calculer manuellement les formats d'image est simple pour les nombres ronds, mais devient rapidement fastidieux pour des dimensions irrégulières comme 1847×923. Notre Calculateur de Format d'Image gratuit gère toute largeur et hauteur instantanément — entrez vos valeurs et obtenez le format simplifié, la valeur décimale, la correspondance standard la plus proche et les valeurs CSS en un seul clic."
+        "heading": "Quand les nombres refusent de se réduire",
+        "body": "Toutes les paires de dimensions ne donnent pas un rapport soigné. 1847 × 923 a un GCD de 1, donc son rapport « simplifié » est 1847:923 — techniquement correct et inutile. Lorsque cela se produit, arrêtez d'essayer de réduire et faites plutôt deux choses : prenez la décimale (1847 ÷ 923 = 2.001, donc c'est essentiellement 2:1), et trouvez le rapport standard le plus proche avec lequel vous pouvez réellement travailler. Les écrans et les plateformes acceptent les rapports standards, pas les exacts, et une différence inférieure à environ un demi-pour cent est invisible."
+      },
+      {
+        "heading": "Pourquoi 1200 × 630 n'est pas 1.91:1",
+        "body": "La taille d'image Open Graph que chaque plateforme sociale demande est 1200 × 630, et elle est presque toujours décrite comme 1.91:1. Exécutez le GCD et vous obtenez 40:21, dont la décimale est 1.9048. Le chiffre 1.91 est une étiquette arrondie qui est restée, pas le vrai rapport. Cela compte lorsque vous mettez à l'échelle : calculer une nouvelle largeur à partir de 1.91 plutôt que de 40:21 dérive d'environ un pixel à 1200px de large et de quatre à 4800px. Mettez toujours à l'échelle à partir du rapport entier, et arrondissez une seule fois à la fin."
+      },
+      {
+        "heading": "Comment calculer une dimension manquante",
+        "body": "Si vous connaissez les dimensions originales et souhaitez trouver une nouvelle taille avec le même rapport, utilisez cette formule : Nouvelle Hauteur = (Hauteur Originale ÷ Largeur Originale) × Nouvelle Largeur. Par exemple, pour trouver la hauteur d'une image 16:9 de 1280px de large : (1080 ÷ 1920) × 1280 = 720px. Notre calculateur le fait automatiquement dans les deux sens."
+      },
+      {
+        "heading": "La méthode la plus rapide : Utilisez un calculateur",
+        "body": "Calculer manuellement les rapports d'aspect est simple pour les nombres ronds, mais devient rapidement fastidieux pour des dimensions irrégulières comme 1847×923. Notre calculateur de rapport d'aspect gratuit gère instantanément n'importe quelle largeur et hauteur. Entrez vos valeurs et obtenez le rapport simplifié, la décimale, la correspondance standard la plus proche et les valeurs CSS en un seul clic."
       }
     ],
-    "conclusion": "Calculer les formats d'image est facile une fois que vous maîtrisez la méthode du PGCD. Pour un usage quotidien, notre calculateur gratuit vous fera gagner du temps et vous donnera des informations supplémentaires comme l'analyse de qualité, les tailles d'impression et l'export CSS. Essayez-le maintenant sur aspect-ratio-calculator.com."
+    "conclusion": "Deux règles couvrent presque tous les cas. Réduisez avec le GCD lorsque les nombres le permettent, et revenez à la décimale plus le rapport standard le plus proche lorsque ce n'est pas le cas. Gardez le rapport entier pour toute arithmétique et n'arrondissez qu'à la toute fin. Cette seule habitude prévient la plupart des erreurs d'un pixel qui apparaissent comme un espace minuscule sur une mise en page finale."
   },
   "aspect-ratio-social-media-guide-2026": {
-    "title": "Tailles d'Images et Formats pour les Réseaux Sociaux : Guide Complet 2026",
-    "description": "Toutes les tailles d'images et formats pour les réseaux sociaux en 2026 : Instagram, YouTube, TikTok, X, LinkedIn, Facebook et Pinterest. Gardez ce guide en favoris.",
-    "intro": "Chaque plateforme de réseaux sociaux a ses propres dimensions d'image recommandées, et celles-ci changent régulièrement. Utiliser la mauvaise taille signifie que vos images seront recadrées, floues ou mal affichées. Ce guide couvre toutes les principales plateformes pour 2026.",
+    "title": "Tailles et rapports d'aspect des images pour les médias sociaux : Guide complet 2026",
+    "description": "Toutes les tailles et rapports d'aspect des images pour les médias sociaux en 2026 : Instagram, YouTube, TikTok, X, LinkedIn, Facebook et Pinterest. Gardez ce guide dans vos favoris.",
+    "intro": "Chaque plateforme de médias sociaux a ses propres dimensions d'image recommandées, et celles-ci changent régulièrement. Utiliser la mauvaise taille signifie que vos images seront recadrées, floues ou mal affichées. Ce guide couvre toutes les principales plateformes pour 2026.",
     "sections": [
       {
-        "heading": "Pourquoi les Tailles d'Images Comptent sur les Réseaux Sociaux",
-        "body": "Chaque plateforme a une mise en page de fil, une zone d'affichage et un algorithme de compression différents. Une image optimisée pour une plateforme peut apparaître floue, recadrée ou étirée sur une autre. Téléverser aux dimensions exactes recommandées garantit :",
+        "heading": "Pourquoi la taille des images est importante sur les médias sociaux",
+        "body": "Chaque plateforme a une mise en page de flux, une zone d'affichage et un algorithme de compression différents. Une image optimisée pour une plateforme peut apparaître floue, recadrée ou étirée sur une autre. Télécharger aux dimensions exactes recommandées garantit :",
         "list": [
-          "Aucun recadrage inattendu du contenu clé",
-          "Netteté maximale — pas de mise à l'échelle par la plateforme",
-          "Temps de chargement plus rapides — la bonne taille réduit la taille du fichier",
-          "Meilleures performances dans les algorithmes de recommandation"
+          "Pas de recadrage inattendu du contenu clé",
+          "Netteté maximale — pas d'agrandissement par la plateforme",
+          "Temps de chargement plus rapides — un dimensionnement correct réduit la taille du fichier",
+          "Meilleure performance dans les algorithmes de recommandation"
         ]
       },
       {
-        "heading": "Tailles d'Images Instagram 2026",
-        "body": "Instagram prend en charge trois formats de fil plus les Stories et les Reels. Pour les publications du fil, le format portrait 4:5 (1080×1350) vous donne le plus d'espace vertical — idéal pour maximiser la visibilité lors du défilement.",
+        "heading": "Tailles d'image Instagram 2026",
+        "body": "Instagram prend en charge trois rapports de flux, plus les Stories et les Reels. Pour les publications de flux, le format portrait 4:5 (1080×1350) vous offre le plus d'espace vertical, ce qui est idéal sur une surface que les gens font défiler.",
         "table": {
           "headers": [
             "Format",
             "Dimensions",
-            "Ratio"
+            "Rapport"
           ],
           "rows": [
             [
-              "Publication du Fil (Carrée)",
+              "Publication de flux (Carré)",
               "1080 × 1080",
               "1:1"
             ],
             [
-              "Publication du Fil (Portrait)",
+              "Publication de flux (Portrait)",
               "1080 × 1350",
               "4:5"
             ],
             [
-              "Publication du Fil (Paysage)",
+              "Publication de flux (Paysage)",
               "1080 × 566",
               "1.91:1"
             ],
@@ -1281,7 +1293,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
               "9:16"
             ],
             [
-              "Photo de Profil",
+              "Photo de profil",
               "320 × 320",
               "1:1"
             ]
@@ -1290,12 +1302,12 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Dimensions YouTube 2026",
-        "body": "YouTube est une plateforme 16:9. Concevez les miniatures à 1280×720 avec du texte en gras et lisible — votre miniature est souvent le facteur décisif pour qu'un utilisateur clique.",
+        "body": "YouTube est une plateforme 16:9. Concevez des miniatures de 1280×720 avec un texte gras et lisible. Votre miniature est souvent le facteur décisif pour qu'une personne clique.",
         "table": {
           "headers": [
             "Format",
             "Dimensions",
-            "Ratio"
+            "Rapport"
           ],
           "rows": [
             [
@@ -1314,7 +1326,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
               "16:9"
             ],
             [
-              "Bannière de Chaîne",
+              "Bannière de chaîne",
               "2560 × 1440",
               "16:9"
             ]
@@ -1322,22 +1334,22 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         }
       },
       {
-        "heading": "Tailles Vidéo TikTok 2026",
-        "body": "TikTok est entièrement vertical — utilisez toujours le 9:16 à 1080×1920 pour la meilleure qualité. Gardez le contenu clé au centre du cadre et éloigné des 20 % inférieurs où apparaissent les sous-titres et les éléments d'interface.",
+        "heading": "Tailles de vidéo TikTok 2026",
+        "body": "TikTok est entièrement vertical — utilisez toujours le format 9:16 à 1080×1920 pour la meilleure qualité. Gardez le contenu clé au centre du cadre et éloigné des 20% inférieurs où apparaissent les légendes et les éléments d'interface utilisateur.",
         "table": {
           "headers": [
             "Format",
             "Dimensions",
-            "Ratio"
+            "Rapport"
           ],
           "rows": [
             [
-              "Vidéo (Recommandée)",
+              "Vidéo (Recommandé)",
               "1080 × 1920",
               "9:16"
             ],
             [
-              "Photo de Profil",
+              "Photo de profil",
               "200 × 200",
               "1:1"
             ]
@@ -1345,19 +1357,19 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         }
       },
       {
-        "heading": "Référence Rapide : Toutes les Plateformes",
-        "body": "Voici un tableau de référence rapide pour les tailles d'images de réseaux sociaux les plus couramment utilisées en 2026 :",
+        "heading": "Référence rapide : Toutes les plateformes",
+        "body": "Voici un tableau de référence rapide pour les tailles d'image de médias sociaux les plus couramment utilisées en 2026 :",
         "table": {
           "headers": [
             "Plateforme",
             "Format",
             "Dimensions",
-            "Ratio"
+            "Rapport"
           ],
           "rows": [
             [
               "Instagram",
-              "Publication du Fil (Portrait)",
+              "Publication de flux (Portrait)",
               "1080 × 1350",
               "4:5"
             ],
@@ -1387,72 +1399,88 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             ],
             [
               "X / Twitter",
-              "Image de Publication",
+              "Image de publication",
               "1600 × 900",
               "16:9"
             ],
             [
               "LinkedIn",
-              "Image de Publication",
+              "Image de publication",
               "1200 × 628",
               "1.91:1"
             ],
             [
               "Facebook",
-              "Image de Publication",
+              "Image de publication",
               "1200 × 630",
               "1.91:1"
             ],
             [
               "Pinterest",
-              "Épingle Standard",
+              "Épingle standard",
               "1000 × 1500",
               "2:3"
             ]
           ]
         }
+      },
+      {
+        "heading": "Les tailles sont bonnes et le cadre est toujours incorrect",
+        "body": "Télécharger en 1080 × 1920 ne signifie pas que tout est visible. Chaque format vertical superpose une interface à votre image : une ligne de profil et une légende en bas, une barre de progression et un bouton de fermeture en haut, et sur les Reels et TikTok, une colonne de boutons sur un côté. L'image est en plein écran ; la zone utilisable ne l'est pas. Une marge de travail pratique consiste à garder tout ce qui doit être lu (texte, visages, logos, prix) à l'intérieur des 70% centraux verticalement et loin du bord de fuite, puis à le prévisualiser sur un téléphone avant de publier. La zone de sécurité n'est pas publiée comme une spécification et elle bouge, alors traitez-la comme une marge plutôt qu'une mesure."
+      },
+      {
+        "heading": "Téléchargez plus grand que le nombre indiqué dans le tableau",
+        "body": "Chaque plateforme re-compresse ce que vous envoyez, et elle fait un meilleur travail en partant de plus de données. Télécharger une exportation de 1080 × 1350 d'un original de 1080 de large ne donne rien à l'encodeur ; télécharger une version de 2160 × 2700 de la même image et laisser la plateforme la réduire donne généralement un aspect visiblement plus net à la même taille finale, en particulier sur le texte et les bords fins. L'exception est lorsqu'une plateforme publie un maximum strict. Respectez cela, puis approchez-vous le plus possible de cette limite."
+      },
+      {
+        "heading": "Si vous ne pouvez créer qu'un seul élément",
+        "body": "Créez-le en 4:5 à 1080 × 1350. C'est la forme la plus haute acceptée par le flux d'Instagram, ce qui signifie qu'elle occupe le plus d'écran sur la surface qui vous en donne le moins, et elle se recadre proprement : recadrage central en 1:1 pour un placement carré, ou en 1.91:1 pour une carte de lien, et le sujet reste là où vous l'avez placé. Faire l'inverse, commencer par un carré et essayer d'atteindre le 4:5, signifie inventer une image qui n'a jamais été photographiée."
+      },
+      {
+        "heading": "Un avertissement concernant les guides comme celui-ci",
+        "body": "Chaque chiffre ici était correct au moment de la rédaction et les plateformes les modifient sans préavis. Un guide est un point de départ, pas une autorité : avant une campagne importante, consultez la documentation d'aide de la plateforme elle-même, car c'est la seule version qui se met à jour lorsqu'ils le font. Les rapports dans la dernière colonne sont beaucoup plus stables que les dimensions en pixels à côté d'eux. 9:16 et 4:5 ont survécu à plusieurs séries de changements de spécifications, et construire en fonction du rapport plutôt que du nombre de pixels est ce qui empêche ce tableau de devenir obsolète."
       }
     ],
-    "conclusion": "Ajoutez ce guide à vos favoris et utilisez notre Calculateur de Format d'Image gratuit pour vérifier ou convertir n'importe quelles dimensions en quelques secondes. Entrez la taille actuelle de votre image et les dimensions de la plateforme cible pour vérifier la qualité, calculer les valeurs CSS et partager les résultats instantanément."
+    "conclusion": "Construisez en fonction du rapport, pas du nombre de pixels, et exportez plus grand que la cible. Ces deux habitudes survivent aux changements de plateforme, ce que les chiffres exacts de ces tableaux ne feront pas. Gardez tout ce qui doit être lu bien à l'intérieur du cadre, et vérifiez la documentation propre à la plateforme avant de publier quoi que ce soit pour lequel vous payez."
   },
   "16-9-vs-4-3-aspect-ratio": {
-    "title": "Format 16:9 vs 4:3 — Lequel Devriez-Vous Utiliser ?",
-    "description": "Une comparaison claire des formats 16:9 et 4:3 : quand utiliser chacun, leur histoire, les différences clés et des exemples de tailles en pixels.",
-    "intro": "16:9 et 4:3 sont les deux formats d'image les plus historiquement significatifs en vidéo et en photographie. Si vous avez déjà vu des bandes noires sur votre écran — que ce soit sur les côtés ou en haut et en bas — vous avez déjà rencontré la différence entre les deux. Voici une comparaison complète.",
+    "title": "Rapport d'aspect 16:9 vs 4:3 — Lequel devriez-vous utiliser ?",
+    "description": "Une comparaison claire des rapports d'aspect 16:9 et 4:3 : quand utiliser chacun, leur histoire, les différences clés et des exemples de taille de pixels.",
+    "intro": "Le 16:9 et le 4:3 sont les deux rapports d'aspect les plus historiquement significatifs en vidéo et en photographie. Si vous avez déjà vu des barres noires sur votre écran, que ce soit sur les côtés ou en haut et en bas, vous avez déjà rencontré la différence entre eux. Voici une comparaison complète.",
     "sections": [
       {
-        "heading": "La Différence Clé",
-        "body": "Le 16:9 est plus large et rectangulaire (rapport de 1,78:1), tandis que le 4:3 est plus carré (rapport de 1,33:1). Une image 16:9 est environ 33 % plus large qu'une image 4:3 de même hauteur. Cette différence peut sembler minime, mais elle est très perceptible à l'écran."
+        "heading": "La différence clé",
+        "body": "Le 16:9 est plus large et plus rectangulaire (rapport de 1.78:1), tandis que le 4:3 est plus carré (rapport de 1.33:1). Une image 16:9 est environ 33% plus large qu'une image 4:3 de la même hauteur. Cette différence peut sembler minime mais elle est très perceptible à l'écran."
       },
       {
-        "heading": "Histoire : D'où Viennent-ils ?",
-        "body": "Le 4:3 était le standard télévisuel original, adopté dans les années 1930 car il correspondait étroitement au format de la pellicule cinématographique 35mm de l'époque. Le 16:9 a été introduit à la fin des années 1980 comme un standard panoramique de compromis pouvant afficher à la fois le contenu TV 4:3 (avec de petites bandes latérales) et le contenu cinéma 2.39:1 (avec de petites bandes supérieures/inférieures) avec un espace noir minimal. L'UIT a adopté le 16:9 comme standard TVHD en 1987."
+        "heading": "Histoire : D'où viennent-ils ?",
+        "body": "Le 4:3 est apparu en premier, correspondant à la forme des premiers films cinématographiques 35mm, et il est resté le standard de la télévision pendant la majeure partie du XXe siècle. Le 16:9 n'a été hérité de rien. Il a été conçu. Travaillant à la SMPTE au début des années 1980, Kerns Powers a découpé des rectangles de surface égale pour chaque rapport d'aspect alors en usage, de la télévision 1.33:1 au cinéma 2.35:1, et les a superposés en les centrant les uns sur les autres. Chaque rectangle s'insérait dans une boîte extérieure et contenait une boîte intérieure, et ces deux boîtes étaient proches de 1.77:1. Ce chiffre est presque exactement la moyenne géométrique des extrêmes : la racine carrée de 1.33 × 2.35 est 1.77, et 16 ÷ 9 est 1.778. Le 16:9 est la forme qui gaspille le moins d'écran, en moyenne sur tout ce que l'on pourrait vouloir y afficher."
       },
       {
-        "heading": "Quand Utiliser le 16:9",
+        "heading": "Quand utiliser le 16:9",
         "body": "Utilisez le 16:9 lorsque :",
         "list": [
-          "Vous créez du contenu vidéo pour YouTube, Netflix ou la télévision",
-          "Vous réalisez des présentations modernes (Google Slides, PowerPoint 2016 et versions ultérieures utilisent le 16:9 par défaut)",
-          "Vous concevez pour des moniteurs et ordinateurs portables à écran large",
-          "Vous enregistrez de la vidéo avec un smartphone ou un appareil photo moderne",
-          "Vous créez des miniatures YouTube"
+          "Créer du contenu vidéo pour YouTube, Netflix ou la télévision",
+          "Réaliser des présentations modernes (Google Slides, PowerPoint 2016 et versions ultérieures utilisent le 16:9 par défaut)",
+          "Concevoir pour les moniteurs et ordinateurs portables grand écran",
+          "Enregistrer des vidéos avec un smartphone ou un appareil photo moderne",
+          "Créer des miniatures YouTube"
         ]
       },
       {
-        "heading": "Quand Utiliser le 4:3",
+        "heading": "Quand utiliser le 4:3",
         "body": "Utilisez le 4:3 lorsque :",
         "list": [
-          "Vous concevez pour les écrans iPad (qui utilisent le 4:3)",
-          "Vous créez des présentations pour des projecteurs anciens",
-          "Vous devez correspondre à du contenu vidéo ancien",
-          "Vous imprimez dans des proportions photographiques standard (certains appareils photo)",
-          "Vous travaillez avec des images de vidéosurveillance"
+          "Concevoir pour les écrans iPad (qui utilisent le 4:3)",
+          "Créer des présentations pour des projecteurs plus anciens",
+          "Correspondre à du contenu vidéo hérité",
+          "Imprimer selon des proportions photographiques standard (certains appareils photo)",
+          "Travailler avec des images de vidéosurveillance ou de surveillance"
         ]
       },
       {
-        "heading": "Comparaison des Tailles en Pixels",
-        "body": "Voici les résolutions courantes pour les deux formats à des comptes de mégapixels équivalents :",
+        "heading": "Comparaison de la taille des pixels",
+        "body": "Voici les résolutions courantes pour les deux rapports à des nombres de mégapixels équivalents :",
         "table": {
           "headers": [
             "Qualité",
@@ -1477,97 +1505,105 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             ]
           ]
         }
+      },
+      {
+        "heading": "Ce que coûte réellement la conversion entre eux",
+        "body": "Les deux conversions coûtent exactement un quart de l'image, ce qui est plus que ce que la plupart des gens attendent. Passer du 16:9 au 4:3 à la même hauteur signifie recadrer la largeur de 16 unités à 12, vous perdez donc 25% du cadre, et cela se fait sur les côtés, où les sujets filmés sont souvent cadrés. Dans l'autre sens, du 4:3 au 16:9 à la même largeur, recadre la hauteur de 12 unités à 9 : également 25%, cette fois en haut et en bas, là où se trouvent les têtes et les légendes. Aucune des deux directions n'est un redimensionnement. Si le contenu est important, recadrez-le plutôt que de laisser un outil de recadrage choisir."
+      },
+      {
+        "heading": "Ce que les barres noires vous coûtent",
+        "body": "Afficher du contenu 4:3 sur un écran 16:9 le 'pillarboxe', et les barres ne sont pas cosmétiques : l'image occupe 12 des 16 unités de largeur de l'écran, donc un quart de l'affichage ne fait rien. Un téléviseur 16:9 de 55 pouces mesure 47,9 pouces de large, ce qui représente environ 12 pouces de noir. C'est l'argument pratique pour filmer dans le rapport que vous publierez, plutôt que de prévoir de le corriger après coup. Il n'y a pas de recadrage qui récupère un quart de l'écran."
       }
     ],
-    "conclusion": "Pour la plupart des contenus vidéo et d'écran modernes, le 16:9 est le bon choix. Pour du contenu destiné aux tablettes ou une compatibilité avec les systèmes anciens, le 4:3 peut être plus approprié. En cas de doute, utilisez notre Calculateur de Format d'Image gratuit pour convertir entre les deux et prévisualiser le résultat instantanément."
+    "conclusion": "Filmez et concevez en 16:9 à moins que quelque chose de spécifique ne vous pousse ailleurs : un public axé sur l'iPad, un projecteur hérité, une archive à laquelle correspondre. La seule chose à éviter est de décider tardivement : les deux conversions coûtent un quart du cadre, et le quart que vous perdez est une décision mieux prise à travers un viseur qu'avec un outil de recadrage après coup."
   },
   "how-to-resize-image-without-losing-quality": {
-    "title": "Comment Redimensionner une Image Sans Perdre en Qualité",
-    "description": "Apprenez les techniques pour redimensionner des images sans perte de qualité : réduction vs. agrandissement, meilleurs formats de fichier, explication du DPI et recommandations d'outils.",
-    "intro": "Redimensionner une image semble simple, mais mal fait, cela produit des photos floues, pixelisées ou déformées. Ce guide explique quand et comment vous pouvez redimensionner des images sans perte de qualité visible.",
+    "title": "Comment redimensionner une image sans perdre en qualité",
+    "description": "Découvrez les techniques pour redimensionner des images sans perdre en qualité : réduction vs agrandissement, meilleurs formats de fichier, explication du DPI et recommandations d'outils.",
+    "intro": "Redimensionner une image semble simple, mais si cela est fait incorrectement, cela entraîne des photos floues, pixélisées ou déformées. Ce guide explique quand et comment vous pouvez redimensionner des images sans perte de qualité visible.",
     "sections": [
       {
         "heading": "Réduction vs. Agrandissement",
-        "body": "Il existe deux directions dans lesquelles vous pouvez redimensionner une image, et elles ont des implications de qualité très différentes. La réduction (rendre une image plus petite) préserve presque toujours la qualité — vous ne faites que supprimer des pixels. L'agrandissement (rendre une image plus grande) est la source des problèmes de qualité, car le logiciel doit inventer des données de pixels qui n'existent pas dans l'original."
+        "body": "Il y a deux directions dans lesquelles vous pouvez redimensionner une image, et elles ont des implications très différentes en termes de qualité. La réduction (rendre une image plus petite) préserve presque toujours la qualité, car vous ne faites que jeter des pixels. L'agrandissement (rendre une image plus grande) est l'endroit où les problèmes de qualité surviennent, car le logiciel doit inventer des données de pixels qui n'existent pas dans l'original."
       },
       {
-        "heading": "La Règle d'Or : Commencez Toujours avec la Plus Haute Résolution",
-        "body": "La perte de qualité est généralement irréversible. Si vous partez d'une petite image et avez besoin d'une grande, vous observerez toujours une dégradation de la qualité. La meilleure pratique est de :",
+        "heading": "La Règle d'Or : Toujours Partir de la Plus Haute Résolution",
+        "body": "La perte de qualité est majoritairement irréversible. Si vous partez d'une petite image et en avez besoin d'une grande, vous verrez toujours une dégradation de la qualité. La meilleure pratique est de :",
         "list": [
-          "Conservez toujours votre fichier original en haute résolution",
-          "Exportez ou enregistrez une copie séparée à la taille cible",
-          "Ne réenregistrez jamais un JPEG compressé plusieurs fois — chaque enregistrement dégrade la qualité",
-          "Exportez depuis le fichier maître chaque fois que vous avez besoin d'une nouvelle taille"
+          "Toujours conserver votre fichier original en haute résolution",
+          "Exporter ou enregistrer une copie séparée à la taille cible",
+          "Ne jamais réenregistrer un JPEG compressé plusieurs fois, car chaque enregistrement dégrade la qualité",
+          "Exporter depuis le fichier maître chaque fois que vous avez besoin d'une nouvelle taille"
         ]
       },
       {
-        "heading": "De Combien Pouvez-Vous Agrandir ?",
-        "body": "En règle générale : un agrandissement jusqu'à 110-120 % est généralement imperceptible pour la plupart des spectateurs. Un agrandissement de 150-200 % produit une douceur notable. Un agrandissement au-delà de 200 % produit typiquement une pixelisation et un flou évidents. Les outils d'agrandissement basés sur l'IA (comme Topaz Gigapixel, Adobe Firefly et similaires) peuvent parfois produire des résultats acceptables avec un agrandissement de 2 à 4 fois en générant intelligemment des détails."
+        "heading": "Jusqu'où pouvez-vous agrandir ?",
+        "body": "En règle générale : un agrandissement jusqu'à 110–120% est généralement imperceptible pour la plupart des spectateurs. Un agrandissement de 150–200% produit une douceur notable. Un agrandissement au-delà de 200% produit généralement une pixellisation et un flou évidents. Les outils d'agrandissement basés sur l'IA (tels que Topaz Gigapixel, Adobe Firefly et similaires) peuvent parfois produire des résultats acceptables avec un agrandissement de 2 à 4 fois en générant intelligemment des détails."
       },
       {
-        "heading": "Maintenir le Format d'Image lors du Redimensionnement",
-        "body": "L'une des erreurs de qualité les plus courantes est de changer accidentellement le format d'image lors du redimensionnement — étirant ou écrasant l'image. Redimensionnez toujours proportionnellement en verrouillant le format d'image dans votre outil d'édition. Notre calculateur gratuit vous aide à trouver la hauteur cible correcte pour toute nouvelle largeur (ou inversement), garantissant que votre redimensionnement conserve les proportions originales."
+        "heading": "Maintenir le rapport d'aspect lors du redimensionnement",
+        "body": "L'une des erreurs de qualité les plus courantes est de modifier accidentellement le rapport d'aspect lors du redimensionnement, en étirant ou en écrasant l'image. Redimensionnez toujours proportionnellement en verrouillant le rapport d'aspect dans votre outil d'édition. Notre calculateur gratuit vous aide à trouver la hauteur cible correcte pour toute nouvelle largeur (ou vice versa), garantissant que votre redimensionnement maintient les proportions originales."
       },
       {
-        "heading": "Meilleurs Formats de Fichier pour la Qualité",
+        "heading": "Meilleurs formats de fichier pour la qualité",
         "body": "Le format de fichier affecte significativement la qualité après le redimensionnement :",
         "list": [
-          "PNG — Compression sans perte ; idéal pour les graphiques, illustrations et captures d'écran où la netteté compte",
-          "JPEG — Compression avec perte ; idéal pour les photographies ; réglez la qualité à 80-90 % pour le meilleur équilibre taille/qualité",
-          "WebP — Format moderne qui obtient une meilleure compression que le JPEG à qualité équivalente ; pris en charge par tous les navigateurs modernes",
-          "TIFF — Non compressé ou sans perte ; utilisé dans les flux de travail professionnels d'impression et de photographie"
+          "PNG : compression sans perte ; idéal pour les graphiques, les illustrations et les captures d'écran où la netteté est importante",
+          "JPEG : compression avec perte ; idéal pour les photographies ; réglez la qualité à 80–90% pour le meilleur équilibre taille/qualité",
+          "WebP : un format moderne qui atteint une meilleure compression que JPEG à qualité équivalente ; pris en charge par tous les navigateurs modernes",
+          "TIFF : non compressé ou sans perte ; utilisé dans les flux de travail professionnels d'impression et de photographie"
         ]
       },
       {
-        "heading": "DPI et Qualité d'Impression",
-        "body": "Le DPI (dots per inch — points par pouce) n'est pertinent que pour l'impression — il est ignoré par les écrans. Pour l'impression : utilisez 300 DPI pour des tirages photo nets, 150 DPI pour une qualité acceptable, et 72-96 DPI pour un usage exclusivement écran. Pour calculer les dimensions en pixels nécessaires pour un tirage : multipliez la taille d'impression en pouces par le DPI. Pour un tirage de 8×10 pouces (20×25 cm) à 300 DPI : 2400×3000 pixels."
+        "heading": "DPI et qualité d'impression",
+        "body": "Le DPI (dots per inch) n'est pertinent que pour l'impression. Les écrans l'ignorent entièrement. Pour l'impression : utilisez 300 DPI pour des impressions photo nettes, 150 DPI pour une qualité acceptable, et 72–96 DPI pour une utilisation uniquement à l'écran. Pour calculer les dimensions en pixels nécessaires pour une impression : multipliez la taille d'impression en pouces par le DPI. Pour une impression de 8×10 pouces à 300 DPI : 2400×3000 pixels."
       }
     ],
-    "conclusion": "La meilleure façon de redimensionner sans perte de qualité est de toujours réduire depuis un original haute résolution, maintenir le format d'image et exporter dans le format approprié. Utilisez notre Calculateur de Format d'Image pour trouver les dimensions cibles exactes qui préservent vos proportions originales — sans avoir à deviner."
+    "conclusion": "Conservez le fichier maître. Presque tous les problèmes de qualité dans ce guide remontent au fait que quelqu'un n'a plus l'original : vous ne pouvez pas réduire à partir de quelque chose que vous avez déjà jeté, et aucun agrandisseur ne récupère des détails qui n'ont jamais été enregistrés. Exportez des copies, archivez l'original et redimensionnez à partir de celui-ci à chaque fois."
   },
   "install-aspect-ratio-calculator": {
-    "title": "Pourquoi installer l'Aspect Ratio Calculator ? Accès hors ligne, rapidité et plus encore",
-    "description": "Installez l'Aspect Ratio Calculator comme une application pour un accès hors ligne instantané, un raccourci sur l'écran d'accueil et une expérience sans distraction — pas d'interface de navigateur, pas de rechargement.",
-    "intro": "Vous pouvez utiliser cette calculatrice directement depuis votre navigateur, mais l'installer comme une application pousse l'expérience plus loin — lancement instantané depuis votre écran d'accueil, prise en charge complète hors ligne et une interface épurée sans navigation de navigateur. Voici tout ce que vous devez savoir.",
+    "title": "Pourquoi installer Aspect Ratio Calculator ? Accès hors ligne, rapidité et plus encore",
+    "description": "Installez Aspect Ratio Calculator comme une application pour un accès hors ligne instantané, un raccourci sur l'écran d'accueil et une expérience sans distraction — pas d'interface de navigateur, pas de rechargement.",
+    "intro": "Vous pouvez utiliser ce calculateur directement depuis votre navigateur, mais l'installer comme une application pousse l'expérience plus loin : lancement instantané depuis votre écran d'accueil, prise en charge complète hors ligne et une interface épurée sans navigation de navigateur. Voici tout ce que vous devez savoir.",
     "sections": [
       {
-        "heading": "Que signifie réellement « Installer » ?",
-        "body": "Lorsque vous installez une application web (également appelée PWA — Progressive Web App), votre appareil enregistre un raccourci sur votre écran d'accueil ou votre bureau et met en cache les fichiers de l'application pour une utilisation hors ligne. Il n'y a pas d'App Store impliqué et rien ne télécharge des gigaoctets de données — les fichiers sont déjà dans le cache de votre navigateur. L'installation promeut simplement le site à une expérience d'application de première classe sur votre appareil."
+        "heading": "Que signifie réellement 'Installer' ?",
+        "body": "Lorsque vous installez une application web (également appelée PWA, ou Progressive Web App), votre appareil enregistre un raccourci sur votre écran d'accueil ou votre bureau et met en cache les fichiers de l'application pour une utilisation hors ligne. Il n'y a pas d'App Store impliqué et rien ne télécharge des gigaoctets de données, car les fichiers sont déjà dans le cache de votre navigateur. L'installation promeut simplement le site à une expérience d'application de première classe sur votre appareil."
       },
       {
         "heading": "Avantages de l'installation",
-        "body": "L'installation de l'Aspect Ratio Calculator vous offre plusieurs avantages par rapport à son utilisation purement dans le navigateur :",
+        "body": "L'installation d'Aspect Ratio Calculator vous offre plusieurs avantages par rapport à son utilisation purement dans le navigateur :",
         "list": [
-          "Accès hors ligne — les calculs fonctionnent même sans connexion internet, utile sur un plateau, sur le terrain ou dans un avion",
-          "Raccourci sur l'écran d'accueil — s'ouvre d'un simple toucher, pas besoin de naviguer vers l'URL ou d'ouvrir un onglet de navigateur",
-          "Interface sans distraction — pas de barre d'adresse de navigateur, d'onglets ou de barre d'outils ; la calculatrice remplit l'écran proprement",
-          "Chargement plus rapide — les fichiers mis en cache se chargent instantanément depuis le stockage local au lieu d'attendre une réponse réseau",
-          "Toujours à jour — le service worker récupère les mises à jour silencieusement en arrière-plan afin que vous ayez toujours la dernière version"
+          "Accès hors ligne : les calculs fonctionnent même sans connexion internet, utile sur un plateau, sur le terrain ou dans un avion",
+          "Raccourci sur l'écran d'accueil : s'ouvre d'un simple toucher, pas besoin de naviguer vers l'URL ou d'ouvrir un onglet de navigateur",
+          "Interface sans distraction : pas de barre d'adresse de navigateur, d'onglets ou de barre d'outils ; le calculateur remplit l'écran proprement",
+          "Chargement plus rapide : les fichiers mis en cache se chargent instantanément depuis le stockage local au lieu d'attendre une réponse réseau",
+          "Toujours à jour : le service worker récupère les mises à jour silencieusement en arrière-plan afin que vous ayez toujours la dernière version"
         ]
       },
       {
         "heading": "Comment installer sur Chrome ou Android",
-        "body": "Sur Android ou Chrome pour ordinateur de bureau, une bannière apparaît automatiquement en bas de la page avec un bouton Installer. Appuyez ou cliquez sur Installer et confirmez lorsque vous y êtes invité. Si la bannière a été ignorée, recherchez l'icône d'installation (un moniteur avec une flèche vers le bas ⊕) dans la barre d'adresse du navigateur sur ordinateur de bureau, ou appuyez sur le menu à trois points sur Android et sélectionnez « Ajouter à l'écran d'accueil »."
+        "body": "Sur Android ou Chrome desktop, une bannière apparaît automatiquement en bas de la page avec un bouton Install. Appuyez ou cliquez sur Install et confirmez lorsque vous y êtes invité. Si la bannière a été ignorée, recherchez l'icône d'installation (un moniteur avec une flèche vers le bas ⊕) dans la barre d'adresse du navigateur sur desktop, ou appuyez sur le menu à trois points sur Android et sélectionnez 'Add to Home screen'."
       },
       {
         "heading": "Comment installer sur iPhone ou iPad (Safari)",
         "body": "Safari sur iOS n'affiche pas de bannière d'installation automatique, mais le processus est simple :",
         "list": [
-          "Appuyez sur le bouton Partager (la boîte avec une flèche pointant vers le haut) dans la barre d'outils Safari en bas de l'écran",
-          "Faites défiler la feuille de partage vers le bas et appuyez sur « Ajouter à l'écran d'accueil »",
-          "Modifiez le nom si vous le souhaitez, puis appuyez sur « Ajouter » dans le coin supérieur droit",
-          "L'icône de la calculatrice apparaît maintenant sur votre écran d'accueil et se lance en mode autonome"
+          "Appuyez sur le bouton Partager (la boîte avec une flèche pointant vers le haut) dans la barre d'outils de Safari en bas de l'écran",
+          "Faites défiler vers le bas dans la feuille de partage et appuyez sur 'Add to Home Screen'",
+          "Modifiez le nom si vous le souhaitez, puis appuyez sur 'Ajouter' dans le coin supérieur droit",
+          "L'icône du calculateur apparaît maintenant sur votre écran d'accueil et se lance en mode autonome"
         ]
       },
       {
-        "heading": "Comment installer sur ordinateur de bureau (Chrome ou Edge)",
-        "body": "Sur un ordinateur de bureau exécutant Chrome ou Edge, recherchez l'icône d'installation dans la barre d'adresse — elle ressemble à un moniteur avec une petite flèche de téléchargement. Cliquez dessus et confirmez l'invite. Sur Edge, l'option peut également apparaître sous le menu à trois points comme « Applications → Installer ce site en tant qu'application ». Une fois installée, la calculatrice apparaît dans votre Start menu (Windows) ou votre dossier Applications (Mac) comme toute application native."
+        "heading": "Comment installer sur desktop (Chrome ou Edge)",
+        "body": "Sur un ordinateur desktop exécutant Chrome ou Edge, recherchez l'icône d'installation dans la barre d'adresse. Elle ressemble à un moniteur avec une petite flèche de téléchargement. Cliquez dessus et confirmez l'invite. Sur Edge, l'option peut également apparaître sous le menu à trois points comme 'Apps → Install this site as an app'. Une fois installé, le calculateur apparaît dans votre Start menu (Windows) ou votre dossier Applications (Mac) comme toute application native."
       },
       {
         "heading": "Comment désinstaller",
-        "body": "La désinstallation est tout aussi facile que l'installation. Sur iOS, appuyez longuement sur l'icône de votre écran d'accueil et appuyez sur « Supprimer l'app ». Sur Android, appuyez longuement et faites glisser vers la zone de désinstallation, ou allez dans Paramètres → Applications. Sur Chrome pour ordinateur de bureau, ouvrez l'application, cliquez sur le menu à trois points dans la fenêtre de l'application et sélectionnez « Désinstaller Aspect Ratio Calculator ». Sur Edge, faites un clic droit sur l'application dans la barre des tâches ou le Start menu et choisissez Désinstaller."
+        "body": "La désinstallation est aussi simple que l'installation. Sur iOS, appuyez longuement sur l'icône de votre écran d'accueil et appuyez sur 'Remove App'. Sur Android, appuyez longuement et faites glisser vers la zone de désinstallation, ou allez dans Settings → Apps. Sur Chrome desktop, ouvrez l'application, cliquez sur le menu à trois points dans la fenêtre de l'application et sélectionnez 'Uninstall Aspect Ratio Calculator'. Sur Edge, faites un clic droit sur l'application dans la barre des tâches ou le Start menu et choisissez Désinstaller."
       }
     ],
-    "conclusion": "L'installation de l'Aspect Ratio Calculator prend environ dix secondes et ne coûte rien. Vous bénéficiez d'un accès hors ligne, d'un raccourci sur l'écran d'accueil et d'une expérience plus rapide et plus propre — sans App Store requis. Si vous utilisez régulièrement la calculatrice, l'installer est le moyen le plus pratique de l'avoir à portée de main."
+    "conclusion": "L'installation d'Aspect Ratio Calculator prend environ dix secondes et ne coûte rien. Vous bénéficiez d'un accès hors ligne, d'un raccourci sur l'écran d'accueil et d'une expérience plus rapide et plus propre, sans App Store requis. Si vous utilisez régulièrement le calculateur, l'installer est le moyen le plus pratique de l'avoir à portée de main."
   }
 };

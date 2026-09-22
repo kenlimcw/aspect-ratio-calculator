@@ -311,7 +311,6 @@
   "homePage": {
     "heroTitle": "Raport de Aspect",
     "heroTitleAccent": "Calculator",
-    "heroSubtitle": "Calculează dimensiuni pentru rețele sociale, video, fotografie și ecrane",
     "whatIsAspectRatio": "Ce este un Raport de Aspect?",
     "whatIsAspectRatioText": "Un raport de aspect descrie relația proporțională dintre lățime și înălțime. Scris ca L:Î (de exemplu, 16:9), îți indică forma unui ecran, a unei imagini sau a unui cadru video. Un raport 16:9 înseamnă că pentru fiecare 16 unități de lățime, înălțimea este de 9 unități — standardul pentru video HD și 4K. Un raport 1:1 este un pătrat perfect, utilizat pentru postările din feed-ul Instagram.",
     "commonAspectRatios": "Rapoarte de Aspect Comune",
@@ -352,7 +351,8 @@
     "tableRow1851UseCase": "Cinematografic plat",
     "tableRow1851Where": "Cinema cu lansare largă, IMAX digital",
     "tableRow219UseCase": "Monitoare ultrawide",
-    "tableRow219Where": "Gaming, display-uri ultrawide"
+    "tableRow219Where": "Gaming, display-uri ultrawide",
+    "heroSubtitle": "Calculează și convertește rapoarte de aspect pentru rețele sociale, video, fotografie și ecrane"
   },
   "ratioPage": {
     "aspectRatio": "Raport de aspect",

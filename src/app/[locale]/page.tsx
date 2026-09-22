@@ -4,6 +4,7 @@ import Calculator from "@/components/Calculator";
 import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
 import { LOCALE_SEGMENTS, getLocaleFromSegment, BASE_URL } from "@/i18n/config";
 import { getAlternates } from "@/lib/hreflang";
+import { CONTENT_REVISED } from "@/lib/content-revised";
 import { getSeoData } from "@/i18n/get-seo-data";
 import { getMessages } from "@/i18n/get-messages";
 
@@ -77,6 +78,10 @@ export default async function Home({ params }: Props) {
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Requires a modern web browser",
     "isAccessibleForFree": true,
+    // The date the calculator itself last changed, from the same hand-maintained
+    // file the sitemap reads. A homepage with no date in its structured data
+    // loses every recency comparison an assistant makes between two answers.
+    "dateModified": CONTENT_REVISED.home,
     "inLanguage": localeConfig.code,
     "screenshot": `${BASE_URL}/og-image.png`,
     "featureList": [

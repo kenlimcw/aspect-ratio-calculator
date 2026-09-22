@@ -311,7 +311,6 @@
   "homePage": {
     "heroTitle": "Relación de Aspecto",
     "heroTitleAccent": "Calculadora",
-    "heroSubtitle": "Calcule dimensiones para redes sociales, video, fotografía y pantallas",
     "whatIsAspectRatio": "¿Qué es una Relación de Aspecto?",
     "whatIsAspectRatioText": "Una relación de aspecto describe la relación proporcional entre el ancho y la altura. Escrita como W:H (por ejemplo, 16:9), indica la forma de una pantalla, imagen o fotograma de video. Una relación 16:9 significa que por cada 16 unidades de ancho, la altura es de 9 unidades — el estándar para video HD y 4K. Una relación 1:1 es un cuadrado perfecto, utilizada para publicaciones en el feed de Instagram.",
     "commonAspectRatios": "Relaciones de Aspecto Comunes",
@@ -352,7 +351,8 @@
     "tableRow1851UseCase": "Cine plano",
     "tableRow1851Where": "Cine de gran estreno, IMAX digital",
     "tableRow219UseCase": "Monitores ultraanchos",
-    "tableRow219Where": "Gaming, pantallas ultraanchas"
+    "tableRow219Where": "Gaming, pantallas ultraanchas",
+    "heroSubtitle": "Calcular y convertir relaciones de aspecto para redes sociales, video, fotografía y pantallas"
   },
   "ratioPage": {
     "aspectRatio": "Relación de Aspecto",

@@ -311,7 +311,6 @@
   "homePage": {
     "heroTitle": "宽高比",
     "heroTitleAccent": "计算器",
-    "heroSubtitle": "计算社交媒体、视频、摄影和屏幕的尺寸",
     "whatIsAspectRatio": "什么是宽高比？",
     "whatIsAspectRatioText": "宽高比描述了宽度和高度之间的比例关系。它以 W:H 的形式表示（例如 16:9），用于说明屏幕、图像或视频帧的形状。16:9 的比例意味着每 16 个单位的宽度对应 9 个单位的高度——这是 HD 和 4K 视频的标准。1:1 的比例是完美的正方形，用于 Instagram 动态帖子。",
     "commonAspectRatios": "常用宽高比",
@@ -352,7 +351,8 @@
     "tableRow1851UseCase": "影院标准宽银幕",
     "tableRow1851Where": "广泛发行的电影、IMAX 数字影院",
     "tableRow219UseCase": "超宽显示器",
-    "tableRow219Where": "游戏、超宽显示屏"
+    "tableRow219Where": "游戏、超宽显示屏",
+    "heroSubtitle": "计算和转换适用于社交媒体、视频、摄影和屏幕的宽高比"
   },
   "ratioPage": {
     "aspectRatio": "宽高比",

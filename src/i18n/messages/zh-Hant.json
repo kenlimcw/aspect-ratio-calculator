@@ -311,7 +311,6 @@
   "homePage": {
     "heroTitle": "長寬比",
     "heroTitleAccent": "計算機",
-    "heroSubtitle": "計算社群媒體、影片、攝影和螢幕的尺寸",
     "whatIsAspectRatio": "什麼是長寬比？",
     "whatIsAspectRatioText": "長寬比描述了寬度與高度之間的比例關係。以 W:H 形式書寫（例如 16:9），它能告訴您螢幕、圖像或影片影格的形狀。16:9 的比例表示每 16 個寬度單位，高度為 9 個單位 — 這是 HD 和 4K 影片的標準。1:1 的比例是完美的正方形，用於 Instagram 貼文。",
     "commonAspectRatios": "常用長寬比",
@@ -352,7 +351,8 @@
     "tableRow1851UseCase": "影院平面",
     "tableRow1851Where": "廣泛發行電影、IMAX 數位",
     "tableRow219UseCase": "超寬顯示器",
-    "tableRow219Where": "遊戲、超寬顯示器"
+    "tableRow219Where": "遊戲、超寬顯示器",
+    "heroSubtitle": "計算並轉換社群媒體、影片、攝影和螢幕的長寬比"
   },
   "ratioPage": {
     "aspectRatio": "長寬比",
