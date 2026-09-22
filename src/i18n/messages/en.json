@@ -540,6 +540,8 @@
     "title": "About",
     "heading": "About the Aspect Ratio Calculator",
     "lead": "A free tool for working out aspect ratios and resizing to them without guesswork. No account, no upload, no cost.",
+    "purposeTitle": "Why this exists",
+    "purpose": "Aspect ratio sits underneath a lot of work that is not about aspect ratio. A photograph that needs cropping. A slide that has to fill a projector. A television bought for the kind of films you actually watch. A container that needs an exact height in code. In every one of those the decision is the same small piece of arithmetic, and getting it wrong shows immediately: something is too big, too small, soft, or surrounded by space that should not be there. Some of that you can fix by eye. Code you cannot — it wants a number. This site exists to make that decision quickly and then get out of the way.",
     "whatItDoesTitle": "What it does",
     "whatItDoes": "Three things. The calculator resizes a width or a height while holding a ratio fixed. Find-ratio takes any two dimensions and tells you the ratio they make, reduced to its simplest form. The Image Wizard takes an image, reads its dimensions automatically, and shows how it will crop on each major social platform.",
     "privacyTitle": "Images never leave your device",

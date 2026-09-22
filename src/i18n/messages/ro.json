@@ -549,7 +549,9 @@
     "maintenanceTitle": "Cum este menținut la zi",
     "maintenance": "Dimensiunile platformelor sociale se schimbă, așa că paginile platformelor sunt revizuite conform specificațiilor publicate de fiecare platformă în parte, în loc să fie copiate din alte ghiduri. Fiecare articol poartă data publicării sale, iar acea dată este modificată doar atunci când conținutul se schimbă efectiv.",
     "contactCta": "Ai găsit ceva greșit sau ceva lipsește?",
-    "contactLink": "Contactează-ne"
+    "contactLink": "Contactează-ne",
+    "purposeTitle": "Scopul acestui site",
+    "purpose": "Aspect ratio stă la baza multor activități care, în esență, nu se referă la aspect ratio. O fotografie care necesită decupare. O prezentare care trebuie să umple un proiector. Un televizor cumpărat pentru tipul de filme pe care le vizionezi de fapt. Un container care necesită o înălțime exactă în cod. În fiecare dintre aceste situații, decizia implică o simplă operație aritmetică, iar o greșeală se vede imediat: ceva este prea mare, prea mic, neclar, sau înconjurat de spațiu care nu ar trebui să existe. O parte din aceste probleme le poți rezolva cu ochiul liber. În cod, însă, nu poți face asta — el necesită un număr. Acest site există pentru a te ajuta să iei acea decizie rapid și apoi a nu mai sta în cale."
   },
   "contactPage": {
     "title": "Contact",

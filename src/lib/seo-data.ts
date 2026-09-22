@@ -912,6 +912,10 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         heading: "Aspect Ratio vs. Resolution",
         body: "Aspect ratio and resolution are related but not the same thing. Resolution refers to the total number of pixels (e.g., 1920×1080). Aspect ratio refers to the shape (e.g., 16:9). Two images can share the same aspect ratio but have completely different resolutions: 640×360 and 3840×2160 are both 16:9 but differ vastly in pixel count and quality.",
       },
+      {
+        heading: "Why It Is Worth Knowing",
+        body: "Aspect ratio is one of those things nobody notices until it is wrong, and then it is the only thing they can see. Photography, film, websites, magazines, packaging: a great deal of what reads as professional polish is simply the proportions being right. When they are not, you feel it before you can name it. Something is too big, too small, oddly soft, or floating in wasted space. Once you start noticing it you cannot stop, which is a slightly annoying gift to have been given.",
+      },
     ],
     conclusion:
       "The whole subject reduces to one habit: decide the shape before you decide the size. Ratio first, pixels second. Get that order right and the rest of it (cropping, letterboxing, the black bars, the blurry upload) mostly stops happening on its own.",
@@ -972,6 +976,10 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       {
         heading: "The Fastest Method: Use a Calculator",
         body: "Manually calculating aspect ratios is straightforward for round numbers, but quickly becomes tedious for irregular dimensions like 1847×923. Our free Aspect Ratio Calculator handles any width and height instantly. Enter your values and get the simplified ratio, decimal, closest standard match, and CSS values in one click.",
+      },
+      {
+        heading: "Why You Cannot Just Eyeball It",
+        body: "There is a point where judgement stops working. Nudging a photo around a page until it looks right is a perfectly good method, because the eye is the instrument the result will be judged by. Code is not like that. A CSS aspect-ratio, an export preset, a container height: each one takes a number, and the number is either correct or it is off by the single pixel that shows up as a hairline gap on a finished layout. Design you can adjust by feel. Sizes you have to calculate.",
       },
     ],
     conclusion:
@@ -1067,6 +1075,10 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         heading: "A Warning About Guides Like This One",
         body: "Every number here was correct when it was written and platforms change them without announcement. A guide is a starting point, not an authority: before a campaign that matters, check the platform's own help documentation, because that is the only version that updates when they do. The ratios in the last column are far more stable than the pixel dimensions beside them. 9:16 and 4:5 have outlived several rounds of spec changes, and building to the ratio rather than the pixel count is what stops this table going stale on you.",
       },
+      {
+        heading: "Decide the Shape Before You Shoot",
+        body: "Most of the pain in this guide is avoidable much earlier than people think. Choosing the frame before the shoot, rather than discovering it at upload, is the difference between deciding what gets cropped and letting a platform decide for you. It is also the cheapest edit available: reframing costs nothing before the shutter and costs a quarter of the picture afterwards.",
+      },
     ],
     conclusion:
       "Build to the ratio, not to the pixel count, and export larger than the target. Those two habits survive platform changes, which the exact numbers in these tables will not. Keep anything that has to be read well inside the frame, and check the platform's own documentation before anything you are paying for goes out.",
@@ -1129,6 +1141,10 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         heading: "What the Black Bars Are Costing You",
         body: "Showing 4:3 content on a 16:9 screen pillarboxes it, and the bars are not cosmetic: the picture occupies 12 of the screen's 16 units of width, so a quarter of the display is doing nothing. A 55-inch 16:9 television is 47.9 inches wide, so that is about 12 inches of black. This is the practical argument for shooting in the ratio you will publish in, rather than planning to fix it afterwards. There is no crop that recovers a quarter of the screen.",
       },
+      {
+        heading: "It Also Decides Which Television to Buy",
+        body: "This is not only a production question. If what you love is widescreen cinema, a 16:9 television will letterbox nearly everything you watch, because most theatrical films are wider than the set you are watching them on. If you mostly watch broadcast television and streaming drama, 16:9 is the exact shape that content is made in and almost nothing is wasted. The right screen is the one that matches the format you actually spend your evenings in, which is worth working out before you spend the money rather than after.",
+      },
     ],
     conclusion:
       "Shoot and design in 16:9 unless something specific pushes you elsewhere: an iPad-first audience, a legacy projector, an archive to match. The one thing worth avoiding is deciding late: both conversions cost a quarter of the frame, and which quarter you lose is a decision better made through a viewfinder than by a crop tool afterwards.",
@@ -1176,6 +1192,10 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       {
         heading: "DPI and Print Quality",
         body: "DPI (dots per inch) is only relevant for print. Screens ignore it entirely. For print: use 300 DPI for sharp photo prints, 150 DPI for acceptable quality, and 72–96 DPI for screen-only use. To calculate the pixel dimensions needed for a print: multiply the print size in inches by the DPI. For an 8×10 inch print at 300 DPI: 2400×3000 pixels.",
+      },
+      {
+        heading: "The Three Ways It Looks Wrong",
+        body: "A bad resize announces itself in one of three ways: too big, too small, or soft. The first two are framing problems, and framing problems can usually be fixed by moving something. The third cannot be. Softness is information that is no longer in the file, and no amount of adjustment puts it back. Knowing which of the three you are looking at is really a question about whether you are five minutes from done or starting again from the original.",
       },
     ],
     conclusion:
@@ -1225,6 +1245,10 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       {
         heading: "How to uninstall",
         body: "Uninstalling is just as easy as installing. On iOS, long-press the icon on your home screen and tap 'Remove App'. On Android, long-press and drag to the uninstall area, or go to Settings → Apps. On Chrome desktop, open the app, click the three-dot menu inside the app window, and select 'Uninstall Aspect Ratio Calculator'. On Edge, right-click the app in the taskbar or Start menu and choose Uninstall.",
+      },
+      {
+        heading: "Why Doing This Quickly Matters",
+        body: "Almost nobody sits down intending to do aspect ratio arithmetic. It comes up in the middle of something else: a file is the wrong shape, a container needs a height, a print is about to go out. It is always in the way of the thing you were actually doing. That is the entire design brief for this tool, and the reason it opens instantly and needs no account: understand the situation, make the decision, get back to work.",
       },
     ],
     conclusion:

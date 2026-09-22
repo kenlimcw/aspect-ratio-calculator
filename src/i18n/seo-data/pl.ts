@@ -1085,31 +1085,31 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
     "sections": [
       {
         "heading": "Co oznacza proporcja obrazu?",
-        "body": "Proporcja obrazu to proporcjonalny związek między szerokością a wysokością obrazu, ekranu lub klatki wideo. Zapisuje się ją jako dwie liczby oddzielone dwukropkiem, np. 16:9 lub 4:3. Pierwsza liczba to szerokość, a druga to wysokość. Proporcja 16:9 oznacza, że na każde 16 jednostek szerokości przypada 9 jednostek wysokości. Rzeczywisty rozmiar nie ma znaczenia. Obraz o wymiarach 160×90 pikseli i obraz o wymiarach 3840×2160 pikseli mają proporcje 16:9, ponieważ mają te same proporcje."
+        "body": "Proporcja obrazu to proporcjonalny związek między szerokością a wysokością obrazu, ekranu lub klatki wideo. Jest zapisywana jako dwie liczby oddzielone dwukropkiem, np. 16:9 lub 4:3. Pierwsza liczba to szerokość, a druga to wysokość. Proporcja 16:9 oznacza, że na każde 16 jednostek szerokości przypada 9 jednostek wysokości. Rzeczywisty rozmiar nie ma znaczenia. Obraz o wymiarach 160×90 pikseli i obraz o wymiarach 3840×2160 pikseli mają proporcje 16:9, ponieważ mają te same proporcje."
       },
       {
         "heading": "Dlaczego proporcja obrazu ma znaczenie?",
         "body": "Proporcja obrazu ma znaczenie zawsze, gdy wyświetlasz, drukujesz lub udostępniasz treści wizualne. Jeśli proporcja Twojego obrazu nie pasuje do proporcji wyświetlacza lub kontenera, dzieje się jedna z dwóch rzeczy:",
         "list": [
           "Letterboxing / Pillarboxing: pojawiają się czarne pasy, aby wypełnić pustą przestrzeń",
-          "Kadrowanie: obraz jest przycinany, aby pasował, a część treści zostaje utracona",
+          "Kadrowanie: obraz jest przycinany, aby pasował, i część treści zostaje utracona",
           "Rozciąganie: obraz jest zniekształcony, aby wypełnić klatkę (najmniej pożądane)"
         ]
       },
       {
-        "heading": "Typowe proporcje obrazu i ich zastosowania",
+        "heading": "Popularne proporcje obrazu i ich zastosowania",
         "body": "Różne branże i platformy ustandaryzowały różne proporcje obrazu. Oto najważniejsze z nich, które warto znać:",
         "table": {
           "headers": [
-            "Ratio",
-            "Decimal",
+            "Proporcja",
+            "Dziesiętna",
             "Typowe zastosowanie"
           ],
           "rows": [
             [
               "16:9",
               "1.78:1",
-              "YouTube, Netflix, TV, monitory, prezentacje"
+              "YouTube, Netflix, telewizory, monitory, prezentacje"
             ],
             [
               "9:16",
@@ -1139,7 +1139,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             [
               "2.39:1",
               "2.39:1",
-              "Filmy kinowe w formacie cinemascope"
+              "Filmy kinowe cinemascope"
             ]
           ]
         }
@@ -1151,14 +1151,18 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       {
         "heading": "Proporcja obrazu a rozdzielczość",
         "body": "Proporcja obrazu i rozdzielczość są ze sobą powiązane, ale nie są tym samym. Rozdzielczość odnosi się do całkowitej liczby pikseli (np. 1920×1080). Proporcja obrazu odnosi się do kształtu (np. 16:9). Dwa obrazy mogą mieć tę samą proporcję obrazu, ale zupełnie inną rozdzielczość: 640×360 i 3840×2160 mają proporcje 16:9, ale znacznie różnią się liczbą pikseli i jakością."
+      },
+      {
+        "heading": "Dlaczego warto to wiedzieć",
+        "body": "Proporcja obrazu to jedna z tych rzeczy, których nikt nie zauważa, dopóki nie jest źle, a wtedy jest to jedyna rzecz, którą widzą. Fotografia, film, strony internetowe, czasopisma, opakowania: duża część tego, co wygląda profesjonalnie, to po prostu właściwe proporcje. Kiedy tak nie jest, czujesz to, zanim potrafisz to nazwać. Coś jest za duże, za małe, dziwnie miękkie lub unosi się w zmarnowanej przestrzeni. Kiedy już zaczniesz to zauważać, nie możesz przestać, co jest nieco irytującym darem."
       }
     ],
-    "conclusion": "Cały temat sprowadza się do jednego nawyku: zdecyduj o kształcie, zanim zdecydujesz o rozmiarze. Najpierw proporcja, potem piksele. Jeśli zachowasz tę kolejność, reszta (kadrowanie, letterboxing, czarne pasy, rozmyte przesyłanie) w większości przestanie się dziać samoistnie."
+    "conclusion": "Cały temat sprowadza się do jednego nawyku: zdecyduj o kształcie, zanim zdecydujesz o rozmiarze. Najpierw proporcja, potem piksele. Ustal tę kolejność, a reszta (kadrowanie, letterboxing, czarne pasy, rozmyte przesyłanie) w większości przestanie się dziać sama."
   },
   "how-to-calculate-aspect-ratio": {
     "title": "Jak obliczyć proporcje obrazu: Kompletny przewodnik",
     "description": "Dowiedz się, jak krok po kroku obliczyć proporcje obrazu: używając metody GCD, wzoru i naszego darmowego kalkulatora online. Zawiera przykłady.",
-    "intro": "Umiejętność obliczania proporcji obrazu to podstawowa umiejętność dla każdego, kto pracuje z obrazami, wideo lub projektowaniem. Ten przewodnik obejmuje matematykę stojącą za tym, najszybsze metody ręczne oraz sposób korzystania z naszego darmowego kalkulatora dla natychmiastowych wyników.",
+    "intro": "Umiejętność obliczania proporcji obrazu to podstawowa umiejętność dla każdego, kto pracuje z obrazami, wideo lub projektowaniem. Ten przewodnik omawia matematykę stojącą za tym, najszybsze metody ręczne oraz sposób korzystania z naszego darmowego kalkulatora dla natychmiastowych wyników.",
     "sections": [
       {
         "heading": "Wzór na proporcje obrazu",
@@ -1226,7 +1230,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Jak znaleźć GCD bez kalkulatora",
-        "body": "Każda z powyższych metod zależy od znalezienia Największego Wspólnego Dzielnika, a jest to krok, który większość przewodników pomija. Niezawodnym sposobem jest algorytm Euklidesa, który ma ponad dwa tysiące lat i zajmuje około czterech kroków dla liczb o rozmiarach ekranu: podziel większą liczbę przez mniejszą, zachowaj resztę, a następnie powtórz z mniejszą liczbą i tą resztą, aż reszta wyniesie zero. Ostatnia niezerowa liczba to GCD. Dla 1920 i 1080: 1920 ÷ 1080 daje resztę 840; 1080 ÷ 840 daje resztę 240; 840 ÷ 240 daje resztę 120; 240 ÷ 120 daje resztę 0. GCD wynosi 120."
+        "body": "Każda z powyższych metod zależy od znalezienia Największego Wspólnego Dzielnika, a to jest krok, który większość przewodników pomija. Niezawodnym sposobem jest algorytm Euklidesa, który ma ponad dwa tysiące lat i zajmuje około czterech kroków dla liczb o rozmiarach ekranu: podziel większą liczbę przez mniejszą, zachowaj resztę, a następnie powtórz z mniejszą liczbą i tą resztą, aż reszta wyniesie zero. Ostatnia niezerowa liczba to GCD. Dla 1920 i 1080: 1920 ÷ 1080 daje resztę 840; 1080 ÷ 840 daje resztę 240; 840 ÷ 240 daje resztę 120; 240 ÷ 120 daje resztę 0. GCD wynosi 120."
       },
       {
         "heading": "Gdy liczby nie chcą się uprościć",
@@ -1234,7 +1238,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Dlaczego 1200 × 630 to nie 1.91:1",
-        "body": "Rozmiar obrazu Open Graph, o który prosi każda platforma społecznościowa, to 1200 × 630 i jest on prawie zawsze opisywany jako 1.91:1. Uruchom GCD, a otrzymasz 40:21, którego wartość dziesiętna to 1.9048. Liczba 1.91 to zaokrąglona etykieta, która się przyjęła, a nie rzeczywiste proporcje. Ma to znaczenie podczas skalowania: obliczanie nowej szerokości z 1.91 zamiast z 40:21 powoduje odchylenie o około jeden piksel przy szerokości 1200px i o cztery przy 4800px. Zawsze skaluj z proporcji całkowitych i zaokrąglaj tylko na końcu."
+        "body": "Rozmiar obrazu Open Graph, o który prosi każda platforma społecznościowa, to 1200 × 630 i jest on prawie zawsze opisywany jako 1.91:1. Uruchom GCD, a otrzymasz 40:21, którego wartość dziesiętna to 1.9048. Liczba 1.91 to zaokrąglona etykieta, która się przyjęła, a nie rzeczywiste proporcje. Ma to znaczenie podczas skalowania: obliczanie nowej szerokości z 1.91 zamiast z 40:21 powoduje odchylenie o około jeden piksel przy szerokości 1200px i o cztery przy 4800px. Zawsze skaluj z proporcji całkowitych i zaokrąglaj tylko raz na końcu."
       },
       {
         "heading": "Jak obliczyć brakujący wymiar",
@@ -1242,21 +1246,25 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Najszybsza metoda: Użyj kalkulatora",
-        "body": "Ręczne obliczanie proporcji obrazu jest proste dla liczb całkowitych, ale szybko staje się żmudne dla nieregularnych wymiarów, takich jak 1847×923. Nasz darmowy Kalkulator Proporcji Obrazu natychmiast obsługuje dowolną szerokość i wysokość. Wprowadź swoje wartości i uzyskaj uproszczone proporcje, wartość dziesiętną, najbliższe standardowe dopasowanie i wartości CSS jednym kliknięciem."
+        "body": "Ręczne obliczanie proporcji obrazu jest proste dla liczb całkowitych, ale szybko staje się żmudne dla nieregularnych wymiarów, takich jak 1847×923. Nasz darmowy Kalkulator Proporcji Obrazu natychmiast obsługuje dowolną szerokość i wysokość. Wprowadź swoje wartości i uzyskaj uproszczone proporcje, wartość dziesiętną, najbliższe standardowe dopasowanie oraz wartości CSS za jednym kliknięciem."
+      },
+      {
+        "heading": "Dlaczego nie możesz po prostu ocenić tego na oko",
+        "body": "Jest punkt, w którym ocena przestaje działać. Przesuwanie zdjęcia po stronie, aż będzie wyglądać dobrze, to doskonała metoda, ponieważ oko jest instrumentem, którym będzie oceniany wynik. Kod nie jest taki. Proporcje obrazu CSS, ustawienie eksportu, wysokość kontenera: każdy z nich przyjmuje liczbę, a liczba ta jest albo poprawna, albo różni się o jeden piksel, który pojawia się jako cienka linia na gotowym układzie. Projektowanie możesz dostosować na wyczucie. Rozmiary musisz obliczyć."
       }
     ],
-    "conclusion": "Dwie zasady obejmują prawie każdy przypadek. Upraszczaj za pomocą GCD, gdy liczby na to pozwalają, i wracaj do wartości dziesiętnej plus najbliższe standardowe proporcje, gdy nie. Zachowaj proporcje całkowite dla wszelkich obliczeń i zaokrąglaj tylko na samym końcu. Ten jeden nawyk zapobiega większości błędów o jeden piksel, które pojawiają się jako cienka szczelina w gotowym układzie."
+    "conclusion": "Dwie zasady obejmują prawie każdy przypadek. Upraszczaj za pomocą GCD, gdy liczby na to pozwalają, i wracaj do wartości dziesiętnej plus najbliższe standardowe proporcje, gdy nie. Zachowaj proporcje całkowite dla wszelkich obliczeń i zaokrąglaj tylko na samym końcu. Ten jeden nawyk zapobiega większości błędów o jeden piksel, które pojawiają się jako cienka linia na gotowym układzie."
   },
   "aspect-ratio-social-media-guide-2026": {
-    "title": "Rozmiary obrazów i proporcje na mediach społecznościowych: Kompletny przewodnik 2026",
-    "description": "Każdy rozmiar obrazu i proporcje na mediach społecznościowych na rok 2026: Instagram, YouTube, TikTok, X, LinkedIn, Facebook i Pinterest. Zachowaj ten przewodnik w zakładkach.",
+    "title": "Rozmiary i proporcje obrazów w mediach społecznościowych: Kompletny przewodnik 2026",
+    "description": "Każdy rozmiar i proporcje obrazu w mediach społecznościowych na rok 2026: Instagram, YouTube, TikTok, X, LinkedIn, Facebook i Pinterest. Zachowaj ten przewodnik w zakładkach.",
     "intro": "Platformy mediów społecznościowych mają własne zalecane wymiary obrazów, które regularnie się zmieniają. Użycie niewłaściwego rozmiaru oznacza, że Twoje obrazy zostaną przycięte, rozmyte lub źle wyświetlone. Ten przewodnik obejmuje każdą główną platformę na rok 2026.",
     "sections": [
       {
         "heading": "Dlaczego rozmiary obrazów mają znaczenie w mediach społecznościowych",
         "body": "Każda platforma ma inny układ kanału, obszar wyświetlania i algorytm kompresji. Obraz zoptymalizowany dla jednej platformy może wyglądać rozmycie, być przycięty lub rozciągnięty na innej. Przesyłanie obrazów w dokładnie zalecanych wymiarach zapewnia:",
         "list": [
-          "Brak nieoczekiwanego przycinania kluczowej zawartości",
+          "Brak nieoczekiwanego przycinania kluczowej treści",
           "Maksymalna ostrość — brak skalowania w górę przez platformę",
           "Szybsze czasy ładowania — prawidłowe rozmiary zmniejszają rozmiar pliku",
           "Lepsza wydajność w algorytmach rekomendacji"
@@ -1264,7 +1272,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Rozmiary obrazów na Instagramie 2026",
-        "body": "Instagram obsługuje trzy proporcje dla kanału, a także Stories i Reels. W przypadku postów w kanale, pionowy format 4:5 (1080×1350) zapewnia najwięcej pionowej przestrzeni, co jest pożądane na powierzchni, którą ludzie przewijają.",
+        "body": "Instagram obsługuje trzy proporcje dla postów w kanale, a także Stories i Reels. W przypadku postów w kanale, pionowy format 4:5 (1080×1350) zapewnia najwięcej pionowej przestrzeni, co jest pożądane na powierzchni, którą ludzie przewijają.",
         "table": {
           "headers": [
             "Format",
@@ -1335,7 +1343,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Rozmiary wideo TikTok 2026",
-        "body": "TikTok jest całkowicie pionowy — zawsze używaj proporcji 9:16 w rozmiarze 1080×1920 dla najlepszej jakości. Zachowaj kluczową zawartość w centrum kadru i z dala od dolnych 20%, gdzie pojawiają się napisy i elementy interfejsu użytkownika.",
+        "body": "TikTok jest całkowicie pionowy — zawsze używaj proporcji 9:16 w rozmiarze 1080×1920 dla najlepszej jakości. Kluczową treść umieszczaj na środku kadru i z dala od dolnych 20%, gdzie pojawiają się napisy i elementy interfejsu użytkownika.",
         "table": {
           "headers": [
             "Format",
@@ -1430,46 +1438,50 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Przesyłaj większe niż liczba w tabeli",
-        "body": "Każda platforma ponownie kompresuje to, co wysyłasz, i robi to lepiej, zaczynając od większej ilości danych. Przesłanie eksportu 1080 × 1350 z oryginalnego obrazu o szerokości 1080 pikseli nie daje koderowi nic do pracy; przesłanie wersji 2160 × 2700 tego samego obrazu i pozwolenie platformie na skalowanie w dół zazwyczaj wygląda wyraźnie czyściej w tej samej końcowej wielkości, szczególnie w przypadku tekstu i drobnych krawędzi. Wyjątkiem jest sytuacja, gdy platforma publikuje twarde maksimum. Szanuj to, a następnie zbliż się do niego jak najbardziej."
+        "body": "Każda platforma rekompresuje to, co wysyłasz, i robi to lepiej, zaczynając od większej ilości danych. Przesłanie eksportu 1080 × 1350 z oryginalnego obrazu o szerokości 1080 pikseli nie daje koderowi nic do pracy; przesłanie wersji 2160 × 2700 tego samego obrazu i pozwolenie platformie na skalowanie w dół zazwyczaj wygląda wyraźnie czyściej w tej samej końcowej wielkości, szczególnie w przypadku tekstu i drobnych krawędzi. Wyjątkiem jest sytuacja, gdy platforma publikuje twardy limit. Uszanuj to, a następnie zbliż się do niego jak najbardziej."
       },
       {
         "heading": "Jeśli możesz stworzyć tylko jeden zasób",
-        "body": "Stwórz go w proporcjach 4:5 w rozmiarze 1080 × 1350. Jest to najwyższy kształt, jaki akceptuje kanał Instagrama, co oznacza, że zajmuje najwięcej miejsca na ekranie, który daje Ci najmniej, i czysto się przycina: przycięcie do środka do 1:1 dla kwadratowego umieszczenia, lub do 1.91:1 dla karty linku, a obiekt pozostaje tam, gdzie go umieściłeś. Idąc w drugą stronę, zaczynając od kwadratu i próbując osiągnąć 4:5, oznacza wymyślanie obrazu, który nigdy nie został sfotografowany."
+        "body": "Stwórz go w proporcjach 4:5 w rozmiarze 1080 × 1350. Jest to najwyższy kształt akceptowany przez kanał Instagrama, co oznacza, że zajmuje najwięcej ekranu na powierzchni, która daje Ci najmniej, i czysto się przycina: przycięcie do środka do 1:1 dla kwadratowego umieszczenia, lub do 1.91:1 dla karty linku, a obiekt pozostaje tam, gdzie go umieściłeś. Idąc w drugą stronę, zaczynając od kwadratu i próbując osiągnąć 4:5, oznacza wymyślanie obrazu, który nigdy nie został sfotografowany."
       },
       {
         "heading": "Ostrzeżenie dotyczące przewodników takich jak ten",
-        "body": "Każda liczba tutaj była poprawna w momencie pisania, a platformy zmieniają je bez zapowiedzi. Przewodnik jest punktem wyjścia, a nie autorytetem: przed ważną kampanią sprawdź własną dokumentację pomocy platformy, ponieważ jest to jedyna wersja, która aktualizuje się wraz z nimi. Proporcje w ostatniej kolumnie są znacznie bardziej stabilne niż wymiary pikseli obok nich. 9:16 i 4:5 przetrwały kilka rund zmian specyfikacji, a budowanie w oparciu o proporcje, a nie liczbę pikseli, zapobiega przestarzałości tej tabeli."
+        "body": "Każda liczba tutaj była poprawna w momencie pisania, a platformy zmieniają je bez zapowiedzi. Przewodnik jest punktem wyjścia, a nie autorytetem: przed ważną kampanią sprawdź własną dokumentację pomocy platformy, ponieważ jest to jedyna wersja, która aktualizuje się, gdy platformy to robią. Proporcje w ostatniej kolumnie są znacznie bardziej stabilne niż wymiary pikseli obok nich. 9:16 i 4:5 przetrwały kilka rund zmian specyfikacji, a budowanie w oparciu o proporcje, a nie liczbę pikseli, zapobiega przestarzałości tej tabeli."
+      },
+      {
+        "heading": "Zdecyduj o kształcie przed zdjęciem",
+        "body": "Większości problemów opisanych w tym przewodniku można uniknąć znacznie wcześniej, niż ludzie myślą. Wybór kadru przed sesją zdjęciową, zamiast odkrywania go podczas przesyłania, to różnica między decydowaniem o tym, co zostanie przycięte, a pozwoleniem platformie na podjęcie decyzji za Ciebie. Jest to również najtańsza dostępna edycja: przekadrowanie nic nie kosztuje przed naciśnięciem migawki, a po niej kosztuje jedną czwartą wartości zdjęcia."
       }
     ],
-    "conclusion": "Twórz w oparciu o proporcje, a nie liczbę pikseli, i eksportuj większe niż cel. Te dwie nawyki przetrwają zmiany platform, czego nie zrobią dokładne liczby w tych tabelach. Zachowaj wszystko, co musi być dobrze czytelne, wewnątrz kadru i sprawdź własną dokumentację platformy, zanim cokolwiek, za co płacisz, zostanie opublikowane."
+    "conclusion": "Twórz w oparciu o proporcje, a nie liczbę pikseli, i eksportuj większe niż docelowe. Te dwie nawyki przetrwają zmiany platform, czego nie zrobią dokładne liczby w tych tabelach. Zachowaj wszystko, co musi być czytelne, dobrze wewnątrz kadru i sprawdź własną dokumentację platformy, zanim cokolwiek, za co płacisz, zostanie opublikowane."
   },
   "16-9-vs-4-3-aspect-ratio": {
-    "title": "16:9 vs 4:3 Aspect Ratio — Którego powinieneś użyć?",
-    "description": "Jasne porównanie proporcji obrazu 16:9 i 4:3: kiedy używać każdej z nich, ich historia, kluczowe różnice i przykłady rozmiarów pikseli.",
-    "intro": "16:9 i 4:3 to dwie najbardziej historycznie znaczące proporcje obrazu w wideo i fotografii. Jeśli kiedykolwiek widziałeś czarne pasy na ekranie, po bokach lub na górze i na dole, już zetknąłeś się z różnicą między nimi. Oto kompletne porównanie.",
+    "title": "Proporcje obrazu 16:9 vs 4:3 — Których powinieneś używać?",
+    "description": "Przejrzyste porównanie proporcji obrazu 16:9 i 4:3: kiedy używać każdej z nich, ich historia, kluczowe różnice i przykłady rozmiarów pikseli.",
+    "intro": "16:9 i 4:3 to dwie najbardziej historycznie znaczące proporcje obrazu w wideo i fotografii. Jeśli kiedykolwiek widziałeś czarne pasy na ekranie, po bokach lub na górze i na dole, to już zetknąłeś się z różnicą między nimi. Oto kompletne porównanie.",
     "sections": [
       {
         "heading": "Kluczowa różnica",
-        "body": "16:9 jest szerszy i bardziej prostokątny (proporcje 1.78:1), podczas gdy 4:3 jest bardziej kwadratowy (proporcje 1.33:1). Obraz 16:9 jest o około 33% szerszy niż obraz 4:3 o tej samej wysokości. Ta różnica może wydawać się niewielka, ale jest bardzo zauważalna na ekranie."
+        "body": "16:9 jest szerszy i bardziej prostokątny (stosunek 1.78:1), podczas gdy 4:3 jest bardziej kwadratowy (stosunek 1.33:1). Obraz 16:9 jest o około 33% szerszy niż obraz 4:3 o tej samej wysokości. Ta różnica może wydawać się niewielka, ale jest bardzo zauważalna na ekranie."
       },
       {
         "heading": "Historia: Skąd się wzięły?",
-        "body": "4:3 pojawiło się jako pierwsze, odpowiadając kształtowi wczesnych filmów kinowych 35mm, i pozostało standardem telewizyjnym przez większość XX wieku. 16:9 nie zostało odziedziczone po niczym. Zostało zaprojektowane. Pracując w SMPTE na początku lat 80., Kerns Powers wyciął prostokąty o równej powierzchni dla każdej używanej wówczas proporcji obrazu, od telewizyjnej 1.33:1 do kinowej 2.35:1, i nałożył je na siebie, centrując je. Każdy prostokąt mieścił się w jednym zewnętrznym pudełku i zawierał jedno wewnętrzne pudełko, a oba te pudełka były bliskie 1.77:1. Ta liczba jest niemal dokładnie średnią geometryczną skrajności: pierwiastek kwadratowy z 1.33 × 2.35 wynosi 1.77, a 16 ÷ 9 to 1.778. 16:9 to kształt, który marnuje najmniej ekranu, uśredniając wszystko, co ktoś mógłby na nim wyświetlić."
+        "body": "4:3 pojawiło się jako pierwsze, odpowiadając kształtowi wczesnych filmów kinowych 35mm, i pozostało standardem telewizyjnym przez większość XX wieku. 16:9 nie zostało odziedziczone po niczym. Zostało zaprojektowane. Pracując w SMPTE na początku lat 80., Kerns Powers wyciął prostokąty o równej powierzchni dla każdego używanego wówczas współczynnika proporcji, od telewizyjnego 1.33:1 do kinowego 2.35:1, i nałożył je na siebie, centrując je. Każdy prostokąt mieścił się w jednym zewnętrznym pudełku i zawierał jedno wewnętrzne pudełko, a oba te pudełka były bliskie 1.77:1. Ta liczba to prawie dokładnie średnia geometryczna skrajności: pierwiastek kwadratowy z 1.33 × 2.35 wynosi 1.77, a 16 ÷ 9 to 1.778. 16:9 to kształt, który marnuje najmniej miejsca na ekranie, uśredniając wszystko, co ktoś mógłby na nim wyświetlić."
       },
       {
         "heading": "Kiedy używać 16:9",
-        "body": "Użyj 16:9, gdy:",
+        "body": "Używaj 16:9, gdy:",
         "list": [
           "Tworzysz treści wideo dla YouTube, Netflix lub telewizji",
           "Tworzysz nowoczesne prezentacje (Google Slides, PowerPoint 2016 i nowsze domyślnie używają 16:9)",
           "Projektujesz dla monitorów panoramicznych i laptopów",
           "Nagrywasz wideo nowoczesnym smartfonem lub aparatem",
-          "Tworzysz miniatury YouTube"
+          "Tworzysz miniatury dla YouTube"
         ]
       },
       {
         "heading": "Kiedy używać 4:3",
-        "body": "Użyj 4:3, gdy:",
+        "body": "Używaj 4:3, gdy:",
         "list": [
           "Projektujesz dla wyświetlaczy iPad (które używają 4:3)",
           "Tworzysz prezentacje dla starszych projektorów",
@@ -1508,23 +1520,27 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Ile faktycznie kosztuje konwersja między nimi",
-        "body": "Obie konwersje kosztują dokładnie jedną czwartą obrazu, co jest więcej niż większość ludzi się spodziewa. Przejście z 16:9 na 4:3 przy tej samej wysokości oznacza przycięcie szerokości z 16 jednostek do 12, więc tracisz 25% kadru, a dzieje się to po bokach, gdzie często kadrowane są filmowane obiekty. Idąc w drugą stronę, z 4:3 na 16:9 przy tej samej szerokości, przycina się wysokość z 12 jednostek do 9: również 25%, tym razem z góry i z dołu, gdzie znajdują się głowy i napisy. Żaden z kierunków nie jest zmianą rozmiaru. Jeśli treść ma znaczenie, przekadruj ją, zamiast pozwolić narzędziu do przycinania wybrać."
+        "body": "Obie konwersje kosztują dokładnie jedną czwartą obrazu, co jest więcej niż większość ludzi się spodziewa. Przejście z 16:9 na 4:3 przy tej samej wysokości oznacza przycięcie szerokości z 16 jednostek do 12, więc tracisz 25% kadru, a dzieje się to po bokach, gdzie często kadrowane są filmowane obiekty. Idąc w drugą stronę, z 4:3 na 16:9 przy tej samej szerokości, przycina wysokość z 12 jednostek do 9: również 25%, tym razem z góry i z dołu, gdzie znajdują się głowy i napisy. Żaden z kierunków nie jest zmianą rozmiaru. Jeśli treść ma znaczenie, przekadruj ją, zamiast pozwolić narzędziu do przycinania wybrać."
       },
       {
         "heading": "Ile kosztują Cię czarne pasy",
-        "body": "Wyświetlanie treści 4:3 na ekranie 16:9 powoduje pojawienie się czarnych pasów po bokach (pillarboxing), a pasy te nie są tylko kosmetyczne: obraz zajmuje 12 z 16 jednostek szerokości ekranu, więc jedna czwarta wyświetlacza nic nie robi. 55-calowy telewizor 16:9 ma 47.9 cala szerokości, więc to około 12 cali czerni. To jest praktyczny argument za nagrywaniem w proporcjach, w których będziesz publikować, zamiast planować poprawki później. Nie ma przycięcia, które odzyska jedną czwartą ekranu."
+        "body": "Wyświetlanie treści 4:3 na ekranie 16:9 powoduje pojawienie się czarnych pasów po bokach (pillarboxing), a pasy te nie są jedynie kosmetyczne: obraz zajmuje 12 z 16 jednostek szerokości ekranu, więc jedna czwarta wyświetlacza nic nie robi. 55-calowy telewizor 16:9 ma 47.9 cala szerokości, więc to około 12 cali czerni. To jest praktyczny argument za nagrywaniem w proporcjach, w których będziesz publikować, zamiast planować poprawki później. Nie ma przycięcia, które odzyska jedną czwartą ekranu."
+      },
+      {
+        "heading": "Decyduje to również o tym, jaki telewizor kupić",
+        "body": "To nie tylko kwestia produkcji. Jeśli kochasz kino panoramiczne, telewizor 16:9 będzie wyświetlał prawie wszystko, co oglądasz, z czarnymi pasami u góry i na dole (letterboxing), ponieważ większość filmów kinowych jest szersza niż ekran, na którym je oglądasz. Jeśli głównie oglądasz telewizję naziemną i seriale streamingowe, 16:9 to dokładnie taki kształt, w jakim tworzone są te treści i prawie nic się nie marnuje. Właściwy ekran to ten, który pasuje do formatu, w którym faktycznie spędzasz wieczory, co warto ustalić przed wydaniem pieniędzy, a nie po."
       }
     ],
-    "conclusion": "Nagrywaj i projektuj w 16:9, chyba że coś konkretnego skłania Cię do innego wyboru: publiczność preferująca iPad, starszy projektor, archiwum do dopasowania. Jedną rzeczą, której warto unikać, jest późne podejmowanie decyzji: obie konwersje kosztują jedną czwartą kadru, a to, którą ćwiartkę stracisz, to decyzja lepiej podjęta przez wizjer niż później za pomocą narzędzia do przycinania."
+    "conclusion": "Nagrywaj i projektuj w 16:9, chyba że coś konkretnego skłania Cię do innego wyboru: publiczność korzystająca głównie z iPad, starszy projektor, archiwum do dopasowania. Jedyną rzeczą, której warto unikać, jest późne podejmowanie decyzji: obie konwersje kosztują jedną czwartą kadru, a to, którą ćwiartkę stracisz, to decyzja lepiej podjęta przez wizjer niż przez narzędzie do przycinania po fakcie."
   },
   "how-to-resize-image-without-losing-quality": {
     "title": "Jak zmienić rozmiar obrazu bez utraty jakości",
     "description": "Poznaj techniki zmiany rozmiaru obrazów bez utraty jakości: zmniejszanie vs. powiększanie, najlepsze formaty plików, wyjaśnienie DPI i rekomendacje narzędzi.",
-    "intro": "Zmiana rozmiaru obrazu brzmi prosto, ale wykonana nieprawidłowo skutkuje rozmytymi, rozpikselowanymi lub zniekształconymi zdjęciami. Ten przewodnik wyjaśnia, kiedy i jak można zmieniać rozmiar obrazów bez widocznej utraty jakości.",
+    "intro": "Zmiana rozmiaru obrazu brzmi prosto, ale wykonana nieprawidłowo skutkuje rozmytymi, spikselowanymi lub zniekształconymi zdjęciami. Ten przewodnik wyjaśnia, kiedy i jak można zmieniać rozmiar obrazów bez widocznej utraty jakości.",
     "sections": [
       {
-        "heading": "Zmniejszanie (Downscaling) vs. Powiększanie (Upscaling)",
-        "body": "Istnieją dwa kierunki zmiany rozmiaru obrazu, a mają one bardzo różne implikacje dla jakości. Zmniejszanie (downscaling) (zmniejszanie obrazu) prawie zawsze zachowuje jakość, ponieważ po prostu odrzucasz piksele. Powiększanie (upscaling) (powiększanie obrazu) to miejsce, gdzie pojawiają się problemy z jakością, ponieważ oprogramowanie musi wymyślić dane pikseli, które nie istnieją w oryginale."
+        "heading": "Zmniejszanie vs. Powiększanie",
+        "body": "Istnieją dwa kierunki zmiany rozmiaru obrazu, które mają bardzo różne konsekwencje dla jakości. Zmniejszanie (zmniejszanie obrazu) prawie zawsze zachowuje jakość, ponieważ po prostu odrzucasz piksele. Powiększanie (zwiększanie obrazu) to miejsce, gdzie pojawiają się problemy z jakością, ponieważ oprogramowanie musi wymyślić dane pikseli, które nie istnieją w oryginale."
       },
       {
         "heading": "Złota zasada: Zawsze zaczynaj od najwyższej rozdzielczości",
@@ -1537,8 +1553,8 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         ]
       },
       {
-        "heading": "O ile można powiększyć (upscale)?",
-        "body": "Ogólnie rzecz biorąc: powiększanie (upscaling) do 110–120% jest zazwyczaj niezauważalne dla większości widzów. Powiększanie o 150–200% powoduje zauważalną miękkość. Powiększanie powyżej 200% zazwyczaj powoduje oczywistą pikselizację i rozmycie. Narzędzia do powiększania oparte na sztucznej inteligencji (takie jak Topaz Gigapixel, Adobe Firefly i podobne) mogą czasami dawać akceptowalne wyniki przy powiększaniu 2–4× poprzez inteligentne generowanie szczegółów."
+        "heading": "O ile można powiększyć?",
+        "body": "Ogólnie rzecz biorąc: powiększanie o 110–120% jest zazwyczaj niezauważalne dla większości widzów. Powiększanie o 150–200% powoduje zauważalną miękkość. Powiększanie powyżej 200% zazwyczaj powoduje wyraźną pikselizację i rozmycie. Narzędzia do powiększania oparte na sztucznej inteligencji (takie jak Topaz Gigapixel, Adobe Firefly i podobne) mogą czasami dawać akceptowalne wyniki przy powiększeniu 2–4× poprzez inteligentne generowanie szczegółów."
       },
       {
         "heading": "Zachowanie proporcji obrazu podczas zmiany rozmiaru",
@@ -1557,53 +1573,61 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       {
         "heading": "DPI i jakość druku",
         "body": "DPI (dots per inch) jest istotne tylko dla druku. Ekrany całkowicie je ignorują. Do druku: użyj 300 DPI dla ostrych wydruków zdjęć, 150 DPI dla akceptowalnej jakości i 72–96 DPI do użytku wyłącznie na ekranie. Aby obliczyć wymiary w pikselach potrzebne do wydruku: pomnóż rozmiar wydruku w calach przez DPI. Dla wydruku 8×10 cali przy 300 DPI: 2400×3000 pikseli."
+      },
+      {
+        "heading": "Trzy sposoby, w jakie wygląda to źle",
+        "body": "Źle zmieniony rozmiar objawia się na jeden z trzech sposobów: za duży, za mały lub rozmyty. Pierwsze dwa to problemy z kadrowaniem, a problemy z kadrowaniem można zazwyczaj naprawić, przesuwając coś. Trzeciego nie da się naprawić. Rozmycie to informacja, której już nie ma w pliku, i żadna ilość regulacji jej nie przywróci. Wiedza, na który z tych trzech problemów patrzysz, to tak naprawdę pytanie o to, czy jesteś pięć minut od zakończenia, czy zaczynasz od nowa od oryginału."
       }
     ],
-    "conclusion": "Zachowaj plik główny. Prawie każdy problem z jakością w tym przewodniku wynika z tego, że ktoś nie ma już oryginału: nie możesz zmniejszyć (downscale) czegoś, co już wyrzuciłeś, a żaden upscaler nie odzyska szczegółów, które nigdy nie zostały zarejestrowane. Eksportuj kopie, archiwizuj oryginał i zmieniaj jego rozmiar za każdym razem."
+    "conclusion": "Zachowaj plik główny. Prawie każdy problem z jakością w tym przewodniku wynika z tego, że ktoś nie ma już oryginału: nie możesz zmniejszyć rozmiaru czegoś, co już wyrzuciłeś, a żaden program do powiększania nie odzyska szczegółów, które nigdy nie zostały zarejestrowane. Eksportuj kopie, archiwizuj oryginał i zmieniaj jego rozmiar za każdym razem."
   },
   "install-aspect-ratio-calculator": {
     "title": "Dlaczego warto zainstalować Kalkulator Proporcji Obrazu? Dostęp offline, szybkość i więcej",
-    "description": "Zainstaluj Kalkulator Proporcji Obrazu jako aplikację, aby uzyskać natychmiastowy dostęp offline, skrót na ekranie głównym i doświadczenie bez rozpraszaczy — bez interfejsu przeglądarki, bez przeładowywania.",
+    "description": "Zainstaluj Kalkulator Proporcji Obrazu jako aplikację, aby uzyskać natychmiastowy dostęp offline, skrót na ekranie głównym i doświadczenie bez rozpraszania uwagi — bez interfejsu przeglądarki, bez przeładowywania.",
     "intro": "Możesz używać tego kalkulatora bezpośrednio z przeglądarki, ale zainstalowanie go jako aplikacji przenosi doświadczenie na wyższy poziom: natychmiastowe uruchamianie z ekranu głównego, pełne wsparcie offline i czysty interfejs bez nawigacji przeglądarki. Oto wszystko, co musisz wiedzieć.",
     "sections": [
       {
         "heading": "Co właściwie oznacza 'Zainstaluj'?",
-        "body": "Kiedy instalujesz aplikację internetową (zwaną również PWA, czyli Progressive Web App), Twoje urządzenie zapisuje skrót na ekranie głównym lub pulpicie i buforuje pliki aplikacji do użytku offline. Nie ma w tym udziału żadnego sklepu z aplikacjami i nic nie pobiera gigabajtów danych, ponieważ pliki są już w pamięci podręcznej przeglądarki. Instalacja po prostu promuje witrynę do doświadczenia aplikacji pierwszej klasy na Twoim urządzeniu."
+        "body": "Kiedy instalujesz aplikację internetową (nazywaną również PWA, czyli Progressive Web App), Twoje urządzenie zapisuje skrót na ekranie głównym lub pulpicie i buforuje pliki aplikacji do użytku offline. Nie ma w tym udziału żadnego App Store i nic nie pobiera gigabajtów danych, ponieważ pliki są już w pamięci podręcznej przeglądarki. Instalacja po prostu promuje witrynę do pełnoprawnego doświadczenia aplikacji na Twoim urządzeniu."
       },
       {
         "heading": "Korzyści z instalacji",
-        "body": "Zainstalowanie Kalkulatora Proporcji Obrazu daje kilka korzyści w porównaniu do używania go wyłącznie w przeglądarce:",
+        "body": "Zainstalowanie Kalkulatora Proporcji Obrazu daje kilka przewag nad używaniem go wyłącznie w przeglądarce:",
         "list": [
           "Dostęp offline: obliczenia działają nawet bez połączenia z internetem, przydatne na planie, w terenie lub w samolocie",
-          "Skrót na ekranie głównym: otwiera się jednym dotknięciem, nie ma potrzeby nawigowania do adresu URL ani otwierania nowej karty przeglądarki",
-          "Interfejs bez rozpraszaczy: bez paska adresu przeglądarki, kart czy paska narzędzi; kalkulator wypełnia ekran w czysty sposób",
-          "Szybsze ładowanie: buforowane pliki ładują się natychmiast z pamięci lokalnej zamiast czekać na odpowiedź sieci",
+          "Skrót na ekranie głównym: otwiera się jednym dotknięciem, nie trzeba nawigować do adresu URL ani otwierać karty przeglądarki",
+          "Interfejs bez rozpraszania uwagi: brak paska adresu przeglądarki, kart czy paska narzędzi; kalkulator czysto wypełnia ekran",
+          "Szybsze ładowanie: buforowane pliki ładują się natychmiast z lokalnej pamięci masowej, zamiast czekać na odpowiedź sieciową",
           "Zawsze aktualny: service worker pobiera aktualizacje cicho w tle, dzięki czemu zawsze masz najnowszą wersję"
         ]
       },
       {
         "heading": "Jak zainstalować na Chrome lub Android",
-        "body": "Na Android lub Chrome na komputerze, baner pojawia się automatycznie na dole strony z przyciskiem Zainstaluj. Dotknij lub kliknij Zainstaluj i potwierdź, gdy zostaniesz o to poproszony. Jeśli baner został odrzucony, poszukaj ikony instalacji (monitor z strzałką w dół ⊕) w pasku adresu przeglądarki na komputerze, lub dotknij menu z trzema kropkami na Android i wybierz 'Dodaj do ekranu głównego'."
+        "body": "Na Android lub Chrome na komputerze stacjonarnym, na dole strony automatycznie pojawia się baner z przyciskiem Zainstaluj. Stuknij lub kliknij Zainstaluj i potwierdź, gdy zostaniesz o to poproszony. Jeśli baner został odrzucony, poszukaj ikony instalacji (monitor z strzałką w dół ⊕) w pasku adresu przeglądarki na komputerze stacjonarnym, lub stuknij menu z trzema kropkami na Android i wybierz 'Dodaj do ekranu głównego'."
       },
       {
         "heading": "Jak zainstalować na iPhone lub iPad (Safari)",
         "body": "Safari na iOS nie wyświetla automatycznego banera instalacji, ale proces jest prosty:",
         "list": [
-          "Dotknij przycisku Udostępnij (kwadrat ze strzałką skierowaną w górę) na pasku narzędzi Safari na dole ekranu",
-          "Przewiń w dół w arkuszu udostępniania i dotknij 'Dodaj do ekranu początkowego'",
-          "Edytuj nazwę, jeśli chcesz, następnie dotknij 'Dodaj' w prawym górnym rogu",
-          "Ikona kalkulatora pojawi się teraz na Twoim ekranie głównym i uruchamia się w trybie samodzielnym"
+          "Stuknij przycisk Udostępnij (kwadrat ze strzałką skierowaną w górę) na pasku narzędzi Safari na dole ekranu",
+          "Przewiń w dół w arkuszu udostępniania i stuknij 'Dodaj do ekranu początkowego'",
+          "Edytuj nazwę, jeśli chcesz, a następnie stuknij 'Dodaj' w prawym górnym rogu",
+          "Ikona kalkulatora pojawi się teraz na Twoim ekranie głównym i uruchomi się w trybie samodzielnym"
         ]
       },
       {
         "heading": "Jak zainstalować na komputerze stacjonarnym (Chrome lub Edge)",
-        "body": "Na komputerze stacjonarnym z Chrome lub Edge, poszukaj ikony instalacji w pasku adresu. Wygląda jak monitor z małą strzałką pobierania. Kliknij ją i potwierdź monit. W Edge opcja może również pojawić się w menu z trzema kropkami jako 'Aplikacje → Zainstaluj tę witrynę jako aplikację'. Po zainstalowaniu kalkulator pojawia się w menu Start (Windows) lub folderze Aplikacje (Mac) jak każda natywna aplikacja."
+        "body": "Na komputerze stacjonarnym z systemem Chrome lub Edge, poszukaj ikony instalacji w pasku adresu. Wygląda jak monitor z małą strzałką pobierania. Kliknij ją i potwierdź monit. W Edge opcja może również pojawić się w menu z trzema kropkami jako 'Aplikacje → Zainstaluj tę witrynę jako aplikację'. Po zainstalowaniu kalkulator pojawi się w Twoim Start menu (Windows) lub folderze Aplikacje (Mac) jak każda natywna aplikacja."
       },
       {
         "heading": "Jak odinstalować",
-        "body": "Odinstalowanie jest tak samo łatwe jak instalacja. Na iOS, długo naciśnij ikonę na ekranie głównym i dotknij 'Usuń aplikację'. Na Android, długo naciśnij i przeciągnij do obszaru odinstalowywania, lub przejdź do Ustawienia → Aplikacje. Na Chrome na komputerze, otwórz aplikację, kliknij menu z trzema kropkami w oknie aplikacji i wybierz 'Odinstaluj Kalkulator Proporcji Obrazu'. W Edge, kliknij prawym przyciskiem myszy aplikację na pasku zadań lub w menu Start i wybierz Odinstaluj."
+        "body": "Odinstalowanie jest tak samo łatwe jak instalacja. Na iOS, naciśnij i przytrzymaj ikonę na ekranie głównym i stuknij 'Usuń aplikację'. Na Android, naciśnij i przytrzymaj, a następnie przeciągnij do obszaru odinstalowania, lub przejdź do Ustawienia → Aplikacje. Na Chrome na komputerze stacjonarnym, otwórz aplikację, kliknij menu z trzema kropkami w oknie aplikacji i wybierz 'Odinstaluj Kalkulator Proporcji Obrazu'. W Edge, kliknij prawym przyciskiem myszy aplikację na pasku zadań lub w Start menu i wybierz Odinstaluj."
+      },
+      {
+        "heading": "Dlaczego szybkość działania ma znaczenie",
+        "body": "Prawie nikt nie siada z zamiarem wykonywania obliczeń proporcji obrazu. Pojawia się to w trakcie czegoś innego: plik ma zły kształt, kontener potrzebuje wysokości, wydruk ma zostać wysłany. Zawsze przeszkadza to w tym, co faktycznie robisz. To jest cała koncepcja projektowa tego narzędzia i powód, dla którego otwiera się ono natychmiast i nie wymaga konta: zrozum sytuację, podejmij decyzję, wróć do pracy."
       }
     ],
-    "conclusion": "Zainstalowanie Kalkulatora Proporcji Obrazu zajmuje około dziesięciu sekund i nic nie kosztuje. Otrzymujesz dostęp offline, skrót na ekranie głównym oraz szybsze, czystsze doświadczenie, bez konieczności korzystania ze sklepu z aplikacjami. Jeśli regularnie korzystasz z kalkulatora, zainstalowanie go to najwygodniejszy sposób, aby mieć go zawsze pod ręką."
+    "conclusion": "Zainstalowanie Kalkulatora Proporcji Obrazu zajmuje około dziesięciu sekund i nic nie kosztuje. Otrzymujesz dostęp offline, skrót na ekranie głównym oraz szybsze, czystsze doświadczenie, bez konieczności korzystania z App Store. Jeśli regularnie korzystasz z kalkulatora, zainstalowanie go jest najwygodniejszym sposobem, aby mieć go zawsze pod ręką."
   }
 };
