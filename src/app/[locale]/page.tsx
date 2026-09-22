@@ -5,6 +5,7 @@ import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
 import { LOCALE_SEGMENTS, getLocaleFromSegment, BASE_URL } from "@/i18n/config";
 import { getAlternates } from "@/lib/hreflang";
 import { CONTENT_REVISED } from "@/lib/content-revised";
+import { ORG_ID } from "@/lib/schema";
 import { getSeoData } from "@/i18n/get-seo-data";
 import { getMessages } from "@/i18n/get-messages";
 
@@ -82,6 +83,10 @@ export default async function Home({ params }: Props) {
     // file the sitemap reads. A homepage with no date in its structured data
     // loses every recency comparison an assistant makes between two answers.
     "dateModified": CONTENT_REVISED.home,
+    // A date without an author is half a byline, and a model weighing two
+    // answers reads both. The calculator is the site's own work, so the
+    // organisation is genuinely its author — this is not a placeholder.
+    "author": { "@id": ORG_ID },
     "inLanguage": localeConfig.code,
     "screenshot": `${BASE_URL}/og-image.png`,
     "featureList": [
