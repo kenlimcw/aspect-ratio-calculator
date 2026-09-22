@@ -311,7 +311,6 @@
   "homePage": {
     "heroTitle": "Proporção de Aspecto",
     "heroTitleAccent": "Calculadora",
-    "heroSubtitle": "Calcule dimensões para redes sociais, vídeo, fotografia e telas",
     "whatIsAspectRatio": "O que é uma Proporção de Aspecto?",
     "whatIsAspectRatioText": "Uma proporção de aspecto descreve a relação proporcional entre largura e altura. Escrita como L:A (por exemplo, 16:9), ela indica o formato de uma tela, imagem ou quadro de vídeo. Uma proporção 16:9 significa que para cada 16 unidades de largura, a altura é de 9 unidades — o padrão para vídeo HD e 4K. Uma proporção 1:1 é um quadrado perfeito, usado para publicações no feed do Instagram.",
     "commonAspectRatios": "Proporções de Aspecto Comuns",
@@ -352,7 +351,8 @@
     "tableRow1851UseCase": "Teatral plano",
     "tableRow1851Where": "Cinema de grande lançamento, IMAX digital",
     "tableRow219UseCase": "Monitores ultrawide",
-    "tableRow219Where": "Jogos, telas ultrawide"
+    "tableRow219Where": "Jogos, telas ultrawide",
+    "heroSubtitle": "Calcular e converter proporções de aspecto para mídias sociais, vídeo, fotografia e telas"
   },
   "ratioPage": {
     "aspectRatio": "Proporção de Aspecto",

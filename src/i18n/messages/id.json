@@ -311,7 +311,6 @@
   "homePage": {
     "heroTitle": "Rasio Aspek",
     "heroTitleAccent": "Kalkulator",
-    "heroSubtitle": "Hitung dimensi untuk media sosial, video, fotografi, dan layar",
     "whatIsAspectRatio": "Apa itu Aspect Ratio?",
     "whatIsAspectRatioText": "Aspect Ratio menjelaskan hubungan proporsional antara lebar dan tinggi. Ditulis sebagai L:T (misalnya, 16:9), ini memberitahu Anda bentuk layar, gambar, atau bingkai video. Rasio 16:9 berarti untuk setiap 16 unit lebar, tingginya adalah 9 unit — standar untuk video HD dan 4K. Rasio 1:1 adalah persegi sempurna, digunakan untuk postingan feed Instagram.",
     "commonAspectRatios": "Aspect Ratio Umum",
@@ -352,7 +351,8 @@
     "tableRow1851UseCase": "Teatrikal datar",
     "tableRow1851Where": "Bioskop rilis luas, digital IMAX",
     "tableRow219UseCase": "Monitor ultrawide",
-    "tableRow219Where": "Gaming, layar ultrawide"
+    "tableRow219Where": "Gaming, layar ultrawide",
+    "heroSubtitle": "Hitung dan konversi rasio aspek untuk media sosial, video, fotografi, dan layar."
   },
   "ratioPage": {
     "aspectRatio": "Aspect Ratio",

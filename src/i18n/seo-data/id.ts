@@ -1079,30 +1079,30 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
 
 export const ARTICLE_DATA: Record<string, ArticleData> = {
   "what-is-aspect-ratio": {
-    "title": "Apa Itu Rasio Aspek? Panduan untuk Pemula",
+    "title": "Apa Itu Rasio Aspek? Panduan Pemula",
     "description": "Penjelasan yang jelas dan ramah pemula tentang rasio aspek: apa artinya, bagaimana penulisannya, mengapa penting untuk layar dan gambar, serta cara menggunakannya.",
-    "intro": "Rasio aspek adalah salah satu istilah yang terdengar teknis tetapi sebenarnya cukup sederhana setelah Anda memahaminya. Baik Anda sedang mengubah ukuran foto untuk Instagram, menyiapkan video YouTube, atau membeli monitor baru, rasio aspek menentukan bentuk gambar atau layar Anda. Panduan ini menjelaskan semua yang perlu Anda ketahui.",
+    "intro": "Rasio aspek adalah salah satu istilah yang terdengar teknis tetapi sebenarnya cukup sederhana setelah Anda memahaminya. Baik Anda mengubah ukuran foto untuk Instagram, menyiapkan video YouTube, atau membeli monitor baru, rasio aspek menentukan bentuk gambar atau layar Anda. Panduan ini menjelaskan semua yang perlu Anda ketahui.",
     "sections": [
       {
         "heading": "Apa Arti Rasio Aspek?",
-        "body": "Rasio aspek adalah hubungan proporsional antara lebar dan tinggi suatu gambar, layar, atau bingkai video. Ditulis sebagai dua angka yang dipisahkan oleh titik dua — misalnya, 16:9 atau 4:3. Angka pertama adalah lebar dan angka kedua adalah tinggi. Rasio 16:9 berarti untuk setiap 16 unit lebar, tingginya adalah 9 unit. Ukuran sebenarnya tidak penting — gambar 160×90 piksel dan gambar 3840×2160 piksel keduanya 16:9 karena memiliki proporsi yang sama."
+        "body": "Rasio aspek adalah hubungan proporsional antara lebar dan tinggi suatu gambar, layar, atau bingkai video. Ini ditulis sebagai dua angka yang dipisahkan oleh titik dua, seperti 16:9 atau 4:3. Angka pertama adalah lebar dan angka kedua adalah tinggi. Rasio 16:9 berarti bahwa untuk setiap 16 unit lebar, tingginya adalah 9 unit. Ukuran sebenarnya tidak menjadi masalah. Gambar 160×90 piksel dan gambar 3840×2160 piksel keduanya memiliki rasio 16:9 karena keduanya memiliki proporsi yang sama."
       },
       {
         "heading": "Mengapa Rasio Aspek Penting?",
-        "body": "Rasio aspek penting setiap kali Anda menampilkan, mencetak, atau membagikan konten visual. Jika rasio gambar Anda tidak sesuai dengan rasio layar atau wadah, salah satu dari dua hal ini terjadi:",
+        "body": "Rasio aspek penting setiap kali Anda menampilkan, mencetak, atau berbagi konten visual. Jika rasio gambar Anda tidak cocok dengan rasio tampilan atau wadah, salah satu dari dua hal ini akan terjadi:",
         "list": [
-          "Letterboxing / Pillarboxing — Bilah hitam muncul untuk mengisi ruang kosong",
-          "Pemotongan — Gambar dipotong agar pas, dan sebagian konten hilang",
-          "Peregangan — Gambar didistorsi untuk mengisi bingkai (paling tidak diinginkan)"
+          "Letterboxing / Pillarboxing: bilah hitam muncul untuk mengisi ruang kosong",
+          "Pemotongan (Cropping): gambar dipotong agar sesuai, dan sebagian konten hilang",
+          "Peregangan (Stretching): gambar terdistorsi untuk mengisi bingkai (paling tidak diinginkan)"
         ]
       },
       {
-        "heading": "Rasio Aspek Umum dan Di Mana Digunakan",
-        "body": "Industri dan platform yang berbeda telah menstandardisasi rasio aspek yang berbeda. Berikut yang paling penting untuk diketahui:",
+        "heading": "Rasio Aspek Umum dan Penggunaannya",
+        "body": "Berbagai industri dan platform telah membakukan rasio aspek yang berbeda. Berikut adalah yang paling penting untuk diketahui:",
         "table": {
           "headers": [
-            "Rasio",
-            "Desimal",
+            "Ratio",
+            "Decimal",
             "Penggunaan Umum"
           ],
           "rows": [
@@ -1119,7 +1119,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             [
               "1:1",
               "1.00:1",
-              "Postingan feed Instagram, foto profil, sampul album"
+              "Postingan feed Instagram, gambar profil, sampul album"
             ],
             [
               "4:5",
@@ -1139,49 +1139,49 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             [
               "2.39:1",
               "2.39:1",
-              "Film bioskop cinemascope"
+              "Film cinemascope teatrikal"
             ]
           ]
         }
       },
       {
         "heading": "Cara Menghitung Rasio Aspek",
-        "body": "Untuk menemukan rasio aspek gambar apa pun, bagi lebar dan tinggi dengan Faktor Persekutuan Terbesar (FPB) mereka. Misalnya, gambar 1920×1080 piksel: kedua angka habis dibagi 120, menghasilkan 16:9. Kalkulator gratis kami melakukan ini secara otomatis — cukup masukkan lebar dan tinggi Anda."
+        "body": "Untuk menemukan rasio aspek gambar apa pun, bagi lebar dan tinggi dengan Pembagi Persekutuan Terbesar (GCD) mereka. Misalnya, gambar berukuran 1920×1080 piksel: kedua angka dapat dibagi 120, menghasilkan 16:9. Kalkulator gratis kami melakukan ini secara otomatis — cukup masukkan lebar dan tinggi Anda."
       },
       {
         "heading": "Rasio Aspek vs. Resolusi",
-        "body": "Rasio aspek dan resolusi saling terkait tetapi bukan hal yang sama. Resolusi mengacu pada jumlah total piksel (mis. 1920×1080). Rasio aspek mengacu pada bentuk (mis. 16:9). Dua gambar dapat memiliki rasio aspek yang sama tetapi resolusi yang sangat berbeda — misalnya, 640×360 dan 3840×2160 keduanya 16:9 tetapi berbeda jauh dalam jumlah piksel dan kualitas."
+        "body": "Rasio aspek dan resolusi saling terkait tetapi bukan hal yang sama. Resolusi mengacu pada jumlah total piksel (misalnya, 1920×1080). Rasio aspek mengacu pada bentuk (misalnya, 16:9). Dua gambar dapat memiliki rasio aspek yang sama tetapi memiliki resolusi yang sangat berbeda: 640×360 dan 3840×2160 keduanya 16:9 tetapi sangat berbeda dalam jumlah piksel dan kualitas."
       }
     ],
-    "conclusion": "Memahami rasio aspek membantu Anda menghasilkan gambar dan video yang terlihat persis seperti yang diinginkan di setiap layar dan platform. Gunakan kalkulator rasio aspek gratis kami untuk mengonversi dimensi secara instan, mengidentifikasi rasio, dan mengubah ukuran gambar sambil mempertahankan proporsi yang benar."
+    "conclusion": "Seluruh topik ini bermuara pada satu kebiasaan: tentukan bentuknya sebelum Anda menentukan ukurannya. Rasio dulu, piksel kedua. Lakukan urutan itu dengan benar dan sisanya (pemotongan, letterboxing, bilah hitam, unggahan buram) sebagian besar akan berhenti terjadi dengan sendirinya."
   },
   "how-to-calculate-aspect-ratio": {
     "title": "Cara Menghitung Rasio Aspek: Panduan Lengkap",
-    "description": "Pelajari cara menghitung rasio aspek langkah demi langkah: menggunakan metode FPB, rumusnya, dan kalkulator online gratis kami. Termasuk contoh yang sudah dikerjakan.",
+    "description": "Pelajari cara menghitung rasio aspek langkah demi langkah: menggunakan metode GCD, rumus, dan kalkulator online gratis kami. Termasuk contoh-contoh yang dikerjakan.",
     "intro": "Mengetahui cara menghitung rasio aspek adalah keterampilan dasar bagi siapa pun yang bekerja dengan gambar, video, atau desain. Panduan ini mencakup matematika di baliknya, metode manual tercepat, dan cara menggunakan kalkulator gratis kami untuk hasil instan.",
     "sections": [
       {
         "heading": "Rumus Rasio Aspek",
-        "body": "Rasio aspek dari persegi panjang apa pun adalah: Lebar ÷ Tinggi. Untuk menyatakannya sebagai rasio W:H yang bersih (mis. 16:9 daripada 1,778:1), Anda perlu menemukan Faktor Persekutuan Terbesar (FPB) dari lebar dan tinggi, lalu membagi keduanya dengan FPB tersebut."
+        "body": "Rasio aspek dari setiap persegi panjang hanyalah: Lebar ÷ Tinggi. Untuk menyatakannya sebagai rasio W:H yang bersih (misalnya, 16:9 daripada 1.778:1), Anda perlu menemukan Pembagi Persekutuan Terbesar (GCD) dari lebar dan tinggi, lalu membagi keduanya dengan GCD tersebut."
       },
       {
         "heading": "Langkah demi Langkah: Cara Menemukan Rasio Aspek",
-        "body": "Berikut cara menghitung rasio aspek gambar apa pun secara manual:",
+        "body": "Berikut adalah cara menghitung rasio aspek gambar apa pun secara manual:",
         "list": [
-          "Langkah 1: Tulis lebar dan tinggi dalam piksel (mis. 1920 dan 1080)",
-          "Langkah 2: Temukan Faktor Persekutuan Terbesar (FPB) dari kedua angka. Untuk 1920 dan 1080, FPB-nya adalah 120.",
-          "Langkah 3: Bagi kedua angka dengan FPB. 1920 ÷ 120 = 16; 1080 ÷ 120 = 9.",
-          "Langkah 4: Tulis hasilnya sebagai W:H — dalam hal ini, 16:9."
+          "Langkah 1: Tuliskan lebar dan tinggi dalam piksel (misalnya, 1920 dan 1080)",
+          "Langkah 2: Temukan Pembagi Persekutuan Terbesar (GCD) dari kedua angka. Untuk 1920 dan 1080, GCD adalah 120.",
+          "Langkah 3: Bagi kedua angka dengan GCD. 1920 ÷ 120 = 16; 1080 ÷ 120 = 9.",
+          "Langkah 4: Tulis hasilnya sebagai W:H — dalam kasus ini, 16:9."
         ]
       },
       {
-        "heading": "Contoh yang Sudah Dikerjakan",
-        "body": "Berikut beberapa dimensi umum beserta rasio aspeknya:",
+        "heading": "Contoh-contoh yang Dikerjakan",
+        "body": "Berikut adalah beberapa dimensi umum dan rasio aspeknya:",
         "table": {
           "headers": [
             "Lebar",
             "Tinggi",
-            "FPB",
+            "GCD",
             "Rasio Aspek"
           ],
           "rows": [
@@ -1225,34 +1225,46 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         }
       },
       {
+        "heading": "Cara Menemukan GCD Tanpa Kalkulator",
+        "body": "Setiap metode di atas bergantung pada penemuan Pembagi Persekutuan Terbesar, dan itulah langkah yang dilewati sebagian besar panduan. Cara yang dapat diandalkan adalah algoritma Euclid, yang berusia lebih dari dua ribu tahun dan membutuhkan sekitar empat langkah untuk angka berukuran layar: bagi angka yang lebih besar dengan yang lebih kecil, simpan sisanya, lalu ulangi dengan angka yang lebih kecil dan sisa tersebut hingga sisanya nol. Angka non-nol terakhir adalah GCD. Untuk 1920 dan 1080: 1920 ÷ 1080 menyisakan 840; 1080 ÷ 840 menyisakan 240; 840 ÷ 240 menyisakan 120; 240 ÷ 120 menyisakan 0. GCD adalah 120."
+      },
+      {
+        "heading": "Ketika Angka Menolak untuk Disederhanakan",
+        "body": "Tidak setiap pasangan dimensi menghasilkan rasio yang rapi. 1847 × 923 memiliki GCD 1, jadi rasio \"sederhana\"-nya adalah 1847:923 — secara teknis benar dan tidak berguna. Ketika itu terjadi, berhentilah mencoba menyederhanakan dan lakukan dua hal sebagai gantinya: ambil desimalnya (1847 ÷ 923 = 2.001, jadi pada dasarnya adalah 2:1), dan temukan rasio standar terdekat yang benar-benar dapat Anda gunakan. Layar dan platform menerima rasio standar, bukan yang persis, dan perbedaan di bawah sekitar setengah persen tidak terlihat."
+      },
+      {
+        "heading": "Mengapa 1200 × 630 Bukan 1.91:1",
+        "body": "Ukuran gambar Open Graph yang diminta setiap platform sosial adalah 1200 × 630, dan hampir selalu digambarkan sebagai 1.91:1. Jalankan GCD dan Anda akan mendapatkan 40:21, yang desimalnya adalah 1.9048. Angka 1.91 adalah label yang dibulatkan yang melekat, bukan rasio sebenarnya. Ini penting saat Anda melakukan penskalaan: menghitung lebar baru dari 1.91 daripada dari 40:21 akan bergeser sekitar satu piksel pada lebar 1200px dan empat piksel pada 4800px. Selalu skalakan dari rasio bilangan bulat, dan bulatkan sekali di akhir."
+      },
+      {
         "heading": "Cara Menghitung Dimensi yang Hilang",
         "body": "Jika Anda mengetahui dimensi asli dan ingin menemukan ukuran baru dengan rasio yang sama, gunakan rumus ini: Tinggi Baru = (Tinggi Asli ÷ Lebar Asli) × Lebar Baru. Misalnya, untuk menemukan tinggi gambar 16:9 dengan lebar 1280px: (1080 ÷ 1920) × 1280 = 720px. Kalkulator kami melakukan ini secara otomatis di kedua arah."
       },
       {
         "heading": "Metode Tercepat: Gunakan Kalkulator",
-        "body": "Menghitung rasio aspek secara manual mudah untuk angka bulat, tetapi cepat menjadi membosankan untuk dimensi tidak teratur seperti 1847×923. Kalkulator Rasio Aspek gratis kami menangani lebar dan tinggi apa pun secara instan — masukkan nilai Anda dan dapatkan rasio yang disederhanakan, desimal, kecocokan standar terdekat, dan nilai CSS dalam satu klik."
+        "body": "Menghitung rasio aspek secara manual mudah untuk angka bulat, tetapi dengan cepat menjadi membosankan untuk dimensi tidak beraturan seperti 1847×923. Kalkulator Rasio Aspek gratis kami menangani lebar dan tinggi apa pun secara instan. Masukkan nilai Anda dan dapatkan rasio yang disederhanakan, desimal, padanan standar terdekat, dan nilai CSS dalam satu klik."
       }
     ],
-    "conclusion": "Menghitung rasio aspek mudah setelah Anda memahami metode FPB. Untuk penggunaan sehari-hari, kalkulator gratis kami akan menghemat waktu Anda dan memberikan informasi tambahan seperti analisis kualitas, ukuran cetak, dan ekspor CSS. Coba sekarang di aspect-ratio-calculator.com."
+    "conclusion": "Dua aturan mencakup hampir setiap kasus. Sederhanakan dengan GCD ketika angka memungkinkan, dan kembali ke desimal ditambah rasio standar terdekat ketika tidak memungkinkan. Pertahankan rasio bilangan bulat untuk setiap perhitungan dan bulatkan hanya di bagian paling akhir. Kebiasaan tunggal itu mencegah sebagian besar kesalahan satu piksel yang muncul sebagai celah tipis pada tata letak yang sudah jadi."
   },
   "aspect-ratio-social-media-guide-2026": {
     "title": "Ukuran Gambar & Rasio Aspek Media Sosial: Panduan Lengkap 2026",
-    "description": "Setiap ukuran gambar dan rasio aspek media sosial untuk 2026: Instagram, YouTube, TikTok, X, LinkedIn, Facebook, dan Pinterest. Simpan panduan ini di bookmark Anda.",
-    "intro": "Setiap platform media sosial memiliki dimensi gambar yang direkomendasikan sendiri, dan dimensi ini berubah secara berkala. Menggunakan ukuran yang salah berarti gambar Anda akan terpotong, buram, atau ditampilkan dengan buruk. Panduan ini mencakup setiap platform utama untuk 2026.",
+    "description": "Setiap ukuran gambar dan rasio aspek media sosial untuk tahun 2026: Instagram, YouTube, TikTok, X, LinkedIn, Facebook, dan Pinterest. Simpan panduan ini sebagai bookmark.",
+    "intro": "Setiap platform media sosial memiliki dimensi gambar yang direkomendasikan sendiri, dan dimensi tersebut berubah secara teratur. Menggunakan ukuran yang salah berarti gambar Anda akan terpotong, buram, atau ditampilkan dengan buruk. Panduan ini mencakup setiap platform utama untuk tahun 2026.",
     "sections": [
       {
         "heading": "Mengapa Ukuran Gambar Penting di Media Sosial",
-        "body": "Setiap platform memiliki tata letak feed, area tampilan, dan algoritma kompresi yang berbeda. Gambar yang dioptimalkan untuk satu platform mungkin terlihat buram, terpotong, atau teregang di platform lain. Mengunggah dengan dimensi yang tepat memastikan:",
+        "body": "Setiap platform memiliki tata letak feed, area tampilan, dan algoritma kompresi yang berbeda. Gambar yang dioptimalkan untuk satu platform mungkin terlihat buram, terpotong, atau meregang di platform lain. Mengunggah dengan dimensi yang direkomendasikan secara tepat memastikan:",
         "list": [
           "Tidak ada pemotongan konten utama yang tidak terduga",
-          "Ketajaman maksimum — tidak ada upscaling oleh platform",
-          "Waktu muat lebih cepat — ukuran yang tepat mengurangi ukuran file",
+          "Ketajaman maksimum — tidak ada peningkatan skala oleh platform",
+          "Waktu muat lebih cepat — ukuran yang benar mengurangi ukuran file",
           "Performa lebih baik dalam algoritma rekomendasi"
         ]
       },
       {
         "heading": "Ukuran Gambar Instagram 2026",
-        "body": "Instagram mendukung tiga rasio feed ditambah Stories dan Reels. Untuk postingan feed, potret 4:5 (1080×1350) memberi Anda ruang vertikal terbanyak — ideal untuk memaksimalkan visibilitas saat menggulir.",
+        "body": "Instagram mendukung tiga rasio feed ditambah Stories dan Reels. Untuk postingan feed, potret 4:5 (1080×1350) memberi Anda ruang vertikal paling banyak, yang Anda inginkan pada permukaan yang dilewati orang saat menggulir.",
         "table": {
           "headers": [
             "Format",
@@ -1290,7 +1302,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Dimensi YouTube 2026",
-        "body": "YouTube adalah platform 16:9. Desain thumbnail pada 1280×720 dengan teks tebal dan mudah dibaca — thumbnail Anda sering menjadi faktor penentu apakah seseorang mengklik.",
+        "body": "YouTube adalah platform 16:9. Desain thumbnail pada 1280×720 dengan teks tebal yang mudah dibaca. Thumbnail Anda seringkali menjadi faktor penentu apakah seseorang akan mengklik.",
         "table": {
           "headers": [
             "Format",
@@ -1314,7 +1326,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
               "16:9"
             ],
             [
-              "Banner Channel",
+              "Banner Saluran",
               "2560 × 1440",
               "16:9"
             ]
@@ -1323,7 +1335,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Ukuran Video TikTok 2026",
-        "body": "TikTok sepenuhnya vertikal — selalu gunakan 9:16 pada 1080×1920 untuk kualitas terbaik. Jaga konten utama di tengah bingkai dan jauhkan dari 20% bawah di mana teks dan elemen UI muncul.",
+        "body": "TikTok sepenuhnya vertikal — selalu gunakan 9:16 pada 1080×1920 untuk kualitas terbaik. Jaga agar konten utama berada di tengah bingkai dan jauh dari 20% bagian bawah tempat teks dan elemen UI muncul.",
         "table": {
           "headers": [
             "Format",
@@ -1346,7 +1358,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         "heading": "Referensi Cepat: Semua Platform",
-        "body": "Berikut tabel referensi cepat untuk ukuran gambar media sosial yang paling sering digunakan pada 2026:",
+        "body": "Berikut adalah tabel referensi cepat untuk ukuran gambar media sosial yang paling umum digunakan pada tahun 2026:",
         "table": {
           "headers": [
             "Platform",
@@ -1411,29 +1423,45 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             ]
           ]
         }
+      },
+      {
+        "heading": "Ukuran Sudah Benar tetapi Bingkai Masih Salah",
+        "body": "Mengunggah pada 1080 × 1920 tidak berarti seluruhnya terlihat. Setiap format vertikal menempatkan antarmuka di atas gambar Anda: baris profil dan keterangan di bagian bawah, bilah kemajuan dan tombol tutup di bagian atas, serta di Reels dan TikTok kolom tombol di satu sisi. Gambar adalah full-bleed; area yang dapat digunakan tidak. Margin kerja yang praktis adalah menjaga apa pun yang harus dibaca (teks, wajah, logo, harga) di dalam 70% bagian tengah secara vertikal dan jauh dari tepi belakang, lalu pratinjau di ponsel sebelum menerbitkan. Area aman tidak dipublikasikan sebagai spesifikasi dan bergerak, jadi perlakukan sebagai margin daripada pengukuran."
+      },
+      {
+        "heading": "Unggah Lebih Besar dari Angka di Tabel",
+        "body": "Setiap platform mengkompres ulang apa yang Anda kirim, dan ia melakukan pekerjaan yang lebih baik dimulai dari lebih banyak data. Mengunggah ekspor 1080 × 1350 dari gambar asli selebar 1080 tidak memberi encoder apa pun untuk dikerjakan; mengunggah versi 2160 × 2700 dari gambar yang sama dan membiarkan platform menurunkan skala biasanya terlihat lebih bersih pada ukuran akhir yang sama, terutama pada teks dan tepi halus. Pengecualian adalah di mana platform menerbitkan batas maksimum yang ketat. Hormati itu, lalu dekati batas tersebut sebisa mungkin."
+      },
+      {
+        "heading": "Jika Anda Hanya Bisa Membuat Satu Aset",
+        "body": "Buatlah 4:5 pada 1080 × 1350. Ini adalah bentuk tertinggi yang diterima feed Instagram, yang berarti ia mengklaim sebagian besar layar pada permukaan yang memberi Anda paling sedikit, dan ia memotong dengan rapi: potong tengah ke 1:1 untuk penempatan persegi, atau ke 1.91:1 untuk kartu tautan, dan subjek tetap di tempat Anda meletakkannya. Melakukan sebaliknya, memulai dari persegi dan mencoba mencapai 4:5, berarti menciptakan gambar yang tidak pernah difoto."
+      },
+      {
+        "heading": "Peringatan Mengenai Panduan Seperti Ini",
+        "body": "Setiap angka di sini benar saat ditulis dan platform mengubahnya tanpa pemberitahuan. Panduan adalah titik awal, bukan otoritas: sebelum kampanye yang penting, periksa dokumentasi bantuan platform itu sendiri, karena itu adalah satu-satunya versi yang diperbarui saat mereka melakukannya. Rasio di kolom terakhir jauh lebih stabil daripada dimensi piksel di sampingnya. 9:16 dan 4:5 telah bertahan melalui beberapa putaran perubahan spesifikasi, dan membangun berdasarkan rasio daripada jumlah piksel adalah yang mencegah tabel ini menjadi usang bagi Anda."
       }
     ],
-    "conclusion": "Simpan panduan ini di bookmark Anda dan gunakan Kalkulator Rasio Aspek gratis kami untuk memverifikasi atau mengonversi dimensi apa pun dalam hitungan detik. Masukkan ukuran gambar saat ini dan dimensi platform target untuk memeriksa kualitas, menghitung nilai CSS, dan membagikan hasilnya secara instan."
+    "conclusion": "Bangun berdasarkan rasio, bukan jumlah piksel, dan ekspor lebih besar dari target. Kedua kebiasaan ini bertahan dari perubahan platform, yang tidak akan dilakukan oleh angka-angka persis dalam tabel ini. Jaga agar apa pun yang harus dibaca berada di dalam bingkai, dan periksa dokumentasi platform itu sendiri sebelum apa pun yang Anda bayar dipublikasikan."
   },
   "16-9-vs-4-3-aspect-ratio": {
-    "title": "Rasio Aspek 16:9 vs 4:3 — Mana yang Harus Anda Gunakan?",
-    "description": "Perbandingan yang jelas antara rasio aspek 16:9 dan 4:3: kapan menggunakan masing-masing, sejarah di baliknya, perbedaan utama, dan contoh ukuran piksel.",
-    "intro": "16:9 dan 4:3 adalah dua rasio aspek yang paling bersejarah dalam video dan fotografi. Jika Anda pernah melihat bilah hitam di layar — baik di samping atau atas dan bawah — Anda sudah menemukan perbedaan di antara keduanya. Berikut perbandingan lengkapnya.",
+    "title": "16:9 vs 4:3 Rasio Aspek — Mana yang Seharusnya Anda Gunakan?",
+    "description": "Perbandingan jelas rasio aspek 16:9 dan 4:3: kapan menggunakan masing-masing, sejarah di baliknya, perbedaan utama, dan contoh ukuran piksel.",
+    "intro": "16:9 dan 4:3 adalah dua rasio aspek paling signifikan secara historis dalam video dan fotografi. Jika Anda pernah melihat bilah hitam di layar Anda, baik di samping atau di atas dan bawah, Anda sudah menemukan perbedaan di antara keduanya. Berikut adalah perbandingan lengkapnya.",
     "sections": [
       {
         "heading": "Perbedaan Utama",
-        "body": "16:9 lebih lebar dan lebih persegi panjang (rasio 1,78:1), sedangkan 4:3 lebih persegi (rasio 1,33:1). Gambar 16:9 sekitar 33% lebih lebar dari gambar 4:3 dengan tinggi yang sama. Perbedaan ini mungkin tampak kecil tetapi sangat terlihat di layar."
+        "body": "16:9 lebih lebar dan lebih persegi panjang (rasio 1.78:1), sedangkan 4:3 lebih persegi (rasio 1.33:1). Gambar 16:9 sekitar 33% lebih lebar daripada gambar 4:3 dengan tinggi yang sama. Perbedaan ini mungkin terlihat kecil tetapi sangat mencolok di layar."
       },
       {
-        "heading": "Sejarah: Dari Mana Mereka Berasal?",
-        "body": "4:3 adalah standar televisi asli, diadopsi pada tahun 1930-an karena sangat cocok dengan rasio aspek film gambar bergerak 35mm pada masa itu. 16:9 diperkenalkan pada akhir 1980-an sebagai standar layar lebar kompromi yang bisa menampilkan konten TV 4:3 (dengan bilah samping kecil) dan konten sinema 2.39:1 (dengan bilah atas/bawah kecil) dengan ruang hitam minimal. ITU mengadopsi 16:9 sebagai standar HDTV pada tahun 1987."
+        "heading": "Sejarah: Dari Mana Asalnya?",
+        "body": "4:3 muncul lebih dulu, sesuai dengan bentuk film gambar bergerak 35mm awal, dan tetap menjadi standar televisi sepanjang sebagian besar abad kedua puluh. 16:9 tidak diwarisi dari apa pun. Itu direkayasa. Bekerja di SMPTE pada awal 1980-an, Kerns Powers memotong persegi panjang dengan luas yang sama untuk setiap rasio aspek yang digunakan saat itu, dari televisi 1.33:1 hingga sinema 2.35:1, dan menumpuknya terpusat satu sama lain. Setiap persegi panjang pas di dalam satu kotak luar dan berisi satu kotak dalam, dan kedua kotak tersebut mendekati 1.77:1. Angka itu hampir persis rata-rata geometris dari ekstrem: akar kuadrat dari 1.33 × 2.35 adalah 1.77, dan 16 ÷ 9 adalah 1.778. 16:9 adalah bentuk yang paling sedikit membuang ruang layar, rata-rata di semua hal yang mungkin ingin ditampilkan siapa pun di atasnya."
       },
       {
         "heading": "Kapan Menggunakan 16:9",
         "body": "Gunakan 16:9 ketika:",
         "list": [
           "Membuat konten video untuk YouTube, Netflix, atau televisi",
-          "Membuat presentasi modern (Google Slides, PowerPoint 2016 dan setelahnya default ke 16:9)",
+          "Membuat presentasi modern (Google Slides, PowerPoint 2016 dan yang lebih baru secara default menggunakan 16:9)",
           "Mendesain untuk monitor dan laptop layar lebar",
           "Merekam video dengan smartphone atau kamera modern",
           "Membuat thumbnail YouTube"
@@ -1445,14 +1473,14 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         "list": [
           "Mendesain untuk layar iPad (yang menggunakan 4:3)",
           "Membuat presentasi untuk proyektor lama",
-          "Menyesuaikan dengan konten video lama",
-          "Mencetak pada proporsi fotografi standar (beberapa kamera)",
+          "Mencocokkan konten video lama",
+          "Mencetak dengan proporsi fotografi standar (beberapa kamera)",
           "Bekerja dengan rekaman CCTV atau pengawasan"
         ]
       },
       {
         "heading": "Perbandingan Ukuran Piksel",
-        "body": "Berikut resolusi umum untuk kedua rasio pada hitungan megapiksel yang setara:",
+        "body": "Berikut adalah resolusi umum untuk kedua rasio pada jumlah megapiksel yang setara:",
         "table": {
           "headers": [
             "Kualitas",
@@ -1477,97 +1505,105 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
             ]
           ]
         }
+      },
+      {
+        "heading": "Berapa Biaya Sebenarnya Mengonversi Antara Keduanya",
+        "body": "Kedua konversi memakan tepat seperempat gambar, yang lebih dari yang kebanyakan orang harapkan. Berpindah dari 16:9 ke 4:3 pada tinggi yang sama berarti memotong lebar dari 16 unit menjadi 12, sehingga Anda kehilangan 25% dari bingkai, dan itu terpotong dari samping, di mana subjek yang difilmkan sering dibingkai. Berpindah ke arah lain, 4:3 ke 16:9 pada lebar yang sama, memotong tinggi dari 12 unit menjadi 9: juga 25%, kali ini dari atas dan bawah, di mana kepala dan keterangan berada. Tidak ada arah yang merupakan perubahan ukuran. Jika konten penting, bingkai ulang daripada membiarkan alat potong memilih."
+      },
+      {
+        "heading": "Berapa Kerugian Anda Akibat Bilah Hitam",
+        "body": "Menampilkan konten 4:3 pada layar 16:9 akan membuatnya memiliki bilah hitam di samping (pillarbox), dan bilah tersebut bukan kosmetik: gambar menempati 12 dari 16 unit lebar layar, sehingga seperempat tampilan tidak melakukan apa-apa. Televisi 16:9 berukuran 55 inci memiliki lebar 47.9 inci, jadi itu sekitar 12 inci hitam. Ini adalah argumen praktis untuk merekam dalam rasio yang akan Anda publikasikan, daripada berencana untuk memperbaikinya nanti. Tidak ada pemotongan yang dapat mengembalikan seperempat layar."
       }
     ],
-    "conclusion": "Untuk sebagian besar konten video dan layar modern, 16:9 adalah pilihan yang tepat. Untuk konten yang difokuskan pada tablet atau kompatibilitas lama, 4:3 mungkin lebih sesuai. Jika ragu, gunakan Kalkulator Rasio Aspek gratis kami untuk mengonversi antara keduanya dan melihat pratinjau hasilnya secara instan."
+    "conclusion": "Rekam dan desain dalam 16:9 kecuali ada sesuatu yang spesifik mendorong Anda ke arah lain: audiens yang mengutamakan iPad, proyektor lama, arsip yang harus dicocokkan. Satu hal yang patut dihindari adalah memutuskan terlambat: kedua konversi memakan seperempat bingkai, dan seperempat mana yang Anda hilangkan adalah keputusan yang lebih baik dibuat melalui jendela bidik daripada oleh alat potong setelahnya."
   },
   "how-to-resize-image-without-losing-quality": {
     "title": "Cara Mengubah Ukuran Gambar Tanpa Kehilangan Kualitas",
     "description": "Pelajari teknik mengubah ukuran gambar tanpa kehilangan kualitas: downscaling vs upscaling, format file terbaik, penjelasan DPI, dan rekomendasi alat.",
-    "intro": "Mengubah ukuran gambar terdengar sederhana, tetapi jika dilakukan dengan salah, hasilnya adalah foto yang buram, berpiksel, atau terdistorsi. Panduan ini menjelaskan kapan dan bagaimana Anda bisa mengubah ukuran gambar tanpa kehilangan kualitas yang terlihat.",
+    "intro": "Mengubah ukuran gambar terdengar sederhana, tetapi jika dilakukan dengan tidak benar dapat menghasilkan foto yang buram, berpiksel, atau terdistorsi. Panduan ini menjelaskan kapan dan bagaimana Anda dapat mengubah ukuran gambar tanpa kehilangan kualitas yang terlihat.",
     "sections": [
       {
         "heading": "Downscaling vs. Upscaling",
-        "body": "Ada dua arah untuk mengubah ukuran gambar, dan keduanya memiliki implikasi kualitas yang sangat berbeda. Downscaling (memperkecil gambar) hampir selalu mempertahankan kualitas — Anda hanya membuang piksel. Upscaling (memperbesar gambar) adalah di mana masalah kualitas muncul, karena perangkat lunak harus membuat data piksel yang tidak ada dalam gambar asli."
+        "body": "Ada dua arah Anda dapat mengubah ukuran gambar, dan keduanya memiliki implikasi kualitas yang sangat berbeda. Downscaling (membuat gambar lebih kecil) hampir selalu mempertahankan kualitas, karena Anda hanya membuang piksel. Upscaling (membuat gambar lebih besar) adalah tempat masalah kualitas terjadi, karena perangkat lunak harus menciptakan data piksel yang tidak ada dalam aslinya."
       },
       {
-        "heading": "Aturan Emas: Selalu Mulai dari Resolusi Tertinggi",
-        "body": "Kehilangan kualitas sebagian besar tidak dapat dipulihkan. Jika Anda memulai dengan gambar kecil dan membutuhkan yang besar, Anda akan selalu melihat degradasi kualitas. Praktik terbaik adalah:",
+        "heading": "Aturan Emas: Selalu Mulai dengan Resolusi Tertinggi",
+        "body": "Kehilangan kualitas sebagian besar tidak dapat diubah. Jika Anda memulai dengan gambar kecil dan membutuhkan gambar besar, Anda akan selalu melihat penurunan kualitas. Praktik terbaik adalah:",
         "list": [
-          "Selalu simpan file asli resolusi tinggi Anda",
-          "Ekspor atau simpan salinan terpisah pada ukuran target",
-          "Jangan pernah menyimpan ulang JPEG terkompresi berkali-kali — setiap penyimpanan menurunkan kualitas",
+          "Selalu simpan file asli Anda yang beresolusi tinggi",
+          "Ekspor atau simpan salinan terpisah dengan ukuran target",
+          "Jangan pernah menyimpan ulang JPEG terkompresi berkali-kali, karena setiap penyimpanan menurunkan kualitas",
           "Ekspor dari file master setiap kali Anda membutuhkan ukuran baru"
         ]
       },
       {
-        "heading": "Seberapa Besar Anda Bisa Melakukan Upscale?",
-        "body": "Sebagai pedoman umum: upscaling hingga 110–120% umumnya tidak terlihat oleh sebagian besar penonton. Upscaling sebesar 150–200% menghasilkan kelembutan yang terlihat. Upscaling di atas 200% biasanya menghasilkan pikselisasi dan blur yang jelas. Alat upscaling berbasis AI (seperti Topaz Gigapixel, Adobe Firefly, dan sejenisnya) terkadang bisa menghasilkan hasil yang dapat diterima pada upscaling 2–4× dengan menghasilkan detail secara cerdas."
+        "heading": "Seberapa Banyak Anda Bisa Melakukan Upscale?",
+        "body": "Sebagai pedoman umum: upscaling hingga 110–120% umumnya tidak terlihat oleh sebagian besar pemirsa. Upscaling sebesar 150–200% menghasilkan kelembutan yang terlihat. Upscaling di atas 200% biasanya menghasilkan pikselasi dan keburaman yang jelas. Alat upscaling berbasis AI (seperti Topaz Gigapixel, Adobe Firefly, dan yang serupa) terkadang dapat menghasilkan hasil yang dapat diterima pada upscaling 2–4× dengan menghasilkan detail secara cerdas."
       },
       {
         "heading": "Mempertahankan Rasio Aspek Saat Mengubah Ukuran",
-        "body": "Salah satu kesalahan kualitas paling umum adalah secara tidak sengaja mengubah rasio aspek saat mengubah ukuran — meregangkan atau menekan gambar. Selalu ubah ukuran secara proporsional dengan mengunci rasio aspek di alat pengeditan Anda. Kalkulator gratis kami membantu Anda menemukan tinggi target yang tepat untuk lebar baru apa pun (atau sebaliknya), memastikan perubahan ukuran Anda mempertahankan proporsi asli."
+        "body": "Salah satu kesalahan kualitas yang paling umum adalah secara tidak sengaja mengubah rasio aspek saat mengubah ukuran, meregangkan atau memipihkan gambar. Selalu ubah ukuran secara proporsional dengan mengunci rasio aspek di alat pengeditan Anda. Kalkulator gratis kami membantu Anda menemukan tinggi target yang benar untuk lebar baru apa pun (atau sebaliknya), memastikan perubahan ukuran Anda mempertahankan proporsi asli."
       },
       {
         "heading": "Format File Terbaik untuk Kualitas",
-        "body": "Format file secara signifikan memengaruhi kualitas setelah mengubah ukuran:",
+        "body": "Format file sangat memengaruhi kualitas setelah mengubah ukuran:",
         "list": [
-          "PNG — Kompresi lossless; ideal untuk grafis, ilustrasi, dan tangkapan layar di mana ketajaman penting",
-          "JPEG — Kompresi lossy; ideal untuk foto; atur kualitas ke 80–90% untuk keseimbangan ukuran/kualitas terbaik",
-          "WebP — Format modern yang mencapai kompresi lebih baik dari JPEG pada kualitas setara; didukung oleh semua browser modern",
-          "TIFF — Tidak terkompresi atau lossless; digunakan dalam alur kerja cetak dan fotografi profesional"
+          "PNG: kompresi lossless; ideal untuk grafik, ilustrasi, dan tangkapan layar di mana ketajaman penting",
+          "JPEG: kompresi lossy; ideal untuk foto; atur kualitas ke 80–90% untuk keseimbangan ukuran/kualitas terbaik",
+          "WebP: format modern yang mencapai kompresi lebih baik daripada JPEG pada kualitas yang setara; didukung oleh semua browser modern",
+          "TIFF: tidak terkompresi atau lossless; digunakan dalam alur kerja cetak dan fotografi profesional"
         ]
       },
       {
         "heading": "DPI dan Kualitas Cetak",
-        "body": "DPI (dots per inch) hanya relevan untuk cetak — layar mengabaikannya. Untuk cetak: gunakan 300 DPI untuk cetakan foto yang tajam, 150 DPI untuk kualitas yang dapat diterima, dan 72–96 DPI untuk penggunaan layar saja. Untuk menghitung dimensi piksel yang dibutuhkan untuk cetakan: kalikan ukuran cetak dalam inci dengan DPI. Untuk cetakan 8×10 inci pada 300 DPI: 2400×3000 piksel."
+        "body": "DPI (dots per inch) hanya relevan untuk cetak. Layar mengabaikannya sepenuhnya. Untuk cetak: gunakan 300 DPI untuk cetakan foto yang tajam, 150 DPI untuk kualitas yang dapat diterima, dan 72–96 DPI untuk penggunaan khusus layar. Untuk menghitung dimensi piksel yang dibutuhkan untuk cetakan: kalikan ukuran cetak dalam inci dengan DPI. Untuk cetakan 8×10 inci pada 300 DPI: 2400×3000 piksel."
       }
     ],
-    "conclusion": "Cara terbaik mengubah ukuran tanpa kehilangan kualitas adalah selalu melakukan downscale dari asli resolusi tinggi, mempertahankan rasio aspek, dan mengekspor dalam format yang sesuai. Gunakan Kalkulator Rasio Aspek kami untuk menemukan dimensi target yang tepat yang mempertahankan proporsi asli Anda — tanpa perlu menebak."
+    "conclusion": "Simpan file master. Hampir setiap masalah kualitas dalam panduan ini bermula dari seseorang yang tidak lagi memiliki file asli: Anda tidak dapat melakukan downscale dari sesuatu yang sudah Anda buang, dan tidak ada upscaler yang dapat memulihkan detail yang tidak pernah direkam. Ekspor salinan, arsipkan yang asli, dan ubah ukurannya dari sana setiap saat."
   },
   "install-aspect-ratio-calculator": {
-    "title": "Mengapa Menginstal Aspect Ratio Calculator? Akses Offline, Kecepatan & Lainnya",
-    "description": "Instal Aspect Ratio Calculator sebagai aplikasi untuk akses offline instan, pintasan layar utama, dan pengalaman bebas gangguan — tanpa UI browser, tanpa memuat ulang.",
-    "intro": "Anda dapat menggunakan kalkulator ini langsung dari browser Anda, tetapi menginstalnya sebagai aplikasi akan meningkatkan pengalaman — peluncuran instan dari layar utama Anda, dukungan offline penuh, dan antarmuka yang bersih tanpa navigasi browser yang mengganggu. Berikut adalah semua yang perlu Anda ketahui.",
+    "title": "Mengapa Menginstal Kalkulator Rasio Aspek? Akses Offline, Kecepatan & Lainnya",
+    "description": "Instal Kalkulator Rasio Aspek sebagai aplikasi untuk akses offline instan, pintasan layar utama, dan pengalaman bebas gangguan — tanpa UI browser, tanpa memuat ulang.",
+    "intro": "Anda dapat menggunakan kalkulator ini langsung dari browser Anda, tetapi menginstalnya sebagai aplikasi akan meningkatkan pengalaman: peluncuran instan dari layar utama Anda, dukungan offline penuh, dan antarmuka yang bersih tanpa navigasi browser yang mengganggu. Berikut adalah semua yang perlu Anda ketahui.",
     "sections": [
       {
         "heading": "Apa sebenarnya arti 'Instal'?",
-        "body": "Saat Anda menginstal aplikasi web (juga disebut PWA — Progressive Web App), perangkat Anda menyimpan pintasan ke layar utama atau desktop Anda dan menyimpan file aplikasi dalam cache untuk penggunaan offline. Tidak ada App Store yang terlibat dan tidak ada yang mengunduh data gigabyte — file-file tersebut sudah ada di cache browser Anda. Menginstal hanya meningkatkan situs menjadi pengalaman aplikasi kelas satu di perangkat Anda."
+        "body": "Ketika Anda menginstal aplikasi web (juga disebut PWA, atau Progressive Web App), perangkat Anda menyimpan pintasan ke layar utama atau desktop Anda dan menyimpan file aplikasi dalam cache untuk penggunaan offline. Tidak ada App Store yang terlibat dan tidak ada yang mengunduh gigabyte data, karena file-file tersebut sudah ada di cache browser Anda. Menginstal hanya mempromosikan situs tersebut menjadi pengalaman aplikasi kelas satu di perangkat Anda."
       },
       {
         "heading": "Manfaat menginstal",
-        "body": "Menginstal Aspect Ratio Calculator memberi Anda beberapa keuntungan dibandingkan hanya menggunakannya di browser:",
+        "body": "Menginstal Kalkulator Rasio Aspek memberi Anda beberapa keuntungan dibandingkan hanya menggunakannya di browser:",
         "list": [
-          "Akses offline — perhitungan berfungsi bahkan tanpa koneksi internet, berguna di lokasi syuting, di lapangan, atau di pesawat",
-          "Pintasan layar utama — terbuka dengan satu ketukan, tidak perlu menavigasi ke URL atau membuka tab browser",
-          "Antarmuka bebas gangguan — tanpa bilah alamat browser, tab, atau bilah alat; kalkulator memenuhi layar dengan bersih",
-          "Pemuatan lebih cepat — file yang di-cache dimuat secara instan dari penyimpanan lokal alih-alih menunggu respons jaringan",
-          "Selalu terbaru — service worker mengambil pembaruan secara diam-diam di latar belakang sehingga Anda selalu memiliki versi terbaru"
+          "Akses offline: perhitungan berfungsi bahkan tanpa koneksi internet, berguna di lokasi syuting, di lapangan, atau di pesawat",
+          "Pintasan layar utama: terbuka dengan satu ketukan, tidak perlu menavigasi ke URL atau membuka tab browser",
+          "Antarmuka bebas gangguan: tanpa bilah alamat browser, tab, atau bilah alat; kalkulator memenuhi layar dengan bersih",
+          "Pemuatan lebih cepat: file yang di-cache memuat secara instan dari penyimpanan lokal alih-alih menunggu respons jaringan",
+          "Selalu terbaru: service worker mengambil pembaruan secara diam-diam di latar belakang sehingga Anda selalu memiliki versi terbaru"
         ]
       },
       {
         "heading": "Cara menginstal di Chrome atau Android",
-        "body": "Di Android atau Chrome desktop, sebuah banner muncul secara otomatis di bagian bawah halaman dengan tombol Instal. Ketuk atau klik Instal dan konfirmasi saat diminta. Jika banner telah ditutup, cari ikon instal (monitor dengan panah ke bawah ⊕) di bilah alamat browser di desktop, atau ketuk menu tiga titik di Android dan pilih 'Tambahkan ke Layar Utama'."
+        "body": "Di Android atau Chrome desktop, spanduk akan muncul secara otomatis di bagian bawah halaman dengan tombol Instal. Ketuk atau klik Instal dan konfirmasi saat diminta. Jika spanduk telah ditutup, cari ikon instal (monitor dengan panah ke bawah ⊕) di bilah alamat browser di desktop, atau ketuk menu tiga titik di Android dan pilih 'Add to Home screen'."
       },
       {
         "heading": "Cara menginstal di iPhone atau iPad (Safari)",
-        "body": "Safari di iOS tidak menampilkan banner instal otomatis, tetapi prosesnya mudah:",
+        "body": "Safari di iOS tidak menampilkan spanduk instal otomatis, tetapi prosesnya mudah:",
         "list": [
           "Ketuk tombol Bagikan (kotak dengan panah menunjuk ke atas) di bilah alat Safari di bagian bawah layar",
-          "Gulir ke bawah di lembar berbagi dan ketuk 'Tambahkan ke Layar Utama'",
-          "Edit nama jika Anda mau, lalu ketuk 'Tambah' di sudut kanan atas",
+          "Gulir ke bawah di lembar berbagi dan ketuk 'Add to Home Screen'",
+          "Edit nama jika Anda mau, lalu ketuk 'Add' di sudut kanan atas",
           "Ikon kalkulator sekarang muncul di layar utama Anda dan diluncurkan dalam mode mandiri"
         ]
       },
       {
         "heading": "Cara menginstal di desktop (Chrome atau Edge)",
-        "body": "Di komputer desktop yang menjalankan Chrome atau Edge, cari ikon instal di bilah alamat — terlihat seperti monitor dengan panah unduh kecil. Klik dan konfirmasi perintahnya. Di Edge, opsi tersebut mungkin juga muncul di bawah menu tiga titik sebagai 'Aplikasi → Instal situs ini sebagai aplikasi'. Setelah terinstal, kalkulator muncul di Start menu Anda (Windows) atau folder Aplikasi (Mac) seperti aplikasi native lainnya."
+        "body": "Pada komputer desktop yang menjalankan Chrome atau Edge, cari ikon instal di bilah alamat. Ikon tersebut terlihat seperti monitor dengan panah unduh kecil. Klik dan konfirmasi perintahnya. Di Edge, opsi tersebut mungkin juga muncul di bawah menu tiga titik sebagai 'Apps → Install this site as an app'. Setelah terinstal, kalkulator muncul di Start menu Anda (Windows) atau folder Applications (Mac) seperti aplikasi native lainnya."
       },
       {
         "heading": "Cara menghapus instalasi",
-        "body": "Menghapus instalasi semudah menginstal. Di iOS, tekan lama ikon di layar utama Anda dan ketuk 'Hapus Aplikasi'. Di Android, tekan lama dan seret ke area hapus instalasi, atau buka Pengaturan → Aplikasi. Di Chrome desktop, buka aplikasi, klik menu tiga titik di dalam jendela aplikasi, dan pilih 'Hapus Instalasi Aspect Ratio Calculator'. Di Edge, klik kanan aplikasi di bilah tugas atau Start menu dan pilih Hapus Instalasi."
+        "body": "Menghapus instalasi sama mudahnya dengan menginstal. Di iOS, tekan lama ikon di layar utama Anda dan ketuk 'Remove App'. Di Android, tekan lama dan seret ke area hapus instalasi, atau buka Settings → Apps. Di Chrome desktop, buka aplikasi, klik menu tiga titik di dalam jendela aplikasi, dan pilih 'Uninstall Aspect Ratio Calculator'. Di Edge, klik kanan aplikasi di bilah tugas atau Start menu dan pilih Uninstall."
       }
     ],
-    "conclusion": "Menginstal Aspect Ratio Calculator membutuhkan waktu sekitar sepuluh detik dan tidak dikenakan biaya. Anda mendapatkan akses offline, pintasan layar utama, dan pengalaman yang lebih cepat, lebih bersih — tanpa memerlukan App Store. Jika Anda sering menggunakan kalkulator ini, menginstalnya adalah cara paling nyaman untuk selalu memilikinya di ujung jari Anda."
+    "conclusion": "Menginstal Kalkulator Rasio Aspek membutuhkan waktu sekitar sepuluh detik dan tidak dikenakan biaya. Anda mendapatkan akses offline, pintasan layar utama, dan pengalaman yang lebih cepat, lebih bersih, tanpa memerlukan App Store. Jika Anda sering menggunakan kalkulator, menginstalnya adalah cara paling nyaman untuk selalu memilikinya di ujung jari Anda."
   }
 };

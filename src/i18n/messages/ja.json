@@ -311,7 +311,6 @@
   "homePage": {
     "heroTitle": "アスペクト比",
     "heroTitleAccent": "計算ツール",
-    "heroSubtitle": "ソーシャルメディア、動画、写真、画面の寸法を計算します",
     "whatIsAspectRatio": "アスペクト比とは？",
     "whatIsAspectRatioText": "アスペクト比とは、幅と高さの比例関係を表すものです。W:H（例：16:9）と表記され、画面、画像、または動画フレームの形状を示します。16:9の比率は、幅が16単位に対して高さが9単位であることを意味し、HDや4K動画の標準です。1:1の比率は完全な正方形で、Instagramのフィード投稿に使用されます。",
     "commonAspectRatios": "一般的なアスペクト比",
@@ -352,7 +351,8 @@
     "tableRow1851UseCase": "劇場フラット",
     "tableRow1851Where": "ワイドリリース映画、IMAX digital",
     "tableRow219UseCase": "ウルトラワイドモニター",
-    "tableRow219Where": "ゲーム、ウルトラワイドディスプレイ"
+    "tableRow219Where": "ゲーム、ウルトラワイドディスプレイ",
+    "heroSubtitle": "ソーシャルメディア、動画、写真、画面向けのアスペクト比を計算・変換"
   },
   "ratioPage": {
     "aspectRatio": "アスペクト比",
