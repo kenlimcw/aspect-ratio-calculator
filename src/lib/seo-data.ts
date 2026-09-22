@@ -70,7 +70,7 @@ export const RATIO_DATA: Record<string, RatioData> = {
     description:
       "Everything about the 16:9 aspect ratio: common dimensions (720p, 1080p, 4K, 8K), use cases, and a free calculator. The standard for video, TV, and monitors.",
     explanation:
-      "16:9 (sixteen-to-nine) is the universally adopted widescreen aspect ratio for HD video, streaming, and modern displays. For every 16 units of width, the height is 9 units — producing a wide, cinematic rectangle. It replaced the older 4:3 standard in the early 2000s and is now the default for virtually all video content, monitors, and television broadcasts worldwide.",
+      "16:9 (sixteen-to-nine) is the universally adopted widescreen aspect ratio for HD video, streaming, and modern displays. For every 16 units of width, the height is 9 units, producing a wide, cinematic rectangle. It replaced the older 4:3 standard in the early 2000s and is now the default for virtually all video content, monitors, and television broadcasts worldwide.",
     useCases: [
       "YouTube videos and thumbnails",
       "Netflix, Disney+, and streaming platforms",
@@ -103,7 +103,7 @@ export const RATIO_DATA: Record<string, RatioData> = {
       },
       {
         q: "What is the 16:9 ratio for a 4K resolution?",
-        a: "4K UHD (Ultra High Definition) at 16:9 is 3840×2160 pixels — exactly four times the area of 1920×1080. Cinema 4K (DCI 4K) is 4096×2160, which is a slightly different ratio (1.9:1).",
+        a: "4K UHD (Ultra High Definition) at 16:9 is 3840×2160 pixels: exactly four times the area of 1920×1080. Cinema 4K (DCI 4K) is 4096×2160, which is a slightly different ratio (1.9:1).",
       },
     ],
     relatedRatios: ["4-3", "21-9", "9-16"],
@@ -119,7 +119,7 @@ export const RATIO_DATA: Record<string, RatioData> = {
     description:
       "Complete guide to the 9:16 aspect ratio: pixel dimensions, use cases for TikTok, Instagram Reels, YouTube Shorts, and a free calculator.",
     explanation:
-      "9:16 is the vertical (portrait) counterpart of 16:9 widescreen. It perfectly fills a smartphone screen held upright — making it the dominant format for short-form social video. TikTok, Instagram Reels, YouTube Shorts, and Snapchat all use 9:16 as their primary canvas.",
+      "9:16 is the vertical (portrait) counterpart of 16:9 widescreen. It perfectly fills a smartphone screen held upright, which makes it the dominant format for short-form social video. TikTok, Instagram Reels, YouTube Shorts, and Snapchat all use 9:16 as their primary canvas.",
     useCases: [
       "TikTok videos",
       "Instagram Reels and Stories",
@@ -248,7 +248,7 @@ export const RATIO_DATA: Record<string, RatioData> = {
     description:
       "The 4:5 aspect ratio for Instagram portrait posts: best pixel sizes, why it gets more feed space, and a free calculator.",
     explanation:
-      "4:5 is a portrait (taller than wide) ratio that takes up the maximum vertical space allowed by Instagram's feed — giving your image more screen real estate than a square or landscape post. At a ratio of 0.8:1, it is slightly wider than a 9:16 phone screen, making it ideal for portraits, product shots, and editorial photography.",
+      "4:5 is a portrait (taller than wide) ratio that takes up the maximum vertical space allowed by Instagram's feed, giving your image more screen real estate than a square or landscape post. At a ratio of 0.8:1, it is slightly wider than a 9:16 phone screen, making it ideal for portraits, product shots, and editorial photography.",
     useCases: [
       "Instagram feed posts (portrait — maximum height)",
       "Social media photography",
@@ -288,7 +288,7 @@ export const RATIO_DATA: Record<string, RatioData> = {
     description:
       "The 3:2 aspect ratio for DSLR cameras and print: common dimensions, 35mm film origins, and a free aspect ratio calculator.",
     explanation:
-      "3:2 originates from the 35mm film frame, which measures 36mm × 24mm — a 3:2 ratio. It remains the native ratio for most DSLR and mirrorless cameras, and maps directly to common print sizes such as 4×6 inches, 6×9 inches, and 12×18 inches.",
+      "3:2 originates from the 35mm film frame, which measures 36mm × 24mm, a 3:2 ratio. It remains the native ratio for most DSLR and mirrorless cameras, and maps directly to common print sizes such as 4×6 inches, 6×9 inches, and 12×18 inches.",
     useCases: [
       "DSLR and mirrorless camera sensors",
       "35mm film photography",
@@ -377,7 +377,7 @@ export const RATIO_DATA: Record<string, RatioData> = {
     faq: [
       {
         q: "What is the difference between 2:1 and 16:9?",
-        a: "A 2:1 ratio (2.0:1) is wider than 16:9 (1.78:1). A 2:1 image is more panoramic — for example, 2000×1000 pixels versus 1920×1080 at 16:9. 2:1 has more horizontal space relative to its height.",
+        a: "A 2:1 ratio (2.0:1) is wider than 16:9 (1.78:1). A 2:1 image is more panoramic: 2000×1000 pixels versus 1920×1080 at 16:9. 2:1 has more horizontal space relative to its height.",
       },
     ],
     relatedRatios: ["16-9", "21-9"],
@@ -444,11 +444,11 @@ export const RATIO_DATA: Record<string, RatioData> = {
     faq: [
       {
         q: "Is 2.39:1 the same as 2.40:1?",
-        a: "Practically yes, with a subtle distinction. The original SMPTE spec for anamorphic was 2.39:1 (after a 1970 revision from the historical 2.35:1). Many writers and Blu-ray labels round to 2.40:1 for readability. CSS, FFmpeg, and most film software accept either value — 2.39 / 1 and 2.40 / 1 differ by less than half a pixel at 1080p.",
+        a: "Practically yes, with a subtle distinction. The original SMPTE spec for anamorphic was 2.39:1 (after a 1970 revision from the historical 2.35:1). Many writers and Blu-ray labels round to 2.40:1 for readability. CSS, FFmpeg, and most film software accept either value, and 2.39 / 1 and 2.40 / 1 differ by less than half a pixel at 1080p.",
       },
       {
         q: "Why does anamorphic look different from a plain widescreen crop?",
-        a: "Optical anamorphic uses a special lens that horizontally squeezes the image during capture and un-squeezes it during projection. This produces distinctive oval bokeh, horizontal lens flares (the blue streak in many films), and slightly compressed faces in close-ups — aesthetic traits that pure digital cropping doesn't reproduce.",
+        a: "Optical anamorphic uses a special lens that horizontally squeezes the image during capture and un-squeezes it during projection. This produces distinctive oval bokeh, horizontal lens flares (the blue streak in many films), and slightly compressed faces in close-ups, aesthetic traits that pure digital cropping doesn't reproduce.",
       },
     ],
     relatedRatios: ["16-9", "2-1", "21-9"],
@@ -501,7 +501,7 @@ export const RATIO_DATA: Record<string, RatioData> = {
     description:
       "The 1.43:1 IMAX aspect ratio: native 70mm IMAX film, IMAX Digital, and the taller cinematic frames Christopher Nolan and Denis Villeneuve favour.",
     explanation:
-      "1.43:1 is the native aspect ratio of 15-perforation 70mm IMAX film and IMAX Digital projection. It's noticeably taller than standard widescreen — closer to a square than to a letterbox — which is why scenes shot in IMAX expand vertically on-screen when projected in a true IMAX theater. Films like Oppenheimer, Dunkirk, Interstellar, and Mission: Impossible use this format for select sequences.",
+      "1.43:1 is the native aspect ratio of 15-perforation 70mm IMAX film and IMAX Digital projection. It's noticeably taller than standard widescreen, closer to a square than to a letterbox — which is why scenes shot in IMAX expand vertically on-screen when projected in a true IMAX theater. Films like Oppenheimer, Dunkirk, Interstellar, and Mission: Impossible use this format for select sequences.",
     useCases: [
       "Native IMAX 70mm and IMAX Digital projection",
       "Premium large-format (PLF) theatrical sequences",
@@ -537,7 +537,7 @@ export const RATIO_DATA: Record<string, RatioData> = {
     description:
       "The 1.375:1 Academy ratio: the standard 35mm sound-era cinema aspect ratio from 1932 to the early 1950s, still used today for stylistic effect.",
     explanation:
-      "The Academy ratio (1.375:1, also written 11:8) was the standard 35mm sound film aspect ratio adopted by the Academy of Motion Picture Arts and Sciences in 1932 and used for nearly all theatrical features until widescreen formats arrived in the 1950s. It's slightly wider than 4:3 (1.33:1) to accommodate the optical soundtrack stripe on the film. Modern directors occasionally revive it for stylistic reasons — The Lighthouse, Ida, and First Cow are recent examples.",
+      "The Academy ratio (1.375:1, also written 11:8) was the standard 35mm sound film aspect ratio adopted by the Academy of Motion Picture Arts and Sciences in 1932 and used for nearly all theatrical features until widescreen formats arrived in the 1950s. It's slightly wider than 4:3 (1.33:1) to accommodate the optical soundtrack stripe on the film. Modern directors occasionally revive it for stylistic reasons: The Lighthouse, Ida and First Cow are recent examples.",
     useCases: [
       "Classic Hollywood films (1932–early 1950s)",
       "Stylistic revival films seeking a vintage feel",
@@ -589,11 +589,11 @@ export const RATIO_DATA: Record<string, RatioData> = {
     faq: [
       {
         q: "What is 1.66:1 in simpler numbers?",
-        a: "Exactly 5:3. Width is five units for every three units of height — slightly less wide than 16:9 (1.78:1), and slightly less than 1.85:1 American Flat. It's a useful 'in-between' ratio when you want widescreen feel without the full theatrical horizontal stretch.",
+        a: "Exactly 5:3. Width is five units for every three units of height, slightly less wide than 16:9 (1.78:1), and slightly less than 1.85:1 American Flat. It's a useful 'in-between' ratio when you want widescreen feel without the full theatrical horizontal stretch.",
       },
       {
         q: "Is Super 16mm the same as 1.66:1?",
-        a: "Yes, the Super 16 film gate is 12.52 × 7.41 mm, which works out to almost exactly 1.69:1 — commonly cropped to 1.66:1 in post for distribution. Many independent and BBC productions favoured Super 16 in the 1980s–2000s for its blend of film aesthetic and lower cost than 35mm.",
+        a: "Yes, the Super 16 film gate is 12.52 × 7.41 mm, which works out to almost exactly 1.69:1, commonly cropped to 1.66:1 in post for distribution. Many independent and BBC productions favoured Super 16 in the 1980s–2000s for its blend of film aesthetic and lower cost than 35mm.",
       },
     ],
     relatedRatios: ["16-9", "3-2", "4-3"],
@@ -631,7 +631,7 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
     faq: [
       {
         q: "What is the best Instagram post size in 2026?",
-        a: "For maximum feed visibility, use 1080×1350 pixels (4:5 ratio — portrait). This is the tallest format Instagram allows for feed posts and takes up the most screen space as users scroll.",
+        a: "For maximum feed visibility, use 1080×1350 pixels (4:5 ratio, portrait). This is the tallest format Instagram allows for feed posts and takes up the most screen space as users scroll.",
       },
       {
         q: "Can I post a 16:9 video to Instagram?",
@@ -699,7 +699,7 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
     ],
     tips: [
       "Always record and upload at 1080×1920 (9:16) for the best display quality",
-      "Keep key content in the centre of the frame — the bottom 20% is covered by captions and UI",
+      "Keep key content in the centre of the frame, because the bottom 20% is covered by captions and UI",
       "TikTok supports .mp4 and .mov formats; H.264 codec is recommended",
       "Use the TikTok text overlay tool sparingly — it sits on top of your content",
       "Bright lighting and high contrast visuals perform better on the algorithm",
@@ -739,7 +739,7 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
     tips: [
       "Use 1600×900 for landscape post images — it displays without cropping in the timeline",
       "Keep the centre 60% of the header banner safe for all devices",
-      "Profile pictures are displayed as circles — use a centred subject with no important content near the edges",
+      "Profile pictures are displayed as circles, so use a centred subject with no important content near the edges",
       "X compresses images — export at 100% quality JPEG to minimise visible compression",
       "For Twitter cards (link previews), use a 2:1 ratio (e.g., 1200×628) for large card format",
     ],
@@ -750,7 +750,7 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
       },
       {
         q: "What size is the X (Twitter) header banner?",
-        a: "The recommended X header size is 1500×500 pixels (3:1 ratio). Note that the banner is cropped differently on desktop vs. mobile — keep important content within the centre area.",
+        a: "The recommended X header size is 1500×500 pixels (3:1 ratio). Note that the banner is cropped differently on desktop vs. mobile, so keep important content within the centre area.",
       },
     ],
     relatedRatios: ["16-9", "1-1", "2-1"],
@@ -832,7 +832,7 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
     description:
       "Pinterest image dimensions for 2026: standard pins, idea pins, square pins, and profile photos. Get the right aspect ratio for maximum reach.",
     intro:
-      "Pinterest is a visual discovery platform where taller images (2:3 ratio) perform best — they take up more space in the feed. Here are the recommended dimensions for all Pinterest content types.",
+      "Pinterest is a visual discovery platform where taller images (2:3 ratio) perform best, because they take up more space in the feed. Here are the recommended dimensions for all Pinterest content types.",
     formats: [
       { type: "Standard Pin (Portrait)", width: 1000, height: 1500, ratio: "2:3", notes: "Recommended — best reach and engagement" },
       { type: "Square Pin", width: 1000, height: 1000, ratio: "1:1", notes: "Works well; less vertical space than portrait" },
@@ -843,7 +843,7 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
     tips: [
       "Use 1000×1500 (2:3) for standard pins — it is the sweet spot for feed visibility",
       "Avoid going taller than 1:2.1 ratio — Pinterest may cut off overly tall images",
-      "Add a text overlay to the upper-middle of the pin — avoid the bottom 100px where the source domain is displayed",
+      "Add a text overlay to the upper-middle of the pin, and avoid the bottom 100px where the source domain is displayed",
       "Save pins in JPEG for photos (max 20MB) or PNG for graphics with transparency",
       "Idea Pins (9:16) work differently from standard pins — they are more like Stories",
     ],
