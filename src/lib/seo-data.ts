@@ -877,15 +877,15 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
     sections: [
       {
         heading: "What Does Aspect Ratio Mean?",
-        body: "Aspect ratio is the proportional relationship between the width and height of an image, screen, or video frame. It is written as two numbers separated by a colon — for example, 16:9 or 4:3. The first number is the width and the second is the height. A 16:9 ratio means that for every 16 units of width, the height is 9 units. The actual size does not matter — a 160×90 pixel image and a 3840×2160 pixel image are both 16:9 because they share the same proportions.",
+        body: "Aspect ratio is the proportional relationship between the width and height of an image, screen, or video frame. It is written as two numbers separated by a colon, as in 16:9 or 4:3. The first number is the width and the second is the height. A 16:9 ratio means that for every 16 units of width, the height is 9 units. The actual size does not matter. A 160×90 pixel image and a 3840×2160 pixel image are both 16:9 because they share the same proportions.",
       },
       {
         heading: "Why Does Aspect Ratio Matter?",
         body: "Aspect ratio matters whenever you are displaying, printing, or sharing visual content. If the ratio of your image does not match the ratio of the display or container, one of two things happens:",
         list: [
-          "Letterboxing / Pillarboxing — Black bars appear to fill the empty space",
-          "Cropping — The image is cut to fit, and some content is lost",
-          "Stretching — The image is distorted to fill the frame (least desirable)",
+          "Letterboxing / Pillarboxing: black bars appear to fill the empty space",
+          "Cropping: the image is cut to fit, and some content is lost",
+          "Stretching: the image is distorted to fill the frame (least desirable)",
         ],
       },
       {
@@ -910,11 +910,11 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         heading: "Aspect Ratio vs. Resolution",
-        body: "Aspect ratio and resolution are related but not the same thing. Resolution refers to the total number of pixels (e.g., 1920×1080). Aspect ratio refers to the shape (e.g., 16:9). Two images can share the same aspect ratio but have completely different resolutions — for example, 640×360 and 3840×2160 are both 16:9 but differ vastly in pixel count and quality.",
+        body: "Aspect ratio and resolution are related but not the same thing. Resolution refers to the total number of pixels (e.g., 1920×1080). Aspect ratio refers to the shape (e.g., 16:9). Two images can share the same aspect ratio but have completely different resolutions: 640×360 and 3840×2160 are both 16:9 but differ vastly in pixel count and quality.",
       },
     ],
     conclusion:
-      "Understanding aspect ratio helps you produce images and videos that look exactly as intended on every screen and platform. Use our free aspect ratio calculator to instantly convert dimensions, identify ratios, and resize images while maintaining the correct proportions.",
+      "The whole subject reduces to one habit: decide the shape before you decide the size. Ratio first, pixels second. Get that order right and the rest of it (cropping, letterboxing, the black bars, the blurry upload) mostly stops happening on its own.",
   },
 
   "how-to-calculate-aspect-ratio": {
@@ -954,16 +954,28 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         },
       },
       {
+        heading: "How to Find the GCD Without a Calculator",
+        body: "Every method above depends on finding the Greatest Common Divisor, and that is the step most guides skip. The reliable way is Euclid's algorithm, which is over two thousand years old and takes about four steps for screen-sized numbers: divide the larger number by the smaller, keep the remainder, then repeat with the smaller number and that remainder until the remainder is zero. The last non-zero number is the GCD. For 1920 and 1080: 1920 ÷ 1080 leaves 840; 1080 ÷ 840 leaves 240; 840 ÷ 240 leaves 120; 240 ÷ 120 leaves 0. The GCD is 120.",
+      },
+      {
+        heading: "When the Numbers Refuse to Reduce",
+        body: "Not every pair of dimensions gives a tidy ratio. 1847 × 923 has a GCD of 1, so its \"simplified\" ratio is 1847:923 — technically correct and useless. When that happens, stop trying to reduce and do two things instead: take the decimal (1847 ÷ 923 = 2.001, so it is essentially 2:1), and find the nearest standard ratio you can actually work to. Screens and platforms accept standard ratios, not exact ones, and a difference under about half a percent is invisible.",
+      },
+      {
+        heading: "Why 1200 × 630 Is Not 1.91:1",
+        body: "The Open Graph image size every social platform asks for is 1200 × 630, and it is almost always described as 1.91:1. Run the GCD and you get 40:21, whose decimal is 1.9048. The 1.91 figure is a rounded label that stuck, not the real ratio. This matters when you scale: computing a new width from 1.91 rather than from 40:21 drifts by roughly one pixel at 1200px wide and by four at 4800px. Always scale from the integer ratio, and round once at the end.",
+      },
+      {
         heading: "How to Calculate a Missing Dimension",
         body: "If you know the original dimensions and want to find a new size at the same ratio, use this formula: New Height = (Original Height ÷ Original Width) × New Width. For example, to find the height of a 16:9 image at 1280px wide: (1080 ÷ 1920) × 1280 = 720px. Our calculator does this automatically in both directions.",
       },
       {
         heading: "The Fastest Method: Use a Calculator",
-        body: "Manually calculating aspect ratios is straightforward for round numbers, but quickly becomes tedious for irregular dimensions like 1847×923. Our free Aspect Ratio Calculator handles any width and height instantly — enter your values and get the simplified ratio, decimal, closest standard match, and CSS values in one click.",
+        body: "Manually calculating aspect ratios is straightforward for round numbers, but quickly becomes tedious for irregular dimensions like 1847×923. Our free Aspect Ratio Calculator handles any width and height instantly. Enter your values and get the simplified ratio, decimal, closest standard match, and CSS values in one click.",
       },
     ],
     conclusion:
-      "Calculating aspect ratios is easy once you understand the GCD method. For everyday use, our free calculator will save you time and give you additional information like quality analysis, print sizes, and CSS export. Try it now at aspect-ratio-calculator.com.",
+      "Two rules cover almost every case. Reduce with the GCD when the numbers allow it, and fall back to the decimal plus the nearest standard ratio when they do not. Keep the integer ratio for any arithmetic and round only at the very end. That single habit prevents most of the off-by-one pixel errors that show up as a hairline gap on a finished layout.",
   },
 
   "aspect-ratio-social-media-guide-2026": {
@@ -985,7 +997,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         heading: "Instagram Image Sizes 2026",
-        body: "Instagram supports three feed ratios plus Stories and Reels. For feed posts, 4:5 portrait (1080×1350) gives you the most vertical space — ideal for maximising scroll visibility.",
+        body: "Instagram supports three feed ratios plus Stories and Reels. For feed posts, 4:5 portrait (1080×1350) gives you the most vertical space, which is what you want on a surface people scroll past.",
         table: {
           headers: ["Format", "Dimensions", "Ratio"],
           rows: [
@@ -999,7 +1011,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         heading: "YouTube Dimensions 2026",
-        body: "YouTube is a 16:9 platform. Design thumbnails at 1280×720 with bold, readable text — your thumbnail is often the deciding factor for whether someone clicks.",
+        body: "YouTube is a 16:9 platform. Design thumbnails at 1280×720 with bold, readable text. Your thumbnail is often the deciding factor for whether someone clicks.",
         table: {
           headers: ["Format", "Dimensions", "Ratio"],
           rows: [
@@ -1039,9 +1051,25 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
           ],
         },
       },
+      {
+        heading: "The Sizes Are Right and the Frame Is Still Wrong",
+        body: "Uploading at 1080 × 1920 does not mean all of it is visible. Every vertical format puts interface on top of your picture: a profile row and a caption at the bottom, a progress bar and close button at the top, and on Reels and TikTok a column of buttons down one side. The picture is full-bleed; the usable area is not. A practical working margin is to keep anything that must be read (text, faces, logos, prices) inside the middle 70% vertically and away from the trailing edge, then preview it on a phone before publishing. The safe area is not published as a spec and it moves, so treat it as a margin rather than a measurement.",
+      },
+      {
+        heading: "Upload Bigger Than the Number in the Table",
+        body: "Every platform recompresses what you send, and it does a better job starting from more data. Uploading a 1080 × 1350 export of a 1080-wide original gives the encoder nothing to work with; uploading a 2160 × 2700 version of the same image and letting the platform downscale usually looks visibly cleaner at the same final size, particularly on text and fine edges. The exception is where a platform publishes a hard maximum. Respect that, then go as close under it as you can.",
+      },
+      {
+        heading: "If You Can Only Make One Asset",
+        body: "Make it 4:5 at 1080 × 1350. It is the tallest shape Instagram's feed accepts, which means it claims the most screen on the surface that gives you the least, and it crops down cleanly: centre-crop to 1:1 for a square placement, or to 1.91:1 for a link card, and the subject stays where you put it. Going the other way, starting square and trying to reach 4:5, means inventing picture that was never photographed.",
+      },
+      {
+        heading: "A Warning About Guides Like This One",
+        body: "Every number here was correct when it was written and platforms change them without announcement. A guide is a starting point, not an authority: before a campaign that matters, check the platform's own help documentation, because that is the only version that updates when they do. The ratios in the last column are far more stable than the pixel dimensions beside them. 9:16 and 4:5 have outlived several rounds of spec changes, and building to the ratio rather than the pixel count is what stops this table going stale on you.",
+      },
     ],
     conclusion:
-      "Bookmark this guide and use our free Aspect Ratio Calculator to verify or convert any dimensions in seconds. Enter your current image size and target platform dimensions to check quality, calculate CSS values, and share results instantly.",
+      "Build to the ratio, not to the pixel count, and export larger than the target. Those two habits survive platform changes, which the exact numbers in these tables will not. Keep anything that has to be read well inside the frame, and check the platform's own documentation before anything you are paying for goes out.",
   },
 
   "16-9-vs-4-3-aspect-ratio": {
@@ -1049,7 +1077,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
     description:
       "A clear comparison of 16:9 and 4:3 aspect ratios: when to use each, the history behind them, key differences, and pixel size examples.",
     intro:
-      "16:9 and 4:3 are the two most historically significant aspect ratios in video and photography. If you have ever seen black bars on your screen — either on the sides or top and bottom — you have already encountered the difference between them. Here is a complete comparison.",
+      "16:9 and 4:3 are the two most historically significant aspect ratios in video and photography. If you have ever seen black bars on your screen, either on the sides or top and bottom, you have already encountered the difference between them. Here is a complete comparison.",
     sections: [
       {
         heading: "The Key Difference",
@@ -1057,7 +1085,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         heading: "History: Where Did They Come From?",
-        body: "4:3 was the original television standard, adopted in the 1930s because it closely matched the aspect ratio of 35mm motion picture film at the time. 16:9 was introduced in the late 1980s as a compromise widescreen standard that could display both 4:3 TV content (with small side bars) and 2.39:1 cinema content (with small top/bottom bars) with minimal black space. The ITU adopted 16:9 as the HDTV standard in 1987.",
+        body: "4:3 came first, matching the shape of early 35mm motion picture film, and it stayed the television standard for most of the twentieth century. 16:9 was not inherited from anything. It was engineered. Working at SMPTE in the early 1980s, Kerns Powers cut rectangles of equal area for every aspect ratio then in use, from 1.33:1 television to 2.35:1 cinema, and overlaid them centred on each other. Every rectangle fitted inside one outer box and contained one inner box, and both of those boxes were close to 1.77:1. That figure is almost exactly the geometric mean of the extremes: the square root of 1.33 × 2.35 is 1.77, and 16 ÷ 9 is 1.778. 16:9 is the shape that wastes the least screen, averaged across everything anyone might want to show on it.",
       },
       {
         heading: "When to Use 16:9",
@@ -1093,9 +1121,17 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
           ],
         },
       },
+      {
+        heading: "What Converting Between Them Actually Costs",
+        body: "Both conversions cost exactly a quarter of the picture, which is more than most people expect. Going from 16:9 to 4:3 at the same height means cropping the width from 16 units to 12, so you lose 25% of the frame, and it comes off the sides, where filmed subjects are often framed. Going the other way, 4:3 to 16:9 at the same width, crops the height from 12 units to 9: also 25%, this time off the top and bottom, which is where heads and captions live. Neither direction is a resize. If the content matters, reframe it rather than letting a crop tool choose.",
+      },
+      {
+        heading: "What the Black Bars Are Costing You",
+        body: "Showing 4:3 content on a 16:9 screen pillarboxes it, and the bars are not cosmetic: the picture occupies 12 of the screen's 16 units of width, so a quarter of the display is doing nothing. A 55-inch 16:9 television is 47.9 inches wide, so that is about 12 inches of black. This is the practical argument for shooting in the ratio you will publish in, rather than planning to fix it afterwards. There is no crop that recovers a quarter of the screen.",
+      },
     ],
     conclusion:
-      "For most modern video and screen content, 16:9 is the right choice. For tablet-focused content or legacy compatibility, 4:3 may be more appropriate. When in doubt, use our free Aspect Ratio Calculator to convert between the two and preview the result instantly.",
+      "Shoot and design in 16:9 unless something specific pushes you elsewhere: an iPad-first audience, a legacy projector, an archive to match. The one thing worth avoiding is deciding late: both conversions cost a quarter of the frame, and which quarter you lose is a decision better made through a viewfinder than by a crop tool afterwards.",
   },
 
   "how-to-resize-image-without-losing-quality": {
@@ -1107,7 +1143,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
     sections: [
       {
         heading: "Downscaling vs. Upscaling",
-        body: "There are two directions you can resize an image, and they have very different quality implications. Downscaling (making an image smaller) almost always preserves quality — you are simply discarding pixels. Upscaling (making an image larger) is where quality problems occur, because software must invent pixel data that does not exist in the original.",
+        body: "There are two directions you can resize an image, and they have very different quality implications. Downscaling (making an image smaller) almost always preserves quality, because you are simply discarding pixels. Upscaling (making an image larger) is where quality problems occur, because software must invent pixel data that does not exist in the original.",
       },
       {
         heading: "The Golden Rule: Always Start With the Highest Resolution",
@@ -1115,7 +1151,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
         list: [
           "Always keep your original high-resolution file",
           "Export or save a separate copy at the target size",
-          "Never re-save a compressed JPEG multiple times — each save degrades quality",
+          "Never re-save a compressed JPEG multiple times, because each save degrades quality",
           "Export from the master file each time you need a new size",
         ],
       },
@@ -1125,25 +1161,25 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         heading: "Maintaining Aspect Ratio When Resizing",
-        body: "One of the most common quality mistakes is accidentally changing the aspect ratio during resizing — stretching or squishing the image. Always resize proportionally by locking the aspect ratio in your editing tool. Our free calculator helps you find the correct target height for any new width (or vice versa), ensuring your resize maintains the original proportions.",
+        body: "One of the most common quality mistakes is accidentally changing the aspect ratio during resizing, stretching or squishing the image. Always resize proportionally by locking the aspect ratio in your editing tool. Our free calculator helps you find the correct target height for any new width (or vice versa), ensuring your resize maintains the original proportions.",
       },
       {
         heading: "Best File Formats for Quality",
         body: "The file format affects quality significantly after resizing:",
         list: [
-          "PNG — Lossless compression; ideal for graphics, illustrations, and screenshots where sharpness matters",
-          "JPEG — Lossy compression; ideal for photographs; set quality to 80–90% for the best size/quality balance",
-          "WebP — Modern format that achieves better compression than JPEG at equivalent quality; supported by all modern browsers",
-          "TIFF — Uncompressed or lossless; used in professional print and photography workflows",
+          "PNG: lossless compression; ideal for graphics, illustrations, and screenshots where sharpness matters",
+          "JPEG: lossy compression; ideal for photographs; set quality to 80–90% for the best size/quality balance",
+          "WebP: a modern format that achieves better compression than JPEG at equivalent quality; supported by all modern browsers",
+          "TIFF: uncompressed or lossless; used in professional print and photography workflows",
         ],
       },
       {
         heading: "DPI and Print Quality",
-        body: "DPI (dots per inch) is only relevant for print — it is ignored by screens. For print: use 300 DPI for sharp photo prints, 150 DPI for acceptable quality, and 72–96 DPI for screen-only use. To calculate the pixel dimensions needed for a print: multiply the print size in inches by the DPI. For an 8×10 inch print at 300 DPI: 2400×3000 pixels.",
+        body: "DPI (dots per inch) is only relevant for print. Screens ignore it entirely. For print: use 300 DPI for sharp photo prints, 150 DPI for acceptable quality, and 72–96 DPI for screen-only use. To calculate the pixel dimensions needed for a print: multiply the print size in inches by the DPI. For an 8×10 inch print at 300 DPI: 2400×3000 pixels.",
       },
     ],
     conclusion:
-      "The best way to resize without quality loss is to always downscale from a high-resolution original, maintain the aspect ratio, and export in the appropriate format. Use our Aspect Ratio Calculator to find the exact target dimensions that preserve your original proportions — no guesswork required.",
+      "Keep the master file. Almost every quality problem in this guide traces back to someone not having the original any more: you cannot downscale from something you have already thrown away, and no upscaler recovers detail that was never recorded. Export copies, archive the original, and resize from it every time.",
   },
 
   "install-aspect-ratio-calculator": {
@@ -1151,21 +1187,21 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
     description:
       "Install the Aspect Ratio Calculator as an app for instant offline access, a home screen shortcut, and a distraction-free experience — no browser UI, no reloading.",
     intro:
-      "You can use this calculator straight from your browser, but installing it as an app takes the experience further — instant launch from your home screen, full offline support, and a clean interface with no browser navigation in the way. Here is everything you need to know.",
+      "You can use this calculator straight from your browser, but installing it as an app takes the experience further: instant launch from your home screen, full offline support, and a clean interface with no browser navigation in the way. Here is everything you need to know.",
     sections: [
       {
         heading: "What does 'Install' actually mean?",
-        body: "When you install a web app (also called a PWA — Progressive Web App), your device saves a shortcut to your home screen or desktop and caches the app files for offline use. There is no app store involved and nothing is downloading gigabytes of data — the files are already in your browser cache. Installing simply promotes the site to a first-class app experience on your device.",
+        body: "When you install a web app (also called a PWA, or Progressive Web App), your device saves a shortcut to your home screen or desktop and caches the app files for offline use. There is no app store involved and nothing is downloading gigabytes of data, because the files are already in your browser cache. Installing simply promotes the site to a first-class app experience on your device.",
       },
       {
         heading: "Benefits of installing",
         body: "Installing the Aspect Ratio Calculator gives you several advantages over using it purely in the browser:",
         list: [
-          "Offline access — calculations work even without an internet connection, useful on set, in the field, or on an aeroplane",
-          "Home screen shortcut — opens with a single tap, no need to navigate to the URL or open a browser tab",
-          "Distraction-free interface — no browser address bar, tabs, or toolbar; the calculator fills the screen cleanly",
-          "Faster load — cached files load instantly from local storage instead of waiting for a network response",
-          "Always up to date — the service worker fetches updates silently in the background so you always have the latest version",
+          "Offline access: calculations work even without an internet connection, useful on set, in the field, or on an aeroplane",
+          "Home screen shortcut: opens with a single tap, no need to navigate to the URL or open a browser tab",
+          "Distraction-free interface: no browser address bar, tabs, or toolbar; the calculator fills the screen cleanly",
+          "Faster load: cached files load instantly from local storage instead of waiting for a network response",
+          "Always up to date: the service worker fetches updates silently in the background so you always have the latest version",
         ],
       },
       {
@@ -1184,7 +1220,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
       {
         heading: "How to install on desktop (Chrome or Edge)",
-        body: "On a desktop computer running Chrome or Edge, look for the install icon in the address bar — it looks like a monitor with a small download arrow. Click it and confirm the prompt. On Edge the option may also appear under the three-dot menu as 'Apps → Install this site as an app'. Once installed, the calculator appears in your Start menu (Windows) or Applications folder (Mac) like any native application.",
+        body: "On a desktop computer running Chrome or Edge, look for the install icon in the address bar. It looks like a monitor with a small download arrow. Click it and confirm the prompt. On Edge the option may also appear under the three-dot menu as 'Apps → Install this site as an app'. Once installed, the calculator appears in your Start menu (Windows) or Applications folder (Mac) like any native application.",
       },
       {
         heading: "How to uninstall",
@@ -1192,7 +1228,7 @@ export const ARTICLE_DATA: Record<string, ArticleData> = {
       },
     ],
     conclusion:
-      "Installing the Aspect Ratio Calculator takes about ten seconds and costs nothing. You get offline access, a home screen shortcut, and a faster, cleaner experience — with no app store required. If you find yourself using the calculator regularly, installing it is the most convenient way to keep it at your fingertips.",
+      "Installing the Aspect Ratio Calculator takes about ten seconds and costs nothing. You get offline access, a home screen shortcut, and a faster, cleaner experience, with no app store required. If you find yourself using the calculator regularly, installing it is the most convenient way to keep it at your fingertips.",
   },
 };
 
