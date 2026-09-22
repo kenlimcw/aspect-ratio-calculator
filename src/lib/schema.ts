@@ -28,9 +28,13 @@ const SITE_DESCRIPTION =
  * someone else's is worse than no array at all, because the claim is checked.
  *
  * Add real, live profile URLs and they flow into the schema automatically. Two
- * playbook rows stay unearned until there are at least three of them.
+ * rows stay partly unearned until there are at least three platforms here, so
+ * this list is expected to grow — but every entry must be a profile that exists
+ * and is ours, and an empty slot is always better than a wrong one.
  */
-export const SAME_AS: string[] = [];
+export const SAME_AS: string[] = [
+  "https://www.youtube.com/@AspectRatioCalc",
+];
 
 interface Node {
   "@type": string;
