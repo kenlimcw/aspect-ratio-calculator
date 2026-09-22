@@ -613,9 +613,9 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
     intro:
       "Instagram supports multiple aspect ratios depending on where your content appears. Getting the right dimensions ensures your images display crisply without unwanted cropping. Here are all the official recommended sizes for 2026.",
     formats: [
-      { type: "Feed Post — Square", width: 1080, height: 1080, ratio: "1:1", notes: "Classic format; safe for all devices" },
-      { type: "Feed Post — Portrait (max height)", width: 1080, height: 1350, ratio: "4:5", notes: "Takes up the most feed space; recommended for max visibility" },
-      { type: "Feed Post — Landscape", width: 1080, height: 566, ratio: "1.91:1", notes: "Wide image; less feed space than portrait" },
+      { type: "Feed Post (Square)", width: 1080, height: 1080, ratio: "1:1", notes: "Classic format; safe for all devices" },
+      { type: "Feed Post (Portrait (max height))", width: 1080, height: 1350, ratio: "4:5", notes: "Takes up the most feed space; recommended for max visibility" },
+      { type: "Feed Post (Landscape)", width: 1080, height: 566, ratio: "1.91:1", notes: "Wide image; less feed space than portrait" },
       { type: "Story", width: 1080, height: 1920, ratio: "9:16", notes: "Full-screen vertical; 15-second max for photos" },
       { type: "Reel", width: 1080, height: 1920, ratio: "9:16", notes: "Video must be at least 3 seconds; max 90 seconds" },
       { type: "Profile Picture", width: 320, height: 320, ratio: "1:1", notes: "Displayed as a circle; keep key content centred" },
@@ -624,9 +624,9 @@ export const PLATFORM_DATA: Record<string, PlatformData> = {
     tips: [
       "Use 4:5 (1080×1350) for feed posts to maximise vertical space in the scroll",
       "Keep important content within the centre 80% of Stories to avoid UI overlaps",
-      "Export at full 1080px width — Instagram will compress anything larger anyway",
+      "Export at full 1080px width, since Instagram will compress anything larger anyway",
       "Use PNG for graphics and illustrations; JPEG at 80–90% quality for photos",
-      "Avoid small text near the edges — it may be cropped on older devices",
+      "Avoid small text near the edges, where it may be cropped on older devices",
     ],
     faq: [
       {
