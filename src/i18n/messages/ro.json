@@ -243,7 +243,8 @@
     "privacyPolicy": "Politica de confidențialitate",
     "feedback": "Feedback",
     "freeTool": "Instrument gratuit, nu necesită înregistrare",
-    "copyright": "© {year} aspect-ratio-calculator.com. Toate drepturile rezervate."
+    "copyright": "© {year} aspect-ratio-calculator.com. Toate drepturile rezervate.",
+    "tools": "Instrumente"
   },
   "installPrompt": {
     "installCalculator": "Instalează acest calculator",
@@ -352,7 +353,10 @@
     "tableRow1851Where": "Cinema cu lansare largă, IMAX digital",
     "tableRow219UseCase": "Monitoare ultrawide",
     "tableRow219Where": "Gaming, display-uri ultrawide",
-    "heroSubtitle": "Calculează și convertește rapoarte de aspect pentru rețele sociale, video, fotografie și ecrane"
+    "heroSubtitle": "Calculează și convertește rapoarte de aspect pentru rețele sociale, video, fotografie și ecrane",
+    "toolsHeading": "Calculatoare și verificatoare",
+    "byTool": "Instrumente",
+    "allTools": "Toate instrumentele"
   },
   "ratioPage": {
     "aspectRatio": "Raport de aspect",
@@ -640,7 +644,9 @@
     "shortsSource": "Valori publicate convenționale; nu au fost măsurate față de o versiune aici.",
     "related9x16": "Raport de aspect 9:16",
     "relatedInstagram": "Dimensiuni Instagram",
-    "relatedConvert": "Convertirea 16:9 în 9:16"
+    "relatedConvert": "Convertirea 16:9 în 9:16",
+    "navLabel": "Verificator zonă sigură",
+    "tagline": "Ce acoperă Reels, TikTok și Shorts, și ce taie ecranul."
   },
   "phoneCropTool": {
     "breadcrumb": "Instrumente",
@@ -668,7 +674,9 @@
     "trueNineSixteen": "Un ecran 9:16 real",
     "relatedSafeZone": "Instagram Reels verificator zonă sigură",
     "related9x16": "Raport de aspect 9:16",
-    "relatedInstagram": "Dimensiuni Instagram"
+    "relatedInstagram": "Dimensiuni Instagram",
+    "navLabel": "De ce Reels-urile sunt decupate",
+    "tagline": "Cei 18% pe care un ecran de telefon îi elimină dintr-un videoclip încărcat corect în format 9:16."
   },
   "pixelsInchesTool": {
     "breadcrumb": "Instrumente",
@@ -698,7 +706,9 @@
     "noDpiBody": "DPI măsoară punctele imprimate pe inch de hârtie — există doar odată ce cerneala întâlnește o dimensiune fizică fixă. Un ecran nu are un pas fix al punctelor în acest sens: aceeași imagine 1920×1080 arată mai densă pe un panou mic de telefon decât pe un monitor mare, și niciunul dintre numere nu este stocat nicăieri în fișier. Cifra de '72 DPI' pe care oamenii o citează pentru ecrane nu este o măsurătoare a niciunui afișaj; este o convenție din era tiparului care a supraviețuit produsului pe care îl descria.",
     "relatedResize": "Redimensionați o imagine fără a pierde calitatea",
     "relatedRatio": "3:2 aspect ratio",
-    "relatedSafeZone": "Instagram Reels verificator zonă sigură"
+    "relatedSafeZone": "Instagram Reels verificator zonă sigură",
+    "navLabel": "Pixeli în inchi",
+    "tagline": "Dimensiunea pixelilor în dimensiune fizică, și cea mai mare imprimare fidelă."
   },
   "printCropTool": {
     "breadcrumb": "Instrumente",
@@ -734,7 +744,9 @@
     "keptLabel": "Ce păstrează printul",
     "related3x2": "raport de aspect 3:2",
     "related4x3": "raport de aspect 4:3",
-    "relatedResize": "Redimensionare fără pierderea calității"
+    "relatedResize": "Redimensionare fără pierderea calității",
+    "navLabel": "Decupare imprimare",
+    "tagline": "Cât pierde o fotografie 3:2 sau 4:3 pe formatele 6x4, 5x7, 8x10 și A4."
   },
   "screenSizeTool": {
     "breadcrumb": "Instrumente",
@@ -759,7 +771,9 @@
     "surprise": "La o diagonală de {d} {unit}, 16:9 vă oferă {h169} {unit} în înălțime și {a169} {unit}² în arie. 21:9 la exact aceeași diagonală oferă doar {h219} {unit} în înălțime și {a219} {unit}² în arie — cu {pctHeight} mai puțină înălțime și cu {pctArea} mai puțină arie, dintr-o specificație de diagonală care pare identică.",
     "related16x9": "Raport de aspect 16:9",
     "related4x3": "Raport de aspect 4:3",
-    "relatedCompare": "16:9 vs 4:3 comparat"
+    "relatedCompare": "16:9 vs 4:3 comparat",
+    "navLabel": "Dimensiune ecran",
+    "tagline": "Diagonala la lățime și înălțime, pentru orice raport de aspect."
   },
   "sensorCropTool": {
     "breadcrumb": "Instrumente",
@@ -794,6 +808,15 @@
     "fullFrameNote": "Full frame este senzorul de referință: diagonala sa proprie împărțită la ea însăși trebuie să dea exact 1.000× — verificarea că aceasta este aritmetică, nu o tabelă de căutare.",
     "related3x2": "Raport de aspect 3:2",
     "related4x3": "Raport de aspect 4:3",
-    "relatedWhatIs": "Ce este raportul de aspect?"
+    "relatedWhatIs": "Ce este raportul de aspect?",
+    "navLabel": "Factor de crop",
+    "tagline": "Distanță focală echivalentă de 35mm și diafragmă echivalentă."
+  },
+  "toolsPage": {
+    "title": "Instrumente gratuite pentru raport de aspect și decupare",
+    "description": "Calculatoare gratuite pentru raport de aspect, decupare, zone sigure, dimensiune de imprimare, factor de decupare al senzorului și dimensiuni în pixeli. Fără înregistrare, funcționează offline.",
+    "h1": "Instrumente",
+    "intro": "Fiecare dintre acestea răspunde la o întrebare și arată cum a fost obținut rezultatul. Fiecare număr este fie calculat aici dintr-o cifră publicată, fie etichetat cu sursa și data.",
+    "heading": "Instrumente"
   }
 }

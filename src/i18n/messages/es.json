@@ -243,7 +243,8 @@
     "privacyPolicy": "Política de privacidad",
     "feedback": "Comentarios",
     "freeTool": "Herramienta gratuita, no requiere registro",
-    "copyright": "© {year} aspect-ratio-calculator.com. Todos los derechos reservados."
+    "copyright": "© {year} aspect-ratio-calculator.com. Todos los derechos reservados.",
+    "tools": "Herramientas"
   },
   "installPrompt": {
     "installCalculator": "Instalar esta calculadora",
@@ -352,7 +353,10 @@
     "tableRow1851Where": "Cine de gran estreno, IMAX digital",
     "tableRow219UseCase": "Monitores ultraanchos",
     "tableRow219Where": "Gaming, pantallas ultraanchas",
-    "heroSubtitle": "Calcular y convertir relaciones de aspecto para redes sociales, video, fotografía y pantallas"
+    "heroSubtitle": "Calcular y convertir relaciones de aspecto para redes sociales, video, fotografía y pantallas",
+    "toolsHeading": "Calculadoras y verificadores",
+    "byTool": "Herramientas",
+    "allTools": "Todas las herramientas"
   },
   "ratioPage": {
     "aspectRatio": "Relación de Aspecto",
@@ -641,7 +645,9 @@
     "shortsSource": "Valores publicados convencionales; no medidos aquí con una versión.",
     "related9x16": "Relación de aspecto 9:16",
     "relatedInstagram": "Tamaños de Instagram",
-    "relatedConvert": "Convertir 16:9 a 9:16"
+    "relatedConvert": "Convertir 16:9 a 9:16",
+    "navLabel": "Comprobador de zona segura",
+    "tagline": "Lo que cubren Reels, TikTok y Shorts, y lo que la pantalla recorta."
   },
   "phoneCropTool": {
     "breadcrumb": "Herramientas",
@@ -669,7 +675,9 @@
     "trueNineSixteen": "Una verdadera pantalla 9:16",
     "relatedSafeZone": "Comprobador de zona segura de Instagram Reels",
     "related9x16": "Relación de aspecto 9:16",
-    "relatedInstagram": "Tamaños de Instagram"
+    "relatedInstagram": "Tamaños de Instagram",
+    "navLabel": "¿Por qué se recortan los Reels?",
+    "tagline": "El 18% que la pantalla de un teléfono recorta de una carga correcta en 9:16."
   },
   "pixelsInchesTool": {
     "breadcrumb": "Herramientas",
@@ -699,7 +707,9 @@
     "noDpiBody": "DPI mide los puntos impresos por pulgada de papel — solo existe una vez que la tinta se encuentra con un tamaño físico fijo. Una pantalla no tiene un paso de punto fijo en ese sentido: la misma imagen de 1920×1080 se ve más densa en el panel de un teléfono pequeño que en un monitor grande, y ninguno de los números se almacena en el archivo. La cifra de '72 DPI' que la gente cita para las pantallas no es una medida de ninguna pantalla; es una convención de la era de la impresión que sobrevivió al producto que describía.",
     "relatedResize": "Redimensionar una imagen sin perder calidad",
     "relatedRatio": "relación de aspecto 3:2",
-    "relatedSafeZone": "Comprobador de zona segura de Instagram Reels"
+    "relatedSafeZone": "Comprobador de zona segura de Instagram Reels",
+    "navLabel": "Píxeles a pulgadas",
+    "tagline": "Tamaño de píxel a tamaño físico, y la impresión honesta más grande."
   },
   "printCropTool": {
     "breadcrumb": "Herramientas",
@@ -735,7 +745,9 @@
     "keptLabel": "Lo que conserva la impresión",
     "related3x2": "Relación de aspecto 3:2",
     "related4x3": "Relación de aspecto 4:3",
-    "relatedResize": "Redimensionar sin perder calidad"
+    "relatedResize": "Redimensionar sin perder calidad",
+    "navLabel": "Recorte de impresión",
+    "tagline": "Lo que una foto 3:2 o 4:3 pierde en 6x4, 5x7, 8x10 y A4."
   },
   "screenSizeTool": {
     "breadcrumb": "Herramientas",
@@ -760,7 +772,9 @@
     "surprise": "Con una diagonal de {d} {unit}, 16:9 te da {h169} {unit} de alto y {a169} {unit}² de área. 21:9 con la misma diagonal exacta da solo {h219} {unit} de alto y {a219} {unit}² de área — {pctHeight} menos de alto y {pctArea} menos de área, de una especificación de diagonal que se lee como idéntica.",
     "related16x9": "Relación de aspecto 16:9",
     "related4x3": "Relación de aspecto 4:3",
-    "relatedCompare": "16:9 vs 4:3 comparación"
+    "relatedCompare": "16:9 vs 4:3 comparación",
+    "navLabel": "Tamaño de pantalla",
+    "tagline": "Diagonal a ancho y altura, para cualquier relación de aspecto."
   },
   "sensorCropTool": {
     "breadcrumb": "Herramientas",
@@ -795,6 +809,15 @@
     "fullFrameNote": "Full frame es el sensor de referencia: su propia diagonal dividida por sí misma debe dar exactamente 1.000× — la comprobación de que esto es aritmética, no una tabla de consulta.",
     "related3x2": "Relación de aspecto 3:2",
     "related4x3": "Relación de aspecto 4:3",
-    "relatedWhatIs": "¿Qué es la relación de aspecto?"
+    "relatedWhatIs": "¿Qué es la relación de aspecto?",
+    "navLabel": "Factor de recorte",
+    "tagline": "Longitud focal equivalente a 35mm y apertura equivalente."
+  },
+  "toolsPage": {
+    "title": "Herramientas Gratuitas de Relación de Aspecto y Recorte",
+    "description": "Calculadoras gratuitas para relación de aspecto, recorte, zonas seguras, tamaño de impresión, factor de recorte del sensor y dimensiones de píxeles. Sin registro, funciona sin conexión.",
+    "h1": "Herramientas",
+    "intro": "Cada una de estas responde a una pregunta y muestra su funcionamiento. Cada número se calcula aquí a partir de una cifra publicada, o se etiqueta con su origen y fecha.",
+    "heading": "Herramientas"
   }
 }

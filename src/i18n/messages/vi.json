@@ -243,7 +243,8 @@
     "privacyPolicy": "Chính sách quyền riêng tư",
     "feedback": "Phản hồi",
     "freeTool": "Công cụ miễn phí, không cần đăng ký",
-    "copyright": "© {year} aspect-ratio-calculator.com. Mọi quyền được bảo lưu."
+    "copyright": "© {year} aspect-ratio-calculator.com. Mọi quyền được bảo lưu.",
+    "tools": "Công cụ"
   },
   "installPrompt": {
     "installCalculator": "Cài đặt máy tính này",
@@ -352,7 +353,10 @@
     "tableRow1851Where": "Rạp chiếu phim phát hành rộng rãi, IMAX kỹ thuật số",
     "tableRow219UseCase": "Màn hình siêu rộng",
     "tableRow219Where": "Chơi game, màn hình siêu rộng",
-    "heroSubtitle": "Tính toán và chuyển đổi tỷ lệ khung hình cho mạng xã hội, video, nhiếp ảnh và màn hình"
+    "heroSubtitle": "Tính toán và chuyển đổi tỷ lệ khung hình cho mạng xã hội, video, nhiếp ảnh và màn hình",
+    "toolsHeading": "Máy tính và công cụ kiểm tra",
+    "byTool": "Công cụ",
+    "allTools": "Tất cả công cụ"
   },
   "ratioPage": {
     "aspectRatio": "Tỷ lệ khung hình",
@@ -640,7 +644,9 @@
     "shortsSource": "Các giá trị công bố thông thường; chưa được đo lường với phiên bản tại đây.",
     "related9x16": "Tỷ lệ khung hình 9:16",
     "relatedInstagram": "Kích thước Instagram",
-    "relatedConvert": "Chuyển đổi 16:9 sang 9:16"
+    "relatedConvert": "Chuyển đổi 16:9 sang 9:16",
+    "navLabel": "Kiểm tra vùng an toàn",
+    "tagline": "Những gì Reels, TikTok và Shorts che khuất, và những gì màn hình cắt bỏ."
   },
   "phoneCropTool": {
     "breadcrumb": "Công cụ",
@@ -668,7 +674,9 @@
     "trueNineSixteen": "Một màn hình 9:16 thực sự",
     "relatedSafeZone": "Công cụ kiểm tra vùng an toàn Instagram Reels",
     "related9x16": "Tỷ lệ khung hình 9:16",
-    "relatedInstagram": "Kích thước Instagram"
+    "relatedInstagram": "Kích thước Instagram",
+    "navLabel": "Tại sao Reels bị cắt",
+    "tagline": "18% màn hình điện thoại chiếm mất từ một nội dung tải lên chuẩn 9:16."
   },
   "pixelsInchesTool": {
     "breadcrumb": "Công cụ",
@@ -698,7 +706,9 @@
     "noDpiBody": "DPI đo số chấm được in trên mỗi inch giấy — nó chỉ tồn tại khi mực gặp một kích thước vật lý cố định. Màn hình không có khoảng cách chấm cố định theo nghĩa đó: cùng một hình ảnh 1920×1080 trông dày đặc hơn trên màn hình điện thoại nhỏ so với trên màn hình lớn, và không có con số nào được lưu trữ trong tệp. Con số '72 DPI' mà mọi người trích dẫn cho màn hình không phải là phép đo của bất kỳ màn hình nào; đó là một quy ước từ thời in ấn đã tồn tại lâu hơn sản phẩm mà nó mô tả.",
     "relatedResize": "Thay đổi kích thước hình ảnh mà không mất chất lượng",
     "relatedRatio": "3:2 aspect ratio",
-    "relatedSafeZone": "Công cụ kiểm tra vùng an toàn Instagram Reels"
+    "relatedSafeZone": "Công cụ kiểm tra vùng an toàn Instagram Reels",
+    "navLabel": "Pixel sang inch",
+    "tagline": "Kích thước pixel sang kích thước vật lý, và bản in lớn nhất đảm bảo chất lượng."
   },
   "printCropTool": {
     "breadcrumb": "Công cụ",
@@ -734,7 +744,9 @@
     "keptLabel": "Phần bản in giữ lại",
     "related3x2": "Tỷ lệ khung hình 3:2",
     "related4x3": "Tỷ lệ khung hình 4:3",
-    "relatedResize": "Thay đổi kích thước mà không giảm chất lượng"
+    "relatedResize": "Thay đổi kích thước mà không giảm chất lượng",
+    "navLabel": "Cắt ảnh in",
+    "tagline": "Những gì ảnh 3:2 hoặc 4:3 bị mất đi khi in trên các kích thước 6x4, 5x7, 8x10 và A4."
   },
   "screenSizeTool": {
     "breadcrumb": "Công cụ",
@@ -759,7 +771,9 @@
     "surprise": "Với đường chéo {d} {unit}, màn hình 16:9 cho bạn chiều cao {h169} {unit} và diện tích {a169} {unit}². Màn hình 21:9 với cùng đường chéo đó chỉ cho chiều cao {h219} {unit} và diện tích {a219} {unit}² — thấp hơn {pctHeight} chiều cao và ít hơn {pctArea} diện tích, từ một thông số đường chéo trông có vẻ giống hệt.",
     "related16x9": "Tỷ lệ khung hình 16:9",
     "related4x3": "Tỷ lệ khung hình 4:3",
-    "relatedCompare": "So sánh 16:9 vs 4:3"
+    "relatedCompare": "So sánh 16:9 vs 4:3",
+    "navLabel": "Kích thước màn hình",
+    "tagline": "Đường chéo thành chiều rộng và chiều cao, cho mọi tỷ lệ khung hình."
   },
   "sensorCropTool": {
     "breadcrumb": "Công cụ",
@@ -794,6 +808,15 @@
     "fullFrameNote": "Full frame là cảm biến tham chiếu: đường chéo của nó chia cho chính nó phải ra chính xác 1.000× — đây là kiểm tra cho thấy đây là phép tính số học, không phải bảng tra cứu.",
     "related3x2": "Tỷ lệ khung hình 3:2",
     "related4x3": "Tỷ lệ khung hình 4:3",
-    "relatedWhatIs": "Tỷ lệ khung hình là gì?"
+    "relatedWhatIs": "Tỷ lệ khung hình là gì?",
+    "navLabel": "Hệ số crop",
+    "tagline": "Tiêu cự tương đương 35mm và khẩu độ tương đương."
+  },
+  "toolsPage": {
+    "title": "Công cụ Tỷ lệ Khung hình và Cắt xén Miễn phí",
+    "description": "Các công cụ tính toán miễn phí cho tỷ lệ khung hình, cắt xén, vùng an toàn, kích thước in, hệ số crop cảm biến và kích thước pixel. Không cần đăng ký, hoạt động ngoại tuyến.",
+    "h1": "Công cụ",
+    "intro": "Mỗi công cụ này trả lời một câu hỏi và hiển thị cách thực hiện. Mọi con số đều được tính toán tại đây từ một số liệu đã công bố, hoặc được ghi rõ nguồn gốc và thời điểm.",
+    "heading": "Công cụ"
   }
 }

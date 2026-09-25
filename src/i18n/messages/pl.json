@@ -243,7 +243,8 @@
     "privacyPolicy": "Polityka prywatności",
     "feedback": "Opinie",
     "freeTool": "Bezpłatne narzędzie, bez rejestracji",
-    "copyright": "© {year} aspect-ratio-calculator.com. Wszelkie prawa zastrzeżone."
+    "copyright": "© {year} aspect-ratio-calculator.com. Wszelkie prawa zastrzeżone.",
+    "tools": "Narzędzia"
   },
   "installPrompt": {
     "installCalculator": "Zainstaluj ten kalkulator",
@@ -352,7 +353,10 @@
     "tableRow1851Where": "Kino szerokiej dystrybucji, IMAX cyfrowy",
     "tableRow219UseCase": "Monitory ultrawide",
     "tableRow219Where": "Gry, wyświetlacze ultrawide",
-    "heroSubtitle": "Obliczaj i konwertuj proporcje obrazu dla mediów społecznościowych, wideo, fotografii i ekranów"
+    "heroSubtitle": "Obliczaj i konwertuj proporcje obrazu dla mediów społecznościowych, wideo, fotografii i ekranów",
+    "toolsHeading": "Kalkulatory i sprawdzarki",
+    "byTool": "Narzędzia",
+    "allTools": "Wszystkie narzędzia"
   },
   "ratioPage": {
     "aspectRatio": "Współczynnik proporcji",
@@ -640,7 +644,9 @@
     "shortsSource": "Konwencjonalne opublikowane wartości; niezmierzono tutaj w oparciu o wersję.",
     "related9x16": "Proporcje obrazu 9:16",
     "relatedInstagram": "Rozmiary Instagram",
-    "relatedConvert": "Konwertowanie 16:9 na 9:16"
+    "relatedConvert": "Konwertowanie 16:9 na 9:16",
+    "navLabel": "Sprawdzanie strefy bezpieczeństwa",
+    "tagline": "Co zakrywają Reels, TikTok i Shorts, a co obcina ekran."
   },
   "phoneCropTool": {
     "breadcrumb": "Narzędzia",
@@ -668,7 +674,9 @@
     "trueNineSixteen": "Prawdziwy ekran 9:16",
     "relatedSafeZone": "Narzędzie do sprawdzania bezpiecznej strefy Instagram Reels",
     "related9x16": "Proporcje obrazu 9:16",
-    "relatedInstagram": "Rozmiary Instagrama"
+    "relatedInstagram": "Rozmiary Instagrama",
+    "navLabel": "Dlaczego Reels są przycinane",
+    "tagline": "18% odcinane przez ekran telefonu z prawidłowo przesłanego materiału w proporcjach 9:16."
   },
   "pixelsInchesTool": {
     "breadcrumb": "Narzędzia",
@@ -698,7 +706,9 @@
     "noDpiBody": "DPI mierzy punkty drukowane na cal papieru — istnieje tylko wtedy, gdy atrament styka się z ustaloną fizyczną powierzchnią. Ekran nie ma stałego rastra w tym sensie: ten sam obraz 1920×1080 wygląda gęściej na małym panelu telefonu niż na dużym monitorze, a żadna z tych liczb nie jest przechowywana w pliku. Wartość '72 DPI', którą ludzie podają dla ekranów, nie jest pomiarem żadnego wyświetlacza; to konwencja z epoki druku, która przetrwała produkt, który opisywała.",
     "relatedResize": "Zmień rozmiar obrazu bez utraty jakości",
     "relatedRatio": "3:2 aspect ratio",
-    "relatedSafeZone": "Instagram Reels sprawdzanie bezpiecznej strefy"
+    "relatedSafeZone": "Instagram Reels sprawdzanie bezpiecznej strefy",
+    "navLabel": "Piksele na cale",
+    "tagline": "Rozmiar piksela do rozmiaru fizycznego, i największy wydruk bez utraty jakości."
   },
   "printCropTool": {
     "breadcrumb": "Narzędzia",
@@ -734,7 +744,9 @@
     "keptLabel": "Co zachowuje wydruk",
     "related3x2": "proporcje obrazu 3:2",
     "related4x3": "proporcje obrazu 4:3",
-    "relatedResize": "Zmiana rozmiaru bez utraty jakości"
+    "relatedResize": "Zmiana rozmiaru bez utraty jakości",
+    "navLabel": "Kadrowanie do druku",
+    "tagline": "Co zdjęcie w formacie 3:2 lub 4:3 traci na formatach 6x4, 5x7, 8x10 i A4."
   },
   "screenSizeTool": {
     "breadcrumb": "Narzędzia",
@@ -759,7 +771,9 @@
     "surprise": "Przy przekątnej {d} {unit}, 16:9 daje {h169} {unit} wysokości i {a169} {unit}² powierzchni. 21:9 przy dokładnie tej samej przekątnej daje tylko {h219} {unit} wysokości i {a219} {unit}² powierzchni — o {pctHeight} mniej wysokości i o {pctArea} mniej powierzchni, przy specyfikacji przekątnej, która wydaje się identyczna.",
     "related16x9": "Proporcje obrazu 16:9",
     "related4x3": "Proporcje obrazu 4:3",
-    "relatedCompare": "16:9 vs 4:3 porównanie"
+    "relatedCompare": "16:9 vs 4:3 porównanie",
+    "navLabel": "Rozmiar ekranu",
+    "tagline": "Przekątna do szerokości i wysokości, dla dowolnego aspect ratio."
   },
   "sensorCropTool": {
     "breadcrumb": "Narzędzia",
@@ -794,6 +808,15 @@
     "fullFrameNote": "Full frame to matryca referencyjna: jej własna przekątna podzielona przez siebie musi wynosić dokładnie 1.000× — potwierdzenie, że to są obliczenia, a nie tabela odniesień.",
     "related3x2": "Proporcje obrazu 3:2",
     "related4x3": "Proporcje obrazu 4:3",
-    "relatedWhatIs": "Czym są proporcje obrazu?"
+    "relatedWhatIs": "Czym są proporcje obrazu?",
+    "navLabel": "Współczynnik kadrowania",
+    "tagline": "Ekwiwalentna ogniskowa 35mm i ekwiwalentna przysłona."
+  },
+  "toolsPage": {
+    "title": "Darmowe Narzędzia do Proporcji Obrazu i Kadrowania",
+    "description": "Darmowe kalkulatory do proporcji obrazu, kadrowania, bezpiecznych stref, rozmiaru wydruku, współczynnika kadrowania matrycy i wymiarów w pikselach. Bez rejestracji, działa offline.",
+    "h1": "Narzędzia",
+    "intro": "Każde z nich odpowiada na jedno pytanie i przedstawia obliczenia. Każda liczba jest obliczana tutaj na podstawie opublikowanych danych lub oznaczona źródłem i datą.",
+    "heading": "Narzędzia"
   }
 }

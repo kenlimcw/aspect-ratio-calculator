@@ -243,7 +243,8 @@
     "privacyPolicy": "隐私政策",
     "feedback": "反馈",
     "freeTool": "免费工具，无需注册",
-    "copyright": "© {year} aspect-ratio-calculator.com. 保留所有权利。"
+    "copyright": "© {year} aspect-ratio-calculator.com. 保留所有权利。",
+    "tools": "工具"
   },
   "installPrompt": {
     "installCalculator": "安装此计算器",
@@ -352,7 +353,10 @@
     "tableRow1851Where": "广泛发行的电影、IMAX 数字影院",
     "tableRow219UseCase": "超宽显示器",
     "tableRow219Where": "游戏、超宽显示屏",
-    "heroSubtitle": "计算和转换适用于社交媒体、视频、摄影和屏幕的宽高比"
+    "heroSubtitle": "计算和转换适用于社交媒体、视频、摄影和屏幕的宽高比",
+    "toolsHeading": "计算器和检查器",
+    "byTool": "工具",
+    "allTools": "所有工具"
   },
   "ratioPage": {
     "aspectRatio": "宽高比",
@@ -641,7 +645,9 @@
     "shortsSource": "常规公布值；此处未根据版本进行测量。",
     "related9x16": "9:16 宽高比",
     "relatedInstagram": "Instagram 尺寸",
-    "relatedConvert": "将 16:9 转换为 9:16"
+    "relatedConvert": "将 16:9 转换为 9:16",
+    "navLabel": "安全区检查",
+    "tagline": "Reels、TikTok 和 Shorts 会遮挡哪些区域，以及屏幕会裁剪掉哪些内容。"
   },
   "phoneCropTool": {
     "breadcrumb": "工具",
@@ -669,7 +675,9 @@
     "trueNineSixteen": "一个真正的 9:16 屏幕",
     "relatedSafeZone": "Instagram Reels 安全区检查器",
     "related9x16": "9:16 宽高比",
-    "relatedInstagram": "Instagram 尺寸"
+    "relatedInstagram": "Instagram 尺寸",
+    "navLabel": "Reels 为什么会被裁剪",
+    "tagline": "手机屏幕会裁掉正确 9:16 上传内容的 18%。"
   },
   "pixelsInchesTool": {
     "breadcrumb": "工具",
@@ -699,7 +707,9 @@
     "noDpiBody": "DPI衡量的是每英寸纸张上打印的点数 — 它只在墨水遇到固定的物理尺寸时才存在。屏幕没有这种意义上的固定点距：相同的1920×1080图像在小型手机屏幕上看起来比在大型显示器上更密集，而且这两个数字都没有存储在文件中。人们为屏幕引用的“72 DPI”并非任何显示器的测量值；它是一个打印时代的惯例，其生命力超越了它所描述的产品。",
     "relatedResize": "无损调整图像大小",
     "relatedRatio": "3:2 aspect ratio",
-    "relatedSafeZone": "Instagram Reels 安全区检查器"
+    "relatedSafeZone": "Instagram Reels 安全区检查器",
+    "navLabel": "像素到英寸",
+    "tagline": "像素尺寸到物理尺寸，以及最大最佳打印尺寸。"
   },
   "printCropTool": {
     "breadcrumb": "工具",
@@ -735,7 +745,9 @@
     "keptLabel": "打印件保留的部分",
     "related3x2": "3:2 宽高比",
     "related4x3": "4:3 宽高比",
-    "relatedResize": "无损调整大小"
+    "relatedResize": "无损调整大小",
+    "navLabel": "打印裁剪",
+    "tagline": "3:2或4:3的照片在6x4、5x7、8x10和A4尺寸上会损失多少内容。"
   },
   "screenSizeTool": {
     "breadcrumb": "工具",
@@ -760,7 +772,9 @@
     "surprise": "在 {d} {unit} 对角线的情况下，16:9 屏幕的高度为 {h169} {unit}，面积为 {a169} {unit}²。而21:9 屏幕在完全相同的对角线情况下，高度仅为 {h219} {unit}，面积仅为 {a219} {unit}²——比看起来相同的对角线规格，高度减少了 {pctHeight}，面积减少了 {pctArea}。",
     "related16x9": "16:9 宽高比",
     "related4x3": "4:3 宽高比",
-    "relatedCompare": "16:9 对比 4:3 比较"
+    "relatedCompare": "16:9 对比 4:3 比较",
+    "navLabel": "屏幕尺寸",
+    "tagline": "根据对角线计算宽度和高度，适用于任何宽高比。"
   },
   "sensorCropTool": {
     "breadcrumb": "工具",
@@ -795,6 +809,15 @@
     "fullFrameNote": "全画幅是参考传感器：它自身的对角线除以自身必须正好得出 1.000×——这是验证其为算术计算而非查找表的依据。",
     "related3x2": "3:2 宽高比",
     "related4x3": "4:3 宽高比",
-    "relatedWhatIs": "什么是宽高比？"
+    "relatedWhatIs": "什么是宽高比？",
+    "navLabel": "裁剪系数",
+    "tagline": "35mm 等效焦距和等效光圈。"
+  },
+  "toolsPage": {
+    "title": "免费宽高比和裁剪工具",
+    "description": "免费计算器，用于宽高比、裁剪、安全区、打印尺寸、传感器裁剪系数和像素尺寸。无需注册，可离线使用。",
+    "h1": "工具",
+    "intro": "每个工具都回答一个问题并展示其计算过程。每个数字要么是根据已发布数据计算得出，要么标明其来源和时间。",
+    "heading": "工具"
   }
 }

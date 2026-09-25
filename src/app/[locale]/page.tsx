@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Calculator from "@/components/Calculator";
 import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
+import { TOOL_DATA, TOOL_SLUGS } from "@/lib/tools-data";
 import { LOCALE_SEGMENTS, getLocaleFromSegment, BASE_URL } from "@/i18n/config";
 import { getAlternates } from "@/lib/hreflang";
 import { CONTENT_REVISED } from "@/lib/content-revised";
@@ -297,6 +298,43 @@ export default async function Home({ params }: Props) {
             </div>
           </div>
 
+          {/* ── Tools ──
+            * Placed above Explore deliberately. The home page is one of only
+            * six URLs Google currently has indexed for this site, so a link
+            * from here is the strongest discovery signal available — and these
+            * are the pages built to be found. */}
+          <div className="seo-card">
+            <h2 id="tools" className="text-base font-semibold text-[var(--foreground)] mb-4">
+              {hp.toolsHeading ?? "Calculators and checkers"}
+            </h2>
+            <ul className="grid sm:grid-cols-2 gap-2">
+              {TOOL_SLUGS.map((slug) => {
+                const tm = (messages[TOOL_DATA[slug].ns] ?? {}) as Record<string, string>;
+                return (
+                  <li key={slug}>
+                    <Link
+                      href={`${prefix}/tools/${slug}`}
+                      className="block p-3 rounded-md border border-[var(--border)] hover:border-[var(--accent)] transition-colors"
+                    >
+                      <span className="block text-sm font-medium text-[var(--foreground)]">
+                        {tm.navLabel ?? slug}
+                      </span>
+                      <span className="block text-xs text-[var(--muted)] mt-0.5">
+                        {tm.tagline}
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <Link
+              href={`${prefix}/tools`}
+              className="inline-block mt-3 text-sm text-[var(--accent)] hover:underline"
+            >
+              {hp.allTools ?? "All tools"} &rarr;
+            </Link>
+          </div>
+
           {/* ── Explore Section ── */}
           <div className="seo-card">
             <h2 id="explore" className="text-base font-semibold text-[var(--foreground)] mb-4">
@@ -331,6 +369,22 @@ export default async function Home({ params }: Props) {
                       className="px-3 py-1.5 text-sm rounded-md border border-[var(--border)] text-[var(--foreground-dim)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
                     >
                       {seoData.PLATFORM_DATA[slug]?.name ?? slug}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 id="by-tool" className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">
+                  {hp.byTool ?? "Tools"}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {TOOL_SLUGS.map((slug) => (
+                    <Link
+                      key={slug}
+                      href={`${prefix}/tools/${slug}`}
+                      className="px-3 py-1.5 text-sm rounded-md border border-[var(--border)] text-[var(--foreground-dim)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                    >
+                      {(messages[TOOL_DATA[slug].ns] ?? {}).navLabel ?? slug}
                     </Link>
                   ))}
                 </div>

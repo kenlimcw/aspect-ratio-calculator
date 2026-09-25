@@ -243,7 +243,8 @@
     "privacyPolicy": "隱私權政策",
     "feedback": "意見回饋",
     "freeTool": "免費工具，無需註冊",
-    "copyright": "© {year} aspect-ratio-calculator.com. 版權所有。"
+    "copyright": "© {year} aspect-ratio-calculator.com. 版權所有。",
+    "tools": "工具"
   },
   "installPrompt": {
     "installCalculator": "安裝此計算機",
@@ -352,7 +353,10 @@
     "tableRow1851Where": "廣泛發行電影、IMAX 數位",
     "tableRow219UseCase": "超寬顯示器",
     "tableRow219Where": "遊戲、超寬顯示器",
-    "heroSubtitle": "計算並轉換社群媒體、影片、攝影和螢幕的長寬比"
+    "heroSubtitle": "計算並轉換社群媒體、影片、攝影和螢幕的長寬比",
+    "toolsHeading": "計算機與檢查工具",
+    "byTool": "工具",
+    "allTools": "所有工具"
   },
   "ratioPage": {
     "aspectRatio": "長寬比",
@@ -641,7 +645,9 @@
     "shortsSource": "常規公佈值；在此未經版本測量。",
     "related9x16": "9:16 長寬比",
     "relatedInstagram": "Instagram 尺寸",
-    "relatedConvert": "將 16:9 轉換為 9:16"
+    "relatedConvert": "將 16:9 轉換為 9:16",
+    "navLabel": "安全區檢查",
+    "tagline": "Reels、TikTok 和 Shorts 會遮蓋的內容，以及螢幕會裁切掉的部分。"
   },
   "phoneCropTool": {
     "breadcrumb": "工具",
@@ -669,7 +675,9 @@
     "trueNineSixteen": "一個真正的 9:16 螢幕",
     "relatedSafeZone": "Instagram Reel 安全區域檢查工具",
     "related9x16": "9:16 畫面比例",
-    "relatedInstagram": "Instagram 尺寸"
+    "relatedInstagram": "Instagram 尺寸",
+    "navLabel": "Reels為何被裁切",
+    "tagline": "手機螢幕會佔用正確9:16上傳內容的18%空間。"
   },
   "pixelsInchesTool": {
     "breadcrumb": "工具",
@@ -699,7 +707,9 @@
     "noDpiBody": "DPI 衡量每英吋紙張上列印的點數 — 它只在墨水遇到固定的物理尺寸時才存在。螢幕在這個意義上沒有固定的點距：相同的 1920×1080 圖像在小型手機螢幕上看起來比在大型顯示器上更密集，而且這兩個數字都沒有儲存在檔案中的任何地方。人們為螢幕引用的「72 DPI」並非任何顯示器的測量值；它是一個印刷時代的慣例，其壽命比它所描述的產品更長。",
     "relatedResize": "不失真地調整圖像大小",
     "relatedRatio": "3:2 aspect ratio",
-    "relatedSafeZone": "Instagram Reels 安全區域檢查器"
+    "relatedSafeZone": "Instagram Reels 安全區域檢查器",
+    "navLabel": "像素轉英吋",
+    "tagline": "像素尺寸轉換為實體尺寸，以及最大誠實列印。"
   },
   "printCropTool": {
     "breadcrumb": "工具",
@@ -735,7 +745,9 @@
     "keptLabel": "列印保留的部分",
     "related3x2": "3:2 aspect ratio",
     "related4x3": "4:3 aspect ratio",
-    "relatedResize": "不失真地調整大小"
+    "relatedResize": "不失真地調整大小",
+    "navLabel": "列印裁切",
+    "tagline": "3:2 或 4:3 的照片在 6x4、5x7、8x10 和 A4 尺寸的列印上會損失多少畫面。"
   },
   "screenSizeTool": {
     "breadcrumb": "工具",
@@ -760,7 +772,9 @@
     "surprise": "在 {d} {unit} 的對角線下，16:9 提供 {h169} {unit} 的高度和 {a169} {unit}² 的面積。而 21:9 在完全相同的對角線下，僅提供 {h219} {unit} 的高度和 {a219} {unit}² 的面積 — 相較於看起來相同的對角線規格，高度減少了 {pctHeight}，面積減少了 {pctArea}。",
     "related16x9": "16:9 長寬比",
     "related4x3": "4:3 長寬比",
-    "relatedCompare": "16:9 與 4:3 比較"
+    "relatedCompare": "16:9 與 4:3 比較",
+    "navLabel": "螢幕尺寸",
+    "tagline": "從對角線計算寬度和高度，適用於任何長寬比。"
   },
   "sensorCropTool": {
     "breadcrumb": "工具",
@@ -795,6 +809,15 @@
     "fullFrameNote": "全片幅是參考感光元件：它本身的對角線長度除以自身，結果必須正好是 1.000×——這是驗證計算而非查詢表的依據。",
     "related3x2": "3:2 長寬比",
     "related4x3": "4:3 長寬比",
-    "relatedWhatIs": "什麼是長寬比？"
+    "relatedWhatIs": "什麼是長寬比？",
+    "navLabel": "裁切係數",
+    "tagline": "35mm 等效焦距與等效光圈。"
+  },
+  "toolsPage": {
+    "title": "免費長寬比與裁切工具",
+    "description": "免費計算器，用於計算長寬比、裁切、安全區、印刷尺寸、感光元件裁切係數和像素尺寸。無需註冊，可離線使用。",
+    "h1": "工具",
+    "intro": "每個工具都回答一個問題並展示其運算過程。每個數字要麼是根據已發布的數據在此計算得出，要麼標明其來源和時間。",
+    "heading": "工具"
   }
 }

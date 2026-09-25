@@ -243,7 +243,8 @@
     "privacyPolicy": "Privacy Policy",
     "feedback": "Feedback",
     "freeTool": "Free tool, no sign-up required",
-    "copyright": "© {year} aspect-ratio-calculator.com. All rights reserved."
+    "copyright": "© {year} aspect-ratio-calculator.com. All rights reserved.",
+    "tools": "Tools"
   },
   "installPrompt": {
     "installCalculator": "Install this calculator",
@@ -352,7 +353,10 @@
     "tableRow1851UseCase": "Theatrical flat",
     "tableRow1851Where": "Wide-release cinema, IMAX digital",
     "tableRow219UseCase": "Ultrawide monitors",
-    "tableRow219Where": "Gaming, ultrawide displays"
+    "tableRow219Where": "Gaming, ultrawide displays",
+    "toolsHeading": "Calculators and checkers",
+    "byTool": "Tools",
+    "allTools": "All tools"
   },
   "ratioPage": {
     "aspectRatio": "Aspect Ratio",
@@ -640,7 +644,9 @@
     "shortsSource": "Conventional published values; not measured against a build here.",
     "related9x16": "9:16 aspect ratio",
     "relatedInstagram": "Instagram sizes",
-    "relatedConvert": "Converting 16:9 to 9:16"
+    "relatedConvert": "Converting 16:9 to 9:16",
+    "navLabel": "Safe zone checker",
+    "tagline": "What Reels, TikTok and Shorts cover, and what the screen cuts."
   },
   "phoneCropTool": {
     "breadcrumb": "Tools",
@@ -668,7 +674,9 @@
     "trueNineSixteen": "A true 9:16 screen",
     "relatedSafeZone": "Instagram Reels safe zone checker",
     "related9x16": "9:16 aspect ratio",
-    "relatedInstagram": "Instagram sizes"
+    "relatedInstagram": "Instagram sizes",
+    "navLabel": "Why Reels get cropped",
+    "tagline": "The 18% a phone screen takes off a correct 9:16 upload."
   },
   "pixelsInchesTool": {
     "breadcrumb": "Tools",
@@ -698,7 +706,9 @@
     "noDpiBody": "DPI measures dots printed per inch of paper — it only exists once ink meets a fixed physical size. A screen has no fixed dot pitch in that sense: the same 1920×1080 image looks denser on a small phone panel than on a large monitor, and neither number is stored anywhere in the file. The '72 DPI' people quote for screens is not a measurement of any display; it's a print-era convention that outlived the product it described.",
     "relatedResize": "Resize an image without losing quality",
     "relatedRatio": "3:2 aspect ratio",
-    "relatedSafeZone": "Instagram Reels safe zone checker"
+    "relatedSafeZone": "Instagram Reels safe zone checker",
+    "navLabel": "Pixels to inches",
+    "tagline": "Pixel size to physical size, and the largest honest print."
   },
   "printCropTool": {
     "breadcrumb": "Tools",
@@ -734,7 +744,9 @@
     "keptLabel": "What the print keeps",
     "related3x2": "3:2 aspect ratio",
     "related4x3": "4:3 aspect ratio",
-    "relatedResize": "Resizing without losing quality"
+    "relatedResize": "Resizing without losing quality",
+    "navLabel": "Print crop",
+    "tagline": "What a 3:2 or 4:3 photo loses on 6x4, 5x7, 8x10 and A4."
   },
   "screenSizeTool": {
     "breadcrumb": "Tools",
@@ -759,7 +771,9 @@
     "surprise": "At a {d} {unit} diagonal, 16:9 gives you {h169} {unit} of height and {a169} {unit}² of area. 21:9 at the exact same diagonal gives only {h219} {unit} of height and {a219} {unit}² of area — {pctHeight} less height and {pctArea} less area, from a diagonal spec that reads as identical.",
     "related16x9": "16:9 aspect ratio",
     "related4x3": "4:3 aspect ratio",
-    "relatedCompare": "16:9 vs 4:3 compared"
+    "relatedCompare": "16:9 vs 4:3 compared",
+    "navLabel": "Screen size",
+    "tagline": "Diagonal to width and height, for any aspect ratio."
   },
   "sensorCropTool": {
     "breadcrumb": "Tools",
@@ -794,6 +808,15 @@
     "fullFrameNote": "Full frame is the reference sensor: its own diagonal divided by itself has to come out to exactly 1.000× — the check that this is arithmetic, not a lookup table.",
     "related3x2": "3:2 aspect ratio",
     "related4x3": "4:3 aspect ratio",
-    "relatedWhatIs": "What is aspect ratio?"
+    "relatedWhatIs": "What is aspect ratio?",
+    "navLabel": "Crop factor",
+    "tagline": "35mm equivalent focal length and equivalent aperture."
+  },
+  "toolsPage": {
+    "title": "Free Aspect Ratio and Crop Tools",
+    "description": "Free calculators for aspect ratio, crop, safe zones, print size, sensor crop factor and pixel dimensions. No sign-up, works offline.",
+    "h1": "Tools",
+    "intro": "Each of these answers one question and shows its working. Every number is either computed here from a published figure, or labelled with where it came from and when.",
+    "heading": "Tools"
   }
 }

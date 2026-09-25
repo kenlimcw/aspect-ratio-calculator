@@ -8,6 +8,7 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useTranslation } from "@/components/I18nProvider";
 import { SiteSearch } from "@/components/SiteSearch";
 import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
+import { TOOL_DATA, TOOL_SLUGS } from "@/lib/tools-data";
 
 /** Serializable SEO titles passed from server layout */
 export interface FooterSeoData {
@@ -45,7 +46,7 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
     <footer className="mt-20 border-t border-[var(--border)]">
       {/* Explore Navigation */}
       <div className="max-w-2xl mx-auto px-4 pt-8 pb-4">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-xs">
           <div>
             <h4 className="font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
               {t("footer", "aspectRatios")}
@@ -92,6 +93,26 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
                     className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
                   >
                     {seoData?.articleTitles[slug] ?? slug}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* Tools sit in the footer, not only on the hub, because the footer is
+            * the one component on every page: it is what turns six new URLs
+            * from orphans into pages the crawler can reach from anywhere. */}
+          <div>
+            <h4 className="font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
+              {t("footer", "tools")}
+            </h4>
+            <ul className="space-y-1.5">
+              {TOOL_SLUGS.map((slug) => (
+                <li key={slug}>
+                  <Link
+                    href={`${prefix}/tools/${slug}`}
+                    className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
+                  >
+                    {t(TOOL_DATA[slug].ns, "navLabel")}
                   </Link>
                 </li>
               ))}

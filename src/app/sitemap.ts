@@ -39,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localizedEntries("/contact", siteInfo, "yearly", 0.4),
     ...localizedEntries("/developers", siteInfo, "monthly", 0.6),
     ...localizedEntries("/blog", siteInfo, "monthly", 0.6),
+    ...localizedEntries("/tools", TOOL_DATA[TOOL_SLUGS[0]].lastmod, "monthly", 0.8),
     ...localizedEntries("/terms", legal, "yearly", 0.3),
     ...localizedEntries("/privacy", legal, "yearly", 0.3),
     ...RATIO_SLUGS.flatMap((slug) =>

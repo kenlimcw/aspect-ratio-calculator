@@ -243,7 +243,8 @@
     "privacyPolicy": "Politique de confidentialité",
     "feedback": "Commentaires",
     "freeTool": "Outil gratuit, aucune inscription requise",
-    "copyright": "© {year} aspect-ratio-calculator.com. Tous droits réservés."
+    "copyright": "© {year} aspect-ratio-calculator.com. Tous droits réservés.",
+    "tools": "Outils"
   },
   "installPrompt": {
     "installCalculator": "Installer cette calculatrice",
@@ -352,7 +353,10 @@
     "tableRow1851Where": "Cinéma à large diffusion, numérique IMAX",
     "tableRow219UseCase": "Moniteurs ultra-larges",
     "tableRow219Where": "Jeux vidéo, écrans ultra-larges",
-    "heroSubtitle": "Calculer et convertir les rapports d'aspect pour les réseaux sociaux, la vidéo, la photographie et les écrans"
+    "heroSubtitle": "Calculer et convertir les rapports d'aspect pour les réseaux sociaux, la vidéo, la photographie et les écrans",
+    "toolsHeading": "Outils de calcul et de vérification",
+    "byTool": "Outils",
+    "allTools": "Tous les outils"
   },
   "ratioPage": {
     "aspectRatio": "Rapport d'aspect",
@@ -641,7 +645,9 @@
     "shortsSource": "Valeurs publiées conventionnelles ; non mesurées par rapport à une version ici.",
     "related9x16": "Format d'image 9:16",
     "relatedInstagram": "Tailles Instagram",
-    "relatedConvert": "Convertir 16:9 en 9:16"
+    "relatedConvert": "Convertir 16:9 en 9:16",
+    "navLabel": "Vérificateur de zone de sécurité",
+    "tagline": "Ce que recouvrent les Reels, TikTok et Shorts, et ce que l'écran coupe."
   },
   "phoneCropTool": {
     "breadcrumb": "Outils",
@@ -669,7 +675,9 @@
     "trueNineSixteen": "Un véritable écran 9:16",
     "relatedSafeZone": "Vérificateur de zone de sécurité Instagram Reels",
     "related9x16": "Rapport d'aspect 9:16",
-    "relatedInstagram": "Tailles Instagram"
+    "relatedInstagram": "Tailles Instagram",
+    "navLabel": "Pourquoi les Reels sont recadrés",
+    "tagline": "Les 18% qu'un écran de téléphone retire d'une publication 9:16 correcte."
   },
   "pixelsInchesTool": {
     "breadcrumb": "Outils",
@@ -699,7 +707,9 @@
     "noDpiBody": "Le DPI mesure les points imprimés par pouce de papier — il n'existe qu'une fois que l'encre rencontre une taille physique fixe. Un écran n'a pas de pas de point fixe dans ce sens : la même image 1920×1080 semble plus dense sur un petit écran de téléphone que sur un grand moniteur, et aucun de ces chiffres n'est stocké dans le fichier. Le '72 DPI' que les gens citent pour les écrans n'est pas une mesure d'un affichage ; c'est une convention de l'ère de l'impression qui a survécu au produit qu'elle décrivait.",
     "relatedResize": "Redimensionner une image sans perte de qualité",
     "relatedRatio": "3:2 aspect ratio",
-    "relatedSafeZone": "Vérificateur de zone de sécurité Instagram Reels"
+    "relatedSafeZone": "Vérificateur de zone de sécurité Instagram Reels",
+    "navLabel": "Pixels en pouces",
+    "tagline": "De la taille en pixels à la taille physique, et la plus grande impression optimale."
   },
   "printCropTool": {
     "breadcrumb": "Outils",
@@ -735,7 +745,9 @@
     "keptLabel": "Ce que l'impression conserve",
     "related3x2": "rapport d'aspect 3:2",
     "related4x3": "rapport d'aspect 4:3",
-    "relatedResize": "Redimensionner sans perte de qualité"
+    "relatedResize": "Redimensionner sans perte de qualité",
+    "navLabel": "Recadrage pour impression",
+    "tagline": "Ce qu'une photo 3:2 ou 4:3 perd sur les formats 6x4, 5x7, 8x10 et A4."
   },
   "screenSizeTool": {
     "breadcrumb": "Outils",
@@ -760,7 +772,9 @@
     "surprise": "Avec une diagonale de {d} {unit}, le 16:9 vous donne {h169} {unit} de hauteur et {a169} {unit}² de surface. Le 21:9, avec exactement la même diagonale, ne donne que {h219} {unit} de hauteur et {a219} {unit}² de surface — soit {pctHeight} de hauteur en moins et {pctArea} de surface en moins, pour une spécification de diagonale qui semble identique.",
     "related16x9": "Rapport d'aspect 16:9",
     "related4x3": "Rapport d'aspect 4:3",
-    "relatedCompare": "16:9 vs 4:3 : comparaison"
+    "relatedCompare": "16:9 vs 4:3 : comparaison",
+    "navLabel": "Taille de l'écran",
+    "tagline": "De la diagonale à la largeur et à la hauteur, pour tout rapport d'aspect."
   },
   "sensorCropTool": {
     "breadcrumb": "Outils",
@@ -795,6 +809,15 @@
     "fullFrameNote": "Le plein format est le capteur de référence : sa propre diagonale divisée par elle-même doit donner exactement 1.000× — la vérification que c'est arithmétique, et non une table de correspondance.",
     "related3x2": "Format d'image 3:2",
     "related4x3": "Format d'image 4:3",
-    "relatedWhatIs": "Qu'est-ce que le format d'image ?"
+    "relatedWhatIs": "Qu'est-ce que le format d'image ?",
+    "navLabel": "Facteur de recadrage",
+    "tagline": "Focale équivalente 35mm et ouverture équivalente."
+  },
+  "toolsPage": {
+    "title": "Outils gratuits de format d'image et de recadrage",
+    "description": "Calculatrices gratuites pour le format d'image, le recadrage, les zones de sécurité, la taille d'impression, le facteur de recadrage du capteur et les dimensions en pixels. Sans inscription, fonctionne hors ligne.",
+    "h1": "Outils",
+    "intro": "Chacun d'eux répond à une question et montre son fonctionnement. Chaque chiffre est soit calculé ici à partir d'une donnée publiée, soit étiqueté avec sa provenance et sa date.",
+    "heading": "Outils"
   }
 }

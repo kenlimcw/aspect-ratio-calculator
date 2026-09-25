@@ -243,7 +243,8 @@
     "privacyPolicy": "プライバシーポリシー",
     "feedback": "フィードバック",
     "freeTool": "無料ツール、登録不要",
-    "copyright": "© {year} aspect-ratio-calculator.com. 全ての権利を保有します。"
+    "copyright": "© {year} aspect-ratio-calculator.com. 全ての権利を保有します。",
+    "tools": "ツール"
   },
   "installPrompt": {
     "installCalculator": "この計算機をインストール",
@@ -352,7 +353,10 @@
     "tableRow1851Where": "ワイドリリース映画、IMAX digital",
     "tableRow219UseCase": "ウルトラワイドモニター",
     "tableRow219Where": "ゲーム、ウルトラワイドディスプレイ",
-    "heroSubtitle": "ソーシャルメディア、動画、写真、画面向けのアスペクト比を計算・変換"
+    "heroSubtitle": "ソーシャルメディア、動画、写真、画面向けのアスペクト比を計算・変換",
+    "toolsHeading": "計算ツール・チェッカー",
+    "byTool": "ツール",
+    "allTools": "全てのツール"
   },
   "ratioPage": {
     "aspectRatio": "アスペクト比",
@@ -641,7 +645,9 @@
     "shortsSource": "一般的な公開値。ここではビルドに対する測定は行われていません。",
     "related9x16": "9:16 アスペクト比",
     "relatedInstagram": "Instagram サイズ",
-    "relatedConvert": "16:9を9:16に変換"
+    "relatedConvert": "16:9を9:16に変換",
+    "navLabel": "セーフゾーンチェッカー",
+    "tagline": "Reels、TikTok、Shortsで隠れる部分と、画面でカットされる部分。"
   },
   "phoneCropTool": {
     "breadcrumb": "ツール",
@@ -669,7 +675,9 @@
     "trueNineSixteen": "真の9:16画面",
     "relatedSafeZone": "Instagramリールセーフゾーンチェッカー",
     "related9x16": "9:16アスペクト比",
-    "relatedInstagram": "Instagramサイズ"
+    "relatedInstagram": "Instagramサイズ",
+    "navLabel": "リールがトリミングされる理由",
+    "tagline": "正しい9:16でアップロードしても、スマートフォンの画面で表示されなくなる18%"
   },
   "pixelsInchesTool": {
     "breadcrumb": "ツール",
@@ -699,7 +707,9 @@
     "noDpiBody": "DPIは、紙1インチあたりに印刷されるドット数を測定するもので、インクが固定された物理的なサイズに接したときにのみ存在します。その意味で、画面には固定されたドットピッチがありません。同じ1920×1080の画像でも、大きなモニターよりも小さなスマートフォンの画面の方が高密度に見えますし、どちらの数値もファイル内のどこにも保存されていません。人々が画面について引用する「72 DPI」は、いかなるディスプレイの測定値でもありません。それは、それが記述していた製品よりも長く生き残った印刷時代の慣習なのです。",
     "relatedResize": "品質を損なわずに画像をリサイズする",
     "relatedRatio": "3:2 アスペクト比",
-    "relatedSafeZone": "Instagram Reels セーフゾーンチェッカー"
+    "relatedSafeZone": "Instagram Reels セーフゾーンチェッカー",
+    "navLabel": "ピクセルをインチに",
+    "tagline": "ピクセルサイズから物理サイズへ、そして最大の忠実な印刷。"
   },
   "printCropTool": {
     "breadcrumb": "ツール",
@@ -735,7 +745,9 @@
     "keptLabel": "プリントに残る部分",
     "related3x2": "3:2のアスペクト比",
     "related4x3": "4:3のアスペクト比",
-    "relatedResize": "画質を損なわずにリサイズ"
+    "relatedResize": "画質を損なわずにリサイズ",
+    "navLabel": "プリントトリミング",
+    "tagline": "3:2や4:3の写真を6x4、5x7、8x10、A4サイズでプリントする際に失われる部分。"
   },
   "screenSizeTool": {
     "breadcrumb": "ツール",
@@ -760,7 +772,9 @@
     "surprise": "{d} {unit}の対角線の場合、16:9は高さ{h169} {unit}と面積{a169} {unit}²を提供します。全く同じ対角線を持つ21:9は、高さ{h219} {unit}と面積{a219} {unit}²しか提供しません。これは、見た目は同じ対角線仕様でありながら、高さが{pctHeight}低く、面積が{pctArea}少ないことを意味します。",
     "related16x9": "16:9アスペクト比",
     "related4x3": "4:3アスペクト比",
-    "relatedCompare": "16:9と4:3の比較"
+    "relatedCompare": "16:9と4:3の比較",
+    "navLabel": "画面サイズ",
+    "tagline": "対角線から幅と高さを算出。任意のアスペクト比に対応。"
   },
   "sensorCropTool": {
     "breadcrumb": "ツール",
@@ -795,6 +809,15 @@
     "fullFrameNote": "フルサイズは基準となるセンサーです。自身の対角線長をそれ自身で割ると、正確に1.000×になるはずです。これは、これが計算であり、ルックアップテーブルではないことの確認です。",
     "related3x2": "3:2 アスペクト比",
     "related4x3": "4:3 アスペクト比",
-    "relatedWhatIs": "アスペクト比とは？"
+    "relatedWhatIs": "アスペクト比とは？",
+    "navLabel": "クロップファクター",
+    "tagline": "35mm判換算焦点距離と換算F値。"
+  },
+  "toolsPage": {
+    "title": "無料のアスペクト比・トリミングツール",
+    "description": "アスペクト比、トリミング、セーフゾーン、印刷サイズ、センサークロップファクター、ピクセル寸法の無料計算ツール。登録不要でオフラインでも動作します。",
+    "h1": "ツール",
+    "intro": "これらはそれぞれ一つの質問に答え、その計算過程を示します。すべての数値は、公開された数値からここで計算されるか、その出所と日時が明記されています。",
+    "heading": "ツール"
   }
 }
