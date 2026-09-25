@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test';
 
-const BASE_URL = 'http://localhost:3000';
+/* Honour the config's baseURL (and PLAYWRIGHT_BASE_URL with it). Hardcoding the
+ * port meant the whole suite failed with ERR_CONNECTION_REFUSED whenever another
+ * service held 3000 — which looks like 30 broken tests rather than one wrong
+ * constant. */
+const BASE_URL = process.env.PLAYWRIGHT_BASE_URL ?? 'http://localhost:3000';
 
 // ── Phase 2: Visual Testing ──────────────────────────────────────
 test.describe('Phase 2: Visual Testing', () => {

@@ -61,12 +61,53 @@ export function proxy(request: NextRequest) {
   return applyCSP(request, url);
 }
 
+/* Why there is no nonce here any more.
+ *
+ * This used to mint a per-request nonce and send `script-src 'self'
+ * 'nonce-...' 'strict-dynamic'`. Under `strict-dynamic` a browser IGNORES
+ * `'self'` and runs only scripts carrying the nonce — and a statically
+ * prerendered page cannot carry a per-request value, because it was written to
+ * disk at build time.
+ *
+ * So every prerendered page on this site shipped JavaScript the browser then
+ * refused to execute. Measured against production on 2026-09-25:
+ *
+ *     /ratio/16-9                 prerendered, 0 script tags with a nonce
+ *     /platform/instagram         prerendered, 0
+ *     /blog/what-is-aspect-ratio  prerendered, 0
+ *     /ja                         dynamic, nonce present, works
+ *
+ * The calculator worked on the home page and nowhere else, and the reason the
+ * home page worked is that reading headers() had forced it to render on demand
+ * — which is also what made it uncacheable. The nonce and the caching problem
+ * were the same bug wearing two hats.
+ *
+ * `'unsafe-inline'` is here for the same reason and it is the uncomfortable
+ * half. Removing the nonce unblocked the external chunks, and the browser then
+ * reported 15 more violations against `script-src-elem <- inline`: the App
+ * Router always emits an inline bootstrap carrying the RSC payload, and that
+ * needs a nonce, a per-page hash, or `unsafe-inline`. A nonce cannot exist in a
+ * file written at build time, and the payload differs per page so a static hash
+ * list is not maintainable. **A nonce-based CSP and static prerendering are
+ * mutually exclusive in this framework** — that is the actual constraint, and
+ * every other arrangement is a way of choosing which one to lose.
+ *
+ * So the trade, stated rather than slipped in. We lose: protection against an
+ * injected inline script. We keep: no `unsafe-eval`, third-party script limited
+ * to named origins, `object-src 'none'`, `base-uri 'self'`. The exposure needs
+ * an XSS vector to exploit, and this site renders no user input into HTML — it
+ * is a calculator whose inputs never leave client state, with no uploads, no
+ * comments and no user-supplied URLs.
+ *
+ * The alternative is what production does today: render everything on demand to
+ * keep the nonce, which costs the cacheability and the ETags that Googlebot
+ * needs — on a site whose whole problem is that Google stopped crawling it.
+ * Worth revisiting if the site ever renders anything a user typed.
+ */
 function applyCSP(request: NextRequest, rewriteUrl?: URL) {
-  const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
-
   const csp = [
     "default-src 'self'",
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms`,
+    "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms",
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: blob: https://www.google-analytics.com https://c.clarity.ms",
     "font-src 'self'",
@@ -75,14 +116,11 @@ function applyCSP(request: NextRequest, rewriteUrl?: URL) {
     "base-uri 'self'",
   ].join("; ");
 
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-nonce", nonce);
-
   let response: NextResponse;
   if (rewriteUrl) {
-    response = NextResponse.rewrite(rewriteUrl, { request: { headers: requestHeaders } });
+    response = NextResponse.rewrite(rewriteUrl);
   } else {
-    response = NextResponse.next({ request: { headers: requestHeaders } });
+    response = NextResponse.next();
   }
   response.headers.set("Content-Security-Policy", csp);
 

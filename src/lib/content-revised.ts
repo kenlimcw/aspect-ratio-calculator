@@ -23,4 +23,7 @@ export const CONTENT_REVISED = {
   legal: "2026-03-01",
   /** About, Contact, the blog index and the developer documentation. */
   siteInfo: "2026-09-21",
+  /** The /tools pages. They ship and change independently of everything else,
+   *  so they carry their own date rather than riding on ratioAndPlatform. */
+  tools: "2026-09-25",
 } as const;

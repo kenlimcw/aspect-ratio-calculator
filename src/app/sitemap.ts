@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { LOCALES, BASE_URL } from "@/i18n/config";
 import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
+import { TOOL_SLUGS } from "@/lib/tools-data";
 import { CONTENT_REVISED } from "@/lib/content-revised";
 import { articleDates } from "@/lib/article-meta";
 
@@ -31,7 +32,7 @@ function localizedEntries(
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const { home, ratioAndPlatform, legal, siteInfo } = CONTENT_REVISED;
+  const { home, ratioAndPlatform, legal, siteInfo, tools } = CONTENT_REVISED;
   return [
     ...localizedEntries("/", home, "weekly", 1.0),
     ...localizedEntries("/about", siteInfo, "yearly", 0.5),
@@ -44,6 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       localizedEntries(`/ratio/${slug}`, ratioAndPlatform, "monthly", 0.8)),
     ...PLATFORM_SLUGS.flatMap((slug) =>
       localizedEntries(`/platform/${slug}`, ratioAndPlatform, "monthly", 0.8)),
+    // Tools carry the site's highest priority after the calculator itself:
+    // they are the pages built to be cited, and each one outputs a number the
+    // articles quote. `tools` is their own revision date for the same reason
+    // articles have one — they change independently of the ratio copy.
+    ...TOOL_SLUGS.flatMap((slug) =>
+      localizedEntries(`/tools/${slug}`, tools, "monthly", 0.9)),
     // Articles change one at a time, so each carries its own date.
     ...ARTICLE_SLUGS.flatMap((slug) =>
       localizedEntries(`/blog/${slug}`, articleDates(slug).modified, "monthly", 0.7)),
