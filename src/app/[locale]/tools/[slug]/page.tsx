@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TOOL_DATA, TOOL_SLUGS } from "@/lib/tools-data";
-import { SafeZoneChecker } from "@/components/SafeZoneChecker";
+import { ToolWidget } from "@/components/tools/widgets";
 import { LOCALE_SEGMENTS, getLocaleFromSegment, BASE_URL } from "@/i18n/config";
 import { getAlternates } from "@/lib/hreflang";
 import { ORG_ID, SITE_NAME, jsonLd } from "@/lib/schema";
@@ -119,7 +119,7 @@ export default async function ToolPage({ params }: Props) {
           {m.answer}
         </p>
 
-        <SafeZoneChecker />
+        <ToolWidget widget={tool.widget} />
 
         <h2
           className="font-display text-xl font-semibold mt-12 mb-3"

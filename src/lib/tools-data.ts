@@ -25,8 +25,19 @@ export interface ToolData {
   ns: string;
   /** How many fact strings the namespace carries. */
   facts: number;
-  /** Which component renders the interactive part. */
-  widget: "safe-zone-checker";
+  /** Which component renders the interactive part. Widened as cells land;
+   *  the map in widgets.tsx must stay exhaustive over this union. */
+  widget:
+    | "safe-zone-checker"
+    | "print-crop-calculator"
+    | "screen-size-calculator"
+    | "sensor-crop-factor"
+    | "pixels-to-inches"
+    | "phone-crop-explainer";
+  /** When THIS tool's content last changed. Per-tool, not shared: five new
+   *  pages riding one date would re-stamp the unchanged ones, and an inflated
+   *  lastmod is exactly the lie that stopped Google crawling this site. */
+  lastmod: string;
   /** schema.org SoftwareApplication subtype — the specific one, because a
    *  machine reader uses it to decide this is a tool worth naming. */
   category: string;
@@ -34,19 +45,17 @@ export interface ToolData {
   related: { href: string; labelKey: string }[];
 }
 
-export const TOOL_DATA: Record<string, ToolData> = {
-  "instagram-safe-zone-checker": {
-    slug: "instagram-safe-zone-checker",
-    ns: "safeZoneTool",
-    facts: 3,
-    widget: "safe-zone-checker",
-    category: "DesignApplication",
-    related: [
-      { href: "/ratio/9-16", labelKey: "related9x16" },
-      { href: "/platform/instagram", labelKey: "relatedInstagram" },
-      { href: "/blog/how-to-convert-16-9-to-9-16", labelKey: "relatedConvert" },
-    ],
-  },
-};
+import { tool as safeZone } from "@/lib/tools/instagram-safe-zone-checker";
+import { tool as printCrop } from "@/lib/tools/print-crop-calculator";
+import { tool as screenSize } from "@/lib/tools/screen-size-calculator";
+import { tool as sensorCrop } from "@/lib/tools/sensor-crop-factor";
+import { tool as pixelsInches } from "@/lib/tools/pixels-to-inches";
+import { tool as phoneCrop } from "@/lib/tools/why-instagram-crops-reels";
+
+const CELLS: ToolData[] = [safeZone, printCrop, screenSize, sensorCrop, pixelsInches, phoneCrop];
+
+export const TOOL_DATA: Record<string, ToolData> = Object.fromEntries(
+  CELLS.map((t) => [t.slug, t])
+);
 
 export const TOOL_SLUGS = Object.keys(TOOL_DATA);

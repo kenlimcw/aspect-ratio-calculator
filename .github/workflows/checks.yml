@@ -34,6 +34,15 @@ jobs:
       - name: lastmod truthfulness
         run: npm run check:lastmod -- "origin/${{ github.base_ref || 'master' }}"
 
+      # Placeholders surviving translation is not checkable by eye at 12 locales
+      # x 741 keys, and a dropped {px} renders the literal brace text in one
+      # language, silently, often inside an aria-label.
+      - name: i18n invariant — self-test
+        run: npm run check:i18n:self
+
+      - name: i18n key and placeholder parity
+        run: npm run check:i18n
+
       - run: npm run build
 
       # `npm run lint` is deliberately NOT here yet. It currently reports 4
