@@ -61,11 +61,14 @@ export async function generateStaticParams() {
  * homepage. A soft 404 says "found" about a page that is not there, and
  * nothing downstream can tell the difference.
  *
- * dynamicParams = false is declared and is NOT sufficient on its own: the home
- * page reads headers() for the CSP nonce, which forces it to render on demand,
- * and a dynamically rendered route never consults generateStaticParams. So the
- * segment is also checked here, in the layout every locale route passes
- * through, where it holds whichever way the page below happens to render. */
+ * dynamicParams = false is declared, and the segment is ALSO checked here, in
+ * the layout every locale route passes through. The belt-and-braces was
+ * originally because the home page read headers() for a CSP nonce, which forced
+ * it to render on demand, and a dynamically rendered route never consults
+ * generateStaticParams. That nonce is gone (see the note beside the ld+json in
+ * page.tsx) and the home page prerenders again — but the runtime check stays,
+ * because it holds whichever way the page below happens to render, and the next
+ * dynamic API someone reaches for should not silently reopen a soft 404. */
 export const dynamicParams = false;
 
 export const viewport: Viewport = {

@@ -1,0 +1,43 @@
+# The checks that have to hold before anything reaches production.
+#
+# `check:lastmod` is here because the rule it enforces already existed as a
+# comment in src/lib/article-meta.ts and was not followed on the one commit that
+# mattered — six articles were rewritten and their dates stayed at March. A
+# sitemap that lies about freshness is why Google stopped crawling this site in
+# April. Govern by invariants, not prose.
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # the lastmod check diffs against the base branch
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Prove the check can fail before trusting it to pass.
+      - name: lastmod invariant — self-test
+        run: npm run check:lastmod:self
+
+      - name: lastmod truthfulness
+        run: npm run check:lastmod -- "origin/${{ github.base_ref || 'master' }}"
+
+      - run: npm run build
+
+      # `npm run lint` is deliberately NOT here yet. It currently reports 4
+      # pre-existing errors in CookieConsent.tsx, InstallPrompt.tsx and
+      # LanguageSwitcher.tsx, all predating this workflow. A CI job that is red
+      # on the day it lands teaches everyone to ignore CI, which is the same
+      # failure this workflow exists to fix. Fix those four, then add lint here.

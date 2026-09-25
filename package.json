@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "check:lastmod": "node scripts/check-lastmod.mjs",
+    "check:lastmod:self": "node scripts/check-lastmod.mjs --self-test"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.2.8",

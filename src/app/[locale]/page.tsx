@@ -1,4 +1,3 @@
-import { headers } from "next/headers";
 import Link from "next/link";
 import Calculator from "@/components/Calculator";
 import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
@@ -59,7 +58,6 @@ export default async function Home({ params }: Props) {
   const localeConfig = getLocaleFromSegment(localeSegment);
   const messages = await getMessages(localeConfig.code);
   const seoData = await getSeoData(localeConfig.code);
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
 
   const hp = messages.homePage ?? {};
   const prefix = localeConfig.urlPrefix; // "" for en, "/es" for es, etc.
@@ -134,14 +132,19 @@ export default async function Home({ params }: Props) {
 
   return (
     <main className="min-h-screen px-4 py-8 md:py-16">
+      {/* No nonce, deliberately, and it is the reason this page can be cached.
+        * Reading headers() for the CSP nonce made the busiest URL on the site
+        * render on demand: Vercel served it `no-cache, no-store` with no ETag,
+        * so Googlebot could never make a conditional request and every visit
+        * was a full fetch. application/ld+json is data, not an executed script
+        * — the layout has always shipped its own ld+json without a nonce — so
+        * the nonce bought nothing and cost the homepage its cacheability. */}
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppLd) }}
       />
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }}
       />
 
