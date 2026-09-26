@@ -84,7 +84,7 @@ export default async function BlogArticlePage({ params }: Props) {
       {
         "@type": "ListItem",
         position: 2,
-        name: bp.blog ?? "Blog",
+        name: bp.blog ?? "Guides",
         item: `${BASE_URL}${prefix}/blog`,
       },
       {
@@ -115,7 +115,7 @@ export default async function BlogArticlePage({ params }: Props) {
           </Link>
           <span>/</span>
           <Link href={`${prefix}/blog`} className="hover:text-[var(--foreground)] transition-colors">
-            {bp.blog ?? "Blog"}
+            {bp.blog ?? "Guides"}
           </Link>
           <span>/</span>
           <span className="text-[var(--foreground)]">{data.title}</span>

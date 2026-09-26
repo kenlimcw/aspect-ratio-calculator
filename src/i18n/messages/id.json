@@ -231,8 +231,8 @@
     "makeSmaller": "Perkecil",
     "websiteHero": "Hero Situs Web",
     "shopifyBanner": "Shopify Banner",
-    "blogPost": "Postingan Blog",
-    "emailHeader": "Header Email"
+    "emailHeader": "Header Email",
+    "blogPost": "Artikel"
   },
   "footer": {
     "aspectRatios": "Rasio Aspek",
@@ -245,7 +245,9 @@
     "legalLinks": "Hukum",
     "termsOfService": "Ketentuan",
     "privacyPolicy": "Privasi",
-    "copyright": "Semua hak dilindungi · © {year} aspect-ratio-calculator.com"
+    "copyright": "Semua hak dilindungi · © {year} aspect-ratio-calculator.com",
+    "more": "Selengkapnya",
+    "less": "Ringkas"
   },
   "installPrompt": {
     "installCalculator": "Instal kalkulator ini",
@@ -391,9 +393,9 @@
     "tableNotes": "Catatan"
   },
   "blogPage": {
-    "blog": "Blog",
     "readyToPractice": "Siap mempraktikkan ini?",
-    "tryCalculator": "Coba Aspect Ratio Calculator Gratis →"
+    "tryCalculator": "Coba Aspect Ratio Calculator Gratis →",
+    "blog": "Panduan"
   },
   "ratioCalculator": {
     "quickCalculator": "Kalkulator Cepat",

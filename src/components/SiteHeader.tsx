@@ -41,11 +41,8 @@ export function SiteHeader() {
 
   return (
     <header
-      className="sticky top-0 z-40 border-b backdrop-blur-md"
-      style={{
-        borderColor: "var(--border)",
-        background: "color-mix(in srgb, var(--background) 86%, transparent)",
-      }}
+      className="site-header sticky top-0 z-40 border-b backdrop-blur-md"
+      style={{ borderColor: "var(--border)" }}
     >
       <div className="mx-auto flex max-w-5xl items-center gap-1 px-4" style={{ minHeight: 56 }}>
         <Link

@@ -231,8 +231,8 @@
     "makeSmaller": "تصغير الحجم",
     "websiteHero": "صورة رئيسية للموقع",
     "shopifyBanner": "بانر Shopify",
-    "blogPost": "منشور مدونة",
-    "emailHeader": "رأس البريد الإلكتروني"
+    "emailHeader": "رأس البريد الإلكتروني",
+    "blogPost": "مقالة"
   },
   "footer": {
     "aspectRatios": "نسب الأبعاد",
@@ -245,7 +245,9 @@
     "legalLinks": "قانوني",
     "termsOfService": "الشروط",
     "privacyPolicy": "الخصوصية",
-    "copyright": "جميع الحقوق محفوظة · © {year} aspect-ratio-calculator.com"
+    "copyright": "جميع الحقوق محفوظة · © {year} aspect-ratio-calculator.com",
+    "more": "المزيد",
+    "less": "أقل"
   },
   "installPrompt": {
     "installCalculator": "تثبيت هذه الحاسبة",
@@ -391,9 +393,9 @@
     "tableNotes": "ملاحظات"
   },
   "blogPage": {
-    "blog": "المدونة",
     "readyToPractice": "هل أنت مستعد لتطبيق هذا عمليًا؟",
-    "tryCalculator": "جرّب Aspect Ratio Calculator المجانية ←"
+    "tryCalculator": "جرّب Aspect Ratio Calculator المجانية ←",
+    "blog": "إرشادات"
   },
   "ratioCalculator": {
     "quickCalculator": "الحاسبة السريعة",

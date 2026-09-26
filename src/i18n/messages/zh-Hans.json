@@ -231,8 +231,8 @@
     "makeSmaller": "缩小",
     "websiteHero": "网站主图",
     "shopifyBanner": "Shopify 横幅",
-    "blogPost": "博客文章",
-    "emailHeader": "电子邮件标题"
+    "emailHeader": "电子邮件标题",
+    "blogPost": "文章"
   },
   "footer": {
     "aspectRatios": "宽高比",
@@ -245,7 +245,9 @@
     "legalLinks": "法律",
     "termsOfService": "条款",
     "privacyPolicy": "隐私",
-    "copyright": "版权所有 · © {year} aspect-ratio-calculator.com"
+    "copyright": "版权所有 · © {year} aspect-ratio-calculator.com",
+    "more": "更多",
+    "less": "更少"
   },
   "installPrompt": {
     "installCalculator": "安装此计算器",
@@ -391,9 +393,9 @@
     "tableNotes": "备注"
   },
   "blogPage": {
-    "blog": "博客",
     "readyToPractice": "准备好付诸实践了吗？",
-    "tryCalculator": "试用免费宽高比计算器 →"
+    "tryCalculator": "试用免费宽高比计算器 →",
+    "blog": "指南"
   },
   "ratioCalculator": {
     "quickCalculator": "快速计算器",

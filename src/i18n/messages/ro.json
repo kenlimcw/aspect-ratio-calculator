@@ -231,8 +231,8 @@
     "makeSmaller": "Micșorează",
     "websiteHero": "Imagine principală site web",
     "shopifyBanner": "Banner Shopify",
-    "blogPost": "Articol de blog",
-    "emailHeader": "Antet e-mail"
+    "emailHeader": "Antet e-mail",
+    "blogPost": "Articol"
   },
   "footer": {
     "aspectRatios": "Raporturi de aspect",
@@ -245,7 +245,9 @@
     "legalLinks": "Legal",
     "termsOfService": "Termeni",
     "privacyPolicy": "Confidențialitate",
-    "copyright": "Toate drepturile rezervate · © {year} aspect-ratio-calculator.com"
+    "copyright": "Toate drepturile rezervate · © {year} aspect-ratio-calculator.com",
+    "more": "Mai mult",
+    "less": "Mai puțin"
   },
   "installPrompt": {
     "installCalculator": "Instalează acest calculator",
@@ -391,9 +393,9 @@
     "tableNotes": "Note"
   },
   "blogPage": {
-    "blog": "Blog",
     "readyToPractice": "Gata să pui asta în practică?",
-    "tryCalculator": "Încearcă calculatorul gratuit de raport de aspect →"
+    "tryCalculator": "Încearcă calculatorul gratuit de raport de aspect →",
+    "blog": "Ghiduri"
   },
   "ratioCalculator": {
     "quickCalculator": "Calculator rapid",

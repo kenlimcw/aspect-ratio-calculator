@@ -827,3 +827,54 @@ input[pattern="[0-9]*"] {
   .footer-col > .footer-sum { padding-block: 0; margin-bottom: 0.5rem; }
   .footer-col > ul { padding-bottom: 0; }
 }
+
+/* ── Subtle gradients, dark theme only ────────────────────────────────────
+ *
+ * The dark ground is a single flat #0b0d11 across the whole page, which is
+ * what makes large surfaces read as dead space. These are deliberately near
+ * the threshold of visibility — a few percent of the accent and the warm
+ * amber, lit from one corner so every panel agrees about where the light is.
+ * Light theme keeps its flat surfaces: on a near-white ground the same
+ * treatment reads as a printing fault rather than depth.
+ */
+:root .seo-card,
+[data-theme="dark"] .seo-card {
+  background:
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--accent) 4%, var(--surface)) 0%,
+      var(--surface) 55%
+    );
+}
+
+/* The footer closes the page, so it gets the warm end of the grade rather
+ * than another blue wash — otherwise every surface is the same temperature. */
+:root footer,
+[data-theme="dark"] footer {
+  background:
+    radial-gradient(
+      120% 90% at 50% 100%,
+      color-mix(in srgb, var(--accent-amber) 4%, transparent) 0%,
+      transparent 70%
+    );
+}
+
+/* The header floats over whatever scrolls under it, so it needs its own
+ * ground rather than borrowing the page's. */
+:root .site-header,
+[data-theme="dark"] .site-header {
+  background:
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--accent) 5%, transparent),
+      transparent
+    ),
+    color-mix(in srgb, var(--background) 86%, transparent);
+}
+
+/* The one place a gradient is doing work rather than atmosphere: the hero
+ * mark's own glow, which separates it from the ground at display size. */
+:root .hero-lockup .hero-mark,
+[data-theme="dark"] .hero-lockup .hero-mark {
+  filter: drop-shadow(0 0 18px color-mix(in srgb, var(--accent) 22%, transparent));
+}

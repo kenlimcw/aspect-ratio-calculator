@@ -231,8 +231,9 @@
     "makeSmaller": "Thu nhỏ",
     "websiteHero": "Ảnh bìa trang web",
     "shopifyBanner": "Banner Shopify",
-    "blogPost": "Bài đăng blog",
-    "emailHeader": "Tiêu đề email"
+    "emailHeader": "Tiêu đề email",
+    "bài viết blog": "Bài viết",
+    "blogPost": "Bài viết"
   },
   "footer": {
     "aspectRatios": "Tỷ lệ khung hình",
@@ -245,7 +246,9 @@
     "legalLinks": "Pháp lý",
     "termsOfService": "Điều khoản",
     "privacyPolicy": "Quyền riêng tư",
-    "copyright": "Mọi quyền được bảo lưu · © {year} aspect-ratio-calculator.com"
+    "copyright": "Mọi quyền được bảo lưu · © {year} aspect-ratio-calculator.com",
+    "more": "Xem thêm",
+    "less": "Thu gọn"
   },
   "installPrompt": {
     "installCalculator": "Cài đặt máy tính này",
@@ -391,9 +394,9 @@
     "tableNotes": "Ghi chú"
   },
   "blogPage": {
-    "blog": "Blog",
     "readyToPractice": "Sẵn sàng áp dụng điều này vào thực tế?",
-    "tryCalculator": "Dùng thử Công cụ tính tỷ lệ khung hình miễn phí →"
+    "tryCalculator": "Dùng thử Công cụ tính tỷ lệ khung hình miễn phí →",
+    "blog": "Hướng dẫn"
   },
   "ratioCalculator": {
     "quickCalculator": "Máy tính nhanh",

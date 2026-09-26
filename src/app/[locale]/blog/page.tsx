@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: segment } = await params;
   const localeConfig = getLocaleFromSegment(segment);
   const messages = await getMessages(localeConfig.code);
-  const label = messages.blogPage?.blog ?? "Blog";
+  const label = messages.blogPage?.blog ?? "Guides";
 
   return {
     title: `${label} — ${messages.meta?.siteTitle ?? "Aspect Ratio Calculator"}`,
@@ -45,7 +45,7 @@ export default async function BlogIndexPage({ params }: Props) {
   const messages = await getMessages(localeConfig.code);
   const seoData = await getSeoData(localeConfig.code);
   const prefix = localeConfig.urlPrefix;
-  const label = messages.blogPage?.blog ?? "Blog";
+  const label = messages.blogPage?.blog ?? "Guides";
 
   const articles = Object.entries(seoData.ARTICLE_DATA);
 

@@ -231,8 +231,8 @@
     "makeSmaller": "Zmniejsz",
     "websiteHero": "Baner główny strony internetowej",
     "shopifyBanner": "Baner Shopify",
-    "blogPost": "Wpis na blogu",
-    "emailHeader": "Nagłówek e-maila"
+    "emailHeader": "Nagłówek e-maila",
+    "blogPost": "Artykuł"
   },
   "footer": {
     "aspectRatios": "Proporcje obrazu",
@@ -245,7 +245,9 @@
     "legalLinks": "Informacje prawne",
     "termsOfService": "Warunki",
     "privacyPolicy": "Prywatność",
-    "copyright": "Wszelkie prawa zastrzeżone · © {year} aspect-ratio-calculator.com"
+    "copyright": "Wszelkie prawa zastrzeżone · © {year} aspect-ratio-calculator.com",
+    "more": "Więcej",
+    "less": "Mniej"
   },
   "installPrompt": {
     "installCalculator": "Zainstaluj ten kalkulator",
@@ -391,9 +393,9 @@
     "tableNotes": "Uwagi"
   },
   "blogPage": {
-    "blog": "Blog",
     "readyToPractice": "Gotowy, aby zastosować to w praktyce?",
-    "tryCalculator": "Wypróbuj darmowy kalkulator Aspect Ratio →"
+    "tryCalculator": "Wypróbuj darmowy kalkulator Aspect Ratio →",
+    "blog": "Poradniki"
   },
   "ratioCalculator": {
     "quickCalculator": "Szybki kalkulator",

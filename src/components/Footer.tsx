@@ -35,6 +35,52 @@ function buildLocalePath(basePath: string, locale: LocaleConfig): string {
   return `${locale.urlPrefix}${basePath}`;
 }
 
+/* Five items, then a toggle.
+ *
+ * Aspect Ratios carries fourteen entries and Language thirteen; at full length
+ * they ran twice the depth of every other column and ate most of a phone
+ * screen. Two sub-columns fixed the depth by making the block wider and harder
+ * to scan, which is not a trade worth making in a footer.
+ *
+ * Every item stays in the DOM — the overflow is `hidden`, not absent — because
+ * these links are how a crawler reaches the ratio and locale pages.
+ */
+function CappedList({
+  items,
+  cap = 5,
+  more,
+  less,
+}: {
+  items: React.ReactNode[];
+  cap?: number;
+  more: string;
+  less: string;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const overflow = items.length - cap;
+  return (
+    <>
+      <ul className="space-y-1.5">
+        {items.map((item, i) => (
+          <li key={i} hidden={!expanded && i >= cap}>
+            {item}
+          </li>
+        ))}
+      </ul>
+      {overflow > 0 && (
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
+          className="mt-2 text-[var(--muted)] underline underline-offset-4 hover:text-[var(--accent)] transition-colors"
+        >
+          {expanded ? less : `${more} (${overflow})`}
+        </button>
+      )}
+    </>
+  );
+}
+
 export function Footer({ locale: localeProp, seoData }: { locale?: string; seoData?: FooterSeoData }) {
   const { t, locale: ctxLocale } = useTranslation();
   const locale = localeProp ?? ctxLocale;
@@ -72,21 +118,19 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             <summary className="footer-sum font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
               {t("footer", "aspectRatios")}
             </summary>
-            <ul className="space-y-1.5 [column-count:2] [column-gap:1rem] [&>li]:break-inside-avoid sm:[column-count:1] lg:[column-count:2]">
-              {RATIO_SLUGS.map((slug) => (
-                <li key={slug}>
-                  <Link
-                    href={`${prefix}/ratio/${slug}`}
-                    /* "16:9 Ratio" was wrapping inside its sub-column, so 7
-                     * rows rendered as 14 lines and this became the tallest
-                     * column. It is short enough not to need the wrap. */
-                    className="whitespace-nowrap text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
-                  >
-                    {seoData?.ratioLabels[slug] ?? slug} {t("common", "ratio")}
-                  </Link>
-                </li>
+            <CappedList
+              more={t("footer", "more")}
+              less={t("footer", "less")}
+              items={RATIO_SLUGS.map((slug) => (
+                <Link
+                  key={slug}
+                  href={`${prefix}/ratio/${slug}`}
+                  className="whitespace-nowrap text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
+                >
+                  {seoData?.ratioLabels[slug] ?? slug} {t("common", "ratio")}
+                </Link>
               ))}
-            </ul>
+            />
           </details>
           <details open={open} className="footer-col">
             <summary className="footer-sum font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
@@ -150,26 +194,23 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             <summary className="footer-sum font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
               {t("footer", "language")}
             </summary>
-            <ul className="space-y-1.5 [column-count:2] [column-gap:1rem] [&>li]:break-inside-avoid sm:[column-count:1] lg:[column-count:2]">
-              {LOCALES.map((l) => {
-                const basePath = getBasePath(pathname);
-                const href = buildLocalePath(basePath, l);
-                return (
-                  <li key={l.code}>
-                    <a
-                      href={href}
-                      className={`transition-colors ${
-                        l.code === locale
-                          ? "text-[var(--accent)] font-medium"
-                          : "text-[var(--muted)] hover:text-[var(--accent)]"
-                      }`}
-                    >
-                      {l.nativeName}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
+            <CappedList
+              more={t("footer", "more")}
+              less={t("footer", "less")}
+              items={LOCALES.map((l) => (
+                <a
+                  key={l.code}
+                  href={buildLocalePath(getBasePath(pathname), l)}
+                  className={`transition-colors ${
+                    l.code === locale
+                      ? "text-[var(--accent)] font-medium"
+                      : "text-[var(--muted)] hover:text-[var(--accent)]"
+                  }`}
+                >
+                  {l.nativeName}
+                </a>
+              ))}
+            />
           </details>
         </div>
       </div>
@@ -188,9 +229,14 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
         * reaches the bottom of the page.
         */}
       <div className="border-t border-[var(--border)]">
-        <div className="max-w-2xl mx-auto px-4 py-6 flex flex-col items-center gap-3 text-xs text-[var(--muted)]">
+        {/* pb-24 on a phone: the Feedback widget is fixed to the bottom-left and
+            * was sitting on top of the copyright line. */}
+        <div className="max-w-2xl mx-auto px-4 pt-6 pb-24 sm:pb-6 flex flex-col items-center gap-3 text-xs text-[var(--muted)]">
           <SiteSearch />
 
+          {/* One row, centred. Seven short links split across two rows read
+            * as two unrelated groups; together they are just "everything else
+            * on this site", which is what a footer meta row is. */}
           <nav
             className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5"
             aria-label={t("footer", "siteLinks")}
@@ -205,12 +251,6 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
               {t("developersPage", "title")}
             </Link>
             <FooterFeedbackLink />
-          </nav>
-
-          <nav
-            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5"
-            aria-label={t("footer", "legalLinks")}
-          >
             <Link href={`${prefix}/terms`} className="hover:text-[var(--foreground)] transition-colors">
               {t("footer", "termsOfService")}
             </Link>

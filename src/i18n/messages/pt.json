@@ -231,8 +231,8 @@
     "makeSmaller": "Reduzir Tamanho",
     "websiteHero": "Banner Principal do Site",
     "shopifyBanner": "Shopify Banner",
-    "blogPost": "Publicação de Blog",
-    "emailHeader": "Cabeçalho de E-mail"
+    "emailHeader": "Cabeçalho de E-mail",
+    "blogPost": "Artigo"
   },
   "footer": {
     "aspectRatios": "Proporções de Tela",
@@ -245,7 +245,9 @@
     "legalLinks": "Informações Legais",
     "termsOfService": "Termos",
     "privacyPolicy": "Privacidade",
-    "copyright": "Todos os direitos reservados · © {year} aspect-ratio-calculator.com"
+    "copyright": "Todos os direitos reservados · © {year} aspect-ratio-calculator.com",
+    "more": "Mais",
+    "less": "Menos"
   },
   "installPrompt": {
     "installCalculator": "Instalar esta calculadora",
@@ -391,9 +393,9 @@
     "tableNotes": "Notas"
   },
   "blogPage": {
-    "blog": "Blog",
     "readyToPractice": "Pronto para colocar isso em prática?",
-    "tryCalculator": "Experimente a Calculadora Gratuita de Proporção de Aspecto →"
+    "tryCalculator": "Experimente a Calculadora Gratuita de Proporção de Aspecto →",
+    "blog": "Guias"
   },
   "ratioCalculator": {
     "quickCalculator": "Calculadora Rápida",

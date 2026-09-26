@@ -333,7 +333,7 @@ const WIZARD_CATEGORIES: WizardCategory[] = [
         ],
       },
       {
-        label: "Blog Post",
+        label: "Article",
         actions: [
           { label: "1200×630 (OG Image)", targetW: 1200, targetH: 630, ratioLabel: "1.91:1" },
           { label: "800×450 (Featured)", targetW: 800, targetH: 450, ratioLabel: "16:9" },

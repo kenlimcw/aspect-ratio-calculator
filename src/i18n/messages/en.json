@@ -231,7 +231,7 @@
     "makeSmaller": "Make Smaller",
     "websiteHero": "Website Hero",
     "shopifyBanner": "Shopify Banner",
-    "blogPost": "Blog Post",
+    "blogPost": "Article",
     "emailHeader": "Email Header"
   },
   "footer": {
@@ -245,7 +245,9 @@
     "copyright": "All rights reserved · © {year} aspect-ratio-calculator.com",
     "tools": "Tools",
     "siteLinks": "Site links",
-    "legalLinks": "Legal"
+    "legalLinks": "Legal",
+    "more": "More",
+    "less": "Less"
   },
   "installPrompt": {
     "installCalculator": "Install this calculator",
@@ -391,7 +393,7 @@
     "tableNotes": "Notes"
   },
   "blogPage": {
-    "blog": "Blog",
+    "blog": "Guides",
     "readyToPractice": "Ready to put this into practice?",
     "tryCalculator": "Try the Free Aspect Ratio Calculator →"
   },

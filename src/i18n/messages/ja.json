@@ -231,8 +231,8 @@
     "makeSmaller": "小さくする",
     "websiteHero": "ウェブサイトヒーロー",
     "shopifyBanner": "Shopifyバナー",
-    "blogPost": "ブログ投稿",
-    "emailHeader": "メールヘッダー"
+    "emailHeader": "メールヘッダー",
+    "blogPost": "記事"
   },
   "footer": {
     "aspectRatios": "アスペクト比",
@@ -245,7 +245,9 @@
     "legalLinks": "法務",
     "termsOfService": "利用規約",
     "privacyPolicy": "プライバシーポリシー",
-    "copyright": "著作権所有・© {year} aspect-ratio-calculator.com"
+    "copyright": "著作権所有・© {year} aspect-ratio-calculator.com",
+    "more": "もっと見る",
+    "less": "閉じる"
   },
   "installPrompt": {
     "installCalculator": "この計算機をインストール",
@@ -391,9 +393,9 @@
     "tableNotes": "注意事項"
   },
   "blogPage": {
-    "blog": "ブログ",
     "readyToPractice": "これを実践する準備はできましたか？",
-    "tryCalculator": "無料のAspect Ratio Calculatorを試す →"
+    "tryCalculator": "無料のAspect Ratio Calculatorを試す →",
+    "blog": "ガイド"
   },
   "ratioCalculator": {
     "quickCalculator": "クイック計算",

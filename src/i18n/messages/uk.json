@@ -231,8 +231,8 @@
     "makeSmaller": "Зробити меншим",
     "websiteHero": "Головне зображення вебсайту",
     "shopifyBanner": "Банер Shopify",
-    "blogPost": "Допис у блозі",
-    "emailHeader": "Заголовок електронного листа"
+    "emailHeader": "Заголовок електронного листа",
+    "blogPost": "Стаття"
   },
   "footer": {
     "aspectRatios": "Співвідношення сторін",
@@ -245,7 +245,9 @@
     "legalLinks": "Юридична інформація",
     "termsOfService": "Умови",
     "privacyPolicy": "Конфіденційність",
-    "copyright": "Усі права захищено · © {year} aspect-ratio-calculator.com"
+    "copyright": "Усі права захищено · © {year} aspect-ratio-calculator.com",
+    "more": "Більше",
+    "less": "Менше"
   },
   "installPrompt": {
     "installCalculator": "Встановити цей калькулятор",
@@ -391,9 +393,9 @@
     "tableNotes": "Примітки"
   },
   "blogPage": {
-    "blog": "Блог",
     "readyToPractice": "Готові застосувати це на практиці?",
-    "tryCalculator": "Спробуйте безкоштовний калькулятор співвідношення сторін →"
+    "tryCalculator": "Спробуйте безкоштовний калькулятор співвідношення сторін →",
+    "blog": "Посібники"
   },
   "ratioCalculator": {
     "quickCalculator": "Швидкий калькулятор",
