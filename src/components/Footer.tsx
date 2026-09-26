@@ -148,25 +148,23 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
 
       {/* Copyright & Legal
         *
-        * This was one flex row holding ten links, a search box and the
-        * copyright — 536px of content in a 375px viewport, so it forced the
-        * whole page to scroll sideways. Wrapping it fixed the overflow and
-        * left a dense, unreadable thicket.
+        * Three earlier attempts at this: one 536px row that scrolled the page
+        * sideways, then a wrapped thicket, then three widely spaced bands that
+        * left more air than content. This is the tight version — two link rows
+        * and a copyright line, centred at every width.
         *
-        * Three bands instead, because they are three different kinds of
-        * thing: where else to go, the legal obligations, and the statement
-        * about the site. Centred on a phone where there is no room to imply
-        * a relationship with left and right edges; split left/right on a wide
-        * screen where there is.
+        * Centred rather than split left/right because there is not enough here
+        * to justify two edges; nine short links pushed apart just read as a
+        * gap. "Free tool, no sign-up required" is gone: it was marketing in a
+        * legal strip, and the price is already obvious by the time anyone
+        * reaches the bottom of the page.
         */}
       <div className="border-t border-[var(--border)]">
-        <div className="max-w-2xl mx-auto px-4 py-7 space-y-5 text-xs text-[var(--muted)]">
-          <div className="flex justify-center sm:justify-start">
-            <SiteSearch />
-          </div>
+        <div className="max-w-2xl mx-auto px-4 py-6 flex flex-col items-center gap-3 text-xs text-[var(--muted)]">
+          <SiteSearch />
 
           <nav
-            className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2.5 sm:justify-start"
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5"
             aria-label={t("footer", "siteLinks")}
           >
             <Link href={`${prefix}/about`} className="hover:text-[var(--foreground)] transition-colors">
@@ -185,7 +183,7 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
           </nav>
 
           <nav
-            className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2.5 sm:justify-start"
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5"
             aria-label={t("footer", "legalLinks")}
           >
             <Link href={`${prefix}/terms`} className="hover:text-[var(--foreground)] transition-colors">
@@ -197,10 +195,9 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             <CookieSettingsLink />
           </nav>
 
-          <div className="flex flex-col items-center gap-1.5 border-t border-[var(--border)] pt-5 text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-start">
-            <span>{t("footer", "copyright").replace("{year}", String(year))}</span>
-            <span>{t("footer", "freeTool")}</span>
-          </div>
+          <span className="text-center text-[var(--muted)]/80">
+            {t("footer", "copyright").replace("{year}", String(year))}
+          </span>
         </div>
       </div>
     </footer>

@@ -731,10 +731,10 @@ input[pattern="[0-9]*"] {
  *            y, because both lines are single lines and it fits.
  */
 .hero-lockup {
-  --h: 1.75rem;              /* 28px — the largest that keeps the headline
-                              * on one line beside the mark at 375px:
-                              * 10.716em of text = 300px, + mark 28 + gap 8
-                              * = 336 of the 343 available */
+  --h: 1.75rem;              /* 28px — the largest that keeps the headline on
+                              * one line beside the mark at 375px: 10.716em of
+                              * text is 300px, + a 28px mark + an 8px gap, in
+                              * the 343px available */
   --lh: 1.06;
   --lead: 0.300em;
   display: grid;
@@ -742,11 +742,28 @@ input[pattern="[0-9]*"] {
   grid-template-areas: "mark title" "tag tag";
   column-gap: 0.55rem;
   align-items: start;
-  text-align: start;
+
+  /* Centred while narrow, and not for decoration.
+   *
+   * Left-aligned, this block has three different left edges: the mark at the
+   * page gutter, the headline pushed right by the mark, and the tagline back
+   * at the gutter. That zigzag is what reads as the mark "sticking out" — it
+   * is the only heavy thing on a line the rest of the page does not share.
+   * There is no way to fix it and keep the mark beside the headline: at 375px
+   * the gutter is 16px and a 28px mark cannot hang outside it.
+   *
+   * Centring removes the comparison. Nothing claims to line up with the
+   * column below, so nothing fails to.
+   */
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
 }
 .hero-lockup .hero-mark {
   grid-area: mark;
-  width: var(--h); height: var(--h);        /* the headline's own ink box */
+  width: var(--h);          /* the headline's own ink box: apex of the A down
+                             * to the tail of the p, measured at 1.000em */
+  height: var(--h);
   color: var(--accent);
   margin-top: calc((var(--lh) * var(--h) - var(--h)) / 2 + var(--lead));
 }
@@ -767,6 +784,11 @@ input[pattern="[0-9]*"] {
     --h: 3rem;
     grid-template-areas: "mark title" "mark tag";
     column-gap: 1.1rem;
+    /* Wide enough that the tagline sits beside the mark rather than under it,
+     * so the text column has ONE left edge and the mark hangs cleanly off it. */
+    justify-content: start;
+    justify-items: start;
+    text-align: start;
   }
   /* apex of the A to the tail of the y: 0.810em + 20.6px + 3px */
   .hero-lockup .hero-mark {
