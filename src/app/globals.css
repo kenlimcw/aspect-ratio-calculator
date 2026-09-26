@@ -743,21 +743,19 @@ input[pattern="[0-9]*"] {
   column-gap: 0.55rem;
   align-items: start;
 
-  /* Centred while narrow, and not for decoration.
+  /* Left-aligned, now that it can be.
    *
-   * Left-aligned, this block has three different left edges: the mark at the
-   * page gutter, the headline pushed right by the mark, and the tagline back
-   * at the gutter. That zigzag is what reads as the mark "sticking out" — it
-   * is the only heavy thing on a line the rest of the page does not share.
-   * There is no way to fix it and keep the mark beside the headline: at 375px
-   * the gutter is 16px and a 28px mark cannot hang outside it.
+   * The mark sits on the page's content edge — the same line as the tab bar,
+   * "Original Size" and every label below — because the shell is capped to
+   * max-w-xl like the calculator. The headline indents from the mark, which
+   * is an ordinary hanging lockup; the tagline drops back to the content edge
+   * underneath. Two of the three edges are the page's own.
    *
-   * Centring removes the comparison. Nothing claims to line up with the
-   * column below, so nothing fails to.
-   */
-  justify-content: center;
-  justify-items: center;
-  text-align: center;
+   * This was centred for one commit as a way of dodging an alignment that
+   * could not be made to work. It could: the containers simply disagreed. */
+  justify-content: start;
+  justify-items: start;
+  text-align: start;
 }
 .hero-lockup .hero-mark {
   grid-area: mark;
@@ -779,21 +777,21 @@ input[pattern="[0-9]*"] {
   line-height: 1.4;
 }
 
-@container (min-width: 600px) {
+/* The shell is capped at max-w-xl (576px) to match the calculator, so it can
+ * never BE 600px wide — that breakpoint would never have fired. 500px is the
+ * real threshold, and 40px is the largest headline the wide arrangement fits
+ * in 576: mark 54 + gap 18 + 10.716em of text (429) = 501. */
+@container (min-width: 500px) {
   .hero-lockup {
-    --h: 3rem;
+    --h: 2.5rem;
     grid-template-areas: "mark title" "mark tag";
     column-gap: 1.1rem;
-    /* Wide enough that the tagline sits beside the mark rather than under it,
-     * so the text column has ONE left edge and the mark hangs cleanly off it. */
-    justify-content: start;
-    justify-items: start;
-    text-align: start;
   }
-  /* apex of the A to the tail of the y: 0.810em + 20.6px + 3px */
+  /* apex of the A to the tail of the y, for a one-line 14px tagline:
+   * 0.810em + 18.9px baseline-to-baseline + 2.6px of descender */
   .hero-lockup .hero-mark {
-    width: calc(var(--h) * 0.81 + 23.6px);
-    height: calc(var(--h) * 0.81 + 23.6px);
+    width: calc(var(--h) * 0.81 + 21.5px);
+    height: calc(var(--h) * 0.81 + 21.5px);
   }
   .hero-lockup .hero-tagline { margin-top: 0.25rem; }
 }

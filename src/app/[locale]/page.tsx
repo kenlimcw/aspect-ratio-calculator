@@ -159,14 +159,21 @@ export default async function Home({ params }: Props) {
           * in globals.css. Below ~600px of container it stacks and centres,
           * which is what this block already did.
           */}
-        <div className="hero-shell mb-10">
+        {/* max-w-xl, matching Calculator's own root (Calculator.tsx:1636).
+          * The page container is max-w-2xl; the calculator is max-w-xl inside
+          * it, so mx-auto insets it by 48px a side. Without the same limit the
+          * hero starts 48px left of the tab bar, "Original Size" and every
+          * label under it — which is the mark appearing to stick out. It was
+          * never a type-size problem, and no amount of resizing would have
+          * closed it. */}
+        <div className="hero-shell mx-auto mb-10 w-full max-w-xl">
           <div className="hero-lockup">
             <ArcLogo className="hero-mark" title={`${hp.heroTitle ?? "Aspect Ratio"} ${hp.heroTitleAccent ?? "Calculator"}`} />
             <h1 className="font-display font-semibold text-[var(--foreground)] tracking-tight title-glow">
               {hp.heroTitle ?? "Aspect Ratio"}{" "}
               <span className="text-[var(--accent)]">{hp.heroTitleAccent ?? "Calculator"}</span>
             </h1>
-            <p className="hero-tagline text-[var(--muted)] text-sm md:text-base">
+            <p className="hero-tagline text-[var(--muted)] text-sm">
               {hp.heroSubtitle ?? "Your everyday calculator for social media, video, photography and screens"}
             </p>
           </div>
