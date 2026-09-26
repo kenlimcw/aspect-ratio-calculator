@@ -242,7 +242,7 @@
     "termsOfService": "Terms",
     "privacyPolicy": "Privacy",
     "feedback": "Feedback",
-    "copyright": "© {year} aspect-ratio-calculator.com",
+    "copyright": "All rights reserved · © {year} aspect-ratio-calculator.com",
     "tools": "Tools",
     "siteLinks": "Site links",
     "legalLinks": "Legal"
@@ -531,7 +531,7 @@
     "body": "We use Google Analytics and Microsoft Clarity to understand how visitors use this site. These tools set cookies and collect anonymous usage data. You can accept or decline — your calculator always works regardless of your choice.",
     "acceptAll": "Accept Analytics",
     "rejectAll": "Decline",
-    "manageSettings": "Cookie Settings",
+    "manageSettings": "Cookies",
     "settingsTitle": "Manage Cookie Preferences",
     "analyticsCookies": "Analytics Cookies",
     "analyticsCookiesDesc": "Google Analytics & Microsoft Clarity — helps us improve the calculator. You can change this at any time.",

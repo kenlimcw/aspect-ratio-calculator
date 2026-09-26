@@ -245,7 +245,7 @@
     "legalLinks": "法務",
     "termsOfService": "利用規約",
     "privacyPolicy": "プライバシーポリシー",
-    "copyright": "© {year} aspect-ratio-calculator.com"
+    "copyright": "著作権所有・© {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "この計算機をインストール",
@@ -532,7 +532,6 @@
     "body": "当サイトでは、訪問者の利用状況を把握するためにGoogle AnalyticsとMicrosoft Clarityを使用しています。これらのツールはCookieを設定し、匿名で利用データを収集します。同意または拒否を選択できます。どちらを選択しても、計算機は常に機能します。",
     "acceptAll": "アナリティクスを許可",
     "rejectAll": "拒否",
-    "manageSettings": "Cookieの設定",
     "settingsTitle": "Cookieの設定を管理",
     "analyticsCookies": "アナリティクスCookie",
     "analyticsCookiesDesc": "Google AnalyticsとMicrosoft Clarity — 計算機の改善に役立ちます。これはいつでも変更できます。",
@@ -540,7 +539,8 @@
     "essentialDesc": "テーマ設定とオフラインキャッシュ — 常に有効で、無効にすることはできません。",
     "alwaysOn": "常にオン",
     "save": "設定を保存",
-    "privacyLink": "プライバシーポリシー"
+    "privacyLink": "プライバシーポリシー",
+    "manageSettings": "クッキー"
   },
   "aboutPage": {
     "title": "このサイトについて",

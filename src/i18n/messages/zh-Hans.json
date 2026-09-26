@@ -245,7 +245,7 @@
     "legalLinks": "法律",
     "termsOfService": "条款",
     "privacyPolicy": "隐私",
-    "copyright": "© {year} aspect-ratio-calculator.com"
+    "copyright": "版权所有 · © {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "安装此计算器",
@@ -532,7 +532,6 @@
     "body": "我们使用 Google Analytics 和 Microsoft Clarity 来了解访问者如何使用本网站。这些工具会设置 Cookie 并收集匿名使用数据。您可以接受或拒绝 — 无论您的选择如何，您的计算器始终可以正常工作。",
     "acceptAll": "接受分析 Cookie",
     "rejectAll": "拒绝",
-    "manageSettings": "Cookie 设置",
     "settingsTitle": "管理 Cookie 偏好设置",
     "analyticsCookies": "分析 Cookie",
     "analyticsCookiesDesc": "Google Analytics 和 Microsoft Clarity — 帮助我们改进计算器。您可以随时更改此设置。",
@@ -540,7 +539,8 @@
     "essentialDesc": "主题偏好设置和离线缓存 — 始终启用，无法禁用。",
     "alwaysOn": "始终开启",
     "save": "保存偏好设置",
-    "privacyLink": "隐私政策"
+    "privacyLink": "隐私政策",
+    "manageSettings": "Cookie"
   },
   "aboutPage": {
     "title": "关于",

@@ -245,7 +245,7 @@
     "legalLinks": "Pháp lý",
     "termsOfService": "Điều khoản",
     "privacyPolicy": "Quyền riêng tư",
-    "copyright": "© {year} aspect-ratio-calculator.com"
+    "copyright": "Mọi quyền được bảo lưu · © {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "Cài đặt máy tính này",
@@ -531,7 +531,6 @@
     "body": "Chúng tôi sử dụng Google Analytics và Microsoft Clarity để hiểu cách khách truy cập sử dụng trang web này. Các công cụ này đặt cookie và thu thập dữ liệu sử dụng ẩn danh. Bạn có thể chấp nhận hoặc từ chối — công cụ tính tỷ lệ khung hình của bạn luôn hoạt động bất kể lựa chọn của bạn.",
     "acceptAll": "Chấp nhận Phân tích",
     "rejectAll": "Từ chối",
-    "manageSettings": "Cài đặt Cookie",
     "settingsTitle": "Quản lý Tùy chọn Cookie",
     "analyticsCookies": "Cookie Phân tích",
     "analyticsCookiesDesc": "Google Analytics & Microsoft Clarity — giúp chúng tôi cải thiện công cụ tính tỷ lệ khung hình. Bạn có thể thay đổi điều này bất cứ lúc nào.",
@@ -539,7 +538,8 @@
     "essentialDesc": "Tùy chọn giao diện & bộ nhớ đệm ngoại tuyến — luôn hoạt động, không thể tắt.",
     "alwaysOn": "Luôn bật",
     "save": "Lưu Tùy chọn",
-    "privacyLink": "Chính sách Quyền riêng tư"
+    "privacyLink": "Chính sách Quyền riêng tư",
+    "manageSettings": "Cookie"
   },
   "aboutPage": {
     "title": "Giới thiệu",

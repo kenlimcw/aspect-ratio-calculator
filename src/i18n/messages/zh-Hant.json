@@ -245,7 +245,7 @@
     "legalLinks": "法律連結",
     "termsOfService": "條款",
     "privacyPolicy": "隱私",
-    "copyright": "© {year} aspect-ratio-calculator.com"
+    "copyright": "版權所有 · © {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "安裝此計算機",
@@ -532,7 +532,6 @@
     "body": "我們使用 Google Analytics 和 Microsoft Clarity 以了解訪客如何使用本網站。這些工具會設定 Cookie 並收集匿名使用數據。您可以接受或拒絕 — 無論您的選擇如何，您的長寬比計算工具始終有效。",
     "acceptAll": "接受分析 Cookie",
     "rejectAll": "拒絕",
-    "manageSettings": "Cookie 設定",
     "settingsTitle": "管理 Cookie 偏好設定",
     "analyticsCookies": "分析 Cookie",
     "analyticsCookiesDesc": "Google Analytics 和 Microsoft Clarity — 幫助我們改進長寬比計算工具。您可以隨時更改此設定。",
@@ -540,7 +539,8 @@
     "essentialDesc": "主題偏好設定和離線快取 — 始終啟用，無法禁用。",
     "alwaysOn": "始終啟用",
     "save": "儲存偏好設定",
-    "privacyLink": "隱私權政策"
+    "privacyLink": "隱私權政策",
+    "manageSettings": "Cookie"
   },
   "aboutPage": {
     "title": "關於",

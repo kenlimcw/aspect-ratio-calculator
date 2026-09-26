@@ -245,7 +245,7 @@
     "legalLinks": "Hukum",
     "termsOfService": "Ketentuan",
     "privacyPolicy": "Privasi",
-    "copyright": "© {year} aspect-ratio-calculator.com"
+    "copyright": "Semua hak dilindungi · © {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "Instal kalkulator ini",
@@ -532,7 +532,6 @@
     "body": "Kami menggunakan Google Analytics dan Microsoft Clarity untuk memahami bagaimana pengunjung menggunakan situs ini. Alat-alat ini mengatur cookie dan mengumpulkan data penggunaan anonim. Anda dapat menerima atau menolak — kalkulator Anda selalu berfungsi terlepas dari pilihan Anda.",
     "acceptAll": "Terima Analitik",
     "rejectAll": "Tolak",
-    "manageSettings": "Pengaturan Cookie",
     "settingsTitle": "Kelola Preferensi Cookie",
     "analyticsCookies": "Cookie Analitik",
     "analyticsCookiesDesc": "Google Analytics & Microsoft Clarity — membantu kami meningkatkan kalkulator. Anda dapat mengubah ini kapan saja.",
@@ -540,7 +539,8 @@
     "essentialDesc": "Preferensi tema & cache offline — selalu aktif, tidak dapat dinonaktifkan.",
     "alwaysOn": "Selalu aktif",
     "save": "Simpan Preferensi",
-    "privacyLink": "Kebijakan Privasi"
+    "privacyLink": "Kebijakan Privasi",
+    "manageSettings": "Cookie"
   },
   "aboutPage": {
     "title": "Tentang",

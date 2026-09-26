@@ -795,3 +795,35 @@ input[pattern="[0-9]*"] {
   }
   .hero-lockup .hero-tagline { margin-top: 0.25rem; }
 }
+
+/* ── Footer columns as an accordion on a phone ────────────────────────────
+ * The marker and the pointer only exist where the control does anything: on
+ * a desktop the <details> is always open and the summary is just a heading,
+ * so giving it a chevron would promise an interaction that does nothing. */
+.footer-sum { list-style: none; cursor: pointer; }
+.footer-sum::-webkit-details-marker { display: none; }
+.footer-sum::after {
+  content: "";
+  float: inline-end;
+  width: 0.45em; height: 0.45em;
+  margin-top: 0.2em;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.18s ease;
+  opacity: 0.55;
+}
+.footer-col[open] > .footer-sum::after { transform: rotate(-135deg); }
+.footer-col:not(:last-child) { border-bottom: 1px solid var(--border-subtle); }
+.footer-col > .footer-sum { padding-block: 0.7rem; margin-bottom: 0; }
+.footer-col[open] > .footer-sum { margin-bottom: 0.5rem; }
+.footer-col > ul { padding-bottom: 0.7rem; }
+
+@media (min-width: 640px) {
+  .footer-sum { cursor: default; pointer-events: none; }
+  .footer-sum::after { display: none; }
+  .footer-col,
+  .footer-col:not(:last-child) { border-bottom: 0; }
+  .footer-col > .footer-sum { padding-block: 0; margin-bottom: 0.5rem; }
+  .footer-col > ul { padding-bottom: 0; }
+}

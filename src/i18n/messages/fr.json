@@ -245,7 +245,7 @@
     "legalLinks": "Mentions légales",
     "termsOfService": "Conditions",
     "privacyPolicy": "Confidentialité",
-    "copyright": "© {year} aspect-ratio-calculator.com"
+    "copyright": "Tous droits réservés · © {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "Installer cette calculatrice",
@@ -532,7 +532,6 @@
     "body": "Nous utilisons Google Analytics et Microsoft Clarity pour comprendre comment les visiteurs utilisent ce site. Ces outils déposent des cookies et collectent des données d'utilisation anonymes. Vous pouvez accepter ou refuser — votre calculatrice fonctionne toujours quel que soit votre choix.",
     "acceptAll": "Accepter l'analyse",
     "rejectAll": "Refuser",
-    "manageSettings": "Paramètres des cookies",
     "settingsTitle": "Gérer les préférences de cookies",
     "analyticsCookies": "Cookies d'analyse",
     "analyticsCookiesDesc": "Google Analytics et Microsoft Clarity — nous aident à améliorer la calculatrice. Vous pouvez modifier cela à tout moment.",
@@ -540,7 +539,8 @@
     "essentialDesc": "Préférence de thème et cache hors ligne — toujours actifs, ne peuvent pas être désactivés.",
     "alwaysOn": "Toujours activé",
     "save": "Enregistrer les préférences",
-    "privacyLink": "Politique de confidentialité"
+    "privacyLink": "Politique de confidentialité",
+    "manageSettings": "Cookies"
   },
   "aboutPage": {
     "title": "À propos",

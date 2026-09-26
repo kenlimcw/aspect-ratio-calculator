@@ -245,7 +245,7 @@
     "legalLinks": "قانوني",
     "termsOfService": "الشروط",
     "privacyPolicy": "الخصوصية",
-    "copyright": "© {year} aspect-ratio-calculator.com"
+    "copyright": "جميع الحقوق محفوظة · © {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "تثبيت هذه الحاسبة",
@@ -532,7 +532,6 @@
     "body": "نحن نستخدم Google Analytics و Microsoft Clarity لفهم كيفية استخدام الزوار لهذا الموقع. تقوم هذه الأدوات بتعيين ملفات تعريف الارتباط وجمع بيانات الاستخدام المجهولة. يمكنك القبول أو الرفض — ستعمل حاسبتك دائمًا بغض النظر عن اختيارك.",
     "acceptAll": "قبول التحليلات",
     "rejectAll": "رفض",
-    "manageSettings": "إعدادات ملفات تعريف الارتباط",
     "settingsTitle": "إدارة تفضيلات ملفات تعريف الارتباط",
     "analyticsCookies": "ملفات تعريف الارتباط التحليلية",
     "analyticsCookiesDesc": "Google Analytics و Microsoft Clarity — تساعدنا على تحسين الحاسبة. يمكنك تغيير هذا في أي وقت.",
@@ -540,7 +539,8 @@
     "essentialDesc": "تفضيل المظهر وذاكرة التخزين المؤقت دون اتصال — نشط دائمًا، لا يمكن تعطيله.",
     "alwaysOn": "دائم التشغيل",
     "save": "حفظ التفضيلات",
-    "privacyLink": "سياسة الخصوصية"
+    "privacyLink": "سياسة الخصوصية",
+    "manageSettings": "ملفات الارتباط"
   },
   "aboutPage": {
     "title": "حول",

@@ -245,7 +245,7 @@
     "legalLinks": "Legal",
     "termsOfService": "Termeni",
     "privacyPolicy": "Confidențialitate",
-    "copyright": "© {year} aspect-ratio-calculator.com"
+    "copyright": "Toate drepturile rezervate · © {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "Instalează acest calculator",
@@ -531,7 +531,6 @@
     "body": "Folosim Google Analytics și Microsoft Clarity pentru a înțelege cum vizitatorii utilizează acest site. Aceste instrumente setează cookie-uri și colectează date anonime de utilizare. Puteți accepta sau refuza — calculatorul dumneavoastră funcționează întotdeauna indiferent de alegerea dumneavoastră.",
     "acceptAll": "Acceptă Analiza",
     "rejectAll": "Refuză",
-    "manageSettings": "Setări cookie",
     "settingsTitle": "Gestionează Preferințele Cookie",
     "analyticsCookies": "Cookie-uri de Analiză",
     "analyticsCookiesDesc": "Google Analytics și Microsoft Clarity — ne ajută să îmbunătățim calculatorul. Puteți schimba acest lucru oricând.",
@@ -539,7 +538,8 @@
     "essentialDesc": "Preferința temei și cache-ul offline — întotdeauna active, nu pot fi dezactivate.",
     "alwaysOn": "Întotdeauna activ",
     "save": "Salvează Preferințele",
-    "privacyLink": "Politica de confidențialitate"
+    "privacyLink": "Politica de confidențialitate",
+    "manageSettings": "Cookie-uri"
   },
   "aboutPage": {
     "title": "Despre",

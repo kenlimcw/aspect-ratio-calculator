@@ -245,7 +245,7 @@
     "legalLinks": "Юридична інформація",
     "termsOfService": "Умови",
     "privacyPolicy": "Конфіденційність",
-    "copyright": "© {year} aspect-ratio-calculator.com"
+    "copyright": "Усі права захищено · © {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "Встановити цей калькулятор",
@@ -531,7 +531,6 @@
     "body": "Ми використовуємо Google Analytics та Microsoft Clarity, щоб зрозуміти, як відвідувачі використовують цей сайт. Ці інструменти встановлюють файли cookie та збирають анонімні дані про використання. Ви можете прийняти або відхилити — ваш калькулятор завжди працюватиме незалежно від вашого вибору.",
     "acceptAll": "Прийняти аналітику",
     "rejectAll": "Відхилити",
-    "manageSettings": "Налаштування файлів cookie",
     "settingsTitle": "Керування налаштуваннями файлів cookie",
     "analyticsCookies": "Аналітичні файли cookie",
     "analyticsCookiesDesc": "Google Analytics та Microsoft Clarity — допомагають нам покращити калькулятор. Ви можете змінити це в будь-який час.",
@@ -539,7 +538,8 @@
     "essentialDesc": "Налаштування теми та офлайн-кеш — завжди активні, не можуть бути вимкнені.",
     "alwaysOn": "Завжди увімкнено",
     "save": "Зберегти налаштування",
-    "privacyLink": "Політика конфіденційності"
+    "privacyLink": "Політика конфіденційності",
+    "manageSettings": "Файли cookie"
   },
   "aboutPage": {
     "title": "Про",
