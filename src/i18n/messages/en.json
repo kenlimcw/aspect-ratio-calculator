@@ -239,10 +239,10 @@
     "platforms": "Platforms",
     "guides": "Guides",
     "language": "Language",
-    "termsOfService": "Terms of Service",
-    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms",
+    "privacyPolicy": "Privacy",
     "feedback": "Feedback",
-    "copyright": "© {year} aspect-ratio-calculator.com. All rights reserved.",
+    "copyright": "© {year} aspect-ratio-calculator.com",
     "tools": "Tools",
     "siteLinks": "Site links",
     "legalLinks": "Legal"

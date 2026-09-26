@@ -239,13 +239,13 @@
     "platforms": "Nền tảng",
     "guides": "Hướng dẫn",
     "language": "Ngôn ngữ",
-    "termsOfService": "Điều khoản dịch vụ",
-    "privacyPolicy": "Chính sách quyền riêng tư",
     "feedback": "Phản hồi",
-    "copyright": "© {year} aspect-ratio-calculator.com. Mọi quyền được bảo lưu.",
     "tools": "Công cụ",
     "siteLinks": "Liên kết trang web",
-    "legalLinks": "Pháp lý"
+    "legalLinks": "Pháp lý",
+    "termsOfService": "Điều khoản",
+    "privacyPolicy": "Quyền riêng tư",
+    "copyright": "© {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "Cài đặt máy tính này",

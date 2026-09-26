@@ -239,13 +239,13 @@
     "platforms": "Platforme",
     "guides": "Ghiduri",
     "language": "Limbă",
-    "termsOfService": "Termeni și condiții",
-    "privacyPolicy": "Politica de confidențialitate",
     "feedback": "Feedback",
-    "copyright": "© {year} aspect-ratio-calculator.com. Toate drepturile rezervate.",
     "tools": "Instrumente",
     "siteLinks": "Linkuri site",
-    "legalLinks": "Legal"
+    "legalLinks": "Legal",
+    "termsOfService": "Termeni",
+    "privacyPolicy": "Confidențialitate",
+    "copyright": "© {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "Instalează acest calculator",

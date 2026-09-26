@@ -239,13 +239,13 @@
     "platforms": "Plataformas",
     "guides": "Guías",
     "language": "Idioma",
-    "termsOfService": "Términos de servicio",
-    "privacyPolicy": "Política de privacidad",
     "feedback": "Comentarios",
-    "copyright": "© {year} aspect-ratio-calculator.com. Todos los derechos reservados.",
     "tools": "Herramientas",
     "siteLinks": "Enlaces del sitio",
-    "legalLinks": "Legal"
+    "legalLinks": "Legal",
+    "termsOfService": "Términos",
+    "privacyPolicy": "Privacidad",
+    "copyright": "© {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "Instalar esta calculadora",

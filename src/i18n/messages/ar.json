@@ -239,13 +239,13 @@
     "platforms": "المنصات",
     "guides": "الأدلة",
     "language": "اللغة",
-    "termsOfService": "شروط الخدمة",
-    "privacyPolicy": "سياسة الخصوصية",
     "feedback": "الملاحظات",
-    "copyright": "© {year} aspect-ratio-calculator.com. جميع الحقوق محفوظة.",
     "tools": "أدوات",
     "siteLinks": "روابط الموقع",
-    "legalLinks": "قانوني"
+    "legalLinks": "قانوني",
+    "termsOfService": "الشروط",
+    "privacyPolicy": "الخصوصية",
+    "copyright": "© {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "تثبيت هذه الحاسبة",

@@ -239,13 +239,13 @@
     "platforms": "プラットフォーム",
     "guides": "ガイド",
     "language": "言語",
-    "termsOfService": "利用規約",
-    "privacyPolicy": "プライバシーポリシー",
     "feedback": "フィードバック",
-    "copyright": "© {year} aspect-ratio-calculator.com. 全ての権利を保有します。",
     "tools": "ツール",
     "siteLinks": "サイトリンク",
-    "legalLinks": "法務"
+    "legalLinks": "法務",
+    "termsOfService": "利用規約",
+    "privacyPolicy": "プライバシーポリシー",
+    "copyright": "© {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "この計算機をインストール",

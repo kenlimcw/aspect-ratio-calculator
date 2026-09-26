@@ -239,13 +239,13 @@
     "platforms": "平台",
     "guides": "指南",
     "language": "语言",
-    "termsOfService": "服务条款",
-    "privacyPolicy": "隐私政策",
     "feedback": "反馈",
-    "copyright": "© {year} aspect-ratio-calculator.com. 保留所有权利。",
     "tools": "工具",
     "siteLinks": "网站链接",
-    "legalLinks": "法律"
+    "legalLinks": "法律",
+    "termsOfService": "条款",
+    "privacyPolicy": "隐私",
+    "copyright": "© {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "安装此计算器",

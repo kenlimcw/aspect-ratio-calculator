@@ -239,13 +239,13 @@
     "platforms": "Platform",
     "guides": "Panduan",
     "language": "Bahasa",
-    "termsOfService": "Ketentuan Layanan",
-    "privacyPolicy": "Kebijakan Privasi",
     "feedback": "Umpan Balik",
-    "copyright": "© {year} aspect-ratio-calculator.com. Semua hak dilindungi.",
     "tools": "Alat",
     "siteLinks": "Tautan situs",
-    "legalLinks": "Hukum"
+    "legalLinks": "Hukum",
+    "termsOfService": "Ketentuan",
+    "privacyPolicy": "Privasi",
+    "copyright": "© {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "Instal kalkulator ini",

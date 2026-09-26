@@ -51,7 +51,7 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             <h4 className="font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
               {t("footer", "aspectRatios")}
             </h4>
-            <ul className="space-y-1.5">
+            <ul className="space-y-1.5 [column-count:2] [column-gap:1rem] [&>li]:break-inside-avoid sm:[column-count:1] lg:[column-count:2]">
               {RATIO_SLUGS.map((slug) => (
                 <li key={slug}>
                   <Link
@@ -122,7 +122,7 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             <h4 className="font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
               {t("footer", "language")}
             </h4>
-            <ul className="space-y-1.5">
+            <ul className="space-y-1.5 [column-count:2] [column-gap:1rem] [&>li]:break-inside-avoid sm:[column-count:1] lg:[column-count:2]">
               {LOCALES.map((l) => {
                 const basePath = getBasePath(pathname);
                 const href = buildLocalePath(basePath, l);

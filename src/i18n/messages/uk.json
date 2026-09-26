@@ -239,13 +239,13 @@
     "platforms": "Платформи",
     "guides": "Посібники",
     "language": "Мова",
-    "termsOfService": "Умови використання",
-    "privacyPolicy": "Політика конфіденційності",
     "feedback": "Зворотний зв'язок",
-    "copyright": "© {year} aspect-ratio-calculator.com. Усі права захищено.",
     "tools": "Інструменти",
     "siteLinks": "Посилання на сайт",
-    "legalLinks": "Юридична інформація"
+    "legalLinks": "Юридична інформація",
+    "termsOfService": "Умови",
+    "privacyPolicy": "Конфіденційність",
+    "copyright": "© {year} aspect-ratio-calculator.com"
   },
   "installPrompt": {
     "installCalculator": "Встановити цей калькулятор",
