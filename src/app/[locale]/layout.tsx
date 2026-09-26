@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { InstallPrompt } from "@/components/InstallPrompt";
 import { ServiceWorkerRegistrar } from "@/components/ServiceWorkerRegistrar";
 import { FeedbackWidget } from "@/components/FeedbackWidget";
 import { Analytics } from "@vercel/analytics/next";
@@ -163,7 +162,6 @@ export default async function LocaleLayout({ children, params }: Props) {
             <SiteHeader />
             {children}
             <Footer locale={localeConfig.code} seoData={footerSeoData} />
-            <InstallPrompt />
             <ServiceWorkerRegistrar />
             <FeedbackWidget />
             <Analytics />

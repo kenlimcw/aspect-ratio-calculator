@@ -708,54 +708,42 @@ input[pattern="[0-9]*"] {
 
 /* ── The hero lockup ──────────────────────────────────────────────────────
  *
- * Every number here was measured, not chosen. Playfair Display's cap height
- * is 0.708em and its ascender 1.082em (OS/2 table), so the drop from the top
- * of the headline's line box to the top of its CAPITALS is
+ * The mark spans from the top of the headline's tallest ink to the bottom of
+ * the tagline's descenders. Both figures are what the BROWSER reports for
+ * these exact strings, not what the font's metric table suggests:
  *
- *     (line-height - 1)/2  +  (ascender - cap)   =  0.03 + 0.374 em
+ *   headline ink ascent   0.8125em   NOT the 0.708em cap height — the tallest
+ *                                    thing in "Aspect Ratio Calculator" is the
+ *                                    ascender of the l, which clears the caps
+ *   headline font ascent  1.0938em   what the line box is built from
+ *   tagline ink descent   0.1875em   NOT the font's 0.310em maximum — that is
+ *                                    the deepest glyph in the face, and the y
+ *                                    and p here do not reach it
  *
- * Offsetting the mark by that puts its top edge on the cap line. Its height,
- * 1.2203em, then carries its bottom edge to the bottom of the tagline's
- * DESCENDERS — not to the tagline's baseline, which leaves the tails of
- * "everyday" and "photography" hanging below the mark. Ink extents came from
- * canvas TextMetrics on these exact strings; verified in a browser to ±0px at
- * the top.
+ * lead   = (line-height - 1)/2 + (font ascent - ink ascent) = 0.311em
+ * height = ink ascent + baseline-to-baseline + ink descent  = 1.292em
  *
- * The tagline carries no max-width on purpose. It wraps at the headline's own
- * measure, so its right edge relates to something. An arbitrary character cap
- * made it 114px narrower than the headline and forced a third line on a phone.
- *
- * Container query, not a media query: the block answers to the space it is in,
- * so it still stacks correctly anywhere it is reused at a smaller size.
+ * Sizing to the cap height and the font's max descender — which is the
+ * intuitive thing to do — put the mark 13px too low and 4px too short.
  */
 .hero-lockup {
-  --h: 2.25rem;            /* text-4xl, the phone headline size */
+  --h: 1.75rem;
   --lh: 1.06;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.75rem;
+  text-align: start;
 }
 .hero-lockup .hero-mark {
-  width: calc(var(--h) * 1.2203);
-  height: calc(var(--h) * 1.2203);
+  width: calc(var(--h) * 1.292);
+  height: calc(var(--h) * 1.292);
   color: var(--accent);
   flex: 0 0 auto;
-  margin-bottom: 0.875rem;
+  margin: calc((var(--lh) * var(--h) - var(--h)) / 2 + var(--h) * 0.2813) 0 0;
 }
-.hero-lockup h1 { line-height: var(--lh); margin: 0; }
-.hero-lockup .hero-tagline { margin: 0.375rem 0 0; line-height: 1.4; }
+.hero-lockup h1 { line-height: var(--lh); margin: 0; font-size: var(--h); }
+.hero-lockup .hero-tagline { margin: 0.25rem 0 0; line-height: 1.4; }
 
-@container (min-width: 600px) {
-  .hero-lockup {
-    --h: 3rem;             /* md:text-5xl */
-    flex-direction: row;
-    align-items: flex-start;
-    text-align: start;
-    gap: 1.25rem;
-  }
-  .hero-lockup .hero-mark {
-    margin: calc((var(--lh) * var(--h) - var(--h)) / 2 + var(--h) * 0.374) 0 0;
-  }
-  .hero-lockup .hero-tagline { margin-top: 0.25rem; }
-}
+@container (min-width: 430px) { .hero-lockup { --h: 2.25rem; gap: 0.9rem; } }
+@container (min-width: 600px) { .hero-lockup { --h: 3rem; gap: 1.25rem; } }

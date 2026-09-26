@@ -163,7 +163,7 @@ export default async function Home({ params }: Props) {
         <div className="hero-lockup">
           <ArcLogo className="hero-mark" title={`${hp.heroTitle ?? "Aspect Ratio"} ${hp.heroTitleAccent ?? "Calculator"}`} />
           <div className="hero-text">
-            <h1 className="font-display text-4xl md:text-5xl font-semibold text-[var(--foreground)] tracking-tight title-glow">
+            <h1 className="font-display font-semibold text-[var(--foreground)] tracking-tight title-glow">
               {hp.heroTitle ?? "Aspect Ratio"}{" "}
               <span className="text-[var(--accent)]">{hp.heroTitleAccent ?? "Calculator"}</span>
             </h1>
@@ -175,6 +175,51 @@ export default async function Home({ params }: Props) {
         </div>
 
         <Calculator />
+
+        {/* ── Articles ──
+          * These were a list of bare links in an "Explore" block at the very
+          * bottom of a 450-line page, below the ratio table and the platform
+          * table. Nobody scrolls that far to discover that the site writes
+          * anything. They are the second reason to come here after the
+          * calculator, so they sit directly under it.
+          */}
+        <section className="mt-16" aria-labelledby="articles-heading">
+          <div className="flex items-baseline justify-between gap-4 mb-4">
+            <h2
+              id="articles-heading"
+              className="font-display text-xl md:text-2xl font-semibold tracking-tight text-[var(--foreground)]"
+            >
+              {messages.blogPage?.blog ?? "Guides"}
+            </h2>
+            <Link
+              href={`${prefix}/blog`}
+              className="text-sm text-[var(--muted)] hover:text-[var(--accent)] transition-colors whitespace-nowrap"
+            >
+              {messages.common?.readMore ?? "All guides"} &rarr;
+            </Link>
+          </div>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {ARTICLE_SLUGS.map((slug) => {
+              const a = seoData.ARTICLE_DATA[slug];
+              return (
+                <li key={slug}>
+                  <Link
+                    href={`${prefix}/blog/${slug}`}
+                    className="block h-full rounded-lg border p-4 transition-colors hover:border-[var(--accent)]"
+                    style={{ borderColor: "var(--border)", background: "var(--surface)" }}
+                  >
+                    <span className="block font-semibold mb-1 text-[var(--foreground)]">
+                      {a?.title ?? slug}
+                    </span>
+                    <span className="block text-sm text-[var(--muted)] leading-relaxed">
+                      {a?.description}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
 
         {/* ── SEO Content ── */}
         <section className="mt-20 space-y-6">

@@ -63,7 +63,7 @@ export function SiteHeader() {
         </Link>
 
         <nav
-          className="ms-auto flex items-center gap-0.5 overflow-x-auto"
+          className="ms-auto flex min-w-0 items-center gap-0.5"
           aria-label={t("siteNav", "label")}
           style={{ scrollbarWidth: "none" }}
         >
@@ -74,10 +74,14 @@ export function SiteHeader() {
                 key={key}
                 href={`${prefix}${href}`}
                 aria-current={on ? "page" : undefined}
-                className="whitespace-nowrap rounded-lg px-2.5 py-2 text-sm transition-colors sm:px-3"
+                /* Underline on hover, never a filled pill. A pill reads as a
+                 * control that might open something; these are destinations. */
+                className="whitespace-nowrap px-2 py-2 text-sm underline-offset-[6px] transition-colors hover:underline sm:px-2.5"
                 style={{
                   color: on ? "var(--accent)" : "var(--muted)",
-                  background: on ? "var(--accent-glow)" : "transparent",
+                  textDecoration: on ? "underline" : undefined,
+                  textDecorationColor: on ? "var(--accent)" : undefined,
+                  textUnderlineOffset: 6,
                 }}
               >
                 {t("siteNav", key)}

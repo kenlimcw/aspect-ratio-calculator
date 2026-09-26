@@ -151,7 +151,10 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
         <div className="max-w-2xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--muted)]">
           <span>{t("footer", "copyright").replace("{year}", String(year))}</span>
           <SiteSearch className="mb-4 sm:mb-0 sm:me-auto" />
-          <nav className="flex items-center gap-4" aria-label="Site information">
+          <nav
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2"
+            aria-label="Site information"
+          >
             <Link
               href={`${prefix}/about`}
               className="hover:text-[var(--foreground)] transition-colors"
