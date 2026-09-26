@@ -244,7 +244,9 @@
     "feedback": "意見回饋",
     "freeTool": "免費工具，無需註冊",
     "copyright": "© {year} aspect-ratio-calculator.com. 版權所有。",
-    "tools": "工具"
+    "tools": "工具",
+    "siteLinks": "網站連結",
+    "legalLinks": "法律連結"
   },
   "installPrompt": {
     "installCalculator": "安裝此計算機",

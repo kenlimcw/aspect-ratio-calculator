@@ -244,7 +244,9 @@
     "feedback": "Phản hồi",
     "freeTool": "Công cụ miễn phí, không cần đăng ký",
     "copyright": "© {year} aspect-ratio-calculator.com. Mọi quyền được bảo lưu.",
-    "tools": "Công cụ"
+    "tools": "Công cụ",
+    "siteLinks": "Liên kết trang web",
+    "legalLinks": "Pháp lý"
   },
   "installPrompt": {
     "installCalculator": "Cài đặt máy tính này",

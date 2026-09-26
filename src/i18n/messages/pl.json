@@ -244,7 +244,9 @@
     "feedback": "Opinie",
     "freeTool": "Bezpłatne narzędzie, bez rejestracji",
     "copyright": "© {year} aspect-ratio-calculator.com. Wszelkie prawa zastrzeżone.",
-    "tools": "Narzędzia"
+    "tools": "Narzędzia",
+    "siteLinks": "Linki do strony",
+    "legalLinks": "Informacje prawne"
   },
   "installPrompt": {
     "installCalculator": "Zainstaluj ten kalkulator",

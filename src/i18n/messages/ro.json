@@ -244,7 +244,9 @@
     "feedback": "Feedback",
     "freeTool": "Instrument gratuit, nu necesită înregistrare",
     "copyright": "© {year} aspect-ratio-calculator.com. Toate drepturile rezervate.",
-    "tools": "Instrumente"
+    "tools": "Instrumente",
+    "siteLinks": "Linkuri site",
+    "legalLinks": "Legal"
   },
   "installPrompt": {
     "installCalculator": "Instalează acest calculator",

@@ -45,7 +45,32 @@ export function CookieConsent() {
   useEffect(() => {
     const consent = readConsent();
     if (consent === null) {
-      setStatus("banner");
+      /* Two regimes, decided at the edge by `src/proxy.ts` and handed here in
+       * the `arc_gdpr` cookie.
+       *
+       * Inside the EEA/UK/CH we must ask before any analytics cookie, so the
+       * banner appears. Everywhere else it does not, and showing it anyway is
+       * an interruption for no benefit.
+       *
+       * But the second half matters as much as the first: AnalyticsScripts
+       * loads GA and Clarity ONLY when a stored record says analytics is on.
+       * So suppressing the banner without also recording consent would have
+       * silently switched measurement off for most of the world — the banner
+       * would be gone and so would the data. Outside the EEA we therefore
+       * record it as granted, which is the ordinary notice-not-consent model,
+       * and the Cookie settings link in the footer stays available to anyone
+       * who wants to turn it off.
+       */
+      const needsConsent = !document.cookie
+        .split("; ")
+        .some((c) => c === "arc_gdpr=0");
+      if (needsConsent) {
+        setStatus("banner");
+      } else {
+        writeConsent(true);
+        setAnalyticsEnabled(true);
+        setStatus("hidden");
+      }
     } else {
       setAnalyticsEnabled(consent.analytics);
       setStatus("hidden");

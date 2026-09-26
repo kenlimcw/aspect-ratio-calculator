@@ -708,42 +708,70 @@ input[pattern="[0-9]*"] {
 
 /* ── The hero lockup ──────────────────────────────────────────────────────
  *
- * The mark spans from the top of the headline's tallest ink to the bottom of
- * the tagline's descenders. Both figures are what the BROWSER reports for
- * these exact strings, not what the font's metric table suggests:
+ * Measured, not guessed. Asking the browser for the ink of these exact
+ * strings in this exact face gives:
  *
- *   headline ink ascent   0.8125em   NOT the 0.708em cap height — the tallest
- *                                    thing in "Aspect Ratio Calculator" is the
- *                                    ascender of the l, which clears the caps
- *   headline font ascent  1.0938em   what the line box is built from
- *   tagline ink descent   0.1875em   NOT the font's 0.310em maximum — that is
- *                                    the deepest glyph in the face, and the y
- *                                    and p here do not reach it
+ *   lead (line-box top -> apex of the A)  0.300em   — steady across sizes
+ *   headline ink (apex -> tail of the p)  1.000em   — steady
+ *   headline ink ascent                   0.810em
+ *   baseline-to-baseline, h1 -> tagline   ~19-21px  — BARELY scales
  *
- * lead   = (line-height - 1)/2 + (font ascent - ink ascent) = 0.311em
- * height = ink ascent + baseline-to-baseline + ink descent  = 1.292em
+ * That last one is why a single em multiplier for the mark's height can
+ * never be right: the gap between the two baselines is nearly constant
+ * while the type is not, so the span is 1.63em at 26px and 1.31em at 48px.
+ * The height is therefore set per step, in px, from the measurement.
  *
- * Sizing to the cap height and the font's max descender — which is the
- * intuitive thing to do — put the mark 13px too low and 4px too short.
+ * Two arrangements, because one does not fit both:
+ *
+ *   narrow — mark beside the HEADLINE only, spanning its ink, with the
+ *            tagline dropped below at full width. Spanning down to a
+ *            two-line tagline here would make the mark taller than the
+ *            headline and steal the width the headline needs.
+ *   wide   — mark spans the whole block, apex of the A to the tail of the
+ *            y, because both lines are single lines and it fits.
  */
 .hero-lockup {
-  --h: 1.75rem;
+  --h: 1.75rem;              /* 28px — the largest that keeps the headline
+                              * on one line beside the mark at 375px:
+                              * 10.716em of text = 300px, + mark 28 + gap 8
+                              * = 336 of the 343 available */
   --lh: 1.06;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 0.75rem;
+  --lead: 0.300em;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas: "mark title" "tag tag";
+  column-gap: 0.55rem;
+  align-items: start;
   text-align: start;
 }
 .hero-lockup .hero-mark {
-  width: calc(var(--h) * 1.292);
-  height: calc(var(--h) * 1.292);
+  grid-area: mark;
+  width: var(--h); height: var(--h);        /* the headline's own ink box */
   color: var(--accent);
-  flex: 0 0 auto;
-  margin: calc((var(--lh) * var(--h) - var(--h)) / 2 + var(--h) * 0.2813) 0 0;
+  margin-top: calc((var(--lh) * var(--h) - var(--h)) / 2 + var(--lead));
 }
-.hero-lockup h1 { line-height: var(--lh); margin: 0; font-size: var(--h); }
-.hero-lockup .hero-tagline { margin: 0.25rem 0 0; line-height: 1.4; }
+.hero-lockup h1 {
+  grid-area: title;
+  font-size: var(--h);
+  line-height: var(--lh);
+  margin: 0;
+}
+.hero-lockup .hero-tagline {
+  grid-area: tag;
+  margin: 0.4rem 0 0;
+  line-height: 1.4;
+}
 
-@container (min-width: 430px) { .hero-lockup { --h: 2.25rem; gap: 0.9rem; } }
-@container (min-width: 600px) { .hero-lockup { --h: 3rem; gap: 1.25rem; } }
+@container (min-width: 600px) {
+  .hero-lockup {
+    --h: 3rem;
+    grid-template-areas: "mark title" "mark tag";
+    column-gap: 1.1rem;
+  }
+  /* apex of the A to the tail of the y: 0.810em + 20.6px + 3px */
+  .hero-lockup .hero-mark {
+    width: calc(var(--h) * 0.81 + 23.6px);
+    height: calc(var(--h) * 0.81 + 23.6px);
+  }
+  .hero-lockup .hero-tagline { margin-top: 0.25rem; }
+}

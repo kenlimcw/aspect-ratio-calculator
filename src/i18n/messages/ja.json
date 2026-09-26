@@ -244,7 +244,9 @@
     "feedback": "フィードバック",
     "freeTool": "無料ツール、登録不要",
     "copyright": "© {year} aspect-ratio-calculator.com. 全ての権利を保有します。",
-    "tools": "ツール"
+    "tools": "ツール",
+    "siteLinks": "サイトリンク",
+    "legalLinks": "法務"
   },
   "installPrompt": {
     "installCalculator": "この計算機をインストール",

@@ -160,9 +160,8 @@ export default async function Home({ params }: Props) {
           * which is what this block already did.
           */}
         <div className="hero-shell mb-10">
-        <div className="hero-lockup">
-          <ArcLogo className="hero-mark" title={`${hp.heroTitle ?? "Aspect Ratio"} ${hp.heroTitleAccent ?? "Calculator"}`} />
-          <div className="hero-text">
+          <div className="hero-lockup">
+            <ArcLogo className="hero-mark" title={`${hp.heroTitle ?? "Aspect Ratio"} ${hp.heroTitleAccent ?? "Calculator"}`} />
             <h1 className="font-display font-semibold text-[var(--foreground)] tracking-tight title-glow">
               {hp.heroTitle ?? "Aspect Ratio"}{" "}
               <span className="text-[var(--accent)]">{hp.heroTitleAccent ?? "Calculator"}</span>
@@ -171,7 +170,6 @@ export default async function Home({ params }: Props) {
               {hp.heroSubtitle ?? "Your everyday calculator for social media, video, photography and screens"}
             </p>
           </div>
-        </div>
         </div>
 
         <Calculator />
@@ -237,7 +235,8 @@ export default async function Home({ params }: Props) {
               {hp.commonAspectRatios ?? "Common Aspect Ratios"}
             </h2>
             <div className="overflow-x-auto -mx-1.5">
-              <table className="w-full text-left border-collapse seo-table">
+              <div className="-mx-2 overflow-x-auto px-2">
+              <table className="w-full min-w-[22rem] text-left border-collapse seo-table">
                 <thead>
                   <tr className="border-b border-[var(--border)]">
                     <th>{hp.tableRatio ?? "Ratio"}</th>
@@ -275,6 +274,7 @@ export default async function Home({ params }: Props) {
                   })}
                 </tbody>
               </table>
+              </div>
             </div>
           </div>
 
@@ -312,7 +312,8 @@ export default async function Home({ params }: Props) {
               {hp.socialMediaSizes ?? "Social Media Image Sizes (2026)"}
             </h2>
             <div className="overflow-x-auto -mx-1.5">
-              <table className="w-full text-left border-collapse seo-table">
+              <div className="-mx-2 overflow-x-auto px-2">
+              <table className="w-full min-w-[22rem] text-left border-collapse seo-table">
                 <thead>
                   <tr className="border-b border-[var(--border)]">
                     <th>{hp.tablePlatform ?? "Platform"}</th>
@@ -353,6 +354,7 @@ export default async function Home({ params }: Props) {
                   })}
                 </tbody>
               </table>
+              </div>
             </div>
           </div>
 

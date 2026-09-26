@@ -244,7 +244,9 @@
     "feedback": "Umpan Balik",
     "freeTool": "Alat gratis, tidak perlu mendaftar",
     "copyright": "© {year} aspect-ratio-calculator.com. Semua hak dilindungi.",
-    "tools": "Alat"
+    "tools": "Alat",
+    "siteLinks": "Tautan situs",
+    "legalLinks": "Hukum"
   },
   "installPrompt": {
     "installCalculator": "Instal kalkulator ini",

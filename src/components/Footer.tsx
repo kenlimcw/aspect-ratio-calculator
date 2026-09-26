@@ -146,59 +146,61 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
         </div>
       </div>
 
-      {/* Copyright & Legal */}
+      {/* Copyright & Legal
+        *
+        * This was one flex row holding ten links, a search box and the
+        * copyright — 536px of content in a 375px viewport, so it forced the
+        * whole page to scroll sideways. Wrapping it fixed the overflow and
+        * left a dense, unreadable thicket.
+        *
+        * Three bands instead, because they are three different kinds of
+        * thing: where else to go, the legal obligations, and the statement
+        * about the site. Centred on a phone where there is no room to imply
+        * a relationship with left and right edges; split left/right on a wide
+        * screen where there is.
+        */}
       <div className="border-t border-[var(--border)]">
-        <div className="max-w-2xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--muted)]">
-          <span>{t("footer", "copyright").replace("{year}", String(year))}</span>
-          <SiteSearch className="mb-4 sm:mb-0 sm:me-auto" />
+        <div className="max-w-2xl mx-auto px-4 py-7 space-y-5 text-xs text-[var(--muted)]">
+          <div className="flex justify-center sm:justify-start">
+            <SiteSearch />
+          </div>
+
           <nav
-            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2"
-            aria-label="Site information"
+            className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2.5 sm:justify-start"
+            aria-label={t("footer", "siteLinks")}
           >
-            <Link
-              href={`${prefix}/about`}
-              className="hover:text-[var(--foreground)] transition-colors"
-            >
+            <Link href={`${prefix}/about`} className="hover:text-[var(--foreground)] transition-colors">
               {t("aboutPage", "title")}
             </Link>
-            <Link
-              href={`${prefix}/contact`}
-              className="hover:text-[var(--foreground)] transition-colors"
-            >
+            <Link href={`${prefix}/contact`} className="hover:text-[var(--foreground)] transition-colors">
               {t("contactPage", "title")}
             </Link>
-            <Link
-              href={`${prefix}/developers`}
-              className="hover:text-[var(--foreground)] transition-colors"
-            >
+            <Link href={`${prefix}/developers`} className="hover:text-[var(--foreground)] transition-colors">
               {t("developersPage", "title")}
             </Link>
-            <a
-              href="/openapi.json"
-              className="hover:text-[var(--foreground)] transition-colors"
-            >
+            <a href="/openapi.json" className="hover:text-[var(--foreground)] transition-colors">
               openapi.json
             </a>
-            <span className="text-[var(--border)]">&middot;</span>
-            <Link
-              href={`${prefix}/terms`}
-              className="hover:text-[var(--foreground)] transition-colors"
-            >
+            <FooterFeedbackLink />
+          </nav>
+
+          <nav
+            className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2.5 sm:justify-start"
+            aria-label={t("footer", "legalLinks")}
+          >
+            <Link href={`${prefix}/terms`} className="hover:text-[var(--foreground)] transition-colors">
               {t("footer", "termsOfService")}
             </Link>
-            <Link
-              href={`${prefix}/privacy`}
-              className="hover:text-[var(--foreground)] transition-colors"
-            >
+            <Link href={`${prefix}/privacy`} className="hover:text-[var(--foreground)] transition-colors">
               {t("footer", "privacyPolicy")}
             </Link>
-            <span className="text-[var(--border)]">&middot;</span>
             <CookieSettingsLink />
-            <span className="text-[var(--border)]">&middot;</span>
-            <FooterFeedbackLink />
-            <span className="text-[var(--border)]">&middot;</span>
-            <span>{t("footer", "freeTool")}</span>
           </nav>
+
+          <div className="flex flex-col items-center gap-1.5 border-t border-[var(--border)] pt-5 text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-start">
+            <span>{t("footer", "copyright").replace("{year}", String(year))}</span>
+            <span>{t("footer", "freeTool")}</span>
+          </div>
         </div>
       </div>
     </footer>

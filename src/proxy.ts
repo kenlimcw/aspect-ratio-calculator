@@ -104,6 +104,14 @@ export function proxy(request: NextRequest) {
  * needs — on a site whose whole problem is that Google stopped crawling it.
  * Worth revisiting if the site ever renders anything a user typed.
  */
+/* EEA + UK + Switzerland. Switzerland is outside the EEA, but the revised FADP
+ * is close enough that treating it differently is not worth the argument. */
+const GDPR_COUNTRIES = new Set([
+  "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU",
+  "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES",
+  "SE", "IS", "LI", "NO", "GB", "CH",
+]);
+
 function applyCSP(request: NextRequest, rewriteUrl?: URL) {
   const csp = [
     "default-src 'self'",
@@ -123,6 +131,28 @@ function applyCSP(request: NextRequest, rewriteUrl?: URL) {
     response = NextResponse.next();
   }
   response.headers.set("Content-Security-Policy", csp);
+
+  /* Where is this request from?
+   *
+   * Consent before analytics cookies is an EEA/UK obligation, not a global one,
+   * and a banner shown to everyone is an interruption most of the world never
+   * asked for. Vercel resolves the country at the edge for nothing, so the
+   * decision is made once here and handed to the client, rather than guessed
+   * in the browser or shown to everybody just in case.
+   *
+   * Deliberately not httpOnly — CookieConsent has to read it. It carries one
+   * bit, derived from an IP address that is never stored.
+   *
+   * No header means we are not on Vercel (local, or a self-host), and then we
+   * assume the stricter regime. Wrong in that direction costs a banner; wrong
+   * the other way is a compliance breach.
+   */
+  const country = request.headers.get("x-vercel-ip-country");
+  response.cookies.set(
+    "arc_gdpr",
+    country === null || GDPR_COUNTRIES.has(country) ? "1" : "0",
+    { path: "/", sameSite: "lax", maxAge: 60 * 60 * 24, httpOnly: false },
+  );
 
   return response;
 }

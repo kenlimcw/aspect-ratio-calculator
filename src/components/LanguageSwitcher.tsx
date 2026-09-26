@@ -57,8 +57,8 @@ export function LanguageSwitcher() {
         aria-expanded={open}
       >
         <Globe size={14} strokeWidth={2} />
-        <span className="uppercase font-medium">{currentLocale.code === "zh-Hans" ? "ZH" : currentLocale.code === "zh-Hant" ? "ZH-T" : currentLocale.code.toUpperCase()}</span>
-        <ChevronDown size={12} className={`transition-transform ${open ? "rotate-180" : ""}`} />
+        <span className="hidden uppercase font-medium sm:inline">{currentLocale.code === "zh-Hans" ? "ZH" : currentLocale.code === "zh-Hant" ? "ZH-T" : currentLocale.code.toUpperCase()}</span>
+        <ChevronDown size={12} className={`hidden transition-transform sm:block ${open ? "rotate-180" : ""}`} />
       </button>
 
       {open && (
