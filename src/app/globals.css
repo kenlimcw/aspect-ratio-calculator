@@ -23,6 +23,22 @@
   --accent-amber: #c9a24e;
   --accent-rose: #c96b7e;
   --accent-emerald: #5bb88a;
+
+  /* Four steps of the noir ladder, lit from off the top-left, plus the beam
+   * at the source and a far tungsten counter-light. Both accents sit at a few
+   * percent: enough that the corner is a different colour from the opposite
+   * corner, not enough to read as a colour. */
+  --grad-ground:
+    radial-gradient(90% 70% at 14% -6%,
+      color-mix(in srgb, var(--accent) 7%, transparent) 0%, transparent 62%),
+    radial-gradient(70% 55% at 100% 104%,
+      color-mix(in srgb, var(--accent-amber) 5%, transparent) 0%, transparent 60%),
+    radial-gradient(120% 85% at 18% -4%,
+      #141922 0%, #0f131a 26%, #0b0d11 58%, #07080b 100%);
+  /* A raised surface is lit from the same direction — 158deg is that source
+   * read as an angle — and sinks into shadow along its bottom edge. */
+  --grad-surface: linear-gradient(158deg, #1c212b 0%, #171c25 38%, #13161e 100%);
+  --grad-sink: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.20) 100%);
   color-scheme: dark;
 }
 
@@ -44,6 +60,15 @@
   --accent-amber: #a07d2e;
   --accent-rose: #a24a5c;
   --accent-emerald: #2e8a60;
+
+  /* Same construction, same light source, paper instead of noir. */
+  --grad-ground:
+    radial-gradient(90% 70% at 14% -6%,
+      color-mix(in srgb, var(--accent) 5%, transparent) 0%, transparent 62%),
+    radial-gradient(120% 85% at 18% -4%,
+      #ffffff 0%, #fbfcfd 30%, #f8f9fb 62%, #f1f3f7 100%);
+  --grad-surface: linear-gradient(158deg, #ffffff 0%, #fdfdfe 44%, #f7f8fb 100%);
+  --grad-sink: linear-gradient(180deg, rgba(21,24,32,0) 0%, rgba(21,24,32,0.035) 100%);
   color-scheme: light;
 }
 
@@ -76,9 +101,18 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% -20%, var(--accent-glow), transparent 70%),
-    radial-gradient(ellipse 60% 40% at 80% 100%, color-mix(in srgb, var(--accent-teal) 5%, transparent), transparent 70%);
+  /* The ground is a lit surface, not a fill.
+   *
+   * What was here tinted the flat ground with two puffs of accent, which
+   * reads as coloured haze rather than light. This is a value ladder of the
+   * ground's own colour running from a source just off the top-left corner
+   * to the far one — the same move ZapSprout makes, and it suits a site whose
+   * whole theme is a darkened auditorium better than it suits a plant shop.
+   *
+   * Fixed, so it is the same light however long the page is. A scrolling
+   * gradient re-lights the room every screenful and stops reading as a source.
+   */
+  background: var(--grad-ground);
   pointer-events: none;
 }
 
@@ -828,53 +862,31 @@ input[pattern="[0-9]*"] {
   .footer-col > ul { padding-bottom: 0; }
 }
 
-/* ── Subtle gradients, dark theme only ────────────────────────────────────
- *
- * The dark ground is a single flat #0b0d11 across the whole page, which is
- * what makes large surfaces read as dead space. These are deliberately near
- * the threshold of visibility — a few percent of the accent and the warm
- * amber, lit from one corner so every panel agrees about where the light is.
- * Light theme keeps its flat surfaces: on a near-white ground the same
- * treatment reads as a printing fault rather than depth.
+/* ── Surfaces, lit from the same place as the ground ─────────────────────
+ * One light source or none: a card lit from a different angle than the page
+ * it sits on is worse than a flat card. The sink along the bottom edge is
+ * what makes it read as raised rather than merely paler.
  */
-:root .seo-card,
-[data-theme="dark"] .seo-card {
-  background:
-    linear-gradient(
-      160deg,
-      color-mix(in srgb, var(--accent) 4%, var(--surface)) 0%,
-      var(--surface) 55%
-    );
+.seo-card {
+  background: var(--grad-sink) bottom / 100% 48px no-repeat, var(--grad-surface);
 }
 
-/* The footer closes the page, so it gets the warm end of the grade rather
- * than another blue wash — otherwise every surface is the same temperature. */
-:root footer,
-[data-theme="dark"] footer {
+/* The header floats over scrolling content, so it needs its own ground. */
+.site-header {
   background:
-    radial-gradient(
-      120% 90% at 50% 100%,
-      color-mix(in srgb, var(--accent-amber) 4%, transparent) 0%,
-      transparent 70%
-    );
-}
-
-/* The header floats over whatever scrolls under it, so it needs its own
- * ground rather than borrowing the page's. */
-:root .site-header,
-[data-theme="dark"] .site-header {
-  background:
-    linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--accent) 5%, transparent),
-      transparent
-    ),
+    linear-gradient(to bottom,
+      color-mix(in srgb, var(--accent) 5%, transparent), transparent),
     color-mix(in srgb, var(--background) 86%, transparent);
 }
 
-/* The one place a gradient is doing work rather than atmosphere: the hero
- * mark's own glow, which separates it from the ground at display size. */
-:root .hero-lockup .hero-mark,
-[data-theme="dark"] .hero-lockup .hero-mark {
+/* The footer closes the page: the warm end of the grade, so the last thing
+ * on screen is not the same temperature as everything above it. */
+footer {
+  background: radial-gradient(120% 90% at 50% 100%,
+    color-mix(in srgb, var(--accent-amber) 5%, transparent) 0%, transparent 72%);
+}
+
+/* The one gradient doing work rather than atmosphere. */
+.hero-lockup .hero-mark {
   filter: drop-shadow(0 0 18px color-mix(in srgb, var(--accent) 22%, transparent));
 }

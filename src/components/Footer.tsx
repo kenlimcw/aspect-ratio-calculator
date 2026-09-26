@@ -232,13 +232,27 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
         {/* pb-24 on a phone: the Feedback widget is fixed to the bottom-left and
             * was sitting on top of the copyright line. */}
         <div className="max-w-2xl mx-auto px-4 pt-6 pb-24 sm:pb-6 flex flex-col items-center gap-3 text-xs text-[var(--muted)]">
+          {/* The mark opens the closing block rather than ending it — it reads
+            * as the site signing its name before the utilities, not as a
+            * footnote after them. */}
+          <ArcLogo
+            style={{ width: 22, height: 22, color: "var(--muted)" }}
+            title={`${t("homePage", "heroTitle")} ${t("homePage", "heroTitleAccent")}`}
+          />
           <SiteSearch />
 
           {/* One row, centred. Seven short links split across two rows read
             * as two unrelated groups; together they are just "everything else
             * on this site", which is what a footer meta row is. */}
           <nav
-            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5"
+            /* lowercase: these are utilities, not headings, and setting them
+             * in lower case drops them a level without shrinking them further.
+             * A transform, not rewritten strings — it leaves the translations
+             * alone and is a no-op in scripts that have no case. */
+            /* [&_button]:lowercase as well as lowercase: Feedback and Cookies
+             * are <button>s, and a button does not inherit text-transform from
+             * its parent the way the links beside it do. */
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 lowercase [&_button]:lowercase"
             aria-label={t("footer", "siteLinks")}
           >
             <Link href={`${prefix}/about`} className="hover:text-[var(--foreground)] transition-colors">
@@ -260,14 +274,7 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             <CookieSettingsLink />
           </nav>
 
-          {/* The mark closes the page. Muted rather than accent — a sign-off,
-            * not a call to anything. */}
-          <ArcLogo
-            className="mt-1"
-            style={{ width: 20, height: 20, color: "var(--muted)" }}
-            title={`${t("homePage", "heroTitle")} ${t("homePage", "heroTitleAccent")}`}
-          />
-          <span className="text-center text-[var(--muted)]/80">
+          <span className="text-center lowercase text-[var(--muted)]/80">
             {t("footer", "copyright").replace("{year}", String(year))}
           </span>
         </div>
