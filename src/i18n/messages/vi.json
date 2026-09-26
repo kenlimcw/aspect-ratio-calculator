@@ -353,10 +353,10 @@
     "tableRow1851Where": "Rạp chiếu phim phát hành rộng rãi, IMAX kỹ thuật số",
     "tableRow219UseCase": "Màn hình siêu rộng",
     "tableRow219Where": "Chơi game, màn hình siêu rộng",
-    "heroSubtitle": "Tính toán và chuyển đổi tỷ lệ khung hình cho mạng xã hội, video, nhiếp ảnh và màn hình",
     "toolsHeading": "Máy tính và công cụ kiểm tra",
     "byTool": "Công cụ",
-    "allTools": "Tất cả công cụ"
+    "allTools": "Tất cả công cụ",
+    "heroSubtitle": "Máy tính hàng ngày của bạn dành cho mạng xã hội, video, nhiếp ảnh và màn hình"
   },
   "ratioPage": {
     "aspectRatio": "Tỷ lệ khung hình",
@@ -818,5 +818,11 @@
     "h1": "Công cụ",
     "intro": "Mỗi công cụ này trả lời một câu hỏi và hiển thị cách thực hiện. Mọi con số đều được tính toán tại đây từ một số liệu đã công bố, hoặc được ghi rõ nguồn gốc và thời điểm.",
     "heading": "Công cụ"
+  },
+  "siteNav": {
+    "label": "Các phần của trang web",
+    "navTools": "Công cụ",
+    "navGuides": "Hướng dẫn",
+    "navReference": "Tham khảo"
   }
 }

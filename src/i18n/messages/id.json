@@ -353,10 +353,10 @@
     "tableRow1851Where": "Bioskop rilis luas, digital IMAX",
     "tableRow219UseCase": "Monitor ultrawide",
     "tableRow219Where": "Gaming, layar ultrawide",
-    "heroSubtitle": "Hitung dan konversi rasio aspek untuk media sosial, video, fotografi, dan layar.",
     "toolsHeading": "Kalkulator dan pemeriksa",
     "byTool": "Alat",
-    "allTools": "Semua alat"
+    "allTools": "Semua alat",
+    "heroSubtitle": "Kalkulator sehari-hari Anda untuk media sosial, video, fotografi, dan layar"
   },
   "ratioPage": {
     "aspectRatio": "Aspect Ratio",
@@ -819,5 +819,11 @@
     "h1": "Alat",
     "intro": "Masing-masing dari ini menjawab satu pertanyaan dan menunjukkan cara kerjanya. Setiap angka dihitung di sini dari angka yang dipublikasikan, atau diberi label dengan sumber dan waktunya.",
     "heading": "Alat"
+  },
+  "siteNav": {
+    "label": "Bagian situs",
+    "navTools": "Alat",
+    "navGuides": "Panduan",
+    "navReference": "Referensi"
   }
 }

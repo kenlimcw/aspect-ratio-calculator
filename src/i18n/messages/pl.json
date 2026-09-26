@@ -353,10 +353,10 @@
     "tableRow1851Where": "Kino szerokiej dystrybucji, IMAX cyfrowy",
     "tableRow219UseCase": "Monitory ultrawide",
     "tableRow219Where": "Gry, wyświetlacze ultrawide",
-    "heroSubtitle": "Obliczaj i konwertuj proporcje obrazu dla mediów społecznościowych, wideo, fotografii i ekranów",
     "toolsHeading": "Kalkulatory i sprawdzarki",
     "byTool": "Narzędzia",
-    "allTools": "Wszystkie narzędzia"
+    "allTools": "Wszystkie narzędzia",
+    "heroSubtitle": "Kalkulator na co dzień dla mediów społecznościowych, wideo, fotografii i ekranów"
   },
   "ratioPage": {
     "aspectRatio": "Współczynnik proporcji",
@@ -818,5 +818,11 @@
     "h1": "Narzędzia",
     "intro": "Każde z nich odpowiada na jedno pytanie i przedstawia obliczenia. Każda liczba jest obliczana tutaj na podstawie opublikowanych danych lub oznaczona źródłem i datą.",
     "heading": "Narzędzia"
+  },
+  "siteNav": {
+    "label": "Sekcje strony",
+    "navTools": "Narzędzia",
+    "navGuides": "Poradniki",
+    "navReference": "Referencje"
   }
 }

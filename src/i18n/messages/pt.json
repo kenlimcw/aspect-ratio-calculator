@@ -353,10 +353,10 @@
     "tableRow1851Where": "Cinema de grande lançamento, IMAX digital",
     "tableRow219UseCase": "Monitores ultrawide",
     "tableRow219Where": "Jogos, telas ultrawide",
-    "heroSubtitle": "Calcular e converter proporções de aspecto para mídias sociais, vídeo, fotografia e telas",
     "toolsHeading": "Calculadoras e verificadores",
     "byTool": "Ferramentas",
-    "allTools": "Todas as ferramentas"
+    "allTools": "Todas as ferramentas",
+    "heroSubtitle": "Sua calculadora diária para redes sociais, vídeo, fotografia e telas"
   },
   "ratioPage": {
     "aspectRatio": "Proporção de Aspecto",
@@ -819,5 +819,11 @@
     "h1": "Ferramentas",
     "intro": "Cada uma destas responde a uma pergunta e mostra o seu funcionamento. Cada número é calculado aqui a partir de um dado publicado, ou é rotulado com a sua origem e data.",
     "heading": "Ferramentas"
+  },
+  "siteNav": {
+    "label": "Seções do site",
+    "navTools": "Ferramentas",
+    "navGuides": "Guias",
+    "navReference": "Referência"
   }
 }

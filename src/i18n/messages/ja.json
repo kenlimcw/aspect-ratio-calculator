@@ -353,10 +353,10 @@
     "tableRow1851Where": "ワイドリリース映画、IMAX digital",
     "tableRow219UseCase": "ウルトラワイドモニター",
     "tableRow219Where": "ゲーム、ウルトラワイドディスプレイ",
-    "heroSubtitle": "ソーシャルメディア、動画、写真、画面向けのアスペクト比を計算・変換",
     "toolsHeading": "計算ツール・チェッカー",
     "byTool": "ツール",
-    "allTools": "全てのツール"
+    "allTools": "全てのツール",
+    "heroSubtitle": "ソーシャルメディア、動画、写真、スクリーン向けの普段使いの計算ツール"
   },
   "ratioPage": {
     "aspectRatio": "アスペクト比",
@@ -819,5 +819,11 @@
     "h1": "ツール",
     "intro": "これらはそれぞれ一つの質問に答え、その計算過程を示します。すべての数値は、公開された数値からここで計算されるか、その出所と日時が明記されています。",
     "heading": "ツール"
+  },
+  "siteNav": {
+    "label": "サイトセクション",
+    "navTools": "ツール",
+    "navGuides": "ガイド",
+    "navReference": "リファレンス"
   }
 }

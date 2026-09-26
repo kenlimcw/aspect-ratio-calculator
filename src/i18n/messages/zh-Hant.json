@@ -353,10 +353,10 @@
     "tableRow1851Where": "廣泛發行電影、IMAX 數位",
     "tableRow219UseCase": "超寬顯示器",
     "tableRow219Where": "遊戲、超寬顯示器",
-    "heroSubtitle": "計算並轉換社群媒體、影片、攝影和螢幕的長寬比",
     "toolsHeading": "計算機與檢查工具",
     "byTool": "工具",
-    "allTools": "所有工具"
+    "allTools": "所有工具",
+    "heroSubtitle": "您的日常計算工具，適用於社群媒體、影片、攝影和螢幕"
   },
   "ratioPage": {
     "aspectRatio": "長寬比",
@@ -819,5 +819,11 @@
     "h1": "工具",
     "intro": "每個工具都回答一個問題並展示其運算過程。每個數字要麼是根據已發布的數據在此計算得出，要麼標明其來源和時間。",
     "heading": "工具"
+  },
+  "siteNav": {
+    "label": "網站區塊",
+    "navTools": "工具",
+    "navGuides": "指南",
+    "navReference": "參考"
   }
 }

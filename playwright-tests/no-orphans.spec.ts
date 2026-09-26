@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 
 /* No page ships without a way in.
  *
@@ -25,7 +25,7 @@ const TOOLS = [
   'why-instagram-crops-reels',
 ];
 
-async function hrefsOn(page, url: string): Promise<string[]> {
+async function hrefsOn(page: Page, url: string): Promise<string[]> {
   await page.goto(url);
   await page.waitForLoadState('domcontentloaded');
   return page.locator('a[href]').evaluateAll((as: HTMLAnchorElement[]) =>

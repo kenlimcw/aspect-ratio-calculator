@@ -353,10 +353,10 @@
     "tableRow1851Where": "Cinéma à large diffusion, numérique IMAX",
     "tableRow219UseCase": "Moniteurs ultra-larges",
     "tableRow219Where": "Jeux vidéo, écrans ultra-larges",
-    "heroSubtitle": "Calculer et convertir les rapports d'aspect pour les réseaux sociaux, la vidéo, la photographie et les écrans",
     "toolsHeading": "Outils de calcul et de vérification",
     "byTool": "Outils",
-    "allTools": "Tous les outils"
+    "allTools": "Tous les outils",
+    "heroSubtitle": "Votre calculatrice de tous les jours pour les réseaux sociaux, la vidéo, la photographie et les écrans"
   },
   "ratioPage": {
     "aspectRatio": "Rapport d'aspect",
@@ -819,5 +819,11 @@
     "h1": "Outils",
     "intro": "Chacun d'eux répond à une question et montre son fonctionnement. Chaque chiffre est soit calculé ici à partir d'une donnée publiée, soit étiqueté avec sa provenance et sa date.",
     "heading": "Outils"
+  },
+  "siteNav": {
+    "label": "Sections du site",
+    "navTools": "Outils",
+    "navGuides": "Guides",
+    "navReference": "Référence"
   }
 }

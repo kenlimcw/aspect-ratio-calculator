@@ -353,10 +353,10 @@
     "tableRow1851Where": "Cinema cu lansare largă, IMAX digital",
     "tableRow219UseCase": "Monitoare ultrawide",
     "tableRow219Where": "Gaming, display-uri ultrawide",
-    "heroSubtitle": "Calculează și convertește rapoarte de aspect pentru rețele sociale, video, fotografie și ecrane",
     "toolsHeading": "Calculatoare și verificatoare",
     "byTool": "Instrumente",
-    "allTools": "Toate instrumentele"
+    "allTools": "Toate instrumentele",
+    "heroSubtitle": "Calculatorul tău de zi cu zi pentru rețelele sociale, video, fotografie și ecrane"
   },
   "ratioPage": {
     "aspectRatio": "Raport de aspect",
@@ -818,5 +818,11 @@
     "h1": "Instrumente",
     "intro": "Fiecare dintre acestea răspunde la o întrebare și arată cum a fost obținut rezultatul. Fiecare număr este fie calculat aici dintr-o cifră publicată, fie etichetat cu sursa și data.",
     "heading": "Instrumente"
+  },
+  "siteNav": {
+    "label": "Secțiuni site",
+    "navTools": "Instrumente",
+    "navGuides": "Ghiduri",
+    "navReference": "Referință"
   }
 }

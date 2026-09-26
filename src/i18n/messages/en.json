@@ -312,7 +312,7 @@
   "homePage": {
     "heroTitle": "Aspect Ratio",
     "heroTitleAccent": "Calculator",
-    "heroSubtitle": "Calculate and convert aspect ratios for social media, video, photography and screens",
+    "heroSubtitle": "Your everyday calculator for social media, video, photography and screens",
     "whatIsAspectRatio": "What is an Aspect Ratio?",
     "whatIsAspectRatioText": "An aspect ratio describes the proportional relationship between width and height. Written as W:H (e.g., 16:9), it tells you the shape of a screen, image, or video frame. A 16:9 ratio means for every 16 units of width, the height is 9 units — the standard for HD and 4K video. A 1:1 ratio is a perfect square, used for Instagram feed posts.",
     "commonAspectRatios": "Common Aspect Ratios",
@@ -818,5 +818,11 @@
     "h1": "Tools",
     "intro": "Each of these answers one question and shows its working. Every number is either computed here from a published figure, or labelled with where it came from and when.",
     "heading": "Tools"
+  },
+  "siteNav": {
+    "label": "Site sections",
+    "navTools": "Tools",
+    "navGuides": "Guides",
+    "navReference": "Reference"
   }
 }

@@ -353,10 +353,10 @@
     "tableRow1851Where": "广泛发行的电影、IMAX 数字影院",
     "tableRow219UseCase": "超宽显示器",
     "tableRow219Where": "游戏、超宽显示屏",
-    "heroSubtitle": "计算和转换适用于社交媒体、视频、摄影和屏幕的宽高比",
     "toolsHeading": "计算器和检查器",
     "byTool": "工具",
-    "allTools": "所有工具"
+    "allTools": "所有工具",
+    "heroSubtitle": "您的日常计算器，适用于社交媒体、视频、摄影和屏幕"
   },
   "ratioPage": {
     "aspectRatio": "宽高比",
@@ -819,5 +819,11 @@
     "h1": "工具",
     "intro": "每个工具都回答一个问题并展示其计算过程。每个数字要么是根据已发布数据计算得出，要么标明其来源和时间。",
     "heading": "工具"
+  },
+  "siteNav": {
+    "label": "网站版块",
+    "navTools": "工具",
+    "navGuides": "指南",
+    "navReference": "参考"
   }
 }

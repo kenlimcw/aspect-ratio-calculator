@@ -6,7 +6,8 @@ import { ServiceWorkerRegistrar } from "@/components/ServiceWorkerRegistrar";
 import { FeedbackWidget } from "@/components/FeedbackWidget";
 import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/Footer";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { SiteHeader } from "@/components/SiteHeader";
+import { ArcLogoSprite } from "@/components/ArcLogo";
 import { I18nProvider } from "@/components/I18nProvider";
 import { AnalyticsScripts } from "@/components/AnalyticsScripts";
 import { CookieConsent } from "@/components/CookieConsent";
@@ -131,6 +132,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={localeConfig.code} dir={localeConfig.dir} suppressHydrationWarning>
       <head>
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         {/* Declared, not just conventional: a reader or crawler should not
           * have to guess /feed.xml by trying paths. */}
         <link
@@ -153,9 +155,12 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className={`${dmSans.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} antialiased`}>
         <I18nProvider locale={localeConfig.code} dir={localeConfig.dir} messages={messages}>
           <ThemeProvider>
-            <div className="fixed top-3 end-3 z-40">
-              <LanguageSwitcher />
-            </div>
+            {/* One mask definition for the whole document; every <ArcLogo/>
+              * references it by <use>. */}
+            <ArcLogoSprite />
+            {/* Replaces a floating language switcher that was the only
+              * sitewide chrome above the fold. */}
+            <SiteHeader />
             {children}
             <Footer locale={localeConfig.code} seoData={footerSeoData} />
             <InstallPrompt />

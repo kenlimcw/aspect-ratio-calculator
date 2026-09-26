@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArcLogo } from "@/components/ArcLogo";
 import Calculator from "@/components/Calculator";
 import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
 import { TOOL_DATA, TOOL_SLUGS } from "@/lib/tools-data";
@@ -150,15 +151,27 @@ export default async function Home({ params }: Props) {
       />
 
       <div className="max-w-2xl mx-auto">
-        {/* ── Hero Title ── */}
-        <div className="text-center mb-10">
-          <h1 className="font-display text-4xl md:text-5xl font-semibold text-[var(--foreground)] mb-3 tracking-tight title-glow">
-            {hp.heroTitle ?? "Aspect Ratio"}{" "}
-            <span className="text-[var(--accent)]">{hp.heroTitleAccent ?? "Calculator"}</span>
-          </h1>
-          <p className="text-[var(--muted)] text-sm md:text-base">
-            {hp.heroSubtitle ?? "Calculate dimensions for social media, video, photography, and screens"}
-          </p>
+        {/* ── Hero ──
+          * The mark sits beside the headline rather than above it, and its
+          * size is derived from the type rather than chosen by eye: it spans
+          * from the top of the headline's capitals to the bottom of the
+          * tagline's descenders. Both figures are measured — see `.hero-lockup`
+          * in globals.css. Below ~600px of container it stacks and centres,
+          * which is what this block already did.
+          */}
+        <div className="hero-shell mb-10">
+        <div className="hero-lockup">
+          <ArcLogo className="hero-mark" title={`${hp.heroTitle ?? "Aspect Ratio"} ${hp.heroTitleAccent ?? "Calculator"}`} />
+          <div className="hero-text">
+            <h1 className="font-display text-4xl md:text-5xl font-semibold text-[var(--foreground)] tracking-tight title-glow">
+              {hp.heroTitle ?? "Aspect Ratio"}{" "}
+              <span className="text-[var(--accent)]">{hp.heroTitleAccent ?? "Calculator"}</span>
+            </h1>
+            <p className="hero-tagline text-[var(--muted)] text-sm md:text-base">
+              {hp.heroSubtitle ?? "Your everyday calculator for social media, video, photography and screens"}
+            </p>
+          </div>
+        </div>
         </div>
 
         <Calculator />

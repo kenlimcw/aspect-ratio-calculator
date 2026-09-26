@@ -353,10 +353,10 @@
     "tableRow1851Where": "Cine de gran estreno, IMAX digital",
     "tableRow219UseCase": "Monitores ultraanchos",
     "tableRow219Where": "Gaming, pantallas ultraanchas",
-    "heroSubtitle": "Calcular y convertir relaciones de aspecto para redes sociales, video, fotografía y pantallas",
     "toolsHeading": "Calculadoras y verificadores",
     "byTool": "Herramientas",
-    "allTools": "Todas las herramientas"
+    "allTools": "Todas las herramientas",
+    "heroSubtitle": "Tu calculadora diaria para redes sociales, video, fotografía y pantallas"
   },
   "ratioPage": {
     "aspectRatio": "Relación de Aspecto",
@@ -819,5 +819,11 @@
     "h1": "Herramientas",
     "intro": "Cada una de estas responde a una pregunta y muestra su funcionamiento. Cada número se calcula aquí a partir de una cifra publicada, o se etiqueta con su origen y fecha.",
     "heading": "Herramientas"
+  },
+  "siteNav": {
+    "label": "Secciones del sitio",
+    "navTools": "Herramientas",
+    "navGuides": "Guías",
+    "navReference": "Referencia"
   }
 }
