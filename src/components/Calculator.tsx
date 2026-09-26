@@ -1633,7 +1633,12 @@ export default function Calculator() {
   }, []);
 
   return (
-    <div className="w-full max-w-xl mx-auto relative">
+    /* data-calculator-root: the hero has to share this element's left edge
+     * and width. See playwright-tests/hero-alignment.spec.ts — for five
+     * commits it did not, because this is max-w-xl and the page is
+     * max-w-2xl. Anchoring the test here rather than on "the first
+     * button" keeps it pointed at the right thing if this markup moves. */
+    <div data-calculator-root className="w-full max-w-xl mx-auto relative">
 
       {/* ── Global Drag & Drop Overlay ── */}
       {dragOver && (
