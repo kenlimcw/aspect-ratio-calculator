@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { ArcLogo } from "@/components/ArcLogo";
 import { usePathname } from "next/navigation";
 import { FooterFeedbackLink } from "@/components/FooterFeedbackLink";
 import { CookieSettingsLink } from "@/components/CookieConsent";
@@ -35,49 +36,29 @@ function buildLocalePath(basePath: string, locale: LocaleConfig): string {
   return `${locale.urlPrefix}${basePath}`;
 }
 
-/* Five items, then a toggle.
+/* Five items per column, with the toggle owned by the section.
  *
- * Aspect Ratios carries fourteen entries and Language thirteen; at full length
- * they ran twice the depth of every other column and ate most of a phone
- * screen. Two sub-columns fixed the depth by making the block wider and harder
- * to scan, which is not a trade worth making in a footer.
+ * It was per-column first, which put five separate "More" buttons in one
+ * block — five controls doing the same job, and a reader deciding five times.
+ * One button under the grid opens every column at once.
  *
- * Every item stays in the DOM — the overflow is `hidden`, not absent — because
- * these links are how a crawler reaches the ratio and locale pages.
+ * Every item stays in the DOM — the overflow is `hidden`, not absent —
+ * because these links are how a crawler reaches the ratio, platform, guide,
+ * tool and locale pages.
  */
-function CappedList({
-  items,
-  cap = 5,
-  more,
-  less,
-}: {
+function FooterList({ items, expanded, cap = 5 }: {
   items: React.ReactNode[];
+  expanded: boolean;
   cap?: number;
-  more: string;
-  less: string;
 }) {
-  const [expanded, setExpanded] = useState(false);
-  const overflow = items.length - cap;
   return (
-    <>
-      <ul className="space-y-1.5">
-        {items.map((item, i) => (
-          <li key={i} hidden={!expanded && i >= cap}>
-            {item}
-          </li>
-        ))}
-      </ul>
-      {overflow > 0 && (
-        <button
-          type="button"
-          onClick={() => setExpanded((v) => !v)}
-          aria-expanded={expanded}
-          className="mt-2 text-[var(--muted)] underline underline-offset-4 hover:text-[var(--accent)] transition-colors"
-        >
-          {expanded ? less : `${more} (${overflow})`}
-        </button>
-      )}
-    </>
+    <ul className="space-y-1.5">
+      {items.map((item, i) => (
+        <li key={i} hidden={!expanded && i >= cap}>
+          {item}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -99,6 +80,15 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
    * <details> rather than a hand-rolled accordion: keyboard, screen readers
    * and find-in-page all work without writing any of it. */
   const [open, setOpen] = useState(true);
+
+  /* One toggle for all five columns. Five separate "More" buttons in one
+   * block was five controls doing the same job and a reader deciding five
+   * times. */
+  const [showAll, setShowAll] = useState(false);
+  const CAP = 5;
+  const hiddenCount =
+    [RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS, TOOL_SLUGS, LOCALES]
+      .reduce((n, list) => n + Math.max(0, list.length - CAP), 0);
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 640px)");
     const sync = () => setOpen(mq.matches);
@@ -118,9 +108,8 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             <summary className="footer-sum font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
               {t("footer", "aspectRatios")}
             </summary>
-            <CappedList
-              more={t("footer", "more")}
-              less={t("footer", "less")}
+            <FooterList
+              expanded={showAll}
               items={RATIO_SLUGS.map((slug) => (
                 <Link
                   key={slug}
@@ -136,39 +125,38 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             <summary className="footer-sum font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
               {t("footer", "platforms")}
             </summary>
-            <ul className="space-y-1.5">
-              {PLATFORM_SLUGS.map((slug) => (
-                <li key={slug}>
-                  <Link
-                    href={`${prefix}/platform/${slug}`}
-                    className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
-                  >
-                    {seoData?.platformNames[slug] ?? slug}
-                  </Link>
-                </li>
+            <FooterList
+              expanded={showAll}
+              items={PLATFORM_SLUGS.map((slug) => (
+                <Link
+                  key={slug}
+                  href={`${prefix}/platform/${slug}`}
+                  className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
+                >
+                  {seoData?.platformNames[slug] ?? slug}
+                </Link>
               ))}
-            </ul>
+            />
           </details>
           <details open={open} className="footer-col">
             <summary className="footer-sum font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
               {t("footer", "guides")}
             </summary>
-            <ul className="space-y-1.5">
-              {ARTICLE_SLUGS.map((slug) => (
-                <li key={slug}>
-                  <Link
-                    href={`${prefix}/blog/${slug}`}
-                    /* Full article titles run to three lines each — "How to
-                     * Calculate Aspect Ratio: The Complete Guide" — so six of
-                     * them made this column 400px against Platforms' 200.
-                     * Two lines still identifies an article. */
-                    className="line-clamp-2 text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
-                  >
-                    {seoData?.articleTitles[slug] ?? slug}
-                  </Link>
-                </li>
+            <FooterList
+              expanded={showAll}
+              items={ARTICLE_SLUGS.map((slug) => (
+                <Link
+                  key={slug}
+                  href={`${prefix}/blog/${slug}`}
+                  /* Full titles run to three lines each — "How to Calculate
+                   * Aspect Ratio: The Complete Guide". Two still identifies
+                   * an article you already know the subject of. */
+                  className="line-clamp-2 text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
+                >
+                  {seoData?.articleTitles[slug] ?? slug}
+                </Link>
               ))}
-            </ul>
+            />
           </details>
           {/* Tools sit in the footer, not only on the hub, because the footer is
             * the one component on every page: it is what turns six new URLs
@@ -177,26 +165,25 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             <summary className="footer-sum font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
               {t("footer", "tools")}
             </summary>
-            <ul className="space-y-1.5">
-              {TOOL_SLUGS.map((slug) => (
-                <li key={slug}>
-                  <Link
-                    href={`${prefix}/tools/${slug}`}
-                    className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
-                  >
-                    {t(TOOL_DATA[slug].ns, "navLabel")}
-                  </Link>
-                </li>
+            <FooterList
+              expanded={showAll}
+              items={TOOL_SLUGS.map((slug) => (
+                <Link
+                  key={slug}
+                  href={`${prefix}/tools/${slug}`}
+                  className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
+                >
+                  {t(TOOL_DATA[slug].ns, "navLabel")}
+                </Link>
               ))}
-            </ul>
+            />
           </details>
           <details open={open} className="footer-col">
             <summary className="footer-sum font-semibold text-[var(--foreground)] mb-2 uppercase tracking-wider">
               {t("footer", "language")}
             </summary>
-            <CappedList
-              more={t("footer", "more")}
-              less={t("footer", "less")}
+            <FooterList
+              expanded={showAll}
               items={LOCALES.map((l) => (
                 <a
                   key={l.code}
@@ -213,6 +200,19 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             />
           </details>
         </div>
+
+        {hiddenCount > 0 && (
+          <div className="mt-5 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAll((v) => !v)}
+              aria-expanded={showAll}
+              className="text-xs text-[var(--muted)] underline underline-offset-4 hover:text-[var(--accent)] transition-colors"
+            >
+              {showAll ? t("footer", "less") : `${t("footer", "more")} (${hiddenCount})`}
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Copyright & Legal
@@ -260,6 +260,13 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             <CookieSettingsLink />
           </nav>
 
+          {/* The mark closes the page. Muted rather than accent — a sign-off,
+            * not a call to anything. */}
+          <ArcLogo
+            className="mt-1"
+            style={{ width: 20, height: 20, color: "var(--muted)" }}
+            title={`${t("homePage", "heroTitle")} ${t("homePage", "heroTitleAccent")}`}
+          />
           <span className="text-center text-[var(--muted)]/80">
             {t("footer", "copyright").replace("{year}", String(year))}
           </span>
