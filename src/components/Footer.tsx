@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { ArcLogo } from "@/components/ArcLogo";
 import { usePathname } from "next/navigation";
@@ -85,10 +86,18 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
    * block was five controls doing the same job and a reader deciding five
    * times. */
   const [showAll, setShowAll] = useState(false);
+  /* Five rows everywhere, three in Guides. A cap counts items, and the eye
+   * counts lines: a guide title wraps to two, so five of them stand twice as
+   * deep as five ratios. Three brings the column back level with its
+   * neighbours, which is the point of capping at all. */
   const CAP = 5;
+  const CAP_GUIDES = 3;
   const hiddenCount =
-    [RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS, TOOL_SLUGS, LOCALES]
-      .reduce((n, list) => n + Math.max(0, list.length - CAP), 0);
+    Math.max(0, RATIO_SLUGS.length - CAP) +
+    Math.max(0, PLATFORM_SLUGS.length - CAP) +
+    Math.max(0, ARTICLE_SLUGS.length - CAP_GUIDES) +
+    Math.max(0, TOOL_SLUGS.length - CAP) +
+    Math.max(0, LOCALES.length - CAP);
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 640px)");
     const sync = () => setOpen(mq.matches);
@@ -144,6 +153,7 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
             </summary>
             <FooterList
               expanded={showAll}
+              cap={CAP_GUIDES}
               items={ARTICLE_SLUGS.map((slug) => (
                 <Link
                   key={slug}
@@ -203,13 +213,28 @@ export function Footer({ locale: localeProp, seoData }: { locale?: string; seoDa
 
         {hiddenCount > 0 && (
           <div className="mt-5 flex justify-center">
+            {/* A chevron, not a word. It sits under five columns that each
+              * already close with one, so the same mark reading "there is more
+              * below" is the consistent thing — and it needs no translation.
+              * The words stay as the accessible name. */}
             <button
               type="button"
               onClick={() => setShowAll((v) => !v)}
               aria-expanded={showAll}
-              className="text-xs text-[var(--muted)] underline underline-offset-4 hover:text-[var(--accent)] transition-colors"
+              aria-label={
+                showAll ? t("footer", "less") : `${t("footer", "more")} (${hiddenCount})`
+              }
+              title={
+                showAll ? t("footer", "less") : `${t("footer", "more")} (${hiddenCount})`
+              }
+              className="flex items-center justify-center rounded-full border text-[var(--muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+              style={{ width: 34, height: 34, borderColor: "var(--border)" }}
             >
-              {showAll ? t("footer", "less") : `${t("footer", "more")} (${hiddenCount})`}
+              <ChevronDown
+                size={16}
+                aria-hidden
+                className={`transition-transform ${showAll ? "rotate-180" : ""}`}
+              />
             </button>
           </div>
         )}
