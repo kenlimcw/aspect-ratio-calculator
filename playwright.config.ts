@@ -24,7 +24,22 @@ export default defineConfig({
      * Declaring a country here makes the default suite exercise the path most
      * visitors take. A spec that wants the banner sets `DE` on its own
      * context and tests it deliberately. */
-    extraHTTPHeaders: { 'x-vercel-ip-country': 'AU' },
+    extraHTTPHeaders: {
+      'x-vercel-ip-country': 'AU',
+
+      /* Preview deployments sit behind Vercel Authentication and answer an
+       * unauthenticated request with a 302 to the SSO login, so a suite
+       * pointed at one fails every assertion for a reason that has nothing to
+       * do with the site. This header is the documented way through, and it
+       * keeps the deployment private to everyone who does not hold it.
+       *
+       * Absent — which is the normal case against localhost — it contributes
+       * no header at all. Never hardcode the value; it lives outside the
+       * repo. */
+      ...(process.env.VERCEL_PROTECTION_BYPASS
+        ? { 'x-vercel-protection-bypass': process.env.VERCEL_PROTECTION_BYPASS }
+        : {}),
+    },
   },
   projects: [
     {
