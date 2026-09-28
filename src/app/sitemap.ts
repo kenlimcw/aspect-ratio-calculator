@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { LOCALES, BASE_URL } from "@/i18n/config";
+import { LOCALES, localeUrl } from "@/i18n/config";
 import { RATIO_SLUGS, PLATFORM_SLUGS, ARTICLE_SLUGS } from "@/lib/seo-data";
 import { TOOL_DATA, TOOL_SLUGS } from "@/lib/tools-data";
 import { CONTENT_REVISED } from "@/lib/content-revised";
@@ -8,9 +8,9 @@ import { articleDates } from "@/lib/article-meta";
 function makeLanguages(path: string): Record<string, string> {
   const languages: Record<string, string> = {};
   for (const locale of LOCALES) {
-    languages[locale.hreflang] = `${BASE_URL}${locale.urlPrefix}${path}`;
+    languages[locale.hreflang] = localeUrl(locale.urlPrefix, path);
   }
-  languages["x-default"] = `${BASE_URL}${path}`;
+  languages["x-default"] = localeUrl("", path);
   return languages;
 }
 
@@ -23,7 +23,7 @@ function localizedEntries(
   priority: number,
 ): MetadataRoute.Sitemap {
   return LOCALES.map((locale) => ({
-    url: `${BASE_URL}${locale.urlPrefix}${path}`,
+    url: localeUrl(locale.urlPrefix, path),
     lastModified,
     changeFrequency,
     priority,

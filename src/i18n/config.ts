@@ -30,6 +30,28 @@ export const LOCALE_SEGMENTS = LOCALES.map((l) => l.urlSegment);
 export const NON_DEFAULT_SEGMENTS = LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l) => l.urlSegment);
 export const BASE_URL = "https://aspect-ratio-calculator.com";
 
+/* Join a locale prefix to a path. `/es` + `/` is `/es`, never `/es/`.
+ *
+ * Both callers used to interpolate `${urlPrefix}${path}` directly, which is
+ * right for every path except the one that matters most. On the locale home
+ * pages it produced `/es/`, and the site answers that with a 308 to `/es`.
+ * The result was a canonical pointing at a URL that redirects away from the
+ * page declaring it — every locale home page told Google "my real address is
+ * /es/", Google followed it and was bounced back. The same concatenation put
+ * the redirecting form in the sitemap and in all 14 hreflang alternates.
+ *
+ * Thirteen pages, and they were the locale home pages: the highest-value URLs
+ * on the site after the root. Deep paths were never affected, because they
+ * never end in a slash.
+ *
+ * English keeps its slash: it has no prefix, and `https://…com/` is the root.
+ * An empty path would be a malformed URL, and the root's two spellings are
+ * equivalent anyway. */
+export function localeUrl(urlPrefix: string, path: string): string {
+  if (path === "/") return `${BASE_URL}${urlPrefix || "/"}`;
+  return `${BASE_URL}${urlPrefix}${path}`;
+}
+
 const segmentToLocaleMap: Record<string, string> = {};
 for (const l of LOCALES) {
   segmentToLocaleMap[l.urlSegment] = l.code;
