@@ -3,24 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Globe, ChevronDown } from "lucide-react";
 import { useTranslation } from "@/components/I18nProvider";
-import { LOCALES, type LocaleConfig } from "@/i18n/config";
+import { LOCALES, localePath, stripLocale, type LocaleConfig } from "@/i18n/config";
 
-function getBasePath(pathname: string, currentLocale: string): string {
-  // Strip the current locale prefix to get the base path
-  for (const locale of LOCALES) {
-    if (locale.code === "en") continue;
-    const prefix = `/${locale.urlSegment}`;
-    if (pathname === prefix || pathname.startsWith(prefix + "/")) {
-      return pathname.slice(prefix.length) || "/";
-    }
-  }
-  return pathname;
-}
-
-function buildLocalePath(basePath: string, locale: LocaleConfig): string {
-  if (locale.code === "en") return basePath;
-  return `${locale.urlPrefix}${basePath}`;
-}
 
 export function LanguageSwitcher() {
   const { locale } = useTranslation();
@@ -43,9 +27,7 @@ export function LanguageSwitcher() {
   function handleSelect(target: LocaleConfig) {
     setOpen(false);
     const pathname = window.location.pathname;
-    const basePath = getBasePath(pathname, locale);
-    const newPath = buildLocalePath(basePath, target);
-    window.location.href = newPath;
+    window.location.href = localePath(target.urlPrefix, stripLocale(pathname));
   }
 
   return (

@@ -69,6 +69,9 @@ async function inspect(url) {
     title: pick(html, /<title[^>]*>([\s\S]*?)<\/title>/i),
     hreflang: (html.match(/hreflang="/gi) ?? []).length,
     noindex: /<meta name="robots"[^>]*noindex/i.test(html),
+    /* Anchors only. `link rel=alternate` hrefs are checked separately via the
+     * canonical pass, and counting them here would just duplicate that. */
+    hrefs: [...html.matchAll(/<a\b[^>]*\bhref="([^"]+)"/gi)].map((m) => m[1]),
   };
 }
 
@@ -141,6 +144,36 @@ for (const [id, { titles, pages }] of clusters) {
   if (titles.size === 1 && pages > 3) {
     fail('same title in every locale (untranslated)', id, `${pages} translated pages share one title`);
   }
+}
+
+/* Every internal link must land on a 200.
+ *
+ * The canonical fix corrected the sitemap, the canonicals and the hreflang
+ * alternates, and left 804 navigation anchors still pointing at `/es/` —
+ * because the footer and the language switcher each kept a private copy of
+ * the same path-joining function. Fixing the shared helper did nothing for
+ * the copies, and nothing above this line looks at what the pages link to.
+ *
+ * So: collect every distinct internal href, resolve each once. A redirect is
+ * a finding here too — it spends crawl budget and dilutes the link — and a
+ * 404 is how the dangling guide link went unnoticed. */
+const hrefs = new Set();
+for (const r of rows) {
+  for (const h of r.hrefs ?? []) {
+    if (h.startsWith('/') && !h.startsWith('//')) hrefs.add(h.split('#')[0]);
+  }
+}
+const linkTargets = [...hrefs].filter(Boolean);
+console.log(`resolving ${linkTargets.length} distinct internal link targets`);
+const linkStatus = await mapLimit(linkTargets, CONCURRENCY, async (h) => {
+  try {
+    return [h, (await fetchRaw(BASE + h)).status];
+  } catch {
+    return [h, 'ERR'];
+  }
+});
+for (const [h, st] of linkStatus) {
+  if (st !== 200) fail(`internal link returns ${st}`, h, '');
 }
 
 const byRule = problems.reduce((a, p) => ((a[p.rule] = (a[p.rule] ?? 0) + 1), a), {});

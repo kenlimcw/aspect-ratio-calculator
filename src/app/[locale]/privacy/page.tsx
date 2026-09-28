@@ -52,7 +52,8 @@ export default async function PrivacyPage({ params }: Props) {
                 return (
                   <>
                     {parts[0]}
-                    <Link href="/en/privacy" className="text-[var(--accent)] hover:underline underline-offset-2">
+                    {/* English is served unprefixed — "/en/privacy" is the internal rewrite target and 404s publicly. */}
+                    <Link href="/privacy" className="text-[var(--accent)] hover:underline underline-offset-2">
                       {parts[1]}
                     </Link>
                     {parts[2]}

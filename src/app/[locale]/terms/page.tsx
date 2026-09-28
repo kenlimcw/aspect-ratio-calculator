@@ -52,7 +52,8 @@ export default async function TermsPage({ params }: Props) {
                 return (
                   <>
                     {parts[0]}
-                    <Link href="/en/terms" className="text-[var(--accent)] hover:underline underline-offset-2">
+                    {/* English is served unprefixed — "/en/terms" is the internal rewrite target and 404s publicly. */}
+                    <Link href="/terms" className="text-[var(--accent)] hover:underline underline-offset-2">
                       {parts[1]}
                     </Link>
                     {parts[2]}

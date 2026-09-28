@@ -47,9 +47,33 @@ export const BASE_URL = "https://aspect-ratio-calculator.com";
  * English keeps its slash: it has no prefix, and `https://…com/` is the root.
  * An empty path would be a malformed URL, and the root's two spellings are
  * equivalent anyway. */
+export function localePath(urlPrefix: string, path: string): string {
+  if (path === "/") return urlPrefix || "/";
+  return `${urlPrefix}${path}`;
+}
+
 export function localeUrl(urlPrefix: string, path: string): string {
-  if (path === "/") return `${BASE_URL}${urlPrefix || "/"}`;
-  return `${BASE_URL}${urlPrefix}${path}`;
+  return `${BASE_URL}${localePath(urlPrefix, path)}`;
+}
+
+/* Remove a leading locale segment, English included.
+ *
+ * English is served with no prefix but renders through the same `[locale]`
+ * segment as every other language, so a server-rendered `usePathname()`
+ * reports "/en/tools" for the page published at "/tools". Leaving that "/en"
+ * in place made every other language build on top of it — /es/en/tools — and
+ * all eleven 404'd.
+ *
+ * Exact-or-followed-by-slash, so a real path like /encoding is never mistaken
+ * for the English segment. */
+export function stripLocale(pathname: string): string {
+  for (const locale of LOCALES) {
+    const prefix = `/${locale.urlSegment}`;
+    if (pathname === prefix || pathname.startsWith(prefix + "/")) {
+      return pathname.slice(prefix.length) || "/";
+    }
+  }
+  return pathname;
 }
 
 const segmentToLocaleMap: Record<string, string> = {};

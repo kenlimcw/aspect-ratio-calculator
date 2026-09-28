@@ -13,6 +13,11 @@ export const tool: ToolData = {
   related: [
     { href: "/ratio/9-16", labelKey: "related9x16" },
     { href: "/platform/instagram", labelKey: "relatedInstagram" },
-    { href: "/blog/how-to-convert-16-9-to-9-16", labelKey: "relatedConvert" },
+    /* Was /blog/how-to-convert-16-9-to-9-16, which has never existed — the
+     * article was planned and the link shipped ahead of it, so this 404'd in
+     * all thirteen locales. /ratio/9-16 is the page that actually answers
+     * "converting 16:9 to 9:16". Point the link back here if that article is
+     * ever written. */
+    { href: "/ratio/9-16", labelKey: "relatedConvert" },
   ],
 };
