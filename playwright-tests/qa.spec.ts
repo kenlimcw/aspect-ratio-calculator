@@ -31,13 +31,22 @@ test.describe('Phase 2: Visual Testing', () => {
       if (msg.type() === 'error') consoleErrors.push(msg.text());
     });
     page.on('requestfailed', r => {
-      /* A cancelled RSC prefetch is the router doing its job. Next fires
-       * speculative `?_rsc=` fetches on link hover and drops them when the
-       * navigation does not happen, which surfaces as ERR_ABORTED. Only
-       * aborts, and only on prefetch URLs — a prefetch that 404s or a real
-       * request that aborts still counts. */
+      /* Two kinds of cancellation are the browser working correctly, not a
+       * resource failing to load.
+       *
+       * A speculative `?_rsc=` prefetch is dropped when the navigation it was
+       * guessing at does not happen. An analytics beacon is fire-and-forget
+       * and is routinely cut off at teardown — the page is going away, which
+       * is the whole reason beacons exist.
+       *
+       * Narrow on purpose: only ERR_ABORTED, and only these URLs. A prefetch
+       * that 404s, a beacon that 403s, or any other request that aborts all
+       * still count. Whether analytics *works* is a different question, and
+       * analytics-wiring.spec.ts asks it directly rather than inferring it
+       * from the absence of an error here. */
       const aborted = r.failure()?.errorText === 'net::ERR_ABORTED';
-      if (aborted && r.url().includes('_rsc=')) return;
+      const cancellable = /_rsc=|google-analytics\.com|clarity\.ms/.test(r.url());
+      if (aborted && cancellable) return;
       failedUrls.push(r.url());
     });
     page.on('response', r => { if (r.status() >= 400) failedUrls.push(r.url()); });

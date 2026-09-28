@@ -30,8 +30,25 @@ function loadGA4() {
   document.head.appendChild(script);
 
   const layer: unknown[] = (window.dataLayer = window.dataLayer ?? []);
-  window.gtag = function (...args: unknown[]) {
-    layer.push(args);
+
+  /* `arguments`, not a rest array. This looks like a stylistic relic of
+   * Google's snippet and is not one.
+   *
+   * gtag.js reads dataLayer and dispatches on what it finds. An `arguments`
+   * object is how it recognises a command; a real array is data, and it is
+   * ignored. Written with rest parameters, `gtag("config", ID)` pushed
+   * ["config", ID] — an array — so gtag.js loaded, saw nothing it recognised,
+   * and sent no pageview. GA4 recorded not one hit for the life of the site.
+   *
+   * Measured on production 2026-09-28 before the fix: the site's own pushes
+   * produced zero requests to /g/collect; the same two commands re-pushed as
+   * `arguments` objects in the same page produced one immediately.
+   *
+   * eslint's prefer-rest-params is right about ordinary code and wrong here,
+   * because the shape is the payload. */
+  window.gtag = function gtag() {
+    // eslint-disable-next-line prefer-rest-params
+    layer.push(arguments);
   };
   window.gtag("js", new Date());
   window.gtag("config", GA4_ID);
