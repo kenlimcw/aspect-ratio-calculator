@@ -9,17 +9,56 @@ const BASE_URL = process.env.PLAYWRIGHT_BASE_URL ?? 'http://localhost:3000';
 // ── Phase 2: Visual Testing ──────────────────────────────────────
 test.describe('Phase 2: Visual Testing', () => {
 
+  /* Hosts that cannot succeed on a dev box and say nothing about the site.
+   *
+   * `_vercel/insights` is injected by the platform and only exists on a
+   * deployment, so it 404s locally by design. `clarity.ms` resolves IPv6-only
+   * and this build machine has no IPv6 default route — the request fails here
+   * and nowhere else. Both are matched on URL, never on the message text.
+   *
+   * That distinction is the point of the rewrite. The filter used to match
+   * substrings of `msg.text()`, which for a failed subresource is the bare
+   * string "Failed to load resource: ..." with no URL in it. So the only way
+   * to silence an environmental failure was a blanket match that would have
+   * hidden a real one just as well. Collect URLs, exclude by host. */
+  const ENVIRONMENTAL = ['/_vercel/insights/', 'clarity.ms'];
+
   test('page loads with no console errors', async ({ page }) => {
     const consoleErrors: string[] = [];
+    const failedUrls: string[] = [];
+
     page.on('console', msg => {
       if (msg.type() === 'error') consoleErrors.push(msg.text());
     });
+    page.on('requestfailed', r => {
+      /* A cancelled RSC prefetch is the router doing its job. Next fires
+       * speculative `?_rsc=` fetches on link hover and drops them when the
+       * navigation does not happen, which surfaces as ERR_ABORTED. Only
+       * aborts, and only on prefetch URLs — a prefetch that 404s or a real
+       * request that aborts still counts. */
+      const aborted = r.failure()?.errorText === 'net::ERR_ABORTED';
+      if (aborted && r.url().includes('_rsc=')) return;
+      failedUrls.push(r.url());
+    });
+    page.on('response', r => { if (r.status() >= 400) failedUrls.push(r.url()); });
+
     await page.goto(BASE_URL);
     await page.waitForLoadState('networkidle');
+
+    const realFailures = failedUrls.filter(
+      u => !ENVIRONMENTAL.some(host => u.includes(host))
+    );
+    expect(realFailures, 'no resource should fail to load').toEqual([]);
+
+    /* Console errors that are not about a resource at all — a thrown
+     * exception, a CSP refusal, a React warning escalated to an error. The
+     * resource ones are covered above with their URLs attached, so they are
+     * dropped here rather than counted twice. */
     const criticalErrors = consoleErrors.filter(e =>
       !e.includes('favicon') &&
       !e.includes('service worker') &&
-      !e.includes('sw.js')
+      !e.includes('sw.js') &&
+      !e.startsWith('Failed to load resource')
     );
     expect(criticalErrors).toHaveLength(0);
   });

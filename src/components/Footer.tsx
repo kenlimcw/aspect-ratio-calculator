@@ -21,9 +21,26 @@ export interface FooterSeoData {
 }
 import { LOCALES, type LocaleConfig } from "@/i18n/config";
 
+/* Strip the locale segment, INCLUDING English.
+ *
+ * English is served without a prefix — aspect-ratio-calculator.com/tools — but
+ * it renders through the same `[locale]` segment as every other language, and
+ * `usePathname()` in a server-rendered client component reports the internal
+ * rewritten path, not the public URL. So on /tools this receives "/en/tools".
+ *
+ * Skipping English here left that "/en" in the base path and every other
+ * language was then built on top of it: /es/en/tools, /pt/en/tools, and so on
+ * for all eleven, on all 123 English pages. They 404, and hydration does not
+ * correct them because the client recomputes the same wrong value.
+ *
+ * English's urlPrefix is "" while its urlSegment is "en", so stripping it here
+ * costs nothing on the way back out: buildLocalePath returns the bare base
+ * path for English and prefixes it for everyone else.
+ *
+ * The match is exact-or-followed-by-slash, so a real path like /encoding is
+ * never mistaken for the English segment. */
 function getBasePath(pathname: string): string {
   for (const locale of LOCALES) {
-    if (locale.code === "en") continue;
     const prefix = `/${locale.urlSegment}`;
     if (pathname === prefix || pathname.startsWith(prefix + "/")) {
       return pathname.slice(prefix.length) || "/";

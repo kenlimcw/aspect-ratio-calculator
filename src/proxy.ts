@@ -119,7 +119,19 @@ function applyCSP(request: NextRequest, rewriteUrl?: URL) {
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: blob: https://www.google-analytics.com https://c.clarity.ms",
     "font-src 'self'",
-    "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://z.clarity.ms https://c.clarity.ms https://www.clarity.ms",
+    /* Clarity is wildcarded, the rest enumerated. Its collector is a lettered
+     * regional host — g.clarity.ms here, a different letter elsewhere — so an
+     * enumerated list silently drops whichever letters it missed. This one did:
+     * z, c and www were allowed, uploads go to g, and every beacon was refused
+     * by CSP from the day Clarity was installed. The script loaded, the panel
+     * showed nothing, and nothing in the app reported an error. */
+    /* googletagmanager.com is in script-src but was missing here, so GA4's
+     * /td beacon was refused on every page load — the same omission as
+     * Clarity's, one line apart. Pageviews reach /g/collect on
+     * google-analytics.com and were never affected; this is the supplementary
+     * signal, and the console error it threw was noise sitting on top of the
+     * real ones. */
+    "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://*.clarity.ms",
     "object-src 'none'",
     "base-uri 'self'",
   ].join("; ");

@@ -10,6 +10,21 @@ export default defineConfig({
      * honestly. */
     baseURL: process.env.PLAYWRIGHT_BASE_URL ?? 'http://localhost:3000',
     trace: 'on-first-retry',
+
+    /* Model a visitor outside the EEA, which is most of them.
+     *
+     * The consent banner is geo-gated: `src/proxy.ts` reads Vercel's
+     * `x-vercel-ip-country` and only asks for consent inside the EEA/UK/CH.
+     * Absent that header it assumes the strictest case, which is right for a
+     * real request of unknown origin and wrong for a test run — locally the
+     * header never exists, so the banner opened on every page, sat over the
+     * bottom-left corner and swallowed clicks meant for the controls beneath
+     * it. Five specs failed on a dialog none of them were about.
+     *
+     * Declaring a country here makes the default suite exercise the path most
+     * visitors take. A spec that wants the banner sets `DE` on its own
+     * context and tests it deliberately. */
+    extraHTTPHeaders: { 'x-vercel-ip-country': 'AU' },
   },
   projects: [
     {
