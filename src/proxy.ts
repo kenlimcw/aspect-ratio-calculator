@@ -119,9 +119,18 @@ const GDPR_COUNTRIES = new Set([
 
 function applyCSP(request: NextRequest, rewriteUrl?: URL) {
   /* Framing is refused everywhere except the widget, which exists to be
-   * framed. X-Frame-Options says the same thing for older browsers and is
-   * withheld from this path in vercel.json — BOTH halves are required, since
-   * either one alone still blocks the iframe.
+   * framed. BOTH halves are required, since either one alone still blocks the
+   * iframe:
+   *
+   *   here          frame-ancestors * on /embed, 'none' on everything else
+   *   vercel.json   "source": "/((?!embed$).*)" on the X-Frame-Options rule
+   *
+   * The negative lookahead is the whole mechanism over there: Vercel has no
+   * way to UNSET a header a broader rule already set, so the broader rule has
+   * to not match in the first place. And the reason that is explained here
+   * rather than beside it is that vercel.json is JSON — it has no comments,
+   * and a "comment" key fails schema validation and takes the build down with
+   * it. Which it did, once.
    *
    * `frame-ancestors *` is the point of the route, not an oversight: the
    * widget holds no session, reads no cookie and renders nothing

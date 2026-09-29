@@ -21,7 +21,6 @@
       ]
     },
     {
-      "comment": "X-Frame-Options everywhere EXCEPT /embed, which exists to be framed. The negative lookahead is the whole mechanism: Vercel has no way to unset a header a broader rule already set, so the broader rule must never match. CSP frame-ancestors in src/proxy.ts carries the same policy for modern browsers, and both halves are needed — either one alone still blocks the iframe.",
       "source": "/((?!embed$).*)",
       "headers": [{ "key": "X-Frame-Options", "value": "DENY" }]
     },
