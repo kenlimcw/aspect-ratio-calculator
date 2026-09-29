@@ -51,9 +51,23 @@ export default defineConfig({
          * chrome-linux-arm64/ rather than chrome-linux/. Point at a known-good
          * binary there; leave it unset in CI, where `playwright install` has
          * put the matching revision where Playwright expects it. */
-        launchOptions: process.env.PLAYWRIGHT_CHROMIUM
-          ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM }
-          : {},
+        launchOptions: {
+          ...(process.env.PLAYWRIGHT_CHROMIUM
+            ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM }
+            : {}),
+          /* The embed suite frames 127.0.0.1 from localhost to get a real
+           * cross-origin parent. Chrome's Local Network Access check refuses
+           * that with ERR_BLOCKED_BY_LOCAL_NETWORK_ACCESS_CHECKS — a
+           * protection against public pages probing your LAN, which has
+           * nothing to do with a third-party site embedding a public widget.
+           *
+           * Without the flag all seven iframe tests fail with an empty frame
+           * and the widget looks broken when it is not. Scoped to the test
+           * browser; it changes nothing that ships. */
+          args: [
+            '--disable-features=LocalNetworkAccessChecks,PrivateNetworkAccessChecks,BlockInsecurePrivateNetworkRequests',
+          ],
+        },
       },
     },
   ],

@@ -7,6 +7,7 @@ import { LOCALE_SEGMENTS, getLocaleFromSegment, BASE_URL } from "@/i18n/config";
 import { getAlternates } from "@/lib/hreflang";
 import { getSeoData } from "@/i18n/get-seo-data";
 import { getMessages } from "@/i18n/get-messages";
+import { EmbedSnippet } from "@/components/EmbedSnippet";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -261,6 +262,11 @@ export default async function RatioPage({ params }: Props) {
               ))}
             </div>
           </div>
+
+          {/* The embed offer sits with the related links, not in the footer:
+            * a reader deciding this page is useful is the reader who might put
+            * it on their own site, and that decision happens here. */}
+          <EmbedSnippet w={data.w} h={data.h} label={data.label} />
 
           {/* Related Ratios */}
           {data.relatedRatios.length > 0 && (

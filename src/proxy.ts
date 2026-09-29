@@ -41,6 +41,11 @@ export function proxy(request: NextRequest) {
     pathname.startsWith("/api/") ||
     pathname.startsWith("/_next/") ||
     pathname.startsWith("/icons/") ||
+    /* The embeddable widget lives outside [locale] on purpose — one route
+     * with a `lang` parameter instead of thirteen more URLs on a site that
+     * is already indexed on six of five hundred. Without this it would be
+     * rewritten to /en/embed, which does not exist. */
+    pathname === "/embed" ||
     pathname.includes(".")
   ) {
     return applyCSP(request);
@@ -113,7 +118,18 @@ const GDPR_COUNTRIES = new Set([
 ]);
 
 function applyCSP(request: NextRequest, rewriteUrl?: URL) {
+  /* Framing is refused everywhere except the widget, which exists to be
+   * framed. X-Frame-Options says the same thing for older browsers and is
+   * withheld from this path in vercel.json — BOTH halves are required, since
+   * either one alone still blocks the iframe.
+   *
+   * `frame-ancestors *` is the point of the route, not an oversight: the
+   * widget holds no session, reads no cookie and renders nothing
+   * user-specific, so there is nothing for a hostile framer to clickjack. */
+  const isEmbed = request.nextUrl.pathname === "/embed";
+
   const csp = [
+    isEmbed ? "frame-ancestors *" : "frame-ancestors 'none'",
     "default-src 'self'",
     "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms",
     "style-src 'self' 'unsafe-inline'",
