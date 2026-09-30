@@ -15,11 +15,19 @@ import { test, expect } from '@playwright/test';
  * a week later.
  *
  * `x-vercel-ip-country` comes from the config, which puts the run outside the
- * EEA, so consent is recorded automatically and the loaders run. */
+ * EEA, so consent is recorded automatically and the loaders run.
+ *
+ * The loaders are also gated to the production hostname, because a test run
+ * against 127.0.0.1 was sending real hits to the real GA4 property — 329 of
+ * 427 sessions on 2026-09-30 came from localhost. So the mechanism tests set
+ * __arcForceAnalytics, and the gate itself gets its own test below. Forcing
+ * it in two tests while never testing the gate would be how the gate quietly
+ * stops working. */
 
 test.describe('analytics wiring', () => {
 
   test('gtag pushes arguments objects, not arrays', async ({ page }) => {
+    await page.addInitScript(() => { window.__arcForceAnalytics = true; });
     await page.goto('/tools');
     await page.waitForFunction(() => (window.dataLayer?.length ?? 0) >= 2, null, { timeout: 15000 });
 
@@ -37,6 +45,7 @@ test.describe('analytics wiring', () => {
   });
 
   test('consent is recorded outside the EEA, so the loaders run at all', async ({ page }) => {
+    await page.addInitScript(() => { window.__arcForceAnalytics = true; });
     await page.goto('/tools');
     await page.waitForFunction(() => !!localStorage.getItem('cookie-consent'), null, { timeout: 15000 });
 
@@ -61,5 +70,29 @@ test.describe('analytics wiring', () => {
      * wildcard is the assertion. */
     expect(connect, 'connect-src must wildcard clarity.ms').toContain('https://*.clarity.ms');
     expect(connect, 'GA4 posts to googletagmanager.com too').toContain('https://www.googletagmanager.com');
+  });
+
+  test('no analytics loads on a host that is not the live site', async ({ page }) => {
+    /* The inverse of the two tests above, and the one that actually protects
+     * the data. Without the hostname gate every local `next start` run and
+     * every Vercel preview reported itself as a visitor: 329 of 427 GA4
+     * sessions on 2026-09-30 carried hostName 127.0.0.1, which is our own
+     * testing outnumbering the site's real audience three to one.
+     *
+     * No addInitScript here — this run must look like an ordinary visit to a
+     * non-production host. */
+    await page.goto('/tools');
+    await page.waitForFunction(() => !!localStorage.getItem('cookie-consent'), null, { timeout: 15000 });
+
+    const consent = await page.evaluate(() => localStorage.getItem('cookie-consent'));
+    expect(consent, 'consent must still be granted — the gate is about the host, not consent')
+      .toContain('"analytics":true');
+
+    await expect(page.locator('script[src*="googletagmanager.com/gtag/js"]'),
+      'GA4 must not load off the live hostname').toHaveCount(0);
+    await expect(page.locator('script[src*="clarity.ms/tag/"]'),
+      'Clarity must not load off the live hostname').toHaveCount(0);
+    expect(await page.evaluate(() => window.dataLayer?.length ?? 0),
+      'nothing may be pushed to the dataLayer').toBe(0);
   });
 });
