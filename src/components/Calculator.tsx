@@ -1098,7 +1098,16 @@ export default function Calculator() {
 
   // ── URL param reading on mount ──
   useEffect(() => {
+    /* Internal links carry the pre-fill in the FRAGMENT so they do not mint
+     * a crawlable URL per ratio per locale. The query string is still read
+     * first, because 182 of the old ?rw= form are already in Google's index
+     * and somebody may have bookmarked one — dropping support would turn a
+     * duplicate-content problem into a broken-link problem. */
     const params = new URLSearchParams(window.location.search);
+    const hash = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+    hash.forEach((v, k) => {
+      if (!params.has(k)) params.set(k, v);
+    });
     const pw = params.get("w");
     const ph = params.get("h");
     const prw = params.get("rw");
@@ -1118,6 +1127,21 @@ export default function Calculator() {
         }
         setMode("scale");
       }
+    } else if (prw && prh) {
+      /* Ratio without dimensions: lock the ratio, leave the size blank.
+       *
+       * This is what the "Full calculator" link on every ratio page has
+       * always asked for — ?rw=16&rh=9&mode=scale, no w or h — and the
+       * reader above requires `pw && ph`, so for the life of the site the
+       * link has opened a plain, unlocked homepage. The 182 crawlable
+       * duplicates it minted bought nothing at all.
+       *
+       * Found 2026-10-01 while moving those links to a fragment: the three
+       * URL forms rendered byte-identical empty inputs, including the query
+       * form that was supposed to work. */
+      setScaleLockedRW(parseFloat(prw));
+      setScaleLockedRH(parseFloat(prh));
+      setMode("scale");
     }
   }, []);
 

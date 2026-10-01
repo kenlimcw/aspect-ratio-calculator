@@ -116,7 +116,24 @@ export default async function RatioPage({ params }: Props) {
     },
   };
 
-  const calcUrl = `${prefix}/?rw=${data.w}&rh=${data.h}&mode=scale`;
+  /* A FRAGMENT, not a query string, and the distinction is the whole point.
+   *
+   * This one line produced 182 crawlable URLs — 14 ratios x 13 locales —
+   * every one of which returns the homepage body at 10/10 duplicate
+   * similarity. A crawler cannot know that ?rw=1920 is "the same page with
+   * numbers filled in"; it sees an address it has not visited, fetches it,
+   * and files another copy. Measured: they added about a third to the
+   * crawlable URL space and exhausted an external crawler's 600-page cap,
+   * on a site where 399 of 533 real URLs have never been fetched once.
+   *
+   * Everything after # never leaves the browser. It is not sent to the
+   * server and search engines ignore it by design, because it was invented
+   * to address a position WITHIN a page rather than a different page. The
+   * visitor experience is identical; the 182 addresses stop existing.
+   *
+   * Calculator.tsx still reads the old ?rw= form, for the copies already in
+   * Google's index and for anyone who bookmarked one. */
+  const calcUrl = `${prefix}/#rw=${data.w}&rh=${data.h}&mode=scale`;
   const paddingBottom = ((data.h / data.w) * 100).toFixed(4);
 
   return (
