@@ -231,6 +231,41 @@ export default async function RatioPage({ params }: Props) {
             </ul>
           </div>
 
+          {/* Deep dive — present on 16:9 only, by design.
+            *
+            * The refusal experiment: Google crawled nine English pages on
+            * 2026-09-28 and declined all nine. They are 500-600 words across
+            * six identical headings, so "the pages are thin" and "the domain
+            * has no reputation" fit the evidence equally well, and the two
+            * have opposite fixes. This section makes ONE of those nine
+            * substantially better and leaves /ratio/4-3 and /ratio/9-16 — the
+            * same template, crawled the same day, refused the same way —
+            * untouched as controls.
+            *
+            * If 16-9 flips to indexed and the controls do not, thinness was
+            * the constraint. If nothing moves, it is reputation and we stop
+            * rewriting pages. arc_gsc_index_state.changed_at reports it the
+            * morning Google changes its mind. */}
+          {data.deepDive?.length ? (
+            <div className="seo-card">
+              {data.deepDive.map((section) => (
+                <section key={section.heading} className="mb-6 last:mb-0">
+                  <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">
+                    {section.heading}
+                  </h2>
+                  {section.body.map((para, i) => (
+                    <p
+                      key={i}
+                      className="text-sm text-[var(--muted-foreground)] leading-relaxed mb-3 last:mb-0"
+                    >
+                      {para}
+                    </p>
+                  ))}
+                </section>
+              ))}
+            </div>
+          ) : null}
+
           {/* CSS Code Snippet */}
           <div className="seo-card">
             <h2 className="text-base font-semibold text-[var(--foreground)] mb-3">

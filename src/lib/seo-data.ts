@@ -23,6 +23,12 @@ export interface RatioData {
   relatedRatios: string[];
   relatedPlatforms: string[];
   cssValue: string;
+  /* Substance that only this ratio can carry — history, derivations, exact
+   * conversion arithmetic. Optional on purpose: a field every ratio must
+   * fill would be filled with template, which is the problem it exists to
+   * solve. Google crawled nine of these pages on 2026-09-28 and declined
+   * all nine; they run 500-600 words across six identical headings. */
+  deepDive?: { heading: string; body: string[] }[];
 }
 
 export interface PlatformFormat {
@@ -71,6 +77,32 @@ export const RATIO_DATA: Record<string, RatioData> = {
       "Everything about the 16:9 aspect ratio: common dimensions (720p, 1080p, 4K, 8K), use cases, and a free calculator. The standard for video, TV, and monitors.",
     explanation:
       "16:9 (sixteen-to-nine) is the universally adopted widescreen aspect ratio for HD video, streaming, and modern displays. For every 16 units of width, the height is 9 units, producing a wide, cinematic rectangle. It replaced the older 4:3 standard in the early 2000s and is now the default for virtually all video content, monitors, and television broadcasts worldwide.",
+    deepDive: [
+      {
+        heading: "Why 16:9 exists at all",
+        body: [
+          "It was designed, not inherited. In 1984 Kerns Powers, an engineer at the SMPTE, was trying to find a single screen shape that could show every film and television format then in use without wasting too much of the screen on either side.",
+          "He cut a rectangle for each format \u2014 4:3 television, 1.85:1 cinema, 2.35:1 CinemaScope \u2014 all to the same area, and overlapped them about a common centre. The rectangle that best split the difference had a ratio of roughly 1.77:1. That is the geometric mean of the narrowest and widest formats in common use: the square root of 1.33 \u00d7 2.35 is 1.77.",
+          "16 \u00f7 9 is 1.7778. It is also exactly 4\u00b2 : 3\u00b2 \u2014 the square of the old television standard, which is a coincidence worth knowing and not the reason it was chosen.",
+        ],
+      },
+      {
+        heading: "Why 1920 \u00d7 1080, and not some other pair of numbers",
+        body: [
+          "1080 \u00d7 16 \u00f7 9 is 1920 exactly, with nothing left over. That matters more than it sounds: a resolution that does not divide cleanly gives you either non-square pixels or a fractional scan line, and both cause trouble somewhere downstream.",
+          "The whole 16:9 ladder divides exactly \u2014 1280\u00d7720, 1920\u00d71080, 2560\u00d71440, 3840\u00d72160, 7680\u00d74320. And 3840\u00d72160 holds precisely four times the pixels of 1920\u00d71080, which is why 4K footage downscales to 1080p without resampling artefacts.",
+        ],
+      },
+      {
+        heading: "What converting away from 16:9 actually costs",
+        body: [
+          "Cropping 16:9 to fill a 9:16 vertical frame keeps (9\u00f716)\u00b2 of the picture \u2014 31.6%. You discard more than two thirds of what you shot. This is the single most common conversion on the internet and the most expensive.",
+          "Fitting 4:3 content inside a 16:9 frame covers 75% of the screen exactly; the pillarbox bars take the remaining quarter.",
+          "Fitting 16:9 inside a 2.39:1 cinema frame covers 74.4%, so the letterbox cost is almost identical \u2014 a quarter of the screen either way, whichever direction you are going.",
+          "The arithmetic is always the same: divide the narrower ratio by the wider one. Everything else is rounding.",
+        ],
+      },
+    ],
     useCases: [
       "YouTube videos and thumbnails",
       "Netflix, Disney+, and streaming platforms",
