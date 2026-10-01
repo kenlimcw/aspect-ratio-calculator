@@ -104,7 +104,35 @@ function main() {
     locales[f.replace(/\.json$/, "")] = JSON.parse(readFileSync(path.join(DIR, f), "utf8"));
   }
 
-  const problems = compare(en, locales);
+
+/* The homepage <title> must open in the locale's own language.
+ *
+ * Six of thirteen led with the untranslated product name — "Aspect Ratio
+ * Calculator - 無料オンラインツール" on a page whose head term is アスペクト比,
+ * 14,800/mo at keyword difficulty zero. The first words of a title are the
+ * strongest on-page signal there is, and six locales were spending them on
+ * a phrase nobody in that market searches.
+ *
+ * This is a FAILURE, not a warning: the title is cheap to get right and
+ * expensive to notice when it is wrong. en is exempt, obviously. */
+function englishLeadingTitles(locales) {
+  const out = [];
+  for (const [loc, msgs] of Object.entries(locales)) {
+    if (loc === "en") continue;
+    const t = msgs?.meta?.siteTitle;
+    if (!t) continue;
+    if (/^aspect\s*ratio\s*calculator/i.test(t)) {
+      out.push({
+        check: "title-leads-in-english", loc, where: "meta.siteTitle",
+        msg: `opens with the English product name: "${t.slice(0, 50)}" — ` +
+             `lead with the term this market actually searches`,
+      });
+    }
+  }
+  return out;
+}
+
+  const problems = compare(en, locales).concat(englishLeadingTitles(locales));
   const warnings = untranslated(en, locales);
 
   for (const w of warnings) console.warn(`  warn  ${w}`);
