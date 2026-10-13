@@ -1,7 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
+import { useState } from "react";
 import { useTranslation } from "@/components/I18nProvider";
+import { CopyButton } from "@/components/CopyButton";
+import { track } from "@/lib/analytics";
 
 /* A deliberately small calculator, not the real one in a smaller box.
  *
@@ -45,7 +48,6 @@ export function EmbedCalculator({ initialW, initialH }: { initialW: number; init
   /* Which side the reader typed into last. Without it, filling both target
    * boxes and then editing the first leaves the second stale and wrong. */
   const [driver, setDriver] = useState<"w" | "h" | null>(null);
-  const [copied, setCopied] = useState(false);
 
   const ow = num(w);
   const oh = num(h);
@@ -66,16 +68,22 @@ export function EmbedCalculator({ initialW, initialH }: { initialW: number; init
 
   const ratioLabel = r ? `${r.rw} : ${r.rh}` : Number.isFinite(decimal) ? `${decimal.toFixed(3)} : 1` : "—";
 
-  async function copy() {
-    try {
-      await navigator.clipboard.writeText(ratioLabel);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1400);
-    } catch {
-      /* Clipboard is permission-gated and blocked outright in some embedding
-       * contexts. A silent no-op beats an exception in someone else's page. */
-    }
-  }
+  /* Clipboard handling now lives in CopyButton + lib/clipboard, which falls
+   * back to a textarea + execCommand when the async API is unavailable. That
+   * fallback matters most HERE: an embed runs inside somebody else's iframe,
+   * frequently sandboxed and often not a secure context, which is exactly
+   * where navigator.clipboard refuses. The previous local implementation
+   * called it bare and swallowed the rejection, so copy silently did nothing
+   * on the hosts most likely to be using the widget.
+   *
+   * `calc_run` carries surface:"embed" so widget use never inflates the
+   * site's own calculator numbers. */
+  const calcRunFired = useRef(false);
+  const markCalcRun = useCallback(() => {
+    if (calcRunFired.current) return;
+    calcRunFired.current = true;
+    track("calc_run", { surface: "embed" });
+  }, []);
 
   /* Tell the host how tall we are, so it never has to guess or scroll.
    *
@@ -130,21 +138,23 @@ export function EmbedCalculator({ initialW, initialH }: { initialW: number; init
           <div className={label}>{t("calculator", "ratio")}</div>
           <div className="font-mono text-xl text-[var(--accent)]" data-arc-ratio>{ratioLabel}</div>
         </div>
-        <button onClick={copy}
-                className="rounded-md border border-[var(--border)] px-2.5 py-1 text-xs text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
-          {copied ? t("calculator", "copied") : t("calculator", "copy")}
-        </button>
+        <CopyButton value={ratioLabel} label="embed-ratio" surface="embed" />
       </div>
 
       <div className="mt-3">
-        <div className={label}>{t("calculator", "newSize")}</div>
+        <div className="flex items-center justify-between gap-2">
+          <div className={label}>{t("calculator", "newSize")}</div>
+          {outW && outH && (
+            <CopyButton value={`${outW} × ${outH}`} label="embed-dims" surface="embed" compact />
+          )}
+        </div>
         <div className="grid grid-cols-2 gap-3">
           <input aria-label={t("calculator", "width")} className={field} inputMode="numeric"
                  placeholder={t("calculator", "width")} value={outW}
-                 onChange={(e) => { setTargetW(e.target.value); setDriver("w"); }} />
+                 onChange={(e) => { setTargetW(e.target.value); setDriver("w"); markCalcRun(); }} />
           <input aria-label={t("calculator", "height")} className={field} inputMode="numeric"
                  placeholder={t("calculator", "height")} value={outH}
-                 onChange={(e) => { setTargetH(e.target.value); setDriver("h"); }} />
+                 onChange={(e) => { setTargetH(e.target.value); setDriver("h"); markCalcRun(); }} />
         </div>
       </div>
 

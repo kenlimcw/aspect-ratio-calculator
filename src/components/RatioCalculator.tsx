@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import Link from "next/link";
 import { useTranslation } from "@/components/I18nProvider";
+import { CopyButton } from "@/components/CopyButton";
+import { track } from "@/lib/analytics";
 
 interface Props {
   w: number; // ratio width unit  e.g. 16
@@ -17,6 +19,24 @@ export function RatioCalculator({ w, h, label, calcUrl }: Props) {
   const [height, setHeight] = useState("");
   const [lastEdited, setLastEdited] = useState<"w" | "h" | null>(null);
 
+  /* `calc_run` fires AT MOST ONCE per mount, deliberately.
+   *
+   * The question it exists to answer is "of the people who land here, how many
+   * actually compute something" — so one event per page view makes GA4's
+   * totalUsers for the event the answer directly. Firing per keystroke would
+   * make the count a measure of typing speed; these handlers run on every
+   * change event, so "1920" alone would be four calculations.
+   *
+   * It is declared in src/lib/analytics.ts and, until now, was never called
+   * from anywhere in the app — so the site's single most common action had no
+   * measurement at all. */
+  const calcRunFired = useRef(false);
+  const markCalcRun = useCallback(() => {
+    if (calcRunFired.current) return;
+    calcRunFired.current = true;
+    track("calc_run", { surface: "ratio_page", ratio: label });
+  }, [label]);
+
   const handleWidth = useCallback(
     (val: string) => {
       setWidth(val);
@@ -25,11 +45,12 @@ export function RatioCalculator({ w, h, label, calcUrl }: Props) {
       if (!isNaN(n) && n > 0) {
         const computed = Math.round((n * h) / w);
         setHeight(String(computed));
+        markCalcRun();
       } else {
         setHeight("");
       }
     },
-    [w, h]
+    [w, h, markCalcRun]
   );
 
   const handleHeight = useCallback(
@@ -40,11 +61,12 @@ export function RatioCalculator({ w, h, label, calcUrl }: Props) {
       if (!isNaN(n) && n > 0) {
         const computed = Math.round((n * w) / h);
         setWidth(String(computed));
+        markCalcRun();
       } else {
         setWidth("");
       }
     },
-    [w, h]
+    [w, h, markCalcRun]
   );
 
   const hasResult = width !== "" && height !== "";
@@ -127,15 +149,27 @@ export function RatioCalculator({ w, h, label, calcUrl }: Props) {
 
       {/* Result bar */}
       {hasResult && (
-        <div className="mt-3 flex items-center gap-2 rounded-lg bg-[var(--accent-glow)] border border-[var(--accent)]/20 px-3 py-2">
-          <span className="text-[var(--accent)] text-xs">✓</span>
-          <p className="text-xs text-[var(--foreground-dim)]">
-            <span className="font-mono text-[var(--foreground)]">{Number(width).toLocaleString()}</span>
-            {" × "}
-            <span className="font-mono text-[var(--foreground)]">{Number(height).toLocaleString()}</span>
-            {" px — "}
-            {t("ratioCalculator", "calculatedFor", { dimension: t("ratioCalculator", lastEdited === "w" ? "height" : "width"), label })}
-          </p>
+        <div className="mt-3 flex items-center justify-between gap-2 rounded-lg bg-[var(--accent-glow)] border border-[var(--accent)]/20 px-3 py-2">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="text-[var(--accent)] text-xs">✓</span>
+            <p className="text-xs text-[var(--foreground-dim)]">
+              <span className="font-mono text-[var(--foreground)]">{Number(width).toLocaleString()}</span>
+              {" × "}
+              <span className="font-mono text-[var(--foreground)]">{Number(height).toLocaleString()}</span>
+              {" px — "}
+              {t("ratioCalculator", "calculatedFor", { dimension: t("ratioCalculator", lastEdited === "w" ? "height" : "width"), label })}
+            </p>
+          </div>
+          {/* The dead-click target. Clarity logged 42 dead clicks in three days
+            * clustered on these pages, because this bar renders accent-coloured
+            * monospace numbers exactly like Calculator.tsx's result, which has
+            * always had a copy button. The format matches that one — `W × H` —
+            * so a value copied from any calculator on the site looks the same. */}
+          <CopyButton
+            value={`${width} × ${height}`}
+            label="ratio-dims"
+            surface="ratio_page"
+          />
         </div>
       )}
 
