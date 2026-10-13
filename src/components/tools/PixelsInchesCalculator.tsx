@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useTranslation } from "@/components/I18nProvider";
+import { CopyButton } from "@/components/CopyButton";
 import { printSizeTable, formatMeasurement } from "@/lib/tools/pixels-to-inches";
 
 /* One pixel size, three DPI standards, and that table is both conversions the
@@ -115,6 +116,25 @@ export function PixelsInchesCalculator() {
                   </div>
                   <div className="text-xs mt-1" style={{ color: "var(--muted)" }}>
                     {M(`${row.dpi.msg}Note`)}
+                  </div>
+                  {/* Every row is somebody's answer, so every row can be
+                    * copied — not just the accented 300 DPI one. The value is
+                    * composed from the existing localised `sizeFormat` rather
+                    * than a new "{w} x {h}" string, because a new string would
+                    * mean thirteen new translations and this needed none. */}
+                  <div className="mt-1.5">
+                    <CopyButton
+                      value={`${M("sizeFormat", {
+                        inches: formatMeasurement(row.width.inches),
+                        cm: formatMeasurement(row.width.cm),
+                      })} × ${M("sizeFormat", {
+                        inches: formatMeasurement(row.height.inches),
+                        cm: formatMeasurement(row.height.cm),
+                      })}`}
+                      label={`print-size-${row.dpi.id}`}
+                      surface="tool_pixels_inches"
+                      compact
+                    />
                   </div>
                 </td>
                 <td

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useTranslation } from "@/components/I18nProvider";
+import { ResultRow as Row } from "@/components/tools/ResultRow";
 import {
   RATIOS,
   DEFAULT_RATIO,
@@ -140,6 +141,9 @@ export function ScreenSizeCalculator() {
             label={M("dimensionsLabel", { ratio: ratio.label })}
             value={M("dimensionsFormat", { width: fmt1(size.width), height: fmt1(size.height), unit: unitLabel })}
             strong
+            copyValue={M("dimensionsFormat", { width: fmt1(size.width), height: fmt1(size.height), unit: unitLabel })}
+            copyLabel="screen-dimensions"
+            surface="tool_screen_size"
           />
           <Row label={M("areaLabel")} value={M("areaFormat", { area: fmt1(size.area), unit: unitLabel })} />
 
@@ -191,13 +195,3 @@ export function ScreenSizeCalculator() {
   );
 }
 
-function Row({ label, value, strong }: { label: string; value: string; strong?: boolean }) {
-  return (
-    <div className="flex justify-between gap-4 py-2 text-sm" style={{ borderBottom: "1px solid var(--border)" }}>
-      <span style={{ color: "var(--muted)" }}>{label}</span>
-      <span className="font-mono text-right" style={{ color: strong ? "var(--accent)" : "var(--foreground)" }}>
-        {value}
-      </span>
-    </div>
-  );
-}

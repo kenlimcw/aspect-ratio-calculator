@@ -25,6 +25,7 @@ import {
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useTranslation } from "@/components/I18nProvider";
 import { track } from "@/lib/analytics";
+import { copyToClipboard } from "@/lib/clipboard";
 
 // ── Preset Data ──────────────────────────────────────────────
 
@@ -173,29 +174,6 @@ function matchClosestRatio(w: number, h: number): string | null {
   return null;
 }
 
-function copyToClipboard(text: string): Promise<boolean> {
-  if (navigator.clipboard && window.isSecureContext) {
-    return navigator.clipboard.writeText(text).then(() => true).catch(() => fallbackCopy(text));
-  }
-  return Promise.resolve(fallbackCopy(text));
-}
-
-function fallbackCopy(text: string): boolean {
-  const ta = document.createElement("textarea");
-  ta.value = text;
-  ta.style.position = "fixed";
-  ta.style.opacity = "0";
-  document.body.appendChild(ta);
-  ta.select();
-  try {
-    document.execCommand("copy");
-    return true;
-  } catch {
-    return false;
-  } finally {
-    document.body.removeChild(ta);
-  }
-}
 
 function getOrientation(w: number, h: number): "landscape" | "portrait" | "square" {
   if (w > h) return "landscape";
@@ -1233,7 +1211,18 @@ export default function Calculator() {
     }
   }, [flashLock, scaleQuickRatio]);
 
+  /* Once per mount. See the long note in RatioCalculator.tsx: the point is to
+   * count PEOPLE who computed something, not keystrokes. `surface` separates
+   * the homepage calculator from the ratio pages and the embed widget. */
+  const calcRunFired = useRef(false);
+  const markCalcRun = useCallback((surface: string) => {
+    if (calcRunFired.current) return;
+    calcRunFired.current = true;
+    track("calc_run", { surface });
+  }, []);
+
   const handleOrigWChange = useCallback((val: string) => {
+    markCalcRun("home_scale");
     setOrigW(val);
     const w = parseFloat(val) || 0;
     const h = parseFloat(origH) || 0;
@@ -1253,9 +1242,10 @@ export default function Calculator() {
         flashComputed("newW");
       }
     }
-  }, [origH, newW, newH, scaleLastEdited, updateScaleRatio, flashComputed]);
+  }, [origH, newW, newH, scaleLastEdited, updateScaleRatio, flashComputed, markCalcRun]);
 
   const handleOrigHChange = useCallback((val: string) => {
+    markCalcRun("home_scale");
     setOrigH(val);
     const w = parseFloat(origW) || 0;
     const h = parseFloat(val) || 0;
@@ -1275,7 +1265,7 @@ export default function Calculator() {
         flashComputed("newW");
       }
     }
-  }, [origW, newW, newH, scaleLastEdited, updateScaleRatio, flashComputed]);
+  }, [origW, newW, newH, scaleLastEdited, updateScaleRatio, flashComputed, markCalcRun]);
 
   const scaleRatioW = scaleLockedRW;
   const scaleRatioH = scaleLockedRH;
@@ -2229,7 +2219,7 @@ export default function Calculator() {
                   inputMode="decimal"
                   pattern="[0-9.]*"
                   value={findW}
-                  onChange={(e) => setFindW(sanitizeNumeric(e.target.value))}
+                  onChange={(e) => { setFindW(sanitizeNumeric(e.target.value)); markCalcRun("home_find"); }}
                   onFocus={(e) => e.target.select()}
                   placeholder={t("calculator", "width")}
                   className={`${bigInputBase} ${!findWNum ? "glow-active" : ""}`}
@@ -2254,7 +2244,7 @@ export default function Calculator() {
                   inputMode="decimal"
                   pattern="[0-9.]*"
                   value={findH}
-                  onChange={(e) => setFindH(sanitizeNumeric(e.target.value))}
+                  onChange={(e) => { setFindH(sanitizeNumeric(e.target.value)); markCalcRun("home_find"); }}
                   onFocus={(e) => e.target.select()}
                   placeholder={t("calculator", "height")}
                   className={`${bigInputBase} ${findWNum > 0 && !findHNum ? "glow-active" : ""}`}

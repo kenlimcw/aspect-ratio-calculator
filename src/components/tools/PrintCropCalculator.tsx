@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useTranslation } from "@/components/I18nProvider";
+import { ResultRow as Row } from "@/components/tools/ResultRow";
 import {
   SOURCE_RATIOS,
   PRINT_SIZES,
@@ -164,6 +165,9 @@ export function PrintCropCalculator() {
           <Row
             label={M("printSizeLabel")}
             value={M("dimsFormat", { first: fmt(print.firstMm), second: fmt(print.secondMm), unit: unitLabel })}
+            copyValue={M("dimsFormat", { first: fmt(print.firstMm), second: fmt(print.secondMm), unit: unitLabel })}
+            copyLabel="print-size"
+            surface="tool_print_crop"
           />
           <Row label={M("sourceShapeLabel")} value={`${crop.sourceRatio.toFixed(3)} : 1`} />
           <Row label={M("printShapeLabel")} value={`${crop.printRatio.toFixed(3)} : 1`} />
@@ -200,13 +204,3 @@ function Cut({ style }: { style: React.CSSProperties }) {
   );
 }
 
-function Row({ label, value, strong }: { label: string; value: React.ReactNode; strong?: boolean }) {
-  return (
-    <div className="flex justify-between gap-4 py-2 text-sm" style={{ borderBottom: "1px solid var(--border)" }}>
-      <span style={{ color: "var(--muted)" }}>{label}</span>
-      <span className="font-mono text-right" style={{ color: strong ? "var(--accent)" : "var(--foreground)" }}>
-        {value}
-      </span>
-    </div>
-  );
-}

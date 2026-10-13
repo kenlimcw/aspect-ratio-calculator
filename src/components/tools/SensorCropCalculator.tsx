@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useTranslation } from "@/components/I18nProvider";
+import { ResultRow as Row } from "@/components/tools/ResultRow";
 import {
   SENSORS,
   FULL_FRAME,
@@ -133,7 +134,8 @@ export function SensorCropCalculator() {
             label={M("diagonalLabel")}
             value={M("diagonalValue", { sensor: sensorDiag.toFixed(2), full: fullFrameDiag.toFixed(2) })}
           />
-          <Row label={M("cropFactorLabel")} value={formatCrop(result.cropFactor)} strong />
+          <Row label={M("cropFactorLabel")} value={formatCrop(result.cropFactor)} strong
+            copyValue={formatCrop(result.cropFactor)} copyLabel="crop-factor" surface="tool_sensor_crop" />
 
           <div className="grid grid-cols-2 gap-3 mt-5 mb-2">
             <div>
@@ -178,11 +180,17 @@ export function SensorCropCalculator() {
             label={M("equivFocalLabel")}
             value={M("equivFocalValue", { value: result.equivFocalLength.toFixed(1) })}
             strong
+            copyValue={M("equivFocalValue", { value: result.equivFocalLength.toFixed(1) })}
+            copyLabel="equiv-focal"
+            surface="tool_sensor_crop"
           />
           <Row
             label={M("equivApertureLabel")}
             value={M("equivApertureValue", { value: result.equivAperture.toFixed(2) })}
             strong
+            copyValue={M("equivApertureValue", { value: result.equivAperture.toFixed(2) })}
+            copyLabel="equiv-aperture"
+            surface="tool_sensor_crop"
           />
 
           {/* The line the brief exists to force onto the page: this number
@@ -206,19 +214,3 @@ export function SensorCropCalculator() {
   );
 }
 
-function Row({ label, value, strong }: { label: string; value: string; strong?: boolean }) {
-  return (
-    <div
-      className="flex justify-between gap-4 py-2 text-sm"
-      style={{ borderBottom: "1px solid var(--border)" }}
-    >
-      <span style={{ color: "var(--muted)" }}>{label}</span>
-      <span
-        className="font-mono text-right"
-        style={{ color: strong ? "var(--accent)" : "var(--foreground)" }}
-      >
-        {value}
-      </span>
-    </div>
-  );
-}
